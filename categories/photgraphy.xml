@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (photgraphy)</title><link>http://milosophical.me/</link><description></description><language>en</language><lastBuildDate>Fri, 23 Jan 2015 22:36:08 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Oxygen OpenOffice Professional</title><link>http://milosophical.me/blog/2007/08/08/oxygen-openoffice-professional.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;Found &lt;a title="Oxygen OpenOffice project (SourceForge)" href="http://sourceforge.net/projects/ooop/"&gt;this neat project in SourceForge&lt;/a&gt;, which is a fork (?) of OpenOffice that adds some nice features, but the really cool part is that it has free clip art and templates, many of which are actually decent!
+
+
+&lt;!--more--&gt;You can install the whole thing, but I already have OpenOffice (OOo) on all my systems.  So you can also just &lt;a title="Oxygen OpenOffice Extensions (SourceForge)" href="http://sourceforge.net/project/showfiles.php?group_id=170021&amp;amp;package_id=208656"&gt;download the extensions&lt;/a&gt; (which are platform agnostic) and install only those (just run the .osx files from your file browser — it's MIME settings should open it in OOo's Extension Manager and install for you.
+
+
+
+There is one issue (attributable to a bug in the OpenOffice  UNO Extension mechanism I think): The gallery links to the photos from the &lt;em&gt;gallery.oxt&lt;/em&gt; extension are not mapped to their actual installation directory. This means that you can see the thumbnails in the OOo gallery, but cannot include the actual photos into your documents :(
+
+
+
+For example, in my Windows install, it seems the OOo extension is incorrectly mapping the gallery photograph files to &lt;code&gt;&lt;em&gt;&amp;lt;user home&amp;gt;&lt;/em&gt;\Application Settings\OpenOffice.org2\user\gallery\Photos&lt;/code&gt; .  The correct mapping should be &lt;code&gt;&lt;em&gt;&amp;lt;user home&amp;gt;&lt;/em&gt;\Application Settings\OpenOffice.org2\user\uno_packages\cache\uno_packages\&lt;em&gt;&amp;lt;temp name&amp;gt;&lt;/em&gt;\OOOP-&lt;em&gt;&amp;lt;version&amp;gt;&lt;/em&gt;-gallery.oxt\gallery\Photos&lt;/code&gt; (either that, or the mapping is right and the photos are installed to the wrong place...)
+
+
+
+A work-around, I found, was to just move these photos into the directory that the OOo gallery link is expecting (that is, from the actual location above, to the expected location).  You can confirm the expected location by clicking on one of the photo thumbnails in the OOo gallery, and looking at the directory name at the top of the gallery.
+
+
+
+I have only tested this on Windows, but it if it occurs in Linux too, the work-around should be similar.
+
+
+
+The real fix of course would be to correct the bug in the UNO mapping for the extension.  Since both projects are OpenSource, I could theoretically do this and submit a patch to the relevant project, but I don't know enough about the mechanics of UNO or OOo extensions to identify where the bug is, or how to fix it, and I don't have the time to research it.  I also haven't had time to see if this bug has been reported in either project, so I'm just blogging my work-around.
+
+
+
+If anybody from the OOo project or the OOOP project finds this blog entry and knows what I'm talking about and how to fix, feel free to do so!&lt;/p&gt;</description><category>computers</category><category>hacking</category><category>media</category><category>photgraphy</category><category>tip</category><guid>http://milosophical.me/blog/2007/08/08/oxygen-openoffice-professional.html</guid><pubDate>Wed, 08 Aug 2007 01:42:28 GMT</pubDate></item></channel></rss>

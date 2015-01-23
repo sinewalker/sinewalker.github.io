@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>first post | Milosophical Me</title>
+
+                <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+
+                <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+
+      <link rel="canonical" href="http://milosophical.me/blog/first-post.html">
+
+
+
+    
+        <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]-->
+
+    
+
+    
+    <meta name="author" content="Mike Lockhart">
+        <meta name="og:title" content="first post">
+    <meta name="og:url" content="http://milosophical.me/blog/first-post.html">
+    <meta name="og:description" content="My first post
+This is written in IPython Notebook, using a Markdown cell. I don't know Markdown, but I guess I'll be getting to know it.
+I also want to try writing a post with Emacs org-mode, and comp">
+    <meta name="og:site_name" content="Milosophical Me">
+    <meta name="og:type" content="article">
+
+    
+    
+
+</head>
+<body>
+    <section class="social">
+        <ul>
+                    <li><a href="../index.html" title="Home"><i class="icon-home"></i></a></li>
+            <li><a href="../archive.html" title="Archives"><i class="icon-folder-open-alt"></i></a></li>
+            <li><a href="../categories/index.html" title="Tags"><i class="icon-tags"></i></a></li>
+            <li><a href="../rss.xml" title="RSS"><i class="icon-rss"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/mikelockhart" title="My LinkedIn profile"><i class="icon-linkedin"></i></a></li>
+            <li><a href="https://bitbucket.com/sinewalker" title="My Bitbucket"><i class="icon-bitbucket"></i></a></li>
+            <li><a href="https://github.com/sinewalker" title="My Github"><i class="icon-github"></i></a></li>
+            <li><a href="https://plus.google.com/+MichaelLockhart" title="Michael+"><i class="icon-google-plus"></i></a></li>
+            <li><a href="http://stackoverflow.com/users/776953/mike" title="Stack Overflow"><i class="icon-stackexchange"></i></a></li>
+
+        </ul>
+    </section>
+    <section class="page-content">
+        <div class="content" rel="main">
+    <div class="post">
+        <h1 class="p-name entry-title" itemprop="headline name">first post</h1>
+
+        <div class="meta">
+            <div class="authordate">
+                <time class="timeago" datetime="2014-08-21T22:30:23+10:00">2014-08-21 22:30</time>
+            
+                      |  
+        <a href="first-post.ipynb" id="sourcelink">Source</a>
+
+            </div>
+            
+        </div>
+        <div class="body">
+            <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="-my-first-post"> My first post</h3>
+<p>This is written in <a href="http://ipython.org/install.html">IPython</a> <a href="http://ipython.org/notebook.html">Notebook</a>, using a Markdown cell. I don't know <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a>, but I guess I'll be getting to know it.</p>
+<p>I also want to try writing a post with Emacs org-mode, and compiling with emacs.</p>
+<ul>
+<li><a href="http://punchagan.muse-amuse.in/posts/blogging-with-nikola-and-org-mode.html">Nikola plugin to compile org-mode pages</a></li>
+<li><a href="http://wikemacs.org/wiki/Nikola">nice emacs nikola publishing code</a></li>
+<li>
+<p><a href="http://brunettoziosi.eu/posts/blogging-with-nikola-ipython-github.html">Nikola + ipython + github pages, slightly dated, but good info</a> I followed his steps to get started with this post.</p>
+</li>
+<li>
+<p><a href="http://www.damian.oquanta.info/posts/bidirectional-ipython-nikola-workflow-to-write-your-blog-post.html">this guy blogs in ipython and makes a nice theme</a></p>
+</li>
+<li><a href="http://nikola.readthedocs.org/en/latest/manual/">the Nikola Handbook</a></li>
+<li>
+<p><a href="http://tinkeringwithstuff.com/posts/my-setup-for-blogging-with-nikola.html">another way to host, with nikola on the server, building there</a></p>
+<p>Notes</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>It is handy to set all of this up in a <a href="http://docs.python-guide.org/en/latest/dev/virtualenvs/">VirtualEnv</a> using <a href="http://virtualenvwrapper.readthedocs.org/en/latest/index.html">VirtualEnvWrapper</a>
+</li>
+<li>
+<code>nikola build</code> didn't work very well without <strong><em>node.js</em></strong>.  I Installed it from my distro's packages (just normal, not the <code>-devel</code> package, <em>but</em> it has to be 0.9.12 or later... e.g. openSUSE 12.3 has 0.8.12, so I needed to look in <a href="http://software.opensuse.org/package/nodejs">software.opensuse.org</a> or else upgrade to oS 13.1)</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In [3]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="mi">7</span><span class="o">*</span><span class="mi">6</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">
+    Out[3]:</div>
+
+
+<div class="output_text output_subarea output_pyout">
+<pre>
+42
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In [1]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">cd</span> <span class="o">~/</span><span class="n">Projects</span><span class="o">/</span><span class="n">blogs</span><span class="o">/</span><span class="n">net</span><span class="o">/</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+/home/mjl/Projects/blogs/net
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In [12]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">ls</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+total 36
+drwxr-xr-x 1 mjl users    28 Aug 22 22:23 <span class="ansibold ansiblue">cache</span>/
+-rw-r--r-- 1 mjl users 29390 Aug 22 08:54 conf.py
+-rw-r--r-- 1 mjl users  3292 Aug 22 21:53 conf.pyc
+drwxr-xr-x 1 mjl users    18 Aug 22 10:05 <span class="ansibold ansiblue">org</span>/
+drwxr-xr-x 1 mjl users   182 Aug 22 22:23 <span class="ansibold ansiblue">output</span>/
+drwxr-xr-x 1 mjl users    98 Aug 22 08:54 <span class="ansibold ansiblue">posts</span>/
+drwxr-xr-x 1 mjl users    40 Aug 22 08:54 <span class="ansibold ansiblue">themes</span>/
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In [3]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">sys</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In [4]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'/home/mjl/Projects/blogs/net/lib/'</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In [1]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="o">%</span><span class="k">load_ext</span> <span class="n">pygments_magic</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In [5]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="o">%</span><span class="k">highlight</span> <span class="o">-</span><span class="n">g</span> <span class="n">light</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">mjl</span><span class="o">/</span><span class="n">Projects</span><span class="o">/</span><span class="n">blogs</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">conf</span><span class="o">.</span><span class="n">py</span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+<span class="ansigrey"># -*- coding: utf-8 -*-</span>
+
+<span class="ansiblue">from</span> <span class="ansicyan">__future__</span> <span class="ansiblue">import</span> unicode_literals
+<span class="ansiblue">import</span> <span class="ansicyan">time</span>
+
+<span class="ansigrey"># !! This is the configuration of Nikola. !! #</span>
+<span class="ansigrey"># !!  You should edit it to your liking.  !! #</span>
+
+
+<span class="ansigrey"># ! Some settings can be different in different languages.</span>
+<span class="ansigrey"># ! A comment stating (translatable) is used to denote those.</span>
+<span class="ansigrey"># ! There are two ways to specify a translatable setting:</span>
+<span class="ansigrey"># ! (a) BLOG_TITLE = "My Blog"</span>
+<span class="ansigrey"># ! (b) BLOG_TITLE = {"en": "My Blog", "es": "Mi Blog"}</span>
+<span class="ansigrey"># ! Option (a) is used when you don't want that setting translated.</span>
+<span class="ansigrey"># ! Option (b) is used for settings that are different in different languages.</span>
+
+
+<span class="ansigrey"># Data about this site</span>
+BLOG_AUTHOR = <span class="ansiyellow">"</span><span class="ansiyellow">Mike Lockhart</span><span class="ansiyellow">"</span>  <span class="ansigrey"># (translatable)</span>
+BLOG_TITLE = <span class="ansiyellow">"</span><span class="ansiyellow">Milosophical Me</span><span class="ansiyellow">"</span>  <span class="ansigrey"># (translatable)</span>
+<span class="ansigrey"># This is the main URL for your site. It will be used</span>
+<span class="ansigrey"># in a prominent link</span>
+SITE_URL = <span class="ansiyellow">"</span><span class="ansiyellow">http://milosophical.me/</span><span class="ansiyellow">"</span>
+<span class="ansigrey"># This is the URL where nikola's output will be deployed.</span>
+<span class="ansigrey"># If not set, defaults to SITE_URL</span>
+<span class="ansigrey"># BASE_URL = "http://milosophical.me/"</span>
+BLOG_EMAIL = <span class="ansiyellow">"</span><span class="ansiyellow">sinewalker@gmail.com</span><span class="ansiyellow">"</span>
+BLOG_DESCRIPTION = <span class="ansiyellow">"</span><span class="ansiyellow">A geek</span><span class="ansiyellow">'</span><span class="ansiyellow">s notebook</span><span class="ansiyellow">"</span>  <span class="ansigrey"># (translatable)</span>
+
+<span class="ansigrey"># Nikola is multilingual!</span>
+<span class="ansigrey">#</span>
+<span class="ansigrey"># Currently supported languages are:</span>
+<span class="ansigrey">#</span>
+<span class="ansigrey"># en     English</span>
+<span class="ansigrey"># bg     Bulgarian</span>
+<span class="ansigrey"># ca     Catalan</span>
+<span class="ansigrey"># cs     Czech [ALTERNATIVELY cz]</span>
+<span class="ansigrey"># de     German</span>
+<span class="ansigrey"># el     Greek [NOT gr]</span>
+<span class="ansigrey"># eo     Esperanto</span>
+<span class="ansigrey"># es     Spanish</span>
+<span class="ansigrey"># et     Estonian</span>
+<span class="ansigrey"># eu     Basque</span>
+<span class="ansigrey"># fa     Persian</span>
+<span class="ansigrey"># fi     Finnish</span>
+<span class="ansigrey"># fr     French</span>
+<span class="ansigrey"># hi     Hindi</span>
+<span class="ansigrey"># hr     Croatian</span>
+<span class="ansigrey"># it     Italian</span>
+<span class="ansigrey"># ja     Japanese [NOT jp]</span>
+<span class="ansigrey"># nb     Norwegian BokmÃ¥l</span>
+<span class="ansigrey"># nl     Dutch</span>
+<span class="ansigrey"># pl     Polish</span>
+<span class="ansigrey"># pt_br  Portuguese (Brasil)</span>
+<span class="ansigrey"># ru     Russian</span>
+<span class="ansigrey"># sk     Slovak</span>
+<span class="ansigrey"># sl     Slovene</span>
+<span class="ansigrey"># tr     Turkish [NOT tr_TR]</span>
+<span class="ansigrey"># ur     Urdu</span>
+<span class="ansigrey"># zh_cn  Chinese (Simplified)</span>
+<span class="ansigrey">#</span>
+<span class="ansigrey"># If you want to use Nikola with a non-supported language you have to provide</span>
+<span class="ansigrey"># a module containing the necessary translations</span>
+<span class="ansigrey"># (cf. the modules at nikola/data/themes/base/messages/).</span>
+<span class="ansigrey"># If a specific post is not translated to a language, then the version</span>
+<span class="ansigrey"># in the default language will be shown instead.</span>
+
+<span class="ansigrey"># What is the default language?</span>
+DEFAULT_LANG = <span class="ansiyellow">"</span><span class="ansiyellow">en</span><span class="ansiyellow">"</span>
+
+<span class="ansigrey"># What other languages do you have?</span>
+<span class="ansigrey"># The format is {"translationcode" : "path/to/translation" }</span>
+<span class="ansigrey"># the path will be used as a prefix for the generated pages location</span>
+TRANSLATIONS = {
+    DEFAULT_LANG: <span class="ansiyellow">"</span><span class="ansiyellow">"</span>,
+    <span class="ansigrey"># Example for another language:</span>
+    <span class="ansigrey"># "es": "./es",</span>
+}
+
+<span class="ansigrey"># What will translated input files be named like?</span>
+
+<span class="ansigrey"># If you have a page something.rst, then something.pl.rst will be considered</span>
+<span class="ansigrey"># its Polish translation.</span>
+<span class="ansigrey">#     (in the above example: path == "something", ext == "rst", lang == "pl")</span>
+<span class="ansigrey"># this pattern is also used for metadata:</span>
+<span class="ansigrey">#     something.meta -&gt; something.pl.meta</span>
+
+TRANSLATIONS_PATTERN = <span class="ansiyellow">"</span><span class="ansiyellow">{path}.{lang}.{ext}</span><span class="ansiyellow">"</span>
+
+<span class="ansigrey"># Links for the sidebar / navigation bar.</span>
+<span class="ansigrey"># You should provide a key-value pair for each used language.</span>
+<span class="ansigrey"># (the same way you would do with a (translatable) setting.)</span>
+
+
+NAVIGATION_LINKS = {
+    DEFAULT_LANG: (
+        (<span class="ansiyellow">'</span><span class="ansiyellow">/index.html</span><span class="ansiyellow">'</span>, <span class="ansiyellow">'</span><span class="ansiyellow">Home</span><span class="ansiyellow">'</span>, <span class="ansiyellow">'</span><span class="ansiyellow">icon-home</span><span class="ansiyellow">'</span>),
+        (<span class="ansiyellow">'</span><span class="ansiyellow">/archive.html</span><span class="ansiyellow">'</span>, <span class="ansiyellow">'</span><span class="ansiyellow">Archives</span><span class="ansiyellow">'</span>, <span class="ansiyellow">'</span><span class="ansiyellow">icon-folder-open-alt</span><span class="ansiyellow">'</span>),
+        (<span class="ansiyellow">'</span><span class="ansiyellow">/categories/index.html</span><span class="ansiyellow">'</span>, <span class="ansiyellow">'</span><span class="ansiyellow">Tags</span><span class="ansiyellow">'</span>, <span class="ansiyellow">'</span><span class="ansiyellow">icon-tags</span><span class="ansiyellow">'</span>),
+        (<span class="ansiyellow">'</span><span class="ansiyellow">/rss.xml</span><span class="ansiyellow">'</span>, <span class="ansiyellow">'</span><span class="ansiyellow">RSS</span><span class="ansiyellow">'</span>, <span class="ansiyellow">'</span><span class="ansiyellow">icon-rss</span><span class="ansiyellow">'</span>),
+        (<span class="ansiyellow">'</span><span class="ansiyellow">http://getnikola.com</span><span class="ansiyellow">'</span>, <span class="ansiyellow">'</span><span class="ansiyellow">About me</span><span class="ansiyellow">'</span>, <span class="ansiyellow">'</span><span class="ansiyellow">icon-user</span><span class="ansiyellow">'</span>),
+        (<span class="ansiyellow">'</span><span class="ansiyellow">https://twitter.com/getnikola</span><span class="ansiyellow">'</span>, <span class="ansiyellow">'</span><span class="ansiyellow">My Twitter</span><span class="ansiyellow">'</span>, <span class="ansiyellow">'</span><span class="ansiyellow">icon-twitter</span><span class="ansiyellow">'</span>),
+        (<span class="ansiyellow">'</span><span class="ansiyellow">https://github.com/getnikola</span><span class="ansiyellow">'</span>, <span class="ansiyellow">'</span><span class="ansiyellow">My Github</span><span class="ansiyellow">'</span>, <span class="ansiyellow">'</span><span class="ansiyellow">icon-github</span><span class="ansiyellow">'</span>),
+    )
+}
+
+<span class="ansigrey"># Name of the theme to use.</span>
+THEME = <span class="ansiyellow">"</span><span class="ansiyellow">zen-ipython</span><span class="ansiyellow">"</span>
+
+<span class="ansigrey"># Below this point, everything is optional</span>
+
+<span class="ansigrey"># Post's dates are considered in UTC by default, if you want to use</span>
+<span class="ansigrey"># another time zone, please set TIMEZONE to match. Check the available</span>
+<span class="ansigrey"># list from Wikipedia:</span>
+<span class="ansigrey"># http://en.wikipedia.org/wiki/List_of_tz_database_time_zones</span>
+<span class="ansigrey"># (eg. 'Europe/Zurich')</span>
+<span class="ansigrey"># Also, if you want to use a different time zone in some of your posts,</span>
+<span class="ansigrey"># you can use the ISO 8601/RFC 3339 format (ex. 2012-03-30T23:00:00+02:00)</span>
+TIMEZONE = <span class="ansiyellow">"</span><span class="ansiyellow">Australia/Hobart</span><span class="ansiyellow">"</span>
+
+<span class="ansigrey"># If you want to use ISO 8601 (also valid RFC 3339) throughout Nikola</span>
+<span class="ansigrey"># (especially in new_post), set this to True.</span>
+<span class="ansigrey"># Note that this does not affect DATE_FORMAT.</span>
+<span class="ansigrey"># FORCE_ISO8601 = False</span>
+
+<span class="ansigrey"># Date format used to display post dates.</span>
+<span class="ansigrey"># (str used by datetime.datetime.strftime)</span>
+<span class="ansigrey"># DATE_FORMAT = '%Y-%m-%d %H:%M'</span>
+
+<span class="ansigrey"># While nikola can select a sensible locale for each language,</span>
+<span class="ansigrey"># sometimes explicit control can come handy.</span>
+<span class="ansigrey"># In this file we express locales in the string form that</span>
+<span class="ansigrey"># python's locales will accept in your OS, by example</span>
+<span class="ansigrey"># "en_US.utf8" in unix-like OS, "English_United States" in Windows.</span>
+<span class="ansigrey"># LOCALES = dict mapping language --&gt; explicit locale for the languages</span>
+<span class="ansigrey"># in TRANSLATIONS. You can ommit one or more keys.</span>
+<span class="ansigrey"># LOCALE_FALLBACK = locale to use when an explicit locale is unavailable</span>
+<span class="ansigrey"># LOCALE_DEFAULT = locale to use for languages not mentioned in LOCALES; if</span>
+<span class="ansigrey"># not set the default Nikola mapping is used.</span>
+
+<span class="ansigrey"># POSTS and PAGES contains (wildcard, destination, template) tuples.</span>
+<span class="ansigrey">#</span>
+<span class="ansigrey"># The wildcard is used to generate a list of reSt source files</span>
+<span class="ansigrey"># (whatever/thing.txt).</span>
+<span class="ansigrey">#</span>
+<span class="ansigrey"># That fragment could have an associated metadata file (whatever/thing.meta),</span>
+<span class="ansigrey"># and optionally translated files (example for spanish, with code "es"):</span>
+<span class="ansigrey">#     whatever/thing.es.txt and whatever/thing.es.meta</span>
+<span class="ansigrey">#</span>
+<span class="ansigrey">#     This assumes you use the default TRANSLATIONS_PATTERN.</span>
+<span class="ansigrey">#</span>
+<span class="ansigrey"># From those files, a set of HTML fragment files will be generated:</span>
+<span class="ansigrey"># cache/whatever/thing.html (and maybe cache/whatever/thing.html.es)</span>
+<span class="ansigrey">#</span>
+<span class="ansigrey"># These files are combinated with the template to produce rendered</span>
+<span class="ansigrey"># pages, which will be placed at</span>
+<span class="ansigrey"># output / TRANSLATIONS[lang] / destination / pagename.html</span>
+<span class="ansigrey">#</span>
+<span class="ansigrey"># where "pagename" is the "slug" specified in the metadata file.</span>
+<span class="ansigrey">#</span>
+<span class="ansigrey"># The difference between POSTS and PAGES is that POSTS are added</span>
+<span class="ansigrey"># to feeds and are considered part of a blog, while PAGES are</span>
+<span class="ansigrey"># just independent HTML pages.</span>
+<span class="ansigrey">#</span>
+
+POSTS = (
+    (<span class="ansiyellow">"</span><span class="ansiyellow">posts/*.rst</span><span class="ansiyellow">"</span>, <span class="ansiyellow">"</span><span class="ansiyellow">posts</span><span class="ansiyellow">"</span>, <span class="ansiyellow">"</span><span class="ansiyellow">post.tmpl</span><span class="ansiyellow">"</span>),
+    (<span class="ansiyellow">"</span><span class="ansiyellow">posts/*.txt</span><span class="ansiyellow">"</span>, <span class="ansiyellow">"</span><span class="ansiyellow">posts</span><span class="ansiyellow">"</span>, <span class="ansiyellow">"</span><span class="ansiyellow">post.tmpl</span><span class="ansiyellow">"</span>),
+    (<span class="ansiyellow">"</span><span class="ansiyellow">posts/*.ipynb</span><span class="ansiyellow">"</span>, <span class="ansiyellow">"</span><span class="ansiyellow">posts</span><span class="ansiyellow">"</span>, <span class="ansiyellow">"</span><span class="ansiyellow">post.tmpl</span><span class="ansiyellow">"</span>),
+)
+PAGES = (
+    (<span class="ansiyellow">"</span><span class="ansiyellow">stories/*.rst</span><span class="ansiyellow">"</span>, <span class="ansiyellow">"</span><span class="ansiyellow">stories</span><span class="ansiyellow">"</span>, <span class="ansiyellow">"</span><span class="ansiyellow">story.tmpl</span><span class="ansiyellow">"</span>),
+    (<span class="ansiyellow">"</span><span class="ansiyellow">stories/*.txt</span><span class="ansiyellow">"</span>, <span class="ansiyellow">"</span><span class="ansiyellow">stories</span><span class="ansiyellow">"</span>, <span class="ansiyellow">"</span><span class="ansiyellow">story.tmpl</span><span class="ansiyellow">"</span>),
+    (<span class="ansiyellow">"</span><span class="ansiyellow">stories/*.ipynb</span><span class="ansiyellow">"</span>, <span class="ansiyellow">"</span><span class="ansiyellow">stories</span><span class="ansiyellow">"</span>, <span class="ansiyellow">"</span><span class="ansiyellow">story.tmpl</span><span class="ansiyellow">"</span>),
+)
+
+<span class="ansigrey"># One or more folders containing files to be copied as-is into the output.</span>
+<span class="ansigrey"># The format is a dictionary of "source" "relative destination".</span>
+<span class="ansigrey"># Default is:</span>
+<span class="ansigrey"># FILES_FOLDERS = {'files': '' }</span>
+<span class="ansigrey"># Which means copy 'files' into 'output'</span>
+
+<span class="ansigrey"># A mapping of languages to file-extensions that represent that language.</span>
+<span class="ansigrey"># Feel free to add or delete extensions to any list, but don't add any new</span>
+<span class="ansigrey"># compilers unless you write the interface for it yourself.</span>
+<span class="ansigrey">#</span>
+<span class="ansigrey"># 'rest' is reStructuredText</span>
+<span class="ansigrey"># 'markdown' is MarkDown</span>
+<span class="ansigrey"># 'html' assumes the file is html and just copies it</span>
+COMPILERS = {
+    <span class="ansiyellow">"</span><span class="ansiyellow">rest</span><span class="ansiyellow">"</span>: (<span class="ansiyellow">'</span><span class="ansiyellow">.rst</span><span class="ansiyellow">'</span>, <span class="ansiyellow">'</span><span class="ansiyellow">.txt</span><span class="ansiyellow">'</span>),
+    <span class="ansiyellow">"</span><span class="ansiyellow">markdown</span><span class="ansiyellow">"</span>: (<span class="ansiyellow">'</span><span class="ansiyellow">.md</span><span class="ansiyellow">'</span>, <span class="ansiyellow">'</span><span class="ansiyellow">.mdown</span><span class="ansiyellow">'</span>, <span class="ansiyellow">'</span><span class="ansiyellow">.markdown</span><span class="ansiyellow">'</span>),
+    <span class="ansiyellow">"</span><span class="ansiyellow">textile</span><span class="ansiyellow">"</span>: (<span class="ansiyellow">'</span><span class="ansiyellow">.textile</span><span class="ansiyellow">'</span>,),
+    <span class="ansiyellow">"</span><span class="ansiyellow">txt2tags</span><span class="ansiyellow">"</span>: (<span class="ansiyellow">'</span><span class="ansiyellow">.t2t</span><span class="ansiyellow">'</span>,),
+    <span class="ansiyellow">"</span><span class="ansiyellow">bbcode</span><span class="ansiyellow">"</span>: (<span class="ansiyellow">'</span><span class="ansiyellow">.bb</span><span class="ansiyellow">'</span>,),
+    <span class="ansiyellow">"</span><span class="ansiyellow">wiki</span><span class="ansiyellow">"</span>: (<span class="ansiyellow">'</span><span class="ansiyellow">.wiki</span><span class="ansiyellow">'</span>,),
+    <span class="ansiyellow">"</span><span class="ansiyellow">ipynb</span><span class="ansiyellow">"</span>: (<span class="ansiyellow">'</span><span class="ansiyellow">.ipynb</span><span class="ansiyellow">'</span>,),
+    <span class="ansiyellow">"</span><span class="ansiyellow">html</span><span class="ansiyellow">"</span>: (<span class="ansiyellow">'</span><span class="ansiyellow">.html</span><span class="ansiyellow">'</span>, <span class="ansiyellow">'</span><span class="ansiyellow">.htm</span><span class="ansiyellow">'</span>),
+    <span class="ansigrey"># PHP files are rendered the usual way (i.e. with the full templates).</span>
+    <span class="ansigrey"># The resulting files have .php extensions, making it possible to run</span>
+    <span class="ansigrey"># them without reconfiguring your server to recognize them.</span>
+    <span class="ansiyellow">"</span><span class="ansiyellow">php</span><span class="ansiyellow">"</span>: (<span class="ansiyellow">'</span><span class="ansiyellow">.php</span><span class="ansiyellow">'</span>,),
+    <span class="ansigrey"># Pandoc detects the input from the source filename</span>
+    <span class="ansigrey"># but is disabled by default as it would conflict</span>
+    <span class="ansigrey"># with many of the others.</span>
+    <span class="ansigrey"># "pandoc": ('.rst', '.md', '.txt'),</span>
+}
+
+<span class="ansigrey"># Create by default posts in one file format?</span>
+<span class="ansigrey"># Set to False for two-file posts, with separate metadata.</span>
+<span class="ansigrey"># ONE_FILE_POSTS = True</span>
+
+<span class="ansigrey"># If this is set to True, the DEFAULT_LANG version will be displayed for</span>
+<span class="ansigrey"># untranslated posts.</span>
+<span class="ansigrey"># If this is set to False, then posts that are not translated to a language</span>
+<span class="ansigrey"># LANG will not be visible at all in the pages in that language.</span>
+<span class="ansigrey"># Formerly known as HIDE_UNTRANSLATED_POSTS (inverse)</span>
+<span class="ansigrey"># SHOW_UNTRANSLATED_POSTS = True</span>
+
+<span class="ansigrey"># Nikola supports logo display.  If you have one, you can put the URL here.</span>
+<span class="ansigrey"># Final output is &lt;img src="LOGO_URL" id="logo" alt="BLOG_TITLE"&gt;.</span>
+<span class="ansigrey"># The URL may be relative to the site root.</span>
+<span class="ansigrey"># LOGO_URL = ''</span>
+
+<span class="ansigrey"># If you want to hide the title of your website (for example, if your logo</span>
+<span class="ansigrey"># already contains the text), set this to False.</span>
+<span class="ansigrey"># SHOW_BLOG_TITLE = True</span>
+
+<span class="ansigrey"># Paths for different autogenerated bits. These are combined with the</span>
+<span class="ansigrey"># translation paths.</span>
+
+<span class="ansigrey"># Final locations are:</span>
+<span class="ansigrey"># output / TRANSLATION[lang] / TAG_PATH / index.html (list of tags)</span>
+<span class="ansigrey"># output / TRANSLATION[lang] / TAG_PATH / tag.html (list of posts for a tag)</span>
+<span class="ansigrey"># output / TRANSLATION[lang] / TAG_PATH / tag.xml (RSS feed for a tag)</span>
+<span class="ansigrey"># TAG_PATH = "categories"</span>
+
+<span class="ansigrey"># If TAG_PAGES_ARE_INDEXES is set to True, each tag's page will contain</span>
+<span class="ansigrey"># the posts themselves. If set to False, it will be just a list of links.</span>
+<span class="ansigrey"># TAG_PAGES_ARE_INDEXES = False</span>
+
+<span class="ansigrey"># Final location for the main blog page and sibling paginated pages is</span>
+<span class="ansigrey"># output / TRANSLATION[lang] / INDEX_PATH / index-*.html</span>
+<span class="ansigrey"># INDEX_PATH = ""</span>
+
+<span class="ansigrey"># Create per-month archives instead of per-year</span>
+<span class="ansigrey"># CREATE_MONTHLY_ARCHIVE = False</span>
+<span class="ansigrey"># Create one large archive instead of per-year</span>
+<span class="ansigrey"># CREATE_SINGLE_ARCHIVE = False</span>
+<span class="ansigrey"># Final locations for the archives are:</span>
+<span class="ansigrey"># output / TRANSLATION[lang] / ARCHIVE_PATH / ARCHIVE_FILENAME</span>
+<span class="ansigrey"># output / TRANSLATION[lang] / ARCHIVE_PATH / YEAR / index.html</span>
+<span class="ansigrey"># output / TRANSLATION[lang] / ARCHIVE_PATH / YEAR / MONTH / index.html</span>
+<span class="ansigrey"># ARCHIVE_PATH = ""</span>
+<span class="ansigrey"># ARCHIVE_FILENAME = "archive.html"</span>
+
+<span class="ansigrey"># URLs to other posts/pages can take 3 forms:</span>
+<span class="ansigrey"># rel_path: a relative URL to the current page/post (default)</span>
+<span class="ansigrey"># full_path: a URL with the full path from the root</span>
+<span class="ansigrey"># absolute: a complete URL (that includes the SITE_URL)</span>
+<span class="ansigrey"># URL_TYPE = 'rel_path'</span>
+
+<span class="ansigrey"># Final location for the blog main RSS feed is:</span>
+<span class="ansigrey"># output / TRANSLATION[lang] / RSS_PATH / rss.xml</span>
+<span class="ansigrey"># RSS_PATH = ""</span>
+
+<span class="ansigrey"># Number of posts in RSS feeds</span>
+<span class="ansigrey"># FEED_LENGTH = 10</span>
+
+<span class="ansigrey"># Slug the Tag URL easier for users to type, special characters are</span>
+<span class="ansigrey"># often removed or replaced as well.</span>
+<span class="ansigrey"># SLUG_TAG_PATH = True</span>
+
+<span class="ansigrey"># A list of redirection tuples, [("foo/from.html", "/bar/to.html")].</span>
+<span class="ansigrey">#</span>
+<span class="ansigrey"># A HTML file will be created in output/foo/from.html that redirects</span>
+<span class="ansigrey"># to the "/bar/to.html" URL. notice that the "from" side MUST be a</span>
+<span class="ansigrey"># relative URL.</span>
+<span class="ansigrey">#</span>
+<span class="ansigrey"># If you don't need any of these, just set to []</span>
+REDIRECTIONS = []
+
+<span class="ansigrey"># Commands to execute to deploy. Can be anything, for example,</span>
+<span class="ansigrey"># you may use rsync:</span>
+<span class="ansigrey"># "rsync -rav --delete output/ joe@my.site:/srv/www/site"</span>
+<span class="ansigrey"># And then do a backup, or run `nikola ping` from the `ping`</span>
+<span class="ansigrey"># plugin (`nikola install_plugin ping`).</span>
+<span class="ansigrey"># To do manual deployment, set it to []</span>
+<span class="ansigrey"># DEPLOY_COMMANDS = []</span>
+
+<span class="ansigrey"># For user.github.io/organization.github.io pages, the DEPLOY branch</span>
+<span class="ansigrey"># MUST be 'master', and 'gh-pages' for other repositories.</span>
+<span class="ansigrey"># GITHUB_SOURCE_BRANCH = 'master'</span>
+<span class="ansigrey"># GITHUB_DEPLOY_BRANCH = 'gh-pages'</span>
+
+<span class="ansigrey"># The name of the remote where you wish to push to, using github_deploy.</span>
+<span class="ansigrey"># GITHUB_REMOTE_NAME = 'origin'</span>
+
+<span class="ansigrey"># Where the output site should be located</span>
+<span class="ansigrey"># If you don't use an absolute path, it will be considered as relative</span>
+<span class="ansigrey"># to the location of conf.py</span>
+<span class="ansigrey"># OUTPUT_FOLDER = 'output'</span>
+
+<span class="ansigrey"># where the "cache" of partial generated content should be located</span>
+<span class="ansigrey"># default: 'cache'</span>
+<span class="ansigrey"># CACHE_FOLDER = 'cache'</span>
+
+<span class="ansigrey"># Filters to apply to the output.</span>
+<span class="ansigrey"># A directory where the keys are either: a file extensions, or</span>
+<span class="ansigrey"># a tuple of file extensions.</span>
+<span class="ansigrey">#</span>
+<span class="ansigrey"># And the value is a list of commands to be applied in order.</span>
+<span class="ansigrey">#</span>
+<span class="ansigrey"># Each command must be either:</span>
+<span class="ansigrey">#</span>
+<span class="ansigrey"># A string containing a '%s' which will</span>
+<span class="ansigrey"># be replaced with a filename. The command *must* produce output</span>
+<span class="ansigrey"># in place.</span>
+<span class="ansigrey">#</span>
+<span class="ansigrey"># Or:</span>
+<span class="ansigrey">#</span>
+<span class="ansigrey"># A python callable, which will be called with the filename as</span>
+<span class="ansigrey"># argument.</span>
+<span class="ansigrey">#</span>
+<span class="ansigrey"># By default, there are no filters.</span>
+<span class="ansigrey">#</span>
+<span class="ansigrey"># Many filters are shipped with Nikola.  A list is available in the manual:</span>
+<span class="ansigrey"># &lt;http://getnikola.com/handbook.html#post-processing-filters&gt;</span>
+<span class="ansigrey"># FILTERS = {</span>
+<span class="ansigrey">#    ".jpg": ["jpegoptim --strip-all -m75 -v %s"],</span>
+<span class="ansigrey"># }</span>
+
+<span class="ansigrey"># Expert setting! Create a gzipped copy of each generated file. Cheap server-</span>
+<span class="ansigrey"># side optimization for very high traffic sites or low memory servers.</span>
+<span class="ansigrey"># GZIP_FILES = False</span>
+<span class="ansigrey"># File extensions that will be compressed</span>
+<span class="ansigrey"># GZIP_EXTENSIONS = ('.txt', '.htm', '.html', '.css', '.js', '.json', '.xml')</span>
+<span class="ansigrey"># Use an external gzip command? None means no.</span>
+<span class="ansigrey"># Example: GZIP_COMMAND = "pigz -k {filename}"</span>
+<span class="ansigrey"># GZIP_COMMAND = None</span>
+<span class="ansigrey"># Make sure the server does not return a "Accept-Ranges: bytes" header for</span>
+<span class="ansigrey"># files compressed by this option! OR make sure that a ranged request does not</span>
+<span class="ansigrey"># return partial content of another representation for these resources. Do not</span>
+<span class="ansigrey"># use this feature if you do not understand what this means.</span>
+
+<span class="ansigrey"># Compiler to process LESS files.</span>
+<span class="ansigrey"># LESS_COMPILER = 'lessc'</span>
+
+<span class="ansigrey"># A list of options to pass to the LESS compiler.</span>
+<span class="ansigrey"># Final command is: LESS_COMPILER LESS_OPTIONS file.less</span>
+<span class="ansigrey"># LESS_OPTIONS = []</span>
+
+<span class="ansigrey"># Compiler to process Sass files.</span>
+<span class="ansigrey"># SASS_COMPILER = 'sass'</span>
+
+<span class="ansigrey"># A list of options to pass to the Sass compiler.</span>
+<span class="ansigrey"># Final command is: SASS_COMPILER SASS_OPTIONS file.s(a|c)ss</span>
+<span class="ansigrey"># SASS_OPTIONS = []</span>
+
+<span class="ansigrey"># #############################################################################</span>
+<span class="ansigrey"># Image Gallery Options</span>
+<span class="ansigrey"># #############################################################################</span>
+
+<span class="ansigrey"># Galleries are folders in galleries/</span>
+<span class="ansigrey"># Final location of galleries will be output / GALLERY_PATH / gallery_name</span>
+<span class="ansigrey"># GALLERY_PATH = "galleries"</span>
+<span class="ansigrey"># THUMBNAIL_SIZE = 180</span>
+<span class="ansigrey"># MAX_IMAGE_SIZE = 1280</span>
+<span class="ansigrey"># USE_FILENAME_AS_TITLE = True</span>
+<span class="ansigrey"># EXTRA_IMAGE_EXTENSIONS = []</span>
+<span class="ansigrey">#</span>
+<span class="ansigrey"># If set to False, it will sort by filename instead. Defaults to True</span>
+<span class="ansigrey"># GALLERY_SORT_BY_DATE = True</span>
+
+<span class="ansigrey"># #############################################################################</span>
+<span class="ansigrey"># HTML fragments and diverse things that are used by the templates</span>
+<span class="ansigrey"># #############################################################################</span>
+
+<span class="ansigrey"># Data about post-per-page indexes.</span>
+<span class="ansigrey"># INDEXES_PAGES defaults to 'old posts, page %d' or 'page %d' (translated),</span>
+<span class="ansigrey"># depending on the value of INDEXES_PAGES_MAIN.</span>
+<span class="ansigrey"># INDEXES_TITLE = ""         # If this is empty, defaults to BLOG_TITLE</span>
+<span class="ansigrey"># INDEXES_PAGES = ""         # If this is empty, defaults to '[old posts,] page %d' (see above)</span>
+<span class="ansigrey"># INDEXES_PAGES_MAIN = False # If True, INDEXES_PAGES is also displayed on</span>
+<span class="ansigrey">#                            # the main (the newest) index page (index.html)</span>
+
+<span class="ansigrey"># Color scheme to be used for code blocks. If your theme provides</span>
+<span class="ansigrey"># "assets/css/code.css" this is ignored.</span>
+<span class="ansigrey"># Can be any of autumn borland bw colorful default emacs friendly fruity manni</span>
+<span class="ansigrey"># monokai murphy native pastie perldoc rrt tango trac vim vs</span>
+<span class="ansigrey"># CODE_COLOR_SCHEME = 'default'</span>
+
+<span class="ansigrey"># If you use 'site-reveal' theme you can select several subthemes</span>
+<span class="ansigrey"># THEME_REVEAL_CONFIG_SUBTHEME = 'sky'</span>
+<span class="ansigrey"># You can also use: beige/serif/simple/night/default</span>
+
+<span class="ansigrey"># Again, if you use 'site-reveal' theme you can select several transitions</span>
+<span class="ansigrey"># between the slides</span>
+<span class="ansigrey"># THEME_REVEAL_CONFIG_TRANSITION = 'cube'</span>
+<span class="ansigrey"># You can also use: page/concave/linear/none/default</span>
+
+<span class="ansigrey"># FAVICONS contains (name, file, size) tuples.</span>
+<span class="ansigrey"># Used for create favicon link like this:</span>
+<span class="ansigrey"># &lt;link rel="name" href="file" sizes="size"/&gt;</span>
+<span class="ansigrey"># FAVICONS = {</span>
+<span class="ansigrey">#     ("icon", "/favicon.ico", "16x16"),</span>
+<span class="ansigrey">#     ("icon", "/icon_128x128.png", "128x128"),</span>
+<span class="ansigrey"># }</span>
+
+<span class="ansigrey"># Show only teasers in the index pages? Defaults to False.</span>
+<span class="ansigrey"># INDEX_TEASERS = False</span>
+
+<span class="ansigrey"># HTML fragments with the Read more... links.</span>
+<span class="ansigrey"># The following tags exist and are replaced for you:</span>
+<span class="ansigrey"># {link}                        A link to the full post page.</span>
+<span class="ansigrey"># {read_more}                   The string âRead moreâ in the current language.</span>
+<span class="ansigrey"># {reading_time}                An estimate of how long it will take to read the post.</span>
+<span class="ansigrey"># {remaining_reading_time}      An estimate of how long it will take to read the post, sans the teaser.</span>
+<span class="ansigrey"># {min_remaining_read}          The string â{remaining_reading_time} min remaining to readâ in the current language.</span>
+<span class="ansigrey"># {paragraph_count}             The amount of paragraphs in the post.</span>
+<span class="ansigrey"># {remaining_paragraph_count}   The amount of paragraphs in the post, sans the teaser.</span>
+<span class="ansigrey"># {{                            A literal { (U+007B LEFT CURLY BRACKET)</span>
+<span class="ansigrey"># }}                            A literal } (U+007D RIGHT CURLY BRACKET)</span>
+
+<span class="ansigrey"># 'Read more...' for the index page, if INDEX_TEASERS is True (translatable)</span>
+INDEX_READ_MORE_LINK = <span class="ansiyellow">'</span><span class="ansiyellow">&lt;p class=</span><span class="ansiyellow">"</span><span class="ansiyellow">more</span><span class="ansiyellow">"</span><span class="ansiyellow">&gt;&lt;a href=</span><span class="ansiyellow">"</span><span class="ansiyellow">{link}</span><span class="ansiyellow">"</span><span class="ansiyellow">&gt;{read_more}â¦&lt;/a&gt;&lt;/p&gt;</span><span class="ansiyellow">'</span>
+<span class="ansigrey"># 'Read more...' for the RSS_FEED, if RSS_TEASERS is True (translatable)</span>
+RSS_READ_MORE_LINK = <span class="ansiyellow">'</span><span class="ansiyellow">&lt;p&gt;&lt;a href=</span><span class="ansiyellow">"</span><span class="ansiyellow">{link}</span><span class="ansiyellow">"</span><span class="ansiyellow">&gt;{read_more}â¦&lt;/a&gt; ({min_remaining_read})&lt;/p&gt;</span><span class="ansiyellow">'</span>
+
+<span class="ansigrey"># A HTML fragment describing the license, for the sidebar.</span>
+<span class="ansigrey"># (translatable)</span>
+LICENSE = <span class="ansiyellow">"</span><span class="ansiyellow">"</span>
+<span class="ansigrey"># I recommend using the Creative Commons' wizard:</span>
+<span class="ansigrey"># http://creativecommons.org/choose/</span>
+<span class="ansigrey"># LICENSE = """</span>
+<span class="ansigrey"># &lt;a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/"&gt;</span>
+<span class="ansigrey"># &lt;img alt="Creative Commons License BY-NC-SA"</span>
+<span class="ansigrey"># style="border-width:0; margin-bottom:12px;"</span>
+<span class="ansigrey"># src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"&gt;&lt;/a&gt;"""</span>
+
+<span class="ansigrey"># A small copyright notice for the page footer (in HTML).</span>
+<span class="ansigrey"># (translatable)</span>
+CONTENT_FOOTER = <span class="ansiyellow">'</span><span class="ansiyellow">Contents &amp;copy; {date}         &lt;a href=</span><span class="ansiyellow">"</span><span class="ansiyellow">mailto:{email}</span><span class="ansiyellow">"</span><span class="ansiyellow">&gt;{author}&lt;/a&gt; - Powered by         &lt;a href=</span><span class="ansiyellow">"</span><span class="ansiyellow">http://getnikola.com</span><span class="ansiyellow">"</span><span class="ansiyellow"> rel=</span><span class="ansiyellow">"</span><span class="ansiyellow">nofollow</span><span class="ansiyellow">"</span><span class="ansiyellow">&gt;Nikola&lt;/a&gt;         {license}</span><span class="ansiyellow">'</span>
+
+<span class="ansigrey"># Things that will be passed to CONTENT_FOOTER.format().  This is done</span>
+<span class="ansigrey"># for translatability, as dicts are not formattable.  Nikola will</span>
+<span class="ansigrey"># intelligently format the setting properly.</span>
+<span class="ansigrey"># The setting takes a dict. The keys are languages. The values are</span>
+<span class="ansigrey"># tuples of tuples of positional arguments and dicts of keyword arguments</span>
+<span class="ansigrey"># to format().  For example, {'en': (('Hello'), {'target': 'World'})}</span>
+<span class="ansigrey"># results in CONTENT_FOOTER['en'].format('Hello', target='World').</span>
+<span class="ansigrey"># WARNING: If you do not use multiple languages with CONTENT_FOOTER, this</span>
+<span class="ansigrey">#          still needs to be a dict of this format.  (it can be empty if you</span>
+<span class="ansigrey">#          do not need formatting)</span>
+<span class="ansigrey"># (translatable)</span>
+CONTENT_FOOTER_FORMATS = {
+    DEFAULT_LANG: (
+        (),
+        {
+            <span class="ansiyellow">"</span><span class="ansiyellow">email</span><span class="ansiyellow">"</span>: BLOG_EMAIL,
+            <span class="ansiyellow">"</span><span class="ansiyellow">author</span><span class="ansiyellow">"</span>: BLOG_AUTHOR,
+            <span class="ansiyellow">"</span><span class="ansiyellow">date</span><span class="ansiyellow">"</span>: time.gmtime().tm_year,
+            <span class="ansiyellow">"</span><span class="ansiyellow">license</span><span class="ansiyellow">"</span>: LICENSE
+        }
+    )
+}
+
+<span class="ansigrey"># To use comments, you can choose between different third party comment</span>
+<span class="ansigrey"># systems.  The following comment systems are supported by Nikola:</span>
+<span class="ansigrey">#   disqus, facebook, googleplus, intensedebate, isso, livefyre, muut</span>
+<span class="ansigrey"># You can leave this option blank to disable comments.</span>
+COMMENT_SYSTEM = <span class="ansiyellow">"</span><span class="ansiyellow">googleplus</span><span class="ansiyellow">"</span>
+<span class="ansigrey"># And you also need to add your COMMENT_SYSTEM_ID which</span>
+<span class="ansigrey"># depends on what comment system you use. The default is</span>
+<span class="ansigrey"># "nikolademo" which is a test account for Disqus. More information</span>
+<span class="ansigrey"># is in the manual.</span>
+COMMENT_SYSTEM_ID = <span class="ansiyellow">"</span><span class="ansiyellow">"</span>
+
+<span class="ansigrey"># Enable annotations using annotateit.org?</span>
+<span class="ansigrey"># If set to False, you can still enable them for individual posts and pages</span>
+<span class="ansigrey"># setting the "annotations" metadata.</span>
+<span class="ansigrey"># If set to True, you can disable them for individual posts and pages using</span>
+<span class="ansigrey"># the "noannotations" metadata.</span>
+<span class="ansigrey"># ANNOTATIONS = False</span>
+
+<span class="ansigrey"># Create index.html for story folders?</span>
+<span class="ansigrey"># STORY_INDEX = False</span>
+<span class="ansigrey"># Enable comments on story pages?</span>
+<span class="ansigrey"># COMMENTS_IN_STORIES = False</span>
+<span class="ansigrey"># Enable comments on picture gallery pages?</span>
+<span class="ansigrey"># COMMENTS_IN_GALLERIES = False</span>
+
+<span class="ansigrey"># What file should be used for directory indexes?</span>
+<span class="ansigrey"># Defaults to index.html</span>
+<span class="ansigrey"># Common other alternatives: default.html for IIS, index.php</span>
+<span class="ansigrey"># INDEX_FILE = "index.html"</span>
+
+<span class="ansigrey"># If a link ends in /index.html,  drop the index.html part.</span>
+<span class="ansigrey"># http://mysite/foo/bar/index.html =&gt; http://mysite/foo/bar/</span>
+<span class="ansigrey"># (Uses the INDEX_FILE setting, so if that is, say, default.html,</span>
+<span class="ansigrey"># it will instead /foo/default.html =&gt; /foo)</span>
+<span class="ansigrey"># (Note: This was briefly STRIP_INDEX_HTML in v 5.4.3 and 5.4.4)</span>
+<span class="ansigrey"># Default = False</span>
+<span class="ansigrey"># STRIP_INDEXES = False</span>
+
+<span class="ansigrey"># Should the sitemap list directories which only include other directories</span>
+<span class="ansigrey"># and no files.</span>
+<span class="ansigrey"># Default to True</span>
+<span class="ansigrey"># If this is False</span>
+<span class="ansigrey"># e.g. /2012 includes only /01, /02, /03, /04, ...: don't add it to the sitemap</span>
+<span class="ansigrey"># if /2012 includes any files (including index.html)... add it to the sitemap</span>
+<span class="ansigrey"># SITEMAP_INCLUDE_FILELESS_DIRS = True</span>
+
+<span class="ansigrey"># List of files relative to the server root (!) that will be asked to be excluded</span>
+<span class="ansigrey"># from indexing and other robotic spidering. * is supported. Will only be effective</span>
+<span class="ansigrey"># if SITE_URL points to server root. The list is used to exclude resources from</span>
+<span class="ansigrey"># /robots.txt and /sitemap.xml, and to inform search engines about /sitemapindex.xml.</span>
+<span class="ansigrey"># ROBOTS_EXCLUSIONS = ["/archive.html", "/category/*.html"]</span>
+
+<span class="ansigrey"># Instead of putting files in &lt;slug&gt;.html, put them in</span>
+<span class="ansigrey"># &lt;slug&gt;/index.html. Also enables STRIP_INDEXES</span>
+<span class="ansigrey"># This can be disabled on a per-page/post basis by adding</span>
+<span class="ansigrey">#    .. pretty_url: False</span>
+<span class="ansigrey"># to the metadata</span>
+<span class="ansigrey"># PRETTY_URLS = False</span>
+
+<span class="ansigrey"># If True, publish future dated posts right away instead of scheduling them.</span>
+<span class="ansigrey"># Defaults to False.</span>
+<span class="ansigrey"># FUTURE_IS_NOW = False</span>
+
+<span class="ansigrey"># If True, future dated posts are allowed in deployed output</span>
+<span class="ansigrey"># Only the individual posts are published/deployed; not in indexes/sitemap</span>
+<span class="ansigrey"># Generally, you want FUTURE_IS_NOW and DEPLOY_FUTURE to be the same value.</span>
+<span class="ansigrey"># DEPLOY_FUTURE = False</span>
+<span class="ansigrey"># If False, draft posts will not be deployed</span>
+<span class="ansigrey"># DEPLOY_DRAFTS = True</span>
+
+<span class="ansigrey"># Allows scheduling of posts using the rule specified here (new_post -s)</span>
+<span class="ansigrey"># Specify an iCal Recurrence Rule: http://www.kanzaki.com/docs/ical/rrule.html</span>
+<span class="ansigrey"># SCHEDULE_RULE = ''</span>
+<span class="ansigrey"># If True, use the scheduling rule to all posts by default</span>
+<span class="ansigrey"># SCHEDULE_ALL = False</span>
+
+<span class="ansigrey"># Do you want a add a Mathjax config file?</span>
+<span class="ansigrey"># MATHJAX_CONFIG = ""</span>
+
+<span class="ansigrey"># If you are using the compile-ipynb plugin, just add this one:</span>
+<span class="ansigrey"># MATHJAX_CONFIG = """</span>
+<span class="ansigrey"># &lt;script type="text/x-mathjax-config"&gt;</span>
+<span class="ansigrey"># MathJax.Hub.Config({</span>
+<span class="ansigrey">#     tex2jax: {</span>
+<span class="ansigrey">#         inlineMath: [ ['$','$'], ["\\\(","\\\)"] ],</span>
+<span class="ansigrey">#         displayMath: [ ['$$','$$'], ["\\\[","\\\]"] ]</span>
+<span class="ansigrey">#     },</span>
+<span class="ansigrey">#     displayAlign: 'left', // Change this to 'center' to center equations.</span>
+<span class="ansigrey">#     "HTML-CSS": {</span>
+<span class="ansigrey">#         styles: {'.MathJax_Display': {"margin": 0}}</span>
+<span class="ansigrey">#     }</span>
+<span class="ansigrey"># });</span>
+<span class="ansigrey"># &lt;/script&gt;</span>
+<span class="ansigrey"># """</span>
+
+<span class="ansigrey"># Do you want to customize the nbconversion of your IPython notebook?</span>
+<span class="ansigrey"># IPYNB_CONFIG = {}</span>
+<span class="ansigrey"># With the following example configuracion you can use a custom jinja template</span>
+<span class="ansigrey"># called `toggle.tpl` which has to be located in your site/blog main folder:</span>
+<span class="ansigrey"># IPYNB_CONFIG = {'Exporter':{'template_file': 'toggle'}}</span>
+
+<span class="ansigrey"># What Markdown extensions to enable?</span>
+<span class="ansigrey"># You will also get gist, nikola and podcast because those are</span>
+<span class="ansigrey"># done in the code, hope you don't mind ;-)</span>
+<span class="ansigrey"># Note: most Nikola-specific extensions are done via the Nikola plugin system,</span>
+<span class="ansigrey">#       with the MarkdownExtension class and should not be added here.</span>
+<span class="ansigrey"># MARKDOWN_EXTENSIONS = ['fenced_code', 'codehilite']</span>
+
+<span class="ansigrey"># Social buttons. This is sample code for AddThis (which was the default for a</span>
+<span class="ansigrey"># long time). Insert anything you want here, or even make it empty.</span>
+<span class="ansigrey"># (translatable)</span>
+<span class="ansigrey"># SOCIAL_BUTTONS_CODE = """</span>
+<span class="ansigrey"># &lt;!-- Social buttons --&gt;</span>
+<span class="ansigrey"># &lt;div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style"&gt;</span>
+<span class="ansigrey"># &lt;a class="addthis_button_more"&gt;Share&lt;/a&gt;</span>
+<span class="ansigrey"># &lt;ul&gt;&lt;li&gt;&lt;a class="addthis_button_facebook"&gt;&lt;/a&gt;</span>
+<span class="ansigrey"># &lt;li&gt;&lt;a class="addthis_button_google_plusone_share"&gt;&lt;/a&gt;</span>
+<span class="ansigrey"># &lt;li&gt;&lt;a class="addthis_button_linkedin"&gt;&lt;/a&gt;</span>
+<span class="ansigrey"># &lt;li&gt;&lt;a class="addthis_button_twitter"&gt;&lt;/a&gt;</span>
+<span class="ansigrey"># &lt;/ul&gt;</span>
+<span class="ansigrey"># &lt;/div&gt;</span>
+<span class="ansigrey"># &lt;script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"&gt;&lt;/script&gt;</span>
+<span class="ansigrey"># &lt;!-- End of social buttons --&gt;</span>
+<span class="ansigrey"># """</span>
+
+<span class="ansigrey"># Show link to source for the posts?</span>
+<span class="ansigrey"># Formerly known as HIDE_SOURCELINK (inverse)</span>
+<span class="ansigrey"># SHOW_SOURCELINK = True</span>
+<span class="ansigrey"># Copy the source files for your pages?</span>
+<span class="ansigrey"># Setting it to False implies SHOW_SOURCELINK = False</span>
+<span class="ansigrey"># COPY_SOURCES = True</span>
+
+<span class="ansigrey"># Modify the number of Post per Index Page</span>
+<span class="ansigrey"># Defaults to 10</span>
+<span class="ansigrey"># INDEX_DISPLAY_POST_COUNT = 10</span>
+
+<span class="ansigrey"># By default, Nikola generates RSS files for the website and for tags, and</span>
+<span class="ansigrey"># links to it.  Set this to False to disable everything RSS-related.</span>
+<span class="ansigrey"># GENERATE_RSS = True</span>
+
+<span class="ansigrey"># RSS_LINK is a HTML fragment to link the RSS or Atom feeds. If set to None,</span>
+<span class="ansigrey"># the base.tmpl will use the feed Nikola generates. However, you may want to</span>
+<span class="ansigrey"># change it for a feedburner feed or something else.</span>
+<span class="ansigrey"># RSS_LINK = None</span>
+
+<span class="ansigrey"># Show only teasers in the RSS feed? Default to True</span>
+<span class="ansigrey"># RSS_TEASERS = True</span>
+
+<span class="ansigrey"># Strip HTML in the RSS feed? Default to False</span>
+<span class="ansigrey"># RSS_PLAIN = False</span>
+
+<span class="ansigrey"># A search form to search this site, for the sidebar. You can use a google</span>
+<span class="ansigrey"># custom search (http://www.google.com/cse/)</span>
+<span class="ansigrey"># Or a duckduckgo search: https://duckduckgo.com/search_box.html</span>
+<span class="ansigrey"># Default is no search form.</span>
+<span class="ansigrey"># (translatable)</span>
+<span class="ansigrey"># SEARCH_FORM = ""</span>
+<span class="ansigrey">#</span>
+<span class="ansigrey"># This search form works for any site and looks good in the "site" theme where</span>
+<span class="ansigrey"># it appears on the navigation bar:</span>
+<span class="ansigrey">#</span>
+<span class="ansigrey"># SEARCH_FORM = """</span>
+<span class="ansigrey"># &lt;!-- Custom search --&gt;</span>
+<span class="ansigrey"># &lt;form method="get" id="search" action="//duckduckgo.com/"</span>
+<span class="ansigrey">#  class="navbar-form pull-left"&gt;</span>
+<span class="ansigrey"># &lt;input type="hidden" name="sites" value="%s"/&gt;</span>
+<span class="ansigrey"># &lt;input type="hidden" name="k8" value="#444444"/&gt;</span>
+<span class="ansigrey"># &lt;input type="hidden" name="k9" value="#D51920"/&gt;</span>
+<span class="ansigrey"># &lt;input type="hidden" name="kt" value="h"/&gt;</span>
+<span class="ansigrey"># &lt;input type="text" name="q" maxlength="255"</span>
+<span class="ansigrey">#  placeholder="Search&amp;hellip;" class="span2" style="margin-top: 4px;"/&gt;</span>
+<span class="ansigrey"># &lt;input type="submit" value="DuckDuckGo Search" style="visibility: hidden;" /&gt;</span>
+<span class="ansigrey"># &lt;/form&gt;</span>
+<span class="ansigrey"># &lt;!-- End of custom search --&gt;</span>
+<span class="ansigrey"># """ % SITE_URL</span>
+<span class="ansigrey">#</span>
+<span class="ansigrey"># If you prefer a google search form, here's an example that should just work:</span>
+<span class="ansigrey"># SEARCH_FORM = """</span>
+<span class="ansigrey"># &lt;!-- Custom search with google--&gt;</span>
+<span class="ansigrey"># &lt;form id="search" action="//www.google.com/search" method="get" class="navbar-form pull-left"&gt;</span>
+<span class="ansigrey"># &lt;input type="hidden" name="q" value="site:%s" /&gt;</span>
+<span class="ansigrey"># &lt;input type="text" name="q" maxlength="255" results="0" placeholder="Search"/&gt;</span>
+<span class="ansigrey"># &lt;/form&gt;</span>
+<span class="ansigrey"># &lt;!-- End of custom search --&gt;</span>
+<span class="ansigrey">#""" % SITE_URL</span>
+
+<span class="ansigrey"># Use content distribution networks for jquery, twitter-bootstrap css and js,</span>
+<span class="ansigrey"># and html5shiv (for older versions of Internet Explorer)</span>
+<span class="ansigrey"># If this is True, jquery and html5shiv is served from the Google and twitter-</span>
+<span class="ansigrey"># bootstrap is served from the NetDNA CDN</span>
+<span class="ansigrey"># Set this to False if you want to host your site without requiring access to</span>
+<span class="ansigrey"># external resources.</span>
+<span class="ansigrey"># USE_CDN = False</span>
+
+<span class="ansigrey"># Extra things you want in the pages HEAD tag. This will be added right</span>
+<span class="ansigrey"># before &lt;/head&gt;</span>
+<span class="ansigrey"># (translatable)</span>
+<span class="ansigrey"># EXTRA_HEAD_DATA = ""</span>
+<span class="ansigrey"># Google Analytics or whatever else you use. Added to the bottom of &lt;body&gt;</span>
+<span class="ansigrey"># in the default template (base.tmpl).</span>
+<span class="ansigrey"># (translatable)</span>
+<span class="ansigrey"># BODY_END = ""</span>
+
+<span class="ansigrey"># The possibility to extract metadata from the filename by using a</span>
+<span class="ansigrey"># regular expression.</span>
+<span class="ansigrey"># To make it work you need to name parts of your regular expression.</span>
+<span class="ansigrey"># The following names will be used to extract metadata:</span>
+<span class="ansigrey"># - title</span>
+<span class="ansigrey"># - slug</span>
+<span class="ansigrey"># - date</span>
+<span class="ansigrey"># - tags</span>
+<span class="ansigrey"># - link</span>
+<span class="ansigrey"># - description</span>
+<span class="ansigrey">#</span>
+<span class="ansigrey"># An example re is the following:</span>
+<span class="ansigrey"># '(?P&lt;date&gt;\d{4}-\d{2}-\d{2})-(?P&lt;slug&gt;.*)-(?P&lt;title&gt;.*)\.md'</span>
+<span class="ansigrey"># FILE_METADATA_REGEXP = None</span>
+
+<span class="ansigrey"># If you hate "Filenames with Capital Letters and Spaces.md", you should</span>
+<span class="ansigrey"># set this to true.</span>
+UNSLUGIFY_TITLES = <span class="ansicyan">True</span>
+
+<span class="ansigrey"># Additional metadata that is added to a post when creating a new_post</span>
+<span class="ansigrey"># ADDITIONAL_METADATA = {}</span>
+
+<span class="ansigrey"># Nikola supports Open Graph Protocol data for enhancing link sharing and</span>
+<span class="ansigrey"># discoverability of your site on Facebook, Google+, and other services.</span>
+<span class="ansigrey"># Open Graph is enabled by default.</span>
+<span class="ansigrey"># USE_OPEN_GRAPH = True</span>
+
+<span class="ansigrey"># Nikola supports Twitter Card summaries</span>
+<span class="ansigrey"># Twitter cards are disabled by default. They make it possible for you to</span>
+<span class="ansigrey"># attach media to Tweets that link to your content.</span>
+<span class="ansigrey">#</span>
+<span class="ansigrey"># IMPORTANT:</span>
+<span class="ansigrey"># Please note, that you need to opt-in for using Twitter Cards!</span>
+<span class="ansigrey"># To do this please visit</span>
+<span class="ansigrey"># https://dev.twitter.com/form/participate-twitter-cards</span>
+<span class="ansigrey">#</span>
+<span class="ansigrey"># Uncomment and modify to following lines to match your accounts.</span>
+<span class="ansigrey"># Specifying the id for either 'site' or 'creator' will be preferred</span>
+<span class="ansigrey"># over the cleartext username. Specifying an ID is not necessary.</span>
+<span class="ansigrey"># Displaying images is currently not supported.</span>
+<span class="ansigrey"># TWITTER_CARD = {</span>
+<span class="ansigrey">#     # 'use_twitter_cards': True,  # enable Twitter Cards</span>
+<span class="ansigrey">#     # 'site': '@website',  # twitter nick for the website</span>
+<span class="ansigrey">#     # 'site:id': 123456,  # Same as site, but the website's Twitter user ID</span>
+<span class="ansigrey">#                           # instead.</span>
+<span class="ansigrey">#     # 'creator': '@username',  # Username for the content creator / author.</span>
+<span class="ansigrey">#     # 'creator:id': 654321,  # Same as creator, but the Twitter user's ID.</span>
+<span class="ansigrey"># }</span>
+
+<span class="ansigrey"># If webassets is installed, bundle JS and CSS to make site loading faster</span>
+<span class="ansigrey"># USE_BUNDLES = True</span>
+
+<span class="ansigrey"># Plugins you don't want to use. Be careful :-)</span>
+<span class="ansigrey"># DISABLED_PLUGINS = ["render_galleries"]</span>
+
+<span class="ansigrey"># Add the absolute paths to directories containing plugins to use them.</span>
+<span class="ansigrey"># For example, the `plugins` directory of your clone of the Nikola plugins</span>
+<span class="ansigrey"># repository.</span>
+<span class="ansigrey"># EXTRA_PLUGINS_DIRS = []</span>
+
+<span class="ansigrey"># List of regular expressions, links matching them will always be considered</span>
+<span class="ansigrey"># valid by "nikola check -l"</span>
+<span class="ansigrey"># LINK_CHECK_WHITELIST = []</span>
+
+<span class="ansigrey"># If set to True, enable optional hyphenation in your posts (requires pyphen)</span>
+<span class="ansigrey"># HYPHENATE = False</span>
+
+<span class="ansigrey"># The &lt;hN&gt; tags in HTML generated by certain compilers (reST/Markdown)</span>
+<span class="ansigrey"># will be demoted by that much (1 â h1 will become h2 and so on)</span>
+<span class="ansigrey"># This was a hidden feature of the Markdown and reST compilers in the</span>
+<span class="ansigrey"># past.  Useful especially if your post titles are in &lt;h1&gt; tags too, for</span>
+<span class="ansigrey"># example.</span>
+<span class="ansigrey"># (defaults to 1.)</span>
+<span class="ansigrey"># DEMOTE_HEADERS = 1</span>
+
+<span class="ansigrey"># You can configure the logging handlers installed as plugins or change the</span>
+<span class="ansigrey"># log level of the default stderr handler.</span>
+<span class="ansigrey"># WARNING: The stderr handler allows only the loglevels of 'INFO' and 'DEBUG'.</span>
+<span class="ansigrey">#          This is done for safety reasons, as blocking out anything other</span>
+<span class="ansigrey">#          than 'DEBUG' may hide important information and break the user</span>
+<span class="ansigrey">#          experience!</span>
+
+LOGGING_HANDLERS = {
+    <span class="ansiyellow">'</span><span class="ansiyellow">stderr</span><span class="ansiyellow">'</span>: {<span class="ansiyellow">'</span><span class="ansiyellow">loglevel</span><span class="ansiyellow">'</span>: <span class="ansiyellow">'</span><span class="ansiyellow">INFO</span><span class="ansiyellow">'</span>, <span class="ansiyellow">'</span><span class="ansiyellow">bubble</span><span class="ansiyellow">'</span>: <span class="ansicyan">True</span>},
+    <span class="ansigrey"># 'smtp': {</span>
+    <span class="ansigrey">#     'from_addr': 'test-errors@example.com',</span>
+    <span class="ansigrey">#     'recipients': ('test@example.com'),</span>
+    <span class="ansigrey">#     'credentials':('testusername', 'password'),</span>
+    <span class="ansigrey">#     'server_addr': ('127.0.0.1', 25),</span>
+    <span class="ansigrey">#     'secure': (),</span>
+    <span class="ansigrey">#     'level': 'DEBUG',</span>
+    <span class="ansigrey">#     'bubble': True</span>
+    <span class="ansigrey"># }</span>
+}
+
+<span class="ansigrey"># Templates will use those filters, along with the defaults.</span>
+<span class="ansigrey"># Consult your engine's documentation on filters if you need help defining</span>
+<span class="ansigrey"># those.</span>
+<span class="ansigrey"># TEMPLATE_FILTERS = {}</span>
+
+<span class="ansigrey"># Put in global_context things you want available on all your templates.</span>
+<span class="ansigrey"># It can be anything, data, functions, modules, etc.</span>
+GLOBAL_CONTEXT = {}
+
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In [4]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="o">%</span><span class="k">highlight</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">mjl</span><span class="o">/.</span><span class="n">emacs</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">el</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+<span class="ansiblack ansibold">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span class="ansiblack ansibold">;;</span>
+<span class="ansiblack ansibold">;;  File:       init.el</span>
+<span class="ansiblack ansibold">;;  Created:    2011-11-02</span>
+<span class="ansiblack ansibold">;;  Language:   Emacs-Lisp</span>
+<span class="ansiblack ansibold">;;  Time-stamp: &lt;2014-07-11 09:31:32 mjl&gt;</span>
+<span class="ansiblack ansibold">;;  Platform:   Emacs 24</span>
+<span class="ansiblack ansibold">;;  OS:         N/A</span>
+<span class="ansiblack ansibold">;;  Author:     [MJL] Michael J. Lockhart (sinewalker@gmail.com)</span>
+<span class="ansiblack ansibold">;;</span>
+<span class="ansiblack ansibold">;;  Rights:     Copyright Â© 2011-2014 Michael James Lockhart, B.App.Comp(HONS)</span>
+<span class="ansiblack ansibold">;;</span>
+<span class="ansiblack ansibold">;;  PURPOSE:    GNU Emacs Configuration</span>
+<span class="ansiblack ansibold">;;</span>
+<span class="ansiblack ansibold">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span class="ansiblack ansibold">;;</span>
+<span class="ansiblack ansibold">;;; Commentary:</span>
+<span class="ansiblack ansibold">;;</span>
+<span class="ansiblack ansibold">;;      This bootstraps my emacs customisations for Emacs 24. It is</span>
+<span class="ansiblack ansibold">;;      inspired by the Emacs Starter Kit version 2</span>
+<span class="ansiblack ansibold">;;      (http://github.com/technomancy/emacs-starter-kit), but I have</span>
+<span class="ansiblack ansibold">;;      since moved to rolling my own, per technomancy's</span>
+<span class="ansiblack ansibold">;;      recommendation.</span>
+<span class="ansiblack ansibold">;;</span>
+<span class="ansiblack ansibold">;;      This file does three things:</span>
+<span class="ansiblack ansibold">;;</span>
+<span class="ansiblack ansibold">;;        1. Initialise the ELPA with the Marmalade repository and</span>
+<span class="ansiblack ansibold">;;           others, then install some base packages (when required)</span>
+<span class="ansiblack ansibold">;;</span>
+<span class="ansiblack ansibold">;;        2. Sets my `custom-file' and loads my customize'd</span>
+<span class="ansiblack ansibold">;;           variables.</span>
+<span class="ansiblack ansibold">;;</span>
+<span class="ansiblack ansibold">;;        3. If they exist, load files matching</span>
+<span class="ansiblack ansibold">;;           "system/`system-name'.el" and/or</span>
+<span class="ansiblack ansibold">;;           "system/`system-name'/*.el", containing system-specific</span>
+<span class="ansiblack ansibold">;;           settings.</span>
+<span class="ansiblack ansibold">;;</span>
+<span class="ansiblack ansibold">;;        4. If they exist, load files matching "`user-name'.el"</span>
+<span class="ansiblack ansibold">;;           and/or "`user-name'/*.el", containing user-specific</span>
+<span class="ansiblack ansibold">;;           settings.</span>
+<span class="ansiblack ansibold">;;</span>
+<span class="ansiblack ansibold">;;        5. If it exists, load "hooks.el" containing emacs hooks.</span>
+<span class="ansiblack ansibold">;;</span>
+<span class="ansiblack ansibold">;;        6. If it exists, load "bindings.el" containing key bindings</span>
+<span class="ansiblack ansibold">;;</span>
+<span class="ansiblack ansibold">;;        7. Set inital buffer to Bookmarks rather than scratch, as</span>
+<span class="ansiblack ansibold">;;           it is more useful. The bookmarks to use can be found</span>
+<span class="ansiblack ansibold">;;           under "system/`system-name'/bookmarks" -- if it's not</span>
+<span class="ansiblack ansibold">;;           there, look for bookmarks in</span>
+<span class="ansiblack ansibold">;;           `user-emacs-directory'/bookmarks"</span>
+<span class="ansiblack ansibold">;;      </span>
+<span class="ansiblack ansibold">;;</span>
+<span class="ansiblack ansibold">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span class="ansiblack ansibold">;;</span>
+<span class="ansiblack ansibold">;;; Change Log:</span>
+<span class="ansiblack ansibold">;;</span>
+<span class="ansiblack ansibold">;;  MJL20111102 - Created for migration to ESK2</span>
+<span class="ansiblack ansibold">;;  MJL20120131 - added ergoemacs-keybindings to mjl/base-packages</span>
+<span class="ansiblack ansibold">;;              - mapc add-to-list over list of package archives</span>
+<span class="ansiblack ansibold">;;  MJL20120815 - Initialise  the package library *after* setting the</span>
+<span class="ansiblack ansibold">;;                `package-archives` list... duh!</span>
+<span class="ansiblack ansibold">;;  MJL20121113 - Load Bookmark List at startup.</span>
+<span class="ansiblack ansibold">;;  MJL20140103 - Although ergoemacs-mode should be installed for all,</span>
+<span class="ansiblack ansibold">;;                do not actually enable it here -- that's a User preference</span>
+<span class="ansiblack ansibold">;;  MJL20140128 - personal packages should be loaded by personal settings</span>
+<span class="ansiblack ansibold">;;  MJL20140131 - Only activate hl-line-mode on a graphics terminal</span>
+<span class="ansiblack ansibold">;;  MJL20140607 - Now loading my own settings myself, rather than rely</span>
+<span class="ansiblack ansibold">;;                upon Emacs Starter Kit</span>
+<span class="ansiblack ansibold">;;  MJL20140609 - defined mjl/init-check-install-packages for code-reuse</span>
+<span class="ansiblack ansibold">;;  MJL20140610 - load conf dir's first --- something about ergoemacs</span>
+<span class="ansiblack ansibold">;;                screwing the key binding functions up?</span>
+<span class="ansiblack ansibold">;;  MJL20140611 - cody tidy</span>
+<span class="ansiblack ansibold">;;  MJL20140612 - relocate bindings/hooks, custom files is list driven</span>
+<span class="ansiblack ansibold">;;  MJL20140613 - fix bug where system-name is FQDN</span>
+<span class="ansiblack ansibold">;;              - put the buffer name in the frame title (on graphics)</span>
+<span class="ansiblack ansibold">;;  MJL20140615 - boot-up files that must be in special order, are now</span>
+<span class="ansiblack ansibold">;;                under  `user-name'/boot (still looked for by name)</span>
+<span class="ansiblack ansibold">;;              - do message logging with date stamps</span>
+<span class="ansiblack ansibold">;;              - calculate startup time</span>
+<span class="ansiblack ansibold">;;              - Use hard-coded user name "mjl" - who am I kidding?</span>
+<span class="ansiblack ansibold">;;  MJL20140701 - Guard system and user conf directories when listing</span>
+<span class="ansiblack ansibold">;;  MJL20140708 - directories not picked up -- use file-name-as-directory</span>
+<span class="ansiblack ansibold">;;  MJL20140710 - source header format</span>
+<span class="ansiblack ansibold">;;  MJL20140711 - frame format for new frames -- breaks emacsclient</span>
+<span class="ansiblack ansibold">;;</span>
+<span class="ansiblack ansibold">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+<span class="ansiblack ansibold">;;</span>
+<span class="ansiblack ansibold">;;; Code:</span>
+<span class="ansiblack ansibold">;;</span>
+
+<span class="ansiblack ansibold">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+
+(<span class="ansiblue ansibold">setq</span> <span class="ansired ansibold">mjl/start-time</span> (<span class="ansired ansibold">current-time</span>))
+
+(<span class="ansicyan ansibold">defun</span> <span class="ansired ansibold">mjl/init-log</span> (<span class="ansired ansibold">msg</span>)
+  <span class="ansiyellow">"Places a message to the *Messages* buffer with a date at the front"</span>
+  (<span class="ansired ansibold">message</span> (<span class="ansired ansibold">concat</span> (<span class="ansired ansibold">format-time-string</span> <span class="ansiyellow">"%Y-%m-%dT%T%z: "</span>) <span class="ansired ansibold">msg</span>)))
+
+(<span class="ansired ansibold">mjl/init-log</span> <span class="ansiyellow">"* inhibit-startup-message"</span>)
+(<span class="ansiblue ansibold">setq</span> <span class="ansired ansibold">inhibit-startup-message</span> <span class="ansired ansibold">t</span>) <span class="ansiblack ansibold">; in case it's not set elsewhere</span>
+(<span class="ansiblue ansibold">setq</span> <span class="ansired ansibold">system-name-fqdn</span> <span class="ansired ansibold">system-name</span>) <span class="ansiblack ansibold">; save original `system-name'</span>
+(<span class="ansiblue ansibold">setq</span> <span class="ansired ansibold">system-name</span> (<span class="ansicyan ansibold">car</span> (<span class="ansired ansibold">split-string</span> <span class="ansired ansibold">system-name</span> <span class="ansiyellow">"\\."</span>))) <span class="ansiblack ansibold">; fix FQDN</span>
+
+(<span class="ansired ansibold">mjl/init-log</span> <span class="ansiyellow">"* load package library"</span>)
+(<span class="ansicyan ansibold">require</span> <span class="ansiyellow">'package</span>)
+
+(<span class="ansired ansibold">mjl/init-log</span> <span class="ansiyellow">"* define utility init functions"</span>)
+
+(<span class="ansicyan ansibold">defun</span> <span class="ansired ansibold">mjl/init-check-install-packages</span> (<span class="ansired ansibold">packages</span>)
+  <span class="ansiyellow">"Check that `packages' list is installed, install any that are missing"</span>
+  (<span class="ansicyan ansibold">dolist</span> (<span class="ansired ansibold">p</span> <span class="ansired ansibold">packages</span>)
+    (<span class="ansicyan ansibold">when</span> (<span class="ansicyan ansibold">not</span> (<span class="ansired ansibold">package-installed-p</span> <span class="ansired ansibold">p</span>))
+      (<span class="ansired ansibold">package-install</span> <span class="ansired ansibold">p</span>))))
+
+(<span class="ansicyan ansibold">defun</span> <span class="ansired ansibold">mjl/flatten</span> (<span class="ansired ansibold">alist</span>)
+  <span class="ansiyellow">"given `alist' with arbitrary nesting, return a new list with</span>
+<span class="ansiyellow">   all the nesting flattened"</span>
+  (<span class="ansicyan ansibold">cond</span>
+   ((<span class="ansicyan ansibold">null</span> <span class="ansired ansibold">alist</span>) <span class="ansired ansibold">nil</span>)
+   ((<span class="ansicyan ansibold">atom</span> <span class="ansired ansibold">alist</span>) (<span class="ansicyan ansibold">list</span> <span class="ansired ansibold">alist</span>))
+   (<span class="ansired ansibold">t</span>
+    (<span class="ansicyan ansibold">append</span> (<span class="ansired ansibold">mjl/flatten</span> (<span class="ansicyan ansibold">car</span> <span class="ansired ansibold">alist</span>)) (<span class="ansired ansibold">mjl/flatten</span> (<span class="ansicyan ansibold">cdr</span> <span class="ansired ansibold">alist</span>))))))
+
+
+<span class="ansiblack ansibold">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+
+(<span class="ansired ansibold">mjl/init-log</span> <span class="ansiyellow">"* INSTALL BASE PACKAGES *"</span>)
+
+(<span class="ansired ansibold">mjl/init-log</span> <span class="ansiyellow">"** add to list package-archives"</span>)
+(<span class="ansicyan ansibold">mapc</span> (<span class="ansiblue ansibold">lambda</span> (<span class="ansired ansibold">p</span>) (<span class="ansired ansibold">add-to-list</span> <span class="ansiyellow">'package-archives</span> <span class="ansired ansibold">p</span> <span class="ansired ansibold">t</span>))
+      (<span class="ansicyan ansibold">list</span> '(<span class="ansiyellow">"marmalade"</span> . <span class="ansiyellow">"http://marmalade-repo.org/packages/"</span>)
+            '(<span class="ansiyellow">"sunrise"</span> .  <span class="ansiyellow">"http://joseito.republika.pl/sunrise-commander/"</span>)
+            '(<span class="ansiyellow">"tromey"</span> . <span class="ansiyellow">"http://tromey.com/elpa/"</span>)
+            '(<span class="ansiyellow">"melpa"</span> . <span class="ansiyellow">"http://melpa.milkbox.net/packages/"</span>)
+            '(<span class="ansiyellow">"gnu"</span> . <span class="ansiyellow">"http://elpa.gnu.org/packages/"</span>)))
+
+(<span class="ansired ansibold">mjl/init-log</span> <span class="ansiyellow">"** initialize packages"</span>)
+(<span class="ansired ansibold">package-initialize</span>)
+
+(<span class="ansicyan ansibold">when</span> (<span class="ansicyan ansibold">not</span> <span class="ansired ansibold">package-archive-contents</span>)
+  (<span class="ansired ansibold">mjl/init-log</span> <span class="ansiyellow">"** package-refresh-contents"</span>)
+  (<span class="ansired ansibold">package-refresh-contents</span>))
+
+(<span class="ansired ansibold">mjl/init-log</span> <span class="ansiyellow">"** Set base packages"</span>)
+(<span class="ansicyan ansibold">defvar</span> <span class="ansired ansibold">mjl/base-packages</span> '(<span class="ansired ansibold">cl-lib</span>
+	                    <span class="ansired ansibold">ergoemacs-mode</span>
+                            <span class="ansired ansibold">smex</span>
+                            )
+  <span class="ansiyellow">"A list of packages to ensure are installed at launch."</span>)
+
+(<span class="ansicyan ansibold">when</span> (<span class="ansicyan ansibold">eq</span> <span class="ansired ansibold">system-type</span> <span class="ansiyellow">'windows-nt</span>)
+  (<span class="ansired ansibold">mjl/init-log</span> <span class="ansiyellow">"** Set win32 base packages"</span>)
+  (<span class="ansicyan ansibold">defvar</span> <span class="ansired ansibold">mjl/win32-packages</span> '(<span class="ansired ansibold">w32-browser</span>
+                               <span class="ansired ansibold">powershell</span>
+                               <span class="ansired ansibold">powershell-mode</span>
+                               )
+  <span class="ansiyellow">"A list of packages to ensure are installed on Win32."</span>))
+
+
+(<span class="ansired ansibold">mjl/init-log</span> <span class="ansiyellow">"** Check for base packages and install if missing"</span>)
+(<span class="ansired ansibold">mjl/init-check-install-packages</span> <span class="ansired ansibold">mjl/base-packages</span>)
+
+(<span class="ansicyan ansibold">when</span> (<span class="ansicyan ansibold">eq</span> <span class="ansired ansibold">system-type</span> <span class="ansiyellow">'windows-nt</span>)
+  (<span class="ansired ansibold">mjl/init-log</span> <span class="ansiyellow">"** Check for win32 base packages and install if missing"</span>)
+  (<span class="ansired ansibold">mjl/init-check-install-packages</span> <span class="ansired ansibold">mjl/win32-packages</span>))
+
+(<span class="ansired ansibold">mjl/init-log</span> <span class="ansiyellow">"* BASE PACKAGES INSTALLED *"</span>)
+
+<span class="ansiblack ansibold">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+
+(<span class="ansired ansibold">mjl/init-log</span> <span class="ansiyellow">"* LOAD CUSTOM SETTINGS"</span>)
+
+(<span class="ansired ansibold">mjl/init-log</span> <span class="ansiyellow">"** locate custom configuration files for this system"</span>)
+(<span class="ansired ansibold">defalias</span> <span class="ansiyellow">'fnad</span> <span class="ansiyellow">'file-name-as-directory</span>)
+
+(<span class="ansicyan ansibold">defvar</span> <span class="ansired ansibold">mjl/system-config</span> (<span class="ansired ansibold">concat</span> (<span class="ansired ansibold">fnad</span> <span class="ansired ansibold">user-emacs-directory</span>)
+				  (<span class="ansired ansibold">fnad</span> <span class="ansiyellow">"system"</span>) 
+				  <span class="ansired ansibold">system-name</span> <span class="ansiyellow">".el"</span>)
+  <span class="ansiyellow">"a file to load system-specific configuration settings"</span>)
+(<span class="ansicyan ansibold">defvar</span> <span class="ansired ansibold">mjl/system-config-dir</span> (<span class="ansired ansibold">concat</span> (<span class="ansired ansibold">fnad</span> <span class="ansired ansibold">user-emacs-directory</span>)
+				      (<span class="ansired ansibold">fnad</span> <span class="ansiyellow">"system"</span>)
+                                      (<span class="ansired ansibold">fnad</span> <span class="ansired ansibold">system-name</span>))
+  <span class="ansiyellow">"a directory containing files to load for system-specific settings"</span>)
+(<span class="ansicyan ansibold">defvar</span> <span class="ansired ansibold">mjl/user-config</span> (<span class="ansired ansibold">concat</span> (<span class="ansired ansibold">fnad</span> <span class="ansired ansibold">user-emacs-directory</span>) 
+                                <span class="ansiyellow">"mjl.el"</span>)
+  <span class="ansiyellow">"a file to load user-specific configuration settings"</span>)
+(<span class="ansicyan ansibold">defvar</span> <span class="ansired ansibold">mjl/user-config-dir</span> (<span class="ansired ansibold">concat</span> (<span class="ansired ansibold">fnad</span> <span class="ansired ansibold">user-emacs-directory</span>) 
+                                    (<span class="ansired ansibold">fnad</span> <span class="ansiyellow">"mjl"</span>))
+  <span class="ansiyellow">"a directory containing files to load for user-specific settings"</span>)
+(<span class="ansicyan ansibold">defvar</span> <span class="ansired ansibold">mjl/hooks-file</span> (<span class="ansired ansibold">concat</span> (<span class="ansired ansibold">fnad</span> <span class="ansired ansibold">mjl/user-config-dir</span>)
+			       (<span class="ansired ansibold">fnad</span> <span class="ansiyellow">"boot"</span>)
+                               <span class="ansiyellow">"hooks.el"</span>)
+  <span class="ansiyellow">"a file containing instructions to add emacs hooks"</span>)
+(<span class="ansicyan ansibold">defvar</span> <span class="ansired ansibold">mjl/bindings-file</span> (<span class="ansired ansibold">concat</span> (<span class="ansired ansibold">fnad</span> <span class="ansired ansibold">mjl/user-config-dir</span>)
+				  (<span class="ansired ansibold">fnad</span> <span class="ansiyellow">"boot"</span>)
+                                  <span class="ansiyellow">"bindings.el"</span>)
+  <span class="ansiyellow">"a file containing instructions to set emacs key bindings"</span>)
+
+
+<span class="ansiblack ansibold">;; Custom files belong in my .emacs.d/`user-login-name'...</span>
+(<span class="ansiblue ansibold">setq</span> <span class="ansired ansibold">recentf-save-file</span> (<span class="ansired ansibold">concat</span> <span class="ansired ansibold">user-emacs-directory</span> <span class="ansiyellow">".recentf"</span>))
+(<span class="ansiblue ansibold">setq</span> <span class="ansired ansibold">eshell-directory-name</span> (<span class="ansired ansibold">concat</span> 
+			     (<span class="ansired ansibold">file-name-as-directory</span> <span class="ansired ansibold">mjl/user-config-dir</span>)
+			     <span class="ansiyellow">"eshell"</span>))
+(<span class="ansiblue ansibold">setq</span> <span class="ansired ansibold">custom-theme-directory</span> (<span class="ansired ansibold">concat</span>
+			      (<span class="ansired ansibold">file-name-as-directory</span> <span class="ansired ansibold">mjl/user-config-dir</span>)
+			      <span class="ansiyellow">"themes"</span>))
+(<span class="ansiblue ansibold">setq</span> <span class="ansired ansibold">custom-file</span> (<span class="ansired ansibold">concat</span> (<span class="ansired ansibold">file-name-as-directory</span> <span class="ansired ansibold">mjl/user-config-dir</span>)
+			  (<span class="ansired ansibold">file-name-as-directory</span> <span class="ansiyellow">"boot"</span>)
+			  <span class="ansiyellow">"custom.el"</span>))
+
+(<span class="ansired ansibold">mjl/init-log</span> <span class="ansiyellow">"** load custom.el"</span>)
+(<span class="ansicyan ansibold">unless</span> (<span class="ansicyan ansibold">load</span> <span class="ansired ansibold">custom-file</span> <span class="ansired ansibold">t</span>)
+  (<span class="ansired ansibold">display-warning</span> '(<span class="ansired ansibold">init.el</span>) (<span class="ansired ansibold">concat</span> <span class="ansiyellow">"Could not load custom-file "</span>
+                                      <span class="ansired ansibold">custom-file</span>
+                                      <span class="ansiyellow">"\nDo 'M-x custom' to create your "</span>
+                                      <span class="ansiyellow">"personal preferences"</span>) 
+		   <span class="ansiyellow">:warning</span>))
+
+
+<span class="ansiblack ansibold">; from above files and directories, build a complete list of files</span>
+
+(<span class="ansicyan ansibold">defvar</span> <span class="ansired ansibold">mjl/elisp-pattern</span> <span class="ansiyellow">"^[^#].*el$"</span>
+  <span class="ansiyellow">"a regex for finding elisp source code in directories"</span>)
+
+(<span class="ansicyan ansibold">defvar</span> <span class="ansired ansibold">mjl/init-files-to-load</span> 
+  (<span class="ansired ansibold">mjl/flatten</span> 
+   (<span class="ansicyan ansibold">list</span> <span class="ansired ansibold">mjl/system-config</span>
+	 (<span class="ansicyan ansibold">when</span> (<span class="ansired ansibold">file-exists-p</span> <span class="ansired ansibold">mjl/system-config-dir</span>)
+           (<span class="ansired ansibold">directory-files</span> <span class="ansired ansibold">mjl/system-config-dir</span> <span class="ansired ansibold">t</span> <span class="ansired ansibold">mjl/elisp-pattern</span>))
+	 <span class="ansired ansibold">mjl/user-config</span>
+	 (<span class="ansicyan ansibold">when</span> (<span class="ansired ansibold">file-exists-p</span> <span class="ansired ansibold">mjl/user-config-dir</span>)
+           (<span class="ansired ansibold">directory-files</span> <span class="ansired ansibold">mjl/user-config-dir</span> <span class="ansired ansibold">t</span> <span class="ansired ansibold">mjl/elisp-pattern</span>))
+	 <span class="ansired ansibold">mjl/hooks-file</span>
+	 <span class="ansired ansibold">mjl/bindings-file</span>))
+<span class="ansiyellow">"Ordered list of personal configuration files to load. This order</span>
+<span class="ansiyellow">is important: system-specific setup and user configured</span>
+<span class="ansiyellow">facilities need to be loaded first; hooks and key bindings need</span>
+<span class="ansiyellow">to be completed last."</span>)
+
+(<span class="ansired ansibold">mjl/init-log</span> <span class="ansiyellow">"** Load system and user settings"</span>)
+(<span class="ansicyan ansibold">mapc</span> (<span class="ansiblue ansibold">lambda</span> (<span class="ansired ansibold">f</span>) (<span class="ansicyan ansibold">when</span> (<span class="ansired ansibold">file-exists-p</span> <span class="ansired ansibold">f</span>) (<span class="ansicyan ansibold">load</span> <span class="ansired ansibold">f</span>)))
+      <span class="ansired ansibold">mjl/init-files-to-load</span>)
+  
+(<span class="ansired ansibold">mjl/init-log</span> <span class="ansiyellow">"* CUSTOM SETTINGS LOADED *"</span>)
+
+<span class="ansiblack ansibold">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span>
+
+(<span class="ansired ansibold">mjl/init-log</span> <span class="ansiyellow">"* switch initial buffer to Bookmarks"</span>)
+(<span class="ansicyan ansibold">require</span> <span class="ansiyellow">'bookmark</span>)
+(<span class="ansiblue ansibold">let</span> ((<span class="ansired ansibold">mjl/system-bookmark-file</span> (<span class="ansired ansibold">concat</span> (<span class="ansired ansibold">file-name-as-directory</span>
+					 <span class="ansired ansibold">mjl/system-config-dir</span>) 
+					<span class="ansiyellow">"bookmarks"</span>)))
+  (<span class="ansiblue ansibold">if</span> (<span class="ansired ansibold">file-exists-p</span> <span class="ansired ansibold">mjl/system-bookmark-file</span>)
+      (<span class="ansiblue ansibold">setq</span> <span class="ansired ansibold">bookmark-default-file</span> <span class="ansired ansibold">mjl/system-bookmark-file</span>)
+    (<span class="ansiblue ansibold">setq</span> <span class="ansired ansibold">bookmark-default-file</span> (<span class="ansired ansibold">concat</span> <span class="ansired ansibold">user-emacs-directory</span>
+					<span class="ansiyellow">"bookmarks"</span>))))
+(<span class="ansired ansibold">mjl/init-log</span> (<span class="ansired ansibold">concat</span> <span class="ansiyellow">"** Bookmarks: "</span> <span class="ansired ansibold">bookmark-default-file</span>))
+(<span class="ansired ansibold">bookmark-bmenu-list</span>)
+(<span class="ansired ansibold">switch-to-buffer</span> <span class="ansiyellow">"*Bookmark List*"</span>)
+
+
+(<span class="ansicyan ansibold">when</span> (<span class="ansicyan ansibold">or</span> (<span class="ansired ansibold">display-graphic-p</span>) (<span class="ansired ansibold">window-system</span>)) <span class="ansiblack ansibold">; display-graphic-p</span>
+  (<span class="ansired ansibold">global-hl-line-mode</span>)                        <span class="ansiblack ansibold">; not always bound?</span>
+  (<span class="ansired ansibold">mouse-wheel-mode</span> <span class="ansired ansibold">t</span>)
+  (<span class="ansiblue ansibold">setq</span> <span class="ansired ansibold">frame-title-format</span> '(<span class="ansired ansibold">buffer-file-name</span> <span class="ansiyellow">"%f"</span> (<span class="ansiyellow">"%b"</span>)))
+  <span class="ansiblack ansibold">;; also for new frames (important if running as daemon)</span>
+  <span class="ansiblack ansibold">;; (MJL20140711 currently opens wrong buffer on new frames)</span>
+<span class="ansiblack ansibold">;;  (add-to-list 'after-make-frame-functions </span>
+<span class="ansiblack ansibold">;;               (lambda()</span>
+<span class="ansiblack ansibold">;;                (setq frame-title-format </span>
+<span class="ansiblack ansibold">;;                     '(buffer-file-name "%f" ("%b")))))</span>
+)
+
+
+(<span class="ansiblue ansibold">setq</span> <span class="ansired ansibold">mjl/time-taken</span> (<span class="ansired ansibold">time-since</span> <span class="ansired ansibold">mjl/start-time</span>))
+(<span class="ansicyan ansibold">require</span> <span class="ansiyellow">'org</span>) <span class="ansiblack ansibold">; in case not already loaded</span>
+(<span class="ansired ansibold">mjl/init-log</span> (<span class="ansired ansibold">concat</span> <span class="ansiyellow">"* Init done ("</span> 
+		      (<span class="ansired ansibold">org-format-seconds</span> <span class="ansiyellow">"%M %S"</span> (<span class="ansicyan ansibold">1+</span> (<span class="ansicyan ansibold">cadr</span> <span class="ansired ansibold">mjl/time-taken</span>)))
+		      <span class="ansiyellow">")"</span>))
+
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In []:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In []:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In []:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In []:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+    </div>
+  </div>
+
+        </div>
+        
+                    <script src="https://apis.google.com/js/plusone.js"></script>
+<div class="g-comments" data-href="http://milosophical.me/blog/first-post.html" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">
+</div>
+
+
+    </div>
+                    <footer id="footer" role="contentinfo">
+            <p>Contents <a href="http://creativecommons.org/licenses/by-sa/4.0/">copyright</a> © 2005 — 2015         <a href="mailto:sinewalker@gmail.com">Mike Lockhart</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         , hosted at <a href="https://pages.github.com/sinewalker">GitHub Pages</a></p>
+            
+        </footer>
+
+        </div>
+    </section>
+    
+    
+                <script src="../assets/js/all-nocdn.js" type="text/javascript"></script>
+    
+<!-- Social buttons -->
+<div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+<a class="addthis_button_more">Share</a>
+<ul>
+<li>
+<a class="addthis_button_facebook"></a>
+</li>
+<li>
+<a class="addthis_button_google_plusone_share"></a>
+</li>
+<li>
+<a class="addthis_button_linkedin"></a>
+</li>
+<li>
+<a class="addthis_button_twitter"></a>
+</li>
+</ul>
+</div>
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script>
+<!-- End of social buttons -->
+
+
+        <script type="text/javascript">
+            $(function(){
+                $('.timeago').timeago();
+            });
+        </script>
+</body>
+</html>

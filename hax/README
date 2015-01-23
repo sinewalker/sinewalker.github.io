@@ -1,0 +1,8 @@
+For public display of web hacks (e.g. Javascript/CSS/HTML hacks, or Processing, and so on).
+
+The content of this directory is not tracked in my 'blog' repository.
+
+Individual hacks should have their own repositories, then be checked out as subdirectories of this one.  Each hack should be presentable without generating files (or if not, then there should be a makefile or some such, to build the display output).
+
+e.g. Matrix Rain:  has it's own repository ssh://hg@bitbucket.org/sinewalker/matrix-rain cloned to hax/matrix-rain/, and contains the HTML/JS/CSS as rendered by the browser.
+

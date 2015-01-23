@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (kubuntu)</title><link>http://milosophical.me/</link><description></description><language>en</language><lastBuildDate>Fri, 23 Jan 2015 22:36:09 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Back to openSUSE</title><link>http://milosophical.me/blog/2008/03/31/back-to-opensuse.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;Well, my stint in *buntu is over, and it ends with an award to openSUSE: this is the first Linux distro I've returned to.
+
+
+Kubuntu is nice, and I'm happy that I've tried it out, but it's not for me. It's nice enough if you want a simple desktop system, and APT rocks (especially with the aptitude front-end). But it's just not as good as openSUSE, sorry.
+
+
+
+&lt;!--more--&gt;Kubuntu's KDE version of the apt installer (Adept) crashes during installs (not exactly inspiring confidence in the system) so I used Synaptic instead, why can't they just stick to the one that works? It's not like Adept is integrated with KDE in any way: it's menus don't go on the KDE menu bar for instance. Also Kubuntu's version of the KDE help system has every heading repeated. And the constant bickering between the GTK and QT factions of *buntu, with insane NIH arguments are just anoying (it's all *buntu, for crying out loud!).  Finally, having watched &lt;a title="Blank ttys when using vesafb (vga=xxx)" href="https://bugs.launchpad.net/bugs/129910"&gt;bug #129910&lt;/a&gt; continue in it's ridiculous way, I've decided I don't particularly like the development community behind *buntu either. I mean, come on! Six months to fix a reversion introduced to frame buffer consoles in Gutsy?! WTF! Okay that might be a bit mean: it's probably a tricky bug. But, the continuous "not a bug" comments from developers and "please consider the code of conduct" comments from moderators (in response to comments where the "code" has &lt;em&gt;not&lt;/em&gt; been broken) are just insulting. Add in that other things weren't working (FreeNX being an important one for me) and I've had enough: I've moved on, or rather, back, to openSUSE.
+
+
+
+I briefly considered Debian, but went back to something I know. Besides, openSUSE 10.3 has removed the hideous mistake that was ZMD, and so updates and installs (using zypper, at least) are actually not too slow now, and boot times are comparible with *buntu too, at about 30 secs for my five-year-old AlthonXP, which were my biggest gripes with 10.2. YaST is still rather slow, but there are promising signs that this will improve for 11. KDE 4.0 should be standard with 11 also, and 4.1 won't be too far behind. Looking forward to it. It's nice to be using a distro where innovation is happening (Compiz; Kickoff, which I didn't like initially but has grown on me with KDE 4; KDE development in general)
+
+&lt;/p&gt;&lt;p align="center"&gt;I've taken the green pill and having a lot of fun ;)&lt;/p&gt;</description><category>SUSE</category><category>alternatives</category><category>computers</category><category>hacking</category><category>kubuntu</category><category>observation</category><category>rant</category><category>thoughts</category><guid>http://milosophical.me/blog/2008/03/31/back-to-opensuse.html</guid><pubDate>Sun, 30 Mar 2008 22:44:49 GMT</pubDate></item><item><title>kubuntu - other desktops</title><link>http://milosophical.me/blog/2007/05/17/kubuntu-other-desktops.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;Quick note:-  I use &lt;a title="K[ewl] Desktop Environment" href="http://www.kde.org"&gt;KDE&lt;/a&gt; nearly all the time.  But sometimes I have occasion for a minimal desktop (e.g. when I plan to use just one, heavy program like &lt;a title="FlightGear Flight Simulator" href="http://www.flightgear.org/"&gt;FlightGear&lt;/a&gt; and need basically not much more than a window manager and X itself).  So an alternate "light" desktop session type is nice to have.
+
+
+&lt;!--more--&gt; There is the &lt;a title="Xubuntu Linux" href="http://www.xubuntu.org/"&gt;Xubuntu&lt;/a&gt; distribution of ubuntu, which uses &lt;a title="Xfce home" href="http://www.xfce.org/"&gt;Xfce&lt;/a&gt;.  But I don't need to switch my whole linux install over.  It's easy to add Xfce to an installed Kubuntu (or Ubuntu):
+
+&lt;code&gt;
+
+&lt;/code&gt;
+
+&lt;/p&gt;&lt;p align="center"&gt;&lt;code&gt; sudo aptitude update &amp;amp;&amp;amp; sudo aptitude install xubuntu-desktop&lt;/code&gt;&lt;/p&gt;
+
+
+
+&lt;code&gt; &lt;/code&gt;
+
+I got this incantation from &lt;a title="Installing Xfce on Ubuntu" href="http://www.psychocats.net/ubuntu/xubuntu"&gt;over here&lt;/a&gt;. This adds the packages for Xfce and puts a new session into your display manager's Session Type menu.  If you had kubuntu or xubuntu and wanted GNOME as well you could install GNOME into either of them with the &lt;code&gt;gnome-desktop-environment&lt;/code&gt; master package, I suppose. GNOME isn't my cup of tea.
+
+
+
+I haven't played with &lt;code&gt;aptitude&lt;/code&gt; yet, but you could substite &lt;code&gt;agt-get&lt;/code&gt; for it in the commands above too I guess.
+
+
+
+Yes, I know, Xfce is more than a window manager; it also has it's own file manager, terminal program, and so on.  But the main feature is that it's &lt;em&gt;fast &lt;/em&gt;and &lt;em&gt;small&lt;/em&gt;, which matters most to me for it's purpose on my system.
+
+
+
+&lt;hr&gt;&lt;strong&gt;2007-05-21T10:37+1000 Update&lt;/strong&gt; RTFM &lt;em&gt;again&lt;/em&gt;!
+
+Since [k|x|ed]ubuntu is &lt;a href="http://www.ubuntulinux.org/community/ubuntustory"&gt;built upon&lt;/a&gt; &lt;a href="http://www.debian.org"&gt;Debian&lt;/a&gt;, all the documentation describing Debian packaging and tools (&lt;code&gt;dpkg&lt;/code&gt;, &lt;code&gt;apt-get&lt;/code&gt;, &lt;code&gt;apt-cache&lt;/code&gt;, &lt;code&gt;aptitude&lt;/code&gt;, &lt;code&gt;dselect&lt;/code&gt; and so on) can be found at their site.  The &lt;a href="http://www.debian.org/doc/manuals/apt-howto/"&gt;APT HOWTO&lt;/a&gt; is also probably a good place to start…</description><category>GUI</category><category>alternatives</category><category>hacking</category><category>kubuntu</category><guid>http://milosophical.me/blog/2007/05/17/kubuntu-other-desktops.html</guid><pubDate>Thu, 17 May 2007 06:45:09 GMT</pubDate></item><item><title>Kubuntu kaboose</title><link>http://milosophical.me/blog/2007/05/16/kubuntu-kaboose.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;Yes, I've joined the ubuntu train, and I'm travelling in the Kubuntu car (the caboose?).
+
+
+This will be, what, my &lt;strong&gt;fifth &lt;/strong&gt;(or sixth if you count Knoppix, but I never put that on my hard drive) Linux distro since trying out RedHat 5.2 back in 1999.  Previous to this I was using openSUSE 10.2 which is not a bad distro either and I always had my eye on SuSE.  So, why yet another distro change?
+
+
+
+&lt;!--more--&gt;
+
+&lt;/p&gt;&lt;ul&gt;
+	&lt;li&gt;openSUSE's YaST tool.  It's sssoooo sssllloooowww.  Even Gentoo's Portage is faster for installing software, and &lt;em&gt;that &lt;/em&gt;has to compile the programs from source code!&lt;/li&gt;
+	&lt;li&gt;ZMD doesn't work.  It keeps breaking, crashing or going ballistic with the CPU&lt;/li&gt;
+	&lt;li&gt;What is with all the susefications?  I really don't like the system menu in openSUSE and couldn't  find a way to turn it off&lt;/li&gt;
+	&lt;li&gt;Some vital programs don't run:  Rosegarden and Google Earth lock up, FlightGear just won't run&lt;/li&gt;
+	&lt;li&gt;Like others in the community, I am grateful to Novell for what they have done in their fight with SCO, but unsure about their deal with Microsoft.  I like to think that perhaps the CEO is just a little naïve about M$ (or hasn't been bitten by them like me — I don't trust the Novell version of OpenOffice to be hands-off on my document, and not fiddle the format somehow)&lt;/li&gt;
+&lt;/ul&gt;
+
+It is a shame since I do really like openSUSE, but this issue, together with the technical nags has tipped me over the edge and I'm moving on.
+
+
+
+So, like was &lt;a title="Comment on " href="http://sinewalker.wordpress.com/2006/01/24/linux-distro-woes/#comments"&gt;suggested to me&lt;/a&gt; a bit over a year ago,  I'm switching to Kubuntu.  It's the latest favourite distro and has good reviews, from &lt;a title="aseigo - key KDE developer" href="http://aseigo.blogspot.com/"&gt;people &lt;/a&gt;I &lt;a title="canllaith - KDE documentor" href="http://www.canllaith.org/"&gt;respect &lt;/a&gt;in the KDE community, so my initial fears a year ago about it's KDE support being sub-par would seem to be unfounded.
+
+
+
+I have to say:  switching to kubuntu has been the easiest Linux distro migration I have ever undertaken in eight years! Twenty minutes to install on my three-year-old home-built PC (Athlon XP1800+, 512MiB RAM, IDE drives, Radeon rv280 GPU and a 48cm LCD, plus other bits). Also, this is the first time that I've been able to surf the Net while an operating system installs itself! Yes, most Linuxen let you switch to another VT and run console programs, but no other installer I've seen lets you run a graphical KDE session while it installs, which is impressive and also very useful — I can read the installation manual on the Net while I install, no need to print it out or have a second computer running to one side.
+
+
+
+Package installation is a breeze, and Feisty comes with the "universe" and "multiverse" repositories enabled, so getting "restricted formats" working took 10 minutes, and the installer was smart enough to configure APT to use a local mirror in Australia too! Very fast and very cool.
+
+
+
+And to top it off:  Google Earth works and Beryl was a snap to install compared to getting Compiz working properly in SUSE.  I haven't tried Rosegarden yet (there's a lot of audio and JACK stuff to set up for it first) but even if that still won't work, Kubuntu's already working better than SUSE on my hardware.  Very satisfied.</description><category>KDE</category><category>Unix</category><category>alternatives</category><category>hacking</category><category>kubuntu</category><guid>http://milosophical.me/blog/2007/05/16/kubuntu-kaboose.html</guid><pubDate>Tue, 15 May 2007 22:53:57 GMT</pubDate></item></channel></rss>

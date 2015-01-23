@@ -1,0 +1,126 @@
+<html><body><p>I've just finished hacking together a simple little program to transcode my "dvorcodes" for when entering on a QWERTY keyboard. I've created a new <a title="Dvorcode project summary page on SourceForge" href="http://sourceforge.net/projects/dvorcode/">project on SourceForge</a> and I've uploaded the code and a pair of pre-compiled executable JARs (one for Java 5 and also a re-worked version that's been tested on Java 1.4.2).
+
+
+<!--more-->
+
+</p><h3>What!?</h3>
+
+What are "dvorcodes"? Well, I use a <a title="Yet another Dvorak advocasy site. This one has good links to information and help. See also dvzine.org" href="http://www.theworldofstuff.com/dvorak/">Dvorak Simplified keyboard</a>, which is great except for entering passwords. If you must use one of those systems that locks your account after too many wrong tries, you really have to know 100% where all the keys are! My work-around <a title="One of my notes on Dvorak usage" href="http://sinewalker.wordpress.com/2006/03/27/dvorak-keyboards/">has been</a>: think of a password and then enter that on the QWERTY caps. For instance, typing the keys <em>bluepotato</em> on a Dvorak-mapped QWERTY keyboard comes out as <em>xng.lryayr</em>.
+
+
+
+This is all great, until you have to enter the password on a QWERTY keyboard (say, a friend or co-worker's machine) and all of a sudden you realise: you have to enter the <em>real</em> password!
+
+
+
+<strong>Problem</strong>: you don't remember (or never even knew) what the dvorcode for "bluepotato" is. Also you can't just walk back to your machine, and your friend is not convinced about Dvorak's greatness enough to let you re-map her own keyboard to Dvorak just so you can spend five minutes checking your web mail on her computer. Trust me: deaf ears, plus your password problem adds weight to her argument...
+
+
+
+This utility is a solution. You run it, enter the password you remember on the QWERTY keyboard, and it'll give you the dvorcode. You can then cut/paste or just remember it for a few seconds and type it in by hand. It's a Java app, so it can be kept on a USB memory for just this emergency, and it will run wherever a JRE is installed (if your friend's machine doesn't have a JRE, why are they your friend?).
+
+<h3>Why?</h3>
+
+<ul>
+	<li>I needed a tool to decode "dvorcodes" for exactly the situation above</li>
+	<li>It's an opportunity to learn some Open Source / Agile project management skills with a simple project</li>
+	<li>It might be useful to someone else</li>
+	<li>There are several things in this tool that could be improved</li>
+	<li>It's good Java and NetBeans practice</li>
+	<li>Possibly meet some new hacker friends on-line</li>
+</ul>
+
+<h3>Project details</h3>
+
+<ul>
+	<li>Hosting web site
+<a title="Dvorcode project summary page on SourceForge" href="http://sourceforge.net/projects/dvorcode/">http://sourceforge.net/projects/dvorcode/</a></li>
+	<li>Subversion repository
+<span> <a class="linkifyplus" href="https://dvorcode.svn.sourceforge.net/svnroot/dvorcode">https://dvorcode.svn.sourceforge.net/svnroot/dvorcode</a></span></li>
+	<li>Browse source on-line
+<a title="Browse the source code online" href="http://dvorcode.svn.sourceforge.net/viewvc/dvorcode/">http://dvorcode.svn.sourceforge.net/viewvc/dvorcode/</a></li>
+
+</ul>
+
+<h3>Documentation</h3>
+
+Here's a quick overview. I'll probably put something better up on SourceForge.
+
+
+
+Enter phrases in the top box (where it says "Enter phrase here"). Press the GO button to perform the trans-code operation. The result is displayed in the lower box. As results are added to the lower box, they scroll down so the newest one is always at the top of the list. Use the radio buttons to change trans-code direction.
+
+<h4>Shortcut Keys</h4>
+
+The mouse is supported too, but I prefer these to the mouse:
+
+<table border="1">
+
+<tbody>
+
+<tr>
+
+<th>Key</th>
+
+<th>Function</th>
+
+</tr>
+
+<tr>
+
+<td><strong>Enter</strong></td>
+
+<td>trans-code the phrase
+
+(pushes the GO button for you.)</td>
+
+</tr>
+
+<tr>
+
+<td><strong>Esc</strong></td>
+
+<td>Quit the program</td>
+
+</tr>
+
+</tbody></table>
+
+<a title="IBM Common User Access keys described on Wikipedia" href="http://en.wikipedia.org/wiki/IBM_Common_User_Access">CUA</a> copy/paste and field navigation key (Tab/Shift-Tab), as well as common <a title="Cut, Copy and Paste described on Wikipedia" href="http://en.wikipedia.org/wiki/Cut,_copy,_and_paste">Copy/Paste</a> keys are also supported (courtesy of Swing).
+
+<h4>Steps to decode a "dvorcode"</h4>
+
+The scrolling text pane automatically selects the newest result for you, so the simplest workflow (but not safest, see cautions) is:
+
+<ol>
+	<li>Start dvorcode.jar on your friend's machine</li>
+	<li>Type your password as you remember it, using the normal QWERTY key mapping, press Enter</li>
+	<li>Press Tab to go to result</li>
+	<li>Copy (Ctrl-C or Ctrl-Insert)</li>
+	<li>Alt-Tab (or whatever) to where you must enter the password</li>
+	<li>Paste (However that's done on the host platform)</li>
+</ol>
+
+<h3>Some cautions</h3>
+
+<ul>
+	<li><span style="color:#cc0033;"><strong><span>dvorcodes are not a safe way to come up with "unguessable" passwords</span></strong></span>. It's simple to build a dvorcode dictionary (you could use this tool in fact) so crackers probably already have one</li>
+	<li>This utility is <span style="color:#cc0033;"><strong><span>not safe against shoulder surfing</span></strong></span>. The passwords and dvorcodes are clear on the screen!</li>
+	<li>If you copy/paste the dvorcode, <span style="color:#cc0033;"><strong><span>it'll remain on your friend's clipboard</span></strong></span>. Copy something else there before you step away, or better yet, <span style="color:#cc0033;"><strong><span>never copy/paste passwords</span></strong></span>...</li>
+	<li>Remember to <span style="color:#cc0033;"><strong><span>exit the program once you have your code</span></strong></span>, so that your passwords aren't left lying around on some strange computer. You can do it quickly with the Escape key, that's why I added it</li>
+	<li>It might be wise practice to <span style="color:#ff6633;"><strong>change your password</strong></span> after using it on someone else's computer anyway, just in case...</li>
+</ul>
+
+<hr>
+
+<strong>UPDATE: 2008-08-18T09:32+1000 - Dvorak Simplified promotion</strong>
+
+I used to recommend people go to see <strong>dvzine.org</strong> for a cute magazine that promotes the Dvorak keyboard, and also how to turn it on with most computers (it's pre-installed in most modern/popular systems, even Mac and Windows).
+
+
+
+Unfortunately that domain and website seem to have dissapeared sometime in late 2007 early 2008. Not surprising since it was run by some university students while they were at college.
+
+
+
+However the <a title="The Net Archives" href="http://www.archive.org/index.php">internet archive</a> <a title="Wayback Machine home page" href="http://www.archive.org/web/web.php">wayback machine</a> has saved <a title="web archives for dvzine.org" href="http://web.archive.org/web/*/http://dvzine.org">several copies of dvzine.org</a>, including a fairly good <a title="DVzine.org circa February 2007" href="http://web.archive.org/web/20070208052330/http://dvzine.org/">working copy</a>.</body></html>

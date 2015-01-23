@@ -1,0 +1,20 @@
+<html><body>
+<p>
+<em>This post was originally published
+  at <a href="http://sinewalker.blogspot.com.au/2006_03_01_archive.html">sinewalker.blogspot.com.au</a>
+  on 20 March 2006.</em>
+</p>
+<hr/>
+
+<p>New del.icio.us rolls do not appear at right-hand side of this site, even though they did in Preview?  Strange.  Maybe it's a blogger glitch?  See what happens in a few days, I suppose...
+</p>
+
+<br/>
+
+<p>
+<strong>UPDATE</strong>:  2006-03-20 12:45 -- Not a glitch. Strange behaviour when I commented the del.icio.us block in the template.  It seems that the comment block wasn't terminated?  Odd.  Fixed by removing my comments.  This is sub-optimal, but works at least.</p>
+
+<br/>
+
+<p>
+<a rel="tag" href="http://del.icio.us/sinewalker_blog/Delicious"></a></p></body></html>

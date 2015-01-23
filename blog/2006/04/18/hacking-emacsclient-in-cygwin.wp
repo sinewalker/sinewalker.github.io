@@ -1,0 +1,27 @@
+<html><body>
+
+<p>
+<em>This post was originally published
+  at <a href="http://sinewalker.wordpress.com/2006/04/18/hacking-emacsclient-in-cygwin/">sinewalker.wordpress.com</a>
+  on 18 April 2006.</em>
+</p>
+
+<hr/>
+
+<p>I don't know why I haven't ever got around to this, but here—finally—is a hack to have Cygwin only ever start one instance of emacs (especially important in cygwin, because Win32 does not appear to share program texts between processes… )
+</p>
+
+<br/>
+
+<!--more-->
+<p>First, have Emacs start it's server whenever Emacs is started.  Put this in your <code>.emacs</code> file:
+
+</p><pre><code>(server-start)</code></pre>
+<p>
+Next, add the following function to your <code>.bashrc</code> file</p>
+
+<pre><code>function emacs(){
+  emacsclient $* || /usr/bin/emacs $*
+}</code></pre>
+<p>
+Now, whenever you type <code>emacs somefile</code>, instead of loading a fresh emacs process (expensive operation in Windows/cygwin), <code>emacsclient</code> will be run, and attempt to connect to a running emacs server to edit <code>somefile</code>. If there is no server (e.g. emacs has not been started), then <code>emacsclient</code> will fail. In this case, <code>emacs</code> will be started instead to edit the file, and the <code>.emacs</code> file makes sure that the server is ready for <code>emacsclient</code> next time.</p></body></html>

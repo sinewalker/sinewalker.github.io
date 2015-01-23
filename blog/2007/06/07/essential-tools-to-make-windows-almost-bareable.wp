@@ -1,0 +1,110 @@
+<html><body><p>Okay, so I hate working in Windows, but on my employer's equipment at least, I must live with it. After having had this machine replaced twice (faulty Dell hardware) and rebuilt more times than I can remember (Windows BSODs), for a total of at least 3 system migrations this past year, I thought I'd better keep a list of what free software to install on top of Windows, and what adjustments to make, so that at least I don't feel like I'm wearing a straight jacket.  Here goes:
+
+
+<!--more-->
+
+</p><h3>Useability</h3>
+
+Fix the keyboard to <a href="http://sinewalker.wordpress.com/2006/03/27/dvorak-keyboards/">Dvorak</a> (following is for Windows XP -- this will likely change for Vista... it shouldn't be this complicated!)
+
+<blockquote>
+
+<ol>
+	<li>Open Control Panel:  <strong>START &gt; Control Panel</strong></li>
+	<li>Choose "<strong>Regional and Language Options</strong>" (why not Keyboard???)</li>
+	<li>Select "<strong>Languages</strong>" tab, press Details... button (sigh)</li>
+	<li>In the "<strong>Installed services</strong>" section, select "<strong>Keyboard</strong>", then press "<strong>Add...</strong>" to add a new keyboard layout</li>
+	<li>Find <strong>US-Dvorak</strong> in the list</li>
+	<li>In the "<strong>Default input language</strong>" section, set the default language to English (Australia) - United States-Dvorak</li>
+	<li>In the "<strong>Preferences</strong>" section, press "<strong>Language Bar...</strong>" button</li>
+	<li>Make sure that "<strong>Show the language bar on the desktop</strong>" is turned <em><strong>on</strong></em>, to make it easier to switch to QWERTY if needed</li>
+	<li>Back in "<strong>Preferences</strong>", press the "<strong>Key Settings...</strong>" button</li>
+	<li>Turn <strong><em>off </em></strong>all the language <strong>Hot keys</strong></li>
+</ol>
+
+</blockquote>
+
+To get rid of that <a href="http://www.winsupersite.com/images/showcase/xp_n_05.jpg">horrible</a>, <a href="http://www.winsupersite.com/images/showcase/xp_n_03.jpg">garish </a>blue/green stock XP theme, I use the <a title="Zune -- it's still Microsoft, but it looks less garish" href="http://stevenharman.net/blog/archive/2006/12/09/WinXP__Zune_Theme.aspx">Zune theme</a> from Microsoft. It sucks less (the theme, that is, not the MP3 player, that sucks <em>more </em>than iPod).
+
+
+
+Make Explorer a bit useable.  Actually Explorer is total crap, and I'm still searching for a replacement. I like <a href="http://en.wikipedia.org/wiki/Midnight_Commander">MidnightCommander</a> in Cygwin (<code>mc</code>), and <a href="http://konqueror.kde.org/">Konqueror</a> in KDE.  But for Windows, there aren't a lot of <em>free </em>Explorer replacements, except maybe Windows File Explorer.  Anyway, follow these steps to have Explorer at least be not so stupid:
+
+<blockquote>
+
+<ol>
+	<li>Open an Explorer window (anywhere)</li>
+	<li>Select "<strong>Tools &gt; Folder Options...</strong>", "<strong>General</strong>" tab</li>
+	<li>Make sure that under "<strong>Browse folders</strong>", the option is to "<strong>Open each folder in the same window</strong>" (Explorer doesn't do multi-windows like Macintosh Finder: it screws them up)</li>
+	<li>In "<strong>Click items as follows</strong>", turn on "<strong>Single-click to open</strong>", and "<strong>Underline icons only when I point at them</strong>"</li>
+	<li>Select the "<strong>View</strong>" tab</li>
+	<li>Turn <em><strong>on </strong></em>the following:
+<ol>
+	<li>"Display the full path in the address bar"</li>
+	<li>"Display the full path in the title bar"</li>
+	<li>"Do not cache thumbnails"</li>
+	<li>"Show hidden files and folders"</li>
+	<li>"Show both parts and manage them individually" (for web pages and folders)</li>
+	<li>"Show encrypted or compressed NTFS files in color"</li>
+</ol>
+
+</li>
+	<li>Turn <em><strong>off </strong></em>the following:
+<ol>
+	<li>"Hide extensions for known file types"</li>
+	<li>"Launch folder windows in a separate process"</li>
+	<li>"Remember each folder'sview settings"</li>
+</ol>
+
+</li>
+	<li>Press the "<strong>Apply</strong>", then "<strong>Apply to All Folders</strong>" buttons</li>
+	<li>Press "<strong>OK</strong>"</li>
+</ol>
+
+</blockquote>
+
+<h3>Programs</h3>
+
+Install these programs at a minimum:
+
+<blockquote>
+
+<ul>
+	<li><a title="Rediscover the Web" href="http://en.www.mozilla.com/en/firefox/">Firefox </a>(essential add-ons:  <a title="social web bookmarks" href="http://del.icio.us/help/firefox/extension">del.icio.us</a>, <a title="Download Accellerator (and a better manager)" href="http://www.downthemall.net/">DownThemAll</a>, <a title="Spell-check input boxes, in en_au language" href="http://www.justlocal.com.au/clients/oooau/">English (AU) Dictionary</a>, <a title="Block's Flash adds" href="https://addons.mozilla.org/en-US/firefox/addon/433">Flashblock</a>, <a title="Make inline images larger" href="http://imagezoom.yellowgorilla.net/">ImageZoom</a>, <a title="Turn on/off proxy settings with one click" href="https://addons.mozilla.org/en-US/firefox/addon/1557">QuickProxy</a>, <a title="Synchronise your local bookmarks between Firefox installations" href="http://www.foxmarks.com">Foxmarks</a>, <a title="Turn your google mail account into free online storage" href="http://www.getgspace.com/">GSpace</a>)</li>
+	<li><a title="Open Source keystroke starter for Windows" href="http://www.launchy.net">Launchy</a></li>
+	<li><a title="WFE description page" href="http://www.freesoftlabs.com/fileexpl.asp">Windows File Explorer</a> (a free, sort-of <a href="http://en.wikipedia.org/wiki/Orthodox_file_manager">orthodox</a> file manager for Windows)</li>
+	<li><a title="Brings Windows desktop up to status of 1990 Unix" href="http://virt-dimension.sourceforge.net">Virtual Dimension</a> (Virtual desktop support for Windows)</li>
+	<li><a title="No Machine's Product listing page" href="http://www.nomachine.com/products.php">No Machine</a>'s <a title="NX Client - Windows - Download" href="http://www.nomachine.com/download-client-windows.php">NX Client for Windows</a> (so I can connect a <a title="NX Technology overview" href="http://www.nomachine.com/documentation/intr-technology.php">high speed X</a> session to my home machine)</li>
+	<li><a href="http://www.openoffice.org">OpenOffice.org</a> (also use <a href="http://www.justlocal.com.au/clients/oooau/">JustLocal</a>'s dictionary / thesaurus files to get spell check working)</li>
+	<li><a title="Unix compatibility layer for Windows" href="http://www.cygwin.com/">Cygwin </a>(include the X11 modules, Emacs [make sure to select ver 22], pdksh, subversion, python, clisp, fortune, mc, ssh, units, etc....)</li>
+	<li><a href="http://java.sun.com/javase/downloads/index.jsp">Java SE DevKit</a></li>
+	<li><a title="Latest Windows Subversion binaries" href="http://subversion.tigris.org/servlets/ProjectDocumentList?folderID=91">Subversion for Windows</a> (version control)</li>
+	<li><a href="http://www.netbeans.org/">NetBeans</a> (6.0 or greater has everything I need)</li>
+	<li><a title="Audio editor and MP3/OGG converter" href="http://audacity.sourceforge.net/download/windows">Audacity</a> audio editor and encoder</li>
+	<li><a title="Network streaming Video" href="http://www.videolan.org/vlc/download-windows.html">VideoLAN Client</a> movie player</li>
+	<li><a href="http://www.illiminable.com/ogg/">Illiminable DirectShow filters</a> for <a href="http://www.vorbis.com/setup_windows/">OGG Vorbis</a> (to play .OGG files in Windows Media Player)</li>
+	<li><a title="Amiga MOD player" href="http://www.modplug.com/">MODPlug</a> (because sometimes a good <a href="http://del.icio.us/sinewalker/modules">MOD</a> fits my mood)</li>
+	<li><a title="GNU Image Manipulation Program" href="http://gimp-win.sourceforge.net/">GIMP</a> image editor</li>
+	<li><a title="Image viewer" href="http://www.irfanview.com/">IrfanView</a> image viewer</li>
+</ul>
+
+</blockquote>
+
+<h3>Emacs</h3>
+
+Once Cygwin and Emacs are installed, I need to add my dotfiles (from backup), and also install these emacs add-ons:   <a title="Superior Lisp Interaction Mode for Emacs" href="http://common-lisp.net/project/slime/"></a>
+
+<blockquote>
+
+<ul>
+	<li><a title="Superior Lisp Interaction Mode for Emacs" href="http://common-lisp.net/project/slime/">SLIME</a> <a href="http://sourceforge.net/projects/psgml"></a></li>
+	<li><a href="http://sourceforge.net/projects/psgml">PSGML</a> <a title="Subversion support for Emacs (pre-22)" href="http://www.xsteve.at/prg/emacs/psvn.el"></a></li>
+	<li><a title="Subversion support for Emacs (pre-22)" href="http://www.xsteve.at/prg/emacs/psvn.el">PSVN</a> (not strictly needed, since emacs22 adds SVN support in VC mode)</li>
+	<li><a title="Collection of Emacs Development Environment Tools" href="http://cedet.sourceforge.net/">CEDET</a> (this is not trivial to install, I<em> still </em>haven't figured it out)<a title="Collection of Emacs Development Environment Tools" href="http://cedet.sourceforge.net/"> </a></li>
+	<li><a title="Java Development Environment for Emacs" href="http://jdee.sunsite.dk/">JDEE</a> (requires some or all of CEDET)</li>
+	<li><a title="This is neat!" href="http://www.eaflux.com/cygwin/cyg-emacsclient/">cyg-emacsclient</a> (wrapper to add Emacs to your SendTo folder, and have it actually work)</li>
+</ul>
+
+</blockquote>
+
+CEDET and JDEE might be more trouble than they're worth, especially since I'm installing NetBeans anyway. They seem cool (especially the enhanced speedbar), but they're not exactly plug-and-play. Jury's still out.</body></html>

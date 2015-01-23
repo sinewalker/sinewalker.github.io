@@ -1,0 +1,17 @@
+<html><body><p>I've recently been playing with <a title="OpenSolaris web site" href="http://opensolaris.org">OpenSolaris</a> and <a title="SDN Solaris Express DE Community web site" href="http://developers.sun.com/sxde/community.jsp">Solaris Express DE</a> running in <a title="Sun's xVM VirtualBox web site" href="http://virtualbox.org">VirtualBox</a>. They're fine so far (except audio isn't working) but I stumbled on a usability issue that was nearly a show-stopper: dratted QWERTY layouts! The GNOME GUI for switching to Dvorak doesn't work, and <code>setxkbmap</code><sub>(1)</sub> can't find the rules file for dvorak either (they don't seem to be installed where the man page indicates)...
+
+
+<!--more-->Well, after some searching around I discovered that for Solaris X11, need to use <strong><code>xmodmap</code><sub>(1)</sub></strong>. The xmodmap key maps for Solaris are located in <strong><code>/usr/share/xmodmap</code></strong> so you can switch between Dvorak and QWERTY thus:
+
+</p><ul>
+	<li><code>xmodmap /usr/share/xmodmap/xmodmap.dvorak</code></li>
+	<li><code>xmodmap /usr/share/xmodmap/xmodmap.us</code></li>
+</ul>
+
+Making a pair of shell aliases for these verbose commands would be handy too:
+
+<pre>alias asdf "xmodmap /usr/share/xmodmap/xmodmap.dvorak"
+
+alias aoeu "xmodmap /usr/share/xmodmap/xmodmap.us"</pre>
+
+with these, just type the first four keys of the home row and press enter to flip to the other layout. Xmodmap only affects X11 (global for all running and new X clients).</body></html>

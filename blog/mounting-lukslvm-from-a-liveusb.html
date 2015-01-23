@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="description" content="How do you mount an encrypted hard drive to recover">
+    <meta name="viewport" content="width=device-width">
+    <title>Mounting LUKS/LVM from a LiveUSB | Milosophical Me</title>
+
+                <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+
+                <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+
+      <link rel="canonical" href="http://milosophical.me/blog/mounting-lukslvm-from-a-liveusb.html">
+
+
+
+    
+        <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]-->
+
+    
+
+    
+    <meta name="author" content="Mike Lockhart">
+        <meta name="og:title" content="Mounting LUKS/LVM from a LiveUSB">
+    <meta name="og:url" content="http://milosophical.me/blog/mounting-lukslvm-from-a-liveusb.html">
+    <meta name="og:description" content="How do you mount an encrypted hard drive to recover">
+    <meta name="og:site_name" content="Milosophical Me">
+    <meta name="og:type" content="article">
+
+    
+    
+
+</head>
+<body>
+    <section class="social">
+        <ul>
+                    <li><a href="../index.html" title="Home"><i class="icon-home"></i></a></li>
+            <li><a href="../archive.html" title="Archives"><i class="icon-folder-open-alt"></i></a></li>
+            <li><a href="../categories/index.html" title="Tags"><i class="icon-tags"></i></a></li>
+            <li><a href="../rss.xml" title="RSS"><i class="icon-rss"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/mikelockhart" title="My LinkedIn profile"><i class="icon-linkedin"></i></a></li>
+            <li><a href="https://bitbucket.com/sinewalker" title="My Bitbucket"><i class="icon-bitbucket"></i></a></li>
+            <li><a href="https://github.com/sinewalker" title="My Github"><i class="icon-github"></i></a></li>
+            <li><a href="https://plus.google.com/+MichaelLockhart" title="Michael+"><i class="icon-google-plus"></i></a></li>
+            <li><a href="http://stackoverflow.com/users/776953/mike" title="Stack Overflow"><i class="icon-stackexchange"></i></a></li>
+
+        </ul>
+    </section>
+    <section class="page-content">
+        <div class="content" rel="main">
+    <div class="post">
+        <h1 class="p-name entry-title" itemprop="headline name">Mounting LUKS/LVM from a LiveUSB</h1>
+
+        <div class="meta">
+            <div class="authordate">
+                <time class="timeago" datetime="2014-11-09T21:30:25+11:00">2014-11-09 21:30</time>
+            
+                      |  
+        <a href="mounting-lukslvm-from-a-liveusb.org" id="sourcelink">Source</a>
+
+            </div>
+                    <div itemprop="keywords" class="tags">
+        <ul>
+        Tags : 
+           <li><a class="tag p-category" href="../categories/luks.html" rel="tag">LUKS</a></li>
+           <li><a class="tag p-category" href="../categories/lvm.html" rel="tag">LVM</a></li>
+           <li><a class="tag p-category" href="../categories/encryption.html" rel="tag">encryption</a></li>
+           <li><a class="tag p-category" href="../categories/linux.html" rel="tag">linux</a></li>
+        </ul>
+        </div>
+
+        </div>
+        <div class="body">
+            <p>
+After upgrading work's openSUSE laptop from 13.1 to 13.2 today it
+would not unlock the LUKS-encrypted LVM, which is a problem since the
+entire SSD is encrypted (except for /boot).  Bummer.
+</p>
+
+<p>
+So, I had occasion to test my backup/recovery strategy and found that
+I had a few issues (of course I did!)
+</p>
+
+<p>
+One problem was: I have my work laptop backups stored to an external
+USB hard drive, which is is also formatted with a LUKS encrypted
+volume. Great, no problem, I just need to unlock the LUKS so I can
+mount, right?  What's the password…?
+</p>
+
+<p>
+Another was: my passwords are stored in a KeePass2 database, which I
+have stored on a cloud service. Only: it turns out it's not been
+sync'd for about 4 months because I changed the DB's location and
+forgot to update the sync software, so the password for the hard drive
+wasn't on the cloud. Where is it? Oh, right, it's on my broken laptop,
+in an encripted LUKS/LVM which can't be unlocked since the upgrade.
+Goody.
+</p>
+
+<p>
+So, what to do…?
+</p>
+
+<p>
+The immediate task was to locate my recovery LiveUSB. Every good
+hacker should have (at least) one of these. Mine's the openSUSE 13.1
+Live Rescue image, which is spartan, but it does have everything you
+need, including lvm/luks on it, and yast.  Yast it turns out didn't
+help me much, I'm unsure why, but anyway, I got by with the command
+line ;-)
+</p>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Unlock LUKS volumes</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+To mount a LUKS-encrypted drive you first need to unlock the LUKS
+container:
+</p>
+
+<div class="highlight"><pre><span class="cp"># cryptsetup luksOpen /dev/sdb1 myusb</span>
+<span class="n">Enter</span> <span class="n">passphrase</span> <span class="k">for</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdb1</span><span class="o">:</span> 
+<span class="n">No</span> <span class="n">key</span> <span class="n">available</span> <span class="n">with</span> <span class="n">this</span> <span class="n">passphrase</span><span class="p">.</span>
+<span class="n">Enter</span> <span class="n">passphrase</span> <span class="k">for</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdb1</span><span class="o">:</span>
+</pre></div>
+
+<p>
+Ah, yes. Got to get that passphrase. Of course, being in KeePass2 it's
+a random generated hex string that no human will ever remember (that is what
+password database are for, after all)… Well, we'll come back to
+this…
+</p>
+
+<p>
+So, need to unlock the volume on the laptop…
+</p>
+
+<div class="highlight"><pre><span class="cp">#cryptsetup luksOpen /dev/sda3 laptop</span>
+<span class="n">Enter</span> <span class="n">passphrase</span> <span class="k">for</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda3</span><span class="o">:</span>
+</pre></div>
+
+<p>
+Okay, so it opened, great! (The problem after the upgrade was that it
+wouldn't even get this far). Now I just need to mount the home
+volume. It's part of an LVG…
+</p>
+</div>
+
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1">Mount the LVG(s)</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+First, let's look at the logical volumes:
+</p>
+
+<div class="highlight"><pre><span class="cp">#lvs</span>
+  <span class="n">LV</span>   <span class="n">VG</span>   <span class="n">Attr</span>      <span class="n">LSize</span>   <span class="n">Pool</span> <span class="n">Origin</span> <span class="n">Data</span><span class="o">%</span>  <span class="n">Move</span> <span class="n">Log</span> <span class="n">Cpy</span><span class="o">%</span><span class="n">Sync</span> <span class="n">Convert</span>
+  <span class="n">home</span> <span class="n">lvg</span>  <span class="o">-</span><span class="n">wi</span><span class="o">-</span><span class="n">ao</span><span class="o">---</span> <span class="mf">179.31</span><span class="n">g</span>                                             
+  <span class="n">root</span> <span class="n">lvg</span>  <span class="o">-</span><span class="n">wi</span><span class="o">-</span><span class="n">ao</span><span class="o">---</span>  <span class="mf">50.00</span><span class="n">g</span>                                             
+  <span class="n">swap</span> <span class="n">lvg</span>  <span class="o">-</span><span class="n">wi</span><span class="o">-</span><span class="n">ao</span><span class="o">---</span>   <span class="mf">8.00</span><span class="n">g</span>
+</pre></div>
+
+<p>
+That's right, I used a very simple/guessable naming
+convention. Bravo. Okay, the passwords file is somewhere in 'home',
+let's mount it
+</p>
+
+<div class="highlight"><pre><span class="cp"># mount /dev/laptop/home /mnt</span>
+<span class="cp"># ls /mnt</span>
+<span class="n">guest</span> <span class="n">mjl</span>
+</pre></div>
+
+<p>
+W00t! Alright, now I can grab that KeePass database, shove it on an SD
+chip and then load it up in Keepass2Android on my smart phone (the
+LiveUSB doesn't have any KeePass software… hmm, better do something
+about that later).
+</p>
+
+<div class="highlight"><pre><span class="c"># mkdir /var/tmp/sdc</span>
+<span class="c"># mount /dev/sdc1 /var/tmp/sdc</span>
+<span class="c"># cp /mnt/home/mjl/keys/db.kdbx /var/tmp/sdc</span>
+<span class="c"># umount /var/tmp/sdc</span>
+</pre></div>
+
+<p>
+Awesome. Now I can open up the password database, and laboriously
+transcribe that generated passphrase to unlock the backup drive, when
+I need to
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2">Long story shorter</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+So in a nutshell (assuming you have your password stored <i>somewhere
+you can get to</i> !), you can do this:
+</p>
+
+<ol class="org-ol">
+<li>Boot to a LiveUSB
+</li>
+<li>Start a Terminal, become root (on the Live system)
+</li>
+<li>
+<b>tail -f /var/log/messages|grep Attached</b>
+</li>
+<li>Plug in the backup drive, watch which device gets attached (look
+for a message like "2014-11-09T22:22:13.742555+11:00 milo kernel:
+[ 4678.150011] sd 7:0:0:0: <i>[sdb]</i> Attached SCSI disk" where
+<i>[sdb]</i> will be dependant on your devices, but that's the device
+you're looking for
+</li>
+<li>unlock it <b>cryptsetup luksOpen /dev/sdb1 mybackup</b>
+</li>
+<li>make a mount point if necessary:  <b>mkdir /recover</b>
+</li>
+<li>If it's a raw partition, you can mount now <b>mount
+/dev/mapper/mybackup /recover</b>, otherwise continue to LVM
+</li>
+<li>list the logical LVM volumes with <b>lvs</b>
+</li>
+<li>pick a volume (e.g. "myvolume") and mount it
+</li>
+</ol>
+
+<div class="highlight"><pre><span class="c"># mount /dev/mapper/mybackup/myvolume /recover</span>
+</pre></div>
+
+<p>
+Now you can navigate the volume and view/copy files.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3">Unmounting</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+You need to first umount the volume, and then close the LUKS:
+</p>
+
+<div class="highlight"><pre><span class="c"># umount /recover</span>
+<span class="c"># cryptsetup luksClose mybackup</span>
+</pre></div>
+</div>
+</div>
+</div>
+        </div>
+                <ul class="pager">
+            <li class="previous">
+                <a href="2013/05/24/fixing-java-ca-certificates-on-opensuse.html" rel="prev" title="Fixing Java CA Certificates on openSUSE">Previous post</a>
+            </li>
+        </ul>
+
+                    <script src="https://apis.google.com/js/plusone.js"></script>
+<div class="g-comments" data-href="http://milosophical.me/blog/mounting-lukslvm-from-a-liveusb.html" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">
+</div>
+
+
+    </div>
+                    <footer id="footer" role="contentinfo">
+            <p>Contents <a href="http://creativecommons.org/licenses/by-sa/4.0/">copyright</a> © 2005 — 2015         <a href="mailto:sinewalker@gmail.com">Mike Lockhart</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         , hosted at <a href="https://pages.github.com/sinewalker">GitHub Pages</a></p>
+            
+        </footer>
+
+        </div>
+    </section>
+    
+    
+                <script src="../assets/js/all-nocdn.js" type="text/javascript"></script>
+    
+<!-- Social buttons -->
+<div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+<a class="addthis_button_more">Share</a>
+<ul>
+<li>
+<a class="addthis_button_facebook"></a>
+</li>
+<li>
+<a class="addthis_button_google_plusone_share"></a>
+</li>
+<li>
+<a class="addthis_button_linkedin"></a>
+</li>
+<li>
+<a class="addthis_button_twitter"></a>
+</li>
+</ul>
+</div>
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script>
+<!-- End of social buttons -->
+
+
+        <script type="text/javascript">
+            $(function(){
+                $('.timeago').timeago();
+            });
+        </script>
+</body>
+</html>

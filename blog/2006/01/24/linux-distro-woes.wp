@@ -1,0 +1,55 @@
+<html><body>
+<p><em>This post was originally posted
+    at <a href="http://sinewalker.blogspot.com.au/2006_01_01_archive.html">sinewalker.blogspot.com.au</a>
+    on 24 January 2006.</em>
+</p>
+<hr/>
+<p>Well, my flirtations with gentoo didn't last too long.  I'm now trying SuSE 10.0 out, which — yes — is an RPM-based distro!
+</p>
+ 
+<br/>
+
+<p>
+So, why did I leave gentoo? I suppose that the "distro that doesn't get in your way" got in my way. With the arrival of our first baby, I'm rather short on the hours needed to learn how to configure everything in gentoo. While it's true that I could stand to learn a lot from getting it all to work, I can't afford to be hacking around getting pesky things like the scanner to go, or printing, or figuring out why I suddenly cannot burn a CD anymore. I need a "linux for dummies" that just works, and is more stable than winblows. Of course, if money was no object, I'd get myself a nice shiny new dual G5 Macintosh, but that's just for my dreams.
+</p>
+
+<br/>
+
+<p>
+So, since Novel have decided to open up SuSE a bit more now, I'm trying it out. I downloaded the "Evaluation" version, rather than OpenSuse, since I'm not an OpenSource zealot, and frankly I'd like to visit web sites with flash animations. It has crippled xine/kaffeine and no DVDCSS, but I can live without movies for now until I get that sorted, or build from the source I have, or even (ick!) just boot to Windows (though I know of no free DVD players for win32 that expand a 16:9 movie to fill as much of my 4:3 screen as Kaffeine does).
+</p>
+
+<br/>
+
+<p>
+So, it installed well, I now have working scanner, printer, cd-rw, dhcpd, cvs, mysql, java (yay!), apache, tomcat, kde. No Audacity or Rosegarden (important apps for me), no Eclipse (can wait). Slightly out-of-date jedit (4.1) and about 250MB of patches to upgrade to at some point, or not, since on dial-up I'm not exactly a cracker target...
+</p>
+
+<br/>
+
+<p>
+I'm very happy with SuSE so far. It's as pleasant as I always thought it would be. YaST is nice too. Only problem: sometimes cdrecord bombs, still (!). Pisses me off, it worked once but not again, even as root. It can sit on the back-burner (oops) until after I've got my missing audio software installed
+</p>
+
+<br/>
+
+<p>
+Major projects for linux are:
+</p>
+
+<br/>
+
+<ul>
+	<li>Record old music tapes to OGG and burn to data and audio CDs</li>
+	<li>Get nice video editing software (kino) working for baby and burn to VCDs</li>
+	<li>Java hacking (install Sun Java Studio sharchives)</li>
+	<li>Photo indexing and database, then archive to CDs</li>
+	<li>Produce a CD database</li>
+	<li>Get a working backup solution running</li>
+</ul>
+
+<br/>
+
+<p>
+Obviously, I need to get cd-rw sorted as a priority... it's kinda central!</p>
+</body></html>

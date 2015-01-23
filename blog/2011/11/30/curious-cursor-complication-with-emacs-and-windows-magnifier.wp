@@ -1,0 +1,26 @@
+<html><body><p>I recently noticed a bug when you start GNU Emacs win32 <em>after</em> starting <a title="Microsoft: Make items on the screen appear bigger (Magnifier)" href="http://windows.microsoft.com/en-AU/windows7/Make-items-on-the-screen-appear-bigger-Magnifier">Windows Magnifier</a>: Emacs' cursor becomes a single-pixel "caret" instead of the box cursor. This makes the cursor very hard to find.
+<!--more-->
+
+I usually leave Emacs' cursor at the default (<code>box</code>) because this is so much easier to see, especially if you also enable <code>blink-cursor-mode</code> (though<a title="How to stop blinking cursors" href="http://www.jurta.org/en/prog/noblink"> that's a matter of taste</a>, I suppose). The default settings also set the cursor to a <code>hollow</code> box when the <code>window</code> (or the entire <a title="Emacs frames and windows" href="http://emacsworld.blogspot.com/2008/08/emacs-frames-and-windows.html"><code>frame</code></a>) is inactive.
+
+
+
+Really, a text editor is unusable with a "caret" or bar-shaped cursor.
+
+
+
+The following behaviors are observed with this bug:
+
+</p><ul>
+	<li>This affects at least GNU Emacs versions 23.1 <a title="Download GNU Emacs for Windows, from GNU FTP site" href="http://ftp.gnu.org/pub/gnu/emacs/windows/">for Windows</a>, and <a title="GNU Emacs 24 win32 pre-built binaries at Google Code" href="http://code.google.com/p/emacs-for-windows/downloads/list">24.0 compiled</a> with mingw for win32</li>
+	<li>The actual shape of the cursor has no correspondence with the value of the <code>cursor-type</code> variable: it is always as-if the value were <code>(bar . 1)</code> (a vertical bar, one pixel wide)</li>
+	<li>The cursor blinks, whether you have enabled <code>blink-cursor-mode</code> or not</li>
+	<li>The value of the Windows Registry key <strong><code>HKCU\Control Panel\Desktop\CaretWidth</code></strong> also has no bearing on the cursor shape (though this key is great for setting the cursor thickness in other Windows programs...)</li>
+	<li>(This one took me ages to find) <span style="text-decoration:underline;">It only happens if Windows Magnifier is running</span> <em>before</em> you start Emacs. If you start Emacs first, and <em>then</em> start Magnifier, the cursor is unchanged and respects the value of <code>cursor-type</code></li>
+</ul>
+
+So, the work-around for this is to start Emacs before you run Magnifier (especially: make sure the Windows Accessibility feature that starts Magnifier when you log in, is turned OFF).
+
+
+
+<a title="Search GNU Bugtracker for emacs cursor bugs" href="http://debbugs.gnu.org/cgi/pkgreport.cgi?include=subject%3Acursor;package=emacs">As far as I can tell</a>, there is no bug report for this.  I may file one when I get around to figuring out <a title="GNU Bugtracker home" href="http://debbugs.gnu.org/">GNU's bug-tracker</a>.</body></html>

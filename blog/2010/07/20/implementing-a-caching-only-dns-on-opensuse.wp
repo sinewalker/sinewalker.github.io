@@ -1,0 +1,78 @@
+<html><body><p>Lately I've been noticing significant DNS latency when visiting certain sites. This is most obvious when my browser spends ages with "Looking up some.web.server.com..." in it's status bar. It's particularly bad at sites like <em>wordpress.com</em> where many pages make reference to sub-domains of wordpress.com and typically also to <em>google.com</em> for analytics or ads.
+
+
+While my ISP's DNS infrastructure is pretty good, there are a couple of things I can do to improve DNS look-up, which makes page loads a lot quicker.
+
+<!--more-->
+
+There are two things which can significantly speed up DNS look-ups for your local clients:
+
+</p><ul>
+	<li>Switch to a faster name service</li>
+	<li>Cache your look-ups on your machine, to prevent repeat DNS requests for sites you often visit</li>
+</ul>
+
+Of course, a combination works well too.
+
+
+
+So, what name service do you use? I know of two free/open services that are pretty good and promising to get better:
+
+<ul>
+	<li><a title="OpenDNS" href="http://www.opendns.com/">OpenDNS</a>: This is a globally distributed service that's fairly quick and is free to use. It also offers a simple (and easily bypassed) content filtering service by blocking known domain names</li>
+	<li><a title="Google Public DNS" href="http://code.google.com/speed/public-dns/">Google Public DNS</a>: This is a recent service offered by Google as an experiment in DNS technologies. Again it's globally distributed (using any-cast so the same IP routes to the Google data centre closest to you). No filtering is provided</li>
+</ul>
+
+Both are great services. <a title="Unixmen: Google vs OpenDNS" href="http://www.unixmen.com/news-today/612-opendns-vs-google-dns">Performance varies depending on where in the world you are</a>.  Since I'm in Australia, Google beats OpenDNS, but I'm going to use both of these and my ISP since it's still fairly good too.
+
+<h2>Hack 0: install and configure BIND</h2>
+
+In openSUSE, you can install <a title="(Wikipedia)" href="http://en.wikipedia.org/wiki/BIND">bind</a> like this (as root):
+
+<pre style="padding-left:30px;"><code># <strong>zypper install bind</strong>
+
+</code></pre>
+
+Although the program is called <a title="Internet Systems Consortium's page about BIND" href="http://www.isc.org/software/bind">BIND</a>, <a title="Off-topic: interesting diversion in application of use-mention in various fields. It comes up quite a lot in computers :)" href="http://www.google.com/search?q=%22the+name+of+the+song%22+haddocks+eyes">the name of the service is</a> actually <a title="TLDP, NAG2, Running named" href="http://tldp.org/LDP/nag2/x-087-2-resolv.named.html">named</a> (name daemon). It's configured with the file <strong><code>/etc/named.conf</code></strong>. Edit this (as root) to add a list of up to three forwarding DNS name servers. I'm going with Google as Primary, then OpenDNS, then my router (which forwards to my ISP):
+
+<pre style="padding-left:30px;"><code>forwarders { 8.8.4.4; 208.67.222.222; 16.1.1.1; };
+
+</code></pre>
+
+Next, you need to tell openSUSE to start the DNS server at boot time. It makes sense to have it running whenever there are network services. In openSUSE, this means at <a title="(Wikipedia) - what's a runlevel" href="http://en.wikipedia.org/wiki/Runlevel">runlevels</a> 3 and 5. I use <a title="Yet another Setup Tool - the reason I still run openSUSE" href="http://chorgan.provo.novell.com/yast/doc/SL11.1/">YaST</a> because it's so simple:
+
+<pre style="padding-left:30px;"><code># <strong>yast2 runlevel</strong>
+
+</code></pre>
+
+Finally, start the server. Either do it from YaST, or with the command-line:
+
+<pre style="padding-left:30px;"><code># <strong>service named start</strong>
+
+</code></pre>
+
+<h2>Hack 1: local resolver</h2>
+
+This is simple: add the nameserver addresses to your <code><strong>/etc/resolv.conf</strong></code>, like so:
+
+<pre style="padding-left:30px;"><code>nameserver 127.0.0.1      # Localhost bind
+
+nameserver 8.8.4.4        # Google
+
+nameserver 208.67.222.222 # OpenDNS
+
+nameserver 16.1.1.1       # My router (forwards requests to my ISP)
+
+</code>
+
+</pre>
+
+There are alternate addresses for each of Google and OpenDNS, I've chosen one each above. The other addresses are <strong>8.8.8.8</strong> for Google, and <strong>208.67.220.220</strong> for OpenDNS. OpenDNS also offers "family shield" on <strong>.123</strong> but your teenager (or maybe your six-year-old?)  can bypass that pretty easily.
+
+<h2>Other computers</h2>
+
+Now, any time your browser makes a DNS look-up, the resolv.conf tells it to try your local DNS server first, which in turn forwards to Google, OpenDNS and the router, and caches the results for next time.
+
+
+
+If you want other machines in your house to use this name server, <a title="Configuring nameservers for different operating systems - use your own address instead of FamilyShield" href="https://store.opendns.com/familyshield/setup/computer">just configure them</a>. If you point their primary DNS server at your openSUSE box's address, they will use the same named you just configured.</body></html>

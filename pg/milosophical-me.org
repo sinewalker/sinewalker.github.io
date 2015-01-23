@@ -1,0 +1,24 @@
+ .. title: Milosophical Me
+ .. slug: milosophical-me
+ .. date: 2014-11-25 22:19:57 UTC+11:00
+ .. tags: 
+ .. link: 
+ .. description: 
+ .. type: text
+
+Here's a dumb page with a few favourite pangrams, to see where it goes.
+
+Grumpy wizards make toxic brew for the evil Queen and Jack.
+
+Pack my box with five dozen liquor jugs.
+
+How quickly daft jumping zebras vex.
+
+Five hexing wizard bots jump quickly.
+
+Five quacking zephyrs jolt my wax bed.
+
+Sphinx of black quartz, judge my vow!
+
+
+You can read [[http://milosophical.me/blog/index.html][my blog]]

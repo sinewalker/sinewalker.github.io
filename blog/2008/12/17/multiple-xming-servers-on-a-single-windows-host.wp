@@ -1,0 +1,21 @@
+<html><body><p>One use-case we have at work for <a title="Xming sourceforge" href="http://sourceforge.net/projects/xming">Xming</a> is to be the X11 server on a Windows RDP terminal server. For security reasons (don't ask!) we can only access certain Unix hosts via an RDP session from our desktops, not directly over the campus LAN. So, we installed Xming on the TS and it works well. Except if two or more people wish to use it at once. Then it's first come, first served.
+
+
+<!--more-->I found a work-around for this that works, but is inelegant: start with a different display number argument.  For instance, the normal Xming start-up parameters are like this:
+
+</p><p style="text-align:center;"><code>D:\Programs\Xming\Xming.exe <strong><span style="color:#7744ff;">:0</span></strong> -clipboard -multiwindow</code></p>
+
+
+
+Change the <strong><span style="color:#7744ff;"><code>:0</code></span></strong> to be something else, and you can have a second (or third) instance running on the same host. Then, so long as you launch an xterm on the remote hosts using an item from your Xming menu, then it seems to pass the X11 packets back to your instance of the server, and not to other people on the same TS.
+
+
+
+There are at least a couple of issues with this:
+
+<ul>
+	<li>It's not very resource efficient. But I can't see a way around this, so long as we are using the RDP terminal server</li>
+	<li>You need to manually allocate display numbers to different people. If two people pick the same number, one will lose (first come, first served again). But at least your clients won't end up on their server...</li>
+</ul>
+
+If anybody can think of a way to snoop which displays are already taken, then choose the next one, it'd be neat!</body></html>

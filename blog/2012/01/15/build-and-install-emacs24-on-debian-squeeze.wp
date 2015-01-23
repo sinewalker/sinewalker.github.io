@@ -1,0 +1,39 @@
+<html><body><p>Hacking in Debian is so easy (one of the reasons I switched). Take, for instance, building Emacs. This is such a piece of cake compared to the weird hoops you have to go through to get all the build dependencies on other platforms. It's something I never tried before, simply because it was too daunting trying to figure out all the packages I need to install. But apt-get has this awesome --build-deps switch...
+<!--more-->
+
+So then, how to build and install Emacs 24 on Debian squeeze, in 6 easy steps?  Since Emacs24 is not yet released, there isn't a package for it in Debian (which is why I'm building my own). But I figured that the build dependencies would not have changed too much from Emacs23, so I used that, and it worked.
+
+</p><ol>
+ <li> Install the build dependencies:
+ <pre><code> 
+   # <strong>apt-get build-dep emacs23</strong></code></pre><br>
+  This installs all the compilers, parsers, development libraries and other parts of the GNU toolchain that is needed to build the emacs23 package.
+ </li>
+ <li> Download the source code. I used the <a href="https://github.com/emacsmirror/emacs">GitHub mirror</a> of the official GNU <a href="http://savannah.gnu.org/projects/emacs/">Savana codebase</a>, and downloaded the newest PKzip archive from there.  There is probably a newer one now. Purists probably would check-out direct from either Savana or GitHub rather than download a zip archive... I'm not going to hack emacs itself though, so I don't care.<br>
+ </li>
+ <li> Unzip the archive and generate the configure script (the autogen step is skipped in the INSTALL file by the way, good thing I've <a href="http://airs.com/ian/configure/configure_3.html#SEC16">done my homework</a>):
+ <pre><code>
+   $ <strong>unzip emacsmirror-emacs-EMACS_PRETEST_24_9_92-295-g2dccfc4.zip</strong>
+   $ <strong>cd emacsmirror-emacssnapshot</strong>
+   $ <strong>./autogen.sh
+ </strong></code></pre><br>
+ </li>
+ <li>Follow the INSTALL instructions:<br>
+ <pre><code>
+   $ <strong>./configure</strong>
+   $ <strong>make</strong>
+ </code></pre><br>
+ </li>
+ <li>Test it (Note:- if you watch the build, you'll see that after the C core of emacs is built, emacs itself is used to compile the elisp components, so building also makes a fairly good test of the C parts anyway):<br>
+  <pre><code>
+   $ <strong>src/emacs -Q</strong>
+  </code></pre><br>
+ </li>
+ <li> If okay, install it:
+  <pre><code>
+   # <strong>make install</strong>
+  </code></pre><br>
+ </li>
+</ol>
+
+</body></html>

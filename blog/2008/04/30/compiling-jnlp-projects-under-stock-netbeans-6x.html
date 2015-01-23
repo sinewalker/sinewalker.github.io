@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Compiling JNLP projects under stock NetBeans 6.x | Milosophical Me</title>
+
+                <link href="../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+
+                <link rel="alternate" type="application/rss+xml" title="RSS" href="../../../../rss.xml">
+
+      <link rel="canonical" href="http://milosophical.me/blog/2008/04/30/compiling-jnlp-projects-under-stock-netbeans-6x.html">
+
+
+
+    
+        <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]-->
+
+    
+
+    
+    <meta name="author" content="Mike Lockhart">
+        <meta name="og:title" content="Compiling JNLP projects under stock NetBeans 6.x">
+    <meta name="og:url" content="http://milosophical.me/blog/2008/04/30/compiling-jnlp-projects-under-stock-netbeans-6x.html">
+    <meta name="og:description" content="This is a pretty simple issue that was easy to solve but took a bit of fumbling around...
+
+
+I recently checked out the new Java SwingSet3 project from it's SVN repo, to play around with it. It's a Net">
+    <meta name="og:site_name" content="Milosophical Me">
+    <meta name="og:type" content="article">
+
+    
+    
+
+</head>
+<body>
+    <section class="social">
+        <ul>
+                    <li><a href="../../../../index.html" title="Home"><i class="icon-home"></i></a></li>
+            <li><a href="../../../../archive.html" title="Archives"><i class="icon-folder-open-alt"></i></a></li>
+            <li><a href="../../../../categories/index.html" title="Tags"><i class="icon-tags"></i></a></li>
+            <li><a href="../../../../rss.xml" title="RSS"><i class="icon-rss"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/mikelockhart" title="My LinkedIn profile"><i class="icon-linkedin"></i></a></li>
+            <li><a href="https://bitbucket.com/sinewalker" title="My Bitbucket"><i class="icon-bitbucket"></i></a></li>
+            <li><a href="https://github.com/sinewalker" title="My Github"><i class="icon-github"></i></a></li>
+            <li><a href="https://plus.google.com/+MichaelLockhart" title="Michael+"><i class="icon-google-plus"></i></a></li>
+            <li><a href="http://stackoverflow.com/users/776953/mike" title="Stack Overflow"><i class="icon-stackexchange"></i></a></li>
+
+        </ul>
+    </section>
+    <section class="page-content">
+        <div class="content" rel="main">
+    <div class="post">
+        <h1 class="p-name entry-title" itemprop="headline name">Compiling JNLP projects under stock NetBeans 6.x</h1>
+
+        <div class="meta">
+            <div class="authordate">
+                <time class="timeago" datetime="2008-04-30T10:40:23+10:00">2008-04-30 10:40</time>
+            
+                      |  
+        <a href="compiling-jnlp-projects-under-stock-netbeans-6x.wp" id="sourcelink">Source</a>
+
+            </div>
+                    <div itemprop="keywords" class="tags">
+        <ul>
+        Tags : 
+           <li><a class="tag p-category" href="../../../../categories/hacking.html" rel="tag">hacking</a></li>
+           <li><a class="tag p-category" href="../../../../categories/java.html" rel="tag">java</a></li>
+           <li><a class="tag p-category" href="../../../../categories/tip.html" rel="tag">tip</a></li>
+        </ul>
+        </div>
+
+        </div>
+        <div class="body">
+            <p>This is a pretty simple issue that was easy to solve but took a bit of fumbling around...
+
+
+I recently checked out the new Java <a title="SwingSet3 demo project on dev.java.net" href="https://swingset3.dev.java.net/">SwingSet3</a> project from it's <a title="browse SwingSet3 Subversion repository" href="https://swingset3.dev.java.net/source/browse/swingset3/">SVN repo</a>, to play around with it. It's a NetBeans project so it was simple enough to fire up NetBeans 6.0 and use it's built-in <a title="NetBeans' Subversion documentation" href="http://subversion.netbeans.org/">Subversion support</a> to check the project out from the repository directly...
+
+
+
+My plan was very simple: check out the code with NetBeans, build it, run it (using JDK 1.6.0_10 beta for the new Nimbus look/feel too) and then hack at the code.
+
+
+
+<!--more-->Small problem: once the project is checked out and loaded, NetBeans pops up a warning dialog:
+
+</p>
+<p style="padding-left:30px;"><img src="http://farm4.static.flickr.com/3070/2472351759_d9d7ff3f6b_o_d.png" alt="Alert box" width="533" height="255"></p>
+
+
+
+Also the Projects view shows errors, and if you drill down to them, it's because NetBeans can't find the <strong><code>javax.jnlp</code></strong> package. Hmm, I thought JNLP was included with the JDK since 1.5? How odd...
+
+
+
+Well, to make a long story short, the fix is to do the following steps (an explanation comes later):
+
+<ol>
+	<li>Resolve Problems by right-clicking the SwingSet3 project in the Projects view and choosing the "<strong>Resolve Problems...</strong>" menu item:
+<a href="http://farm4.static.flickr.com/3129/2473173812_52fe68032f_o_d.png"><img src="http://farm4.static.flickr.com/3129/2473173812_91b7f88edb_d.jpg" alt="NetBeans Project menu " width="500" height="351"></a>
+</li>
+	<li>This opens a dialog listing the problem (should only have one). Press the "<strong>Resolve</strong>..." button at right
+<img src="http://farm4.static.flickr.com/3201/2473173864_2a1f5444fc_o_d.png" alt="Resolve Reference Problems dialog" width="458" height="392">
+</li>
+	<li>NetBeans presents a dialog listing libraries and JARs. Our issue is that the SwingSet3 project has defined a library called "<strong>JavaWebStart</strong>" but if you look in the tree at left, there is no such library defined in NetBeans by default. No worries, let's make one</li>
+	<li>Press the button at bottom ("<strong>New Library...</strong>")
+<a href="http://farm4.static.flickr.com/3225/2472351987_1017ef91ec_o_d.png"><img src="http://farm4.static.flickr.com/3225/2472351987_747fefca8a_d.jpg" alt="NetBeans Library Manager -- New Library button" width="500" height="358"></a>
+
+This gives you the same dialog you get via Project Properties &gt; Libraries &gt; Add Library &gt; Create (in case you want to repeat later...). Give it the name that the Project wants ("<strong>JavaWebStart</strong>" in case of SwingSet3). It'll be a Class Library</li>
+	<li>Now you need to tell NetBeans about the JARs that belong to the library:
+<img src="http://farm4.static.flickr.com/3172/2472352043_0040e20d2b_d.jpg" alt="NetBeans Library Manager -- Add JAR/Folder" width="500" height="358">
+
+We need <code><strong>jnlp.jar</strong></code>, but might as well add the other Java Web Start stuff to the library too. You can find these JARs in your JDK under <strong><code><em>&lt;JDK_HOME&gt;</em>/sample/jnlp/servlet</code></strong>. Add all the JARs form this directory (<strong><code>jnlp.jar</code></strong>,<code> <strong>jnlp-servlet.jar</strong></code>, <strong><code>jardiff.jar</code></strong>):
+
+<a href="http://farm4.static.flickr.com/3227/2472352103_1a795fd8ca_o_d.png"><img src="http://farm4.static.flickr.com/3227/2472352103_339145900f_d.jpg" alt="Library Manager, JARs added" width="500" height="358"></a>
+</li>
+	<li>Add your new library to your project's Compile Libraries and you're done:
+<img src="http://farm4.static.flickr.com/3035/2473174102_8462fafb3d_d.jpg" alt="Resolved, click Close." width="458" height="392">
+</li>
+
+</ol>
+
+Once you've done this, you can use your new "JavaWebStart" library for other projects requiring JWS/JNLP too:
+
+
+
+<a href="http://farm3.static.flickr.com/2309/2485078298_865ae8cd92_o_d.png"><img src="http://farm3.static.flickr.com/2309/2485078298_25a83e9060_m_d.jpg" alt="Right-click Libraries in Projects view to get a menu, choose Add Library" width="240" height="169"></a><a href="http://farm3.static.flickr.com/2166/2484260383_92c8339077_o_d.png"><img src="http://farm3.static.flickr.com/2166/2484260383_acd1f1a6d9_t_d.jpg" alt="Find the JavaWebStart Library and press " width="92" height="100"></a><a href="http://farm4.static.flickr.com/3133/2485077758_c417209c53_o_d.png"><img src="http://farm4.static.flickr.com/3133/2485077758_1cc77bea3d_m_d.jpg" alt="The new Library's JARs are added to the Library tree of the Project view"></a>
+
+
+
+In the SwingSet3 project, there's also a broken reference to <code>C:/java/jnlp1.2/jnlp.jar</code>, but I don't think this matters (it compiles without the reference). You can probably remove it from the project.
+
+
+
+Now, what happened? It seems to me that the project file I checked out contained a reference to a non-standard NetBeans library called "JavaWebStart". This was probably defined by the project coders to refer to the JWS class libraries. For some reason, the JWS stuff ships as part of the JDK since 1.5, but only in the Samples directory. Why Sun chose to distribute it in the samples instead and not in <code><em>&lt;JKD_HOME&gt;</em>/lib</code> is a mystery to me... it causes two problems:
+
+<ul>
+	<li>Development libraries for JNLP is not accessible by default, unlike other <code>javax.<em>*</em></code> packages... so you'll need to go through this learning curve</li>
+	<li>If you chose not to install the samples with your JDK, you won't have <code>jnlp.jar</code>, and will need to add it (using the JDK installer, if you still have it), or download the <a title="Java Web Start Developer's Kit (older)" href="http://java.sun.com/products/javawebstart/download-jnlp.html">Java Web Start Developer's Kit</a> (which also mentions it's included with the JDK since 1.5...)</li>
+</ul>
+
+Anyway, problem's solved once your IDE knows how to find the library and JAR...
+
+
+
+SwingSet3 rocks by the way, and I'm having lots of fun learning how to do Swing properly.
+
+
+
+<hr>
+<strong>2008-05-12 13:40 Update:--</strong> This post has become a community <a href="http://wiki.netbeans.org/TaT_CompileJNLPprojects">Tips and Tricks article</a> at the <a href="http://wiki.netbeans.org/">NetBeans community wiki</a>.
+
+
+        </div>
+                <ul class="pager">
+            <li class="previous">
+                <a href="../04/cygwin-and-emacs-22.html" rel="prev" title="Cygwin and Emacs 22">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../../06/18/solaris-x11-and-dvorak-simplified-keyboard-layout.html" rel="next" title="Solaris X11 and Dvorak simplified keyboard layout">Next post</a>
+            </li>
+        </ul>
+
+                    <script src="https://apis.google.com/js/plusone.js"></script>
+<div class="g-comments" data-href="http://milosophical.me/blog/2008/04/30/compiling-jnlp-projects-under-stock-netbeans-6x.html" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">
+</div>
+
+
+    </div>
+                    <footer id="footer" role="contentinfo">
+            <p>Contents <a href="http://creativecommons.org/licenses/by-sa/4.0/">copyright</a> © 2005 — 2015         <a href="mailto:sinewalker@gmail.com">Mike Lockhart</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         , hosted at <a href="https://pages.github.com/sinewalker">GitHub Pages</a></p>
+            
+        </footer>
+
+        </div>
+    </section>
+    
+    
+                <script src="../../../../assets/js/all-nocdn.js" type="text/javascript"></script>
+    
+<!-- Social buttons -->
+<div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+<a class="addthis_button_more">Share</a>
+<ul>
+<li>
+<a class="addthis_button_facebook"></a>
+</li>
+<li>
+<a class="addthis_button_google_plusone_share"></a>
+</li>
+<li>
+<a class="addthis_button_linkedin"></a>
+</li>
+<li>
+<a class="addthis_button_twitter"></a>
+</li>
+</ul>
+</div>
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script>
+<!-- End of social buttons -->
+
+
+        <script type="text/javascript">
+            $(function(){
+                $('.timeago').timeago();
+            });
+        </script>
+</body>
+</html>

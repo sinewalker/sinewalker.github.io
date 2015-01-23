@@ -1,0 +1,69 @@
+#+BEGIN_COMMENT
+.. title: Colophon
+.. slug: colophon
+.. date: 2015-01-22 21:31:17 UTC+11:00
+.. tags: about
+.. link: 
+.. description: Some information about me.
+.. type: text
+#+END_COMMENT
+
+**** Introductions 
+My name is Mike Lockhart, and this is my web log. I am a senior
+support sysadmin and larval web hacker for a well known Australian
+Open Source web content management company. I do mainly Linux and
+[[http://www.squiz.net/au/platform/matrix][Matrix]] work, and dabble in some other  languages and
+projects in my Copious Free Time. Before this, I worked for nearly 15
+years in EDS and Hewlett Packard on lots of different systems.
+
+I live in [[http://discovertasmania.com.au][Tasmania]], where I grew up, returning here with my family (my
+lovely wife [[http://www.pinterest.com/jen2779/][Jenny]], three sons and a dog) in late 2013. We all feel
+very lucky to be living here, with family close at hand and an
+awesome, friendly and welcoming community around us. Well, maybe not
+the 2-year-old, but he's a pretty happy guy anyway.
+
+**** This web
+
+/On this web site you will find posts, pages, pictures and code that is in/
+/connection with my interests. I try to keep the stuff here as general/
+/as possible -- any work-specific writings live behind a company/
+/firewall. This means that what you see and read here is (or/ *was* /) my/
+/own opinion and does not necessarily reflect the opinions or directions/
+/of my employers (past, present or future)./
+
+Having mostly completed the physical move from New South Wales, I've
+begun a virtual move from Wordpress too. The [[http://milosophical.me/archive.html][archive]] has old posts
+that I've migrated from [[http://sinewalker.blogspot.com.au/][old]] [[https://sinewalker.wordpress.com/][blogs]], though those are still online to be
+read in their original form. On the Net, I go by the handle
+/sinewalker/, and while after 20 years I think I've outgrown it, it's
+still a unique username in most places.
+
+*If you wish to comment on a post, you will need a Google Plus account.*
+I feel this imposition is not too great given the number of Android
+phones out there now.  Besides, if your comment has merit then you
+won't mind being attributed to it... no anonymous cowards here ;-)
+
+**** Contacting me
+
+Feel free to contact me [[https://plus.google.com/+MichaelLockhart][on g+]] or by [[mailto:sinewalker@gmail.com][email]]. Insightful letters may be
+published as new posts or as an addendum to an existing post -- but
+/only with your express permission and attribution/.  Sensitive data
+may be emailed to me using my public key with fingerprint
+[[https://keybase.io/sinewalker/key.asc][3CCA2E6EBCBE8795]] (keybase.io).
+
+**** How this web site is made
+
+Posts are typed using the [[http://milosophical.me/categories/dvorak.html][Dvorak keyboard]] layout into [[http://emacsrocks.com/][Emacs]] on a
+computer running [[http://www.opensuse.org][openSUSE]], usually on a [[https://www.trulyergonomic.com/store/index.php][Truly Ergonomic Computer
+Keyboard]] or a [[http://www.bedroomlan.org/hardware/sun-keyboards-usb][Sun Type 6]] keyboard with rearranged key caps. They are
+generated from a mix of markup languages (typically Emacs [[http://orgmode.org][Org Mode]],
+[[http://daringfireball.net/projects/markdown/][Markdown]] or [[http://ipython.org/][iPython]] [[http://ipython.org/notebook.html][Notebooks]]), using the [[http://getnikola.com][Nikola]] static web site and
+blog generator, and published to [[https://pages.github.com/][GitHub Pages]]. 
+
+The [[https://bitbucket.org/sinewalker/blog/src][source files]] are stored at bitbucket because I prefer [[http://mercurial.selenic.com/][Mercurial]]
+over git -- although peer pressure and [[https://magit.github.io/][magit]] may change my low opinion
+of git some day....
+
+Prose content of all articles are licensed under the [[http://creativecommons.org/licenses/by-sa/4.0/][Creative Commons
+Attribution-ShareAlike 4.0 License]], unless otherwise specified.
+

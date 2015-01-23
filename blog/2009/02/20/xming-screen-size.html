@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>XMing screen size and changing multiple monitors | Milosophical Me</title>
+
+                <link href="../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+
+                <link rel="alternate" type="application/rss+xml" title="RSS" href="../../../../rss.xml">
+
+      <link rel="canonical" href="http://milosophical.me/blog/2009/02/20/xming-screen-size.html">
+
+
+
+    
+        <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]-->
+
+    
+
+    
+    <meta name="author" content="Mike Lockhart">
+        <meta name="og:title" content="XMing screen size and changing multiple monitors">
+    <meta name="og:url" content="http://milosophical.me/blog/2009/02/20/xming-screen-size.html">
+    <meta name="og:description" content="My work's notebook (Windows XP) is running Xming as it's X11 server, and it travels between work, home and on the train.
+
+
+My work office has  a docking station and a rotating second display. Typicall">
+    <meta name="og:site_name" content="Milosophical Me">
+    <meta name="og:type" content="article">
+
+    
+    
+
+</head>
+<body>
+    <section class="social">
+        <ul>
+                    <li><a href="../../../../index.html" title="Home"><i class="icon-home"></i></a></li>
+            <li><a href="../../../../archive.html" title="Archives"><i class="icon-folder-open-alt"></i></a></li>
+            <li><a href="../../../../categories/index.html" title="Tags"><i class="icon-tags"></i></a></li>
+            <li><a href="../../../../rss.xml" title="RSS"><i class="icon-rss"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/mikelockhart" title="My LinkedIn profile"><i class="icon-linkedin"></i></a></li>
+            <li><a href="https://bitbucket.com/sinewalker" title="My Bitbucket"><i class="icon-bitbucket"></i></a></li>
+            <li><a href="https://github.com/sinewalker" title="My Github"><i class="icon-github"></i></a></li>
+            <li><a href="https://plus.google.com/+MichaelLockhart" title="Michael+"><i class="icon-google-plus"></i></a></li>
+            <li><a href="http://stackoverflow.com/users/776953/mike" title="Stack Overflow"><i class="icon-stackexchange"></i></a></li>
+
+        </ul>
+    </section>
+    <section class="page-content">
+        <div class="content" rel="main">
+    <div class="post">
+        <h1 class="p-name entry-title" itemprop="headline name">XMing screen size and changing multiple monitors</h1>
+
+        <div class="meta">
+            <div class="authordate">
+                <time class="timeago" datetime="2009-02-20T10:22:44+11:00">2009-02-20 10:22</time>
+            
+                      |  
+        <a href="xming-screen-size.wp" id="sourcelink">Source</a>
+
+            </div>
+                    <div itemprop="keywords" class="tags">
+        <ul>
+        Tags : 
+           <li><a class="tag p-category" href="../../../../categories/display.html" rel="tag">display</a></li>
+           <li><a class="tag p-category" href="../../../../categories/hacking.html" rel="tag">hacking</a></li>
+           <li><a class="tag p-category" href="../../../../categories/screens.html" rel="tag">screens</a></li>
+           <li><a class="tag p-category" href="../../../../categories/tip.html" rel="tag">tip</a></li>
+           <li><a class="tag p-category" href="../../../../categories/x11.html" rel="tag">x11</a></li>
+           <li><a class="tag p-category" href="../../../../categories/xming.html" rel="tag">xming</a></li>
+        </ul>
+        </div>
+
+        </div>
+        <div class="body">
+            <p>My work's notebook (Windows XP) is running Xming as it's X11 server, and it travels between work, home and on the train.
+
+
+My work office has  a docking station and a rotating second display. Typically if I start Xming with this display plugged in, Xming will adjust it's screen size to use both displays, but if I start it without the screen plugged in, it'll size to just the notebook screen. If I later add the 2nd screen (by docking the notebook), Xming won't use it without a restart. Also if I rotate the screen, only the top 1200 pixels will be used by Xming.
+
+
+
+The solution is to specify a screen size to begin with that is as wide and tall as both of the screens.  On my docked notebook the two displays are the notebook's display (1920x1200 pixels)  and 2nd display (1600x1200 pixels, which rotates to 1200x1600). So that means the combined screen width is 3520 pixels, and the tallest screen hight is 1600 pixels.  Specify this to Xming when it starts:
+
+</p>
+<p style="text-align:center;"><code>path\to\xming.exe :0 -clipboard -multiwindow <strong><span style="color:#7722ff;">-screen 0 3520x1600</span></strong></code></p>
+
+<p style="text-align:left;">Now I can add/remove/rotate the second screen and still use all of it without restarting Xming.</p>
+        </div>
+                <ul class="pager">
+            <li class="previous">
+                <a href="../../01/09/asus-keeeboard-way-kewl.html" rel="prev" title="Asus kEeeboard -- way kewl">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../../05/12/registering-local-dtds-or-xml-schemas-with-netbeans.html" rel="next" title="Registering local DTDs or XML schemas with NetBeans">Next post</a>
+            </li>
+        </ul>
+
+                    <script src="https://apis.google.com/js/plusone.js"></script>
+<div class="g-comments" data-href="http://milosophical.me/blog/2009/02/20/xming-screen-size.html" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">
+</div>
+
+
+    </div>
+                    <footer id="footer" role="contentinfo">
+            <p>Contents <a href="http://creativecommons.org/licenses/by-sa/4.0/">copyright</a> © 2005 — 2015         <a href="mailto:sinewalker@gmail.com">Mike Lockhart</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         , hosted at <a href="https://pages.github.com/sinewalker">GitHub Pages</a></p>
+            
+        </footer>
+
+        </div>
+    </section>
+    
+    
+                <script src="../../../../assets/js/all-nocdn.js" type="text/javascript"></script>
+    
+<!-- Social buttons -->
+<div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+<a class="addthis_button_more">Share</a>
+<ul>
+<li>
+<a class="addthis_button_facebook"></a>
+</li>
+<li>
+<a class="addthis_button_google_plusone_share"></a>
+</li>
+<li>
+<a class="addthis_button_linkedin"></a>
+</li>
+<li>
+<a class="addthis_button_twitter"></a>
+</li>
+</ul>
+</div>
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script>
+<!-- End of social buttons -->
+
+
+        <script type="text/javascript">
+            $(function(){
+                $('.timeago').timeago();
+            });
+        </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<html><body><p>My work's notebook (Windows XP) is running Xming as it's X11 server, and it travels between work, home and on the train.
+
+
+My work office has  a docking station and a rotating second display. Typically if I start Xming with this display plugged in, Xming will adjust it's screen size to use both displays, but if I start it without the screen plugged in, it'll size to just the notebook screen. If I later add the 2nd screen (by docking the notebook), Xming won't use it without a restart. Also if I rotate the screen, only the top 1200 pixels will be used by Xming.
+
+
+
+The solution is to specify a screen size to begin with that is as wide and tall as both of the screens.  On my docked notebook the two displays are the notebook's display (1920x1200 pixels)  and 2nd display (1600x1200 pixels, which rotates to 1200x1600). So that means the combined screen width is 3520 pixels, and the tallest screen hight is 1600 pixels.  Specify this to Xming when it starts:
+
+</p><p style="text-align:center;"><code>path\to\xming.exe :0 -clipboard -multiwindow <strong><span style="color:#7722ff;">-screen 0 3520x1600</span></strong></code></p>
+
+<p style="text-align:left;">Now I can add/remove/rotate the second screen and still use all of it without restarting Xming.</p></body></html>

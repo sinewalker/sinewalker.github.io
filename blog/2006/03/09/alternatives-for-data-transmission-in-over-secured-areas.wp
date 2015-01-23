@@ -1,0 +1,40 @@
+<html><body>
+<p>
+<em>This post was originally published
+  at <a href="http://sinewalker.blogspot.com.au/2006_03_01_archive.html">sinewalker.blogspot.com.au</a>
+  on 9 March 2006.</em>
+</p>
+<hr/>
+
+<p>The <a href="http://www.ietf.org">IETF </a>(Internet Engineering Task Force)
+  is the international community of network experts who have been designing the
+  main Internet “standards” for the past 30 years or so.  These include such
+  landmark standards
+  as <a href="http://www.ietf.org/rfc/rfc1149.txt?number=822">RFC822</a>
+  (email) and RFCs2045-2047 (MIME).  New standards continue to be published and
+  implemented today.</p>
+
+<br/>
+
+<p>
+Two IETF contributions may be especially helpful for our current issues at work in transferring data between two isolated systems.  For the published IETF documents, see:
+</p>
+
+<br/>
+
+<ul>
+	<li><a href="http://www.ietf.org/rfc/rfc1149.txt?number=1149">http://www.ietf.org/rfc/rfc1149.txt?number=1149</a></li>
+	<li><a href="http://www.ietf.org/rfc/rfc1437.txt?number=1437">http://www.ietf.org/rfc/rfc1437.txt?number=1437</a></li>
+</ul>
+
+<br/>
+
+<p>
+(please note the publication dates when reviewing these recommendations)
+</p>
+
+<br/>
+
+
+<p>
+Of special note:  RFC1149 has been implemented in Bergen, Norway:    <a href="http://www.blug.linux.no/rfc1149/">http://www.blug.linux.no/rfc1149/</a></p></body></html>

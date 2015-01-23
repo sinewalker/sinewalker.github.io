@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Stripping tags from ogg Vorbis files | Milosophical Me</title>
+
+                <link href="../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+
+                <link rel="alternate" type="application/rss+xml" title="RSS" href="../../../../rss.xml">
+
+      <link rel="canonical" href="http://milosophical.me/blog/2008/08/26/stripping-tags-from-ogg-vorbis-files.html">
+
+
+
+    
+        <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]-->
+
+    
+
+    
+    <meta name="author" content="Mike Lockhart">
+        <meta name="og:title" content="Stripping tags from ogg Vorbis files">
+    <meta name="og:url" content="http://milosophical.me/blog/2008/08/26/stripping-tags-from-ogg-vorbis-files.html">
+    <meta name="og:description" content="I have a bunch of free Ogg Vorbis audio files that I've downloaded from Kahvi.org. They're great! But recently they've been including cover art within the files, which breaks Windows Media Player (it ">
+    <meta name="og:site_name" content="Milosophical Me">
+    <meta name="og:type" content="article">
+
+    
+    
+
+</head>
+<body>
+    <section class="social">
+        <ul>
+                    <li><a href="../../../../index.html" title="Home"><i class="icon-home"></i></a></li>
+            <li><a href="../../../../archive.html" title="Archives"><i class="icon-folder-open-alt"></i></a></li>
+            <li><a href="../../../../categories/index.html" title="Tags"><i class="icon-tags"></i></a></li>
+            <li><a href="../../../../rss.xml" title="RSS"><i class="icon-rss"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/mikelockhart" title="My LinkedIn profile"><i class="icon-linkedin"></i></a></li>
+            <li><a href="https://bitbucket.com/sinewalker" title="My Bitbucket"><i class="icon-bitbucket"></i></a></li>
+            <li><a href="https://github.com/sinewalker" title="My Github"><i class="icon-github"></i></a></li>
+            <li><a href="https://plus.google.com/+MichaelLockhart" title="Michael+"><i class="icon-google-plus"></i></a></li>
+            <li><a href="http://stackoverflow.com/users/776953/mike" title="Stack Overflow"><i class="icon-stackexchange"></i></a></li>
+
+        </ul>
+    </section>
+    <section class="page-content">
+        <div class="content" rel="main">
+    <div class="post">
+        <h1 class="p-name entry-title" itemprop="headline name">Stripping tags from ogg Vorbis files</h1>
+
+        <div class="meta">
+            <div class="authordate">
+                <time class="timeago" datetime="2008-08-26T16:05:34+10:00">2008-08-26 16:05</time>
+            
+                      |  
+        <a href="stripping-tags-from-ogg-vorbis-files.wp" id="sourcelink">Source</a>
+
+            </div>
+                    <div itemprop="keywords" class="tags">
+        <ul>
+        Tags : 
+           <li><a class="tag p-category" href="../../../../categories/audio.html" rel="tag">audio</a></li>
+           <li><a class="tag p-category" href="../../../../categories/code.html" rel="tag">code</a></li>
+           <li><a class="tag p-category" href="../../../../categories/cygwin.html" rel="tag">cygwin</a></li>
+           <li><a class="tag p-category" href="../../../../categories/hacking.html" rel="tag">hacking</a></li>
+           <li><a class="tag p-category" href="../../../../categories/tip.html" rel="tag">tip</a></li>
+           <li><a class="tag p-category" href="../../../../categories/vorbis.html" rel="tag">vorbis</a></li>
+        </ul>
+        </div>
+
+        </div>
+        <div class="body">
+            <p>I have a bunch of free <a title="Xiph's meta container format for media" href="http://www.xiph.org/ogg/">Ogg</a> <a title="Patent-free audio codec (MP3 killer)" href="http://www.vorbis.com/">Vorbis</a> audio files that I've downloaded from <a title="Kahvi Collective. Sound has the power to make the world a better place" href="http://kahvi.org/">Kahvi.org</a>. They're great! But recently they've been including cover art within the files, which breaks Windows Media Player (it can't handle the very long tags of binhex-coded JPGs).
+
+
+Since I rather like WMP's integration in windows (keyboard shortcuts), and <a title="Kewl KDE music player (iTunes killer)" href="http://amarok.kde.org/">Amarok</a> <a title="Amarok for win32 is still a work in progress, but it compiles..." href="http://amarok.kde.org/wiki/Development/Win32">isn't quite ready for win32</a>, I thought I'd find a way to strip the troublesome tags from the data files rather than change to another player.
+
+
+
+Here's a quick-and-dirty shell hack to remove the tags from the files and get them playable by daft players such as Windows Media Player
+
+
+
+<!--more-->
+
+</p>
+<pre>#!/bin/bash
+
+###############################################################################
+
+#
+
+#   File:       fixvorbis.sh
+
+#   Language:   Bash shell script
+
+#   Time-stamp: &lt;2008-08-26 15:48:45 tzbblg&gt;
+
+#   Platform:   N/A (requirest ogg Vorbis tools installed)
+
+#   OS:         *nix
+
+#   Authors:    Michael Lockhart [MJL]
+
+#
+
+#   Rights:     Copyright © 2008 Michael James Lockhart, B.App.Comp(HONS)
+
+#
+
+#     This program is free software: you can redistribute it and/or
+
+#     modify it under the terms of th e GNU General Public License as
+
+#     published by the Free Software Foundation, either version 3 of the
+
+#     License, or (at your option) any later version.
+
+#
+
+#     This program is distributed in the hope that it will be useful,
+
+#     but WITHOUT ANY WARRANTY; without even the implied warranty of
+
+#     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+
+#     GNU General Public License for more details.
+
+#
+
+#     You should have received a copy of the GNU General Public License
+
+#     along with this program.  If not, see .
+
+#
+
+#   PURPOSE:
+
+#
+
+#     Script to strip out COVERART tags from ogg vorbis files (these
+
+#     tags break certain players...)
+
+#
+
+#   HISTORY:
+
+#
+
+#   MJL20080826 - Created.
+
+#
+
+
+
+# extract the comments, less the COVERART tags
+
+# (keep the art in separate files)
+
+
+
+for n in *.ogg; do
+    echo "Extracting comments and COVERART from $n"
+    vorbiscomment -l $n | grep COVERART &gt; $n-art.txt
+    vorbiscomment -l $n | grep -v COVERART &gt; $n-comment.txt
+done
+
+
+
+#if there's a comments patch (stored in patch.txt in the current dir)
+
+# then apply the patch to the comments.
+
+if [ -f patch.txt ]; then
+    for n in *-comment.txt; do
+	patch $n patch.txt
+    done
+fi
+
+
+
+# edit the comments with new comment files, minus art, possibly patched.
+
+for n in *.ogg; do
+    echo "Replacing comments in $n"
+    vorbiscomment -c $n-comment.txt -w $n
+done
+
+
+
+#clean up
+
+rm *-comment.txt
+
+
+
+# clean-up of art is manual. There might be different cover-art from
+
+# each file, but if not (diff a*-art.txt b*.txt etc produces no
+
+# output) then just remove all but first and rename it...</pre>
+
+<hr>The smarts are all in the vorbis utilites included as part of Cygwin. Specifically the script uses vorbiscomment<sub>(1)</sub> to extract and apply tags in the Ogg files, and grep and (optionally) patch to manipulate the comments.
+
+
+
+Enjoy!
+
+
+
+P.S. My Wordpress stylesheet is doing weird things with the margins and this is really badly formatted, sorry. You can copy/paste into a text editor just fine though...
+        </div>
+                <ul class="pager">
+            <li class="previous">
+                <a href="../21/cascaded-revision-control-strategy.html" rel="prev" title="Cascaded revision control strategy">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../../09/10/generic-types-whats-in-a-name.html" rel="next" title="" generic types: what in a name>Next post</a>
+            </li>
+        </ul>
+
+                    <script src="https://apis.google.com/js/plusone.js"></script>
+<div class="g-comments" data-href="http://milosophical.me/blog/2008/08/26/stripping-tags-from-ogg-vorbis-files.html" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">
+</div>
+
+
+    </div>
+                    <footer id="footer" role="contentinfo">
+            <p>Contents <a href="http://creativecommons.org/licenses/by-sa/4.0/">copyright</a> © 2005 — 2015         <a href="mailto:sinewalker@gmail.com">Mike Lockhart</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         , hosted at <a href="https://pages.github.com/sinewalker">GitHub Pages</a></p>
+            
+        </footer>
+
+        </div>
+    </section>
+    
+    
+                <script src="../../../../assets/js/all-nocdn.js" type="text/javascript"></script>
+    
+<!-- Social buttons -->
+<div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+<a class="addthis_button_more">Share</a>
+<ul>
+<li>
+<a class="addthis_button_facebook"></a>
+</li>
+<li>
+<a class="addthis_button_google_plusone_share"></a>
+</li>
+<li>
+<a class="addthis_button_linkedin"></a>
+</li>
+<li>
+<a class="addthis_button_twitter"></a>
+</li>
+</ul>
+</div>
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script>
+<!-- End of social buttons -->
+
+
+        <script type="text/javascript">
+            $(function(){
+                $('.timeago').timeago();
+            });
+        </script>
+</body>
+</html>

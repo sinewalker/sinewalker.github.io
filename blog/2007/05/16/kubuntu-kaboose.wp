@@ -1,0 +1,34 @@
+<html><body><p>Yes, I've joined the ubuntu train, and I'm travelling in the Kubuntu car (the caboose?).
+
+
+This will be, what, my <strong>fifth </strong>(or sixth if you count Knoppix, but I never put that on my hard drive) Linux distro since trying out RedHat 5.2 back in 1999.  Previous to this I was using openSUSE 10.2 which is not a bad distro either and I always had my eye on SuSE.  So, why yet another distro change?
+
+
+
+<!--more-->
+
+</p><ul>
+	<li>openSUSE's YaST tool.  It's sssoooo sssllloooowww.  Even Gentoo's Portage is faster for installing software, and <em>that </em>has to compile the programs from source code!</li>
+	<li>ZMD doesn't work.  It keeps breaking, crashing or going ballistic with the CPU</li>
+	<li>What is with all the susefications?  I really don't like the system menu in openSUSE and couldn't  find a way to turn it off</li>
+	<li>Some vital programs don't run:  Rosegarden and Google Earth lock up, FlightGear just won't run</li>
+	<li>Like others in the community, I am grateful to Novell for what they have done in their fight with SCO, but unsure about their deal with Microsoft.  I like to think that perhaps the CEO is just a little naïve about M$ (or hasn't been bitten by them like me — I don't trust the Novell version of OpenOffice to be hands-off on my document, and not fiddle the format somehow)</li>
+</ul>
+
+It is a shame since I do really like openSUSE, but this issue, together with the technical nags has tipped me over the edge and I'm moving on.
+
+
+
+So, like was <a title="Comment on " href="http://sinewalker.wordpress.com/2006/01/24/linux-distro-woes/#comments">suggested to me</a> a bit over a year ago,  I'm switching to Kubuntu.  It's the latest favourite distro and has good reviews, from <a title="aseigo - key KDE developer" href="http://aseigo.blogspot.com/">people </a>I <a title="canllaith - KDE documentor" href="http://www.canllaith.org/">respect </a>in the KDE community, so my initial fears a year ago about it's KDE support being sub-par would seem to be unfounded.
+
+
+
+I have to say:  switching to kubuntu has been the easiest Linux distro migration I have ever undertaken in eight years! Twenty minutes to install on my three-year-old home-built PC (Athlon XP1800+, 512MiB RAM, IDE drives, Radeon rv280 GPU and a 48cm LCD, plus other bits). Also, this is the first time that I've been able to surf the Net while an operating system installs itself! Yes, most Linuxen let you switch to another VT and run console programs, but no other installer I've seen lets you run a graphical KDE session while it installs, which is impressive and also very useful — I can read the installation manual on the Net while I install, no need to print it out or have a second computer running to one side.
+
+
+
+Package installation is a breeze, and Feisty comes with the "universe" and "multiverse" repositories enabled, so getting "restricted formats" working took 10 minutes, and the installer was smart enough to configure APT to use a local mirror in Australia too! Very fast and very cool.
+
+
+
+And to top it off:  Google Earth works and Beryl was a snap to install compared to getting Compiz working properly in SUSE.  I haven't tried Rosegarden yet (there's a lot of audio and JACK stuff to set up for it first) but even if that still won't work, Kubuntu's already working better than SUSE on my hardware.  Very satisfied.</body></html>

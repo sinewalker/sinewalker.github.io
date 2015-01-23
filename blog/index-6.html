@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="description" content="A geek's notebook">
+    <meta name="viewport" content="width=device-width">
+    <title>Milosophical Me (old posts, page 6) | Milosophical Me</title>
+
+                <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+
+                <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+
+      <link rel="canonical" href="http://milosophical.me/blog/index-6.html">
+
+
+
+    
+        <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]-->
+
+    
+
+    
+    <style>
+    div.input_prompt {
+      display: none;
+    }
+    </style>
+
+</head>
+<body>
+    <section class="social">
+        <ul>
+                    <li><a href="../index.html" title="Home"><i class="icon-home"></i></a></li>
+            <li><a href="../archive.html" title="Archives"><i class="icon-folder-open-alt"></i></a></li>
+            <li><a href="../categories/index.html" title="Tags"><i class="icon-tags"></i></a></li>
+            <li><a href="../rss.xml" title="RSS"><i class="icon-rss"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/mikelockhart" title="My LinkedIn profile"><i class="icon-linkedin"></i></a></li>
+            <li><a href="https://bitbucket.com/sinewalker" title="My Bitbucket"><i class="icon-bitbucket"></i></a></li>
+            <li><a href="https://github.com/sinewalker" title="My Github"><i class="icon-github"></i></a></li>
+            <li><a href="https://plus.google.com/+MichaelLockhart" title="Michael+"><i class="icon-google-plus"></i></a></li>
+            <li><a href="http://stackoverflow.com/users/776953/mike" title="Stack Overflow"><i class="icon-stackexchange"></i></a></li>
+
+        </ul>
+    </section>
+    <section class="page-content">
+        <div class="content" rel="main">
+        <div class="post">
+            <h1 class="title"><a href="2008/11/24/netbeans-65-and-python.html">NetBeans 6.5 and Python</a></h1>
+            <div class="meta">
+                <div class="authordate">
+                    <time class="timeago" datetime="2008-11-24T12:08:42+11:00">2008-11-24 12:08</time>
+                </div>
+                <div class="stats">
+                            <div class="g-commentcount" data-href="/blog/2008/11/24/netbeans-65-and-python.html"></div>
+<script src="https://apis.google.com/js/plusone.js"></script>
+
+
+                </div>
+                        <div itemprop="keywords" class="tags">
+        <ul>
+        Tags : 
+           <li><a class="tag p-category" href="../categories/code.html" rel="tag">code</a></li>
+           <li><a class="tag p-category" href="../categories/hacking.html" rel="tag">hacking</a></li>
+           <li><a class="tag p-category" href="../categories/netbeans.html" rel="tag">netbeans</a></li>
+           <li><a class="tag p-category" href="../categories/python.html" rel="tag">python</a></li>
+           <li><a class="tag p-category" href="../categories/tip.html" rel="tag">tip</a></li>
+        </ul>
+        </div>
+
+            </div>
+            <div class="body">
+                <a title="NetBeans 6.5 release page" href="http://www.netbeans.org/community/releases/65/">NetBeans 6.5 is out</a>! You can <a title="Using Nimbus with NetBeans 6.5 -- noice!" href="http://mrhaki.blogspot.com/2008/11/start-netbeans-65-with-nimbus-look-and.html">run it with the</a> <a title="The Nimbus L&amp;F project page" href="https://nimbus.dev.java.net/">Nimbus look and feel</a> too! There's also an <a title="NetBeans 6.5 Python -- Early Access" href="http://www.netbeans.org/features/python/index.html">Early Access plugin for Python</a>. All very nice.
+
+
+I recently had occasion to play with some Python at work (a small script to do some configurations, and I didn't want to do them in bash), so I took the time to get all of this set up. It's all so very easy and not worth writing about. However I thought that the i<a title="NetBeans' integrated Jython debugger" href="http://wiki.netbeans.org/Python#section-Python-Debugger">nteractive debugger</a> (which is <em>awesome</em>, btw) has a small issue that needs resolving. Mean-time, here's a work-around.
+
+
+
+<!--more--><strong>The issue is</strong>: the debugger (which runs in Jython) starts in the NetBeans 6.5 install directory, but the normal run-time is in the project's source directory. Normally this is not a problem, unless you're writing a script to pick up files from the current directory. If you just dump your data file in the project's source directory, then it'll work when you run it (with the F6 key), but not when you debug it (Ctrl-F5).
+
+
+
+<strong>The work-around</strong>:  The debugger is interactive and includes a Jython shell which is integrated into your debugging context (so cool)! Upon starting the debugger, your can just issue these commands:
+
+<code> </code>
+
+<pre style="padding-left:30px;">&gt;&gt;&gt; <strong>import os, sys</strong>
+
+&gt;&gt;&gt; <strong>os.chdir(os.path.dirname(sys.argv[0]))</strong></pre>
+
+This will set the CWD for the current debug session to the directory where your script file is. That's where the CWD is set when you run scripts normally with the F6 key.
+
+
+
+<strong>The solution</strong>: I've sent an <a title="NetBeans Issue 153733" href="http://www.netbeans.org/issues/show_bug.cgi?id=153733">enhancement request</a> to the Python-IDE team in <a title="Python debugger" href="http://www.netbeans.org/issues/buglist.cgi?Submit+query=Submit+query&amp;component=python&amp;subcomponent=debugger&amp;issue_status=NEW&amp;issue_status=STARTED&amp;issue_status=REOPENED&amp;email1=&amp;emailtype1=exact&amp;emailassigned_to1=1&amp;email2=&amp;emailtype2=exact&amp;emailreporter2=1&amp;issueidtype=include&amp;issue_id=&amp;changedin=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;short_desc=&amp;short_desc_type=substring&amp;long_desc=&amp;long_desc_type=substring&amp;issue_file_loc=&amp;issue_file_loc_type=substring&amp;status_whiteboard=&amp;status_whiteboard_type=substring&amp;keywords=&amp;keywords_type=anytokens&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=&amp;cmdtype=doit&amp;newqueryname=&amp;order=Reuse+same+sort+as+last+time">NetBeans' issue tracker</a>. I'm not sure where the CWD should be set in the general case, but probably it should be in &lt;project-base&gt;/src to be consistent with the normal runtime.
+
+
+
+<strong>2009-01-11 Update</strong>: The<a href="http://www.netbeans.org/issues/show_bug.cgi?id=153733"> issue has been fixed</a>! Awesome work by jymen (Jean-Yves Mengant). I'll have to <a title="Building the NB Python plug-in from source" href="http://wiki.netbeans.org/NbPythonHgBuild">check out a recent build</a> from trunk and give it a whirl!
+            </div>
+        </div>
+        <div class="post">
+            <h1 class="title"><a href="2008/10/30/switching-to-java-jdk-6u10.html">Switching to Java JDK 6u10</a></h1>
+            <div class="meta">
+                <div class="authordate">
+                    <time class="timeago" datetime="2008-10-30T09:52:21+11:00">2008-10-30 09:52</time>
+                </div>
+                <div class="stats">
+                            <div class="g-commentcount" data-href="/blog/2008/10/30/switching-to-java-jdk-6u10.html"></div>
+<script src="https://apis.google.com/js/plusone.js"></script>
+
+
+                </div>
+                        <div itemprop="keywords" class="tags">
+        <ul>
+        Tags : 
+           <li><a class="tag p-category" href="../categories/hacking.html" rel="tag">hacking</a></li>
+           <li><a class="tag p-category" href="../categories/java.html" rel="tag">java</a></li>
+           <li><a class="tag p-category" href="../categories/netbeans.html" rel="tag">netbeans</a></li>
+           <li><a class="tag p-category" href="../categories/tip.html" rel="tag">tip</a></li>
+        </ul>
+        </div>
+
+            </div>
+            <div class="body">
+                <p>I've been using 6u10 beta for a while and keeping 6u3 as my main JDK. It's also the default JDK for NetBeans but now that update 10 of <em>Mustang </em>is out of beta, it's time for me to ditch 6u3 and swtich to 6u10 final.
+<!--more-->
+
+This is fairly straight forward. Here's what I did:
+
+</p>
+<ol>
+	<li>Install JDK 6u10 (it'll find 6u10b and offer to remove it)</li>
+	<li>Start NetBeans, add the new 6u10 and remove the (now missing) 6u10b java platforms. Do this from the <strong>Tools &gt; Java Platforms</strong> menu</li>
+	<li>To change the default JDK (which is the one running NetBeans itself)
+<ol>
+	<li>edit <code>/<em>path</em>/<em>to</em>/<em>NetBeans</em>/etc/netbeans.conf</code> (you can do this in NB if you like)</li>
+	<li>change the <strong><code>netbeans_jdkhome</code></strong> property to be the path to your 6u10. On my Windows machine, this is <code>"D:\Java\jdk1.6.0_10"</code>
+</li>
+	<li>Restart NetBeans</li>
+</ol>
+
+</li>
+	<li>(optional) Uninstall your other jdk6 and remove it from NetBeans' list.</li>
+</ol>
+
+More tips for <code>netbeans.conf</code> can be found on the <a title="NetBeans FAQ on netbeans.conf" href="http://wiki.netbeans.org/FaqNetbeansConf">NetBeans Community Wiki</a>.
+
+
+
+My policy is to keep around only the latest stable update of each JDK, so I still have 1.4.2_17 and 1.5.0_15, in addition to (now) 1.6.0_10. Mainly this is because I still use 1.4.2 for work and 1.5.0 for testing. But there's no point in keeping two updates of the same version because their APIs are the same.
+
+
+
+Same goes for the javadoc: it shouldn't have changed between 1.6.0 and 1.6.0_10 so I haven't bothered to check it or to download a newer copy. I also keep (zipped) javadocs for 1.4.2 and 1.5.0.
+            </div>
+        </div>
+        <div class="post">
+            <h1 class="title"><a href="2008/10/21/netbeans-turns-10.html">NetBeans turns 10</a></h1>
+            <div class="meta">
+                <div class="authordate">
+                    <time class="timeago" datetime="2008-10-21T13:25:15+11:00">2008-10-21 13:25</time>
+                </div>
+                <div class="stats">
+                            <div class="g-commentcount" data-href="/blog/2008/10/21/netbeans-turns-10.html"></div>
+<script src="https://apis.google.com/js/plusone.js"></script>
+
+
+                </div>
+                        <div itemprop="keywords" class="tags">
+        <ul>
+        Tags : 
+           <li><a class="tag p-category" href="../categories/ide.html" rel="tag">IDE</a></li>
+           <li><a class="tag p-category" href="../categories/development.html" rel="tag">development</a></li>
+           <li><a class="tag p-category" href="../categories/dvorcode.html" rel="tag">dvorcode</a></li>
+           <li><a class="tag p-category" href="../categories/hacking.html" rel="tag">hacking</a></li>
+           <li><a class="tag p-category" href="../categories/netbeans.html" rel="tag">netbeans</a></li>
+        </ul>
+        </div>
+
+            </div>
+            <div class="body">
+                <p>It's <a title="NetBeans 10th Birthday Celebration" href="http://www.netbeans.org/birthday/">NetBeans' 10th birthday</a> and to celebrate I thought I'd write a quick blog post about how I use the NetBeans IDE to develop <a title="Dvorak decoder program" href="http://sinewalker.wordpress.com/2008/08/15/project-dvorcode/">Dvorcode</a>.
+
+
+<!--more-->If you spend any longer than about 5 minutes at my blog you'll quickly discover than I'm in the emacs camp of the perpetual editor holy wars. So naturally when I started to hack away on Dvorcode, emacs was my first choice. But I quickly "upgraded" to NetBeans because:
+
+</p>
+<ul>
+	<li>I'm time-poor and don't have time to waste setting up my tools    (Emacs and Eclipse are both great general tools, but you have to set them up first, which is tedious on Eclipse, and orders of magnitude worse for Emacs if you want to do more than M-x compile for Java).</li>
+	<li>I wanted a GUI for Dvorcodebut didn't want to wrestle withContainers and bindings. I just wanted to draw my interface in a form editor and be done with it.</li>
+	<li>I wanted a graphical debugger, so that pretty much killed emacs</li>
+	<li>I wanted Project files on SourceForge that other hackers could use fairly quickly, so a custom tool-chain is out of the question anyway</li>
+</ul>
+
+So after I hacked together my Dvorcode class in emacs, I moved to NetBeans to add all the things to make it a working application such as automatic tests, a CLI and a GUI.
+
+
+
+I found that migrating code into NetBeans is very easy, especially as I only had one class anyway. But once I had a skeleton project set up, NetBeans made all the tedious chores bareable and some, like the GUI building, were actually fun! It freed my time up to try some experimental elements such as a text scroller that scrolls up instead of down when you insert text into it.
+
+
+
+Also the built-in SVNsupport made working with my SourceForge repo a snap, and the JUnittests give me heaps of confidence to play around with the code, using NetBeans' Refactor function to change how the classes are divided up knowing that my tests will catch me if I break something along the way.
+
+
+
+I even used NetBeans' "local history" feature to get me out of a bind when I accidentally updated my code from the wrong SVN repo (I use two repo's as I mentioned in a <a title="Cascaded SVN" href="http://sinewalker.wordpress.com/2008/08/21/cascaded-revision-control-strategy/">previous post</a>).
+
+
+
+So, having used NetBeans, Eclipse and Emacs, which is my favourite? I still live in Emacs, and it's the first thing I reach for when I want to hack together a quick class. It's editing features just can't be beaten. But for a project of more than a handful of files, you either need <a title="Collection of Emacs Development Environment Tools" href="http://cedet.sourceforge.net/">CEDET</a> (which I <em>still</em> haven't figured out how to install), or a "normal" IDE like the other two.
+
+
+
+I use Eclipse at work as that is what the team leads seem to choose. It's okay, but as I said, it's a pain to set up. We actually use multiple installs of the IDE on our development workstations, to get around different configurations needed for different projects. That's a terrible kludge, but nobody here has time to figure out how to do it "properly".
+
+
+
+So I guess that NetBeans is my favourite for projects larger than a few files, or to be worked on by more than just myself. And even for my own projects if they warrant a build system like Ant.
+            </div>
+        </div>
+        <div class="post">
+            <h1 class="title"><a href="2008/09/10/generic-types-whats-in-a-name.html">"generic" types: what's in a name?</a></h1>
+            <div class="meta">
+                <div class="authordate">
+                    <time class="timeago" datetime="2008-09-10T14:00:37+10:00">2008-09-10 14:00</time>
+                </div>
+                <div class="stats">
+                            <div class="g-commentcount" data-href="/blog/2008/09/10/generic-types-whats-in-a-name.html"></div>
+<script src="https://apis.google.com/js/plusone.js"></script>
+
+
+                </div>
+                        <div itemprop="keywords" class="tags">
+        <ul>
+        Tags : 
+           <li><a class="tag p-category" href="../categories/oop.html" rel="tag">OOP</a></li>
+           <li><a class="tag p-category" href="../categories/duh.html" rel="tag">duh</a></li>
+           <li><a class="tag p-category" href="../categories/generics.html" rel="tag">generics</a></li>
+           <li><a class="tag p-category" href="../categories/jargon.html" rel="tag">jargon</a></li>
+           <li><a class="tag p-category" href="../categories/java.html" rel="tag">java</a></li>
+           <li><a class="tag p-category" href="../categories/terminology.html" rel="tag">terminology</a></li>
+           <li><a class="tag p-category" href="../categories/thoughts.html" rel="tag">thoughts</a></li>
+        </ul>
+        </div>
+
+            </div>
+            <div class="body">
+                <span>I've been stumbling over Java's generic types for a while now...  I think I finally understand what my problem is:</span>
+<p style="text-align:center;">They should be called <strong>specific </strong>types, or <em><span>parametrised</span></em> <em>collections</em>!</p>
+
+
+
+<!--more-->
+
+
+
+I think the feature is called "Java generics" because when you use a collection, say <code>List&lt;E&gt;</code>, that <code>List</code> contains elements of parameterised type <code>&lt;E&gt;</code>, a "generic type".  But the element type in the plain old-fashioned non-parametrised collection <code>List</code> is also generic!  In fact the non-parametrised <code>List</code> is more <em>generic</em> than the "generic" version (it can contain elements of <em>any</em> sub-class of <code>Object</code>)!  The distinction is that the elements in a <code>List&lt;String&gt;</code> are all of one <strong>specific</strong> type (<code>String</code>), whereas the elements in a <code>List</code> can be of any general type, and can even be of different types in the same <code>List</code> collection (leading to problems that "Java generics" was invented to address).
+
+
+
+<span><code>&lt;sarcasm&gt;</code>Gosh, what an epiphany.<code>&lt;/sarcasm&gt;</code></span>
+
+
+
+<span>If you're a Java guru this is nothing new, of course.  But that took me <strong>ages</strong> to grasp.  I think I wasn't helped by the terminology.  </span>In fact whenever I'm reading Java literature, it helps if I swap "generic" for "specific".  This makes much more sense to me.  Actually I already do word substitutions for much of the Java canon.  For instance:
+
+<ul>
+	<li>"class Foo is instantiated"
+Translation: "a Foo object is created"</li>
+	<li>"invoke method X of class Y"
+Translation: "send message X to a Y object",
+
+or even "send class Y the X message"</li>
+
+</ul>
+
+<span>Probably the Java literature is strictly more "correct" or explicit, but it'd be much more clear and concise if people used the older <span>OOP</span> words for things...</span>
+            </div>
+        </div>
+        <div class="post">
+            <h1 class="title"><a href="2008/08/26/stripping-tags-from-ogg-vorbis-files.html">Stripping tags from ogg Vorbis files</a></h1>
+            <div class="meta">
+                <div class="authordate">
+                    <time class="timeago" datetime="2008-08-26T16:05:34+10:00">2008-08-26 16:05</time>
+                </div>
+                <div class="stats">
+                            <div class="g-commentcount" data-href="/blog/2008/08/26/stripping-tags-from-ogg-vorbis-files.html"></div>
+<script src="https://apis.google.com/js/plusone.js"></script>
+
+
+                </div>
+                        <div itemprop="keywords" class="tags">
+        <ul>
+        Tags : 
+           <li><a class="tag p-category" href="../categories/audio.html" rel="tag">audio</a></li>
+           <li><a class="tag p-category" href="../categories/code.html" rel="tag">code</a></li>
+           <li><a class="tag p-category" href="../categories/cygwin.html" rel="tag">cygwin</a></li>
+           <li><a class="tag p-category" href="../categories/hacking.html" rel="tag">hacking</a></li>
+           <li><a class="tag p-category" href="../categories/tip.html" rel="tag">tip</a></li>
+           <li><a class="tag p-category" href="../categories/vorbis.html" rel="tag">vorbis</a></li>
+        </ul>
+        </div>
+
+            </div>
+            <div class="body">
+                <p>I have a bunch of free <a title="Xiph's meta container format for media" href="http://www.xiph.org/ogg/">Ogg</a> <a title="Patent-free audio codec (MP3 killer)" href="http://www.vorbis.com/">Vorbis</a> audio files that I've downloaded from <a title="Kahvi Collective. Sound has the power to make the world a better place" href="http://kahvi.org/">Kahvi.org</a>. They're great! But recently they've been including cover art within the files, which breaks Windows Media Player (it can't handle the very long tags of binhex-coded JPGs).
+
+
+Since I rather like WMP's integration in windows (keyboard shortcuts), and <a title="Kewl KDE music player (iTunes killer)" href="http://amarok.kde.org/">Amarok</a> <a title="Amarok for win32 is still a work in progress, but it compiles..." href="http://amarok.kde.org/wiki/Development/Win32">isn't quite ready for win32</a>, I thought I'd find a way to strip the troublesome tags from the data files rather than change to another player.
+
+
+
+Here's a quick-and-dirty shell hack to remove the tags from the files and get them playable by daft players such as Windows Media Player
+
+
+
+<!--more-->
+
+</p>
+<pre>#!/bin/bash
+
+###############################################################################
+
+#
+
+#   File:       fixvorbis.sh
+
+#   Language:   Bash shell script
+
+#   Time-stamp: &lt;2008-08-26 15:48:45 tzbblg&gt;
+
+#   Platform:   N/A (requirest ogg Vorbis tools installed)
+
+#   OS:         *nix
+
+#   Authors:    Michael Lockhart [MJL]
+
+#
+
+#   Rights:     Copyright © 2008 Michael James Lockhart, B.App.Comp(HONS)
+
+#
+
+#     This program is free software: you can redistribute it and/or
+
+#     modify it under the terms of th e GNU General Public License as
+
+#     published by the Free Software Foundation, either version 3 of the
+
+#     License, or (at your option) any later version.
+
+#
+
+#     This program is distributed in the hope that it will be useful,
+
+#     but WITHOUT ANY WARRANTY; without even the implied warranty of
+
+#     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+
+#     GNU General Public License for more details.
+
+#
+
+#     You should have received a copy of the GNU General Public License
+
+#     along with this program.  If not, see .
+
+#
+
+#   PURPOSE:
+
+#
+
+#     Script to strip out COVERART tags from ogg vorbis files (these
+
+#     tags break certain players...)
+
+#
+
+#   HISTORY:
+
+#
+
+#   MJL20080826 - Created.
+
+#
+
+
+
+# extract the comments, less the COVERART tags
+
+# (keep the art in separate files)
+
+
+
+for n in *.ogg; do
+    echo "Extracting comments and COVERART from $n"
+    vorbiscomment -l $n | grep COVERART &gt; $n-art.txt
+    vorbiscomment -l $n | grep -v COVERART &gt; $n-comment.txt
+done
+
+
+
+#if there's a comments patch (stored in patch.txt in the current dir)
+
+# then apply the patch to the comments.
+
+if [ -f patch.txt ]; then
+    for n in *-comment.txt; do
+	patch $n patch.txt
+    done
+fi
+
+
+
+# edit the comments with new comment files, minus art, possibly patched.
+
+for n in *.ogg; do
+    echo "Replacing comments in $n"
+    vorbiscomment -c $n-comment.txt -w $n
+done
+
+
+
+#clean up
+
+rm *-comment.txt
+
+
+
+# clean-up of art is manual. There might be different cover-art from
+
+# each file, but if not (diff a*-art.txt b*.txt etc produces no
+
+# output) then just remove all but first and rename it...</pre>
+
+<hr>The smarts are all in the vorbis utilites included as part of Cygwin. Specifically the script uses vorbiscomment<sub>(1)</sub> to extract and apply tags in the Ogg files, and grep and (optionally) patch to manipulate the comments.
+
+
+
+Enjoy!
+
+
+
+P.S. My Wordpress stylesheet is doing weird things with the margins and this is really badly formatted, sorry. You can copy/paste into a text editor just fine though...
+            </div>
+        </div>
+        <div class="post">
+            <h1 class="title"><a href="2008/08/21/cascaded-revision-control-strategy.html">Cascaded revision control strategy</a></h1>
+            <div class="meta">
+                <div class="authordate">
+                    <time class="timeago" datetime="2008-08-21T10:45:24+10:00">2008-08-21 10:45</time>
+                </div>
+                <div class="stats">
+                            <div class="g-commentcount" data-href="/blog/2008/08/21/cascaded-revision-control-strategy.html"></div>
+<script src="https://apis.google.com/js/plusone.js"></script>
+
+
+                </div>
+                        <div itemprop="keywords" class="tags">
+        <ul>
+        Tags : 
+           <li><a class="tag p-category" href="../categories/hacking.html" rel="tag">hacking</a></li>
+           <li><a class="tag p-category" href="../categories/subversion.html" rel="tag">subversion</a></li>
+           <li><a class="tag p-category" href="../categories/svn.html" rel="tag">svn</a></li>
+           <li><a class="tag p-category" href="../categories/tip.html" rel="tag">tip</a></li>
+        </ul>
+        </div>
+
+            </div>
+            <div class="body">
+                <p>Okay, this isn't rocket-science, and in fact it's not even my idea (heard it on the <a title="Free/Libré Open Source Software POD casts" href="http://twit.tv/FLOSS">FLOSS</a> <a title="Git" href="http://twit.tv/floss19">POD about Git</a>). A problem with centralised repository systems such as Subversion (which is used on SourceForge) is that you need network access to do many things, and also to just save your work. You can't do commits to the repo' while on the train, for instance (which is where I do most of my hacking).
+
+
+One option is to switch to a distributed revision system, such as <a title="The Git home page" href="http://git.or.cz/">Git</a> or <a title="The Hg home page" href="http://www.selenic.com/mercurial/wiki/">Mercurial</a>.  I may do that some day, but right now is not a good time for me to be learning a new revision system. Plus to have SourceForge host my project in Hg (for instance) means installing it myself and <a title="How to hose a Hg project on SourceForge" href="http://www.selenic.com/mercurial/wiki/index.cgi/MercurialOnSourceforge">blah-blah-blah</a>. Then there's IDE integration to consider...
+
+
+
+I want to have my cake and eat it too.
+
+
+
+<!--more-->A very simple compromise is just to have a local SVN repo' on my laptop, to which I commit minor/experimental changes, hacking on bug fixes etc. Then periodically upload only the good changes to the main repo' on my home machine, or to a public SF repo, or wherever (depending on the project). You can employ this same strategy in order to use mixed repo's, if Hg or Git (or <a title="Canonical's free projects site (Launchpad)" href="https://launchpad.net/">LaunchPad</a>) float your boat but your project is in SVN...
+
+</p>
+<h3>Basic idea</h3>
+
+The idea is pretty simple. Keep a local SVN repository to which I commit changes. I would have 2 working copies, one form the main/public repo and a 2<sup>nd</sup> from my private repo. Most hacking would take place in the 2<sup>nd</sup> working copy, with planned commits back to the main repo via a copy from my 2<sup>nd</sup> (private) working copy of my private repo to my 1<sup>st</sup> working copy, then update/commit to public repo:
+
+
+
+<a href="http://sinewalker.files.wordpress.com/2008/08/svn-svn1.png"><img class="size-medium wp-image-337" src="http://sinewalker.files.wordpress.com/2008/08/svn-svn1.png?w=300" alt="Cascaded subversion repositories" width="300" height="186"></a>
+
+<h3>What this achieves</h3>
+
+<ul>
+	<li>Local repo to which can commit and revert while offline</li>
+	<li>Do not have to make public commits of experimental changes</li>
+	<li>Do not have to switch to a distributed revision system (which achieves same aims)</li>
+</ul>
+
+<h3>Simple workflow</h3>
+
+<ol>
+	<li>Check out of main/public SVN repo</li>
+	<li>Create a private repo and import code (or check in)</li>
+	<li>Check out of private SVN repo to 2<sup>nd</sup> working copy</li>
+	<li>Make minor/experimental changes in 2<sup>nd</sup> working copy, commit these to private SVN repo</li>
+	<li>Tag good states in private SVN repo (these are public check-in candidates)</li>
+	<li>Copy from private 2<sup>nd</sup> working copy back to 1<sup>st</sup> working copy
+(applies your changes in your 1<sup>st</sup> working copy)</li>
+	<li>Update/check-in to main/public repo per usual</li>
+</ol>
+
+<h3>Compare/contrast branches</h3>
+
+Having a private development stream can also be accomplished by using branches on the public repo. However this does not achieve the aim of being able to commit and revert while offline, or the freedom to experiment without having to publish your false-starts.
+
+<h3>Compare/contrast svnsync</h3>
+
+Briefly looked at this tool, but it's for mirroring repositories only. It's use case is for distributing query load across multiple servers. However all commits to the target (mirror) repo's must be done exclusively by svnsync, so it does not match my use case: I want to be able to commit locally too.
+
+<h3>Tagging "good" commit candidates</h3>
+
+<strong>Step 5</strong> is interesting: you can tag the local repo when your code reaches a state that is suitable to commit to the main repo. Very useful if you want to commit, but still unable because you're offline. Also a good way to filter out "dumb" commits.
+
+
+
+The alternative to tagging good commit candidates would be to roll <em>all</em> the changes together into a single main commit by just checking out of the local SVN back to your 1<sup>st</sup> working copy at the end. But that would lose some change history. By tagging in local, I can do commits to main in a manner that matches the semantics of the change. That is, first I did A (commented A and tagged A). Then I did B, and so on up to C. Then when commiting back to main, don't just commit C: commit A first and then B, so that the change history is not lost on main repo.
+
+<h3>What about updates?</h3>
+
+This idea does have a couple of problems with updates from others:
+
+<ul>
+	<li>merging changes from others to the local repo could be an issue. Conflicts might have to be resolved twice? I haven't thought hard about this one yet.</li>
+	<li>does not solve the "hide in a hole and get behind" problem, possibly exacerbates it</li>
+	<li>could potentially give a false sense of security ("my changes are in the repo, aren't they?"). Potential to forget to commit back to main if always commiting to local...</li>
+</ul>
+
+All of these should be kept in mind, and apply some sense and judgement. The SVN documentation about branches has some good advice. I would add: if you're using a private repo, it might be good to have a public branch to back it as well, so that everyone
+
+knows what's going on, and to assist with the merging, since SVN 1.5 can help if it can see all the changes in seperate branches of one repo, but it can't help when you're trying to merge across two.
+
+
+            </div>
+        </div>
+        <div class="post">
+            <h1 class="title"><a href="2008/08/15/project-dvorcode.html">Project: Dvorcode</a></h1>
+            <div class="meta">
+                <div class="authordate">
+                    <time class="timeago" datetime="2008-08-15T09:50:31+10:00">2008-08-15 09:50</time>
+                </div>
+                <div class="stats">
+                            <div class="g-commentcount" data-href="/blog/2008/08/15/project-dvorcode.html"></div>
+<script src="https://apis.google.com/js/plusone.js"></script>
+
+
+                </div>
+                        <div itemprop="keywords" class="tags">
+        <ul>
+        Tags : 
+           <li><a class="tag p-category" href="../categories/dvorak.html" rel="tag">dvorak</a></li>
+           <li><a class="tag p-category" href="../categories/hacking.html" rel="tag">hacking</a></li>
+           <li><a class="tag p-category" href="../categories/java.html" rel="tag">java</a></li>
+           <li><a class="tag p-category" href="../categories/passwords.html" rel="tag">passwords</a></li>
+           <li><a class="tag p-category" href="../categories/projects.html" rel="tag">projects</a></li>
+        </ul>
+        </div>
+
+            </div>
+            <div class="body">
+                <p>I've just finished hacking together a simple little program to transcode my "dvorcodes" for when entering on a QWERTY keyboard. I've created a new <a title="Dvorcode project summary page on SourceForge" href="http://sourceforge.net/projects/dvorcode/">project on SourceForge</a> and I've uploaded the code and a pair of pre-compiled executable JARs (one for Java 5 and also a re-worked version that's been tested on Java 1.4.2).
+
+
+<!--more-->
+
+</p>
+<h3>What!?</h3>
+
+What are "dvorcodes"? Well, I use a <a title="Yet another Dvorak advocasy site. This one has good links to information and help. See also dvzine.org" href="http://www.theworldofstuff.com/dvorak/">Dvorak Simplified keyboard</a>, which is great except for entering passwords. If you must use one of those systems that locks your account after too many wrong tries, you really have to know 100% where all the keys are! My work-around <a title="One of my notes on Dvorak usage" href="http://sinewalker.wordpress.com/2006/03/27/dvorak-keyboards/">has been</a>: think of a password and then enter that on the QWERTY caps. For instance, typing the keys <em>bluepotato</em> on a Dvorak-mapped QWERTY keyboard comes out as <em>xng.lryayr</em>.
+
+
+
+This is all great, until you have to enter the password on a QWERTY keyboard (say, a friend or co-worker's machine) and all of a sudden you realise: you have to enter the <em>real</em> password!
+
+
+
+<strong>Problem</strong>: you don't remember (or never even knew) what the dvorcode for "bluepotato" is. Also you can't just walk back to your machine, and your friend is not convinced about Dvorak's greatness enough to let you re-map her own keyboard to Dvorak just so you can spend five minutes checking your web mail on her computer. Trust me: deaf ears, plus your password problem adds weight to her argument...
+
+
+
+This utility is a solution. You run it, enter the password you remember on the QWERTY keyboard, and it'll give you the dvorcode. You can then cut/paste or just remember it for a few seconds and type it in by hand. It's a Java app, so it can be kept on a USB memory for just this emergency, and it will run wherever a JRE is installed (if your friend's machine doesn't have a JRE, why are they your friend?).
+
+<h3>Why?</h3>
+
+<ul>
+	<li>I needed a tool to decode "dvorcodes" for exactly the situation above</li>
+	<li>It's an opportunity to learn some Open Source / Agile project management skills with a simple project</li>
+	<li>It might be useful to someone else</li>
+	<li>There are several things in this tool that could be improved</li>
+	<li>It's good Java and NetBeans practice</li>
+	<li>Possibly meet some new hacker friends on-line</li>
+</ul>
+
+<h3>Project details</h3>
+
+<ul>
+	<li>Hosting web site
+<a title="Dvorcode project summary page on SourceForge" href="http://sourceforge.net/projects/dvorcode/">http://sourceforge.net/projects/dvorcode/</a>
+</li>
+	<li>Subversion repository
+<span> <a class="linkifyplus" href="https://dvorcode.svn.sourceforge.net/svnroot/dvorcode">https://dvorcode.svn.sourceforge.net/svnroot/dvorcode</a></span>
+</li>
+	<li>Browse source on-line
+<a title="Browse the source code online" href="http://dvorcode.svn.sourceforge.net/viewvc/dvorcode/">http://dvorcode.svn.sourceforge.net/viewvc/dvorcode/</a>
+</li>
+
+</ul>
+
+<h3>Documentation</h3>
+
+Here's a quick overview. I'll probably put something better up on SourceForge.
+
+
+
+Enter phrases in the top box (where it says "Enter phrase here"). Press the GO button to perform the trans-code operation. The result is displayed in the lower box. As results are added to the lower box, they scroll down so the newest one is always at the top of the list. Use the radio buttons to change trans-code direction.
+
+<h4>Shortcut Keys</h4>
+
+The mouse is supported too, but I prefer these to the mouse:
+
+<table border="1">
+
+<tbody>
+
+<tr>
+
+<th>Key</th>
+
+<th>Function</th>
+
+</tr>
+
+<tr>
+
+<td><strong>Enter</strong></td>
+
+<td>trans-code the phrase
+
+(pushes the GO button for you.)</td>
+
+</tr>
+
+<tr>
+
+<td><strong>Esc</strong></td>
+
+<td>Quit the program</td>
+
+</tr>
+
+</tbody>
+</table>
+
+<a title="IBM Common User Access keys described on Wikipedia" href="http://en.wikipedia.org/wiki/IBM_Common_User_Access">CUA</a> copy/paste and field navigation key (Tab/Shift-Tab), as well as common <a title="Cut, Copy and Paste described on Wikipedia" href="http://en.wikipedia.org/wiki/Cut,_copy,_and_paste">Copy/Paste</a> keys are also supported (courtesy of Swing).
+
+<h4>Steps to decode a "dvorcode"</h4>
+
+The scrolling text pane automatically selects the newest result for you, so the simplest workflow (but not safest, see cautions) is:
+
+<ol>
+	<li>Start dvorcode.jar on your friend's machine</li>
+	<li>Type your password as you remember it, using the normal QWERTY key mapping, press Enter</li>
+	<li>Press Tab to go to result</li>
+	<li>Copy (Ctrl-C or Ctrl-Insert)</li>
+	<li>Alt-Tab (or whatever) to where you must enter the password</li>
+	<li>Paste (However that's done on the host platform)</li>
+</ol>
+
+<h3>Some cautions</h3>
+
+<ul>
+	<li>
+<span style="color:#cc0033;"><strong><span>dvorcodes are not a safe way to come up with "unguessable" passwords</span></strong></span>. It's simple to build a dvorcode dictionary (you could use this tool in fact) so crackers probably already have one</li>
+	<li>This utility is <span style="color:#cc0033;"><strong><span>not safe against shoulder surfing</span></strong></span>. The passwords and dvorcodes are clear on the screen!</li>
+	<li>If you copy/paste the dvorcode, <span style="color:#cc0033;"><strong><span>it'll remain on your friend's clipboard</span></strong></span>. Copy something else there before you step away, or better yet, <span style="color:#cc0033;"><strong><span>never copy/paste passwords</span></strong></span>...</li>
+	<li>Remember to <span style="color:#cc0033;"><strong><span>exit the program once you have your code</span></strong></span>, so that your passwords aren't left lying around on some strange computer. You can do it quickly with the Escape key, that's why I added it</li>
+	<li>It might be wise practice to <span style="color:#ff6633;"><strong>change your password</strong></span> after using it on someone else's computer anyway, just in case...</li>
+</ul>
+
+<hr>
+
+<strong>UPDATE: 2008-08-18T09:32+1000 - Dvorak Simplified promotion</strong>
+
+I used to recommend people go to see <strong>dvzine.org</strong> for a cute magazine that promotes the Dvorak keyboard, and also how to turn it on with most computers (it's pre-installed in most modern/popular systems, even Mac and Windows).
+
+
+
+Unfortunately that domain and website seem to have dissapeared sometime in late 2007 early 2008. Not surprising since it was run by some university students while they were at college.
+
+
+
+However the <a title="The Net Archives" href="http://www.archive.org/index.php">internet archive</a> <a title="Wayback Machine home page" href="http://www.archive.org/web/web.php">wayback machine</a> has saved <a title="web archives for dvzine.org" href="http://web.archive.org/web/*/http://dvzine.org">several copies of dvzine.org</a>, including a fairly good <a title="DVzine.org circa February 2007" href="http://web.archive.org/web/20070208052330/http://dvzine.org/">working copy</a>.
+            </div>
+        </div>
+        <div class="post">
+            <h1 class="title"><a href="2008/06/27/unicode-chars-between-emacsx11-cygwin-and-win32.html">Unicode chars between Emacs/X11 cygwin and Win32</a></h1>
+            <div class="meta">
+                <div class="authordate">
+                    <time class="timeago" datetime="2008-06-27T12:19:20+10:00">2008-06-27 12:19</time>
+                </div>
+                <div class="stats">
+                            <div class="g-commentcount" data-href="/blog/2008/06/27/unicode-chars-between-emacsx11-cygwin-and-win32.html"></div>
+<script src="https://apis.google.com/js/plusone.js"></script>
+
+
+                </div>
+                        <div itemprop="keywords" class="tags">
+        <ul>
+        Tags : 
+           <li><a class="tag p-category" href="../categories/emacs.html" rel="tag">emacs</a></li>
+           <li><a class="tag p-category" href="../categories/fonts.html" rel="tag">fonts</a></li>
+           <li><a class="tag p-category" href="../categories/hacking.html" rel="tag">hacking</a></li>
+           <li><a class="tag p-category" href="../categories/tip.html" rel="tag">tip</a></li>
+        </ul>
+        </div>
+
+            </div>
+            <div class="body">
+                <p>I'm using Emacs/X11 on cygwin as my main editor (when stuck on work's machine) and Emacs 22's Unicode support really rocks.  However, getting it to pass unicode between the kill ring and Windows /X11 clipboard doesn't work out-of-the-box (mainly because Emacs thinks it's on a Unix host).  The fix is easy though:
+
+
+<!--more-->
+
+</p>
+<p style="text-align:center;">Set your MULE selection coding system to use the same unicode coding system that Windows employs
+
+(UTF-16BE I think. Or it could be UTF-16LE, will need more trial and error)
+
+
+
+How?  Use MULE's set-selection-coding-system function (interactively, it's bound to C-x RET x).  You could put this in your .emacs:
+
+</p>
+<p style="text-align:center;"><strong>(set-selection-coding-system utf-16be-dos)</strong></p>
+
+
+
+Once you've done this, then cut/paste of unicode works wonderfully, and you can wax lyrical about your Façade design patterns in your UML editor, or your web browser (like I just did: type C-x 8 , c to get a ç, and then copy/paste from emacs to firefox...)
+            </div>
+        </div>
+        <div class="post">
+            <h1 class="title"><a href="2008/06/26/pretty-printing-xml-with-emacs-nxml-mode.html">Pretty-printing XML with Emacs' NXML-mode</a></h1>
+            <div class="meta">
+                <div class="authordate">
+                    <time class="timeago" datetime="2008-06-26T12:46:03+10:00">2008-06-26 12:46</time>
+                </div>
+                <div class="stats">
+                            <div class="g-commentcount" data-href="/blog/2008/06/26/pretty-printing-xml-with-emacs-nxml-mode.html"></div>
+<script src="https://apis.google.com/js/plusone.js"></script>
+
+
+                </div>
+                        <div itemprop="keywords" class="tags">
+        <ul>
+        Tags : 
+           <li><a class="tag p-category" href="../categories/xhtml.html" rel="tag">XHTML</a></li>
+           <li><a class="tag p-category" href="../categories/code.html" rel="tag">code</a></li>
+           <li><a class="tag p-category" href="../categories/emacs.html" rel="tag">emacs</a></li>
+           <li><a class="tag p-category" href="../categories/geek.html" rel="tag">geek</a></li>
+           <li><a class="tag p-category" href="../categories/hacking.html" rel="tag">hacking</a></li>
+           <li><a class="tag p-category" href="../categories/lisp.html" rel="tag">lisp</a></li>
+           <li><a class="tag p-category" href="../categories/tip.html" rel="tag">tip</a></li>
+        </ul>
+        </div>
+
+            </div>
+            <div class="body">
+                <p>Did you ever get a stream of XML out of a log file, or in a data stream, and it's all mashed together without line-breaks so that it just appears as gobble-de-gook? If there's a data error (not an XML parsing error) then you have to read it so that you can find where the error is, but you don't have XML-spy and NetBeans is overkill or takes forever to fire up...
+
+
+Emacs to the rescue! <a title="Benjamin Ferrari's blog (seems to lack an " href="http://blog.bookworm.at/">Benjamin Ferrari</a> wrote this <em>increadibly useful</em> (and simple) <a title="Benjamin Ferrari's original blog post for below code" href="http://blog.bookworm.at/2007/03/pretty-print-xml-with-emacs.html">elisp function</a> to pretty-print a block of XML code:
+
+</p>
+<pre><!--more-->(defun bf-pretty-print-xml-region (begin end)
+  "Pretty format XML markup in region. You need to have nxml-mode
+<a title="NXML-mode home-page" href="http://www.emacswiki.org/cgi-bin/wiki/NxmlMode">http://www.emacswiki.org/cgi-bin/wiki/NxmlMode</a> installed to do
+
+this.  The function inserts linebreaks to separate tags that have
+
+nothing but whitespace between them.  It then indents the markup
+
+by using nxml's indentation rules."
+  (interactive "r")
+  (save-excursion
+      (nxml-mode)
+      (goto-char begin)
+      (while (search-forward-regexp "\&gt;[ \\t]*\&lt;" nil t)
+        (backward-char) (insert "\n"))
+      (indent-region begin end))
+    (message "Ah, much better!"))</pre>
+Indeed, why isn't this included with NXML-mode?  Ah well, at least my problem's solved for the simple use-case of opening a machine-generated XML file and wanting to visually parse it...
+
+
+
+Benjamin's blog has lots of useful Emacs stuff. <a title="Benjamin's intro essay to his emacs hacks, and why anyone might care" href="http://blog.bookworm.at/2007/03/introduction-to-all-these-emacs.html">Worth a read</a>.
+            </div>
+        </div>
+        <div class="post">
+            <h1 class="title"><a href="2008/06/18/solaris-x11-and-dvorak-simplified-keyboard-layout.html">Solaris X11 and Dvorak simplified keyboard layout</a></h1>
+            <div class="meta">
+                <div class="authordate">
+                    <time class="timeago" datetime="2008-06-18T14:00:46+10:00">2008-06-18 14:00</time>
+                </div>
+                <div class="stats">
+                            <div class="g-commentcount" data-href="/blog/2008/06/18/solaris-x11-and-dvorak-simplified-keyboard-layout.html"></div>
+<script src="https://apis.google.com/js/plusone.js"></script>
+
+
+                </div>
+                        <div itemprop="keywords" class="tags">
+        <ul>
+        Tags : 
+           <li><a class="tag p-category" href="../categories/alternatives.html" rel="tag">alternatives</a></li>
+           <li><a class="tag p-category" href="../categories/dvorak.html" rel="tag">dvorak</a></li>
+           <li><a class="tag p-category" href="../categories/hacking.html" rel="tag">hacking</a></li>
+           <li><a class="tag p-category" href="../categories/keyboards.html" rel="tag">keyboards</a></li>
+           <li><a class="tag p-category" href="../categories/solaris.html" rel="tag">solaris</a></li>
+           <li><a class="tag p-category" href="../categories/tip.html" rel="tag">tip</a></li>
+           <li><a class="tag p-category" href="../categories/useability.html" rel="tag">useability</a></li>
+        </ul>
+        </div>
+
+            </div>
+            <div class="body">
+                <p>I've recently been playing with <a title="OpenSolaris web site" href="http://opensolaris.org">OpenSolaris</a> and <a title="SDN Solaris Express DE Community web site" href="http://developers.sun.com/sxde/community.jsp">Solaris Express DE</a> running in <a title="Sun's xVM VirtualBox web site" href="http://virtualbox.org">VirtualBox</a>. They're fine so far (except audio isn't working) but I stumbled on a usability issue that was nearly a show-stopper: dratted QWERTY layouts! The GNOME GUI for switching to Dvorak doesn't work, and <code>setxkbmap</code><sub>(1)</sub> can't find the rules file for dvorak either (they don't seem to be installed where the man page indicates)...
+
+
+<!--more-->Well, after some searching around I discovered that for Solaris X11, need to use <strong><code>xmodmap</code><sub>(1)</sub></strong>. The xmodmap key maps for Solaris are located in <strong><code>/usr/share/xmodmap</code></strong> so you can switch between Dvorak and QWERTY thus:
+
+</p>
+<ul>
+	<li><code>xmodmap /usr/share/xmodmap/xmodmap.dvorak</code></li>
+	<li><code>xmodmap /usr/share/xmodmap/xmodmap.us</code></li>
+</ul>
+
+Making a pair of shell aliases for these verbose commands would be handy too:
+
+<pre>alias asdf "xmodmap /usr/share/xmodmap/xmodmap.dvorak"
+
+alias aoeu "xmodmap /usr/share/xmodmap/xmodmap.us"</pre>
+
+with these, just type the first four keys of the home row and press enter to flip to the other layout. Xmodmap only affects X11 (global for all running and new X clients).
+            </div>
+        </div>
+            <nav class="postindexpager">
+        <ul class="pager">
+            <li class="previous">
+                <a href="index-7.html" rel="prev">Newer posts</a>
+            </li>
+            <li class="next">
+                <a href="index-5.html" rel="next">Older posts</a>
+            </li>
+        </ul>
+        </nav>
+
+            
+
+                    <footer id="footer" role="contentinfo">
+            <p>Contents <a href="http://creativecommons.org/licenses/by-sa/4.0/">copyright</a> © 2005 — 2015         <a href="mailto:sinewalker@gmail.com">Mike Lockhart</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         , hosted at <a href="https://pages.github.com/sinewalker">GitHub Pages</a></p>
+            
+        </footer>
+
+        </div>
+    </section>
+    
+    
+                <script src="../assets/js/all-nocdn.js" type="text/javascript"></script>
+    
+<!-- Social buttons -->
+<div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+<a class="addthis_button_more">Share</a>
+<ul>
+<li>
+<a class="addthis_button_facebook"></a>
+</li>
+<li>
+<a class="addthis_button_google_plusone_share"></a>
+</li>
+<li>
+<a class="addthis_button_linkedin"></a>
+</li>
+<li>
+<a class="addthis_button_twitter"></a>
+</li>
+</ul>
+</div>
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script>
+<!-- End of social buttons -->
+
+
+        <script type="text/javascript">
+            $(function(){
+                $('.timeago').timeago();
+            });
+        </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<html><body><p>Older X.org and XFree86 used to have this neat feature where pressing Ctrl+&lt;numpad +&gt; and Ctrl+&lt;numpad -&gt; would cycle through the screen modes defined in your config file in the "Screen" section, effectively switching screen modes on the fly and letting you pan around the full virtual screen size with the mouse.
+
+
+This was a really useful feature for zooming in on small details, or to blow up videos without incurring high CPU overhead.
+
+
+
+But since about X.org 1.7 this feature seems to be missing.  I've been researching and discovered why it's missing, and what to do about it.
+
+<!--more-->
+
+</p><h2>So why is it missing?</h2>
+
+It's part of an architecture change in X.org and Linux, to support screen-mode switching for suspend/resume on laptop computers and a few other stability problems and useability things. Also it has something to do with the "kvm" module in the Linux kernel I <em>think</em>.  (KVM doesn't work with my Radeon driver, at least not the version included in openSUSE 11.2, yet openSUSE has it enabled by default in 11.2, but that's another story).
+
+<h2>What can I do about it?</h2>
+
+You can look into screen magnifying software to make parts of the screen larger. Ew! (The whole point of switching screen mode is that the monitor does the magnification in hardware, rather than using the CPU or the GPU, so I can watch YouTube full-screen without the CPU having to multiply the pixels)
+
+
+
+Alternatively this functionality is replaced by the new <a title="(Wikipedia)" href="http://en.wikipedia.org/wiki/XRandR">XRandR</a> extension to X11. You can list the modes defined for your system, as well as the status of all your screens connected to your card with the command-line tool <code><strong>xrandr</strong></code>:
+
+<pre><code>
+
+[~]archimedes$ <strong>xrandr</strong>
+
+Screen 0: minimum 320 x 200, current 1280 x 1024, maximum 3840 x 1200
+
+VGA-0 disconnected (normal left inverted right x axis y axis)
+
+<em>DVI-0</em> connected 1280x1024+0+0 (normal left inverted right x axis y axis) 338mm x 270mm panning 1280x1024+0+0
+   <em>1280x1024</em>      60.0*+   75.0     60.0*
+   <em>1152x864</em>       75.0
+   <em>1024x768</em>       75.0     70.1     60.0
+   <em>832x624</em>        74.6
+   <em>800x600</em>        72.2     75.0     60.3     56.2
+   <em>640x480</em>        75.0     72.8     66.7     59.9
+   <em>720x400</em>        70.1
+S-video disconnected (normal left inverted right x axis y axis)
+
+
+
+</code></pre>
+
+So from above info I can see:
+
+<ul>
+	<li>My LCDs native resolution is 1280x1024</li>
+	<li>This screen is identified as "DVI-0" to xrandr</li>
+	<li>The 1280x1024 mode is set as the Preferred mode (marked with a +) which makes sense because it matches the LCD</li>
+	<li>That mode is set as the Current mode (marked with a *)</li>
+	<li>I have a list of the other modes available, as well as supported refresh rates</li>
+</ul>
+
+Now I can change screen mode like this:
+
+<p style="text-align:center;"><strong><code>xrandr --output DVI-0 --mode 800x600 --panning 1280x1024</code></strong></p>
+
+That keeps the virtual screen at the same size but the actual display mode is 800x600 (without the --panning switch, the virtual screen size changes to match the mode, which isn't fun really).  I can switch back with:
+
+<p style="text-align:center;"><strong><code>xrandr --output DVI-0 --mode 1280x1024 --panning 1280x1024</code></strong></p>
+
+Now all that remains is to bind these commands to keyboard shortcuts. The way to do that depends on the desktop environment you use. I'm still looking into how to do it for KDE and / or Awesome.
+
+
+
+Oh, and if I ever plug my screen in via the VGA port, I'd need to change the "DVI-0" to "VGA-0" on my machine.</body></html>

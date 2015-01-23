@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Blogging with Emacs Org Mode | Milosophical Me</title>
+
+                <link href="../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+
+                <link rel="alternate" type="application/rss+xml" title="RSS" href="../../../../rss.xml">
+
+      <link rel="canonical" href="http://milosophical.me/blog/2011/12/15/blogging-with-emacs-org-mode.html">
+
+
+
+    
+        <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]-->
+
+    
+
+    
+    <meta name="author" content="Mike Lockhart">
+        <meta name="og:title" content="Blogging with Emacs Org Mode">
+    <meta name="og:url" content="http://milosophical.me/blog/2011/12/15/blogging-with-emacs-org-mode.html">
+    <meta name="og:description" content="My blog is really in need of some love. One of the reasons I'm not posting very frequently (apart from just not having much to say or making time to say it) is that it is such a pain to write posts in">
+    <meta name="og:site_name" content="Milosophical Me">
+    <meta name="og:type" content="article">
+
+    
+    
+
+</head>
+<body>
+    <section class="social">
+        <ul>
+                    <li><a href="../../../../index.html" title="Home"><i class="icon-home"></i></a></li>
+            <li><a href="../../../../archive.html" title="Archives"><i class="icon-folder-open-alt"></i></a></li>
+            <li><a href="../../../../categories/index.html" title="Tags"><i class="icon-tags"></i></a></li>
+            <li><a href="../../../../rss.xml" title="RSS"><i class="icon-rss"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/mikelockhart" title="My LinkedIn profile"><i class="icon-linkedin"></i></a></li>
+            <li><a href="https://bitbucket.com/sinewalker" title="My Bitbucket"><i class="icon-bitbucket"></i></a></li>
+            <li><a href="https://github.com/sinewalker" title="My Github"><i class="icon-github"></i></a></li>
+            <li><a href="https://plus.google.com/+MichaelLockhart" title="Michael+"><i class="icon-google-plus"></i></a></li>
+            <li><a href="http://stackoverflow.com/users/776953/mike" title="Stack Overflow"><i class="icon-stackexchange"></i></a></li>
+
+        </ul>
+    </section>
+    <section class="page-content">
+        <div class="content" rel="main">
+    <div class="post">
+        <h1 class="p-name entry-title" itemprop="headline name">Blogging with Emacs Org Mode</h1>
+
+        <div class="meta">
+            <div class="authordate">
+                <time class="timeago" datetime="2011-12-15T21:53:00+11:00">2011-12-15 21:53</time>
+            
+                      |  
+        <a href="blogging-with-emacs-org-mode.wp" id="sourcelink">Source</a>
+
+            </div>
+                    <div itemprop="keywords" class="tags">
+        <ul>
+        Tags : 
+           <li><a class="tag p-category" href="../../../../categories/emacs-org-mode-blogging-code.html" rel="tag">emacs org-mode blogging code</a></li>
+           <li><a class="tag p-category" href="../../../../categories/hacking.html" rel="tag">hacking</a></li>
+        </ul>
+        </div>
+
+        </div>
+        <div class="body">
+            <p>My blog is really in need of some love. One of the reasons I'm not posting very frequently (apart from just not having much to say or making time to say it) is that it is such a pain to write posts in WordPress' built in editor.  I briefly considered editing in a text editor and then cut/pasting, but usually there's a mess to clean up anyway, so it's not much fun either. </p> 
+
+
+<!--more-->
+
+<p> I recently started looking for ways to blog offline in emacs and then publish posts up to WordPress. I won't say I was surprised to find more than one solution, but it was pleasant nonetheless… :) </p> <p> The one I'm using to write this post with is a package called <a href="https://github.com/punchagan/org2blog">org2blog</a>. It supports WordPress posts via it's XML RPC interface and can publish to as many different WordPress blogs as you like.  This suits me because I also have an internal work blog at HP (they use WordPress MU, so it'll be interesting to find out how/if that works). </p> <p> You can configure it fairly easily with some elisp. Here's mine: </p>    
+
+
+
+[sourcecode language="text" light="true" highlight="12"]
+
+;; Note - I installed org2blog with ELPA from Marmalade, so this
+
+;; `require' declaration is probably just documentation
+
+
+
+(require 'org2blog-autoloads)
+
+
+
+(setq org2blog/wp-blog-alist
+       '(("sinewalker"
+          :url "http://sinewalker.wordpress.com/xmlrpc.php"
+          :username "sinewalker"
+          :default-categories ("hacking")
+          :tags-as-categories nil
+          :wp-code t)
+         ("hp-hacks"
+          :url "http://blogs.hp.com/hphacks/xmlrpc.php"
+          :username "michael.lockhart@hp.com"
+          :track-posts "~/Documents/blogs/hp-hacks/posts.log")))
+~~~~~~~~~~~~
+
+
+     <p> Note that the directive on line 12 is what causes the code above to be encased in Wordpress' <a href="http://en.support.wordpress.com/code/posting-source-code/">sourcecode shortcut</a>.  In my org version of this post, the code is surrounded by "#+BEGIN_SRC emacs-lisp" and "#+END_SRC", which allows me to edit in emacs using emacs-lisp-mode, right inline of the rest of this post. Unfortunately the sourcecode shortcut in Wordpress doesn't understand emacs lisp, so there's no syntax highlighting. </p> <p> There are still some things for me to figure out (such as how to mark code within the text of a paragraph, as above), but already this is looking a lot better. </p> 
+        </div>
+                <ul class="pager">
+            <li class="previous">
+                <a href="../../11/30/curious-cursor-complication-with-emacs-and-windows-magnifier.html" rel="prev" title="Curious cursor complication with Emacs and Windows Magnifier">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../../../2012/01/11/implementing-a-caching-only-dns-on-debian.html" rel="next" title="Implementing a caching-only DNS on Debian">Next post</a>
+            </li>
+        </ul>
+
+                    <script src="https://apis.google.com/js/plusone.js"></script>
+<div class="g-comments" data-href="http://milosophical.me/blog/2011/12/15/blogging-with-emacs-org-mode.html" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">
+</div>
+
+
+    </div>
+                    <footer id="footer" role="contentinfo">
+            <p>Contents <a href="http://creativecommons.org/licenses/by-sa/4.0/">copyright</a> © 2005 — 2015         <a href="mailto:sinewalker@gmail.com">Mike Lockhart</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         , hosted at <a href="https://pages.github.com/sinewalker">GitHub Pages</a></p>
+            
+        </footer>
+
+        </div>
+    </section>
+    
+    
+                <script src="../../../../assets/js/all-nocdn.js" type="text/javascript"></script>
+    
+<!-- Social buttons -->
+<div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+<a class="addthis_button_more">Share</a>
+<ul>
+<li>
+<a class="addthis_button_facebook"></a>
+</li>
+<li>
+<a class="addthis_button_google_plusone_share"></a>
+</li>
+<li>
+<a class="addthis_button_linkedin"></a>
+</li>
+<li>
+<a class="addthis_button_twitter"></a>
+</li>
+</ul>
+</div>
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script>
+<!-- End of social buttons -->
+
+
+        <script type="text/javascript">
+            $(function(){
+                $('.timeago').timeago();
+            });
+        </script>
+</body>
+</html>

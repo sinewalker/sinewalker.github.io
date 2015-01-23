@@ -1,0 +1,43 @@
+   #+BEGIN_COMMENT 
+   .. title: an org post
+   .. slug: org-post
+   .. date: 2014-10-29T21:55+1100
+   .. tags: one, two, draft
+   .. link: 
+   .. description: second post, made with emacs org-mode
+   .. type: text 
+   #+END_COMMENT
+
+** Header 2
+
+Here's a post I made using Emacs' Org-mode (I have installed org
+version 8.2 using ELPA).
+
+Let's see if it compiles.
+
+*** some in-line code:
+
+#+BEGIN_SRC python
+def mypython_func():
+    '''
+     here's some python code
+    '''
+     print('hello')
+
+
+if __name__ = '__main__':
+    mypython_func
+
+#+END_SRC
+
+I wonder how that appears?  I guess I'll find out.
+
+I don't like those red boxes around the quotes...
+
+#+BEGIN_SRC emacs-lisp
+(let* ((htmlize-dir "~/.emacs.d/elpa/htmlize-20130207.1202"))
+  (when (file-directory-p htmlize-dir)
+    (add-to-list 'load-path htmlize-dir)
+    (require 'htmlize)))
+#+END_SRC
+

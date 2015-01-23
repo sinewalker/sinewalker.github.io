@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (dvorak)</title><link>http://milosophical.me/</link><description></description><language>en</language><lastBuildDate>Fri, 23 Jan 2015 22:36:08 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Project: Dvorcode</title><link>http://milosophical.me/blog/2008/08/15/project-dvorcode.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;I've just finished hacking together a simple little program to transcode my "dvorcodes" for when entering on a QWERTY keyboard. I've created a new &lt;a title="Dvorcode project summary page on SourceForge" href="http://sourceforge.net/projects/dvorcode/"&gt;project on SourceForge&lt;/a&gt; and I've uploaded the code and a pair of pre-compiled executable JARs (one for Java 5 and also a re-worked version that's been tested on Java 1.4.2).
+
+
+&lt;!--more--&gt;
+
+&lt;/p&gt;&lt;h3&gt;What!?&lt;/h3&gt;
+
+What are "dvorcodes"? Well, I use a &lt;a title="Yet another Dvorak advocasy site. This one has good links to information and help. See also dvzine.org" href="http://www.theworldofstuff.com/dvorak/"&gt;Dvorak Simplified keyboard&lt;/a&gt;, which is great except for entering passwords. If you must use one of those systems that locks your account after too many wrong tries, you really have to know 100% where all the keys are! My work-around &lt;a title="One of my notes on Dvorak usage" href="http://sinewalker.wordpress.com/2006/03/27/dvorak-keyboards/"&gt;has been&lt;/a&gt;: think of a password and then enter that on the QWERTY caps. For instance, typing the keys &lt;em&gt;bluepotato&lt;/em&gt; on a Dvorak-mapped QWERTY keyboard comes out as &lt;em&gt;xng.lryayr&lt;/em&gt;.
+
+
+
+This is all great, until you have to enter the password on a QWERTY keyboard (say, a friend or co-worker's machine) and all of a sudden you realise: you have to enter the &lt;em&gt;real&lt;/em&gt; password!
+
+
+
+&lt;strong&gt;Problem&lt;/strong&gt;: you don't remember (or never even knew) what the dvorcode for "bluepotato" is. Also you can't just walk back to your machine, and your friend is not convinced about Dvorak's greatness enough to let you re-map her own keyboard to Dvorak just so you can spend five minutes checking your web mail on her computer. Trust me: deaf ears, plus your password problem adds weight to her argument...
+
+
+
+This utility is a solution. You run it, enter the password you remember on the QWERTY keyboard, and it'll give you the dvorcode. You can then cut/paste or just remember it for a few seconds and type it in by hand. It's a Java app, so it can be kept on a USB memory for just this emergency, and it will run wherever a JRE is installed (if your friend's machine doesn't have a JRE, why are they your friend?).
+
+&lt;h3&gt;Why?&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;I needed a tool to decode "dvorcodes" for exactly the situation above&lt;/li&gt;
+	&lt;li&gt;It's an opportunity to learn some Open Source / Agile project management skills with a simple project&lt;/li&gt;
+	&lt;li&gt;It might be useful to someone else&lt;/li&gt;
+	&lt;li&gt;There are several things in this tool that could be improved&lt;/li&gt;
+	&lt;li&gt;It's good Java and NetBeans practice&lt;/li&gt;
+	&lt;li&gt;Possibly meet some new hacker friends on-line&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Project details&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Hosting web site
+&lt;a title="Dvorcode project summary page on SourceForge" href="http://sourceforge.net/projects/dvorcode/"&gt;http://sourceforge.net/projects/dvorcode/&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;Subversion repository
+&lt;span&gt; &lt;a class="linkifyplus" href="https://dvorcode.svn.sourceforge.net/svnroot/dvorcode"&gt;https://dvorcode.svn.sourceforge.net/svnroot/dvorcode&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li&gt;Browse source on-line
+&lt;a title="Browse the source code online" href="http://dvorcode.svn.sourceforge.net/viewvc/dvorcode/"&gt;http://dvorcode.svn.sourceforge.net/viewvc/dvorcode/&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;h3&gt;Documentation&lt;/h3&gt;
+
+Here's a quick overview. I'll probably put something better up on SourceForge.
+
+
+
+Enter phrases in the top box (where it says "Enter phrase here"). Press the GO button to perform the trans-code operation. The result is displayed in the lower box. As results are added to the lower box, they scroll down so the newest one is always at the top of the list. Use the radio buttons to change trans-code direction.
+
+&lt;h4&gt;Shortcut Keys&lt;/h4&gt;
+
+The mouse is supported too, but I prefer these to the mouse:
+
+&lt;table border="1"&gt;
+
+&lt;tbody&gt;
+
+&lt;tr&gt;
+
+&lt;th&gt;Key&lt;/th&gt;
+
+&lt;th&gt;Function&lt;/th&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;&lt;strong&gt;Enter&lt;/strong&gt;&lt;/td&gt;
+
+&lt;td&gt;trans-code the phrase
+
+(pushes the GO button for you.)&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;&lt;strong&gt;Esc&lt;/strong&gt;&lt;/td&gt;
+
+&lt;td&gt;Quit the program&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;a title="IBM Common User Access keys described on Wikipedia" href="http://en.wikipedia.org/wiki/IBM_Common_User_Access"&gt;CUA&lt;/a&gt; copy/paste and field navigation key (Tab/Shift-Tab), as well as common &lt;a title="Cut, Copy and Paste described on Wikipedia" href="http://en.wikipedia.org/wiki/Cut,_copy,_and_paste"&gt;Copy/Paste&lt;/a&gt; keys are also supported (courtesy of Swing).
+
+&lt;h4&gt;Steps to decode a "dvorcode"&lt;/h4&gt;
+
+The scrolling text pane automatically selects the newest result for you, so the simplest workflow (but not safest, see cautions) is:
+
+&lt;ol&gt;
+	&lt;li&gt;Start dvorcode.jar on your friend's machine&lt;/li&gt;
+	&lt;li&gt;Type your password as you remember it, using the normal QWERTY key mapping, press Enter&lt;/li&gt;
+	&lt;li&gt;Press Tab to go to result&lt;/li&gt;
+	&lt;li&gt;Copy (Ctrl-C or Ctrl-Insert)&lt;/li&gt;
+	&lt;li&gt;Alt-Tab (or whatever) to where you must enter the password&lt;/li&gt;
+	&lt;li&gt;Paste (However that's done on the host platform)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3&gt;Some cautions&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;&lt;span style="color:#cc0033;"&gt;&lt;strong&gt;&lt;span&gt;dvorcodes are not a safe way to come up with "unguessable" passwords&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;. It's simple to build a dvorcode dictionary (you could use this tool in fact) so crackers probably already have one&lt;/li&gt;
+	&lt;li&gt;This utility is &lt;span style="color:#cc0033;"&gt;&lt;strong&gt;&lt;span&gt;not safe against shoulder surfing&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;. The passwords and dvorcodes are clear on the screen!&lt;/li&gt;
+	&lt;li&gt;If you copy/paste the dvorcode, &lt;span style="color:#cc0033;"&gt;&lt;strong&gt;&lt;span&gt;it'll remain on your friend's clipboard&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;. Copy something else there before you step away, or better yet, &lt;span style="color:#cc0033;"&gt;&lt;strong&gt;&lt;span&gt;never copy/paste passwords&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;...&lt;/li&gt;
+	&lt;li&gt;Remember to &lt;span style="color:#cc0033;"&gt;&lt;strong&gt;&lt;span&gt;exit the program once you have your code&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;, so that your passwords aren't left lying around on some strange computer. You can do it quickly with the Escape key, that's why I added it&lt;/li&gt;
+	&lt;li&gt;It might be wise practice to &lt;span style="color:#ff6633;"&gt;&lt;strong&gt;change your password&lt;/strong&gt;&lt;/span&gt; after using it on someone else's computer anyway, just in case...&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;strong&gt;UPDATE: 2008-08-18T09:32+1000 - Dvorak Simplified promotion&lt;/strong&gt;
+
+I used to recommend people go to see &lt;strong&gt;dvzine.org&lt;/strong&gt; for a cute magazine that promotes the Dvorak keyboard, and also how to turn it on with most computers (it's pre-installed in most modern/popular systems, even Mac and Windows).
+
+
+
+Unfortunately that domain and website seem to have dissapeared sometime in late 2007 early 2008. Not surprising since it was run by some university students while they were at college.
+
+
+
+However the &lt;a title="The Net Archives" href="http://www.archive.org/index.php"&gt;internet archive&lt;/a&gt; &lt;a title="Wayback Machine home page" href="http://www.archive.org/web/web.php"&gt;wayback machine&lt;/a&gt; has saved &lt;a title="web archives for dvzine.org" href="http://web.archive.org/web/*/http://dvzine.org"&gt;several copies of dvzine.org&lt;/a&gt;, including a fairly good &lt;a title="DVzine.org circa February 2007" href="http://web.archive.org/web/20070208052330/http://dvzine.org/"&gt;working copy&lt;/a&gt;.</description><category>dvorak</category><category>hacking</category><category>java</category><category>passwords</category><category>projects</category><guid>http://milosophical.me/blog/2008/08/15/project-dvorcode.html</guid><pubDate>Thu, 14 Aug 2008 23:50:31 GMT</pubDate></item><item><title>Solaris X11 and Dvorak simplified keyboard layout</title><link>http://milosophical.me/blog/2008/06/18/solaris-x11-and-dvorak-simplified-keyboard-layout.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;I've recently been playing with &lt;a title="OpenSolaris web site" href="http://opensolaris.org"&gt;OpenSolaris&lt;/a&gt; and &lt;a title="SDN Solaris Express DE Community web site" href="http://developers.sun.com/sxde/community.jsp"&gt;Solaris Express DE&lt;/a&gt; running in &lt;a title="Sun's xVM VirtualBox web site" href="http://virtualbox.org"&gt;VirtualBox&lt;/a&gt;. They're fine so far (except audio isn't working) but I stumbled on a usability issue that was nearly a show-stopper: dratted QWERTY layouts! The GNOME GUI for switching to Dvorak doesn't work, and &lt;code&gt;setxkbmap&lt;/code&gt;&lt;sub&gt;(1)&lt;/sub&gt; can't find the rules file for dvorak either (they don't seem to be installed where the man page indicates)...
+
+
+&lt;!--more--&gt;Well, after some searching around I discovered that for Solaris X11, need to use &lt;strong&gt;&lt;code&gt;xmodmap&lt;/code&gt;&lt;sub&gt;(1)&lt;/sub&gt;&lt;/strong&gt;. The xmodmap key maps for Solaris are located in &lt;strong&gt;&lt;code&gt;/usr/share/xmodmap&lt;/code&gt;&lt;/strong&gt; so you can switch between Dvorak and QWERTY thus:
+
+&lt;/p&gt;&lt;ul&gt;
+	&lt;li&gt;&lt;code&gt;xmodmap /usr/share/xmodmap/xmodmap.dvorak&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;xmodmap /usr/share/xmodmap/xmodmap.us&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+Making a pair of shell aliases for these verbose commands would be handy too:
+
+&lt;pre&gt;alias asdf "xmodmap /usr/share/xmodmap/xmodmap.dvorak"
+
+alias aoeu "xmodmap /usr/share/xmodmap/xmodmap.us"&lt;/pre&gt;
+
+with these, just type the first four keys of the home row and press enter to flip to the other layout. Xmodmap only affects X11 (global for all running and new X clients).</description><category>alternatives</category><category>dvorak</category><category>hacking</category><category>keyboards</category><category>solaris</category><category>tip</category><category>useability</category><guid>http://milosophical.me/blog/2008/06/18/solaris-x11-and-dvorak-simplified-keyboard-layout.html</guid><pubDate>Wed, 18 Jun 2008 04:00:46 GMT</pubDate></item><item><title>Essentials to make Windows almost bareable</title><link>http://milosophical.me/blog/2007/06/07/essential-tools-to-make-windows-almost-bareable.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;Okay, so I hate working in Windows, but on my employer's equipment at least, I must live with it. After having had this machine replaced twice (faulty Dell hardware) and rebuilt more times than I can remember (Windows BSODs), for a total of at least 3 system migrations this past year, I thought I'd better keep a list of what free software to install on top of Windows, and what adjustments to make, so that at least I don't feel like I'm wearing a straight jacket.  Here goes:
+
+
+&lt;!--more--&gt;
+
+&lt;/p&gt;&lt;h3&gt;Useability&lt;/h3&gt;
+
+Fix the keyboard to &lt;a href="http://sinewalker.wordpress.com/2006/03/27/dvorak-keyboards/"&gt;Dvorak&lt;/a&gt; (following is for Windows XP -- this will likely change for Vista... it shouldn't be this complicated!)
+
+&lt;blockquote&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;Open Control Panel:  &lt;strong&gt;START &amp;gt; Control Panel&lt;/strong&gt;&lt;/li&gt;
+	&lt;li&gt;Choose "&lt;strong&gt;Regional and Language Options&lt;/strong&gt;" (why not Keyboard???)&lt;/li&gt;
+	&lt;li&gt;Select "&lt;strong&gt;Languages&lt;/strong&gt;" tab, press Details... button (sigh)&lt;/li&gt;
+	&lt;li&gt;In the "&lt;strong&gt;Installed services&lt;/strong&gt;" section, select "&lt;strong&gt;Keyboard&lt;/strong&gt;", then press "&lt;strong&gt;Add...&lt;/strong&gt;" to add a new keyboard layout&lt;/li&gt;
+	&lt;li&gt;Find &lt;strong&gt;US-Dvorak&lt;/strong&gt; in the list&lt;/li&gt;
+	&lt;li&gt;In the "&lt;strong&gt;Default input language&lt;/strong&gt;" section, set the default language to English (Australia) - United States-Dvorak&lt;/li&gt;
+	&lt;li&gt;In the "&lt;strong&gt;Preferences&lt;/strong&gt;" section, press "&lt;strong&gt;Language Bar...&lt;/strong&gt;" button&lt;/li&gt;
+	&lt;li&gt;Make sure that "&lt;strong&gt;Show the language bar on the desktop&lt;/strong&gt;" is turned &lt;em&gt;&lt;strong&gt;on&lt;/strong&gt;&lt;/em&gt;, to make it easier to switch to QWERTY if needed&lt;/li&gt;
+	&lt;li&gt;Back in "&lt;strong&gt;Preferences&lt;/strong&gt;", press the "&lt;strong&gt;Key Settings...&lt;/strong&gt;" button&lt;/li&gt;
+	&lt;li&gt;Turn &lt;strong&gt;&lt;em&gt;off &lt;/em&gt;&lt;/strong&gt;all the language &lt;strong&gt;Hot keys&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;/blockquote&gt;
+
+To get rid of that &lt;a href="http://www.winsupersite.com/images/showcase/xp_n_05.jpg"&gt;horrible&lt;/a&gt;, &lt;a href="http://www.winsupersite.com/images/showcase/xp_n_03.jpg"&gt;garish &lt;/a&gt;blue/green stock XP theme, I use the &lt;a title="Zune -- it's still Microsoft, but it looks less garish" href="http://stevenharman.net/blog/archive/2006/12/09/WinXP__Zune_Theme.aspx"&gt;Zune theme&lt;/a&gt; from Microsoft. It sucks less (the theme, that is, not the MP3 player, that sucks &lt;em&gt;more &lt;/em&gt;than iPod).
+
+
+
+Make Explorer a bit useable.  Actually Explorer is total crap, and I'm still searching for a replacement. I like &lt;a href="http://en.wikipedia.org/wiki/Midnight_Commander"&gt;MidnightCommander&lt;/a&gt; in Cygwin (&lt;code&gt;mc&lt;/code&gt;), and &lt;a href="http://konqueror.kde.org/"&gt;Konqueror&lt;/a&gt; in KDE.  But for Windows, there aren't a lot of &lt;em&gt;free &lt;/em&gt;Explorer replacements, except maybe Windows File Explorer.  Anyway, follow these steps to have Explorer at least be not so stupid:
+
+&lt;blockquote&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;Open an Explorer window (anywhere)&lt;/li&gt;
+	&lt;li&gt;Select "&lt;strong&gt;Tools &amp;gt; Folder Options...&lt;/strong&gt;", "&lt;strong&gt;General&lt;/strong&gt;" tab&lt;/li&gt;
+	&lt;li&gt;Make sure that under "&lt;strong&gt;Browse folders&lt;/strong&gt;", the option is to "&lt;strong&gt;Open each folder in the same window&lt;/strong&gt;" (Explorer doesn't do multi-windows like Macintosh Finder: it screws them up)&lt;/li&gt;
+	&lt;li&gt;In "&lt;strong&gt;Click items as follows&lt;/strong&gt;", turn on "&lt;strong&gt;Single-click to open&lt;/strong&gt;", and "&lt;strong&gt;Underline icons only when I point at them&lt;/strong&gt;"&lt;/li&gt;
+	&lt;li&gt;Select the "&lt;strong&gt;View&lt;/strong&gt;" tab&lt;/li&gt;
+	&lt;li&gt;Turn &lt;em&gt;&lt;strong&gt;on &lt;/strong&gt;&lt;/em&gt;the following:
+&lt;ol&gt;
+	&lt;li&gt;"Display the full path in the address bar"&lt;/li&gt;
+	&lt;li&gt;"Display the full path in the title bar"&lt;/li&gt;
+	&lt;li&gt;"Do not cache thumbnails"&lt;/li&gt;
+	&lt;li&gt;"Show hidden files and folders"&lt;/li&gt;
+	&lt;li&gt;"Show both parts and manage them individually" (for web pages and folders)&lt;/li&gt;
+	&lt;li&gt;"Show encrypted or compressed NTFS files in color"&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;/li&gt;
+	&lt;li&gt;Turn &lt;em&gt;&lt;strong&gt;off &lt;/strong&gt;&lt;/em&gt;the following:
+&lt;ol&gt;
+	&lt;li&gt;"Hide extensions for known file types"&lt;/li&gt;
+	&lt;li&gt;"Launch folder windows in a separate process"&lt;/li&gt;
+	&lt;li&gt;"Remember each folder'sview settings"&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;/li&gt;
+	&lt;li&gt;Press the "&lt;strong&gt;Apply&lt;/strong&gt;", then "&lt;strong&gt;Apply to All Folders&lt;/strong&gt;" buttons&lt;/li&gt;
+	&lt;li&gt;Press "&lt;strong&gt;OK&lt;/strong&gt;"&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Programs&lt;/h3&gt;
+
+Install these programs at a minimum:
+
+&lt;blockquote&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;&lt;a title="Rediscover the Web" href="http://en.www.mozilla.com/en/firefox/"&gt;Firefox &lt;/a&gt;(essential add-ons:  &lt;a title="social web bookmarks" href="http://del.icio.us/help/firefox/extension"&gt;del.icio.us&lt;/a&gt;, &lt;a title="Download Accellerator (and a better manager)" href="http://www.downthemall.net/"&gt;DownThemAll&lt;/a&gt;, &lt;a title="Spell-check input boxes, in en_au language" href="http://www.justlocal.com.au/clients/oooau/"&gt;English (AU) Dictionary&lt;/a&gt;, &lt;a title="Block's Flash adds" href="https://addons.mozilla.org/en-US/firefox/addon/433"&gt;Flashblock&lt;/a&gt;, &lt;a title="Make inline images larger" href="http://imagezoom.yellowgorilla.net/"&gt;ImageZoom&lt;/a&gt;, &lt;a title="Turn on/off proxy settings with one click" href="https://addons.mozilla.org/en-US/firefox/addon/1557"&gt;QuickProxy&lt;/a&gt;, &lt;a title="Synchronise your local bookmarks between Firefox installations" href="http://www.foxmarks.com"&gt;Foxmarks&lt;/a&gt;, &lt;a title="Turn your google mail account into free online storage" href="http://www.getgspace.com/"&gt;GSpace&lt;/a&gt;)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Open Source keystroke starter for Windows" href="http://www.launchy.net"&gt;Launchy&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a title="WFE description page" href="http://www.freesoftlabs.com/fileexpl.asp"&gt;Windows File Explorer&lt;/a&gt; (a free, sort-of &lt;a href="http://en.wikipedia.org/wiki/Orthodox_file_manager"&gt;orthodox&lt;/a&gt; file manager for Windows)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Brings Windows desktop up to status of 1990 Unix" href="http://virt-dimension.sourceforge.net"&gt;Virtual Dimension&lt;/a&gt; (Virtual desktop support for Windows)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="No Machine's Product listing page" href="http://www.nomachine.com/products.php"&gt;No Machine&lt;/a&gt;'s &lt;a title="NX Client - Windows - Download" href="http://www.nomachine.com/download-client-windows.php"&gt;NX Client for Windows&lt;/a&gt; (so I can connect a &lt;a title="NX Technology overview" href="http://www.nomachine.com/documentation/intr-technology.php"&gt;high speed X&lt;/a&gt; session to my home machine)&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://www.openoffice.org"&gt;OpenOffice.org&lt;/a&gt; (also use &lt;a href="http://www.justlocal.com.au/clients/oooau/"&gt;JustLocal&lt;/a&gt;'s dictionary / thesaurus files to get spell check working)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Unix compatibility layer for Windows" href="http://www.cygwin.com/"&gt;Cygwin &lt;/a&gt;(include the X11 modules, Emacs [make sure to select ver 22], pdksh, subversion, python, clisp, fortune, mc, ssh, units, etc....)&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://java.sun.com/javase/downloads/index.jsp"&gt;Java SE DevKit&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Latest Windows Subversion binaries" href="http://subversion.tigris.org/servlets/ProjectDocumentList?folderID=91"&gt;Subversion for Windows&lt;/a&gt; (version control)&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://www.netbeans.org/"&gt;NetBeans&lt;/a&gt; (6.0 or greater has everything I need)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Audio editor and MP3/OGG converter" href="http://audacity.sourceforge.net/download/windows"&gt;Audacity&lt;/a&gt; audio editor and encoder&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Network streaming Video" href="http://www.videolan.org/vlc/download-windows.html"&gt;VideoLAN Client&lt;/a&gt; movie player&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://www.illiminable.com/ogg/"&gt;Illiminable DirectShow filters&lt;/a&gt; for &lt;a href="http://www.vorbis.com/setup_windows/"&gt;OGG Vorbis&lt;/a&gt; (to play .OGG files in Windows Media Player)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Amiga MOD player" href="http://www.modplug.com/"&gt;MODPlug&lt;/a&gt; (because sometimes a good &lt;a href="http://del.icio.us/sinewalker/modules"&gt;MOD&lt;/a&gt; fits my mood)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="GNU Image Manipulation Program" href="http://gimp-win.sourceforge.net/"&gt;GIMP&lt;/a&gt; image editor&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Image viewer" href="http://www.irfanview.com/"&gt;IrfanView&lt;/a&gt; image viewer&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Emacs&lt;/h3&gt;
+
+Once Cygwin and Emacs are installed, I need to add my dotfiles (from backup), and also install these emacs add-ons:   &lt;a title="Superior Lisp Interaction Mode for Emacs" href="http://common-lisp.net/project/slime/"&gt;&lt;/a&gt;
+
+&lt;blockquote&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;&lt;a title="Superior Lisp Interaction Mode for Emacs" href="http://common-lisp.net/project/slime/"&gt;SLIME&lt;/a&gt; &lt;a href="http://sourceforge.net/projects/psgml"&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://sourceforge.net/projects/psgml"&gt;PSGML&lt;/a&gt; &lt;a title="Subversion support for Emacs (pre-22)" href="http://www.xsteve.at/prg/emacs/psvn.el"&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Subversion support for Emacs (pre-22)" href="http://www.xsteve.at/prg/emacs/psvn.el"&gt;PSVN&lt;/a&gt; (not strictly needed, since emacs22 adds SVN support in VC mode)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Collection of Emacs Development Environment Tools" href="http://cedet.sourceforge.net/"&gt;CEDET&lt;/a&gt; (this is not trivial to install, I&lt;em&gt; still &lt;/em&gt;haven't figured it out)&lt;a title="Collection of Emacs Development Environment Tools" href="http://cedet.sourceforge.net/"&gt; &lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Java Development Environment for Emacs" href="http://jdee.sunsite.dk/"&gt;JDEE&lt;/a&gt; (requires some or all of CEDET)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="This is neat!" href="http://www.eaflux.com/cygwin/cyg-emacsclient/"&gt;cyg-emacsclient&lt;/a&gt; (wrapper to add Emacs to your SendTo folder, and have it actually work)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/blockquote&gt;
+
+CEDET and JDEE might be more trouble than they're worth, especially since I'm installing NetBeans anyway. They seem cool (especially the enhanced speedbar), but they're not exactly plug-and-play. Jury's still out.</description><category>Delicious</category><category>Microsoft</category><category>cygwin</category><category>dvorak</category><category>emacs</category><category>hacking</category><category>how-to</category><category>jEdit</category><category>java</category><category>lisp</category><category>media</category><category>shell</category><guid>http://milosophical.me/blog/2007/06/07/essential-tools-to-make-windows-almost-bareable.html</guid><pubDate>Wed, 06 Jun 2007 23:16:44 GMT</pubDate></item><item><title>Dvorak keyboards</title><link>http://milosophical.me/blog/2006/03/27/dvorak-keyboards.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;
+&lt;em&gt;This post was originally published
+  at &lt;a href="http://sinewalker.blogspot.com.au/2006_03_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
+  on 27 March 2006.&lt;/em&gt;
+&lt;/p&gt;
+&lt;hr&gt;
+
+&lt;p&gt;I prefer &lt;a title="how keyboards should work" href="http://www.mwbrooks.com/dvorak/"&gt;Dvorak keyboards&lt;/a&gt;
+  to &lt;a href="http://en.wikipedia.org/wiki/QWERTY"&gt;QWERTY&lt;/a&gt;, which confounds
+  my work colleagues no end :-)&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+I've been typing on Dvorak for about 3 years now [&lt;em&gt;ed: That is, since
+2003&lt;/em&gt;]. The main reason I use the Dvorak keyboard layout is because, after
+15 years of six-finger typing on QWERTY, I decided to learn to touch-type, and
+Dvorak is very easy to learn (I learnt it in 2 weeks, back to my old typing
+speed after a month).&lt;/p&gt;
+
+&lt;br&gt;
+
+
+
+&lt;!--more--&gt;
+&lt;p&gt;
+I don't believe Dvorak makes me a faster typist inherently (though I am faster now that I can touch-type), but it's &lt;em&gt;much&lt;/em&gt; more comfortable and the shooting pains in my arms have gone.&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+&lt;img src="http://photos1.blogger.com/blogger/179/613/400/2350-1B.0.jpg" border="2" alt="My home keyboard is an A4 KBS23 wireless, very similar to this" align="left"&gt;At home, I use a slightly older model of the &lt;a href="http://www.A4Tech.com"&gt;A4&lt;/a&gt; &lt;a href="http://www.a4tech.com/en/product2.asp?CID=2&amp;amp;SCID=14&amp;amp;MNO=KB%28S%29-2350ZRP"&gt;KB(S)-2350ZRP&lt;/a&gt; (pictured). I chose this keyboard over more &lt;a title="A4 2580RP — keypad at left makes mouse closer" href="http://www.a4tech.com/en/product2.asp?CID=2&amp;amp;SCID=14&amp;amp;MNO=KB%28S%29-2580RP"&gt;radical&lt;/a&gt; &lt;a title="This is just so kewl, like something from seaQuest DSV" href="http://www.teleprint.com/"&gt;designs&lt;/a&gt; that &lt;a title="I nearly bought one of these — may yet when I no longer need to share…" href="http://www.logitech.com/index.cfm/products/details/US/EN,CRID=2295,contentid=6012,detail=1"&gt;I like&lt;/a&gt;, because the A4 2350 is not too different from a standard typewriter layout — so it plays nice with other people in the family.  The A-shaped keys help a lot with my lower-arm pains too, but not so much as the Dvorak layout, since most of the time I'm typing at work on a standard &lt;a href="http://www.dell.com"&gt;Dell &lt;/a&gt;&lt;a title="This keyboard is the same model as the one I use at work.  Ick" href="http://static.flickr.com/65/170195416_e3cba9cda7_o.png"&gt;SK-8125&lt;/a&gt;.&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+Making up strong passwords with this keyboard layout is much easier now.  Think
+of a fairly good password (fee1bo7ch, for instance) and then type it on Dvorak
+as-if you were typing on QWERTY (becomes u..1br7jd).&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+I'm thinking about teaching my left hand
+to &lt;a href="http://www.mwbrooks.com/dvorak/onehand.html"&gt;type one-handed&lt;/a&gt;
+dvorak too, to improve my mousing experience.&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;h4&gt;Issues I've encountered with Dvorak&lt;/h4&gt;
+
+&lt;p&gt;
+There are some minor annoyances when you switch away from QWERTY.  Anybody in a minority group (such as left-handed people) will identify with some of these.  None of these issues have been serious enough to cause me to switch back to QWERTY though, as the benefits I've gained (typing speed, no more pain) far outweigh any of them, even all considered together.
+
+&lt;/p&gt;&lt;ul&gt;
+	&lt;li&gt;Typing on someone else's QWERTY keyboard becomes very uncomfortable. I frequently shudder at the thought of having to touch someone's keyboard now (not because of hygiene, but it's the same feeling). I can still do it, and since I never learnt to type properly on QWERTY anyway, it's no trouble to look at the keyboard.  Years of familiarity with this layout means I don't need much reminding, so it's not like I have to hunt for keys, more like a mental changing of gears and putting up with awkward key combinations (like, for instance A-W-K-W-A-R-D)&lt;/li&gt;
+	&lt;li&gt;In the same vein, letting someone else use your keyboard can be fun!  Most operating systems allow an easy/quick way to switch layouts.  Windows sort-of does, but it only applies to the current window, not the whole system (what a stupid design!), so you need to remember that gotcha.  I sometimes use this as an opportunity to advocate Dvorak, but usually this is interpreted as “just Mike evangelising again…” ;-)&lt;/li&gt;
+	&lt;li&gt;Some programs and games make use of the QWERTY layout in selecting keyboard short-cuts.  For example, vi uses the H J K and L keys for cursor movement, since this arrangement is sensible in QWERTY.  On Dvorak, it's useless as those keys are located at the J C V and P positions.  But then again, &lt;a title="EMACS rules, vi drools" href="http://c2.com/cgi/wiki?ViSucks"&gt;vi sucks&lt;/a&gt; anyway, so it's not a problem.  Winamp uses Z X C V and B for pause, playback and track selection functions, but it can be re-programmed, at least for the global shortcuts.  Some games suffer, so you need to switch back to QWERTY for them&lt;/li&gt;
+	&lt;li&gt;Passwords can be tricky.  On systems that lock your account after too many bad tries, you have to be very confident that you know where the keys are!  An alternative is to use my password trick above, and always look at the keys when entering passwords.  This is accurate, but if you need to put in your password on a QWERTY keyboard, you have to know the real password, and not the easier QWERTY–Dvorak mapping you have memorised.&lt;/li&gt;&lt;/ul&gt;</description><category>dvorak</category><category>geek</category><category>keyboards</category><category>thoughts</category><category>tip</category><guid>http://milosophical.me/blog/2006/03/27/dvorak-keyboards.html</guid><pubDate>Mon, 27 Mar 2006 00:07:00 GMT</pubDate></item></channel></rss>

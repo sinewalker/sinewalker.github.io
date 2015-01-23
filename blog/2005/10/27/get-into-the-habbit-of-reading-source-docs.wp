@@ -1,0 +1,60 @@
+<html><body>
+      <p><em>This post was originally published
+    at <a href="http://sinewalker.blogspot.com.au/2005_10_01_archive.html">sinewalker.blogspot.com.au</a>
+          on 27 October 2005</em></p>
+
+      <hr/>
+      
+
+<blockquote><em> The great thing about Linux is that all the definitive
+documentation (including the source code) comes with the OS. </em></blockquote>
+<p>
+(<a href="http://books.slashdot.org/comments.pl?sid=166454&threshold=-1&commentsort=0&mode=thread&cid=13883477">Slashdot quote</a>)
+</p>
+<br/>
+<p>
+You know, I'm finding that for a lot of the “beginner” linux distro's, this is
+not true.  Yes, the source is <em>available</em> but it doesn't <em>come with
+the OS</em>.</p>
+
+<br/>
+
+<p>
+Granted, not everyone wants to fill their harddrives with source tarballs or
+SRPMs on the off chance they might want to read them, but only a few distro's I
+know come with source, and those are not necessarily for noob's. the main
+example that comes to mind is Gentoo (since it's a “ports”-like
+distribution). This is not to wax lyrical on the benefits of Gentoo for
+learning Linux (Gentoo has many weaknesses in that regard too, among its
+inappropriateness as a general OS for noob's), just that it's the only one I've
+found where the source <em>comes with the OS</em>.
+</p>
+
+<br/>
+
+<p>
+Other distro's with source “available” are Debian and Fedora (on extra CDs you
+have to download, and Fedora locks the source into SRPMs which is another
+learning hurdle to leap over, especially bad if all you want to do is read the
+source comments, or documentation not included in the binary RPM). It makes me
+feel like a 2nd-class citizen, that the source is somehow “open” but you have
+to know the secret handshake to get at it.
+</p>
+
+<br/>
+
+<p>
+All of this, just to say: while reading source docs is a laudable habbit and I
+share your wish to encourage it, I can also see how it is difficult for most
+Linux noob's to form this habbit so long as the source doesn't actually come
+with the OS, which for a great many distro's it does not. The extra steps to
+download (and in many cases extract from SRPMs) the source are probably enough
+of a deterrent to forming this habit.
+</p>
+
+<br/>
+
+<p>
+unfortunately, hacker habbits require hacker motivation :-(
+</p>
+</body></html>

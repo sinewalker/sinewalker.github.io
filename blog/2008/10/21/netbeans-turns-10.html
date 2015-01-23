@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>NetBeans turns 10 | Milosophical Me</title>
+
+                <link href="../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+
+                <link rel="alternate" type="application/rss+xml" title="RSS" href="../../../../rss.xml">
+
+      <link rel="canonical" href="http://milosophical.me/blog/2008/10/21/netbeans-turns-10.html">
+
+
+
+    
+        <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]-->
+
+    
+
+    
+    <meta name="author" content="Mike Lockhart">
+        <meta name="og:title" content="NetBeans turns 10">
+    <meta name="og:url" content="http://milosophical.me/blog/2008/10/21/netbeans-turns-10.html">
+    <meta name="og:description" content="It's NetBeans' 10th birthday and to celebrate I thought I'd write a quick blog post about how I use the NetBeans IDE to develop Dvorcode.
+
+
+If you spend any longer than about 5 minutes at my blog you'">
+    <meta name="og:site_name" content="Milosophical Me">
+    <meta name="og:type" content="article">
+
+    
+    
+
+</head>
+<body>
+    <section class="social">
+        <ul>
+                    <li><a href="../../../../index.html" title="Home"><i class="icon-home"></i></a></li>
+            <li><a href="../../../../archive.html" title="Archives"><i class="icon-folder-open-alt"></i></a></li>
+            <li><a href="../../../../categories/index.html" title="Tags"><i class="icon-tags"></i></a></li>
+            <li><a href="../../../../rss.xml" title="RSS"><i class="icon-rss"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/mikelockhart" title="My LinkedIn profile"><i class="icon-linkedin"></i></a></li>
+            <li><a href="https://bitbucket.com/sinewalker" title="My Bitbucket"><i class="icon-bitbucket"></i></a></li>
+            <li><a href="https://github.com/sinewalker" title="My Github"><i class="icon-github"></i></a></li>
+            <li><a href="https://plus.google.com/+MichaelLockhart" title="Michael+"><i class="icon-google-plus"></i></a></li>
+            <li><a href="http://stackoverflow.com/users/776953/mike" title="Stack Overflow"><i class="icon-stackexchange"></i></a></li>
+
+        </ul>
+    </section>
+    <section class="page-content">
+        <div class="content" rel="main">
+    <div class="post">
+        <h1 class="p-name entry-title" itemprop="headline name">NetBeans turns 10</h1>
+
+        <div class="meta">
+            <div class="authordate">
+                <time class="timeago" datetime="2008-10-21T13:25:15+11:00">2008-10-21 13:25</time>
+            
+                      |  
+        <a href="netbeans-turns-10.wp" id="sourcelink">Source</a>
+
+            </div>
+                    <div itemprop="keywords" class="tags">
+        <ul>
+        Tags : 
+           <li><a class="tag p-category" href="../../../../categories/ide.html" rel="tag">IDE</a></li>
+           <li><a class="tag p-category" href="../../../../categories/development.html" rel="tag">development</a></li>
+           <li><a class="tag p-category" href="../../../../categories/dvorcode.html" rel="tag">dvorcode</a></li>
+           <li><a class="tag p-category" href="../../../../categories/hacking.html" rel="tag">hacking</a></li>
+           <li><a class="tag p-category" href="../../../../categories/netbeans.html" rel="tag">netbeans</a></li>
+        </ul>
+        </div>
+
+        </div>
+        <div class="body">
+            <p>It's <a title="NetBeans 10th Birthday Celebration" href="http://www.netbeans.org/birthday/">NetBeans' 10th birthday</a> and to celebrate I thought I'd write a quick blog post about how I use the NetBeans IDE to develop <a title="Dvorak decoder program" href="http://sinewalker.wordpress.com/2008/08/15/project-dvorcode/">Dvorcode</a>.
+
+
+<!--more-->If you spend any longer than about 5 minutes at my blog you'll quickly discover than I'm in the emacs camp of the perpetual editor holy wars. So naturally when I started to hack away on Dvorcode, emacs was my first choice. But I quickly "upgraded" to NetBeans because:
+
+</p>
+<ul>
+	<li>I'm time-poor and don't have time to waste setting up my tools    (Emacs and Eclipse are both great general tools, but you have to set them up first, which is tedious on Eclipse, and orders of magnitude worse for Emacs if you want to do more than M-x compile for Java).</li>
+	<li>I wanted a GUI for Dvorcodebut didn't want to wrestle withContainers and bindings. I just wanted to draw my interface in a form editor and be done with it.</li>
+	<li>I wanted a graphical debugger, so that pretty much killed emacs</li>
+	<li>I wanted Project files on SourceForge that other hackers could use fairly quickly, so a custom tool-chain is out of the question anyway</li>
+</ul>
+
+So after I hacked together my Dvorcode class in emacs, I moved to NetBeans to add all the things to make it a working application such as automatic tests, a CLI and a GUI.
+
+
+
+I found that migrating code into NetBeans is very easy, especially as I only had one class anyway. But once I had a skeleton project set up, NetBeans made all the tedious chores bareable and some, like the GUI building, were actually fun! It freed my time up to try some experimental elements such as a text scroller that scrolls up instead of down when you insert text into it.
+
+
+
+Also the built-in SVNsupport made working with my SourceForge repo a snap, and the JUnittests give me heaps of confidence to play around with the code, using NetBeans' Refactor function to change how the classes are divided up knowing that my tests will catch me if I break something along the way.
+
+
+
+I even used NetBeans' "local history" feature to get me out of a bind when I accidentally updated my code from the wrong SVN repo (I use two repo's as I mentioned in a <a title="Cascaded SVN" href="http://sinewalker.wordpress.com/2008/08/21/cascaded-revision-control-strategy/">previous post</a>).
+
+
+
+So, having used NetBeans, Eclipse and Emacs, which is my favourite? I still live in Emacs, and it's the first thing I reach for when I want to hack together a quick class. It's editing features just can't be beaten. But for a project of more than a handful of files, you either need <a title="Collection of Emacs Development Environment Tools" href="http://cedet.sourceforge.net/">CEDET</a> (which I <em>still</em> haven't figured out how to install), or a "normal" IDE like the other two.
+
+
+
+I use Eclipse at work as that is what the team leads seem to choose. It's okay, but as I said, it's a pain to set up. We actually use multiple installs of the IDE on our development workstations, to get around different configurations needed for different projects. That's a terrible kludge, but nobody here has time to figure out how to do it "properly".
+
+
+
+So I guess that NetBeans is my favourite for projects larger than a few files, or to be worked on by more than just myself. And even for my own projects if they warrant a build system like Ant.
+        </div>
+                <ul class="pager">
+            <li class="previous">
+                <a href="../../09/10/generic-types-whats-in-a-name.html" rel="prev" title="" generic types: what in a name>Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../30/switching-to-java-jdk-6u10.html" rel="next" title="Switching to Java JDK 6u10">Next post</a>
+            </li>
+        </ul>
+
+                    <script src="https://apis.google.com/js/plusone.js"></script>
+<div class="g-comments" data-href="http://milosophical.me/blog/2008/10/21/netbeans-turns-10.html" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">
+</div>
+
+
+    </div>
+                    <footer id="footer" role="contentinfo">
+            <p>Contents <a href="http://creativecommons.org/licenses/by-sa/4.0/">copyright</a> © 2005 — 2015         <a href="mailto:sinewalker@gmail.com">Mike Lockhart</a> - Powered by         <a href="http://getnikola.com" rel="nofollow">Nikola</a>         , hosted at <a href="https://pages.github.com/sinewalker">GitHub Pages</a></p>
+            
+        </footer>
+
+        </div>
+    </section>
+    
+    
+                <script src="../../../../assets/js/all-nocdn.js" type="text/javascript"></script>
+    
+<!-- Social buttons -->
+<div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+<a class="addthis_button_more">Share</a>
+<ul>
+<li>
+<a class="addthis_button_facebook"></a>
+</li>
+<li>
+<a class="addthis_button_google_plusone_share"></a>
+</li>
+<li>
+<a class="addthis_button_linkedin"></a>
+</li>
+<li>
+<a class="addthis_button_twitter"></a>
+</li>
+</ul>
+</div>
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script>
+<!-- End of social buttons -->
+
+
+        <script type="text/javascript">
+            $(function(){
+                $('.timeago').timeago();
+            });
+        </script>
+</body>
+</html>

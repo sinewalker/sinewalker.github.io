@@ -1,0 +1,31 @@
+<html><body><p>This is common knowledge, yet strangely every time I rebuild my work PC (which is too often! Gah!) I try and Google the location of Registry keys and folders and always, always get a bum-steer. So here, have another (bum-steer?) version of this hack on the Net.
+
+
+<!--more-->
+
+</p><ul>
+	<li>Registry key to hack: <strong>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\ CurrentVersion\Authentication\LogonUI\ Background</strong>
+(you can stick this in a .reg file and Import from regedit.exe):</li>
+
+</ul>
+
+<p style="padding-left:60px;"><code>[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\LogonUI\Background]
+
+"OEMBackground"=dword:00000001</code></p>
+
+
+
+<ul>
+	<li>Directory to place your background image:</li>
+</ul>
+
+<p style="padding-left:60px;"><code><strong>C:\Windows\System32\oobe\info\backgrounds</strong></code></p>
+
+<p style="padding-left:60px;">Call the image "<strong>backgroundDefault.jpg</strong>"</p>
+
+
+
+<ul>
+	<li>The image must be JPEG format, and total size &lt; 256KiB</li>
+	<li>You can test straight away with Ctl+Alt+Del -- no need to reboot or logoff.</li>
+</ul></body></html>

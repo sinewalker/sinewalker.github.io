@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (freenx)</title><link>http://milosophical.me/</link><description></description><language>en</language><lastBuildDate>Fri, 23 Jan 2015 22:36:08 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Remote desktop access on SuSE: Cygwin, X, XDMCP and SSH?  Nope.  FreeNX!</title><link>http://milosophical.me/blog/2007/03/22/remote-desktop-acces-suse-cygwin-x-and-xdmcp.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;strong&gt;MJL20080827 -- Update&lt;/strong&gt;:  I Just realised that this is one of my top-visited pages and it's a totally disorganised and incongruent pile of... What's worse is, I've never updated it since the promised update back in March 2007!
+
+
+Let me clear things up (and save you wading through the whole article): If you want remote access to your openSUSE desktop from a networked thin client, then forget about X11, XDMCP, VNC or tunneling X through SSH. Use the &lt;a title="Nomachine's intro to NX" href="http://nomachine.com/documentation/html/intr-technology.html"&gt;NX&lt;/a&gt; protocol. You'll need to do the following:
+
+&lt;ol&gt;
+	&lt;li&gt;Install &lt;a title="FreeNX -- an opensource implementation of an NX protocol server" href="http://freenx.berlios.de/"&gt;FreeNX&lt;/a&gt; on your openSUSE host. Some (slightly outdated, but usable) instructions are in Chapter 9 of the &lt;a title="openSUSE 10.2 Reference manual (PDF)" href="http://www.novell.com/documentation/opensuse102/pdfdoc/opensuse102_reference/opensuse102_reference.pdf" target="_blank"&gt;openSUSE 10.2 Reference manual&lt;/a&gt;. If you're using openSUSE 11.0 or newer, &lt;a title="FreeNX" href="http://software.opensuse.org/search?baseproject=openSUSE%3A11.0&amp;amp;p=1&amp;amp;q=FreeNX"&gt;get the latest FreeNX package&lt;/a&gt; from the &lt;a title="All about openSUSE Build Service" href="http://build.opensuse.org/"&gt;openSUSE Build Service&lt;/a&gt; (there are &lt;a title="openSUSE one-click install standard" href="http://en.opensuse.org/Standards/One_Click_Install"&gt;one-click install&lt;/a&gt; buttons)&lt;/li&gt;
+	&lt;li&gt;Install an NX client on your remote terminal(s). &lt;a title="Nomachine home page" href="http://www.nomachine.com/"&gt;Nomachine&lt;/a&gt; has &lt;a title="Nomachine's downloads page" href="http://www.nomachine.com/download.php"&gt;free NX clients&lt;/a&gt; for Linux, Mac, Windows and Solaris (even some experimental ones for PlayStation 2 and Zaurus!). If your remote terminal is running openSUSE, you could alternatively &lt;a title="Free NX client from OBS" href="http://software.opensuse.org/search?baseproject=openSUSE%3A11.0&amp;amp;p=1&amp;amp;q=freenx-client"&gt;get an open-source NX client&lt;/a&gt; from the build service (or ask yourself: I'm running X locally, so why don't I just use good ole SSH and X11?)&lt;/li&gt;
+	&lt;li&gt;Configure your NX client to connect to the openSUSE host, then log in and enjoy!&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;strong&gt;The upshot: &lt;/strong&gt;I've done this with a FreeNX server and Nomachine's NX client for Windows XP, and it all "just works", except maybe for some font issues with older X clients like emacs (install extra font packages from nomachine to fix that), and some transparency effect issues I noticed in kwin4, probably to do with X11 extensions missing in the NX client. Not a big deal.
+
+
+
+Read the rest of this article for the boring background and laughable false-starts in my quest for remote desktops in X... &amp;lt;blush/&amp;gt;
+
+
+
+&lt;!--more--&gt;
+
+
+
+...
+
+
+
+What I would &lt;em&gt;really &lt;/em&gt;love to be able to do is get a graphical log-in screen to my openSUSE box, and have the &lt;a title="KDE Screenshots (Google)" href="http://images.google.com.au/images?q=kde%20screenshot&amp;amp;ie=UTF-8&amp;amp;oe=UTF-8&amp;amp;aq=t&amp;amp;rls=org.mozilla:en-US:official&amp;amp;client=firefox-a&amp;amp;um=1&amp;amp;sa=N&amp;amp;tab=wi"&gt;KDE &lt;/a&gt;environment displayed onto a single window within the WinXP desktop on the notebook (sort of like Windows' Remote Desktop feature &lt;code&gt;mstsc.exe&lt;/code&gt;, or the original &lt;a title="X Terminal (Wikipedia)" href="http://en.wikipedia.org/wiki/X_terminal"&gt;X Terminals&lt;/a&gt; we used when I was a student at &lt;a title="School of Computing, University of Tasmania" href="http://www.comp.utas.edu.au"&gt;UTas&lt;/a&gt; back in the nineties).  This way I'd have my full KDE desktop &lt;em&gt;and &lt;/em&gt;it'd be really comfy to use.  So what do I need to do?
+
+
+
+Okay, I've finally had enough time at home  to play with connecting to my &lt;a title="openSUSE home" href="http://en.opensuse.org/Welcome_to_openSUSE.org"&gt;openSUSE&lt;/a&gt; box from my work's laptop (WinXP) over my wireless LAN.  It's all groovy:  I can use &lt;a title="PuTTY home" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/"&gt;PuTTY&lt;/a&gt;, or &lt;a title="Cygwin download mirrors" href="http://cygwin.com/mirrors.html"&gt;Cygwin&lt;/a&gt;'s &lt;code&gt;ssh&lt;/code&gt; command (&lt;code&gt;ssh -Y&lt;/code&gt; to enable X11 tunnelling) to log in, list files, run programs (even X clients, so long as I've started Cygwin's X server first) and it's all secured by an &lt;a title="OpenSSH home" href="http://www.openssh.org/"&gt;SSH&lt;/a&gt; tunnel through the air between my study and my back deck (favorite place to work :-) ).  Note that using &lt;a title="Wireless standard 802.11b (Wikipedia)" href="http://en.wikipedia.org/wiki/802.11#802.11g"&gt;802.11g&lt;/a&gt; is probably a little slow for running intensely graphical X clients like photo viewers or &lt;a title="Xaos fractal zoomer home" href="http://wmi.math.u-szeged.hu/xaos/doku.php"&gt;&lt;code&gt;xaos&lt;/code&gt;&lt;/a&gt; ( :-) ), even with a strong signal, but it's good for running an IDE or &lt;a title="Konquerer (Wikipedia)" href="http://en.wikipedia.org/wiki/Konquerer"&gt;Konquerer&lt;/a&gt;.  And if you add the &lt;code&gt;-C &lt;/code&gt;(Compress) switch to &lt;code&gt;ssh&lt;/code&gt;, it speeds up the intense app's nicely!
+
+
+
+Well, obviously I'll need to start X on the WinXP box, without &lt;code&gt;-multiwindow&lt;/code&gt;, and to &lt;code&gt;-query&lt;/code&gt; for an &lt;a title="X Display Manager Control Protocol (Wikipedia)" href="http://en.wikipedia.org/wiki/Xdmcp"&gt;XDMCP&lt;/a&gt; server on the openSUSE box.  This should work, since I use a graphical login on openSUSE, which means an XDMCP server is already running (KDM).  So I' tried that, and it doesn't work. Why?
+
+
+
+It turns out that nearly every Linux distro' has configured their X display managers (kdm, xdm or gdm) to &lt;em&gt;disable &lt;/em&gt;XDMCP access from external servers and instead only allows connections from &lt;code&gt;localhost&lt;/code&gt; (i.e. from the Linux machine itself).
+
+
+
+Why have they done that?  Because XDMCP is insecure:  it transmits passwords in clear.  Also, you cannot secure XDMCP with SSH, as XDMCP uses UDP as well as TCP protocols :-( .  So it's insecure and it cannot be fixed, therefore distribution providers (wisely) disable it.  If I want to have a remote &lt;em&gt;desktop&lt;/em&gt; as opposed to just seeing individual &lt;em&gt;windows&lt;/em&gt; in my Windows desktop (which is cool, but not what I want), then I'll need to either not use SSH and be insecure, or use something else like &lt;a title="Tight VNC -- free VNC server/client" href="http://www.tightvnc.com/"&gt;VNC&lt;/a&gt;.
+
+
+
+I'm going to opt for the (insecure) option of not using SSH for X desktop access, and stick to traditional XDMCP sessions.  My reasons for this are:
+
+&lt;ul&gt;
+	&lt;li&gt;I want it to be &lt;em&gt;simple&lt;/em&gt;, and with as little overhead as possible (using VNC involves mucking about with session IDs, or &lt;a href="http://www.linux-mag.com/id/1311?r=s"&gt;running an extra X server on the Linux side&lt;/a&gt;)&lt;/li&gt;
+	&lt;li&gt;I only intend to access my Linux desktop from within my (W)LAN.  I have a firewall in the router, so I can set it to disallow access to ports UDP/177 and TCP/6000 from the Internet (or, if it proves too difficult to do it at the router, I can set openSUSE's own firewall to do that)&lt;/li&gt;
+	&lt;li&gt;My WLAN is encrypted  over the air anyway (WPA/PSK) and it's also using a silent SSID &lt;em&gt;and &lt;/em&gt;a MAC-address white-list, so it's pretty secure already.  The only way for somebody to sniff out my password is to be physically attached to my router&lt;/li&gt;
+	&lt;li&gt;So far I feel I can trust every computer attached to the LAN, since it's my own house.  If (&lt;em&gt;when&lt;/em&gt;?) this changes (that is, once my son is old enough to hack the network, so maybe when he's about eight years old?), I might revisit tunneling XDMCP sessions via VNC through SSH.&lt;/li&gt;
+&lt;/ul&gt;
+
+So, how do you set up good ole' XDMCP under Linux? &lt;a title="Linux XDMCP HOWTO (The Linux Documentation Project)" href="http://en.tldp.org/HOWTO/XDMCP-HOWTO/"&gt;READ THE FINE HOW-TO&lt;/a&gt;.  It's that simple, just remember that this is &lt;em&gt;not &lt;/em&gt;secure kids.  If you need security, use VNC, or just &lt;code&gt;ssh -Y&lt;/code&gt; to your Linux host and run individual X clients (with an X server on your local machine). I've also read &lt;a title="Cygwin X-Free mailing list archive" href="http://www.cygwin.com/ml/cygwin-xfree/2004-06/msg00204.html"&gt;in a mailing list&lt;/a&gt; that it's possible to start KDE from an SSH session anyway.  I might give that a go first, since it would be nearly as simple as XDMCP, and also secure.  But I really want my desktop, so we'll see what happens first….
+
+
+
+&lt;hr&gt;&lt;strong&gt; 2007-03-26T08:22+1000 Update: &lt;/strong&gt; — Some mixed success
+
+
+
+I've learned a couple of things over the week-end:
+
+&lt;ol&gt;
+	&lt;li&gt;&lt;code&gt; ssh -&lt;span style="text-decoration:underline;"&gt;C&lt;/span&gt;Y&lt;/code&gt; (use gzip compression when transmitting packets) produces satisfactory speed for &lt;code&gt;xaos&lt;/code&gt; or &lt;code&gt;gwenview&lt;/code&gt;, even over my WLAN&lt;/li&gt;
+	&lt;li&gt;PuTTY doesn't seem to work any faster, even with Compression Enabled. Perhaps it doesn't support OpenSSL's compression?  I don't know.  Anyway, I don't need PuTTY as long as I have Cygwin with &lt;code&gt;ssh&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;You can start the KDE desktop from an &lt;code&gt;ssh&lt;/code&gt; session with the &lt;code&gt;startkde&lt;/code&gt; command.  However in openSUSE (at least my install) this takes a &lt;em&gt;long&lt;/em&gt; time to start, and eventually &lt;code&gt;kwin&lt;/code&gt; hangs on the notebook end.  On the client end (the openSUSE box), it maxes out the CPU&lt;/li&gt;
+&lt;/ol&gt;
+
+So that was exciting and a little disappointing.  I'll need to experiment a little more it seems.  I got expected warnings about missing font paths and ALSA not working, but I was still hoping to get the desktop up, just with some reduced functionality.  There were also warnings about certain X server extensions being unavailable on the Cygwin X server, which I didn't expect, but again, they aren't critical (no transparency support etc.).  Perhaps there's some environment variables that KDM sets which are causing kwin or other desktop subsystems some grief when missing?
+
+
+
+If I still can't get it working soon, I might start with XDMCP, or I might skip straight to VNC after all.  One other thing to try before getting too drastic is to see if the Linux on my notebook's VMWare can run my KDE desktop remotely, or to try booting the notebook from a LiveCD such as Knoppix….
+
+
+
+&lt;hr&gt;&lt;strong&gt; 2007-03-29T16:48+1000 Update: &lt;/strong&gt; — RTFM.  Indeed!
+
+
+
+It's amazing what you can find out if you just read the manuals that come with your software.  Feeling silly now…I was exploring the &lt;a title="Novell openSUSE Reference manual (PDF)" href="http://milosophical.me/blog/2007/03/22/www.novell.com/documentation/opensuse102/pdfdoc/opensuse102_reference/opensuse102_reference.pdf"&gt;openSUSE Reference manual&lt;/a&gt; on the train home last night. Chapter nine is particularly interesting:  it describes FreeNX, a free remote desktop server, all ready to go on openSUSE, just install and follow the instructions.  There's even an &lt;a title="NX Client for Windows (NoMachine)" href="http://www.nomachine.com/download-client-windows.php"&gt;NX client for Windows&lt;/a&gt;. Much simpler, and still Free.
+
+
+
+Looks like this is the way to go.  I'll try it out and do a (hopefully) final  update.</description><category>GUI</category><category>KDE</category><category>Unix</category><category>cygwin</category><category>freenx</category><category>hacking</category><category>how-to</category><category>linux</category><category>nomachine</category><category>nx</category><category>x11</category><category>xorg</category><guid>http://milosophical.me/blog/2007/03/22/remote-desktop-acces-suse-cygwin-x-and-xdmcp.html</guid><pubDate>Thu, 22 Mar 2007 02:59:02 GMT</pubDate></item></channel></rss>

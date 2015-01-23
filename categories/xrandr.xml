@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (XRandR)</title><link>http://milosophical.me/</link><description></description><language>en</language><lastBuildDate>Fri, 23 Jan 2015 22:36:10 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>What happened to my Ctrl-+/- zoom in Xorg?</title><link>http://milosophical.me/blog/2010/07/09/what-happened-to-my-ctrl-zoom-in-xorg.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;Older X.org and XFree86 used to have this neat feature where pressing Ctrl+&amp;lt;numpad +&amp;gt; and Ctrl+&amp;lt;numpad -&amp;gt; would cycle through the screen modes defined in your config file in the "Screen" section, effectively switching screen modes on the fly and letting you pan around the full virtual screen size with the mouse.
+
+
+This was a really useful feature for zooming in on small details, or to blow up videos without incurring high CPU overhead.
+
+
+
+But since about X.org 1.7 this feature seems to be missing.  I've been researching and discovered why it's missing, and what to do about it.
+
+&lt;!--more--&gt;
+
+&lt;/p&gt;&lt;h2&gt;So why is it missing?&lt;/h2&gt;
+
+It's part of an architecture change in X.org and Linux, to support screen-mode switching for suspend/resume on laptop computers and a few other stability problems and useability things. Also it has something to do with the "kvm" module in the Linux kernel I &lt;em&gt;think&lt;/em&gt;.  (KVM doesn't work with my Radeon driver, at least not the version included in openSUSE 11.2, yet openSUSE has it enabled by default in 11.2, but that's another story).
+
+&lt;h2&gt;What can I do about it?&lt;/h2&gt;
+
+You can look into screen magnifying software to make parts of the screen larger. Ew! (The whole point of switching screen mode is that the monitor does the magnification in hardware, rather than using the CPU or the GPU, so I can watch YouTube full-screen without the CPU having to multiply the pixels)
+
+
+
+Alternatively this functionality is replaced by the new &lt;a title="(Wikipedia)" href="http://en.wikipedia.org/wiki/XRandR"&gt;XRandR&lt;/a&gt; extension to X11. You can list the modes defined for your system, as well as the status of all your screens connected to your card with the command-line tool &lt;code&gt;&lt;strong&gt;xrandr&lt;/strong&gt;&lt;/code&gt;:
+
+&lt;pre&gt;&lt;code&gt;
+
+[~]archimedes$ &lt;strong&gt;xrandr&lt;/strong&gt;
+
+Screen 0: minimum 320 x 200, current 1280 x 1024, maximum 3840 x 1200
+
+VGA-0 disconnected (normal left inverted right x axis y axis)
+
+&lt;em&gt;DVI-0&lt;/em&gt; connected 1280x1024+0+0 (normal left inverted right x axis y axis) 338mm x 270mm panning 1280x1024+0+0
+   &lt;em&gt;1280x1024&lt;/em&gt;      60.0*+   75.0     60.0*
+   &lt;em&gt;1152x864&lt;/em&gt;       75.0
+   &lt;em&gt;1024x768&lt;/em&gt;       75.0     70.1     60.0
+   &lt;em&gt;832x624&lt;/em&gt;        74.6
+   &lt;em&gt;800x600&lt;/em&gt;        72.2     75.0     60.3     56.2
+   &lt;em&gt;640x480&lt;/em&gt;        75.0     72.8     66.7     59.9
+   &lt;em&gt;720x400&lt;/em&gt;        70.1
+S-video disconnected (normal left inverted right x axis y axis)
+
+
+
+&lt;/code&gt;&lt;/pre&gt;
+
+So from above info I can see:
+
+&lt;ul&gt;
+	&lt;li&gt;My LCDs native resolution is 1280x1024&lt;/li&gt;
+	&lt;li&gt;This screen is identified as "DVI-0" to xrandr&lt;/li&gt;
+	&lt;li&gt;The 1280x1024 mode is set as the Preferred mode (marked with a +) which makes sense because it matches the LCD&lt;/li&gt;
+	&lt;li&gt;That mode is set as the Current mode (marked with a *)&lt;/li&gt;
+	&lt;li&gt;I have a list of the other modes available, as well as supported refresh rates&lt;/li&gt;
+&lt;/ul&gt;
+
+Now I can change screen mode like this:
+
+&lt;p style="text-align:center;"&gt;&lt;strong&gt;&lt;code&gt;xrandr --output DVI-0 --mode 800x600 --panning 1280x1024&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+
+That keeps the virtual screen at the same size but the actual display mode is 800x600 (without the --panning switch, the virtual screen size changes to match the mode, which isn't fun really).  I can switch back with:
+
+&lt;p style="text-align:center;"&gt;&lt;strong&gt;&lt;code&gt;xrandr --output DVI-0 --mode 1280x1024 --panning 1280x1024&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+
+Now all that remains is to bind these commands to keyboard shortcuts. The way to do that depends on the desktop environment you use. I'm still looking into how to do it for KDE and / or Awesome.
+
+
+
+Oh, and if I ever plug my screen in via the VGA port, I'd need to change the "DVI-0" to "VGA-0" on my machine.</description><category>XRandR</category><category>hacking</category><category>how-to</category><category>screens</category><category>x11</category><guid>http://milosophical.me/blog/2010/07/09/what-happened-to-my-ctrl-zoom-in-xorg.html</guid><pubDate>Fri, 09 Jul 2010 07:17:58 GMT</pubDate></item></channel></rss>

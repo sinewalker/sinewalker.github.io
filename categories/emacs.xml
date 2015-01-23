@@ -1,0 +1,820 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (emacs)</title><link>http://milosophical.me/</link><description></description><language>en</language><lastBuildDate>Fri, 23 Jan 2015 22:36:09 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Install Emacs24 Snapshot on Debian, Ubuntu and Windows 7</title><link>http://milosophical.me/blog/2012/02/13/install-emacs24-snapshot-on-debian-ubuntu-and-windows-7.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;I just can't wait for &lt;a title="An overview of what's coming in Emacs 24" href="http://www.masteringemacs.org/articles/2011/12/06/what-is-new-in-emacs-24-part-1/"&gt;Emacs24&lt;/a&gt; to be released! (I know, it's in beta and it'll be officially released Real Soon Now, but my catalyst is Technomancy's ESK2 which is such an improvement over ESK1, and it needs Emacs 24).
+
+
+In &lt;a title="Build/Install emacs 24 on debian" href="http://sinewalker.wordpress.com/2012/01/15/build-and-install-emacs24-on-debian-squeeze/"&gt;my last post&lt;/a&gt; I had steps to build emacs from source-code. This is worth following for hacker cred, but it soon gets tedious if you have a lot of systems to put emacs on. As pointed out by a few readers, there are some snapshot builds available for different platforms. This post lists steps for installing the pre-built snapshots, for the three operating systems that I use.
+
+
+
+&lt;!--more--&gt;
+
+
+
+&lt;/p&gt;&lt;h3&gt;Debian&lt;/h3&gt;
+
+As pointed out earlier, you can get &lt;a href="http://emacs.naquadah.org/"&gt;emacs-snapshot builds for Debian&lt;/a&gt; from Julien Danjou (of &lt;a href="http://awesome.naquadah.org"&gt;awesome&lt;/a&gt; fame). That page does have instructions, but I'll list them here anyway:
+
+
+
+&lt;ol&gt;
+ &lt;li&gt;Import the key (this is a one-line pipeline, broken for display only):
+&lt;pre&gt;
+
+$ &lt;strong&gt;wget -q -O - http://emacs.naquadah.org/key.gpg 
+
+| sudo apt-key add -&lt;/strong&gt;
+
+
+
+&lt;/pre&gt;
+ &lt;/li&gt;
+ &lt;li&gt;Add the snapshot repository to your &lt;strong&gt;&lt;code&gt;/etc/apt/sources.list&lt;/code&gt;&lt;/strong&gt; (by hand). Here's Julien's "stable" snapshot:
+&lt;pre&gt;
+
+deb http://emacs.naquadah.org/ stable/
+
+deb-src http://emacs.naquadah.org/ stable/
+
+
+
+&lt;/pre&gt;
+ &lt;/li&gt;
+ &lt;li&gt;Update your package database
+&lt;pre&gt;
+
+$ &lt;strong&gt;sudo aptitude update&lt;/strong&gt;
+
+
+
+&lt;/pre&gt;
+ &lt;/li&gt;
+ &lt;li&gt;Install emacs-snapshot
+&lt;pre&gt;
+
+$ &lt;strong&gt;sudo aptitude install &lt;code&gt;emacs-snapshot&lt;/code&gt;&lt;/strong&gt;
+
+
+
+&lt;/pre&gt;
+ &lt;/li&gt;
+&lt;/ol&gt;
+
+
+
+&lt;h3&gt;Ubuntu&lt;/h3&gt;
+
+I'm running Ubuntu 11.10 in a VirtualBox on work's Windows 7 machine. As mentioned at Julien Danjou's page,
+
+Damien Cassou makes a version of the same emacs-snapshot for Ubuntu, which is hosted &lt;a title="emacs-snapshot PPA for ubuntu" href="https://launchpad.net/~cassou/+archive/emacs"&gt;at Launchpad&lt;/a&gt;. You add it and install simalarly:
+
+
+
+&lt;ol&gt;
+ &lt;li&gt;Add the PPA (Personal Package Archive). This also imports the key:
+&lt;pre&gt;
+
+$ &lt;strong&gt;sudo add-apt-repository ppa:cassou/emacs&lt;/strong&gt;
+
+
+
+&lt;/pre&gt;
+ &lt;/li&gt;
+ &lt;li&gt;Update your package database
+&lt;pre&gt;
+
+$ &lt;strong&gt;sudo apt-get update&lt;/strong&gt;
+
+
+
+&lt;/pre&gt;
+ &lt;/li&gt;
+ &lt;li&gt;Install emacs-snapshot
+&lt;pre&gt;
+
+$ &lt;strong&gt;sudo apt-get install emacs-snapshot&lt;/strong&gt;
+
+
+
+&lt;/pre&gt;
+ &lt;/li&gt;
+&lt;/ol&gt;
+
+
+
+&lt;h3&gt;Windows&lt;/h3&gt;
+
+It's handy to have a native Windows emacs as well as the one in the VM. Of course being Windows, it's more complicated to install and configure... This has been tested on Windows 7:
+
+
+
+&lt;ol&gt;
+ &lt;li&gt;Download the latest PKZIP-ed binary from &lt;a href="http://code.google.com/p/emacs-for-windows/updates/list"&gt;Google Code&lt;/a&gt;&lt;/li&gt;
+ &lt;li&gt;Unpack the ZIP (Windows Explorer &lt;em&gt;can&lt;/em&gt; open ZIP files -- but &lt;a href="http://www.7-zip.org"&gt;7zip&lt;/a&gt; is mich nicer). I like to unpack emacs in &lt;code&gt;&lt;strong&gt;c:\Applications\emacs&lt;/strong&gt;&lt;/code&gt;&lt;em&gt;&amp;lt;version&amp;gt;&lt;/em&gt; so I can maintain several different versions at once&lt;/li&gt;
+ &lt;li&gt;(&lt;em&gt;optional&lt;/em&gt;) Put a windows symlink to the version of emacs you want to use.  This assumes your C: drive is formatted with NTFS, which on most Windows systems it is. The symlink can then be used for your %PATH% later and you won't have to edit the variable again to change versions, which for some odd reason is a convoluted operation in Windows... Type the following in a &lt;strong&gt;CMD.EXE&lt;/strong&gt; prompt:
+&lt;pre&gt;
+
+C:\&amp;gt; &lt;strong&gt;CD C:\Applications&lt;/strong&gt;
+
+C:\Applications\&amp;gt; &lt;strong&gt;MKLINK /D emacs emacs&lt;/strong&gt;&lt;em&gt;&amp;lt;version&amp;gt;&lt;/em&gt;
+
+
+
+&lt;/pre&gt;
+ &lt;/li&gt;
+ &lt;li&gt;Create an &lt;em&gt;Environment Variable&lt;/em&gt; called &lt;code&gt;&lt;strong&gt;%HOME%&lt;/strong&gt;&lt;/code&gt; that refers to your Windows home directory (&lt;code&gt;C:\Users\&lt;/code&gt;&lt;em&gt;&amp;lt;username&amp;gt;&lt;/em&gt;). This is so that you can put your &lt;code&gt;.emacs.d&lt;/code&gt; in your home directory, and Emacs will find it:
+ &lt;ol type="a"&gt;
+  &lt;li&gt;Open &lt;strong&gt;Windows Explorer&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Right-click on "&lt;strong&gt;My Computer&lt;/strong&gt;", choose "&lt;strong&gt;Properties&lt;/strong&gt;"&lt;/li&gt;
+  &lt;li&gt;Choose "&lt;strong&gt;Advance system settings&lt;/strong&gt;" (Really? what's so advanced about an environment variable?)&lt;/li&gt;
+  &lt;li&gt;Make sure the "&lt;strong&gt;Advanced&lt;/strong&gt;" tab of the &lt;strong&gt;System Properties&lt;/strong&gt; dialog is selected, then press the "&lt;strong&gt;Environment Variables...&lt;/strong&gt;" button&lt;/li&gt;
+  &lt;li&gt;Press the top "&lt;strong&gt;New...&lt;/strong&gt;" button (to add a personal variable, rather than system variable)&lt;/li&gt;
+  &lt;li&gt;in the "&lt;strong&gt;Variable name:&lt;/strong&gt;" field, enter &lt;code&gt;&lt;strong&gt;HOME&lt;/strong&gt;&lt;/code&gt;. In the "&lt;strong&gt;Variable value:&lt;/strong&gt;" field, put &lt;code&gt;&lt;strong&gt;%USERPROFILE%&lt;/strong&gt;&lt;/code&gt;, press "&lt;strong&gt;OK&lt;/strong&gt;" button&lt;/li&gt;
+  &lt;li&gt;Press the other "&lt;strong&gt;OK&lt;/strong&gt;" button to dismiss the Environment Varables dialog&lt;/li&gt;
+  &lt;li&gt;Press yet another "&lt;strong&gt;OK&lt;/strong&gt;" button to dismiss the System Properties dialog&lt;/li&gt;
+ &lt;/ol&gt;
+ &lt;/li&gt;
+ &lt;li&gt;Put emacs in your &lt;code&gt;&lt;strong&gt;%PATH%&lt;/strong&gt;&lt;/code&gt;. Use the same steps above to edit the Sytem variable PATH and add the path to Emacs (&lt;code&gt;&lt;strong&gt;;C:\Applications\emacs\bin&lt;/strong&gt;&lt;/code&gt; if you put a symlink in step 3)&lt;/li&gt;
+&lt;/ol&gt;
+
+
+
+&lt;h3&gt;Personal Emacs settings&lt;/h3&gt;
+
+You can now put your emacs settings into &lt;code&gt;~/.emacs.d&lt;/code&gt; (that's &lt;code&gt;%HOME%\.emacs.d&lt;/code&gt; for Windows). I highly recommend &lt;a title="Technomany's home" href="http://technomancy.us/"&gt;Technomancy&lt;/a&gt;'s &lt;a title="GitHub ESK2 branch" href="https://github.com/technomancy/emacs-starter-kit"&gt;Emacs Starter Kit&lt;/a&gt; (version 2).
+
+
+
+My own&lt;code&gt; ~/.emacs.d/init.el&lt;/code&gt; is set up to bootstrap ESK2 and a few favourite packages, just as Technomancy describes. 
+
+
+
+One package I'd like to mention here is "&lt;a href="http://xahlee.org/emacs/ergonomic_emacs_keybinding.html"&gt;ergoemacs-keybindings&lt;/a&gt;" which gives more modern/ergonomic key bindings to emacs. Together with cua-mode, it makes Emacs behave very nicely. Currently though I notice there's a problem loading the package (maybe it's autoloads aren't right yet?) So I have to hack it as described in the package's README, (with a hard-coded path to the package directory, that'll break if I update it in the future because it has the package version) but I hope to fix it and send a patch for Xah Real Soon Now...  In the mean-time, here's a snippet:
+
+
+
+
+~~~~~~~~~~~~{.clojure}
+
+
+;;;; egroemacs keybindings
+
+(setenv "ERGOEMACS_KEYBOARD_LAYOUT" "dv") ; US Dvorak (Ergonomic)
+
+
+
+;; FIX: for some reason the library isn't loading from the package? 
+
+;;      Have to put full path to the load file, which is brittle
+
+(when (package-installed-p 'ergoemacs-keybindings)
+  (load-file "~/.emacs.d/elpa/ergoemacs-keybindings-5.3.9/ergoemacs-keybindings.el")
+  (ergoemacs-mode 1)
+  (cua-mode 1))
+
+~~~~~~~~~~~~
+
+
+
+
+(btw, the lisp-ish CSH above is done by using WordPress' sourcecode block and specifying "clojure" for the language)</description><category>debian</category><category>emacs</category><category>emacs24</category><category>hacking</category><category>tips</category><category>ubuntu</category><category>windows</category><guid>http://milosophical.me/blog/2012/02/13/install-emacs24-snapshot-on-debian-ubuntu-and-windows-7.html</guid><pubDate>Mon, 13 Feb 2012 00:15:29 GMT</pubDate></item><item><title>Build and install Emacs24 on Debian squeeze</title><link>http://milosophical.me/blog/2012/01/15/build-and-install-emacs24-on-debian-squeeze.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;Hacking in Debian is so easy (one of the reasons I switched). Take, for instance, building Emacs. This is such a piece of cake compared to the weird hoops you have to go through to get all the build dependencies on other platforms. It's something I never tried before, simply because it was too daunting trying to figure out all the packages I need to install. But apt-get has this awesome --build-deps switch...
+&lt;!--more--&gt;
+
+So then, how to build and install Emacs 24 on Debian squeeze, in 6 easy steps?  Since Emacs24 is not yet released, there isn't a package for it in Debian (which is why I'm building my own). But I figured that the build dependencies would not have changed too much from Emacs23, so I used that, and it worked.
+
+&lt;/p&gt;&lt;ol&gt;
+ &lt;li&gt; Install the build dependencies:
+ &lt;pre&gt;&lt;code&gt; 
+   # &lt;strong&gt;apt-get build-dep emacs23&lt;/strong&gt;&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
+  This installs all the compilers, parsers, development libraries and other parts of the GNU toolchain that is needed to build the emacs23 package.
+ &lt;/li&gt;
+ &lt;li&gt; Download the source code. I used the &lt;a href="https://github.com/emacsmirror/emacs"&gt;GitHub mirror&lt;/a&gt; of the official GNU &lt;a href="http://savannah.gnu.org/projects/emacs/"&gt;Savana codebase&lt;/a&gt;, and downloaded the newest PKzip archive from there.  There is probably a newer one now. Purists probably would check-out direct from either Savana or GitHub rather than download a zip archive... I'm not going to hack emacs itself though, so I don't care.&lt;br&gt;
+ &lt;/li&gt;
+ &lt;li&gt; Unzip the archive and generate the configure script (the autogen step is skipped in the INSTALL file by the way, good thing I've &lt;a href="http://airs.com/ian/configure/configure_3.html#SEC16"&gt;done my homework&lt;/a&gt;):
+ &lt;pre&gt;&lt;code&gt;
+   $ &lt;strong&gt;unzip emacsmirror-emacs-EMACS_PRETEST_24_9_92-295-g2dccfc4.zip&lt;/strong&gt;
+   $ &lt;strong&gt;cd emacsmirror-emacssnapshot&lt;/strong&gt;
+   $ &lt;strong&gt;./autogen.sh
+ &lt;/strong&gt;&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
+ &lt;/li&gt;
+ &lt;li&gt;Follow the INSTALL instructions:&lt;br&gt;
+ &lt;pre&gt;&lt;code&gt;
+   $ &lt;strong&gt;./configure&lt;/strong&gt;
+   $ &lt;strong&gt;make&lt;/strong&gt;
+ &lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
+ &lt;/li&gt;
+ &lt;li&gt;Test it (Note:- if you watch the build, you'll see that after the C core of emacs is built, emacs itself is used to compile the elisp components, so building also makes a fairly good test of the C parts anyway):&lt;br&gt;
+  &lt;pre&gt;&lt;code&gt;
+   $ &lt;strong&gt;src/emacs -Q&lt;/strong&gt;
+  &lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
+ &lt;/li&gt;
+ &lt;li&gt; If okay, install it:
+  &lt;pre&gt;&lt;code&gt;
+   # &lt;strong&gt;make install&lt;/strong&gt;
+  &lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
+ &lt;/li&gt;
+&lt;/ol&gt;
+
+</description><category>build-deps</category><category>debian</category><category>emacs</category><category>hacking</category><category>how-to</category><guid>http://milosophical.me/blog/2012/01/15/build-and-install-emacs24-on-debian-squeeze.html</guid><pubDate>Sun, 15 Jan 2012 11:57:54 GMT</pubDate></item><item><title>Curious cursor complication with Emacs and Windows Magnifier</title><link>http://milosophical.me/blog/2011/11/30/curious-cursor-complication-with-emacs-and-windows-magnifier.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;I recently noticed a bug when you start GNU Emacs win32 &lt;em&gt;after&lt;/em&gt; starting &lt;a title="Microsoft: Make items on the screen appear bigger (Magnifier)" href="http://windows.microsoft.com/en-AU/windows7/Make-items-on-the-screen-appear-bigger-Magnifier"&gt;Windows Magnifier&lt;/a&gt;: Emacs' cursor becomes a single-pixel "caret" instead of the box cursor. This makes the cursor very hard to find.
+&lt;!--more--&gt;
+
+I usually leave Emacs' cursor at the default (&lt;code&gt;box&lt;/code&gt;) because this is so much easier to see, especially if you also enable &lt;code&gt;blink-cursor-mode&lt;/code&gt; (though&lt;a title="How to stop blinking cursors" href="http://www.jurta.org/en/prog/noblink"&gt; that's a matter of taste&lt;/a&gt;, I suppose). The default settings also set the cursor to a &lt;code&gt;hollow&lt;/code&gt; box when the &lt;code&gt;window&lt;/code&gt; (or the entire &lt;a title="Emacs frames and windows" href="http://emacsworld.blogspot.com/2008/08/emacs-frames-and-windows.html"&gt;&lt;code&gt;frame&lt;/code&gt;&lt;/a&gt;) is inactive.
+
+
+
+Really, a text editor is unusable with a "caret" or bar-shaped cursor.
+
+
+
+The following behaviors are observed with this bug:
+
+&lt;/p&gt;&lt;ul&gt;
+	&lt;li&gt;This affects at least GNU Emacs versions 23.1 &lt;a title="Download GNU Emacs for Windows, from GNU FTP site" href="http://ftp.gnu.org/pub/gnu/emacs/windows/"&gt;for Windows&lt;/a&gt;, and &lt;a title="GNU Emacs 24 win32 pre-built binaries at Google Code" href="http://code.google.com/p/emacs-for-windows/downloads/list"&gt;24.0 compiled&lt;/a&gt; with mingw for win32&lt;/li&gt;
+	&lt;li&gt;The actual shape of the cursor has no correspondence with the value of the &lt;code&gt;cursor-type&lt;/code&gt; variable: it is always as-if the value were &lt;code&gt;(bar . 1)&lt;/code&gt; (a vertical bar, one pixel wide)&lt;/li&gt;
+	&lt;li&gt;The cursor blinks, whether you have enabled &lt;code&gt;blink-cursor-mode&lt;/code&gt; or not&lt;/li&gt;
+	&lt;li&gt;The value of the Windows Registry key &lt;strong&gt;&lt;code&gt;HKCU\Control Panel\Desktop\CaretWidth&lt;/code&gt;&lt;/strong&gt; also has no bearing on the cursor shape (though this key is great for setting the cursor thickness in other Windows programs...)&lt;/li&gt;
+	&lt;li&gt;(This one took me ages to find) &lt;span style="text-decoration:underline;"&gt;It only happens if Windows Magnifier is running&lt;/span&gt; &lt;em&gt;before&lt;/em&gt; you start Emacs. If you start Emacs first, and &lt;em&gt;then&lt;/em&gt; start Magnifier, the cursor is unchanged and respects the value of &lt;code&gt;cursor-type&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+So, the work-around for this is to start Emacs before you run Magnifier (especially: make sure the Windows Accessibility feature that starts Magnifier when you log in, is turned OFF).
+
+
+
+&lt;a title="Search GNU Bugtracker for emacs cursor bugs" href="http://debbugs.gnu.org/cgi/pkgreport.cgi?include=subject%3Acursor;package=emacs"&gt;As far as I can tell&lt;/a&gt;, there is no bug report for this.  I may file one when I get around to figuring out &lt;a title="GNU Bugtracker home" href="http://debbugs.gnu.org/"&gt;GNU's bug-tracker&lt;/a&gt;.</description><category>bug</category><category>cursor</category><category>emacs</category><category>hacking</category><category>magnifier</category><category>registry</category><category>windows</category><guid>http://milosophical.me/blog/2011/11/30/curious-cursor-complication-with-emacs-and-windows-magnifier.html</guid><pubDate>Wed, 30 Nov 2011 03:17:06 GMT</pubDate></item><item><title>Using Emacs' EasyPG in text terminals</title><link>http://milosophical.me/blog/2011/03/17/using-emacs-easypg-in-text-terminals.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;There is a bug in the integration between Emacs' EasyPG and the "new" GnuPG2 that causes Emacs to not load &lt;code&gt;.gpg&lt;/code&gt; files when running in a text terminal.  It's being worked on, apparently, but in the mean-time, here is how to fix it.
+
+
+&lt;!--more--&gt;
+
+
+
+The only solution I've found that works is to install a copy of GnuPG1 concurrent with the new GnuPG2.  They can live happily side-by-side.  Once you've done that, you need to tell EasyPG to use the old program rather than the new one. Full details are on the &lt;a href="http://www.emacswiki.org/emacs/EasyPG"&gt;Emacs Wiki&lt;/a&gt;, here it is in a nutshell:
+
+&lt;/p&gt;&lt;ul&gt;
+	&lt;li&gt;You can find an RPM package of GnuPG1 for openSUSE on the &lt;a title="gpg1" href="https://build.opensuse.org/package/binary?arch=i586&amp;amp;filename=gpg1-1.4.9-2.1.i586.rpm&amp;amp;package=gpg1&amp;amp;project=security%3Aprivacy&amp;amp;repository=openSUSE_11.2"&gt;openSUSE Build Service&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;Once installed, you need to customize the variable &lt;code&gt;&lt;strong&gt;epg-gpg-program&lt;/strong&gt;&lt;/code&gt;.  Either use &lt;code&gt;M-x customize&lt;/code&gt; to set it for all future sessions, or see my code snippet below that I put in my start-up scripts.  It should be set to the value &lt;em&gt;"/usr/bin/gpg1"&lt;/em&gt; (or wherever &lt;code&gt;gpg1&lt;/code&gt; is installed on your platform)&lt;/li&gt;
+	&lt;li&gt;Now when EasyPG opens a &lt;code&gt;.gpg&lt;/code&gt; file, it will prompt for the passphrase in the Emacs minibuffer, instead of trying to use the &lt;code&gt;gpg-agent&lt;/code&gt; and calling the &lt;code&gt;pinentry&lt;/code&gt; program (which causes Emacs to hang in text mode)&lt;/li&gt;
+&lt;/ul&gt;
+
+ 
+
+
+
+If you like to use the gpg agent and graphical pinentry programs and only want to override GnuPG2 with GnuPG1 when running Emacs in a text terminial, then you can put code like this in your Emacs start-up (mine goes in &lt;code&gt;~/.emacs.d/&amp;lt;username&amp;gt;.el&lt;/code&gt; because I use the &lt;a href="https://github.com/technomancy/emacs-starter-kit"&gt;Emacs Starter Kit&lt;/a&gt;):
+
+
+
+&lt;blockquote&gt;&lt;code&gt;
+
+&lt;pre&gt;&lt;span style="color:#7f7f7f;"&gt;(&lt;/span&gt;&lt;span style="color:#00ffff;"&gt;when&lt;/span&gt; &lt;span style="color:#7f7f7f;"&gt;(&lt;/span&gt;not &lt;span style="color:#7f7f7f;"&gt;(&lt;/span&gt;display-graphic-p&lt;span style="color:#7f7f7f;"&gt;))&lt;/span&gt;
+  (setq epg-gpg-program "/usr/bin/gpg1")) ; use GnuPG1 in text terminals&lt;/pre&gt; &lt;/code&gt;
+&lt;/blockquote&gt;
+
+Enjoy!</description><category>code</category><category>easypg</category><category>emacs</category><category>gnupg</category><category>hack</category><category>hacking</category><guid>http://milosophical.me/blog/2011/03/17/using-emacs-easypg-in-text-terminals.html</guid><pubDate>Thu, 17 Mar 2011 05:04:59 GMT</pubDate></item><item><title>Unicode chars between Emacs/X11 cygwin and Win32</title><link>http://milosophical.me/blog/2008/06/27/unicode-chars-between-emacsx11-cygwin-and-win32.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;I'm using Emacs/X11 on cygwin as my main editor (when stuck on work's machine) and Emacs 22's Unicode support really rocks.  However, getting it to pass unicode between the kill ring and Windows /X11 clipboard doesn't work out-of-the-box (mainly because Emacs thinks it's on a Unix host).  The fix is easy though:
+
+
+&lt;!--more--&gt;
+
+&lt;/p&gt;&lt;p style="text-align:center;"&gt;Set your MULE selection coding system to use the same unicode coding system that Windows employs
+
+(UTF-16BE I think. Or it could be UTF-16LE, will need more trial and error)
+
+
+
+How?  Use MULE's set-selection-coding-system function (interactively, it's bound to C-x RET x).  You could put this in your .emacs:
+
+&lt;/p&gt;&lt;p style="text-align:center;"&gt;&lt;strong&gt;(set-selection-coding-system utf-16be-dos)&lt;/strong&gt;&lt;/p&gt;
+
+
+
+Once you've done this, then cut/paste of unicode works wonderfully, and you can wax lyrical about your Façade design patterns in your UML editor, or your web browser (like I just did: type C-x 8 , c to get a ç, and then copy/paste from emacs to firefox...)</description><category>emacs</category><category>fonts</category><category>hacking</category><category>tip</category><guid>http://milosophical.me/blog/2008/06/27/unicode-chars-between-emacsx11-cygwin-and-win32.html</guid><pubDate>Fri, 27 Jun 2008 02:19:20 GMT</pubDate></item><item><title>Pretty-printing XML with Emacs' NXML-mode</title><link>http://milosophical.me/blog/2008/06/26/pretty-printing-xml-with-emacs-nxml-mode.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;Did you ever get a stream of XML out of a log file, or in a data stream, and it's all mashed together without line-breaks so that it just appears as gobble-de-gook? If there's a data error (not an XML parsing error) then you have to read it so that you can find where the error is, but you don't have XML-spy and NetBeans is overkill or takes forever to fire up...
+
+
+Emacs to the rescue! &lt;a title="Benjamin Ferrari's blog (seems to lack an " href="http://blog.bookworm.at/"&gt;Benjamin Ferrari&lt;/a&gt; wrote this &lt;em&gt;increadibly useful&lt;/em&gt; (and simple) &lt;a title="Benjamin Ferrari's original blog post for below code" href="http://blog.bookworm.at/2007/03/pretty-print-xml-with-emacs.html"&gt;elisp function&lt;/a&gt; to pretty-print a block of XML code:
+
+&lt;/p&gt;&lt;pre&gt;&lt;!--more--&gt;(defun bf-pretty-print-xml-region (begin end)
+  "Pretty format XML markup in region. You need to have nxml-mode
+&lt;a title="NXML-mode home-page" href="http://www.emacswiki.org/cgi-bin/wiki/NxmlMode"&gt;http://www.emacswiki.org/cgi-bin/wiki/NxmlMode&lt;/a&gt; installed to do
+
+this.  The function inserts linebreaks to separate tags that have
+
+nothing but whitespace between them.  It then indents the markup
+
+by using nxml's indentation rules."
+  (interactive "r")
+  (save-excursion
+      (nxml-mode)
+      (goto-char begin)
+      (while (search-forward-regexp "\&amp;gt;[ \\t]*\&amp;lt;" nil t)
+        (backward-char) (insert "\n"))
+      (indent-region begin end))
+    (message "Ah, much better!"))&lt;/pre&gt;
+Indeed, why isn't this included with NXML-mode?  Ah well, at least my problem's solved for the simple use-case of opening a machine-generated XML file and wanting to visually parse it...
+
+
+
+Benjamin's blog has lots of useful Emacs stuff. &lt;a title="Benjamin's intro essay to his emacs hacks, and why anyone might care" href="http://blog.bookworm.at/2007/03/introduction-to-all-these-emacs.html"&gt;Worth a read&lt;/a&gt;.</description><category>XHTML</category><category>code</category><category>emacs</category><category>geek</category><category>hacking</category><category>lisp</category><category>tip</category><guid>http://milosophical.me/blog/2008/06/26/pretty-printing-xml-with-emacs-nxml-mode.html</guid><pubDate>Thu, 26 Jun 2008 02:46:03 GMT</pubDate></item><item><title>Cygwin and Emacs 22</title><link>http://milosophical.me/blog/2008/04/04/cygwin-and-emacs-22.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;a title="GNU Emacs home page" href="http://www.gnu.org/software/emacs/"&gt;Emacs&lt;/a&gt; long-awaited version 22.1 was released on 2007-07-02, and a package for Cygwin was available a few months later. The Cygwin package is still experimental, so Cygwin's setup program will select 21 by default.
+
+
+&lt;!--more--&gt;I've been hanging out for the new features of 22, happily use it in Linux daily and want to also use it in my Cygwin. It's pretty simple to get it working in Cygwin (it's installable from setup.exe), but since it's an experimental package, you need to take notice of the version of emacs you're installing and make sure you cycle through the install versions and pick 22.1-&lt;em&gt;x&lt;/em&gt; for these packages:
+
+&lt;ul&gt;
+	&lt;li&gt;&lt;strong&gt;emacs&lt;/strong&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;emacs-X11&lt;/strong&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;emacs-el&lt;/strong&gt; (you will need to install this, even if you're not interested in the elisp code, because the pre-compiled lisp code for Cygwin has some errors that cause the .elc to not load properly :( )&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;strong&gt;There's also an important gotcha&lt;/strong&gt;:  &lt;span style="text-decoration:underline;"&gt;&lt;strong&gt;every&lt;/strong&gt;&lt;/span&gt; time you run setup.exe to install/remove Cygwin packages, you need to make sure that these three emacs ones are cycled to "Keep" version 22! Otherwise you'll be unpleasantly surprised that emacs 21 is installed...
+
+
+
+Also: version 22 seems rather unstable for cygwin. It frequently crashes on my employer's WinXP SP2 platform. I'm not sure why, usually it happens in comint modes (like shell mode, for instance) but it can just crash mid-way through lisp operations also. This is annoying, but not critical (unless you're in the middle of a vi/emacs war with colleagues). My advice: make sure autosave is turned on, and make use of &lt;code&gt;M-x recover-session&lt;/code&gt;.
+
+
+
+The Free Software Foundation &lt;a title="GNU Emacs 22.2 NEWS file" href="http://www.gnu.org/software/emacs/NEWS.22.2"&gt;announced&lt;/a&gt; on 2008-03-26 that version 22.2 of emacs has been released. Maybe when the cygwin package is built, it'll be more stable. In the mean-time, I find the new features too invaluable to move back to 21, so I'll put up with the occasional crash (and save my work often!)
+
+
+
+&lt;hr&gt;&lt;strong&gt;2008-05-07T1656+10 Update:&lt;/strong&gt;
+
+
+
+I've just installed the version of emacs 22.2 compiled for Cygwin, prepared by &lt;a title="Angelo Graziosi's emacs 22.2 compiled for Cygwin" href="http://www.webalice.it/angelo.graziosi/cygwin/emacs/Emacs.html"&gt;Angelo Graziosi&lt;/a&gt;. It seems to be much more stable than the 22.1 version in Cygwin's repository, plus 22.2 has a few minor feature enhancements that are nice to boot!</description><category>cygwin</category><category>emacs</category><category>hacking</category><category>package</category><category>tip</category><guid>http://milosophical.me/blog/2008/04/04/cygwin-and-emacs-22.html</guid><pubDate>Thu, 03 Apr 2008 23:09:14 GMT</pubDate></item><item><title>Essentials to make Windows almost bareable</title><link>http://milosophical.me/blog/2007/06/07/essential-tools-to-make-windows-almost-bareable.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;Okay, so I hate working in Windows, but on my employer's equipment at least, I must live with it. After having had this machine replaced twice (faulty Dell hardware) and rebuilt more times than I can remember (Windows BSODs), for a total of at least 3 system migrations this past year, I thought I'd better keep a list of what free software to install on top of Windows, and what adjustments to make, so that at least I don't feel like I'm wearing a straight jacket.  Here goes:
+
+
+&lt;!--more--&gt;
+
+&lt;/p&gt;&lt;h3&gt;Useability&lt;/h3&gt;
+
+Fix the keyboard to &lt;a href="http://sinewalker.wordpress.com/2006/03/27/dvorak-keyboards/"&gt;Dvorak&lt;/a&gt; (following is for Windows XP -- this will likely change for Vista... it shouldn't be this complicated!)
+
+&lt;blockquote&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;Open Control Panel:  &lt;strong&gt;START &amp;gt; Control Panel&lt;/strong&gt;&lt;/li&gt;
+	&lt;li&gt;Choose "&lt;strong&gt;Regional and Language Options&lt;/strong&gt;" (why not Keyboard???)&lt;/li&gt;
+	&lt;li&gt;Select "&lt;strong&gt;Languages&lt;/strong&gt;" tab, press Details... button (sigh)&lt;/li&gt;
+	&lt;li&gt;In the "&lt;strong&gt;Installed services&lt;/strong&gt;" section, select "&lt;strong&gt;Keyboard&lt;/strong&gt;", then press "&lt;strong&gt;Add...&lt;/strong&gt;" to add a new keyboard layout&lt;/li&gt;
+	&lt;li&gt;Find &lt;strong&gt;US-Dvorak&lt;/strong&gt; in the list&lt;/li&gt;
+	&lt;li&gt;In the "&lt;strong&gt;Default input language&lt;/strong&gt;" section, set the default language to English (Australia) - United States-Dvorak&lt;/li&gt;
+	&lt;li&gt;In the "&lt;strong&gt;Preferences&lt;/strong&gt;" section, press "&lt;strong&gt;Language Bar...&lt;/strong&gt;" button&lt;/li&gt;
+	&lt;li&gt;Make sure that "&lt;strong&gt;Show the language bar on the desktop&lt;/strong&gt;" is turned &lt;em&gt;&lt;strong&gt;on&lt;/strong&gt;&lt;/em&gt;, to make it easier to switch to QWERTY if needed&lt;/li&gt;
+	&lt;li&gt;Back in "&lt;strong&gt;Preferences&lt;/strong&gt;", press the "&lt;strong&gt;Key Settings...&lt;/strong&gt;" button&lt;/li&gt;
+	&lt;li&gt;Turn &lt;strong&gt;&lt;em&gt;off &lt;/em&gt;&lt;/strong&gt;all the language &lt;strong&gt;Hot keys&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;/blockquote&gt;
+
+To get rid of that &lt;a href="http://www.winsupersite.com/images/showcase/xp_n_05.jpg"&gt;horrible&lt;/a&gt;, &lt;a href="http://www.winsupersite.com/images/showcase/xp_n_03.jpg"&gt;garish &lt;/a&gt;blue/green stock XP theme, I use the &lt;a title="Zune -- it's still Microsoft, but it looks less garish" href="http://stevenharman.net/blog/archive/2006/12/09/WinXP__Zune_Theme.aspx"&gt;Zune theme&lt;/a&gt; from Microsoft. It sucks less (the theme, that is, not the MP3 player, that sucks &lt;em&gt;more &lt;/em&gt;than iPod).
+
+
+
+Make Explorer a bit useable.  Actually Explorer is total crap, and I'm still searching for a replacement. I like &lt;a href="http://en.wikipedia.org/wiki/Midnight_Commander"&gt;MidnightCommander&lt;/a&gt; in Cygwin (&lt;code&gt;mc&lt;/code&gt;), and &lt;a href="http://konqueror.kde.org/"&gt;Konqueror&lt;/a&gt; in KDE.  But for Windows, there aren't a lot of &lt;em&gt;free &lt;/em&gt;Explorer replacements, except maybe Windows File Explorer.  Anyway, follow these steps to have Explorer at least be not so stupid:
+
+&lt;blockquote&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;Open an Explorer window (anywhere)&lt;/li&gt;
+	&lt;li&gt;Select "&lt;strong&gt;Tools &amp;gt; Folder Options...&lt;/strong&gt;", "&lt;strong&gt;General&lt;/strong&gt;" tab&lt;/li&gt;
+	&lt;li&gt;Make sure that under "&lt;strong&gt;Browse folders&lt;/strong&gt;", the option is to "&lt;strong&gt;Open each folder in the same window&lt;/strong&gt;" (Explorer doesn't do multi-windows like Macintosh Finder: it screws them up)&lt;/li&gt;
+	&lt;li&gt;In "&lt;strong&gt;Click items as follows&lt;/strong&gt;", turn on "&lt;strong&gt;Single-click to open&lt;/strong&gt;", and "&lt;strong&gt;Underline icons only when I point at them&lt;/strong&gt;"&lt;/li&gt;
+	&lt;li&gt;Select the "&lt;strong&gt;View&lt;/strong&gt;" tab&lt;/li&gt;
+	&lt;li&gt;Turn &lt;em&gt;&lt;strong&gt;on &lt;/strong&gt;&lt;/em&gt;the following:
+&lt;ol&gt;
+	&lt;li&gt;"Display the full path in the address bar"&lt;/li&gt;
+	&lt;li&gt;"Display the full path in the title bar"&lt;/li&gt;
+	&lt;li&gt;"Do not cache thumbnails"&lt;/li&gt;
+	&lt;li&gt;"Show hidden files and folders"&lt;/li&gt;
+	&lt;li&gt;"Show both parts and manage them individually" (for web pages and folders)&lt;/li&gt;
+	&lt;li&gt;"Show encrypted or compressed NTFS files in color"&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;/li&gt;
+	&lt;li&gt;Turn &lt;em&gt;&lt;strong&gt;off &lt;/strong&gt;&lt;/em&gt;the following:
+&lt;ol&gt;
+	&lt;li&gt;"Hide extensions for known file types"&lt;/li&gt;
+	&lt;li&gt;"Launch folder windows in a separate process"&lt;/li&gt;
+	&lt;li&gt;"Remember each folder'sview settings"&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;/li&gt;
+	&lt;li&gt;Press the "&lt;strong&gt;Apply&lt;/strong&gt;", then "&lt;strong&gt;Apply to All Folders&lt;/strong&gt;" buttons&lt;/li&gt;
+	&lt;li&gt;Press "&lt;strong&gt;OK&lt;/strong&gt;"&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Programs&lt;/h3&gt;
+
+Install these programs at a minimum:
+
+&lt;blockquote&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;&lt;a title="Rediscover the Web" href="http://en.www.mozilla.com/en/firefox/"&gt;Firefox &lt;/a&gt;(essential add-ons:  &lt;a title="social web bookmarks" href="http://del.icio.us/help/firefox/extension"&gt;del.icio.us&lt;/a&gt;, &lt;a title="Download Accellerator (and a better manager)" href="http://www.downthemall.net/"&gt;DownThemAll&lt;/a&gt;, &lt;a title="Spell-check input boxes, in en_au language" href="http://www.justlocal.com.au/clients/oooau/"&gt;English (AU) Dictionary&lt;/a&gt;, &lt;a title="Block's Flash adds" href="https://addons.mozilla.org/en-US/firefox/addon/433"&gt;Flashblock&lt;/a&gt;, &lt;a title="Make inline images larger" href="http://imagezoom.yellowgorilla.net/"&gt;ImageZoom&lt;/a&gt;, &lt;a title="Turn on/off proxy settings with one click" href="https://addons.mozilla.org/en-US/firefox/addon/1557"&gt;QuickProxy&lt;/a&gt;, &lt;a title="Synchronise your local bookmarks between Firefox installations" href="http://www.foxmarks.com"&gt;Foxmarks&lt;/a&gt;, &lt;a title="Turn your google mail account into free online storage" href="http://www.getgspace.com/"&gt;GSpace&lt;/a&gt;)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Open Source keystroke starter for Windows" href="http://www.launchy.net"&gt;Launchy&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a title="WFE description page" href="http://www.freesoftlabs.com/fileexpl.asp"&gt;Windows File Explorer&lt;/a&gt; (a free, sort-of &lt;a href="http://en.wikipedia.org/wiki/Orthodox_file_manager"&gt;orthodox&lt;/a&gt; file manager for Windows)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Brings Windows desktop up to status of 1990 Unix" href="http://virt-dimension.sourceforge.net"&gt;Virtual Dimension&lt;/a&gt; (Virtual desktop support for Windows)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="No Machine's Product listing page" href="http://www.nomachine.com/products.php"&gt;No Machine&lt;/a&gt;'s &lt;a title="NX Client - Windows - Download" href="http://www.nomachine.com/download-client-windows.php"&gt;NX Client for Windows&lt;/a&gt; (so I can connect a &lt;a title="NX Technology overview" href="http://www.nomachine.com/documentation/intr-technology.php"&gt;high speed X&lt;/a&gt; session to my home machine)&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://www.openoffice.org"&gt;OpenOffice.org&lt;/a&gt; (also use &lt;a href="http://www.justlocal.com.au/clients/oooau/"&gt;JustLocal&lt;/a&gt;'s dictionary / thesaurus files to get spell check working)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Unix compatibility layer for Windows" href="http://www.cygwin.com/"&gt;Cygwin &lt;/a&gt;(include the X11 modules, Emacs [make sure to select ver 22], pdksh, subversion, python, clisp, fortune, mc, ssh, units, etc....)&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://java.sun.com/javase/downloads/index.jsp"&gt;Java SE DevKit&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Latest Windows Subversion binaries" href="http://subversion.tigris.org/servlets/ProjectDocumentList?folderID=91"&gt;Subversion for Windows&lt;/a&gt; (version control)&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://www.netbeans.org/"&gt;NetBeans&lt;/a&gt; (6.0 or greater has everything I need)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Audio editor and MP3/OGG converter" href="http://audacity.sourceforge.net/download/windows"&gt;Audacity&lt;/a&gt; audio editor and encoder&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Network streaming Video" href="http://www.videolan.org/vlc/download-windows.html"&gt;VideoLAN Client&lt;/a&gt; movie player&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://www.illiminable.com/ogg/"&gt;Illiminable DirectShow filters&lt;/a&gt; for &lt;a href="http://www.vorbis.com/setup_windows/"&gt;OGG Vorbis&lt;/a&gt; (to play .OGG files in Windows Media Player)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Amiga MOD player" href="http://www.modplug.com/"&gt;MODPlug&lt;/a&gt; (because sometimes a good &lt;a href="http://del.icio.us/sinewalker/modules"&gt;MOD&lt;/a&gt; fits my mood)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="GNU Image Manipulation Program" href="http://gimp-win.sourceforge.net/"&gt;GIMP&lt;/a&gt; image editor&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Image viewer" href="http://www.irfanview.com/"&gt;IrfanView&lt;/a&gt; image viewer&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Emacs&lt;/h3&gt;
+
+Once Cygwin and Emacs are installed, I need to add my dotfiles (from backup), and also install these emacs add-ons:   &lt;a title="Superior Lisp Interaction Mode for Emacs" href="http://common-lisp.net/project/slime/"&gt;&lt;/a&gt;
+
+&lt;blockquote&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;&lt;a title="Superior Lisp Interaction Mode for Emacs" href="http://common-lisp.net/project/slime/"&gt;SLIME&lt;/a&gt; &lt;a href="http://sourceforge.net/projects/psgml"&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://sourceforge.net/projects/psgml"&gt;PSGML&lt;/a&gt; &lt;a title="Subversion support for Emacs (pre-22)" href="http://www.xsteve.at/prg/emacs/psvn.el"&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Subversion support for Emacs (pre-22)" href="http://www.xsteve.at/prg/emacs/psvn.el"&gt;PSVN&lt;/a&gt; (not strictly needed, since emacs22 adds SVN support in VC mode)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Collection of Emacs Development Environment Tools" href="http://cedet.sourceforge.net/"&gt;CEDET&lt;/a&gt; (this is not trivial to install, I&lt;em&gt; still &lt;/em&gt;haven't figured it out)&lt;a title="Collection of Emacs Development Environment Tools" href="http://cedet.sourceforge.net/"&gt; &lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Java Development Environment for Emacs" href="http://jdee.sunsite.dk/"&gt;JDEE&lt;/a&gt; (requires some or all of CEDET)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="This is neat!" href="http://www.eaflux.com/cygwin/cyg-emacsclient/"&gt;cyg-emacsclient&lt;/a&gt; (wrapper to add Emacs to your SendTo folder, and have it actually work)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/blockquote&gt;
+
+CEDET and JDEE might be more trouble than they're worth, especially since I'm installing NetBeans anyway. They seem cool (especially the enhanced speedbar), but they're not exactly plug-and-play. Jury's still out.</description><category>Delicious</category><category>Microsoft</category><category>cygwin</category><category>dvorak</category><category>emacs</category><category>hacking</category><category>how-to</category><category>jEdit</category><category>java</category><category>lisp</category><category>media</category><category>shell</category><guid>http://milosophical.me/blog/2007/06/07/essential-tools-to-make-windows-almost-bareable.html</guid><pubDate>Wed, 06 Jun 2007 23:16:44 GMT</pubDate></item><item><title>jEdit macros, vs. Emacs functions</title><link>http://milosophical.me/blog/2006/06/07/jedit-macros-vs-emacs-functions.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;I've been playing with customising &lt;a title="The jEdit programmer's editor home page" href="http://www.jedit.org"&gt;jEdit&lt;/a&gt; a little bit, and decided to have a go at writing some simple date insertion macros.  These perform the same work as some old &lt;a title="A fairly good elisp tutorial." href="http://www.glug.org/people/ttn/software/elisp-tutorial/"&gt;elisp&lt;/a&gt; functions I wrote years ago in &lt;a title="GNU Emacs, the One True Way..." href="http://www.gnu.org/software/emacs/"&gt;Emacs&lt;/a&gt;, to insert date/time stamps in various formats.  In my &lt;code&gt;.emacs&lt;/code&gt; file, I bind these functions to short-cut keys, and then use them for updating Changelogs in code and in offline journal entries.
+
+
+&lt;!--more--&gt;Here are my original elisp functions, which are self describing:
+
+
+
+&lt;!-- .syntax0 { color: #ffcc99; } .syntax1 { color: #15ee15; font-style: italic; } .syntax2 { color: #0be276; } .syntax3 { color: #99f433; } .syntax4 { color: #fc5b32; } .syntax5 { color: #ff0000; } .syntax6 { color: #ff9966; font-weight: bold; } .syntax7 { background: #ffffcc; color: #ff0066; } .syntax8 { color: #6087fa; font-weight: bold; } .syntax9 { color: #0099ff; font-weight: bold; } .syntax10 { color: #6699ff; font-weight: bold; } .syntax11 { color: #9999ff; font-weight: bold; } .syntax12 { background: #003333; color: #ff6600; font-weight: bold; } .syntax13 { color: #ff6666; } .syntax14 { color: #ff3333; } .syntax15 { color: #9933ff; } .syntax16 { color: #9900ff; } .syntax17 { color: #9966ff; font-weight: bold; } .syntax18 { color: #ffffff; font-weight: bold; }  --&gt;
+
+&lt;/p&gt;&lt;blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;(defun insert-date-iso ()
+  "Inserts the current local date and time (to the minute) into the current buffer
+before Point. The data are formatted per ISO 8601 specification. This is useful for
+
+prefixing entries in a log book."
+  (interactive)
+  (setq now (decode-time)
+        final-string (format "%04d-%02d-%02dT%02d:%02d+%d"
+                             (nth 5 now)          ; yyyy
+                             (nth 4 now)          ; mm
+                             (nth 3 now)          ; dd
+                             (nth 2 now)          ; HH
+                             (nth 1 now)          ; MM
+                             (/ (nth 8 now) 36))) ; UTCO
+  (insert final-string))
+
+
+(defun insert-date-stamp ()
+  "Inserts the current local date into the current buffer before Point. The data are
+formatted per ISO 8601 short specification and prefixed with my initials 'MJL'. This
+
+is useful for inserting mod comments into code files."
+  (interactive)
+  (setq now (decode-time)
+        final-string (format "MJL%04d%02d%02d - "
+                             (nth 5 now)          ; yyyy
+                             (nth 4 now)          ; mm
+                             (nth 3 now)))        ; dd
+  (insert final-string))
+
+
+(defun insert-date-dow ()
+  "Inserts the current local date and the day of the week into the current buffer
+before Point. The date data are formatted per ISO 8601 specification. The DOW is
+
+expanded to the full name. This is useful for prefixing day entries in a log book."
+  (interactive)
+  (setq DOWlist '(Sunday Monday Tuesday Wednesday Thursday Friday Saturday))
+  (setq now (decode-time)
+        final-string (format "%04d-%02d-%02d %s"
+                             (nth 5 now)                 ; yyyy
+                             (nth 4 now)                 ; mm
+                             (nth 3 now)                 ; dd
+                             (nth (nth 6 now) DOWlist))) ; day
+  (insert final-string))&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+
+These are fairly simple, the only obfuscated part is the way that the output list &lt;code&gt;now&lt;/code&gt; has been created from the &lt;code&gt;(decode-time)&lt;/code&gt; built-in, which then has to be picked appart to get the different date elements for formatting.
+
+
+
+Compare this with the jEdit equivalents, which are written in &lt;a title="The BeanShell java scripting language" href="http://www.beanshell.org/"&gt;BeanShell&lt;/a&gt;. Each macro is in it's own &lt;code&gt;.bsh&lt;/code&gt; file, rather than all together in a single file like the elisp functions, and the documentation is done in XML, rather than as a doc-comment in elisp:
+
+&lt;blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;
+
+/*
+ * Insert_Time_ISO.bsh - a BeanShell macro script for the
+ * jEdit text editor - inserts current system date in ISO 8601 format
+ * Copyright © 2006 Michael Lockhart
+ *
+ * MJL20060603 - Created
+ * MJL20060604 - Tidy code, fix meta-comments
+ * MJL20060605 - Check object creation, just in case...
+ * MJL20060606 - use Macros.error(), instead of Macros.message()
+ *
+ */
+
+
+import java.text.SimpleDateFormat;
+
+
+
+dateFmt = new SimpleDateFormat("yyyy-MM-dd");
+
+timeFmt = new SimpleDateFormat("HH:mmZZZZ");
+
+
+
+now = new Date();
+
+
+
+if ((now != null) &amp;amp;&amp;amp; (dateFmt != null) &amp;amp;&amp;amp; (timeFmt != null))
+    textArea.setSelectedText(dateFmt.format(now) + "T" +
+                             timeFmt.format(now) + " ");
+else
+    Macros.error(view,"Could not create system Date or SimpleDateFormat "
+                       + "objects!nJVM resources might be extremely low.");
+
+
+/*
+	Macro index data (in DocBook format)
+
+
+&amp;lt;listitem&amp;gt;
+    &amp;lt;para&amp;gt;&amp;lt;filename&amp;gt;Insert_Time_ISO.bsh&amp;lt;/filename&amp;gt;&amp;lt;/para&amp;gt;
+    &amp;lt;abstract&amp;gt;&amp;lt;para&amp;gt;
+        Inserts the current local date and time (to the minute) into the
+        current buffer before the cursor. The data are formatted per ISO
+        8601 specification. This is useful for prefixing entries in a log
+        book.
+    &amp;lt;/para&amp;gt;&amp;lt;/abstract&amp;gt;
+&amp;lt;/listitem&amp;gt;
+
+
+
+*/
+
+
+
+// end Insert_Time_ISO.bsh
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;
+
+/*
+ * Insert_Date_ISO-MJL.bsh - a BeanShell macro script for the
+ * jEdit text editor - inserts current system date in ISO 8601 condensed format
+ * Copyright © 2006 Michael Lockhart
+ *
+ * MJL20060603 - Created
+ * MJL20060604 - Tidy code, fix meta-comments
+ * MJL20060605 - Check object creation, just in case...
+ * MJL20060606 - use Macros.error(), instead of Macros.message()
+ */
+
+
+import java.text.SimpleDateFormat;
+
+
+
+dateFmt = new SimpleDateFormat("yyyyMMdd");
+
+now = new Date();
+
+
+
+if ((now != null) &amp;amp;&amp;amp; (dateFmt != null))
+    textArea.setSelectedText("MJL" + dateFmt.format(now) + " - ");
+else
+    Macros.error(view,"Could not create system Date or SimpleDateFormat "
+                    + "objects!nJVM resources might be extremely low.");
+
+
+/*
+	Macro index data (in DocBook format)
+
+
+&amp;lt;listitem&amp;gt;
+    &amp;lt;para&amp;gt;&amp;lt;filename&amp;gt;Insert_Date_ISO-MJL.bsh&amp;lt;/filename&amp;gt;&amp;lt;/para&amp;gt;
+    &amp;lt;abstract&amp;gt;&amp;lt;para&amp;gt;
+        Inserts the current local date into the current buffer before the
+        cursor. The data are formatted per ISO 8601 short specification and
+        prefixed with my initials 'MJL'. This is useful for inserting mod
+        comments into code files.
+    &amp;lt;/para&amp;gt;&amp;lt;/abstract&amp;gt;
+&amp;lt;/listitem&amp;gt;
+
+
+
+*/
+
+
+
+// end Insert_Date_ISO-MJL.bsh
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;
+
+/*
+ * Insert_Date_DOW.bsh - a BeanShell macro script for the
+ * jEdit text editor - inserts current system in ISO 8601 format, with day-of-week
+ * Copyright © 2006 Michael Lockhart
+ *
+ * MJL20060604 - Created
+ * MJL20060605 - Check object creation, just in case...
+ * MJL20060606 - use Macros.error(), instead of Macros.message()
+ *
+ */
+
+
+import java.text.SimpleDateFormat;
+
+
+
+dateFmt = new SimpleDateFormat("yyyy-MM-dd EEEE");
+
+
+
+now = new Date();
+
+
+
+if ((now != null) &amp;amp;&amp;amp; (dateFmt != null))
+    textArea.setSelectedText(dateFmt.format(now) + " ");
+else
+    Macros.error(view,"Could not create system Date or SimpleDateFormat "
+                    + "objects!nJVM resources might be extremely low.");
+
+
+/*
+	Macro index data (in DocBook format)
+
+
+&amp;lt;listitem&amp;gt;
+    &amp;lt;para&amp;gt;&amp;lt;filename&amp;gt;Insert_Date_DOW.bsh&amp;lt;/filename&amp;gt;&amp;lt;/para&amp;gt;
+    &amp;lt;abstract&amp;gt;&amp;lt;para&amp;gt;
+        Inserts the current local date and the day of the week into the
+        current buffer before the cursor. The date data are formatted per
+        ISO 8601 specification. The DOW is expanded to the full name. This
+        is useful for prefixing day entries in a log book.
+    &amp;lt;/para&amp;gt;&amp;lt;/abstract&amp;gt;
+&amp;lt;/listitem&amp;gt;
+
+
+
+*/
+
+
+
+// end Insert_Date_DOW.bsh
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;/blockquote&gt;
+
+The comments are  lot more verbose, but you can see the Insert_Date_ISO-MJL macro at work in the script comments above. Also, the Java &lt;a title="Javadoc - J2SE5 documentation" href="http://java.sun.com/j2se/1.5.0/docs/api/java/text/SimpleDateFormat.html"&gt;&lt;code&gt;SimpleDateFormat&lt;/code&gt;&lt;/a&gt; class makes formatting much simpler to read, I feel, but even with BeanShell's ability to use untyped variables (for example, in BeanShell you can say “&lt;code&gt;dateFormatter = new SimpleDateFormat&lt;/code&gt;…”, instead of Java's “&lt;code&gt;DateFormat dateFormatter=new SimpleDateFormat&lt;/code&gt;…”), the code is still not as &lt;a title="//Elegant" href="http://www.catb.org/~esr/jargon/html/E/elegant.html"&gt;&lt;em&gt;elegant&lt;/em&gt;&lt;/a&gt; as the elisp version.
+
+
+
+However, I think I'm starting to like jEdit over Emacs (blasphemy!).  Mind you it's slow: it makes Emacs seem zippy, and traditionaly Emacs stood for “EMACS Makes A Computer Slow”!
+
+
+
+On a side-note, there is a nice &lt;a title="jEdit plugins page" href="http://plugins.jedit.org/"&gt;plugin&lt;/a&gt; for jEdit, called &lt;a title="The Code2HTML page" href="http://plugins.jedit.org/plugins/?Code2HTML"&gt;Code2HTML&lt;/a&gt;, which renders your code in HTML, with syntax highlighting to match that done by jEdit (and jEdit knows a &lt;em&gt;lot&lt;/em&gt; of languages!).  Unfortunately when I pasted the generated HTML into this WordPress post and then saved it, all the highlighting got removed… I wonder if it has something to do with the plugin's use of &lt;code&gt;&amp;lt;SPAN&amp;gt;&lt;/code&gt;s and CSS Styles? But even if I paste the &lt;code&gt;&amp;lt;STYLE&amp;gt;&lt;/code&gt; block into this post as well, the formatting gets eaten up by WordPress :(  Something to look into.
+
+
+
+&lt;hr&gt;&lt;strong&gt;2006-06-07T15:36+1000 - Update: &lt;/strong&gt;I should make a point about the copyright on these scripts:  they're copy&lt;em&gt;left&lt;/em&gt;, GNU GPL2.0.  I just snipped out the boilerplate to make this post shorter.  Feel free to copy/use as you like, subject to the GPL, and you should of course cite the author (me) and include the boilerplate disclamers on any copy you distribute to others.  The missing boilerplate is below:
+
+&lt;blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt; *
+ *
+ * Copyright © 2006 Michael Lockhart.
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with the jEdit application; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ *
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;/blockquote&gt;
+
+&lt;hr&gt;&lt;strong&gt;2008-07-15T10:45+1000 - Update: &lt;/strong&gt; I've finally re-written these functions using &lt;a title="format-time-string (Emacs manual)" href="http://www.gnu.org/software/emacs/elisp/html_node/Time-Parsing.html#Time-Parsing"&gt;format-time-string&lt;/a&gt; as advised twice in the comments (!). Duh!
+
+&lt;blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;
+
+(defun mjl-insert-date-iso ()
+  "Inserts the current local date and time (to the minute) into
+the current buffer before Point. The date is formatted per ISO
+
+8601 specification. This is useful for prefixing entries in a log
+
+book."
+  (interactive)
+  (insert (format-time-string "%Y-%m-%dT%R%z")))
+
+
+(defun mjl-insert-date-stamp ()
+  "Inserts the current local date into the current buffer before
+Point. The date is formatted per ISO 8601 short specification and
+
+prefixed with my initials 'MJL'. This is useful for inserting mod
+
+comments into code files."
+  (interactive)
+  (setq now (decode-time))
+  (insert (format-time-string "MJL%Y%m%d")))
+
+
+(defun mjl-insert-date-dow ()
+  "Inserts the current local date and the day of the week into
+the current buffer before Point. The date is formatted per ISO
+
+8601 specification. The DOW is expanded to the full name. This is
+
+useful for prefixing day entries in a log book."
+  (interactive)
+  (insert (format-time-string "%Y-%m-%d %A")))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;/blockquote&gt;
+
+… and a new one, since I've become an &lt;a title="Emacs Org mode (standard in Emacs 22)" href="http://orgmode.org/"&gt;Org&lt;/a&gt; (and &lt;a title="Emacs Remember mode (from Emacs Wiki)" href="http://www.emacswiki.org/cgi-bin/wiki/RememberMode"&gt;Remember&lt;/a&gt;) fan:
+
+&lt;blockquote&gt;&lt;code&gt; &lt;/code&gt;
+
+&lt;pre&gt;(defun mjl-insert-log-entry-org ()
+  "Inserts the current local date and time into
+the current buffer before Point. The date is formatted to suit
+
+Org mode's agenda and highlighting functions. The date is also
+
+formatted as a level 3 headline for inclusion in an org
+
+file."
+  (interactive)
+  (insert (format-time-string "*** &amp;lt;%Y-%m-%d %A %R&amp;gt; ")))&lt;/pre&gt;
+&lt;/blockquote&gt;
+
+I should add that my flirtation with jEdit is over, by the way. Back to emacs for me, and I'm repenting for my blasphemous ways...</description><category>code</category><category>copyright</category><category>emacs</category><category>hacking</category><category>jEdit</category><category>java</category><category>lisp</category><guid>http://milosophical.me/blog/2006/06/07/jedit-macros-vs-emacs-functions.html</guid><pubDate>Wed, 07 Jun 2006 00:03:13 GMT</pubDate></item><item><title>Hacking emacsclient in cygwin</title><link>http://milosophical.me/blog/2006/04/18/hacking-emacsclient-in-cygwin.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;
+&lt;em&gt;This post was originally published
+  at &lt;a href="http://sinewalker.wordpress.com/2006/04/18/hacking-emacsclient-in-cygwin/"&gt;sinewalker.wordpress.com&lt;/a&gt;
+  on 18 April 2006.&lt;/em&gt;
+&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;I don't know why I haven't ever got around to this, but here—finally—is a hack to have Cygwin only ever start one instance of emacs (especially important in cygwin, because Win32 does not appear to share program texts between processes… )
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;!--more--&gt;
+&lt;p&gt;First, have Emacs start it's server whenever Emacs is started.  Put this in your &lt;code&gt;.emacs&lt;/code&gt; file:
+
+&lt;/p&gt;&lt;pre&gt;&lt;code&gt;(server-start)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;
+Next, add the following function to your &lt;code&gt;.bashrc&lt;/code&gt; file&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function emacs(){
+  emacsclient $* || /usr/bin/emacs $*
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;
+Now, whenever you type &lt;code&gt;emacs somefile&lt;/code&gt;, instead of loading a fresh emacs process (expensive operation in Windows/cygwin), &lt;code&gt;emacsclient&lt;/code&gt; will be run, and attempt to connect to a running emacs server to edit &lt;code&gt;somefile&lt;/code&gt;. If there is no server (e.g. emacs has not been started), then &lt;code&gt;emacsclient&lt;/code&gt; will fail. In this case, &lt;code&gt;emacs&lt;/code&gt; will be started instead to edit the file, and the &lt;code&gt;.emacs&lt;/code&gt; file makes sure that the server is ready for &lt;code&gt;emacsclient&lt;/code&gt; next time.&lt;/p&gt;</description><category>code</category><category>cygwin</category><category>emacs</category><category>hacking</category><guid>http://milosophical.me/blog/2006/04/18/hacking-emacsclient-in-cygwin.html</guid><pubDate>Tue, 18 Apr 2006 05:57:29 GMT</pubDate></item></channel></rss>
