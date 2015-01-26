@@ -1,24 +1,51 @@
- .. title: Milosophical Me
- .. slug: milosophical-me
- .. date: 2014-11-25 22:19:57 UTC+11:00
- .. tags: 
- .. link: 
- .. description: 
- .. type: text
+#+BEGIN_COMMENT
+.. title: Milosophical Me
+.. slug: milosophical-me
+.. date: 2015-01-26 21:31 UTC+1100
+.. tags: about, thoughts, draft
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
 
-Here's a dumb page with a few favourite pangrams, to see where it goes.
+Welcome to my web site! This page is the seemingly obligatory "why did
+I switch from <insert some other blogging engine/> to a static site on
+GitHub Pages?" story, and also a bit of a bridge since my last regular
+posts in 2012/2013
 
-Grumpy wizards make toxic brew for the evil Queen and Jack.
+** Where I've been
 
-Pack my box with five dozen liquor jugs.
+Readers who don't personally know me are probably unaware what has
+happened in my personal life.  Nothing tragic has occurred, I was just
+made redundant from my long-time position in a major I.T. corporation,
+and it hurt. A lot. It was also a major upheaval for my family, but we
+came through rather well, and I think we are in a better place -- on
+the whole -- for it.  Certainly my new job is much, much better, and
+so is our son's (soon to be sons') school. And so is our house.
 
-How quickly daft jumping zebras vex.
+In June of 2013 I was invited into HP's Sydney office for a
+personal meeting -- I didn't often come physically to work as I was a
+telecommuter living and working from the Blue Mountains. I knew from
+colleagues at work what was happening so it was no surprise what the
+meeting was about: my position had become redundant and unless gainful
+work could be found for me in three months, I would have to leave. HP
+offered to assist in finding work internally, as well as counselling
+and support for finding a position outside the company in that time.
 
-Five hexing wizard bots jump quickly.
-
-Five quacking zephyrs jolt my wax bed.
-
-Sphinx of black quartz, judge my vow!
 
 
-You can read [[http://milosophical.me/blog/index.html][my blog]]
+** Time for reflections
+
+** Appreciating where I am
+
+** Milosophy
+
+So, you will start to see a change in my posts I think: more of the
+personal,reflective/introspective kinds of posts you would expect to
+read in a diary or memoir -- though I am aware that basking in that
+too much is boring for anyone not personally connected to me, and
+potentially embarrasing for anyone else who is. So I'll see if I can
+strike the right balance. I've got a few excellent examples to go on,
+so I should be alright.
+
+
