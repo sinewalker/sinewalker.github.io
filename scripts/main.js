@@ -69,7 +69,7 @@
                     .append(new Btn('Bit Bucket').addClass('skin-bitbucket').on('click', linkEvent('http://www.bitbucket.com/sinewalker')))
                    )
             .append(new Btn('Hacks').addClass('skin-hax')
-                    .append(new Btn('(directory list)').addClass('skin-menu').on('click', linkEvent('/hax/')))
+                    //.append(new Btn('(directory list)').addClass('skin-menu').on('click', linkEvent('/hax/')))
                     .append(new Btn('Matrix rain').addClass('skin-matrix').on('click', linkEvent('/hax/matrix-rain/matrix.html')))
                     )
             .append(new Btn('iStorage').addClass('skin-cloud')
