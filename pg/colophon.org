@@ -16,11 +16,13 @@ Open Source web content management company. I do mainly Linux and
 projects in my Copious Free Time. Before this, I worked for nearly 15
 years in EDS and Hewlett Packard on lots of different systems.
 
-I live in [[http://discovertasmania.com.au][Tasmania]], where I grew up, returning here with my family (my
-lovely wife [[http://www.pinterest.com/jen2779/][Jenny]], three sons and a dog) in late 2013. We all feel
+
+I live in [[http://discovertasmania.com.au][Tasmania]], where I grew up, returning here in late 2013 with
+my family (my lovely wife [[http://www.pinterest.com/jen2779/][Jenny]], [[http://xkcd.com/946][three sons]] and a dog). We all feel
 very lucky to be living here, with family close at hand and an
 awesome, friendly and welcoming community around us. Well, maybe not
 the 2-year-old, but he's a pretty happy guy anyway.
+
 
 **** This web
 
@@ -31,6 +33,7 @@ the 2-year-old, but he's a pretty happy guy anyway.
 /own opinion and does not necessarily reflect the opinions or directions/
 /of my employers (past, present or future)./
 
+
 Having mostly completed the physical move from New South Wales, I've
 begun a virtual move from Wordpress too. The [[http://milosophical.me/archive.html][archive]] has old posts
 that I've migrated from [[http://sinewalker.blogspot.com.au/][old]] [[https://sinewalker.wordpress.com/][blogs]], though those are still online to be
@@ -38,10 +41,12 @@ read in their original form. On the Net, I go by the handle
 /sinewalker/, and while after 20 years I think I've outgrown it, it's
 still a unique username in most places.
 
+
 *If you wish to comment on a post, you will need a Google Plus account.*
 I feel this imposition is not too great given the number of Android
 phones out there now.  Besides, if your comment has merit then you
 won't mind being attributed to it... no anonymous cowards here ;-)
+
 
 **** Contacting me
 
@@ -60,9 +65,11 @@ generated from a mix of markup languages (typically Emacs [[http://orgmode.org][
 [[http://daringfireball.net/projects/markdown/][Markdown]] or [[http://ipython.org/][iPython]] [[http://ipython.org/notebook.html][Notebooks]]), using the [[http://getnikola.com][Nikola]] static web site and
 blog generator, and published to [[https://pages.github.com/][GitHub Pages]]. 
 
+
 The [[https://bitbucket.org/sinewalker/blog/src][source files]] are stored at bitbucket because I prefer [[http://mercurial.selenic.com/][Mercurial]]
 over git -- although peer pressure and [[https://magit.github.io/][magit]] may change my low opinion
 of git some day....
+
 
 Prose content of all articles are licensed under the [[http://creativecommons.org/licenses/by-sa/4.0/][Creative Commons
 Attribution-ShareAlike 4.0 License]], unless otherwise specified.

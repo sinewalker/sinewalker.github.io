@@ -1,8 +1,8 @@
 #+BEGIN_COMMENT
 .. title: Milosophical Me
 .. slug: milosophical-me
-.. date: 2015-01-26 21:31 UTC+1100
-.. tags: about, thoughts, draft
+.. date: 2015-01-27 23:12 UTC+1100
+.. tags: career, reflections, family, life
 .. link: 
 .. description: 
 .. type: text
@@ -11,41 +11,147 @@
 Welcome to my web site! This page is the seemingly obligatory "why did
 I switch from <insert some other blogging engine/> to a static site on
 GitHub Pages?" story, and also a bit of a bridge since my last regular
-posts in 2012/2013
+posts in 2012/2013.
 
-** Where I've been
+** Where have I been?
 
 Readers who don't personally know me are probably unaware what has
-happened in my personal life.  Nothing tragic has occurred, I was just
-made redundant from my long-time position in a major I.T. corporation,
-and it hurt. A lot. It was also a major upheaval for my family, but we
-came through rather well, and I think we are in a better place -- on
-the whole -- for it.  Certainly my new job is much, much better, and
-so is our son's (soon to be sons') school. And so is our house.
+happened in my personal life.  Nothing tragic has occurred, or
+particularly major in perspective, really.  Only that I was made
+redundant from my long-time position in a major I.T. corporation, and
+it hurt.  The shock of suddenly having no sure income, and with four
+dependants and a mortgage was pretty stressful too. 
 
 In June of 2013 I was invited into HP's Sydney office for a
 personal meeting -- I didn't often come physically to work as I was a
-telecommuter living and working from the Blue Mountains. I knew from
-colleagues at work what was happening so it was no surprise what the
+telecommuter living and [[https://www.facebook.com/media/set/?set=a.497711257701.272490.685372701&type=1&l=74e24db6bd][working from the Blue Mountains]]. I knew from
+colleagues at work what was happening, so it was no surprise what the
 meeting was about: my position had become redundant and unless gainful
 work could be found for me in three months, I would have to leave. HP
 offered to assist in finding work internally, as well as counselling
 and support for finding a position outside the company in that time.
 
+The whole redundancy experience is overwhelming. I'm still
+adjusting. The worst is missing my old home, my work colleagues and
+friends. Also the uncertainty and anxiety. The *best* was /being/
+/offered a new position by phone in August 2013, just as I was being/
+/escorted out of the building after my exit interview at my old job!/
 
+The other good news is that I got a large redundancy package, and with
+it we were able to finance a return to Tasmania!
+
+** Why Tasmania?
+
+Well, both Jenny and I grew up in north Tassie, and we both have
+family there (I also have a few aunts and my sister in Hobart).  So
+when I was looking for new work, and seeing that most of the
+opportunities available "near" our Blue Mountains home were in Sydney
+proper -- with a 2 hour commute in each direction between the CBD and
+home -- I decided to cast a wider net and see what jobs were on offer
+in Hobart.
+
+I applied for a couple of positions that looked promising and happily
+landed the one that I /really, really/ wanted.  The PD was very
+seductive and fit my own strengths perfectly.  So, pack up, sell the
+house and off we go to Tasmania!
+
+It was a major upheaval for the family with an interstate move, new
+school for our eldest son, moving away from friends and community
+connections.  When we got here, we were living in a caravan park
+before finding a house to rent and hunt for a new home to buy.  There
+were many hurdles and it took until June 2014 before we had a new
+permanent home (and permanent job). But we came through rather well,
+and I think we are in a better place -- on the whole -- for it.
+Certainly my new job is much, much better, and so is our son's (soon
+to be sons') school. We are making new friends. And our new house is
+awesome.
 
 ** Time for reflections
 
+This new role at Squiz is a return to home in more than one sense. Yes
+I've come home to Tassie, but also I think I've finally found the role
+I'm suited for. For years at EDS/HP I tried to be a developer, because
+I love the technical. I could never quite land the role I wanted or
+hold onto the opportunities that did come my way though, and the few
+times I did get to /write code/, it was last-minute fire-fighting that
+turned into a lights-on support role after the project "went live" and
+the developers all moved on to new projects -- leaving me and a few
+others to hold the fort. Our reward for saving the project.
+
+With the redundancy though, I was forced to take a look inward, at
+what I had and hat not achieved in my career, where I am strongest and
+what I enjoy doing. It turns out I'm not a developer, and I'm okay
+with that. *What I do well, and have done for my whole career, is*
+*integration, teaching and* "*engaging people*". I've been doing "dev-ops"
+since before there was a movement about it; being the connection point
+between the aloof developers and the grumpy sys-admins, and making
+parts and people fit together. And also between the business managers
+and the IT managers, business analysts and my clients' customers (or
+"end-users" as our industry lovingly calls them). So when the job
+description popped up for the role at Squiz, it seemed to fit like a
+glove. Clearly the Squiz HR managers felt the same.
+
+As I write this in early 2015, I've been here at Squiz for about 18
+months. The honeymoon is over and I've seen the warts, but
+[[http://www.squiz.net/au/careers][this place is awesome]], with such potential both as a company and for me
+personally. I'm really not only relieved, but excited to have received
+permanency here. Every day I come (physically) to work, I am
+surrounded by fantastic peers who challenge me and I reaffirm that I'm
+in the right place at last.
+
 ** Appreciating where I am
 
+The return to Tasmania is a home-coming too. Yes, we are missing the
+events and travel opportunities in and around Sydney, and I miss my
+Blue Mountains home (and my tae kwon do club). But Tassie has it's own
+events and stuff that [[http://www.lonelyplanet.com/best-in-travel/regions/04-tasmania][draws people from all over the world]]. We love
+the life style here. We also having family closer -- something we've
+not had for 15 years while living in New South Wales and 9 years of
+raising children.
+
+Also, we can finally travel to places *other* than Tasmania for our
+big summer trips ;-)
+
 ** Milosophy
+
+(Mike's philosophy)
+
+The latter part of 2013 and the year 2014 have been stressful, jubilant, hectic,
+emotional, anxious, challenging, fulfilling.  I was working hard in my
+career and in family life, not having (or taking?) a lot of time for
+personal reflection. In early 2015 I finally took some extended annual
+leave (two weeks) which gave me the time to focus on our home, my
+family, and myself.  This page is part of the return on that
+investment, but of course there is much else beyond what I will
+publicly expose.
+
+** Milosophical Me
+
+There are technical reasons for my move away from Wordpress as a
+blogging platform (it's slow/awkward to use, convoluted to maintain,
+limited when hosted for free, and anyway dynamic pages built from
+databases are silly for static content-heavy sites like blogs), I want
+to begin playing with HTML/CSS/JavaScript (or [[http://clojure.org/clojurescript][languages]] that [[http://coffeescript.org/][compile]]
+to Javascript), and need a place to publish [[http://milosophical.me/hax/matrix-rain/matrix.html][hacks]], and [[http://milosophical.me/pixels/][pictures]]. Now I
+can have my cake and eat it: a framework for making blogging quick and
+painless when I need it to be, as well as being able to side-step it
+when I want full control over the web codes.  Plus I've finally bought
+a domain name, so that I won't be flitting all over the place in
+future, even if I decide to host somewhere other that GitHub, or use
+some other blogging framework than Nikola.
+
+Beyond the technical, for this site I feel there will be more value
+for myself and any readers I have if I use this an opportunity for
+personal reflection, as well as documenting and exploring technical
+topics. More Zen, more Tao, but hopefully still no bull.
 
 So, you will start to see a change in my posts I think: more of the
 personal,reflective/introspective kinds of posts you would expect to
 read in a diary or memoir -- though I am aware that basking in that
 too much is boring for anyone not personally connected to me, and
-potentially embarrasing for anyone else who is. So I'll see if I can
+potentially embarrassing for anyone else who is. So I'll see if I can
 strike the right balance. I've got a few excellent examples to go on,
 so I should be alright.
 
+I begin 2015 in high hopes for my personal and online future. 
 
