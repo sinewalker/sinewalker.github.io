@@ -23,7 +23,6 @@ very lucky to be living here, with family close at hand and an
 awesome, friendly and welcoming community around us. Well, maybe not
 the 2-year-old, but he's a pretty happy guy anyway.
 
-
 **** This web
 
 /On this web site you will find posts, pages, pictures and code that is in/
@@ -46,7 +45,6 @@ still a unique username in most places.
 I feel this imposition is not too great given the number of Android
 phones out there now.  Besides, if your comment has merit then you
 won't mind being attributed to it... no anonymous cowards here ;-)
-
 
 **** Contacting me
 
@@ -71,6 +69,6 @@ over git -- although peer pressure and [[https://magit.github.io/][magit]] may c
 of git some day....
 
 
-Prose content of all articles are licensed under the [[http://creativecommons.org/licenses/by-sa/4.0/][Creative Commons
+Prose content of all articles are licensed under a [[http://creativecommons.org/licenses/by-nc-sa/4.0/][Creative Commons
 Attribution-ShareAlike 4.0 License]], unless otherwise specified.
 
