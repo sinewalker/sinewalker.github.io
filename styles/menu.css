@@ -158,7 +158,7 @@ body {
   height: 60px;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  background-image: url(../images/icon-close.png);
+  background-image: url(../icons/icon-close.png);
   background-size: 60px 60px;
 }
 
@@ -168,7 +168,7 @@ body {
 }
 
 .button-button.skin-main_menu {
-  background-image: url(../images/icon-milo.png);
+  background-image: url(../icons/icon-milo.png);
   background-color: #74e;
   box-shadow: 0 1px 0 0 #74e;
 }
@@ -178,7 +178,7 @@ body {
 }
 
 .button-button.skin-menu {
-  background-image: url(../images/icon-menu.png);
+  background-image: url(../icons/icon-menu.png);
   background-color: #ff6622;
   box-shadow: 0 1px 0 0 #bb3a00;
 }
@@ -188,7 +188,7 @@ body {
 }
 
 .button-button.skin-about {
-  background-image: url(../images/icon-info.png);
+  background-image: url(../icons/icon-info.png);
   background-color: #0022bb;
   box-shadow: 0 1px 0 0 #001155;
 }
@@ -198,7 +198,7 @@ body {
 }
 
 .button-button.skin-www {
-  background-image: url(../images/icon-www.png);
+  background-image: url(../icons/icon-www.png);
   background-color: #0097e0;
   box-shadow: 0 1px 0 0 #00527a;
 }
@@ -208,7 +208,7 @@ body {
 }
 
 .button-button.skin-blog {
-  background-image: url(../images/icon-blog.png);
+  background-image: url(../icons/icon-blog.png);
   background-color: #74e;
   box-shadow: 0 1px 0 0 #74e;
 }
@@ -218,7 +218,7 @@ body {
 }
 
 .button-button.skin-linkedin {
-  background-image: url(../images/icon-linkedin.png);
+  background-image: url(../icons/icon-linkedin.png);
   background-color: #0877b0;
   box-shadow: 0 1px 0 0 #0877b0;
 }
@@ -228,7 +228,7 @@ body {
 }
 
 .button-button.skin-disabled {
-  background-image: url(../images/icon-alert.png);
+  background-image: url(../icons/icon-alert.png);
   background-color: #555;
   box-shadow: 0 1px 0 0 #222;
 }
@@ -238,7 +238,7 @@ body {
 }
 
 .button-button.skin-facebook {
-  background-image: url(../images/icon-facebook.png);
+  background-image: url(../icons/icon-facebook.png);
   background-color: #555;
   box-shadow: 0 1px 0 0 black;
 }
@@ -248,7 +248,7 @@ body {
 }
 
 .button-button.skin-code {
-  background-image: url(../images/icon-code.png);
+  background-image: url(../icons/icon-code.png);
   background-color: #002244;
   box-shadow: 0 1px 0 0 black;
 }
@@ -258,7 +258,7 @@ body {
 }
 
 .button-button.skin-matrix {
-  background-image: url(../images/matrix-animated-image.gif);
+  background-image: url(../icons/matrix-animated-image.gif);
   background-color: #002244;
   box-shadow: 0 1px 0 0 black;
 }
@@ -269,7 +269,7 @@ body {
 
 
 .button-button.skin-gallery {
-  background-image: url(../images/icon-gallery.png);
+  background-image: url(../icons/icon-gallery.png);
   background-color: #74e;
   box-shadow: 0 1px 0 0 black;
 }
@@ -279,7 +279,7 @@ body {
 }
 
 .button-button.skin-codex {
-  background-image: url(../images/icon-codex.png);
+  background-image: url(../icons/icon-codex.png);
   background-color: #74e;
   box-shadow: 0 1px 0 0 black;
 }
@@ -290,7 +290,7 @@ body {
 
 
 .button-button.skin-gcal {
-  background-image: url(../images/icon-gcal.png);
+  background-image: url(../icons/icon-gcal.png);
   background-color: #74e;
   box-shadow: 0 1px 0 0 #091422;
 }
@@ -300,7 +300,7 @@ body {
 }
 
 .button-button.skin-stack-overflow {
-  background-image: url(../images/icon-stack-overflow.png);
+  background-image: url(../icons/icon-stack-overflow.png);
   background-color: #ffffff;
   box-shadow: 0 1px 0 0 #ffffff;
 }
@@ -310,7 +310,7 @@ body {
 }
 
 .button-button.skin-gplus {
-  background-image: url(../images/mike-matrix-square.png);
+  background-image: url(../icons/mike-matrix-square.png);
   background-color: #131131;
   box-shadow: 0 1px 0 0 black;
 }
@@ -320,7 +320,7 @@ body {
 }
 
 .button-button.skin-sourceforge {
-  background-image: url(../images/icon-sourceforge.png);
+  background-image: url(../icons/icon-sourceforge.png);
   background-color: #006294;
   box-shadow: 0 1px 0 0 black;
 }
@@ -330,7 +330,7 @@ body {
 }
 
 .button-button.skin-github {
-  background-image: url(../images/icon-github.png);
+  background-image: url(../icons/icon-github.png);
   background-color: #006294;
   box-shadow: 0 1px 0 0 black;
 }
@@ -340,7 +340,7 @@ body {
 }
 
 .button-button.skin-bitbucket {
-  background-image: url(../images/icon-bitbucket.png);
+  background-image: url(../icons/icon-bitbucket.png);
   background-color: #205081;
   box-shadow: 0 1px 0 0 black;
 }
@@ -350,7 +350,7 @@ body {
 }
 
 .button-button.skin-cloud {
-  background-image: url(../images/icon-cloud.png);
+  background-image: url(../icons/icon-cloud.png);
   background-color: #006294;
   box-shadow: 0 1px 0 0 black;
 }
@@ -360,7 +360,7 @@ body {
 }
 
 .button-button.skin-links {
-  background-image: url(../images/icon-link.png);
+  background-image: url(../icons/icon-link.png);
   background-color: #006294;
   box-shadow: 0 1px 0 0 black;
 }
@@ -370,7 +370,7 @@ body {
 }
 
 .button-button.skin-hax {
-  background-image: url(../images/icon-glider.png);
+  background-image: url(../icons/icon-glider.png);
   background-color: black;
   box-shadow: 0 1px 0 0 black;
 }
@@ -380,7 +380,7 @@ body {
 }
 
 .button-button.skin-gdrive {
-  background-image: url(../images/icon-gdrive.png);
+  background-image: url(../icons/icon-gdrive.png);
   background-color: #006294;
   box-shadow: 0 1px 0 0 black;
 }
@@ -390,7 +390,7 @@ body {
 }
 
 .button-button.skin-gmail {
-  background-image: url(../images/icon-gmail.png);
+  background-image: url(../icons/icon-gmail.png);
   background-color: #74e;
   box-shadow: 0 1px 0 0 black;
 }
@@ -401,7 +401,7 @@ body {
 
 
 .button-button.skin-copy {
-  background-image: url(../images/icon-copy.png);
+  background-image: url(../icons/icon-copy.png);
   background-color: #006294;
   box-shadow: 0 1px 0 0 black;
 }
@@ -411,7 +411,7 @@ body {
 }
 
 .button-button.skin-box {
-  background-image: url(../images/box128.png);
+  background-image: url(../icons/box128.png);
   background-color: #006294;
   box-shadow: 0 1px 0 0 black;
 }
@@ -424,7 +424,7 @@ body {
 
 
 .button-button.skin-alert {
-  background-image: url(../images/icon-alert.png);
+  background-image: url(../icons/icon-alert.png);
   background-color: #ff6622;
   box-shadow: 0 1px 0 0 #bb3a00;
 }
