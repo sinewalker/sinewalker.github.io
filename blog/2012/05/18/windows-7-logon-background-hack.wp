@@ -1,7 +1,7 @@
 <html><body><p>This is common knowledge, yet strangely every time I rebuild my work PC (which is too often! Gah!) I try and Google the location of Registry keys and folders and always, always get a bum-steer. So here, have another (bum-steer?) version of this hack on the Net.
 
 
-<!--more-->
+<!-- TEASER_END -->
 
 </p><ul>
 	<li>Registry key to hack: <strong>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\ CurrentVersion\Authentication\LogonUI\ Background</strong>

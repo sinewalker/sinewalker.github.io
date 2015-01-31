@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (java)</title><link>http://milosophical.me/</link><description></description><language>en</language><lastBuildDate>Fri, 30 Jan 2015 22:57:21 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Fixing Java CA Certificates on openSUSE</title><link>http://milosophical.me/blog/2013/05/24/fixing-java-ca-certificates-on-opensuse.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;Recently switched back to openSUSE after a brief stint with Ubuntu. I guess you need to try other things out to know how good you have it, eh?  Anyway, I'm playing with &lt;a href="https://github.com/technomancy/leiningen" title="Leiningen build tool for Clojure"&gt;Leiningen&lt;/a&gt; and &lt;a href="https://github.com/quil/quil" title="Quil Clojure wrapper for Processing"&gt;Quil&lt;/a&gt;, but for some reason or other, I could not get Leiningen to self-install, because of an exception:
+&lt;/p&gt;&lt;pre style="text-align:center;"&gt;java.security.KeyStoreException: problem accessing trust storejava.io.IOException: Invalid keystore format&lt;/pre&gt;
+
+It turns out that the java keystore is somehow corrupt on OpenJDK / openSUSE 12.3. Not sure who's at fault, but here's how to fix it.
+
+&lt;p&gt;&lt;a href="http://milosophical.me/blog/2013/05/24/fixing-java-ca-certificates-on-opensuse.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>certificates</category><category>fix</category><category>hacking</category><category>java</category><category>openSUSE</category><guid>http://milosophical.me/blog/2013/05/24/fixing-java-ca-certificates-on-opensuse.html</guid><pubDate>Fri, 24 May 2013 04:03:15 GMT</pubDate></item><item><title>Java virtual memory limits again</title><link>http://milosophical.me/blog/2012/07/31/java-virtual-memory-limits-again-2.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;I think I can finally put &lt;a title="32-bit Windows and JVM virtual memory limit" href="http://sinewalker.wordpress.com/2007/03/04/32-bit-windows-and-jvm-virtual-memory-limit"&gt;this old walnut&lt;/a&gt; to bed, having just updated it with some observations made by guru's of Stack Overflow. Hooray, only took me four years :-P&lt;/p&gt;</description><category>hacking</category><category>java</category><category>virtual memory</category><category>windows</category><guid>http://milosophical.me/blog/2012/07/31/java-virtual-memory-limits-again-2.html</guid><pubDate>Tue, 31 Jul 2012 02:50:57 GMT</pubDate></item><item><title>Java 7 is here - but it's lacking the dolphin's grace</title><link>http://milosophical.me/blog/2011/08/09/java-7-lacking-the-dolphins-grace.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;Well, after 5 years and the setting of the Sun, Java SE 1.7 (originally code-named "dolphin") has finally been released. Joyous celebrations from the land of Duke.&lt;/p&gt;
+
+
+&lt;!--more--&gt;
+
+
+&lt;p&gt;
+There's much that has been long looked for in this release, and I'm happy about it — especially the nio.2 filesystem API and the improved support on the platform for scripting languages and dynamic languages. But the "improvements" to the Java language itself only highlight to me that this language is pretty well into zombie status (it's dead and yet it keeps trying to live and eat more developers' brains).
+&lt;/p&gt;
+
+&lt;p&gt;
+Take this enhancement to the language that finally allows you to do a switch on Strings. This bit of syntactic sugar has been on my own wish list since 1997 (when I first started to play with Java and discovered you couldn't switch on Strings). But of course, the bureaucrats have bodged it. Look at this code:
+&lt;/p&gt;
+
+
+&lt;pre&gt;
+public class StringSwitch {
+    public static String getFruitColour(String name) {
+        switch (name) {
+        case "apple":
+        case "raspberry":
+        case "strawberry":
+            return "Red";
+        case "banana":
+        case "lemmon":
+            return "Yellow";
+        case "kiwi":
+        case "grapes":
+        case "lime":
+            return "Green";
+        case "orange":
+        case "pawpaw":
+            return "Orange";
+        default:
+            return "Unknown";
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(getFruitColour("guava"));  // should fall through to default
+        System.out.println(getFruitColour(null));     // actually causes NPE at the switch
+    }
+}
+&lt;/pre&gt;
+
+&lt;p&gt;
+This should work, and the null string should cause the switch to fall through. Seems reasonable, yes? Well, no. You get an NPE:
+
+&lt;/p&gt;&lt;blockquote&gt;
+
+&lt;pre&gt;$ &lt;strong&gt;java StringSwitch&lt;/strong&gt;
+
+Unknown
+
+Exception in thread "main" java.lang.NullPointerException
+	at StringSwitch.getFruitColour(StringSwitch.java:4)
+	at StringSwitch.main(StringSwitch.java:26)&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;
+Damn it, guys! How does this make my coding simpler? Now I have to remember that if I'm switching on String, I have to guard against NPEs. Okay, it's better than nested &lt;code&gt;if&lt;/code&gt;'s, but it's a serious gotcha. Again. Here's one solution, though of course, being Java, it's fugly:
+
+
+&lt;/p&gt;&lt;pre&gt;
+public class StringSwitch {
+    public static String getFruitColour(String name) {
+        if (name != null) {
+            switch (name) {
+                case "apple":
+                case "raspberry":
+                case "strawberry":
+                    return "Red";
+                case "banana":
+                case "lemmon":
+                    return "Yellow";
+                case "kiwi":
+                case "grapes":
+                case "lime":
+                    return "Green";
+                case "orange":
+                case "pawpaw":
+                    return "Orange";
+                default:
+                    return "Unknown";
+            }
+        } else {
+            return "Unknown (NULL)"; // bleah.
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(getFruitColour("guava"));  // should fall through to default
+        System.out.println(getFruitColour(null));     // this time the NPE is guarded
+    }
+}
+&lt;/pre&gt;
+&lt;p&gt;
+If anything, Java 7 demonstrates that the JVM is a great platform for dynamic languages other than Java. Like for instance Scala and Clojure... How disappointing.
+&lt;/p&gt;
+</description><category>hacking</category><category>java</category><category>rant</category><guid>http://milosophical.me/blog/2011/08/09/java-7-lacking-the-dolphins-grace.html</guid><pubDate>Tue, 09 Aug 2011 12:38:54 GMT</pubDate></item><item><title>Java concurrency links</title><link>http://milosophical.me/blog/2010/05/31/java-concurrency-links.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;There is lots of information on the Web about concurrent programming with Java (or with other languages on the JVM). This post is a list of links I have found helpful and/or interesting.
+&lt;/p&gt;&lt;ul&gt;
+	&lt;li&gt;&lt;!--more--&gt;Book: &lt;a title="[Amazon]" href="http://www.amazon.com/Java-Concurrency-Practice-Brian-Goetz/dp/0321349601" target="_blank"&gt;Java Concurrency in Practice&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Lesson: Concurrency [Essential classes]" href="http://java.sun.com/docs/books/tutorial/essential/concurrency/index.html" target="_blank"&gt;Sun Java Concurrency tutorial&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Lesson: Concurrency in Swing" href="http://java.sun.com/docs/books/tutorial/uiswing/concurrency/index.html" target="_blank"&gt;Sun Swing Concurrency tutorial&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;Chet Haas: &lt;a title="Threadaches" href="http://weblogs.java.net/blog/kgh/archive/2004/10/multithreaded_t.html" target="_blank"&gt;why multi-threading complicates programs&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://tutorials.jenkov.com/java-concurrency/index.html" target="_blank"&gt;Jenkov's Java Concurrency tutorial&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://clojure.org/concurrent_programming" target="_blank"&gt;Clojure - concurrent programming&lt;/a&gt; (OOP and threads: you're doing it wrong!)&lt;/li&gt;
+	&lt;li&gt;Rich Hickey's &lt;a href="http://www.infoq.com/author/Rich-Hickey;jsessionid=A71BA221017576118321155C523FB39B" target="_blank"&gt;InfoQ presentations &lt;/a&gt;(about clojure, state, concurrency)&lt;/li&gt;
+	&lt;li&gt;More of Rich Hickey's&lt;a title="Clojure episodes on blip.tv" href="http://clojure.blip.tv/posts?view=archive&amp;amp;nsfw=dc" target="_blank"&gt; Clojure / concurrency talks&lt;/a&gt; at blip.tv&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Vimeo profile" href="http://vimeo.com/seandevlin" target="_blank"&gt;Sean Delvin&lt;/a&gt;'s &lt;a title="Full Disclojure" href="http://vimeo.com/8320428" target="_blank"&gt;introductory series on Clojure 1.1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description><category>clojure</category><category>concurrency</category><category>concurrent programming</category><category>hacking</category><category>java</category><category>jvm</category><category>multi-core</category><category>multi-threading</category><category>programming</category><category>threads</category><guid>http://milosophical.me/blog/2010/05/31/java-concurrency-links.html</guid><pubDate>Mon, 31 May 2010 12:44:38 GMT</pubDate></item><item><title>Switching to Java JDK 6u10</title><link>http://milosophical.me/blog/2008/10/30/switching-to-java-jdk-6u10.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;I've been using 6u10 beta for a while and keeping 6u3 as my main JDK. It's also the default JDK for NetBeans but now that update 10 of &lt;em&gt;Mustang &lt;/em&gt;is out of beta, it's time for me to ditch 6u3 and swtich to 6u10 final.
+&lt;!--more--&gt;
+
+This is fairly straight forward. Here's what I did:
+
+&lt;/p&gt;&lt;ol&gt;
+	&lt;li&gt;Install JDK 6u10 (it'll find 6u10b and offer to remove it)&lt;/li&gt;
+	&lt;li&gt;Start NetBeans, add the new 6u10 and remove the (now missing) 6u10b java platforms. Do this from the &lt;strong&gt;Tools &amp;gt; Java Platforms&lt;/strong&gt; menu&lt;/li&gt;
+	&lt;li&gt;To change the default JDK (which is the one running NetBeans itself)
+&lt;ol&gt;
+	&lt;li&gt;edit &lt;code&gt;/&lt;em&gt;path&lt;/em&gt;/&lt;em&gt;to&lt;/em&gt;/&lt;em&gt;NetBeans&lt;/em&gt;/etc/netbeans.conf&lt;/code&gt; (you can do this in NB if you like)&lt;/li&gt;
+	&lt;li&gt;change the &lt;strong&gt;&lt;code&gt;netbeans_jdkhome&lt;/code&gt;&lt;/strong&gt; property to be the path to your 6u10. On my Windows machine, this is &lt;code&gt;"D:\Java\jdk1.6.0_10"&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;Restart NetBeans&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;/li&gt;
+	&lt;li&gt;(optional) Uninstall your other jdk6 and remove it from NetBeans' list.&lt;/li&gt;
+&lt;/ol&gt;
+
+More tips for &lt;code&gt;netbeans.conf&lt;/code&gt; can be found on the &lt;a title="NetBeans FAQ on netbeans.conf" href="http://wiki.netbeans.org/FaqNetbeansConf"&gt;NetBeans Community Wiki&lt;/a&gt;.
+
+
+
+My policy is to keep around only the latest stable update of each JDK, so I still have 1.4.2_17 and 1.5.0_15, in addition to (now) 1.6.0_10. Mainly this is because I still use 1.4.2 for work and 1.5.0 for testing. But there's no point in keeping two updates of the same version because their APIs are the same.
+
+
+
+Same goes for the javadoc: it shouldn't have changed between 1.6.0 and 1.6.0_10 so I haven't bothered to check it or to download a newer copy. I also keep (zipped) javadocs for 1.4.2 and 1.5.0.</description><category>hacking</category><category>java</category><category>netbeans</category><category>tip</category><guid>http://milosophical.me/blog/2008/10/30/switching-to-java-jdk-6u10.html</guid><pubDate>Wed, 29 Oct 2008 22:52:21 GMT</pubDate></item><item><title>"generic" types: what's in a name?</title><link>http://milosophical.me/blog/2008/09/10/generic-types-whats-in-a-name.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;span&gt;I've been stumbling over Java's generic types for a while now...  I think I finally understand what my problem is:&lt;/span&gt;
+&lt;p style="text-align:center;"&gt;They should be called &lt;strong&gt;specific &lt;/strong&gt;types, or &lt;em&gt;&lt;span&gt;parametrised&lt;/span&gt;&lt;/em&gt; &lt;em&gt;collections&lt;/em&gt;!&lt;/p&gt;
+
+
+
+&lt;!--more--&gt;
+
+
+
+I think the feature is called "Java generics" because when you use a collection, say &lt;code&gt;List&amp;lt;E&amp;gt;&lt;/code&gt;, that &lt;code&gt;List&lt;/code&gt; contains elements of parameterised type &lt;code&gt;&amp;lt;E&amp;gt;&lt;/code&gt;, a "generic type".  But the element type in the plain old-fashioned non-parametrised collection &lt;code&gt;List&lt;/code&gt; is also generic!  In fact the non-parametrised &lt;code&gt;List&lt;/code&gt; is more &lt;em&gt;generic&lt;/em&gt; than the "generic" version (it can contain elements of &lt;em&gt;any&lt;/em&gt; sub-class of &lt;code&gt;Object&lt;/code&gt;)!  The distinction is that the elements in a &lt;code&gt;List&amp;lt;String&amp;gt;&lt;/code&gt; are all of one &lt;strong&gt;specific&lt;/strong&gt; type (&lt;code&gt;String&lt;/code&gt;), whereas the elements in a &lt;code&gt;List&lt;/code&gt; can be of any general type, and can even be of different types in the same &lt;code&gt;List&lt;/code&gt; collection (leading to problems that "Java generics" was invented to address).
+
+
+
+&lt;span&gt;&lt;code&gt;&amp;lt;sarcasm&amp;gt;&lt;/code&gt;Gosh, what an epiphany.&lt;code&gt;&amp;lt;/sarcasm&amp;gt;&lt;/code&gt;&lt;/span&gt;
+
+
+
+&lt;span&gt;If you're a Java guru this is nothing new, of course.  But that took me &lt;strong&gt;ages&lt;/strong&gt; to grasp.  I think I wasn't helped by the terminology.  &lt;/span&gt;In fact whenever I'm reading Java literature, it helps if I swap "generic" for "specific".  This makes much more sense to me.  Actually I already do word substitutions for much of the Java canon.  For instance:
+
+&lt;ul&gt;
+	&lt;li&gt;"class Foo is instantiated"
+Translation: "a Foo object is created"&lt;/li&gt;
+	&lt;li&gt;"invoke method X of class Y"
+Translation: "send message X to a Y object",
+
+or even "send class Y the X message"&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;span&gt;Probably the Java literature is strictly more "correct" or explicit, but it'd be much more clear and concise if people used the older &lt;span&gt;OOP&lt;/span&gt; words for things...&lt;/span&gt;</description><category>OOP</category><category>duh</category><category>generics</category><category>jargon</category><category>java</category><category>terminology</category><category>thoughts</category><guid>http://milosophical.me/blog/2008/09/10/generic-types-whats-in-a-name.html</guid><pubDate>Wed, 10 Sep 2008 04:00:37 GMT</pubDate></item><item><title>Project: Dvorcode</title><link>http://milosophical.me/blog/2008/08/15/project-dvorcode.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;I've just finished hacking together a simple little program to transcode my "dvorcodes" for when entering on a QWERTY keyboard. I've created a new &lt;a title="Dvorcode project summary page on SourceForge" href="http://sourceforge.net/projects/dvorcode/"&gt;project on SourceForge&lt;/a&gt; and I've uploaded the code and a pair of pre-compiled executable JARs (one for Java 5 and also a re-worked version that's been tested on Java 1.4.2).
+
+
+&lt;!--more--&gt;
+
+&lt;/p&gt;&lt;h3&gt;What!?&lt;/h3&gt;
+
+What are "dvorcodes"? Well, I use a &lt;a title="Yet another Dvorak advocasy site. This one has good links to information and help. See also dvzine.org" href="http://www.theworldofstuff.com/dvorak/"&gt;Dvorak Simplified keyboard&lt;/a&gt;, which is great except for entering passwords. If you must use one of those systems that locks your account after too many wrong tries, you really have to know 100% where all the keys are! My work-around &lt;a title="One of my notes on Dvorak usage" href="http://sinewalker.wordpress.com/2006/03/27/dvorak-keyboards/"&gt;has been&lt;/a&gt;: think of a password and then enter that on the QWERTY caps. For instance, typing the keys &lt;em&gt;bluepotato&lt;/em&gt; on a Dvorak-mapped QWERTY keyboard comes out as &lt;em&gt;xng.lryayr&lt;/em&gt;.
+
+
+
+This is all great, until you have to enter the password on a QWERTY keyboard (say, a friend or co-worker's machine) and all of a sudden you realise: you have to enter the &lt;em&gt;real&lt;/em&gt; password!
+
+
+
+&lt;strong&gt;Problem&lt;/strong&gt;: you don't remember (or never even knew) what the dvorcode for "bluepotato" is. Also you can't just walk back to your machine, and your friend is not convinced about Dvorak's greatness enough to let you re-map her own keyboard to Dvorak just so you can spend five minutes checking your web mail on her computer. Trust me: deaf ears, plus your password problem adds weight to her argument...
+
+
+
+This utility is a solution. You run it, enter the password you remember on the QWERTY keyboard, and it'll give you the dvorcode. You can then cut/paste or just remember it for a few seconds and type it in by hand. It's a Java app, so it can be kept on a USB memory for just this emergency, and it will run wherever a JRE is installed (if your friend's machine doesn't have a JRE, why are they your friend?).
+
+&lt;h3&gt;Why?&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;I needed a tool to decode "dvorcodes" for exactly the situation above&lt;/li&gt;
+	&lt;li&gt;It's an opportunity to learn some Open Source / Agile project management skills with a simple project&lt;/li&gt;
+	&lt;li&gt;It might be useful to someone else&lt;/li&gt;
+	&lt;li&gt;There are several things in this tool that could be improved&lt;/li&gt;
+	&lt;li&gt;It's good Java and NetBeans practice&lt;/li&gt;
+	&lt;li&gt;Possibly meet some new hacker friends on-line&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Project details&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Hosting web site
+&lt;a title="Dvorcode project summary page on SourceForge" href="http://sourceforge.net/projects/dvorcode/"&gt;http://sourceforge.net/projects/dvorcode/&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;Subversion repository
+&lt;span&gt; &lt;a class="linkifyplus" href="https://dvorcode.svn.sourceforge.net/svnroot/dvorcode"&gt;https://dvorcode.svn.sourceforge.net/svnroot/dvorcode&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+	&lt;li&gt;Browse source on-line
+&lt;a title="Browse the source code online" href="http://dvorcode.svn.sourceforge.net/viewvc/dvorcode/"&gt;http://dvorcode.svn.sourceforge.net/viewvc/dvorcode/&lt;/a&gt;&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;h3&gt;Documentation&lt;/h3&gt;
+
+Here's a quick overview. I'll probably put something better up on SourceForge.
+
+
+
+Enter phrases in the top box (where it says "Enter phrase here"). Press the GO button to perform the trans-code operation. The result is displayed in the lower box. As results are added to the lower box, they scroll down so the newest one is always at the top of the list. Use the radio buttons to change trans-code direction.
+
+&lt;h4&gt;Shortcut Keys&lt;/h4&gt;
+
+The mouse is supported too, but I prefer these to the mouse:
+
+&lt;table border="1"&gt;
+
+&lt;tbody&gt;
+
+&lt;tr&gt;
+
+&lt;th&gt;Key&lt;/th&gt;
+
+&lt;th&gt;Function&lt;/th&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;&lt;strong&gt;Enter&lt;/strong&gt;&lt;/td&gt;
+
+&lt;td&gt;trans-code the phrase
+
+(pushes the GO button for you.)&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;tr&gt;
+
+&lt;td&gt;&lt;strong&gt;Esc&lt;/strong&gt;&lt;/td&gt;
+
+&lt;td&gt;Quit the program&lt;/td&gt;
+
+&lt;/tr&gt;
+
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;a title="IBM Common User Access keys described on Wikipedia" href="http://en.wikipedia.org/wiki/IBM_Common_User_Access"&gt;CUA&lt;/a&gt; copy/paste and field navigation key (Tab/Shift-Tab), as well as common &lt;a title="Cut, Copy and Paste described on Wikipedia" href="http://en.wikipedia.org/wiki/Cut,_copy,_and_paste"&gt;Copy/Paste&lt;/a&gt; keys are also supported (courtesy of Swing).
+
+&lt;h4&gt;Steps to decode a "dvorcode"&lt;/h4&gt;
+
+The scrolling text pane automatically selects the newest result for you, so the simplest workflow (but not safest, see cautions) is:
+
+&lt;ol&gt;
+	&lt;li&gt;Start dvorcode.jar on your friend's machine&lt;/li&gt;
+	&lt;li&gt;Type your password as you remember it, using the normal QWERTY key mapping, press Enter&lt;/li&gt;
+	&lt;li&gt;Press Tab to go to result&lt;/li&gt;
+	&lt;li&gt;Copy (Ctrl-C or Ctrl-Insert)&lt;/li&gt;
+	&lt;li&gt;Alt-Tab (or whatever) to where you must enter the password&lt;/li&gt;
+	&lt;li&gt;Paste (However that's done on the host platform)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3&gt;Some cautions&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;&lt;span style="color:#cc0033;"&gt;&lt;strong&gt;&lt;span&gt;dvorcodes are not a safe way to come up with "unguessable" passwords&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;. It's simple to build a dvorcode dictionary (you could use this tool in fact) so crackers probably already have one&lt;/li&gt;
+	&lt;li&gt;This utility is &lt;span style="color:#cc0033;"&gt;&lt;strong&gt;&lt;span&gt;not safe against shoulder surfing&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;. The passwords and dvorcodes are clear on the screen!&lt;/li&gt;
+	&lt;li&gt;If you copy/paste the dvorcode, &lt;span style="color:#cc0033;"&gt;&lt;strong&gt;&lt;span&gt;it'll remain on your friend's clipboard&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;. Copy something else there before you step away, or better yet, &lt;span style="color:#cc0033;"&gt;&lt;strong&gt;&lt;span&gt;never copy/paste passwords&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;...&lt;/li&gt;
+	&lt;li&gt;Remember to &lt;span style="color:#cc0033;"&gt;&lt;strong&gt;&lt;span&gt;exit the program once you have your code&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;, so that your passwords aren't left lying around on some strange computer. You can do it quickly with the Escape key, that's why I added it&lt;/li&gt;
+	&lt;li&gt;It might be wise practice to &lt;span style="color:#ff6633;"&gt;&lt;strong&gt;change your password&lt;/strong&gt;&lt;/span&gt; after using it on someone else's computer anyway, just in case...&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;strong&gt;UPDATE: 2008-08-18T09:32+1000 - Dvorak Simplified promotion&lt;/strong&gt;
+
+I used to recommend people go to see &lt;strong&gt;dvzine.org&lt;/strong&gt; for a cute magazine that promotes the Dvorak keyboard, and also how to turn it on with most computers (it's pre-installed in most modern/popular systems, even Mac and Windows).
+
+
+
+Unfortunately that domain and website seem to have dissapeared sometime in late 2007 early 2008. Not surprising since it was run by some university students while they were at college.
+
+
+
+However the &lt;a title="The Net Archives" href="http://www.archive.org/index.php"&gt;internet archive&lt;/a&gt; &lt;a title="Wayback Machine home page" href="http://www.archive.org/web/web.php"&gt;wayback machine&lt;/a&gt; has saved &lt;a title="web archives for dvzine.org" href="http://web.archive.org/web/*/http://dvzine.org"&gt;several copies of dvzine.org&lt;/a&gt;, including a fairly good &lt;a title="DVzine.org circa February 2007" href="http://web.archive.org/web/20070208052330/http://dvzine.org/"&gt;working copy&lt;/a&gt;.</description><category>dvorak</category><category>hacking</category><category>java</category><category>passwords</category><category>projects</category><guid>http://milosophical.me/blog/2008/08/15/project-dvorcode.html</guid><pubDate>Thu, 14 Aug 2008 23:50:31 GMT</pubDate></item><item><title>Compiling JNLP projects under stock NetBeans 6.x</title><link>http://milosophical.me/blog/2008/04/30/compiling-jnlp-projects-under-stock-netbeans-6x.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;This is a pretty simple issue that was easy to solve but took a bit of fumbling around...
+
+
+I recently checked out the new Java &lt;a title="SwingSet3 demo project on dev.java.net" href="https://swingset3.dev.java.net/"&gt;SwingSet3&lt;/a&gt; project from it's &lt;a title="browse SwingSet3 Subversion repository" href="https://swingset3.dev.java.net/source/browse/swingset3/"&gt;SVN repo&lt;/a&gt;, to play around with it. It's a NetBeans project so it was simple enough to fire up NetBeans 6.0 and use it's built-in &lt;a title="NetBeans' Subversion documentation" href="http://subversion.netbeans.org/"&gt;Subversion support&lt;/a&gt; to check the project out from the repository directly...
+
+
+
+My plan was very simple: check out the code with NetBeans, build it, run it (using JDK 1.6.0_10 beta for the new Nimbus look/feel too) and then hack at the code.
+
+
+
+&lt;!--more--&gt;Small problem: once the project is checked out and loaded, NetBeans pops up a warning dialog:
+
+&lt;/p&gt;&lt;p style="padding-left:30px;"&gt;&lt;img src="http://farm4.static.flickr.com/3070/2472351759_d9d7ff3f6b_o_d.png" alt="Alert box" width="533" height="255"&gt;&lt;/p&gt;
+
+
+
+Also the Projects view shows errors, and if you drill down to them, it's because NetBeans can't find the &lt;strong&gt;&lt;code&gt;javax.jnlp&lt;/code&gt;&lt;/strong&gt; package. Hmm, I thought JNLP was included with the JDK since 1.5? How odd...
+
+
+
+Well, to make a long story short, the fix is to do the following steps (an explanation comes later):
+
+&lt;ol&gt;
+	&lt;li&gt;Resolve Problems by right-clicking the SwingSet3 project in the Projects view and choosing the "&lt;strong&gt;Resolve Problems...&lt;/strong&gt;" menu item:
+&lt;a href="http://farm4.static.flickr.com/3129/2473173812_52fe68032f_o_d.png"&gt;&lt;img src="http://farm4.static.flickr.com/3129/2473173812_91b7f88edb_d.jpg" alt="NetBeans Project menu " width="500" height="351"&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;This opens a dialog listing the problem (should only have one). Press the "&lt;strong&gt;Resolve&lt;/strong&gt;..." button at right
+&lt;img src="http://farm4.static.flickr.com/3201/2473173864_2a1f5444fc_o_d.png" alt="Resolve Reference Problems dialog" width="458" height="392"&gt;&lt;/li&gt;
+	&lt;li&gt;NetBeans presents a dialog listing libraries and JARs. Our issue is that the SwingSet3 project has defined a library called "&lt;strong&gt;JavaWebStart&lt;/strong&gt;" but if you look in the tree at left, there is no such library defined in NetBeans by default. No worries, let's make one&lt;/li&gt;
+	&lt;li&gt;Press the button at bottom ("&lt;strong&gt;New Library...&lt;/strong&gt;")
+&lt;a href="http://farm4.static.flickr.com/3225/2472351987_1017ef91ec_o_d.png"&gt;&lt;img src="http://farm4.static.flickr.com/3225/2472351987_747fefca8a_d.jpg" alt="NetBeans Library Manager -- New Library button" width="500" height="358"&gt;&lt;/a&gt;
+
+This gives you the same dialog you get via Project Properties &amp;gt; Libraries &amp;gt; Add Library &amp;gt; Create (in case you want to repeat later...). Give it the name that the Project wants ("&lt;strong&gt;JavaWebStart&lt;/strong&gt;" in case of SwingSet3). It'll be a Class Library&lt;/li&gt;
+	&lt;li&gt;Now you need to tell NetBeans about the JARs that belong to the library:
+&lt;img src="http://farm4.static.flickr.com/3172/2472352043_0040e20d2b_d.jpg" alt="NetBeans Library Manager -- Add JAR/Folder" width="500" height="358"&gt;
+
+We need &lt;code&gt;&lt;strong&gt;jnlp.jar&lt;/strong&gt;&lt;/code&gt;, but might as well add the other Java Web Start stuff to the library too. You can find these JARs in your JDK under &lt;strong&gt;&lt;code&gt;&lt;em&gt;&amp;lt;JDK_HOME&amp;gt;&lt;/em&gt;/sample/jnlp/servlet&lt;/code&gt;&lt;/strong&gt;. Add all the JARs form this directory (&lt;strong&gt;&lt;code&gt;jnlp.jar&lt;/code&gt;&lt;/strong&gt;,&lt;code&gt; &lt;strong&gt;jnlp-servlet.jar&lt;/strong&gt;&lt;/code&gt;, &lt;strong&gt;&lt;code&gt;jardiff.jar&lt;/code&gt;&lt;/strong&gt;):
+
+&lt;a href="http://farm4.static.flickr.com/3227/2472352103_1a795fd8ca_o_d.png"&gt;&lt;img src="http://farm4.static.flickr.com/3227/2472352103_339145900f_d.jpg" alt="Library Manager, JARs added" width="500" height="358"&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;Add your new library to your project's Compile Libraries and you're done:
+&lt;img src="http://farm4.static.flickr.com/3035/2473174102_8462fafb3d_d.jpg" alt="Resolved, click Close." width="458" height="392"&gt;&lt;/li&gt;
+
+&lt;/ol&gt;
+
+Once you've done this, you can use your new "JavaWebStart" library for other projects requiring JWS/JNLP too:
+
+
+
+&lt;a href="http://farm3.static.flickr.com/2309/2485078298_865ae8cd92_o_d.png"&gt;&lt;img src="http://farm3.static.flickr.com/2309/2485078298_25a83e9060_m_d.jpg" alt="Right-click Libraries in Projects view to get a menu, choose Add Library" width="240" height="169"&gt;&lt;/a&gt;&lt;a href="http://farm3.static.flickr.com/2166/2484260383_92c8339077_o_d.png"&gt;&lt;img src="http://farm3.static.flickr.com/2166/2484260383_acd1f1a6d9_t_d.jpg" alt="Find the JavaWebStart Library and press " width="92" height="100"&gt;&lt;/a&gt;&lt;a href="http://farm4.static.flickr.com/3133/2485077758_c417209c53_o_d.png"&gt;&lt;img src="http://farm4.static.flickr.com/3133/2485077758_1cc77bea3d_m_d.jpg" alt="The new Library's JARs are added to the Library tree of the Project view"&gt;&lt;/a&gt;
+
+
+
+In the SwingSet3 project, there's also a broken reference to &lt;code&gt;C:/java/jnlp1.2/jnlp.jar&lt;/code&gt;, but I don't think this matters (it compiles without the reference). You can probably remove it from the project.
+
+
+
+Now, what happened? It seems to me that the project file I checked out contained a reference to a non-standard NetBeans library called "JavaWebStart". This was probably defined by the project coders to refer to the JWS class libraries. For some reason, the JWS stuff ships as part of the JDK since 1.5, but only in the Samples directory. Why Sun chose to distribute it in the samples instead and not in &lt;code&gt;&lt;em&gt;&amp;lt;JKD_HOME&amp;gt;&lt;/em&gt;/lib&lt;/code&gt; is a mystery to me... it causes two problems:
+
+&lt;ul&gt;
+	&lt;li&gt;Development libraries for JNLP is not accessible by default, unlike other &lt;code&gt;javax.&lt;em&gt;*&lt;/em&gt;&lt;/code&gt; packages... so you'll need to go through this learning curve&lt;/li&gt;
+	&lt;li&gt;If you chose not to install the samples with your JDK, you won't have &lt;code&gt;jnlp.jar&lt;/code&gt;, and will need to add it (using the JDK installer, if you still have it), or download the &lt;a title="Java Web Start Developer's Kit (older)" href="http://java.sun.com/products/javawebstart/download-jnlp.html"&gt;Java Web Start Developer's Kit&lt;/a&gt; (which also mentions it's included with the JDK since 1.5...)&lt;/li&gt;
+&lt;/ul&gt;
+
+Anyway, problem's solved once your IDE knows how to find the library and JAR...
+
+
+
+SwingSet3 rocks by the way, and I'm having lots of fun learning how to do Swing properly.
+
+
+
+&lt;hr&gt;&lt;strong&gt;2008-05-12 13:40 Update:--&lt;/strong&gt; This post has become a community &lt;a href="http://wiki.netbeans.org/TaT_CompileJNLPprojects"&gt;Tips and Tricks article&lt;/a&gt; at the &lt;a href="http://wiki.netbeans.org/"&gt;NetBeans community wiki&lt;/a&gt;.
+
+</description><category>hacking</category><category>java</category><category>tip</category><guid>http://milosophical.me/blog/2008/04/30/compiling-jnlp-projects-under-stock-netbeans-6x.html</guid><pubDate>Wed, 30 Apr 2008 00:40:23 GMT</pubDate></item><item><title>Essentials to make Windows almost bareable</title><link>http://milosophical.me/blog/2007/06/07/essential-tools-to-make-windows-almost-bareable.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;Okay, so I hate working in Windows, but on my employer's equipment at least, I must live with it. After having had this machine replaced twice (faulty Dell hardware) and rebuilt more times than I can remember (Windows BSODs), for a total of at least 3 system migrations this past year, I thought I'd better keep a list of what free software to install on top of Windows, and what adjustments to make, so that at least I don't feel like I'm wearing a straight jacket.  Here goes:
+
+
+&lt;!--more--&gt;
+
+&lt;/p&gt;&lt;h3&gt;Useability&lt;/h3&gt;
+
+Fix the keyboard to &lt;a href="http://sinewalker.wordpress.com/2006/03/27/dvorak-keyboards/"&gt;Dvorak&lt;/a&gt; (following is for Windows XP -- this will likely change for Vista... it shouldn't be this complicated!)
+
+&lt;blockquote&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;Open Control Panel:  &lt;strong&gt;START &amp;gt; Control Panel&lt;/strong&gt;&lt;/li&gt;
+	&lt;li&gt;Choose "&lt;strong&gt;Regional and Language Options&lt;/strong&gt;" (why not Keyboard???)&lt;/li&gt;
+	&lt;li&gt;Select "&lt;strong&gt;Languages&lt;/strong&gt;" tab, press Details... button (sigh)&lt;/li&gt;
+	&lt;li&gt;In the "&lt;strong&gt;Installed services&lt;/strong&gt;" section, select "&lt;strong&gt;Keyboard&lt;/strong&gt;", then press "&lt;strong&gt;Add...&lt;/strong&gt;" to add a new keyboard layout&lt;/li&gt;
+	&lt;li&gt;Find &lt;strong&gt;US-Dvorak&lt;/strong&gt; in the list&lt;/li&gt;
+	&lt;li&gt;In the "&lt;strong&gt;Default input language&lt;/strong&gt;" section, set the default language to English (Australia) - United States-Dvorak&lt;/li&gt;
+	&lt;li&gt;In the "&lt;strong&gt;Preferences&lt;/strong&gt;" section, press "&lt;strong&gt;Language Bar...&lt;/strong&gt;" button&lt;/li&gt;
+	&lt;li&gt;Make sure that "&lt;strong&gt;Show the language bar on the desktop&lt;/strong&gt;" is turned &lt;em&gt;&lt;strong&gt;on&lt;/strong&gt;&lt;/em&gt;, to make it easier to switch to QWERTY if needed&lt;/li&gt;
+	&lt;li&gt;Back in "&lt;strong&gt;Preferences&lt;/strong&gt;", press the "&lt;strong&gt;Key Settings...&lt;/strong&gt;" button&lt;/li&gt;
+	&lt;li&gt;Turn &lt;strong&gt;&lt;em&gt;off &lt;/em&gt;&lt;/strong&gt;all the language &lt;strong&gt;Hot keys&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;/blockquote&gt;
+
+To get rid of that &lt;a href="http://www.winsupersite.com/images/showcase/xp_n_05.jpg"&gt;horrible&lt;/a&gt;, &lt;a href="http://www.winsupersite.com/images/showcase/xp_n_03.jpg"&gt;garish &lt;/a&gt;blue/green stock XP theme, I use the &lt;a title="Zune -- it's still Microsoft, but it looks less garish" href="http://stevenharman.net/blog/archive/2006/12/09/WinXP__Zune_Theme.aspx"&gt;Zune theme&lt;/a&gt; from Microsoft. It sucks less (the theme, that is, not the MP3 player, that sucks &lt;em&gt;more &lt;/em&gt;than iPod).
+
+
+
+Make Explorer a bit useable.  Actually Explorer is total crap, and I'm still searching for a replacement. I like &lt;a href="http://en.wikipedia.org/wiki/Midnight_Commander"&gt;MidnightCommander&lt;/a&gt; in Cygwin (&lt;code&gt;mc&lt;/code&gt;), and &lt;a href="http://konqueror.kde.org/"&gt;Konqueror&lt;/a&gt; in KDE.  But for Windows, there aren't a lot of &lt;em&gt;free &lt;/em&gt;Explorer replacements, except maybe Windows File Explorer.  Anyway, follow these steps to have Explorer at least be not so stupid:
+
+&lt;blockquote&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;Open an Explorer window (anywhere)&lt;/li&gt;
+	&lt;li&gt;Select "&lt;strong&gt;Tools &amp;gt; Folder Options...&lt;/strong&gt;", "&lt;strong&gt;General&lt;/strong&gt;" tab&lt;/li&gt;
+	&lt;li&gt;Make sure that under "&lt;strong&gt;Browse folders&lt;/strong&gt;", the option is to "&lt;strong&gt;Open each folder in the same window&lt;/strong&gt;" (Explorer doesn't do multi-windows like Macintosh Finder: it screws them up)&lt;/li&gt;
+	&lt;li&gt;In "&lt;strong&gt;Click items as follows&lt;/strong&gt;", turn on "&lt;strong&gt;Single-click to open&lt;/strong&gt;", and "&lt;strong&gt;Underline icons only when I point at them&lt;/strong&gt;"&lt;/li&gt;
+	&lt;li&gt;Select the "&lt;strong&gt;View&lt;/strong&gt;" tab&lt;/li&gt;
+	&lt;li&gt;Turn &lt;em&gt;&lt;strong&gt;on &lt;/strong&gt;&lt;/em&gt;the following:
+&lt;ol&gt;
+	&lt;li&gt;"Display the full path in the address bar"&lt;/li&gt;
+	&lt;li&gt;"Display the full path in the title bar"&lt;/li&gt;
+	&lt;li&gt;"Do not cache thumbnails"&lt;/li&gt;
+	&lt;li&gt;"Show hidden files and folders"&lt;/li&gt;
+	&lt;li&gt;"Show both parts and manage them individually" (for web pages and folders)&lt;/li&gt;
+	&lt;li&gt;"Show encrypted or compressed NTFS files in color"&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;/li&gt;
+	&lt;li&gt;Turn &lt;em&gt;&lt;strong&gt;off &lt;/strong&gt;&lt;/em&gt;the following:
+&lt;ol&gt;
+	&lt;li&gt;"Hide extensions for known file types"&lt;/li&gt;
+	&lt;li&gt;"Launch folder windows in a separate process"&lt;/li&gt;
+	&lt;li&gt;"Remember each folder'sview settings"&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;/li&gt;
+	&lt;li&gt;Press the "&lt;strong&gt;Apply&lt;/strong&gt;", then "&lt;strong&gt;Apply to All Folders&lt;/strong&gt;" buttons&lt;/li&gt;
+	&lt;li&gt;Press "&lt;strong&gt;OK&lt;/strong&gt;"&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Programs&lt;/h3&gt;
+
+Install these programs at a minimum:
+
+&lt;blockquote&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;&lt;a title="Rediscover the Web" href="http://en.www.mozilla.com/en/firefox/"&gt;Firefox &lt;/a&gt;(essential add-ons:  &lt;a title="social web bookmarks" href="http://del.icio.us/help/firefox/extension"&gt;del.icio.us&lt;/a&gt;, &lt;a title="Download Accellerator (and a better manager)" href="http://www.downthemall.net/"&gt;DownThemAll&lt;/a&gt;, &lt;a title="Spell-check input boxes, in en_au language" href="http://www.justlocal.com.au/clients/oooau/"&gt;English (AU) Dictionary&lt;/a&gt;, &lt;a title="Block's Flash adds" href="https://addons.mozilla.org/en-US/firefox/addon/433"&gt;Flashblock&lt;/a&gt;, &lt;a title="Make inline images larger" href="http://imagezoom.yellowgorilla.net/"&gt;ImageZoom&lt;/a&gt;, &lt;a title="Turn on/off proxy settings with one click" href="https://addons.mozilla.org/en-US/firefox/addon/1557"&gt;QuickProxy&lt;/a&gt;, &lt;a title="Synchronise your local bookmarks between Firefox installations" href="http://www.foxmarks.com"&gt;Foxmarks&lt;/a&gt;, &lt;a title="Turn your google mail account into free online storage" href="http://www.getgspace.com/"&gt;GSpace&lt;/a&gt;)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Open Source keystroke starter for Windows" href="http://www.launchy.net"&gt;Launchy&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a title="WFE description page" href="http://www.freesoftlabs.com/fileexpl.asp"&gt;Windows File Explorer&lt;/a&gt; (a free, sort-of &lt;a href="http://en.wikipedia.org/wiki/Orthodox_file_manager"&gt;orthodox&lt;/a&gt; file manager for Windows)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Brings Windows desktop up to status of 1990 Unix" href="http://virt-dimension.sourceforge.net"&gt;Virtual Dimension&lt;/a&gt; (Virtual desktop support for Windows)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="No Machine's Product listing page" href="http://www.nomachine.com/products.php"&gt;No Machine&lt;/a&gt;'s &lt;a title="NX Client - Windows - Download" href="http://www.nomachine.com/download-client-windows.php"&gt;NX Client for Windows&lt;/a&gt; (so I can connect a &lt;a title="NX Technology overview" href="http://www.nomachine.com/documentation/intr-technology.php"&gt;high speed X&lt;/a&gt; session to my home machine)&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://www.openoffice.org"&gt;OpenOffice.org&lt;/a&gt; (also use &lt;a href="http://www.justlocal.com.au/clients/oooau/"&gt;JustLocal&lt;/a&gt;'s dictionary / thesaurus files to get spell check working)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Unix compatibility layer for Windows" href="http://www.cygwin.com/"&gt;Cygwin &lt;/a&gt;(include the X11 modules, Emacs [make sure to select ver 22], pdksh, subversion, python, clisp, fortune, mc, ssh, units, etc....)&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://java.sun.com/javase/downloads/index.jsp"&gt;Java SE DevKit&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Latest Windows Subversion binaries" href="http://subversion.tigris.org/servlets/ProjectDocumentList?folderID=91"&gt;Subversion for Windows&lt;/a&gt; (version control)&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://www.netbeans.org/"&gt;NetBeans&lt;/a&gt; (6.0 or greater has everything I need)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Audio editor and MP3/OGG converter" href="http://audacity.sourceforge.net/download/windows"&gt;Audacity&lt;/a&gt; audio editor and encoder&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Network streaming Video" href="http://www.videolan.org/vlc/download-windows.html"&gt;VideoLAN Client&lt;/a&gt; movie player&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://www.illiminable.com/ogg/"&gt;Illiminable DirectShow filters&lt;/a&gt; for &lt;a href="http://www.vorbis.com/setup_windows/"&gt;OGG Vorbis&lt;/a&gt; (to play .OGG files in Windows Media Player)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Amiga MOD player" href="http://www.modplug.com/"&gt;MODPlug&lt;/a&gt; (because sometimes a good &lt;a href="http://del.icio.us/sinewalker/modules"&gt;MOD&lt;/a&gt; fits my mood)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="GNU Image Manipulation Program" href="http://gimp-win.sourceforge.net/"&gt;GIMP&lt;/a&gt; image editor&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Image viewer" href="http://www.irfanview.com/"&gt;IrfanView&lt;/a&gt; image viewer&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Emacs&lt;/h3&gt;
+
+Once Cygwin and Emacs are installed, I need to add my dotfiles (from backup), and also install these emacs add-ons:   &lt;a title="Superior Lisp Interaction Mode for Emacs" href="http://common-lisp.net/project/slime/"&gt;&lt;/a&gt;
+
+&lt;blockquote&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;&lt;a title="Superior Lisp Interaction Mode for Emacs" href="http://common-lisp.net/project/slime/"&gt;SLIME&lt;/a&gt; &lt;a href="http://sourceforge.net/projects/psgml"&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://sourceforge.net/projects/psgml"&gt;PSGML&lt;/a&gt; &lt;a title="Subversion support for Emacs (pre-22)" href="http://www.xsteve.at/prg/emacs/psvn.el"&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Subversion support for Emacs (pre-22)" href="http://www.xsteve.at/prg/emacs/psvn.el"&gt;PSVN&lt;/a&gt; (not strictly needed, since emacs22 adds SVN support in VC mode)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Collection of Emacs Development Environment Tools" href="http://cedet.sourceforge.net/"&gt;CEDET&lt;/a&gt; (this is not trivial to install, I&lt;em&gt; still &lt;/em&gt;haven't figured it out)&lt;a title="Collection of Emacs Development Environment Tools" href="http://cedet.sourceforge.net/"&gt; &lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Java Development Environment for Emacs" href="http://jdee.sunsite.dk/"&gt;JDEE&lt;/a&gt; (requires some or all of CEDET)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="This is neat!" href="http://www.eaflux.com/cygwin/cyg-emacsclient/"&gt;cyg-emacsclient&lt;/a&gt; (wrapper to add Emacs to your SendTo folder, and have it actually work)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/blockquote&gt;
+
+CEDET and JDEE might be more trouble than they're worth, especially since I'm installing NetBeans anyway. They seem cool (especially the enhanced speedbar), but they're not exactly plug-and-play. Jury's still out.</description><category>Delicious</category><category>Microsoft</category><category>cygwin</category><category>dvorak</category><category>emacs</category><category>hacking</category><category>how-to</category><category>jEdit</category><category>java</category><category>lisp</category><category>media</category><category>shell</category><guid>http://milosophical.me/blog/2007/06/07/essential-tools-to-make-windows-almost-bareable.html</guid><pubDate>Wed, 06 Jun 2007 23:16:44 GMT</pubDate></item><item><title>Setting up multiple Java VMs under Cygwin</title><link>http://milosophical.me/blog/2007/03/09/setting-up-multiple-java-vms-under-cygwin.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;It is useful to have different versions of the JVM installed, for a number of reasons:
+&lt;/p&gt;&lt;ul&gt;
+	&lt;li&gt;Different optimisation features from different JVM implementations&lt;/li&gt;
+	&lt;li&gt;Different language features from different JVM versions&lt;/li&gt;
+	&lt;li&gt;Java classes compiled with “&lt;em&gt;Tiger&lt;/em&gt;” won't run in “&lt;em&gt;Mantis&lt;/em&gt;”…&lt;/li&gt;
+&lt;/ul&gt;
+
+It is also useful to be able to quickly switch between installed JREs/JDKs depending on the task at hand.
+
+
+
+If I'm hacking in Linux, the &lt;a title="JPackage home page" href="http://milosophical.me/blog/2007/03/09/www.jpackage.org"&gt;JPackage&lt;/a&gt; project provides a much &lt;a title="JPackage's install/location/naming policy facilitates use of the udate-alternative mechanism" href="http://www.jpackage.org/policy.php"&gt;nicer &lt;/a&gt;&lt;a title="Debian's update-alternatives solution explained" href="http://www.debian.org/doc/debian-policy/ap-pkg-alternatives.html"&gt;solution &lt;/a&gt;to this problem, and the Linux distro' I'm using (SUSE 10.0) &lt;a title="Instruction for installing Java on openSUSE" href="http://en.opensuse.org/Installing_Sun's_Java_on_SUSE_Linux"&gt;uses JPackage&lt;/a&gt;. It'd be nice if there was an &lt;code&gt;update-alternatives&lt;/code&gt; for Cygwin, but since there isn't I've come up with this hack.
+
+
+
+&lt;!--more--&gt;
+
+
+
+&lt;hr&gt;&lt;strong&gt;2007-03-09T08:06+1100 - Update: Neater &lt;code&gt;JVersion&lt;/code&gt; code&lt;/strong&gt; I've recently upgraded to &lt;em&gt;Mustang&lt;/em&gt; and noticed that this broke my function, since it installs to a different base directory &lt;em&gt;again&lt;/em&gt;… So here is a new version that hopefully covers off future default directory names that Sun comes up with for &lt;em&gt;Dolphin&lt;/em&gt; and the Open Source releases.
+
+&lt;pre&gt;&lt;code&gt;
+
+# Path variables
+
+if [ x"$X_PATH_NO_JAVA" = x ]; then
+    export X_PATH_NO_JAVA=~/bin:$PATH     # save path without JAVA, for future switches
+fi
+
+
+
+if [ x"$JAVA_BASE" = x ]; then
+    JAVA_BASE=d:\\java    # default if not set in Windows
+fi
+
+
+
+# Functions
+
+function JVersion() {
+    # Select a Java Development Kit to use.
+    # This provides similar functionality in Cygwin, to the
+    # updatealternatives command of Debian/SuSE linux.
+    #
+    # Note, different releases have different standard dirs,
+    # so we just look for "k" which seems to be the
+    # thing they still have in common.  Also the sed scripts
+    # which pull out the version number installed, for
+    # reporting, must be specific for each release...
+
+    #Convert JAVA_BASE to Cygwin format
+    export JAVA_BASE=`cygpath -up $JAVA_BASE`
+
+    # Use function's argument to select, defaulting to Mantis
+    case $1 in
+        1.6 | 1.6.0 | 6.0 | 6 | mustang | Mustang | MUSTANG)
+            export JAVA_VER=`ls $JAVA_BASE | grep k1.6.0`
+            JVERNUM=`echo $JAVA_VER | sed s/^jdk//g`
+        ;;
+        1.5 | 1.5.0 | 5.0 | 5 | tiger | Tiger | TIGER)
+            export JAVA_VER=`ls $JAVA_BASE | grep k1.5.0`
+            JVERNUM=`echo $JAVA_VER | sed s/^j2sdk//g`
+        ;;
+        * | MANTIS)
+            export JAVA_VER=`ls $JAVA_BASE | grep k1.4.2`
+            JVERNUM=`echo $JAVA_VER | sed s/^j2sdk//g`
+        ;;
+    esac
+
+    #Set the JAVA_HOME variable (used by some Java programs, so
+    #must be in Windows format for those programs to understand)
+    export JAVA_HOME=`cygpath -wp $JAVA_BASE/$JAVA_VER`
+
+    #Add the correct JDK runtime to Cygwin's path
+    export PATH=$JAVA_BASE/$JAVA_VER/bin:$X_PATH_NO_JAVA
+
+    #Report what happened
+    echo Java Version: $JVERNUM
+    echo Java Base: $JAVA_BASE
+    echo "Java Home: $JAVA_HOME (`cygpath -up $JAVA_HOME`)"
+}
+
+
+
+#Now run it to set up initial Java environment:
+
+JVersion &amp;gt; /dev/null
+
+&lt;/code&gt;&lt;/pre&gt;
+
+This is all you need now, no complicated set-up variables and such rubbish. You'll notice that the setup steps are now just to set &lt;code&gt;$X_PATH_NO_JAVA&lt;/code&gt; (save the &lt;code&gt;$PATH&lt;/code&gt;&lt;em&gt; without&lt;/em&gt; Java in it), and set up &lt;code&gt;$JAVA_BASE&lt;/code&gt; if necessary. Then after the function is declared and I run it to set a default Java environment for Cygwin (Still &lt;em&gt;Mantis&lt;/em&gt; for now, since my work is using it for a system I support).
+
+
+
+Read on for old stuff and false-starts...
+
+
+
+...
+
+
+
+I have a shell function called &lt;code&gt;JVersion&lt;/code&gt; which you use to select the version of the JVM you want to use, and a bunch of environment variables to make it all work.  Here's how you use it:
+
+&lt;blockquote&gt;
+
+&lt;pre&gt;$ &lt;strong&gt;JVersion tiger&lt;/strong&gt;
+
+Java Version: 1.5.0_04
+
+Java Base: /cygdrive/d/java
+
+Java Home: /cygdrive/d/java/j2sdk1.5.0_04
+
+$ &lt;strong&gt;java -version
+
+&lt;/strong&gt;java version "1.5.0_04"
+
+Java(TM) 2 Runtime Environment, Standard Edition (build 1.5.0_04-b05)
+
+Java HotSpot(TM) Client VM (build 1.5.0_04-b05, mixed mode, sharing)
+
+$
+
+$ &lt;strong&gt;JVersion mantis
+
+&lt;/strong&gt;Java Version: 1.4.2_05
+
+Java Base: /cygdrive/d/java
+
+Java Home: /cygdrive/d/java/j2sdk1.4.2_05
+
+$ &lt;strong&gt;java -version
+
+&lt;/strong&gt;java version "1.4.2_05"
+
+Java(TM) 2 Runtime Environment, Standard Edition (build 1.4.2_05-b04)
+
+Java HotSpot(TM) Client VM (build 1.4.2_05-b04, mixed mode)
+
+$&lt;/pre&gt;
+
+&lt;/blockquote&gt;
+
+When using Java from the command-line (DOS or Cygwin), you need to have the interpreter (for JRE) and development tools (for JDK) on the system search PATH. You also used to have to set the CLASSPATH for the JRE to find bootstrap and extension classes, but these are now found automatically via the System property "&lt;code&gt;sun.boot.class.path&lt;/code&gt;" and the Java Extension Mechanism. However, it's still useful to have a JAVA_HOME variable for some third-party tools, such as IDEs.
+
+
+
+I've written a bash function which uses some control variables to allow easy switching of JVMs on Cygwin. It's still a bit of a hack, but I find it useful when I'm on Windows to work from the bash prompt as well as whatever IDE I'm hacking in.
+
+
+
+The control variables are
+
+&lt;ul&gt;
+	&lt;li&gt;&lt;code&gt;JAVA_BASE&lt;/code&gt; = the base directory where all the JVMs are installed. I put each JVM in it's own directory under &lt;code&gt;D:\java&lt;/code&gt;
+This variable should be in the Windows environment, but it defaults to &lt;code&gt;d:\java&lt;/code&gt; in my &lt;code&gt;.bashrc&lt;/code&gt; if it was not set (i.e. I forgot to):
+
+&lt;pre&gt;if [ x"$JAVA_BASE" = x ]; then
+     JAVA_BASE=d:\\java    # default if not set in Windows
+fi&lt;/pre&gt;
+
+I'm sticking to DOS pathnames for this variable, as I intend to replicate this functionality with batch files one day, in case I'm mad enough to run Java from a Windows command shell.  Anyway, I then convert this to a Cygwin path with the following &lt;a title="$man 1 sed" href="http://linux.ctyme.com/man/man2933.htm"&gt;&lt;code&gt;sed&lt;/code&gt;&lt;sub&gt;(1)&lt;/sub&gt;&lt;/a&gt; and &lt;a title="$man 1 gawk" href="http://linux.ctyme.com/man/man0898.htm"&gt;&lt;code&gt;awk&lt;/code&gt;&lt;sub&gt;(1)&lt;/sub&gt;&lt;/a&gt; hack:
+
+&lt;pre&gt;JAVA_BASE=`echo $JAVA_BASE | sed 's////g'`   # fix DOS sloshes
+
+export JAVA_BASE=`echo $JAVA_BASE | awk '{print(tolower($1))}' \\
+                                  | sed 's/d://cygdrive/d/g'` # fix drive&lt;/pre&gt;
+&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;JAVA_MANTIS&lt;/code&gt; = the version (without the release part) corresponding to “&lt;em&gt;Mantis&lt;/em&gt;”&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;JAVA_TIGER&lt;/code&gt; = the version (without release) corresponding to “&lt;em&gt;Tiger&lt;/em&gt;”&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;JAVA_VER&lt;/code&gt; = the specific version and release of the currently selected JVM (e.g. 1.5.0_04)
+&lt;pre&gt;if [ x"$JAVA_MANTIS" = x ]; then
+  export JAVA_MANTIS=`ls $JAVA_BASE | grep 1.4.2 \\
+                                    | sed s/^j2sdk//g`
+fi
+
+if [ x"$JAVA_TIGER" = x ]; then
+  export JAVA_TIGER=`ls $JAVA_BASE | grep 1.5.0 \\
+                                   | sed s/^j2sdk//g`
+fi
+
+if [ x"$JAVA_VER" = x ]; then
+  export JAVA_VER=$JAVA_MANTIS     # default if not set
+fi&lt;/pre&gt;
+
+&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;JAVA_HOME&lt;/code&gt; = the install directory of the currently selected JVM (e.g. &lt;code&gt;d:\java\j2sdk1.4.2_05&lt;/code&gt;)&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;X_PATH_NO_JAVA&lt;code&gt; = the system search path, without a JVM&lt;/code&gt;&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;&lt;code&gt;PATH = the system search path&lt;/code&gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+The aim is to set JAVA_HOME and PATH so that the Java tools can be found. They are set using the previous variables:
+
+&lt;pre&gt;export JAVA_HOME=$JAVA_BASE/j2sdk$JAVA_VER
+
+if [ x"$X_PATH_NO_JAVA" = x ]; then
+  export X_PATH_NO_JAVA=~/bin:$PATH  # save path without JAVA
+fi
+
+export PATH=$JAVA_HOME/bin:$X_PATH_NO_JAVA&lt;/pre&gt;
+
+So, the above code is run inside my &lt;code&gt;.bashrc&lt;/code&gt;, which takes care of finding the installed JVMs and setting Mantis as the default to use. But what about switching? Well, here's the shell function:
+
+&lt;blockquote&gt;
+
+&lt;pre&gt;function JVersion() {
+    case $1 in
+        1.5 | 1.5.0 | 5.0 | 5 | tiger | Tiger | TIGER)
+            export JAVA_VER=$JAVA_TIGER
+        ;;
+        *)
+        export JAVA_VER=$JAVA_MANTIS
+        ;;
+    esac
+
+    JAVA_BASE=`echo $JAVA_BASE | sed 's////g'`   # fix DOS sloshes
+    export JAVA_BASE=`echo $JAVA_BASE | awk '{print(tolower($1))}' \
+                                      | sed 's/d://cygdrive/d/g'` # fix drive
+    export JAVA_HOME=$JAVA_BASE/j2sdk$JAVA_VER
+    export PATH=$JAVA_HOME/bin:$X_PATH_NO_JAVA
+
+    echo Java Version: $JAVA_VER
+    echo Java Base: $JAVA_BASE
+    echo Java Home: $JAVA_HOME
+}&lt;/pre&gt;
+
+&lt;/blockquote&gt;
+
+You may have noticed that this hack is rather brittle. It works well, but only so long as you follow these steps:
+
+&lt;ol&gt;
+	&lt;li&gt;Install your Javas on your &lt;code&gt;D:&lt;/code&gt; drive (or you have to fix all of the &lt;code&gt;sed&lt;/code&gt; scripts!)&lt;/li&gt;
+	&lt;li&gt;Have a “base” directory, such as &lt;code&gt;D:\java&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;Have a Windows environment variable called &lt;code&gt;JAVA_BASE&lt;/code&gt; equal to the “base” directory&lt;/li&gt;
+	&lt;li&gt;Install your Javas each in a sub-directory of your “base”, called &lt;code&gt;j2sdk&lt;em&gt;w&lt;/em&gt;.&lt;em&gt;x&lt;/em&gt;.&lt;em&gt;y&lt;/em&gt;_&lt;em&gt;z&lt;/em&gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+Additionally it only caters for a &lt;em&gt;single&lt;/em&gt; release of each Java version, &lt;em&gt;and&lt;/em&gt; only for &lt;a title="Sun's internal J2SE release code names" href="http://java.sun.com/j2se/codenames.html"&gt;Java versions&lt;/a&gt; “&lt;em&gt;Mantis&lt;/em&gt;” (1.4.2) and “&lt;em&gt;Tiger&lt;/em&gt;” (1.5.0). If you want to install “&lt;em&gt;Mustang&lt;/em&gt;” and switch to it, you'll need to add a &lt;code&gt;JAVA_MUSTANG&lt;/code&gt; variable, equal to 1.6.0 and also add a case for 1.6.0 to both the &lt;code&gt;JAVA_VER&lt;/code&gt; setup code and the &lt;code&gt;JVersion&lt;/code&gt; &lt;code&gt;case&lt;/code&gt; statement… ugly, but I haven't come up with a more elegant solution yet.  Ultimately I'd like to make a proper replacement for &lt;code&gt;update-alternatives&lt;/code&gt;, but since symlinks will only work for the Cygwin tools, and not the Java tools themselves, it seems unlikely I'll come up with a nicer solution.
+
+&lt;h3&gt;A note about paths in Java on Cygwin:&lt;/h3&gt;
+
+This is noted in the Cygwin docs somewhere I think, but just a reminder: &lt;code&gt;java.exe&lt;/code&gt;, &lt;code&gt;javac.exe&lt;/code&gt;, etc. are Win32 programs, and are not linked to the Cygwin DLLs in any way. So &lt;em&gt;always&lt;/em&gt; they will need DOS style paths (&lt;code&gt;D:\&lt;em&gt;somedir&lt;/em&gt;\&lt;em&gt;etc&lt;/em&gt;&lt;/code&gt;). They won't understand Cygwin's &lt;code&gt;/cygdrive/d/&lt;em&gt;whatever&lt;/em&gt;&lt;/code&gt;. Also as I just alluded to, any Cygwin links will not be followed by the Java tools, for the same reason.  In &lt;a title="$man 1 bash" href="http://linux.ctyme.com/man/man0210.htm"&gt;&lt;code&gt;bash&lt;/code&gt;&lt;sub&gt;(1)&lt;/sub&gt;&lt;/a&gt;, you'll need to escape the sloshes if you're setting the classpath on the command line:
+
+&lt;pre&gt;java -classpath D:\\\\java\\\\special-classes\\\\somefile.jar MyClass&lt;/pre&gt;
+
+Since java transposes the &lt;code&gt;/&lt;/code&gt; and &lt;code&gt;\&lt;/code&gt; characters itself, it &lt;em&gt;may&lt;/em&gt; be possible to do the following:
+
+&lt;pre&gt;java -classpath D:/java/special-classes/somefile.jar MyClass&lt;/pre&gt;
+
+But I haven't tested it…
+
+
+
+&lt;hr&gt;&lt;strong&gt;2006-06-17T16:39+1000 - Update: Cygwin's &lt;code&gt;cygpath&lt;/code&gt;&lt;sub&gt;(1)&lt;/sub&gt; command&lt;/strong&gt; I should have seen this before spending so long playing with sed and sloshes…Cygwin's &lt;code&gt;cygpath&lt;/code&gt;&lt;sub&gt;(1)&lt;/sub&gt; command can be used to fix the Unix/DOS path stuff, much simpler than mucking about with &lt;code&gt;sed&lt;/code&gt; and &lt;code&gt;awk&lt;/code&gt;.  So in the above, instead of code like this:
+
+&lt;pre&gt;JAVA_BASE=`echo $JAVA_BASE | sed 's////g'`   # fix DOS sloshes
+
+export JAVA_BASE=`echo $JAVA_BASE | awk '{print(tolower($1))}' \\
+                                  | sed 's/d://cygdrive/d/g'` # fix drive&lt;/pre&gt;
+… that mess can be replaced replaced with this:
+
+&lt;pre&gt;&lt;code&gt;export JAVA_BASE=`cygpath -up $JAVA_BASE`&lt;/code&gt;&lt;/pre&gt;
+
+… (using back-quotes, or the &lt;code&gt;$()&lt;/code&gt; notation if you prefer).  Similarly, to run Java with a classpath specified in a Cygwin format (i.e. from a Cygwin script or prompt):
+
+&lt;pre&gt;&lt;code&gt;java -classpath `cygpath -wp /cygdrive/d/java/special-classes/somefile.jar` MyClass&lt;/code&gt;&lt;/pre&gt;</description><category>alternatives</category><category>code</category><category>cygwin</category><category>hacking</category><category>java</category><category>shell</category><category>sloshes</category><guid>http://milosophical.me/blog/2007/03/09/setting-up-multiple-java-vms-under-cygwin.html</guid><pubDate>Thu, 08 Mar 2007 21:21:02 GMT</pubDate></item></channel></rss>

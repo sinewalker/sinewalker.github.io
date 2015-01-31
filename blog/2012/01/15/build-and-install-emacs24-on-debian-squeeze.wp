@@ -1,5 +1,6 @@
 <html><body><p>Hacking in Debian is so easy (one of the reasons I switched). Take, for instance, building Emacs. This is such a piece of cake compared to the weird hoops you have to go through to get all the build dependencies on other platforms. It's something I never tried before, simply because it was too daunting trying to figure out all the packages I need to install. But apt-get has this awesome --build-deps switch...
-<!--more-->
+
+<!-- TEASER_END -->
 
 So then, how to build and install Emacs 24 on Debian squeeze, in 6 easy steps?  Since Emacs24 is not yet released, there isn't a package for it in Debian (which is why I'm building my own). But I figured that the build dependencies would not have changed too much from Emacs23, so I used that, and it worked.
 

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (gnupg)</title><link>http://milosophical.me/</link><description></description><language>en</language><lastBuildDate>Fri, 30 Jan 2015 22:57:20 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Using Emacs' EasyPG in text terminals</title><link>http://milosophical.me/blog/2011/03/17/using-emacs-easypg-in-text-terminals.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;There is a bug in the integration between Emacs' EasyPG and the "new" GnuPG2 that causes Emacs to not load &lt;code&gt;.gpg&lt;/code&gt; files when running in a text terminal.  It's being worked on, apparently, but in the mean-time, here is how to fix it.
+
+
+&lt;!--more--&gt;
+
+
+
+The only solution I've found that works is to install a copy of GnuPG1 concurrent with the new GnuPG2.  They can live happily side-by-side.  Once you've done that, you need to tell EasyPG to use the old program rather than the new one. Full details are on the &lt;a href="http://www.emacswiki.org/emacs/EasyPG"&gt;Emacs Wiki&lt;/a&gt;, here it is in a nutshell:
+
+&lt;/p&gt;&lt;ul&gt;
+	&lt;li&gt;You can find an RPM package of GnuPG1 for openSUSE on the &lt;a title="gpg1" href="https://build.opensuse.org/package/binary?arch=i586&amp;amp;filename=gpg1-1.4.9-2.1.i586.rpm&amp;amp;package=gpg1&amp;amp;project=security%3Aprivacy&amp;amp;repository=openSUSE_11.2"&gt;openSUSE Build Service&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;Once installed, you need to customize the variable &lt;code&gt;&lt;strong&gt;epg-gpg-program&lt;/strong&gt;&lt;/code&gt;.  Either use &lt;code&gt;M-x customize&lt;/code&gt; to set it for all future sessions, or see my code snippet below that I put in my start-up scripts.  It should be set to the value &lt;em&gt;"/usr/bin/gpg1"&lt;/em&gt; (or wherever &lt;code&gt;gpg1&lt;/code&gt; is installed on your platform)&lt;/li&gt;
+	&lt;li&gt;Now when EasyPG opens a &lt;code&gt;.gpg&lt;/code&gt; file, it will prompt for the passphrase in the Emacs minibuffer, instead of trying to use the &lt;code&gt;gpg-agent&lt;/code&gt; and calling the &lt;code&gt;pinentry&lt;/code&gt; program (which causes Emacs to hang in text mode)&lt;/li&gt;
+&lt;/ul&gt;
+
+ 
+
+
+
+If you like to use the gpg agent and graphical pinentry programs and only want to override GnuPG2 with GnuPG1 when running Emacs in a text terminial, then you can put code like this in your Emacs start-up (mine goes in &lt;code&gt;~/.emacs.d/&amp;lt;username&amp;gt;.el&lt;/code&gt; because I use the &lt;a href="https://github.com/technomancy/emacs-starter-kit"&gt;Emacs Starter Kit&lt;/a&gt;):
+
+
+
+&lt;blockquote&gt;&lt;code&gt;
+
+&lt;pre&gt;&lt;span style="color:#7f7f7f;"&gt;(&lt;/span&gt;&lt;span style="color:#00ffff;"&gt;when&lt;/span&gt; &lt;span style="color:#7f7f7f;"&gt;(&lt;/span&gt;not &lt;span style="color:#7f7f7f;"&gt;(&lt;/span&gt;display-graphic-p&lt;span style="color:#7f7f7f;"&gt;))&lt;/span&gt;
+  (setq epg-gpg-program "/usr/bin/gpg1")) ; use GnuPG1 in text terminals&lt;/pre&gt; &lt;/code&gt;
+&lt;/blockquote&gt;
+
+Enjoy!</description><category>code</category><category>easypg</category><category>emacs</category><category>gnupg</category><category>hack</category><category>hacking</category><guid>http://milosophical.me/blog/2011/03/17/using-emacs-easypg-in-text-terminals.html</guid><pubDate>Thu, 17 Mar 2011 05:04:59 GMT</pubDate></item></channel></rss>

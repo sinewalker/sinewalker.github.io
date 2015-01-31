@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (Microsoft)</title><link>http://milosophical.me/</link><description></description><language>en</language><lastBuildDate>Fri, 30 Jan 2015 22:57:20 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>No OOXML</title><link>http://milosophical.me/blog/2007/08/17/no-ooxml.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;Just sent the following letter to the Australian Standards rep for the proposal DIS29500 (Microsoft Office Open XML standard) which is being Fast Tracked through ISO, even with blatant interoperability, portability and cultural technical issues.  This is based on the &lt;a title="Information for AU" href="http://www.groklaw.net/article.php?story=20070815125524759"&gt;instructions &lt;/a&gt;posted at Groklaw. Also, instead of just cut-and-pasting the comments from the &lt;a href="http://www.noooxml.org"&gt;No OOXML&lt;/a&gt; web site, I've reviewed them and altered for Australian concerns, so that they really are my own comments.
+
+
+&lt;!--more--&gt;I hope that AS takes heed of my and other's submissions and votes no. Would be a shame (all senses) if this were to be supported by AS.
+
+&lt;/p&gt;&lt;blockquote&gt;Sydney, August 17th 2007&lt;/blockquote&gt;
+
+&lt;blockquote&gt;Subject: Public comments on DIS29500 (ECMA 376)&lt;/blockquote&gt;
+
+&lt;blockquote&gt;Dear Michael Langdon, Member of Standards Australia,&lt;/blockquote&gt;
+
+&lt;blockquote&gt;I am a professional knowledge worker and Australian citizen, with an interest in  Australian Standards' vote for the proposal of DIS29500. I have been following the debates by key players within Australia over Microsoft's proposed OOXML standard, and I have become concerned that, to date, the focus of discussion has been to avoid a dispassionate, technical discussion and instead focus on general issues around the OOXML proposal, and the benefits of having a document standard. It seems odd to me that that these meetings should proceed in this direction for consideration of a technical standard, especially when the bulk of objections to OOXML from other ISO participants (apart from there being an existing ISO standard already, with fully compliant implementations from multiple suppliers) are of a technical nature.&lt;/blockquote&gt;
+
+&lt;blockquote&gt;To this regard, I would like to submit technical comments in the light of the vote on the DIS29500 specification that should happen before the end of the month.&lt;/blockquote&gt;
+
+&lt;blockquote&gt;You can find here attached an 10-pages explanation on why the standard proposal does not fulfill the required criteria to be elected as an ISO international standard. I have also compiled a 20-page list of approximately 100 comments in the template requested by Standards Australia. In compiling this list, I have taken special consideration where the technical issues in OOXML would hurt it's portability and cultural adaptability for implementation by independent Australian vendors.&lt;/blockquote&gt;
+
+&lt;blockquote&gt;&lt;strong&gt;By reading the JTC1 directives, my interpretation is that it is possible to vote no with comments if the specification presents serious technical problems, and that it is not possible to have a positive vote with technical comments.&lt;/strong&gt; In the light of the numerous technical flaws of the specification, I hearty ask you to &lt;strong&gt;vote no with comments&lt;/strong&gt; to the ballot that will happen before the 2nd of September.&lt;/blockquote&gt;
+
+&lt;blockquote&gt;I also would be interested to participate in any meeting on the topic, in order to explain the contradictions mentioned in the documents attached.&lt;/blockquote&gt;
+
+&lt;blockquote&gt;Best regards,&lt;/blockquote&gt;
+
+&lt;blockquote&gt;Michael Lockhart
+
+Concerned Australian Citizen and IT professional&lt;/blockquote&gt;</description><category>Microsoft</category><category>computers</category><category>hacking</category><guid>http://milosophical.me/blog/2007/08/17/no-ooxml.html</guid><pubDate>Thu, 16 Aug 2007 22:31:06 GMT</pubDate></item><item><title>Essentials to make Windows almost bareable</title><link>http://milosophical.me/blog/2007/06/07/essential-tools-to-make-windows-almost-bareable.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;Okay, so I hate working in Windows, but on my employer's equipment at least, I must live with it. After having had this machine replaced twice (faulty Dell hardware) and rebuilt more times than I can remember (Windows BSODs), for a total of at least 3 system migrations this past year, I thought I'd better keep a list of what free software to install on top of Windows, and what adjustments to make, so that at least I don't feel like I'm wearing a straight jacket.  Here goes:
+
+
+&lt;!--more--&gt;
+
+&lt;/p&gt;&lt;h3&gt;Useability&lt;/h3&gt;
+
+Fix the keyboard to &lt;a href="http://sinewalker.wordpress.com/2006/03/27/dvorak-keyboards/"&gt;Dvorak&lt;/a&gt; (following is for Windows XP -- this will likely change for Vista... it shouldn't be this complicated!)
+
+&lt;blockquote&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;Open Control Panel:  &lt;strong&gt;START &amp;gt; Control Panel&lt;/strong&gt;&lt;/li&gt;
+	&lt;li&gt;Choose "&lt;strong&gt;Regional and Language Options&lt;/strong&gt;" (why not Keyboard???)&lt;/li&gt;
+	&lt;li&gt;Select "&lt;strong&gt;Languages&lt;/strong&gt;" tab, press Details... button (sigh)&lt;/li&gt;
+	&lt;li&gt;In the "&lt;strong&gt;Installed services&lt;/strong&gt;" section, select "&lt;strong&gt;Keyboard&lt;/strong&gt;", then press "&lt;strong&gt;Add...&lt;/strong&gt;" to add a new keyboard layout&lt;/li&gt;
+	&lt;li&gt;Find &lt;strong&gt;US-Dvorak&lt;/strong&gt; in the list&lt;/li&gt;
+	&lt;li&gt;In the "&lt;strong&gt;Default input language&lt;/strong&gt;" section, set the default language to English (Australia) - United States-Dvorak&lt;/li&gt;
+	&lt;li&gt;In the "&lt;strong&gt;Preferences&lt;/strong&gt;" section, press "&lt;strong&gt;Language Bar...&lt;/strong&gt;" button&lt;/li&gt;
+	&lt;li&gt;Make sure that "&lt;strong&gt;Show the language bar on the desktop&lt;/strong&gt;" is turned &lt;em&gt;&lt;strong&gt;on&lt;/strong&gt;&lt;/em&gt;, to make it easier to switch to QWERTY if needed&lt;/li&gt;
+	&lt;li&gt;Back in "&lt;strong&gt;Preferences&lt;/strong&gt;", press the "&lt;strong&gt;Key Settings...&lt;/strong&gt;" button&lt;/li&gt;
+	&lt;li&gt;Turn &lt;strong&gt;&lt;em&gt;off &lt;/em&gt;&lt;/strong&gt;all the language &lt;strong&gt;Hot keys&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;/blockquote&gt;
+
+To get rid of that &lt;a href="http://www.winsupersite.com/images/showcase/xp_n_05.jpg"&gt;horrible&lt;/a&gt;, &lt;a href="http://www.winsupersite.com/images/showcase/xp_n_03.jpg"&gt;garish &lt;/a&gt;blue/green stock XP theme, I use the &lt;a title="Zune -- it's still Microsoft, but it looks less garish" href="http://stevenharman.net/blog/archive/2006/12/09/WinXP__Zune_Theme.aspx"&gt;Zune theme&lt;/a&gt; from Microsoft. It sucks less (the theme, that is, not the MP3 player, that sucks &lt;em&gt;more &lt;/em&gt;than iPod).
+
+
+
+Make Explorer a bit useable.  Actually Explorer is total crap, and I'm still searching for a replacement. I like &lt;a href="http://en.wikipedia.org/wiki/Midnight_Commander"&gt;MidnightCommander&lt;/a&gt; in Cygwin (&lt;code&gt;mc&lt;/code&gt;), and &lt;a href="http://konqueror.kde.org/"&gt;Konqueror&lt;/a&gt; in KDE.  But for Windows, there aren't a lot of &lt;em&gt;free &lt;/em&gt;Explorer replacements, except maybe Windows File Explorer.  Anyway, follow these steps to have Explorer at least be not so stupid:
+
+&lt;blockquote&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;Open an Explorer window (anywhere)&lt;/li&gt;
+	&lt;li&gt;Select "&lt;strong&gt;Tools &amp;gt; Folder Options...&lt;/strong&gt;", "&lt;strong&gt;General&lt;/strong&gt;" tab&lt;/li&gt;
+	&lt;li&gt;Make sure that under "&lt;strong&gt;Browse folders&lt;/strong&gt;", the option is to "&lt;strong&gt;Open each folder in the same window&lt;/strong&gt;" (Explorer doesn't do multi-windows like Macintosh Finder: it screws them up)&lt;/li&gt;
+	&lt;li&gt;In "&lt;strong&gt;Click items as follows&lt;/strong&gt;", turn on "&lt;strong&gt;Single-click to open&lt;/strong&gt;", and "&lt;strong&gt;Underline icons only when I point at them&lt;/strong&gt;"&lt;/li&gt;
+	&lt;li&gt;Select the "&lt;strong&gt;View&lt;/strong&gt;" tab&lt;/li&gt;
+	&lt;li&gt;Turn &lt;em&gt;&lt;strong&gt;on &lt;/strong&gt;&lt;/em&gt;the following:
+&lt;ol&gt;
+	&lt;li&gt;"Display the full path in the address bar"&lt;/li&gt;
+	&lt;li&gt;"Display the full path in the title bar"&lt;/li&gt;
+	&lt;li&gt;"Do not cache thumbnails"&lt;/li&gt;
+	&lt;li&gt;"Show hidden files and folders"&lt;/li&gt;
+	&lt;li&gt;"Show both parts and manage them individually" (for web pages and folders)&lt;/li&gt;
+	&lt;li&gt;"Show encrypted or compressed NTFS files in color"&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;/li&gt;
+	&lt;li&gt;Turn &lt;em&gt;&lt;strong&gt;off &lt;/strong&gt;&lt;/em&gt;the following:
+&lt;ol&gt;
+	&lt;li&gt;"Hide extensions for known file types"&lt;/li&gt;
+	&lt;li&gt;"Launch folder windows in a separate process"&lt;/li&gt;
+	&lt;li&gt;"Remember each folder'sview settings"&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;/li&gt;
+	&lt;li&gt;Press the "&lt;strong&gt;Apply&lt;/strong&gt;", then "&lt;strong&gt;Apply to All Folders&lt;/strong&gt;" buttons&lt;/li&gt;
+	&lt;li&gt;Press "&lt;strong&gt;OK&lt;/strong&gt;"&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Programs&lt;/h3&gt;
+
+Install these programs at a minimum:
+
+&lt;blockquote&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;&lt;a title="Rediscover the Web" href="http://en.www.mozilla.com/en/firefox/"&gt;Firefox &lt;/a&gt;(essential add-ons:  &lt;a title="social web bookmarks" href="http://del.icio.us/help/firefox/extension"&gt;del.icio.us&lt;/a&gt;, &lt;a title="Download Accellerator (and a better manager)" href="http://www.downthemall.net/"&gt;DownThemAll&lt;/a&gt;, &lt;a title="Spell-check input boxes, in en_au language" href="http://www.justlocal.com.au/clients/oooau/"&gt;English (AU) Dictionary&lt;/a&gt;, &lt;a title="Block's Flash adds" href="https://addons.mozilla.org/en-US/firefox/addon/433"&gt;Flashblock&lt;/a&gt;, &lt;a title="Make inline images larger" href="http://imagezoom.yellowgorilla.net/"&gt;ImageZoom&lt;/a&gt;, &lt;a title="Turn on/off proxy settings with one click" href="https://addons.mozilla.org/en-US/firefox/addon/1557"&gt;QuickProxy&lt;/a&gt;, &lt;a title="Synchronise your local bookmarks between Firefox installations" href="http://www.foxmarks.com"&gt;Foxmarks&lt;/a&gt;, &lt;a title="Turn your google mail account into free online storage" href="http://www.getgspace.com/"&gt;GSpace&lt;/a&gt;)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Open Source keystroke starter for Windows" href="http://www.launchy.net"&gt;Launchy&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a title="WFE description page" href="http://www.freesoftlabs.com/fileexpl.asp"&gt;Windows File Explorer&lt;/a&gt; (a free, sort-of &lt;a href="http://en.wikipedia.org/wiki/Orthodox_file_manager"&gt;orthodox&lt;/a&gt; file manager for Windows)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Brings Windows desktop up to status of 1990 Unix" href="http://virt-dimension.sourceforge.net"&gt;Virtual Dimension&lt;/a&gt; (Virtual desktop support for Windows)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="No Machine's Product listing page" href="http://www.nomachine.com/products.php"&gt;No Machine&lt;/a&gt;'s &lt;a title="NX Client - Windows - Download" href="http://www.nomachine.com/download-client-windows.php"&gt;NX Client for Windows&lt;/a&gt; (so I can connect a &lt;a title="NX Technology overview" href="http://www.nomachine.com/documentation/intr-technology.php"&gt;high speed X&lt;/a&gt; session to my home machine)&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://www.openoffice.org"&gt;OpenOffice.org&lt;/a&gt; (also use &lt;a href="http://www.justlocal.com.au/clients/oooau/"&gt;JustLocal&lt;/a&gt;'s dictionary / thesaurus files to get spell check working)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Unix compatibility layer for Windows" href="http://www.cygwin.com/"&gt;Cygwin &lt;/a&gt;(include the X11 modules, Emacs [make sure to select ver 22], pdksh, subversion, python, clisp, fortune, mc, ssh, units, etc....)&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://java.sun.com/javase/downloads/index.jsp"&gt;Java SE DevKit&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Latest Windows Subversion binaries" href="http://subversion.tigris.org/servlets/ProjectDocumentList?folderID=91"&gt;Subversion for Windows&lt;/a&gt; (version control)&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://www.netbeans.org/"&gt;NetBeans&lt;/a&gt; (6.0 or greater has everything I need)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Audio editor and MP3/OGG converter" href="http://audacity.sourceforge.net/download/windows"&gt;Audacity&lt;/a&gt; audio editor and encoder&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Network streaming Video" href="http://www.videolan.org/vlc/download-windows.html"&gt;VideoLAN Client&lt;/a&gt; movie player&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://www.illiminable.com/ogg/"&gt;Illiminable DirectShow filters&lt;/a&gt; for &lt;a href="http://www.vorbis.com/setup_windows/"&gt;OGG Vorbis&lt;/a&gt; (to play .OGG files in Windows Media Player)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Amiga MOD player" href="http://www.modplug.com/"&gt;MODPlug&lt;/a&gt; (because sometimes a good &lt;a href="http://del.icio.us/sinewalker/modules"&gt;MOD&lt;/a&gt; fits my mood)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="GNU Image Manipulation Program" href="http://gimp-win.sourceforge.net/"&gt;GIMP&lt;/a&gt; image editor&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Image viewer" href="http://www.irfanview.com/"&gt;IrfanView&lt;/a&gt; image viewer&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Emacs&lt;/h3&gt;
+
+Once Cygwin and Emacs are installed, I need to add my dotfiles (from backup), and also install these emacs add-ons:   &lt;a title="Superior Lisp Interaction Mode for Emacs" href="http://common-lisp.net/project/slime/"&gt;&lt;/a&gt;
+
+&lt;blockquote&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;&lt;a title="Superior Lisp Interaction Mode for Emacs" href="http://common-lisp.net/project/slime/"&gt;SLIME&lt;/a&gt; &lt;a href="http://sourceforge.net/projects/psgml"&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://sourceforge.net/projects/psgml"&gt;PSGML&lt;/a&gt; &lt;a title="Subversion support for Emacs (pre-22)" href="http://www.xsteve.at/prg/emacs/psvn.el"&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Subversion support for Emacs (pre-22)" href="http://www.xsteve.at/prg/emacs/psvn.el"&gt;PSVN&lt;/a&gt; (not strictly needed, since emacs22 adds SVN support in VC mode)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Collection of Emacs Development Environment Tools" href="http://cedet.sourceforge.net/"&gt;CEDET&lt;/a&gt; (this is not trivial to install, I&lt;em&gt; still &lt;/em&gt;haven't figured it out)&lt;a title="Collection of Emacs Development Environment Tools" href="http://cedet.sourceforge.net/"&gt; &lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Java Development Environment for Emacs" href="http://jdee.sunsite.dk/"&gt;JDEE&lt;/a&gt; (requires some or all of CEDET)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="This is neat!" href="http://www.eaflux.com/cygwin/cyg-emacsclient/"&gt;cyg-emacsclient&lt;/a&gt; (wrapper to add Emacs to your SendTo folder, and have it actually work)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/blockquote&gt;
+
+CEDET and JDEE might be more trouble than they're worth, especially since I'm installing NetBeans anyway. They seem cool (especially the enhanced speedbar), but they're not exactly plug-and-play. Jury's still out.</description><category>Delicious</category><category>Microsoft</category><category>cygwin</category><category>dvorak</category><category>emacs</category><category>hacking</category><category>how-to</category><category>jEdit</category><category>java</category><category>lisp</category><category>media</category><category>shell</category><guid>http://milosophical.me/blog/2007/06/07/essential-tools-to-make-windows-almost-bareable.html</guid><pubDate>Wed, 06 Jun 2007 23:16:44 GMT</pubDate></item><item><title>Microsoft Vista keyboard?</title><link>http://milosophical.me/blog/2007/03/22/microsoft-vista-keyboard.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;I spotted a "Vista compatable" keyboard in K-Mart the other day, which set me thinking... what would a Vista keyboard actually &lt;em&gt;do&lt;/em&gt; that a "non-Vista" keyboard can't?
+
+
+Then I Googled for "Microsoft Keyboard Vista" and found &lt;a title="Vista media keyboard??? (Microsoft)" href="http://www.microsoft.com/hardware/mouseandkeyboard/productdetails.aspx?pid=080"&gt;this ad from Microsoft&lt;/a&gt; (&lt;a title="Vista media keyboard??? (Google cache)" href="http://72.14.203.104/search?q=cache:tFfrA9Y1WiEJ:www.microsoft.com/hardware/mouseandkeyboard/productdetails.aspx%3Fpid%3D080+microsoft+keyboard+vista&amp;amp;hl=en&amp;amp;ct=clnk&amp;amp;cd=2&amp;amp;gl=au&amp;amp;client=firefox-a"&gt;Google Cache&lt;/a&gt;).
+
+
+
+What the?  "Designed to make it easier than ever to control PC media from your desk, your lap–or even from the comfort of your couch".  So… if I use this keyboard's Play button to try and play media that Vista's &lt;a title="Digital Rights Management (Wikipedia)" href="http://en.wikipedia.org/wiki/Digital_Rights_Management"&gt;DRM&lt;/a&gt; system &lt;em&gt;thinks &lt;/em&gt;I shouldn't be playing, does it administer an electric shock?  What if I have the keyboard in my lap :-D  Ouch! No so &lt;em&gt;comfortable &lt;/em&gt;now…
+
+
+
+Thanks, Microsoft, but … ahem, &lt;em&gt;no thanks&lt;/em&gt;!&lt;/p&gt;</description><category>Microsoft</category><category>geek</category><category>keyboards</category><category>silly</category><category>thoughts</category><guid>http://milosophical.me/blog/2007/03/22/microsoft-vista-keyboard.html</guid><pubDate>Thu, 22 Mar 2007 04:27:02 GMT</pubDate></item><item><title>32-bit Windows and JVM virtual memory limit</title><link>http://milosophical.me/blog/2007/03/04/32-bit-windows-and-jvm-virtual-memory-limit.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;On the 32-bit Windows platform, JVM programs can only ever use up to about 1.5–1.6 GiB of memory in RAM per Java VM process. Allocating a heap size greater than this amount does not work. What's going on?
+
+
+&lt;!--more--&gt;
+
+
+
+&lt;strong&gt;UPDATE: 20110731 -- Some more answers and links at Stack Overflow&lt;/strong&gt;
+
+&lt;/p&gt;&lt;ul&gt;
+	&lt;li&gt;&lt;a href="http://stackoverflow.com/questions/171205/java-maximum-memory-on-windows-xp"&gt;Java maximum memory on Windows XP &lt;/a&gt; - see in particular the answers with links to IBM and Oracle JRockit, and especially an explanition about contiguous heap&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://stackoverflow.com/questions/1434779/maximum-java-heap-size-of-a-32-bit-jvm-on-a-64-bit-os"&gt;Mamimum Java heap size of a 32-bit JVM on a 64-bit OS&lt;/a&gt; - this one has an answer from me where you can measure the maximum heap allocation using Java's Runtime class.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;strong&gt;UPDATE: 20110428 -- An explanation of my vague "overheads"
+
+&lt;/strong&gt;
+
+
+
+See this excellent post by &lt;a title="Blogger profile" href="http://www.blogger.com/profile/05823921645971746143"&gt;Dharmir Singh&lt;/a&gt; that explains the &lt;a title="Memory Structure in JVM" href="http://java-espresso.blogspot.com/2011/04/memory-structure-in-jvm.html"&gt;JVM memory structure&lt;/a&gt; and shows where some of the missing heap could be going, which I vaguely hand-waved away as "overheads" below.
+
+
+
+&lt;strong&gt;UPDATE: 20110228 -- Some corrections, more observation needed
+
+&lt;/strong&gt;
+
+
+
+&lt;strong&gt;First&lt;/strong&gt;, a correction:  "real" operating systems let processes use &amp;lt;=4GiB on a 32bit system.  *BSD lets user processes access 3GiB (read &lt;a href="http://www.freebsd.org/doc/en_US.ISO8859-1/books/design-44bsd/index.html"&gt;the Devil Book&lt;/a&gt;) and Linux lets user processes &lt;code&gt;malloc&lt;/code&gt; up to &lt;code&gt;TASK_SIZE&lt;/code&gt; -- usually 3GiB on a 32-bit system (see "Professional Linux Kernel Architecture"). This is because in each of these operating systems, 1GiB of user space is reserved to map in system libraries (as opposed &lt;a href="http://en.wikipedia.org/wiki/Hybrid_kernel"&gt;2GiB on Win32&lt;/a&gt; with it's multiple personality disorder). Mapping parts of the kernel makes calling kernel services quicker. An alternative is Mac OS X (XNU): it's processes actually only map a &lt;em&gt;tiny&lt;/em&gt; part of the kernel into user space, so they may &lt;code&gt;malloc&lt;/code&gt; pretty much all of the 4GiB address space (see &lt;a href="http://osxbook.com/book/bonus/misc/osxkernel/index.html"&gt;the OS X book&lt;/a&gt;). This is at the cost of a slower context switch whenever a system call is made.
+
+
+
+&lt;strong&gt;Second&lt;/strong&gt; is the observation Saar makes in the comments below. I &lt;em&gt;guess&lt;/em&gt; that the overheads incurred by the JVM must increase in proportion to the heap size (perhaps some tables to manage references???), but to answer that for certain, I'd need to put the JVM in some sort of debugger and measure the actual overheads incurred (and to do that, I'd need to know what they are, instead of just my vague "overheads").
+
+
+
+Also, switching to 64-bit JVM isn't necessarily the answer: References are twice as long, usually, which means increased overhead.
+
+
+
+Clearly some more research is needed here.
+
+
+
+&lt;strong&gt;UPDATE: 20100819 -- Some interesting related posts&lt;/strong&gt;
+
+
+
+Thanks to the people who took the time to check limits in their own systems and comment on this blog, it makes me seem more credible.
+
+
+
+I noticed Wordpress is generating some related pages links for this, and one of them is a very interesting and informative read. I recommend you take a look at &lt;a title="Windows Server Tech Arena" href="http://windowsservertecharena.wordpress.com/"&gt;Esken AKSOY&lt;/a&gt;'s &lt;a title="Pishing the limits of Windows' Physical Memory" href="http://windowsservertecharena.wordpress.com/2010/08/03/pushing-the-limits-of-windows-physical-memory/"&gt;post&lt;/a&gt; as a general background on how Windows maps memory for client processes (much more accessible than Microsoft's Knowledgebase article linked below).  It explains the 2GB per-process limit very well. There are also &lt;a title="Phisycal Memory limits for Windows 7" href="http://obieosobalu.wordpress.com/2010/07/30/physical-memory-limits-for-windows-7/"&gt;two&lt;/a&gt; &lt;a title="Licensed Memory in 32-bit Windows Vista" href="http://www.geoffchappell.com/viewer.htm?doc=notes/windows/license/memory.htm"&gt;posts&lt;/a&gt; for the cynics / conspiracy theorists among us :)
+
+
+
+&lt;strong&gt;UPDATE: 20081104 -- More recent info?&lt;/strong&gt;
+
+
+
+I notice this page gets a lot of hits still. It's quite old and I haven't researched to see what is happening in OpenJDK or to see if 6u10 addresses any of this for Windows. If anyone has more info please comment or write to me, I'd like to update what I have.
+
+
+
+--- Original post follows (2007) ---
+
+
+
+From my own research on this issue (and taking into account Microsoft's advice on &lt;a href="http://support.microsoft.com/kb/283037/en-us"&gt;KnowledgeBase&lt;/a&gt; about Win32 virtual memory allocation), this is what I understand about the limits of RAM usability, both for Win32 itself, and for 32-bit JVMs running on Windows. I haven't researched if this limit applies for 64-bit Windows or JVMs, nor what Vista might be doing. Also, though the 4GiB limit is inherent to 32-bit machines, the 2GiB limit seems to be peculiar to Windows, and I've not seen it anywhere in Linux, Solaris or BSD: when Unix runs on a 32-bit machine, there's a 4GiB limit, but not 2GiB.
+
+
+
+&lt;!--more--&gt;Any 32-bit binary processor has a hard limit of 4,294,967,296 which is the largest number that can be represented in a single 32 bit machine word: 2&lt;sup&gt;32&lt;/sup&gt; = 4,294,967,296. On a byte-addressed computer like Intel IA32, that equates 4294967296 bytes = 4194304 KiB = 4096 MiB = 4GiB.
+
+
+
+Normal memory access techniques used by 32-bit Windows programs use standard linear byte addressing, and so are limited to 4GiB of addressable memory, whether it is real or virtual.
+
+
+
+On Windows, the amount of this 4GiB space that can actually occupy physical RAM is halved to 2GiB per process. Windows uses the other 2GiB of virtual address space as a per-process overhead for the kernel, and to speed up paging. This is &lt;em&gt;really dumb&lt;/em&gt; because it means that if your process allocates &amp;gt; 2GiB heap memory, then Windows must page some to virtual memory, even if you have &amp;gt; 2GiB of actual RAM! Sort of like the DOS 640KiB limit reborn!
+
+
+
+To overcome this dumb design, Windows has a memory addressing scheme called the AWE API, which allows a process to allocate up to 3GiB of memory and have that memory reside on chips. To use this, the program must be specially written to use the AWE API.
+
+There's also another virtual memory technology in Windows called PAE. This is not useful to application programs — it is how the Windows kernel can use &amp;gt; 4GiB of real memory to allocate physical memory to all processes on the system. Each process is still limited to the 4GiB address space each, with 2GiB mapped to RAM (or 3GiB, if the program uses the AWE API) and the rest having to be virtual (paged to disc). PAE just lets Windows keep more than one of these big processes in memory at once even if their combined total heap is more than 4GiB (and assuming you have more than 4GiB of RAM of course).
+
+
+
+Both Sun and BAE have refused to use the AWE API for implementing their Java VMs. This is probably because the AWE API does not allow for a contiguous address space of 3GiB, but rather breaks it at the 2GiB mark. &lt;a href="http://java.sun.com/docs/books/jvms/second_edition/html/VMSpecTOC.doc.html"&gt;The Java VM spec'&lt;/a&gt; used to require a contiguous addressed heap (though this &lt;a href="http://java.sun.com/docs/books/jvms/second_edition/html/Overview.doc.html#15730"&gt;has changed&lt;/a&gt; for the JVMS 2&lt;sup&gt;nd&lt;/sup&gt; Ed.…). So any Java VM running on Windows is still limited to at most &amp;lt; 2GiB per running program (actually, only about 1.5GiB is usable because of further overhead for the JVM itself). At least, so long as Win32 JVMs don't use the AWE API. I'm not sure how difficult it would be for Sun or BAE to change their JVMs to make use of the AWE API in Windows, but the fact that they haven't done so seems to indicate to me that it wouldn't be easy. I have been unable to determine if IBM's JVM uses it…
+
+
+
+The only workable solution for utilizing greater than about 1.5–1.6 GiB per JVM process on a 32-bit host is to not run it in Windows (i.e. use Solaris, Linux or BSD). Real operating systems can let processes use 4GiB on 32-bit machines without special programming tricks. Or, you could switch to a 64-bit platform. Although there is a Windows for IA-64, I'm not sure about the availability of a 64-bit JVM for that platform.
+
+
+
+It would be better to have a smaller heap on Win32, and if you need more, consider re-engineering the program to use less anyway. If your program is genuinely memory bound and you can't get away from needing more than 1.5GiB heap, you could work around the Win32 memory limit by splitting your Java program into more than once process, each running on its own JVM, allocating 1.5GiB to each JVM, and then having the processes communicate with an IPC mechanism as needed, such as JMS. However there's probably a lot more re-engineering work involved in this than there is to just migrate away from Win32 …</description><category>Microsoft</category><category>hacking</category><category>java</category><category>tip</category><guid>http://milosophical.me/blog/2007/03/04/32-bit-windows-and-jvm-virtual-memory-limit.html</guid><pubDate>Sun, 04 Mar 2007 00:59:48 GMT</pubDate></item><item><title>Shifting Interfaces</title><link>http://milosophical.me/blog/2006/03/22/shifting-interfaces.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;
+&lt;em&gt;This post was originally published
+  at &lt;a href="http://sinewalker.blogspot.com.au/2006_03_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
+  on 22 March 2006.&lt;/em&gt;
+&lt;/p&gt;
+&lt;hr&gt;
+
+&lt;p&gt;Once again, Microsoft have &lt;a href="http://www.microsoft.com/office/preview/uioverview.mspx"&gt;drastically changed their Office interface&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+While the new interface is very nice eye-candy and probably has some new features that could help (arguably), it represents yet another need to re-train.
+&lt;/p&gt;
+
+&lt;br&gt;
+
+
+&lt;p&gt;
+The old argument that &lt;a href="http://www.openoffice.org"&gt;OpenOffice &lt;/a&gt;is too different from &lt;a href="http://office.microsoft.com"&gt;MS-Office&lt;/a&gt; to be quickly useable has just vanished.  &lt;a href="http://www.desktoplinux.com/articles/AT8171250759.html"&gt;OpenOffice is more like MS-Office 97&lt;/a&gt; than MS-Office 2007 will be, and really, who has needed any of the features in Office XP or Office 2003?  What were they, again…?  Oh yeah, anoying interface changes, and removal of the stupid Paperclip.
+&lt;/p&gt;
+
+&lt;br&gt;
+
+
+&lt;p&gt;
+I think I'll be distributing my work documents in PDF, created by OOo now, except where I must absolutely use MSO documents for work.  Everthing else will be OOo.  Now I just need to convince my wife that it's not worth continually purchasing MSO, or even having it on our home PC.&lt;/p&gt;</description><category>GUI</category><category>Microsoft</category><category>rant</category><category>thoughts</category><guid>http://milosophical.me/blog/2006/03/22/shifting-interfaces.html</guid><pubDate>Wed, 22 Mar 2006 06:00:00 GMT</pubDate></item><item><title>Choice Slashdot quote RE: Windows security liability</title><link>http://milosophical.me/blog/2006/01/25/choice-slashdot-quote-re-windows-security-liability.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;&lt;em&gt;This post was originally posted
+    at &lt;a href="http://sinewalker.blogspot.com.au/2006_01_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
+    on 25 January 2006.&lt;/em&gt;
+&lt;/p&gt;
+&lt;hr&gt;
+
+&lt;blockquote&gt;A computer OS is not like a pane of glass; it's understood that the glass windows on your house are subject to breaking easily, it's inherent in their nature. You can't say the same thing about Microsoft Wind....
+
+
+Oh, wait.  Never mind.&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;(&lt;a href="http://it.slashdot.org/comments.pl?sid=174981&amp;amp;threshold=2&amp;amp;commentsort=1&amp;amp;mode=nested&amp;amp;cid=14550425"&gt;Slashdot&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
+&lt;br&gt;
+
+&lt;p&gt;
+Just classic!&lt;/p&gt;
+</description><category>Microsoft</category><category>geek</category><category>quote</category><guid>http://milosophical.me/blog/2006/01/25/choice-slashdot-quote-re-windows-security-liability.html</guid><pubDate>Tue, 24 Jan 2006 22:43:00 GMT</pubDate></item></channel></rss>

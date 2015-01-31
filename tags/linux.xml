@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (linux)</title><link>http://milosophical.me/</link><description></description><language>en</language><lastBuildDate>Sat, 31 Jan 2015 13:45:02 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Mounting LUKS/LVM from a LiveUSB</title><link>http://milosophical.me/blog/mounting-lukslvm-from-a-liveusb.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;
+After upgrading work's openSUSE laptop from 13.1 to 13.2 today it
+would not unlock the LUKS-encrypted LVM, which is a problem since the
+entire SSD is encrypted (except for /boot).  Bummer.
+&lt;/p&gt;
+
+&lt;p&gt;
+So, I had occasion to test my backup/recovery strategy and found that
+I had a few issues (of course I did!)
+&lt;/p&gt;
+
+&lt;p&gt;
+One problem was: I have my work laptop backups stored to an external
+USB hard drive, which is is also formatted with a LUKS encrypted
+volume. Great, no problem, I just need to unlock the LUKS so I can
+mount, right?  What's the password…?
+&lt;/p&gt;
+
+&lt;p&gt;
+Another was: my passwords are stored in a KeePass2 database, which I
+have stored on a cloud service. Only: it turns out it's not been
+sync'd for about 4 months because I changed the DB's location and
+forgot to update the sync software, so the password for the hard drive
+wasn't on the cloud. Where is it? Oh, right, it's on my broken laptop,
+in an encripted LUKS/LVM which can't be unlocked since the upgrade.
+Goody.
+&lt;/p&gt;
+
+&lt;p&gt;
+So, what to do…?
+&lt;/p&gt;
+
+&lt;p&gt;
+The immediate task was to locate my recovery LiveUSB. Every good
+hacker should have (at least) one of these. Mine's the openSUSE 13.1
+Live Rescue image, which is spartan, but it does have everything you
+need, including lvm/luks on it, and yast.  Yast it turns out didn't
+help me much, I'm unsure why, but anyway, I got by with the command
+line ;-)
+&lt;/p&gt;
+
+&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;Unlock LUKS volumes&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;p&gt;
+To mount a LUKS-encrypted drive you first need to unlock the LUKS
+container:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;# cryptsetup luksOpen /dev/sdb1 myusb&lt;/span&gt;
+&lt;span class="n"&gt;Enter&lt;/span&gt; &lt;span class="n"&gt;passphrase&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sdb1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; 
+&lt;span class="n"&gt;No&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="n"&gt;available&lt;/span&gt; &lt;span class="n"&gt;with&lt;/span&gt; &lt;span class="n"&gt;this&lt;/span&gt; &lt;span class="n"&gt;passphrase&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="n"&gt;Enter&lt;/span&gt; &lt;span class="n"&gt;passphrase&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sdb1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Ah, yes. Got to get that passphrase. Of course, being in KeePass2 it's
+a random generated hex string that no human will ever remember (that is what
+password database are for, after all)… Well, we'll come back to
+this…
+&lt;/p&gt;
+
+&lt;p&gt;
+So, need to unlock the volume on the laptop…
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#cryptsetup luksOpen /dev/sda3 laptop&lt;/span&gt;
+&lt;span class="n"&gt;Enter&lt;/span&gt; &lt;span class="n"&gt;passphrase&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sda3&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Okay, so it opened, great! (The problem after the upgrade was that it
+wouldn't even get this far). Now I just need to mount the home
+volume. It's part of an LVG…
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-1-1" class="outline-3"&gt;
+&lt;h3 id="sec-1-1"&gt;Mount the LVG(s)&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1-1"&gt;
+&lt;p&gt;
+First, let's look at the logical volumes:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#lvs&lt;/span&gt;
+  &lt;span class="n"&gt;LV&lt;/span&gt;   &lt;span class="n"&gt;VG&lt;/span&gt;   &lt;span class="n"&gt;Attr&lt;/span&gt;      &lt;span class="n"&gt;LSize&lt;/span&gt;   &lt;span class="n"&gt;Pool&lt;/span&gt; &lt;span class="n"&gt;Origin&lt;/span&gt; &lt;span class="n"&gt;Data&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;  &lt;span class="n"&gt;Move&lt;/span&gt; &lt;span class="n"&gt;Log&lt;/span&gt; &lt;span class="n"&gt;Cpy&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;Sync&lt;/span&gt; &lt;span class="n"&gt;Convert&lt;/span&gt;
+  &lt;span class="n"&gt;home&lt;/span&gt; &lt;span class="n"&gt;lvg&lt;/span&gt;  &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;wi&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ao&lt;/span&gt;&lt;span class="o"&gt;---&lt;/span&gt; &lt;span class="mf"&gt;179.31&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;                                             
+  &lt;span class="n"&gt;root&lt;/span&gt; &lt;span class="n"&gt;lvg&lt;/span&gt;  &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;wi&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ao&lt;/span&gt;&lt;span class="o"&gt;---&lt;/span&gt;  &lt;span class="mf"&gt;50.00&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;                                             
+  &lt;span class="n"&gt;swap&lt;/span&gt; &lt;span class="n"&gt;lvg&lt;/span&gt;  &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;wi&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ao&lt;/span&gt;&lt;span class="o"&gt;---&lt;/span&gt;   &lt;span class="mf"&gt;8.00&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+That's right, I used a very simple/guessable naming
+convention. Bravo. Okay, the passwords file is somewhere in 'home',
+let's mount it
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;# mount /dev/laptop/home /mnt&lt;/span&gt;
+&lt;span class="cp"&gt;# ls /mnt&lt;/span&gt;
+&lt;span class="n"&gt;guest&lt;/span&gt; &lt;span class="n"&gt;mjl&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+W00t! Alright, now I can grab that KeePass database, shove it on an SD
+chip and then load it up in Keepass2Android on my smart phone (the
+LiveUSB doesn't have any KeePass software… hmm, better do something
+about that later).
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# mkdir /var/tmp/sdc&lt;/span&gt;
+&lt;span class="c"&gt;# mount /dev/sdc1 /var/tmp/sdc&lt;/span&gt;
+&lt;span class="c"&gt;# cp /mnt/home/mjl/keys/db.kdbx /var/tmp/sdc&lt;/span&gt;
+&lt;span class="c"&gt;# umount /var/tmp/sdc&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Awesome. Now I can open up the password database, and laboriously
+transcribe that generated passphrase to unlock the backup drive, when
+I need to
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-1-2" class="outline-3"&gt;
+&lt;h3 id="sec-1-2"&gt;Long story shorter&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1-2"&gt;
+&lt;p&gt;
+So in a nutshell (assuming you have your password stored &lt;i&gt;somewhere
+you can get to&lt;/i&gt; !), you can do this:
+&lt;/p&gt;
+
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;Boot to a LiveUSB
+&lt;/li&gt;
+&lt;li&gt;Start a Terminal, become root (on the Live system)
+&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;tail -f /var/log/messages|grep Attached&lt;/b&gt;
+&lt;/li&gt;
+&lt;li&gt;Plug in the backup drive, watch which device gets attached (look
+for a message like "2014-11-09T22:22:13.742555+11:00 milo kernel:
+[ 4678.150011] sd 7:0:0:0: &lt;i&gt;[sdb]&lt;/i&gt; Attached SCSI disk" where
+&lt;i&gt;[sdb]&lt;/i&gt; will be dependant on your devices, but that's the device
+you're looking for
+&lt;/li&gt;
+&lt;li&gt;unlock it &lt;b&gt;cryptsetup luksOpen /dev/sdb1 mybackup&lt;/b&gt;
+&lt;/li&gt;
+&lt;li&gt;make a mount point if necessary:  &lt;b&gt;mkdir /recover&lt;/b&gt;
+&lt;/li&gt;
+&lt;li&gt;If it's a raw partition, you can mount now &lt;b&gt;mount
+/dev/mapper/mybackup /recover&lt;/b&gt;, otherwise continue to LVM
+&lt;/li&gt;
+&lt;li&gt;list the logical LVM volumes with &lt;b&gt;lvs&lt;/b&gt;
+&lt;/li&gt;
+&lt;li&gt;pick a volume (e.g. "myvolume") and mount it
+&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# mount /dev/mapper/mybackup/myvolume /recover&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+Now you can navigate the volume and view/copy files.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-1-3" class="outline-3"&gt;
+&lt;h3 id="sec-1-3"&gt;Unmounting&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1-3"&gt;
+&lt;p&gt;
+You need to first umount the volume, and then close the LUKS:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# umount /recover&lt;/span&gt;
+&lt;span class="c"&gt;# cryptsetup luksClose mybackup&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>LUKS</category><category>LVM</category><category>encryption</category><category>linux</category><guid>http://milosophical.me/blog/mounting-lukslvm-from-a-liveusb.html</guid><pubDate>Sun, 09 Nov 2014 10:30:25 GMT</pubDate></item><item><title>Remote desktop access on SuSE: Cygwin, X, XDMCP and SSH?  Nope.  FreeNX!</title><link>http://milosophical.me/blog/2007/03/22/remote-desktop-acces-suse-cygwin-x-and-xdmcp.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;strong&gt;MJL20080827 -- Update&lt;/strong&gt;:  I Just realised that this is one of my top-visited pages and it's a totally disorganised and incongruent pile of... What's worse is, I've never updated it since the promised update back in March 2007!
+
+
+Let me clear things up (and save you wading through the whole article): If you want remote access to your openSUSE desktop from a networked thin client, then forget about X11, XDMCP, VNC or tunneling X through SSH. Use the &lt;a title="Nomachine's intro to NX" href="http://nomachine.com/documentation/html/intr-technology.html"&gt;NX&lt;/a&gt; protocol. You'll need to do the following:
+
+&lt;ol&gt;
+	&lt;li&gt;Install &lt;a title="FreeNX -- an opensource implementation of an NX protocol server" href="http://freenx.berlios.de/"&gt;FreeNX&lt;/a&gt; on your openSUSE host. Some (slightly outdated, but usable) instructions are in Chapter 9 of the &lt;a title="openSUSE 10.2 Reference manual (PDF)" href="http://www.novell.com/documentation/opensuse102/pdfdoc/opensuse102_reference/opensuse102_reference.pdf" target="_blank"&gt;openSUSE 10.2 Reference manual&lt;/a&gt;. If you're using openSUSE 11.0 or newer, &lt;a title="FreeNX" href="http://software.opensuse.org/search?baseproject=openSUSE%3A11.0&amp;amp;p=1&amp;amp;q=FreeNX"&gt;get the latest FreeNX package&lt;/a&gt; from the &lt;a title="All about openSUSE Build Service" href="http://build.opensuse.org/"&gt;openSUSE Build Service&lt;/a&gt; (there are &lt;a title="openSUSE one-click install standard" href="http://en.opensuse.org/Standards/One_Click_Install"&gt;one-click install&lt;/a&gt; buttons)&lt;/li&gt;
+	&lt;li&gt;Install an NX client on your remote terminal(s). &lt;a title="Nomachine home page" href="http://www.nomachine.com/"&gt;Nomachine&lt;/a&gt; has &lt;a title="Nomachine's downloads page" href="http://www.nomachine.com/download.php"&gt;free NX clients&lt;/a&gt; for Linux, Mac, Windows and Solaris (even some experimental ones for PlayStation 2 and Zaurus!). If your remote terminal is running openSUSE, you could alternatively &lt;a title="Free NX client from OBS" href="http://software.opensuse.org/search?baseproject=openSUSE%3A11.0&amp;amp;p=1&amp;amp;q=freenx-client"&gt;get an open-source NX client&lt;/a&gt; from the build service (or ask yourself: I'm running X locally, so why don't I just use good ole SSH and X11?)&lt;/li&gt;
+	&lt;li&gt;Configure your NX client to connect to the openSUSE host, then log in and enjoy!&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;strong&gt;The upshot: &lt;/strong&gt;I've done this with a FreeNX server and Nomachine's NX client for Windows XP, and it all "just works", except maybe for some font issues with older X clients like emacs (install extra font packages from nomachine to fix that), and some transparency effect issues I noticed in kwin4, probably to do with X11 extensions missing in the NX client. Not a big deal.
+
+
+
+Read the rest of this article for the boring background and laughable false-starts in my quest for remote desktops in X... &amp;lt;blush/&amp;gt;
+
+
+
+&lt;!--more--&gt;
+
+
+
+...
+
+
+
+What I would &lt;em&gt;really &lt;/em&gt;love to be able to do is get a graphical log-in screen to my openSUSE box, and have the &lt;a title="KDE Screenshots (Google)" href="http://images.google.com.au/images?q=kde%20screenshot&amp;amp;ie=UTF-8&amp;amp;oe=UTF-8&amp;amp;aq=t&amp;amp;rls=org.mozilla:en-US:official&amp;amp;client=firefox-a&amp;amp;um=1&amp;amp;sa=N&amp;amp;tab=wi"&gt;KDE &lt;/a&gt;environment displayed onto a single window within the WinXP desktop on the notebook (sort of like Windows' Remote Desktop feature &lt;code&gt;mstsc.exe&lt;/code&gt;, or the original &lt;a title="X Terminal (Wikipedia)" href="http://en.wikipedia.org/wiki/X_terminal"&gt;X Terminals&lt;/a&gt; we used when I was a student at &lt;a title="School of Computing, University of Tasmania" href="http://www.comp.utas.edu.au"&gt;UTas&lt;/a&gt; back in the nineties).  This way I'd have my full KDE desktop &lt;em&gt;and &lt;/em&gt;it'd be really comfy to use.  So what do I need to do?
+
+
+
+Okay, I've finally had enough time at home  to play with connecting to my &lt;a title="openSUSE home" href="http://en.opensuse.org/Welcome_to_openSUSE.org"&gt;openSUSE&lt;/a&gt; box from my work's laptop (WinXP) over my wireless LAN.  It's all groovy:  I can use &lt;a title="PuTTY home" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/"&gt;PuTTY&lt;/a&gt;, or &lt;a title="Cygwin download mirrors" href="http://cygwin.com/mirrors.html"&gt;Cygwin&lt;/a&gt;'s &lt;code&gt;ssh&lt;/code&gt; command (&lt;code&gt;ssh -Y&lt;/code&gt; to enable X11 tunnelling) to log in, list files, run programs (even X clients, so long as I've started Cygwin's X server first) and it's all secured by an &lt;a title="OpenSSH home" href="http://www.openssh.org/"&gt;SSH&lt;/a&gt; tunnel through the air between my study and my back deck (favorite place to work :-) ).  Note that using &lt;a title="Wireless standard 802.11b (Wikipedia)" href="http://en.wikipedia.org/wiki/802.11#802.11g"&gt;802.11g&lt;/a&gt; is probably a little slow for running intensely graphical X clients like photo viewers or &lt;a title="Xaos fractal zoomer home" href="http://wmi.math.u-szeged.hu/xaos/doku.php"&gt;&lt;code&gt;xaos&lt;/code&gt;&lt;/a&gt; ( :-) ), even with a strong signal, but it's good for running an IDE or &lt;a title="Konquerer (Wikipedia)" href="http://en.wikipedia.org/wiki/Konquerer"&gt;Konquerer&lt;/a&gt;.  And if you add the &lt;code&gt;-C &lt;/code&gt;(Compress) switch to &lt;code&gt;ssh&lt;/code&gt;, it speeds up the intense app's nicely!
+
+
+
+Well, obviously I'll need to start X on the WinXP box, without &lt;code&gt;-multiwindow&lt;/code&gt;, and to &lt;code&gt;-query&lt;/code&gt; for an &lt;a title="X Display Manager Control Protocol (Wikipedia)" href="http://en.wikipedia.org/wiki/Xdmcp"&gt;XDMCP&lt;/a&gt; server on the openSUSE box.  This should work, since I use a graphical login on openSUSE, which means an XDMCP server is already running (KDM).  So I' tried that, and it doesn't work. Why?
+
+
+
+It turns out that nearly every Linux distro' has configured their X display managers (kdm, xdm or gdm) to &lt;em&gt;disable &lt;/em&gt;XDMCP access from external servers and instead only allows connections from &lt;code&gt;localhost&lt;/code&gt; (i.e. from the Linux machine itself).
+
+
+
+Why have they done that?  Because XDMCP is insecure:  it transmits passwords in clear.  Also, you cannot secure XDMCP with SSH, as XDMCP uses UDP as well as TCP protocols :-( .  So it's insecure and it cannot be fixed, therefore distribution providers (wisely) disable it.  If I want to have a remote &lt;em&gt;desktop&lt;/em&gt; as opposed to just seeing individual &lt;em&gt;windows&lt;/em&gt; in my Windows desktop (which is cool, but not what I want), then I'll need to either not use SSH and be insecure, or use something else like &lt;a title="Tight VNC -- free VNC server/client" href="http://www.tightvnc.com/"&gt;VNC&lt;/a&gt;.
+
+
+
+I'm going to opt for the (insecure) option of not using SSH for X desktop access, and stick to traditional XDMCP sessions.  My reasons for this are:
+
+&lt;ul&gt;
+	&lt;li&gt;I want it to be &lt;em&gt;simple&lt;/em&gt;, and with as little overhead as possible (using VNC involves mucking about with session IDs, or &lt;a href="http://www.linux-mag.com/id/1311?r=s"&gt;running an extra X server on the Linux side&lt;/a&gt;)&lt;/li&gt;
+	&lt;li&gt;I only intend to access my Linux desktop from within my (W)LAN.  I have a firewall in the router, so I can set it to disallow access to ports UDP/177 and TCP/6000 from the Internet (or, if it proves too difficult to do it at the router, I can set openSUSE's own firewall to do that)&lt;/li&gt;
+	&lt;li&gt;My WLAN is encrypted  over the air anyway (WPA/PSK) and it's also using a silent SSID &lt;em&gt;and &lt;/em&gt;a MAC-address white-list, so it's pretty secure already.  The only way for somebody to sniff out my password is to be physically attached to my router&lt;/li&gt;
+	&lt;li&gt;So far I feel I can trust every computer attached to the LAN, since it's my own house.  If (&lt;em&gt;when&lt;/em&gt;?) this changes (that is, once my son is old enough to hack the network, so maybe when he's about eight years old?), I might revisit tunneling XDMCP sessions via VNC through SSH.&lt;/li&gt;
+&lt;/ul&gt;
+
+So, how do you set up good ole' XDMCP under Linux? &lt;a title="Linux XDMCP HOWTO (The Linux Documentation Project)" href="http://en.tldp.org/HOWTO/XDMCP-HOWTO/"&gt;READ THE FINE HOW-TO&lt;/a&gt;.  It's that simple, just remember that this is &lt;em&gt;not &lt;/em&gt;secure kids.  If you need security, use VNC, or just &lt;code&gt;ssh -Y&lt;/code&gt; to your Linux host and run individual X clients (with an X server on your local machine). I've also read &lt;a title="Cygwin X-Free mailing list archive" href="http://www.cygwin.com/ml/cygwin-xfree/2004-06/msg00204.html"&gt;in a mailing list&lt;/a&gt; that it's possible to start KDE from an SSH session anyway.  I might give that a go first, since it would be nearly as simple as XDMCP, and also secure.  But I really want my desktop, so we'll see what happens first….
+
+
+
+&lt;hr&gt;&lt;strong&gt; 2007-03-26T08:22+1000 Update: &lt;/strong&gt; — Some mixed success
+
+
+
+I've learned a couple of things over the week-end:
+
+&lt;ol&gt;
+	&lt;li&gt;&lt;code&gt; ssh -&lt;span style="text-decoration:underline;"&gt;C&lt;/span&gt;Y&lt;/code&gt; (use gzip compression when transmitting packets) produces satisfactory speed for &lt;code&gt;xaos&lt;/code&gt; or &lt;code&gt;gwenview&lt;/code&gt;, even over my WLAN&lt;/li&gt;
+	&lt;li&gt;PuTTY doesn't seem to work any faster, even with Compression Enabled. Perhaps it doesn't support OpenSSL's compression?  I don't know.  Anyway, I don't need PuTTY as long as I have Cygwin with &lt;code&gt;ssh&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;You can start the KDE desktop from an &lt;code&gt;ssh&lt;/code&gt; session with the &lt;code&gt;startkde&lt;/code&gt; command.  However in openSUSE (at least my install) this takes a &lt;em&gt;long&lt;/em&gt; time to start, and eventually &lt;code&gt;kwin&lt;/code&gt; hangs on the notebook end.  On the client end (the openSUSE box), it maxes out the CPU&lt;/li&gt;
+&lt;/ol&gt;
+
+So that was exciting and a little disappointing.  I'll need to experiment a little more it seems.  I got expected warnings about missing font paths and ALSA not working, but I was still hoping to get the desktop up, just with some reduced functionality.  There were also warnings about certain X server extensions being unavailable on the Cygwin X server, which I didn't expect, but again, they aren't critical (no transparency support etc.).  Perhaps there's some environment variables that KDM sets which are causing kwin or other desktop subsystems some grief when missing?
+
+
+
+If I still can't get it working soon, I might start with XDMCP, or I might skip straight to VNC after all.  One other thing to try before getting too drastic is to see if the Linux on my notebook's VMWare can run my KDE desktop remotely, or to try booting the notebook from a LiveCD such as Knoppix….
+
+
+
+&lt;hr&gt;&lt;strong&gt; 2007-03-29T16:48+1000 Update: &lt;/strong&gt; — RTFM.  Indeed!
+
+
+
+It's amazing what you can find out if you just read the manuals that come with your software.  Feeling silly now…I was exploring the &lt;a title="Novell openSUSE Reference manual (PDF)" href="http://milosophical.me/blog/2007/03/22/www.novell.com/documentation/opensuse102/pdfdoc/opensuse102_reference/opensuse102_reference.pdf"&gt;openSUSE Reference manual&lt;/a&gt; on the train home last night. Chapter nine is particularly interesting:  it describes FreeNX, a free remote desktop server, all ready to go on openSUSE, just install and follow the instructions.  There's even an &lt;a title="NX Client for Windows (NoMachine)" href="http://www.nomachine.com/download-client-windows.php"&gt;NX client for Windows&lt;/a&gt;. Much simpler, and still Free.
+
+
+
+Looks like this is the way to go.  I'll try it out and do a (hopefully) final  update.</description><category>GUI</category><category>KDE</category><category>Unix</category><category>cygwin</category><category>freenx</category><category>hacking</category><category>how-to</category><category>linux</category><category>nomachine</category><category>nx</category><category>x11</category><category>xorg</category><guid>http://milosophical.me/blog/2007/03/22/remote-desktop-acces-suse-cygwin-x-and-xdmcp.html</guid><pubDate>Thu, 22 Mar 2007 02:59:02 GMT</pubDate></item><item><title>Crashed Linux</title><link>http://milosophical.me/blog/2006/03/24/crashed-linux.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;
+&lt;em&gt;This post was originally published
+  at &lt;a href="http://sinewalker.blogspot.com.au/2006_03_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
+  on 24 March 2006.&lt;/em&gt;
+&lt;/p&gt;
+&lt;hr&gt;
+
+&lt;a title="photo sharing" href="http://www.flickr.com/photos/milliped/116393699/"&gt;&lt;img src="http://static.flickr.com/50/116393699_612744e4f7_m.jpg" alt=""&gt;&lt;/a&gt;
+&lt;a href="http://www.flickr.com/photos/milliped/116393699/"&gt;Crashed Linux&lt;/a&gt;
+
+
+&lt;br&gt;
+
+&lt;p&gt;
+Originally uploaded by &lt;a href="http://www.flickr.com/people/milliped/"&gt;milliped&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+This is a pretty neat shot of the in-flight entertainment system on an &lt;a href="http://en.wikipedia.org/wiki/Airbus_A330"&gt;Airbus A330&lt;/a&gt; having a boot-up issue. Note, the kernel is Linux.
+&lt;/p&gt;
+
+&lt;br&gt;
+
+
+&lt;p&gt;
+This photo has a big rant in the flickr comments about whether or not it's a Linux crash. Well, what's a Linux crash? Most of the public Windows crashes do not involve the Windows kernel (except for blue-screens) but they get called Windows crashes. So, to be fair, this is a Linux crash, even if it appears that the kernel itself is fine.&lt;/p&gt;</description><category>aircraft</category><category>geek</category><category>linux</category><category>observation</category><category>screenshot</category><guid>http://milosophical.me/blog/2006/03/24/crashed-linux.html</guid><pubDate>Fri, 24 Mar 2006 03:11:22 GMT</pubDate></item><item><title>New Printer “Just Works” in SUSE 10</title><link>http://milosophical.me/blog/2006/03/22/new-printer-just-works-in-suse-10.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;
+&lt;em&gt;This post was originally published
+  at &lt;a href="http://sinewalker.blogspot.com.au/2006_03_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
+  on 22 March 2006.&lt;/em&gt;
+&lt;/p&gt;
+&lt;hr&gt;
+
+&lt;p&gt;Well, here's a first for me:  go to local Dick Smith's, buy a
+      cheap printer, for my wife  (HP Deskjet 3940, AU$66).  Because I don't
+      really care about printing from Linux, I didn't care if it works or not
+      on that OS, just bought whatever Windows printer was cheapest.&lt;/p&gt;
+
+&lt;br&gt;
+
+
+&lt;p&gt;
+Brought it home, plugged it into my PC (in Windows) and it works, after installing drivers and software and about 15 mins of setup time.&lt;/p&gt;
+
+&lt;br&gt;
+
+
+&lt;p&gt;
+For the heck of it, I rebooted to Linux to see what would happen.  Well lordy
+“New hardware detected:  HPdeskjet3940” and an offer to set it up. After 5
+minutes — just accepting all the standard options — out comes a test page, in
+colour, bi-directional and fast.&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+Neat.  Linux is ready for me....&lt;/p&gt;</description><category>hacking</category><category>hardware</category><category>linux</category><category>printer</category><category>useability</category><guid>http://milosophical.me/blog/2006/03/22/new-printer-just-works-in-suse-10.html</guid><pubDate>Tue, 21 Mar 2006 22:45:00 GMT</pubDate></item><item><title>Linux distro woes</title><link>http://milosophical.me/blog/2006/01/24/linux-distro-woes.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;&lt;em&gt;This post was originally posted
+    at &lt;a href="http://sinewalker.blogspot.com.au/2006_01_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
+    on 24 January 2006.&lt;/em&gt;
+&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Well, my flirtations with gentoo didn't last too long.  I'm now trying SuSE 10.0 out, which — yes — is an RPM-based distro!
+&lt;/p&gt;
+ 
+&lt;br&gt;
+
+&lt;p&gt;
+So, why did I leave gentoo? I suppose that the "distro that doesn't get in your way" got in my way. With the arrival of our first baby, I'm rather short on the hours needed to learn how to configure everything in gentoo. While it's true that I could stand to learn a lot from getting it all to work, I can't afford to be hacking around getting pesky things like the scanner to go, or printing, or figuring out why I suddenly cannot burn a CD anymore. I need a "linux for dummies" that just works, and is more stable than winblows. Of course, if money was no object, I'd get myself a nice shiny new dual G5 Macintosh, but that's just for my dreams.
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+So, since Novel have decided to open up SuSE a bit more now, I'm trying it out. I downloaded the "Evaluation" version, rather than OpenSuse, since I'm not an OpenSource zealot, and frankly I'd like to visit web sites with flash animations. It has crippled xine/kaffeine and no DVDCSS, but I can live without movies for now until I get that sorted, or build from the source I have, or even (ick!) just boot to Windows (though I know of no free DVD players for win32 that expand a 16:9 movie to fill as much of my 4:3 screen as Kaffeine does).
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+So, it installed well, I now have working scanner, printer, cd-rw, dhcpd, cvs, mysql, java (yay!), apache, tomcat, kde. No Audacity or Rosegarden (important apps for me), no Eclipse (can wait). Slightly out-of-date jedit (4.1) and about 250MB of patches to upgrade to at some point, or not, since on dial-up I'm not exactly a cracker target...
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+I'm very happy with SuSE so far. It's as pleasant as I always thought it would be. YaST is nice too. Only problem: sometimes cdrecord bombs, still (!). Pisses me off, it worked once but not again, even as root. It can sit on the back-burner (oops) until after I've got my missing audio software installed
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+Major projects for linux are:
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Record old music tapes to OGG and burn to data and audio CDs&lt;/li&gt;
+	&lt;li&gt;Get nice video editing software (kino) working for baby and burn to VCDs&lt;/li&gt;
+	&lt;li&gt;Java hacking (install Sun Java Studio sharchives)&lt;/li&gt;
+	&lt;li&gt;Photo indexing and database, then archive to CDs&lt;/li&gt;
+	&lt;li&gt;Produce a CD database&lt;/li&gt;
+	&lt;li&gt;Get a working backup solution running&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+Obviously, I need to get cd-rw sorted as a priority... it's kinda central!&lt;/p&gt;
+</description><category>gentoo</category><category>hacking</category><category>linux</category><guid>http://milosophical.me/blog/2006/01/24/linux-distro-woes.html</guid><pubDate>Tue, 24 Jan 2006 02:39:00 GMT</pubDate></item></channel></rss>

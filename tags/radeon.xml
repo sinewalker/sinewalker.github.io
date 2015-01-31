@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (Radeon)</title><link>http://milosophical.me/</link><description></description><language>en</language><lastBuildDate>Fri, 30 Jan 2015 22:57:21 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Radeon Performance Enhancement</title><link>http://milosophical.me/blog/2005/03/30/radeon-performance-enhancement.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;&lt;em&gt;This post was originally published
+    at &lt;a href="http://sinewalker.blogspot.com.au/2005_03_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt; on 30 March 2005&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Place these settings in your &lt;a href="http://www.strw.leidenuniv.nl/cgi-bin/man?program=xorg.conf&amp;amp;section=5"&gt;&lt;code&gt;xorg.conf&lt;/code&gt;&lt;/a&gt;:
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+The RADEON driver (&lt;a href="http://linuxreviews.org/man/radeon/"&gt;&lt;code&gt;man
+radeon&lt;/code&gt;&lt;/a&gt;) supports the following options for the RV280 chip (which is
+found on RADEON 9200 boards).  The default values are in red:
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;&lt;code&gt;Option "AGPMode" "&lt;font color&gt;1&lt;/font&gt;"&lt;/code&gt;
+(driver currently supports up to x4)&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;Option "AGPFastWrite" "&lt;font color="red"&gt;off&lt;/font&gt;"&lt;/code&gt;
+(only used when DRI is enabled)&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;Option "BusType" "&lt;strong&gt;AGP&lt;/strong&gt;"&lt;/code&gt;
+(if driver's bus type detection is wrong)&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;Option "DisplayPriority" "&lt;font color="red"&gt;AUTO&lt;/font&gt;"&lt;/code&gt;
+(set to &lt;code&gt;"BIOS"&lt;/code&gt; or &lt;code&gt;"HIGH"&lt;/code&gt; to fix tearing)&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;Option "EnablePageFlip" "&lt;font color="red"&gt;off&lt;/font&gt;"&lt;/code&gt;
+(turn &lt;code&gt;"on"&lt;/code&gt; 3D page flipping for better performance)&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+The biggest wins would come from &lt;code&gt;APGMode&lt;/code&gt;
+and &lt;code&gt;EnablePageFlip&lt;/code&gt;.  &lt;code&gt;APGFastWrite&lt;/code&gt; may
+help &lt;a href="http://dri.freedesktop.org/wiki/FrontPage"&gt;DRI&lt;/a&gt;.  &lt;code&gt;DisplayPriority&lt;/code&gt;
+may help KDE.  Don't use &lt;code&gt;BusType&lt;/code&gt; unless the log shows the driver
+has selected a PCI bus for the card...
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+&lt;em&gt;Note&lt;/em&gt;:- when playing with Xorg 6.5 I got X crashes
+with &lt;code&gt;EnablePageFlip&lt;/code&gt; turned on.
+&lt;/p&gt;
+
+</description><category>Radeon</category><category>hacking</category><category>hardware</category><category>tip</category><category>xorg</category><guid>http://milosophical.me/blog/2005/03/30/radeon-performance-enhancement.html</guid><pubDate>Wed, 30 Mar 2005 13:46:00 GMT</pubDate></item></channel></rss>

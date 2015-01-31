@@ -1,7 +1,7 @@
 <html><body><p>In a <a href="http://sinewalker.wordpress.com/2012/01/11/implementing-a-caching-only-dns-on-debian/">previous blog entry</a> I described setting up a caching-only DNS server to speed up hostname resolution on Debian systems.  I've recently been playing with Ubuntu and noticed that this hack is not working.
 
 
-<!--more-->
+<!-- TEASER_END -->
 
 
 

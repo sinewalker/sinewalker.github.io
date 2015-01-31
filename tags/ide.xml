@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (IDE)</title><link>http://milosophical.me/</link><description></description><language>en</language><lastBuildDate>Fri, 30 Jan 2015 22:57:20 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>NetBeans turns 10</title><link>http://milosophical.me/blog/2008/10/21/netbeans-turns-10.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;It's &lt;a title="NetBeans 10th Birthday Celebration" href="http://www.netbeans.org/birthday/"&gt;NetBeans' 10th birthday&lt;/a&gt; and to celebrate I thought I'd write a quick blog post about how I use the NetBeans IDE to develop &lt;a title="Dvorak decoder program" href="http://sinewalker.wordpress.com/2008/08/15/project-dvorcode/"&gt;Dvorcode&lt;/a&gt;.
+
+
+&lt;!--more--&gt;If you spend any longer than about 5 minutes at my blog you'll quickly discover than I'm in the emacs camp of the perpetual editor holy wars. So naturally when I started to hack away on Dvorcode, emacs was my first choice. But I quickly "upgraded" to NetBeans because:
+
+&lt;/p&gt;&lt;ul&gt;
+	&lt;li&gt;I'm time-poor and don't have time to waste setting up my tools    (Emacs and Eclipse are both great general tools, but you have to set them up first, which is tedious on Eclipse, and orders of magnitude worse for Emacs if you want to do more than M-x compile for Java).&lt;/li&gt;
+	&lt;li&gt;I wanted a GUI for Dvorcodebut didn't want to wrestle withContainers and bindings. I just wanted to draw my interface in a form editor and be done with it.&lt;/li&gt;
+	&lt;li&gt;I wanted a graphical debugger, so that pretty much killed emacs&lt;/li&gt;
+	&lt;li&gt;I wanted Project files on SourceForge that other hackers could use fairly quickly, so a custom tool-chain is out of the question anyway&lt;/li&gt;
+&lt;/ul&gt;
+
+So after I hacked together my Dvorcode class in emacs, I moved to NetBeans to add all the things to make it a working application such as automatic tests, a CLI and a GUI.
+
+
+
+I found that migrating code into NetBeans is very easy, especially as I only had one class anyway. But once I had a skeleton project set up, NetBeans made all the tedious chores bareable and some, like the GUI building, were actually fun! It freed my time up to try some experimental elements such as a text scroller that scrolls up instead of down when you insert text into it.
+
+
+
+Also the built-in SVNsupport made working with my SourceForge repo a snap, and the JUnittests give me heaps of confidence to play around with the code, using NetBeans' Refactor function to change how the classes are divided up knowing that my tests will catch me if I break something along the way.
+
+
+
+I even used NetBeans' "local history" feature to get me out of a bind when I accidentally updated my code from the wrong SVN repo (I use two repo's as I mentioned in a &lt;a title="Cascaded SVN" href="http://sinewalker.wordpress.com/2008/08/21/cascaded-revision-control-strategy/"&gt;previous post&lt;/a&gt;).
+
+
+
+So, having used NetBeans, Eclipse and Emacs, which is my favourite? I still live in Emacs, and it's the first thing I reach for when I want to hack together a quick class. It's editing features just can't be beaten. But for a project of more than a handful of files, you either need &lt;a title="Collection of Emacs Development Environment Tools" href="http://cedet.sourceforge.net/"&gt;CEDET&lt;/a&gt; (which I &lt;em&gt;still&lt;/em&gt; haven't figured out how to install), or a "normal" IDE like the other two.
+
+
+
+I use Eclipse at work as that is what the team leads seem to choose. It's okay, but as I said, it's a pain to set up. We actually use multiple installs of the IDE on our development workstations, to get around different configurations needed for different projects. That's a terrible kludge, but nobody here has time to figure out how to do it "properly".
+
+
+
+So I guess that NetBeans is my favourite for projects larger than a few files, or to be worked on by more than just myself. And even for my own projects if they warrant a build system like Ant.</description><category>IDE</category><category>development</category><category>dvorcode</category><category>hacking</category><category>netbeans</category><guid>http://milosophical.me/blog/2008/10/21/netbeans-turns-10.html</guid><pubDate>Tue, 21 Oct 2008 02:25:15 GMT</pubDate></item></channel></rss>

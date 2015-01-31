@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (solaris)</title><link>http://milosophical.me/</link><description></description><language>en</language><lastBuildDate>Fri, 30 Jan 2015 22:57:20 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Solaris X11 and Dvorak simplified keyboard layout</title><link>http://milosophical.me/blog/2008/06/18/solaris-x11-and-dvorak-simplified-keyboard-layout.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;I've recently been playing with &lt;a title="OpenSolaris web site" href="http://opensolaris.org"&gt;OpenSolaris&lt;/a&gt; and &lt;a title="SDN Solaris Express DE Community web site" href="http://developers.sun.com/sxde/community.jsp"&gt;Solaris Express DE&lt;/a&gt; running in &lt;a title="Sun's xVM VirtualBox web site" href="http://virtualbox.org"&gt;VirtualBox&lt;/a&gt;. They're fine so far (except audio isn't working) but I stumbled on a usability issue that was nearly a show-stopper: dratted QWERTY layouts! The GNOME GUI for switching to Dvorak doesn't work, and &lt;code&gt;setxkbmap&lt;/code&gt;&lt;sub&gt;(1)&lt;/sub&gt; can't find the rules file for dvorak either (they don't seem to be installed where the man page indicates)...
+
+
+&lt;!--more--&gt;Well, after some searching around I discovered that for Solaris X11, need to use &lt;strong&gt;&lt;code&gt;xmodmap&lt;/code&gt;&lt;sub&gt;(1)&lt;/sub&gt;&lt;/strong&gt;. The xmodmap key maps for Solaris are located in &lt;strong&gt;&lt;code&gt;/usr/share/xmodmap&lt;/code&gt;&lt;/strong&gt; so you can switch between Dvorak and QWERTY thus:
+
+&lt;/p&gt;&lt;ul&gt;
+	&lt;li&gt;&lt;code&gt;xmodmap /usr/share/xmodmap/xmodmap.dvorak&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;xmodmap /usr/share/xmodmap/xmodmap.us&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+Making a pair of shell aliases for these verbose commands would be handy too:
+
+&lt;pre&gt;alias asdf "xmodmap /usr/share/xmodmap/xmodmap.dvorak"
+
+alias aoeu "xmodmap /usr/share/xmodmap/xmodmap.us"&lt;/pre&gt;
+
+with these, just type the first four keys of the home row and press enter to flip to the other layout. Xmodmap only affects X11 (global for all running and new X clients).</description><category>alternatives</category><category>dvorak</category><category>hacking</category><category>keyboards</category><category>solaris</category><category>tip</category><category>useability</category><guid>http://milosophical.me/blog/2008/06/18/solaris-x11-and-dvorak-simplified-keyboard-layout.html</guid><pubDate>Wed, 18 Jun 2008 04:00:46 GMT</pubDate></item></channel></rss>

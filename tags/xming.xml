@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (xming)</title><link>http://milosophical.me/</link><description></description><language>en</language><lastBuildDate>Fri, 30 Jan 2015 22:57:20 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>XMing screen size and changing multiple monitors</title><link>http://milosophical.me/blog/2009/02/20/xming-screen-size.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;My work's notebook (Windows XP) is running Xming as it's X11 server, and it travels between work, home and on the train.
+
+
+My work office has  a docking station and a rotating second display. Typically if I start Xming with this display plugged in, Xming will adjust it's screen size to use both displays, but if I start it without the screen plugged in, it'll size to just the notebook screen. If I later add the 2nd screen (by docking the notebook), Xming won't use it without a restart. Also if I rotate the screen, only the top 1200 pixels will be used by Xming.
+
+
+
+The solution is to specify a screen size to begin with that is as wide and tall as both of the screens.  On my docked notebook the two displays are the notebook's display (1920x1200 pixels)  and 2nd display (1600x1200 pixels, which rotates to 1200x1600). So that means the combined screen width is 3520 pixels, and the tallest screen hight is 1600 pixels.  Specify this to Xming when it starts:
+
+&lt;/p&gt;&lt;p style="text-align:center;"&gt;&lt;code&gt;path\to\xming.exe :0 -clipboard -multiwindow &lt;strong&gt;&lt;span style="color:#7722ff;"&gt;-screen 0 3520x1600&lt;/span&gt;&lt;/strong&gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p style="text-align:left;"&gt;Now I can add/remove/rotate the second screen and still use all of it without restarting Xming.&lt;/p&gt;</description><category>display</category><category>hacking</category><category>screens</category><category>tip</category><category>x11</category><category>xming</category><guid>http://milosophical.me/blog/2009/02/20/xming-screen-size.html</guid><pubDate>Thu, 19 Feb 2009 23:22:44 GMT</pubDate></item><item><title>Multiple Xming servers on a single Windows host</title><link>http://milosophical.me/blog/2008/12/17/multiple-xming-servers-on-a-single-windows-host.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;One use-case we have at work for &lt;a title="Xming sourceforge" href="http://sourceforge.net/projects/xming"&gt;Xming&lt;/a&gt; is to be the X11 server on a Windows RDP terminal server. For security reasons (don't ask!) we can only access certain Unix hosts via an RDP session from our desktops, not directly over the campus LAN. So, we installed Xming on the TS and it works well. Except if two or more people wish to use it at once. Then it's first come, first served.
+
+
+&lt;!--more--&gt;I found a work-around for this that works, but is inelegant: start with a different display number argument.  For instance, the normal Xming start-up parameters are like this:
+
+&lt;/p&gt;&lt;p style="text-align:center;"&gt;&lt;code&gt;D:\Programs\Xming\Xming.exe &lt;strong&gt;&lt;span style="color:#7744ff;"&gt;:0&lt;/span&gt;&lt;/strong&gt; -clipboard -multiwindow&lt;/code&gt;&lt;/p&gt;
+
+
+
+Change the &lt;strong&gt;&lt;span style="color:#7744ff;"&gt;&lt;code&gt;:0&lt;/code&gt;&lt;/span&gt;&lt;/strong&gt; to be something else, and you can have a second (or third) instance running on the same host. Then, so long as you launch an xterm on the remote hosts using an item from your Xming menu, then it seems to pass the X11 packets back to your instance of the server, and not to other people on the same TS.
+
+
+
+There are at least a couple of issues with this:
+
+&lt;ul&gt;
+	&lt;li&gt;It's not very resource efficient. But I can't see a way around this, so long as we are using the RDP terminal server&lt;/li&gt;
+	&lt;li&gt;You need to manually allocate display numbers to different people. If two people pick the same number, one will lose (first come, first served again). But at least your clients won't end up on their server...&lt;/li&gt;
+&lt;/ul&gt;
+
+If anybody can think of a way to snoop which displays are already taken, then choose the next one, it'd be neat!</description><category>hacking</category><category>tip</category><category>x11</category><category>xming</category><guid>http://milosophical.me/blog/2008/12/17/multiple-xming-servers-on-a-single-windows-host.html</guid><pubDate>Tue, 16 Dec 2008 20:21:50 GMT</pubDate></item><item><title>Trouble with the New X11 server in Cygwin</title><link>http://milosophical.me/blog/2008/11/26/new-x11-server-in-cygwin.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;I recently upgraded my Cygwin install and noticed that Cygwin has switched it's X server &lt;code&gt;XWin.exe&lt;/code&gt; from the XFree86 codebase to the Xorg codebase. Besides an updated logo, it also has some other side-effects.
+
+
+&lt;!--more--&gt;The first one I noticed is that the xterm now has a menu turned on by default. If this annoys you (like it did me), you can turn it off by adding the following to your &lt;code&gt;~/.Xdefaults&lt;/code&gt;:
+
+&lt;/p&gt;&lt;p style="text-align:center;"&gt;&lt;code&gt;&lt;strong&gt;XTerm*toolBar: off&lt;/strong&gt;&lt;/code&gt;&lt;/p&gt;
+
+
+
+The next side-effect I haven't yet solved. I &lt;a title="how to set up cygwin's xwin menu" href="http://sinewalker.wordpress.com/2006/04/18/cygwin-systray-menu/"&gt;use the XWin menu&lt;/a&gt; to define some links to the servers I look after at work. I use &lt;code&gt;plink.exe&lt;/code&gt; (part of &lt;a title="PuTTY home page" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/"&gt;PuTTY&lt;/a&gt;) to launch an xterm on the remote host, displayed locally, and using &lt;code&gt;pagent.exe&lt;/code&gt; to do the authentication. For example:
+
+&lt;pre&gt;&lt;code&gt;&lt;strong&gt;MENU DEV_SERVERS {
+    "Content Server" exec "D:/Programs/PuTTY/plink.exe -ssh -X -C -load someserverdef /usr/openwin/bin/xterm -name greenbackground -ls"
+&lt;/strong&gt;&lt;/code&gt;&lt;/pre&gt;
+
+...
+
+
+
+This used to work, but now nothing happens.  Interestingly, the command &lt;em&gt;will &lt;/em&gt;work if you execute it directly from a bash shell. If anyone has an idea, I'd be grateful for their help :)
+
+&lt;h5&gt;UPDATE: - 20081217 -- Use Xming, maybe&lt;/h5&gt;
+
+I haven't yet figured out ssh-agent. However one work-around that I tried earlier and added in the comments was no good: the X clients started in a terminal that is forked off this way don't come through for some reason, to do with the way the X packets are tunnelled I think. So, I was motivated to try &lt;a title="Xming web site" href="http://www.straightrunning.com/XmingNotes/"&gt;Xming&lt;/a&gt;.
+
+
+
+Xming is being used quite successfully by my work colleagues who don't have a whole Cygwin stack on their machines. It's a lightweight X11 server for Windows, and it even uses Microsoft's OpenGL apparently. I'll have to try out some 3D clients from home soon to see what that gets me, but it could be good.
+
+
+
+Anyway, for work, it seems to integrate very well with PuTTY. There's even a stand-alone putty you can &lt;a title="Xming sourceforge" href="http://sourceforge.net/projects/xming"&gt;download&lt;/a&gt; that's pre-integrated, though it seems to also require the Xming server.
+
+
+
+I also found that it'll serve my local X clients quite well. The most important of these is my emacs, of course. For that to work well, I had to download the extra fonts since emacs uses servers-side fonts. But it works and is indistinguishable from the X11 server that's built into Cygwin.
+
+
+
+I haven't yet un-installed Cygwin's X server: I fear it could also remove clients and libraries, and I don't want the hastle just now of figuring that out.
+
+
+
+A final note: It's menu config file is Xmingrc (no dot), which lives in Window's HOME %USERPROFILE%. Also, because it's got no Cygwin dependency, you can't launch local Cygwin X clients from this menu. At least, not without wrapping them in calls to Cygwin's run.exe, e.g.
+
+&lt;p style="text-align:center;"&gt;&lt;code&gt;d:\cygwin\bin\run.exe -p /usr/X11R6/bin emacs -display 127.0.0.1:0.0 --debug-init&lt;/code&gt;&lt;/p&gt;</description><category>cygwin</category><category>hacking</category><category>help</category><category>problem</category><category>tip</category><category>x11</category><category>xming</category><category>xorg</category><guid>http://milosophical.me/blog/2008/11/26/new-x11-server-in-cygwin.html</guid><pubDate>Tue, 25 Nov 2008 23:07:34 GMT</pubDate></item></channel></rss>

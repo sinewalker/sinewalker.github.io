@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (magnifier)</title><link>http://milosophical.me/</link><description></description><language>en</language><lastBuildDate>Fri, 30 Jan 2015 22:57:21 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Curious cursor complication with Emacs and Windows Magnifier</title><link>http://milosophical.me/blog/2011/11/30/curious-cursor-complication-with-emacs-and-windows-magnifier.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;I recently noticed a bug when you start GNU Emacs win32 &lt;em&gt;after&lt;/em&gt; starting &lt;a title="Microsoft: Make items on the screen appear bigger (Magnifier)" href="http://windows.microsoft.com/en-AU/windows7/Make-items-on-the-screen-appear-bigger-Magnifier"&gt;Windows Magnifier&lt;/a&gt;: Emacs' cursor becomes a single-pixel "caret" instead of the box cursor. This makes the cursor very hard to find.
+&lt;!--more--&gt;
+
+I usually leave Emacs' cursor at the default (&lt;code&gt;box&lt;/code&gt;) because this is so much easier to see, especially if you also enable &lt;code&gt;blink-cursor-mode&lt;/code&gt; (though&lt;a title="How to stop blinking cursors" href="http://www.jurta.org/en/prog/noblink"&gt; that's a matter of taste&lt;/a&gt;, I suppose). The default settings also set the cursor to a &lt;code&gt;hollow&lt;/code&gt; box when the &lt;code&gt;window&lt;/code&gt; (or the entire &lt;a title="Emacs frames and windows" href="http://emacsworld.blogspot.com/2008/08/emacs-frames-and-windows.html"&gt;&lt;code&gt;frame&lt;/code&gt;&lt;/a&gt;) is inactive.
+
+
+
+Really, a text editor is unusable with a "caret" or bar-shaped cursor.
+
+
+
+The following behaviors are observed with this bug:
+
+&lt;/p&gt;&lt;ul&gt;
+	&lt;li&gt;This affects at least GNU Emacs versions 23.1 &lt;a title="Download GNU Emacs for Windows, from GNU FTP site" href="http://ftp.gnu.org/pub/gnu/emacs/windows/"&gt;for Windows&lt;/a&gt;, and &lt;a title="GNU Emacs 24 win32 pre-built binaries at Google Code" href="http://code.google.com/p/emacs-for-windows/downloads/list"&gt;24.0 compiled&lt;/a&gt; with mingw for win32&lt;/li&gt;
+	&lt;li&gt;The actual shape of the cursor has no correspondence with the value of the &lt;code&gt;cursor-type&lt;/code&gt; variable: it is always as-if the value were &lt;code&gt;(bar . 1)&lt;/code&gt; (a vertical bar, one pixel wide)&lt;/li&gt;
+	&lt;li&gt;The cursor blinks, whether you have enabled &lt;code&gt;blink-cursor-mode&lt;/code&gt; or not&lt;/li&gt;
+	&lt;li&gt;The value of the Windows Registry key &lt;strong&gt;&lt;code&gt;HKCU\Control Panel\Desktop\CaretWidth&lt;/code&gt;&lt;/strong&gt; also has no bearing on the cursor shape (though this key is great for setting the cursor thickness in other Windows programs...)&lt;/li&gt;
+	&lt;li&gt;(This one took me ages to find) &lt;span style="text-decoration:underline;"&gt;It only happens if Windows Magnifier is running&lt;/span&gt; &lt;em&gt;before&lt;/em&gt; you start Emacs. If you start Emacs first, and &lt;em&gt;then&lt;/em&gt; start Magnifier, the cursor is unchanged and respects the value of &lt;code&gt;cursor-type&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+So, the work-around for this is to start Emacs before you run Magnifier (especially: make sure the Windows Accessibility feature that starts Magnifier when you log in, is turned OFF).
+
+
+
+&lt;a title="Search GNU Bugtracker for emacs cursor bugs" href="http://debbugs.gnu.org/cgi/pkgreport.cgi?include=subject%3Acursor;package=emacs"&gt;As far as I can tell&lt;/a&gt;, there is no bug report for this.  I may file one when I get around to figuring out &lt;a title="GNU Bugtracker home" href="http://debbugs.gnu.org/"&gt;GNU's bug-tracker&lt;/a&gt;.</description><category>bug</category><category>cursor</category><category>emacs</category><category>hacking</category><category>magnifier</category><category>registry</category><category>windows</category><guid>http://milosophical.me/blog/2011/11/30/curious-cursor-complication-with-emacs-and-windows-magnifier.html</guid><pubDate>Wed, 30 Nov 2011 03:17:06 GMT</pubDate></item></channel></rss>

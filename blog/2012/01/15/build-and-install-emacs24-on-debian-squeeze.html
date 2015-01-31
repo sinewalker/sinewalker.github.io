@@ -38,7 +38,7 @@ article: http://ogp.me/ns/article#
         <ul>
                     <li><a href="../../../../index.html" title="Home"><i class="icon-compass"></i></a></li>
             <li><a href="../../../../archive/archive.html" title="Archive"><i class="icon-folder-open-alt"></i></a></li>
-            <li><a href="../../../../categories/index.html" title="Tags"><i class="icon-tags"></i></a></li>
+            <li><a href="../../../../tags/index.html" title="Tags"><i class="icon-tags"></i></a></li>
             <li><a href="../../../../pg/index.html" title="Codex"><i class="icon-book"></i></a></li>
             <li><a href="../../../../rss.xml" title="RSS"><i class="icon-rss"></i></a></li>
             <li><a href="https://plus.google.com/+MichaelLockhart" title="Microblog"><i class="icon-google-plus"></i></a></li>
@@ -65,18 +65,19 @@ article: http://ogp.me/ns/article#
                     <div itemprop="keywords" class="tags">
         <ul>
         Tags : 
-           <li><a class="tag p-category" href="../../../../categories/build-deps.html" rel="tag">build-deps</a></li>
-           <li><a class="tag p-category" href="../../../../categories/debian.html" rel="tag">debian</a></li>
-           <li><a class="tag p-category" href="../../../../categories/emacs.html" rel="tag">emacs</a></li>
-           <li><a class="tag p-category" href="../../../../categories/hacking.html" rel="tag">hacking</a></li>
-           <li><a class="tag p-category" href="../../../../categories/how-to.html" rel="tag">how-to</a></li>
+           <li><a class="tag p-category" href="../../../../tags/build-deps.html" rel="tag">build-deps</a></li>
+           <li><a class="tag p-category" href="../../../../tags/debian.html" rel="tag">debian</a></li>
+           <li><a class="tag p-category" href="../../../../tags/emacs.html" rel="tag">emacs</a></li>
+           <li><a class="tag p-category" href="../../../../tags/hacking.html" rel="tag">hacking</a></li>
+           <li><a class="tag p-category" href="../../../../tags/how-to.html" rel="tag">how-to</a></li>
         </ul>
         </div>
 
         </div>
         <div class="body">
             <p>Hacking in Debian is so easy (one of the reasons I switched). Take, for instance, building Emacs. This is such a piece of cake compared to the weird hoops you have to go through to get all the build dependencies on other platforms. It's something I never tried before, simply because it was too daunting trying to figure out all the packages I need to install. But apt-get has this awesome --build-deps switch...
-<!--more-->
+
+<!-- TEASER_END -->
 
 So then, how to build and install Emacs 24 on Debian squeeze, in 6 easy steps?  Since Emacs24 is not yet released, there isn't a package for it in Debian (which is why I'm building my own). But I figured that the build dependencies would not have changed too much from Emacs23, so I used that, and it worked.
 

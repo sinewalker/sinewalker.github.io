@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (svn)</title><link>http://milosophical.me/</link><description></description><language>en</language><lastBuildDate>Fri, 30 Jan 2015 22:57:21 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Cascaded revision control strategy</title><link>http://milosophical.me/blog/2008/08/21/cascaded-revision-control-strategy.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;Okay, this isn't rocket-science, and in fact it's not even my idea (heard it on the &lt;a title="Free/Libré Open Source Software POD casts" href="http://twit.tv/FLOSS"&gt;FLOSS&lt;/a&gt; &lt;a title="Git" href="http://twit.tv/floss19"&gt;POD about Git&lt;/a&gt;). A problem with centralised repository systems such as Subversion (which is used on SourceForge) is that you need network access to do many things, and also to just save your work. You can't do commits to the repo' while on the train, for instance (which is where I do most of my hacking).
+
+
+One option is to switch to a distributed revision system, such as &lt;a title="The Git home page" href="http://git.or.cz/"&gt;Git&lt;/a&gt; or &lt;a title="The Hg home page" href="http://www.selenic.com/mercurial/wiki/"&gt;Mercurial&lt;/a&gt;.  I may do that some day, but right now is not a good time for me to be learning a new revision system. Plus to have SourceForge host my project in Hg (for instance) means installing it myself and &lt;a title="How to hose a Hg project on SourceForge" href="http://www.selenic.com/mercurial/wiki/index.cgi/MercurialOnSourceforge"&gt;blah-blah-blah&lt;/a&gt;. Then there's IDE integration to consider...
+
+
+
+I want to have my cake and eat it too.
+
+
+
+&lt;!--more--&gt;A very simple compromise is just to have a local SVN repo' on my laptop, to which I commit minor/experimental changes, hacking on bug fixes etc. Then periodically upload only the good changes to the main repo' on my home machine, or to a public SF repo, or wherever (depending on the project). You can employ this same strategy in order to use mixed repo's, if Hg or Git (or &lt;a title="Canonical's free projects site (Launchpad)" href="https://launchpad.net/"&gt;LaunchPad&lt;/a&gt;) float your boat but your project is in SVN...
+
+&lt;/p&gt;&lt;h3&gt;Basic idea&lt;/h3&gt;
+
+The idea is pretty simple. Keep a local SVN repository to which I commit changes. I would have 2 working copies, one form the main/public repo and a 2&lt;sup&gt;nd&lt;/sup&gt; from my private repo. Most hacking would take place in the 2&lt;sup&gt;nd&lt;/sup&gt; working copy, with planned commits back to the main repo via a copy from my 2&lt;sup&gt;nd&lt;/sup&gt; (private) working copy of my private repo to my 1&lt;sup&gt;st&lt;/sup&gt; working copy, then update/commit to public repo:
+
+
+
+&lt;a href="http://sinewalker.files.wordpress.com/2008/08/svn-svn1.png"&gt;&lt;img class="size-medium wp-image-337" src="http://sinewalker.files.wordpress.com/2008/08/svn-svn1.png?w=300" alt="Cascaded subversion repositories" width="300" height="186"&gt;&lt;/a&gt;
+
+&lt;h3&gt;What this achieves&lt;/h3&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Local repo to which can commit and revert while offline&lt;/li&gt;
+	&lt;li&gt;Do not have to make public commits of experimental changes&lt;/li&gt;
+	&lt;li&gt;Do not have to switch to a distributed revision system (which achieves same aims)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Simple workflow&lt;/h3&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;Check out of main/public SVN repo&lt;/li&gt;
+	&lt;li&gt;Create a private repo and import code (or check in)&lt;/li&gt;
+	&lt;li&gt;Check out of private SVN repo to 2&lt;sup&gt;nd&lt;/sup&gt; working copy&lt;/li&gt;
+	&lt;li&gt;Make minor/experimental changes in 2&lt;sup&gt;nd&lt;/sup&gt; working copy, commit these to private SVN repo&lt;/li&gt;
+	&lt;li&gt;Tag good states in private SVN repo (these are public check-in candidates)&lt;/li&gt;
+	&lt;li&gt;Copy from private 2&lt;sup&gt;nd&lt;/sup&gt; working copy back to 1&lt;sup&gt;st&lt;/sup&gt; working copy
+(applies your changes in your 1&lt;sup&gt;st&lt;/sup&gt; working copy)&lt;/li&gt;
+	&lt;li&gt;Update/check-in to main/public repo per usual&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3&gt;Compare/contrast branches&lt;/h3&gt;
+
+Having a private development stream can also be accomplished by using branches on the public repo. However this does not achieve the aim of being able to commit and revert while offline, or the freedom to experiment without having to publish your false-starts.
+
+&lt;h3&gt;Compare/contrast svnsync&lt;/h3&gt;
+
+Briefly looked at this tool, but it's for mirroring repositories only. It's use case is for distributing query load across multiple servers. However all commits to the target (mirror) repo's must be done exclusively by svnsync, so it does not match my use case: I want to be able to commit locally too.
+
+&lt;h3&gt;Tagging "good" commit candidates&lt;/h3&gt;
+
+&lt;strong&gt;Step 5&lt;/strong&gt; is interesting: you can tag the local repo when your code reaches a state that is suitable to commit to the main repo. Very useful if you want to commit, but still unable because you're offline. Also a good way to filter out "dumb" commits.
+
+
+
+The alternative to tagging good commit candidates would be to roll &lt;em&gt;all&lt;/em&gt; the changes together into a single main commit by just checking out of the local SVN back to your 1&lt;sup&gt;st&lt;/sup&gt; working copy at the end. But that would lose some change history. By tagging in local, I can do commits to main in a manner that matches the semantics of the change. That is, first I did A (commented A and tagged A). Then I did B, and so on up to C. Then when commiting back to main, don't just commit C: commit A first and then B, so that the change history is not lost on main repo.
+
+&lt;h3&gt;What about updates?&lt;/h3&gt;
+
+This idea does have a couple of problems with updates from others:
+
+&lt;ul&gt;
+	&lt;li&gt;merging changes from others to the local repo could be an issue. Conflicts might have to be resolved twice? I haven't thought hard about this one yet.&lt;/li&gt;
+	&lt;li&gt;does not solve the "hide in a hole and get behind" problem, possibly exacerbates it&lt;/li&gt;
+	&lt;li&gt;could potentially give a false sense of security ("my changes are in the repo, aren't they?"). Potential to forget to commit back to main if always commiting to local...&lt;/li&gt;
+&lt;/ul&gt;
+
+All of these should be kept in mind, and apply some sense and judgement. The SVN documentation about branches has some good advice. I would add: if you're using a private repo, it might be good to have a public branch to back it as well, so that everyone
+
+knows what's going on, and to assist with the merging, since SVN 1.5 can help if it can see all the changes in seperate branches of one repo, but it can't help when you're trying to merge across two.
+
+</description><category>hacking</category><category>subversion</category><category>svn</category><category>tip</category><guid>http://milosophical.me/blog/2008/08/21/cascaded-revision-control-strategy.html</guid><pubDate>Thu, 21 Aug 2008 00:45:24 GMT</pubDate></item></channel></rss>

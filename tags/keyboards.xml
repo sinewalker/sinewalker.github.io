@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (keyboards)</title><link>http://milosophical.me/</link><description></description><language>en</language><lastBuildDate>Fri, 30 Jan 2015 22:57:21 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Solaris X11 and Dvorak simplified keyboard layout</title><link>http://milosophical.me/blog/2008/06/18/solaris-x11-and-dvorak-simplified-keyboard-layout.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;I've recently been playing with &lt;a title="OpenSolaris web site" href="http://opensolaris.org"&gt;OpenSolaris&lt;/a&gt; and &lt;a title="SDN Solaris Express DE Community web site" href="http://developers.sun.com/sxde/community.jsp"&gt;Solaris Express DE&lt;/a&gt; running in &lt;a title="Sun's xVM VirtualBox web site" href="http://virtualbox.org"&gt;VirtualBox&lt;/a&gt;. They're fine so far (except audio isn't working) but I stumbled on a usability issue that was nearly a show-stopper: dratted QWERTY layouts! The GNOME GUI for switching to Dvorak doesn't work, and &lt;code&gt;setxkbmap&lt;/code&gt;&lt;sub&gt;(1)&lt;/sub&gt; can't find the rules file for dvorak either (they don't seem to be installed where the man page indicates)...
+
+
+&lt;!--more--&gt;Well, after some searching around I discovered that for Solaris X11, need to use &lt;strong&gt;&lt;code&gt;xmodmap&lt;/code&gt;&lt;sub&gt;(1)&lt;/sub&gt;&lt;/strong&gt;. The xmodmap key maps for Solaris are located in &lt;strong&gt;&lt;code&gt;/usr/share/xmodmap&lt;/code&gt;&lt;/strong&gt; so you can switch between Dvorak and QWERTY thus:
+
+&lt;/p&gt;&lt;ul&gt;
+	&lt;li&gt;&lt;code&gt;xmodmap /usr/share/xmodmap/xmodmap.dvorak&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;xmodmap /usr/share/xmodmap/xmodmap.us&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+Making a pair of shell aliases for these verbose commands would be handy too:
+
+&lt;pre&gt;alias asdf "xmodmap /usr/share/xmodmap/xmodmap.dvorak"
+
+alias aoeu "xmodmap /usr/share/xmodmap/xmodmap.us"&lt;/pre&gt;
+
+with these, just type the first four keys of the home row and press enter to flip to the other layout. Xmodmap only affects X11 (global for all running and new X clients).</description><category>alternatives</category><category>dvorak</category><category>hacking</category><category>keyboards</category><category>solaris</category><category>tip</category><category>useability</category><guid>http://milosophical.me/blog/2008/06/18/solaris-x11-and-dvorak-simplified-keyboard-layout.html</guid><pubDate>Wed, 18 Jun 2008 04:00:46 GMT</pubDate></item><item><title>Microsoft Vista keyboard?</title><link>http://milosophical.me/blog/2007/03/22/microsoft-vista-keyboard.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;I spotted a "Vista compatable" keyboard in K-Mart the other day, which set me thinking... what would a Vista keyboard actually &lt;em&gt;do&lt;/em&gt; that a "non-Vista" keyboard can't?
+
+
+Then I Googled for "Microsoft Keyboard Vista" and found &lt;a title="Vista media keyboard??? (Microsoft)" href="http://www.microsoft.com/hardware/mouseandkeyboard/productdetails.aspx?pid=080"&gt;this ad from Microsoft&lt;/a&gt; (&lt;a title="Vista media keyboard??? (Google cache)" href="http://72.14.203.104/search?q=cache:tFfrA9Y1WiEJ:www.microsoft.com/hardware/mouseandkeyboard/productdetails.aspx%3Fpid%3D080+microsoft+keyboard+vista&amp;amp;hl=en&amp;amp;ct=clnk&amp;amp;cd=2&amp;amp;gl=au&amp;amp;client=firefox-a"&gt;Google Cache&lt;/a&gt;).
+
+
+
+What the?  "Designed to make it easier than ever to control PC media from your desk, your lap–or even from the comfort of your couch".  So… if I use this keyboard's Play button to try and play media that Vista's &lt;a title="Digital Rights Management (Wikipedia)" href="http://en.wikipedia.org/wiki/Digital_Rights_Management"&gt;DRM&lt;/a&gt; system &lt;em&gt;thinks &lt;/em&gt;I shouldn't be playing, does it administer an electric shock?  What if I have the keyboard in my lap :-D  Ouch! No so &lt;em&gt;comfortable &lt;/em&gt;now…
+
+
+
+Thanks, Microsoft, but … ahem, &lt;em&gt;no thanks&lt;/em&gt;!&lt;/p&gt;</description><category>Microsoft</category><category>geek</category><category>keyboards</category><category>silly</category><category>thoughts</category><guid>http://milosophical.me/blog/2007/03/22/microsoft-vista-keyboard.html</guid><pubDate>Thu, 22 Mar 2007 04:27:02 GMT</pubDate></item><item><title>Dvorak keyboards</title><link>http://milosophical.me/blog/2006/03/27/dvorak-keyboards.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;
+&lt;em&gt;This post was originally published
+  at &lt;a href="http://sinewalker.blogspot.com.au/2006_03_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
+  on 27 March 2006.&lt;/em&gt;
+&lt;/p&gt;
+&lt;hr&gt;
+
+&lt;p&gt;I prefer &lt;a title="how keyboards should work" href="http://www.mwbrooks.com/dvorak/"&gt;Dvorak keyboards&lt;/a&gt;
+  to &lt;a href="http://en.wikipedia.org/wiki/QWERTY"&gt;QWERTY&lt;/a&gt;, which confounds
+  my work colleagues no end :-)&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+I've been typing on Dvorak for about 3 years now [&lt;em&gt;ed: That is, since
+2003&lt;/em&gt;]. The main reason I use the Dvorak keyboard layout is because, after
+15 years of six-finger typing on QWERTY, I decided to learn to touch-type, and
+Dvorak is very easy to learn (I learnt it in 2 weeks, back to my old typing
+speed after a month).&lt;/p&gt;
+
+&lt;br&gt;
+
+
+
+&lt;!--more--&gt;
+&lt;p&gt;
+I don't believe Dvorak makes me a faster typist inherently (though I am faster now that I can touch-type), but it's &lt;em&gt;much&lt;/em&gt; more comfortable and the shooting pains in my arms have gone.&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+&lt;img src="http://photos1.blogger.com/blogger/179/613/400/2350-1B.0.jpg" border="2" alt="My home keyboard is an A4 KBS23 wireless, very similar to this" align="left"&gt;At home, I use a slightly older model of the &lt;a href="http://www.A4Tech.com"&gt;A4&lt;/a&gt; &lt;a href="http://www.a4tech.com/en/product2.asp?CID=2&amp;amp;SCID=14&amp;amp;MNO=KB%28S%29-2350ZRP"&gt;KB(S)-2350ZRP&lt;/a&gt; (pictured). I chose this keyboard over more &lt;a title="A4 2580RP — keypad at left makes mouse closer" href="http://www.a4tech.com/en/product2.asp?CID=2&amp;amp;SCID=14&amp;amp;MNO=KB%28S%29-2580RP"&gt;radical&lt;/a&gt; &lt;a title="This is just so kewl, like something from seaQuest DSV" href="http://www.teleprint.com/"&gt;designs&lt;/a&gt; that &lt;a title="I nearly bought one of these — may yet when I no longer need to share…" href="http://www.logitech.com/index.cfm/products/details/US/EN,CRID=2295,contentid=6012,detail=1"&gt;I like&lt;/a&gt;, because the A4 2350 is not too different from a standard typewriter layout — so it plays nice with other people in the family.  The A-shaped keys help a lot with my lower-arm pains too, but not so much as the Dvorak layout, since most of the time I'm typing at work on a standard &lt;a href="http://www.dell.com"&gt;Dell &lt;/a&gt;&lt;a title="This keyboard is the same model as the one I use at work.  Ick" href="http://static.flickr.com/65/170195416_e3cba9cda7_o.png"&gt;SK-8125&lt;/a&gt;.&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+Making up strong passwords with this keyboard layout is much easier now.  Think
+of a fairly good password (fee1bo7ch, for instance) and then type it on Dvorak
+as-if you were typing on QWERTY (becomes u..1br7jd).&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+I'm thinking about teaching my left hand
+to &lt;a href="http://www.mwbrooks.com/dvorak/onehand.html"&gt;type one-handed&lt;/a&gt;
+dvorak too, to improve my mousing experience.&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;h4&gt;Issues I've encountered with Dvorak&lt;/h4&gt;
+
+&lt;p&gt;
+There are some minor annoyances when you switch away from QWERTY.  Anybody in a minority group (such as left-handed people) will identify with some of these.  None of these issues have been serious enough to cause me to switch back to QWERTY though, as the benefits I've gained (typing speed, no more pain) far outweigh any of them, even all considered together.
+
+&lt;/p&gt;&lt;ul&gt;
+	&lt;li&gt;Typing on someone else's QWERTY keyboard becomes very uncomfortable. I frequently shudder at the thought of having to touch someone's keyboard now (not because of hygiene, but it's the same feeling). I can still do it, and since I never learnt to type properly on QWERTY anyway, it's no trouble to look at the keyboard.  Years of familiarity with this layout means I don't need much reminding, so it's not like I have to hunt for keys, more like a mental changing of gears and putting up with awkward key combinations (like, for instance A-W-K-W-A-R-D)&lt;/li&gt;
+	&lt;li&gt;In the same vein, letting someone else use your keyboard can be fun!  Most operating systems allow an easy/quick way to switch layouts.  Windows sort-of does, but it only applies to the current window, not the whole system (what a stupid design!), so you need to remember that gotcha.  I sometimes use this as an opportunity to advocate Dvorak, but usually this is interpreted as “just Mike evangelising again…” ;-)&lt;/li&gt;
+	&lt;li&gt;Some programs and games make use of the QWERTY layout in selecting keyboard short-cuts.  For example, vi uses the H J K and L keys for cursor movement, since this arrangement is sensible in QWERTY.  On Dvorak, it's useless as those keys are located at the J C V and P positions.  But then again, &lt;a title="EMACS rules, vi drools" href="http://c2.com/cgi/wiki?ViSucks"&gt;vi sucks&lt;/a&gt; anyway, so it's not a problem.  Winamp uses Z X C V and B for pause, playback and track selection functions, but it can be re-programmed, at least for the global shortcuts.  Some games suffer, so you need to switch back to QWERTY for them&lt;/li&gt;
+	&lt;li&gt;Passwords can be tricky.  On systems that lock your account after too many bad tries, you have to be very confident that you know where the keys are!  An alternative is to use my password trick above, and always look at the keys when entering passwords.  This is accurate, but if you need to put in your password on a QWERTY keyboard, you have to know the real password, and not the easier QWERTY–Dvorak mapping you have memorised.&lt;/li&gt;&lt;/ul&gt;</description><category>dvorak</category><category>geek</category><category>keyboards</category><category>thoughts</category><category>tip</category><guid>http://milosophical.me/blog/2006/03/27/dvorak-keyboards.html</guid><pubDate>Mon, 27 Mar 2006 00:07:00 GMT</pubDate></item></channel></rss>

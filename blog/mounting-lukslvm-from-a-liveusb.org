@@ -17,6 +17,10 @@ entire SSD is encrypted (except for /boot).  Bummer.
 So, I had occasion to test my backup/recovery strategy and found that
 I had a few issues (of course I did!)
 
+#+BEGIN_COMMENT
+: <!-- TEASER_END -->
+#+END_COMMENT
+
 One problem was: I have my work laptop backups stored to an external
 USB hard drive, which is is also formatted with a LUKS encrypted
 volume. Great, no problem, I just need to unlock the LUKS so I can

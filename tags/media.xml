@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (media)</title><link>http://milosophical.me/</link><description></description><language>en</language><lastBuildDate>Fri, 30 Jan 2015 22:57:20 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Oxygen OpenOffice Professional</title><link>http://milosophical.me/blog/2007/08/08/oxygen-openoffice-professional.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;Found &lt;a title="Oxygen OpenOffice project (SourceForge)" href="http://sourceforge.net/projects/ooop/"&gt;this neat project in SourceForge&lt;/a&gt;, which is a fork (?) of OpenOffice that adds some nice features, but the really cool part is that it has free clip art and templates, many of which are actually decent!
+
+
+&lt;!--more--&gt;You can install the whole thing, but I already have OpenOffice (OOo) on all my systems.  So you can also just &lt;a title="Oxygen OpenOffice Extensions (SourceForge)" href="http://sourceforge.net/project/showfiles.php?group_id=170021&amp;amp;package_id=208656"&gt;download the extensions&lt;/a&gt; (which are platform agnostic) and install only those (just run the .osx files from your file browser — it's MIME settings should open it in OOo's Extension Manager and install for you.
+
+
+
+There is one issue (attributable to a bug in the OpenOffice  UNO Extension mechanism I think): The gallery links to the photos from the &lt;em&gt;gallery.oxt&lt;/em&gt; extension are not mapped to their actual installation directory. This means that you can see the thumbnails in the OOo gallery, but cannot include the actual photos into your documents :(
+
+
+
+For example, in my Windows install, it seems the OOo extension is incorrectly mapping the gallery photograph files to &lt;code&gt;&lt;em&gt;&amp;lt;user home&amp;gt;&lt;/em&gt;\Application Settings\OpenOffice.org2\user\gallery\Photos&lt;/code&gt; .  The correct mapping should be &lt;code&gt;&lt;em&gt;&amp;lt;user home&amp;gt;&lt;/em&gt;\Application Settings\OpenOffice.org2\user\uno_packages\cache\uno_packages\&lt;em&gt;&amp;lt;temp name&amp;gt;&lt;/em&gt;\OOOP-&lt;em&gt;&amp;lt;version&amp;gt;&lt;/em&gt;-gallery.oxt\gallery\Photos&lt;/code&gt; (either that, or the mapping is right and the photos are installed to the wrong place...)
+
+
+
+A work-around, I found, was to just move these photos into the directory that the OOo gallery link is expecting (that is, from the actual location above, to the expected location).  You can confirm the expected location by clicking on one of the photo thumbnails in the OOo gallery, and looking at the directory name at the top of the gallery.
+
+
+
+I have only tested this on Windows, but it if it occurs in Linux too, the work-around should be similar.
+
+
+
+The real fix of course would be to correct the bug in the UNO mapping for the extension.  Since both projects are OpenSource, I could theoretically do this and submit a patch to the relevant project, but I don't know enough about the mechanics of UNO or OOo extensions to identify where the bug is, or how to fix it, and I don't have the time to research it.  I also haven't had time to see if this bug has been reported in either project, so I'm just blogging my work-around.
+
+
+
+If anybody from the OOo project or the OOOP project finds this blog entry and knows what I'm talking about and how to fix, feel free to do so!&lt;/p&gt;</description><category>computers</category><category>hacking</category><category>media</category><category>photgraphy</category><category>tip</category><guid>http://milosophical.me/blog/2007/08/08/oxygen-openoffice-professional.html</guid><pubDate>Wed, 08 Aug 2007 01:42:28 GMT</pubDate></item><item><title>Essentials to make Windows almost bareable</title><link>http://milosophical.me/blog/2007/06/07/essential-tools-to-make-windows-almost-bareable.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;Okay, so I hate working in Windows, but on my employer's equipment at least, I must live with it. After having had this machine replaced twice (faulty Dell hardware) and rebuilt more times than I can remember (Windows BSODs), for a total of at least 3 system migrations this past year, I thought I'd better keep a list of what free software to install on top of Windows, and what adjustments to make, so that at least I don't feel like I'm wearing a straight jacket.  Here goes:
+
+
+&lt;!--more--&gt;
+
+&lt;/p&gt;&lt;h3&gt;Useability&lt;/h3&gt;
+
+Fix the keyboard to &lt;a href="http://sinewalker.wordpress.com/2006/03/27/dvorak-keyboards/"&gt;Dvorak&lt;/a&gt; (following is for Windows XP -- this will likely change for Vista... it shouldn't be this complicated!)
+
+&lt;blockquote&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;Open Control Panel:  &lt;strong&gt;START &amp;gt; Control Panel&lt;/strong&gt;&lt;/li&gt;
+	&lt;li&gt;Choose "&lt;strong&gt;Regional and Language Options&lt;/strong&gt;" (why not Keyboard???)&lt;/li&gt;
+	&lt;li&gt;Select "&lt;strong&gt;Languages&lt;/strong&gt;" tab, press Details... button (sigh)&lt;/li&gt;
+	&lt;li&gt;In the "&lt;strong&gt;Installed services&lt;/strong&gt;" section, select "&lt;strong&gt;Keyboard&lt;/strong&gt;", then press "&lt;strong&gt;Add...&lt;/strong&gt;" to add a new keyboard layout&lt;/li&gt;
+	&lt;li&gt;Find &lt;strong&gt;US-Dvorak&lt;/strong&gt; in the list&lt;/li&gt;
+	&lt;li&gt;In the "&lt;strong&gt;Default input language&lt;/strong&gt;" section, set the default language to English (Australia) - United States-Dvorak&lt;/li&gt;
+	&lt;li&gt;In the "&lt;strong&gt;Preferences&lt;/strong&gt;" section, press "&lt;strong&gt;Language Bar...&lt;/strong&gt;" button&lt;/li&gt;
+	&lt;li&gt;Make sure that "&lt;strong&gt;Show the language bar on the desktop&lt;/strong&gt;" is turned &lt;em&gt;&lt;strong&gt;on&lt;/strong&gt;&lt;/em&gt;, to make it easier to switch to QWERTY if needed&lt;/li&gt;
+	&lt;li&gt;Back in "&lt;strong&gt;Preferences&lt;/strong&gt;", press the "&lt;strong&gt;Key Settings...&lt;/strong&gt;" button&lt;/li&gt;
+	&lt;li&gt;Turn &lt;strong&gt;&lt;em&gt;off &lt;/em&gt;&lt;/strong&gt;all the language &lt;strong&gt;Hot keys&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;/blockquote&gt;
+
+To get rid of that &lt;a href="http://www.winsupersite.com/images/showcase/xp_n_05.jpg"&gt;horrible&lt;/a&gt;, &lt;a href="http://www.winsupersite.com/images/showcase/xp_n_03.jpg"&gt;garish &lt;/a&gt;blue/green stock XP theme, I use the &lt;a title="Zune -- it's still Microsoft, but it looks less garish" href="http://stevenharman.net/blog/archive/2006/12/09/WinXP__Zune_Theme.aspx"&gt;Zune theme&lt;/a&gt; from Microsoft. It sucks less (the theme, that is, not the MP3 player, that sucks &lt;em&gt;more &lt;/em&gt;than iPod).
+
+
+
+Make Explorer a bit useable.  Actually Explorer is total crap, and I'm still searching for a replacement. I like &lt;a href="http://en.wikipedia.org/wiki/Midnight_Commander"&gt;MidnightCommander&lt;/a&gt; in Cygwin (&lt;code&gt;mc&lt;/code&gt;), and &lt;a href="http://konqueror.kde.org/"&gt;Konqueror&lt;/a&gt; in KDE.  But for Windows, there aren't a lot of &lt;em&gt;free &lt;/em&gt;Explorer replacements, except maybe Windows File Explorer.  Anyway, follow these steps to have Explorer at least be not so stupid:
+
+&lt;blockquote&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;Open an Explorer window (anywhere)&lt;/li&gt;
+	&lt;li&gt;Select "&lt;strong&gt;Tools &amp;gt; Folder Options...&lt;/strong&gt;", "&lt;strong&gt;General&lt;/strong&gt;" tab&lt;/li&gt;
+	&lt;li&gt;Make sure that under "&lt;strong&gt;Browse folders&lt;/strong&gt;", the option is to "&lt;strong&gt;Open each folder in the same window&lt;/strong&gt;" (Explorer doesn't do multi-windows like Macintosh Finder: it screws them up)&lt;/li&gt;
+	&lt;li&gt;In "&lt;strong&gt;Click items as follows&lt;/strong&gt;", turn on "&lt;strong&gt;Single-click to open&lt;/strong&gt;", and "&lt;strong&gt;Underline icons only when I point at them&lt;/strong&gt;"&lt;/li&gt;
+	&lt;li&gt;Select the "&lt;strong&gt;View&lt;/strong&gt;" tab&lt;/li&gt;
+	&lt;li&gt;Turn &lt;em&gt;&lt;strong&gt;on &lt;/strong&gt;&lt;/em&gt;the following:
+&lt;ol&gt;
+	&lt;li&gt;"Display the full path in the address bar"&lt;/li&gt;
+	&lt;li&gt;"Display the full path in the title bar"&lt;/li&gt;
+	&lt;li&gt;"Do not cache thumbnails"&lt;/li&gt;
+	&lt;li&gt;"Show hidden files and folders"&lt;/li&gt;
+	&lt;li&gt;"Show both parts and manage them individually" (for web pages and folders)&lt;/li&gt;
+	&lt;li&gt;"Show encrypted or compressed NTFS files in color"&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;/li&gt;
+	&lt;li&gt;Turn &lt;em&gt;&lt;strong&gt;off &lt;/strong&gt;&lt;/em&gt;the following:
+&lt;ol&gt;
+	&lt;li&gt;"Hide extensions for known file types"&lt;/li&gt;
+	&lt;li&gt;"Launch folder windows in a separate process"&lt;/li&gt;
+	&lt;li&gt;"Remember each folder'sview settings"&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;/li&gt;
+	&lt;li&gt;Press the "&lt;strong&gt;Apply&lt;/strong&gt;", then "&lt;strong&gt;Apply to All Folders&lt;/strong&gt;" buttons&lt;/li&gt;
+	&lt;li&gt;Press "&lt;strong&gt;OK&lt;/strong&gt;"&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Programs&lt;/h3&gt;
+
+Install these programs at a minimum:
+
+&lt;blockquote&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;&lt;a title="Rediscover the Web" href="http://en.www.mozilla.com/en/firefox/"&gt;Firefox &lt;/a&gt;(essential add-ons:  &lt;a title="social web bookmarks" href="http://del.icio.us/help/firefox/extension"&gt;del.icio.us&lt;/a&gt;, &lt;a title="Download Accellerator (and a better manager)" href="http://www.downthemall.net/"&gt;DownThemAll&lt;/a&gt;, &lt;a title="Spell-check input boxes, in en_au language" href="http://www.justlocal.com.au/clients/oooau/"&gt;English (AU) Dictionary&lt;/a&gt;, &lt;a title="Block's Flash adds" href="https://addons.mozilla.org/en-US/firefox/addon/433"&gt;Flashblock&lt;/a&gt;, &lt;a title="Make inline images larger" href="http://imagezoom.yellowgorilla.net/"&gt;ImageZoom&lt;/a&gt;, &lt;a title="Turn on/off proxy settings with one click" href="https://addons.mozilla.org/en-US/firefox/addon/1557"&gt;QuickProxy&lt;/a&gt;, &lt;a title="Synchronise your local bookmarks between Firefox installations" href="http://www.foxmarks.com"&gt;Foxmarks&lt;/a&gt;, &lt;a title="Turn your google mail account into free online storage" href="http://www.getgspace.com/"&gt;GSpace&lt;/a&gt;)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Open Source keystroke starter for Windows" href="http://www.launchy.net"&gt;Launchy&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a title="WFE description page" href="http://www.freesoftlabs.com/fileexpl.asp"&gt;Windows File Explorer&lt;/a&gt; (a free, sort-of &lt;a href="http://en.wikipedia.org/wiki/Orthodox_file_manager"&gt;orthodox&lt;/a&gt; file manager for Windows)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Brings Windows desktop up to status of 1990 Unix" href="http://virt-dimension.sourceforge.net"&gt;Virtual Dimension&lt;/a&gt; (Virtual desktop support for Windows)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="No Machine's Product listing page" href="http://www.nomachine.com/products.php"&gt;No Machine&lt;/a&gt;'s &lt;a title="NX Client - Windows - Download" href="http://www.nomachine.com/download-client-windows.php"&gt;NX Client for Windows&lt;/a&gt; (so I can connect a &lt;a title="NX Technology overview" href="http://www.nomachine.com/documentation/intr-technology.php"&gt;high speed X&lt;/a&gt; session to my home machine)&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://www.openoffice.org"&gt;OpenOffice.org&lt;/a&gt; (also use &lt;a href="http://www.justlocal.com.au/clients/oooau/"&gt;JustLocal&lt;/a&gt;'s dictionary / thesaurus files to get spell check working)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Unix compatibility layer for Windows" href="http://www.cygwin.com/"&gt;Cygwin &lt;/a&gt;(include the X11 modules, Emacs [make sure to select ver 22], pdksh, subversion, python, clisp, fortune, mc, ssh, units, etc....)&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://java.sun.com/javase/downloads/index.jsp"&gt;Java SE DevKit&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Latest Windows Subversion binaries" href="http://subversion.tigris.org/servlets/ProjectDocumentList?folderID=91"&gt;Subversion for Windows&lt;/a&gt; (version control)&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://www.netbeans.org/"&gt;NetBeans&lt;/a&gt; (6.0 or greater has everything I need)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Audio editor and MP3/OGG converter" href="http://audacity.sourceforge.net/download/windows"&gt;Audacity&lt;/a&gt; audio editor and encoder&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Network streaming Video" href="http://www.videolan.org/vlc/download-windows.html"&gt;VideoLAN Client&lt;/a&gt; movie player&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://www.illiminable.com/ogg/"&gt;Illiminable DirectShow filters&lt;/a&gt; for &lt;a href="http://www.vorbis.com/setup_windows/"&gt;OGG Vorbis&lt;/a&gt; (to play .OGG files in Windows Media Player)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Amiga MOD player" href="http://www.modplug.com/"&gt;MODPlug&lt;/a&gt; (because sometimes a good &lt;a href="http://del.icio.us/sinewalker/modules"&gt;MOD&lt;/a&gt; fits my mood)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="GNU Image Manipulation Program" href="http://gimp-win.sourceforge.net/"&gt;GIMP&lt;/a&gt; image editor&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Image viewer" href="http://www.irfanview.com/"&gt;IrfanView&lt;/a&gt; image viewer&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/blockquote&gt;
+
+&lt;h3&gt;Emacs&lt;/h3&gt;
+
+Once Cygwin and Emacs are installed, I need to add my dotfiles (from backup), and also install these emacs add-ons:   &lt;a title="Superior Lisp Interaction Mode for Emacs" href="http://common-lisp.net/project/slime/"&gt;&lt;/a&gt;
+
+&lt;blockquote&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;&lt;a title="Superior Lisp Interaction Mode for Emacs" href="http://common-lisp.net/project/slime/"&gt;SLIME&lt;/a&gt; &lt;a href="http://sourceforge.net/projects/psgml"&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://sourceforge.net/projects/psgml"&gt;PSGML&lt;/a&gt; &lt;a title="Subversion support for Emacs (pre-22)" href="http://www.xsteve.at/prg/emacs/psvn.el"&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Subversion support for Emacs (pre-22)" href="http://www.xsteve.at/prg/emacs/psvn.el"&gt;PSVN&lt;/a&gt; (not strictly needed, since emacs22 adds SVN support in VC mode)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Collection of Emacs Development Environment Tools" href="http://cedet.sourceforge.net/"&gt;CEDET&lt;/a&gt; (this is not trivial to install, I&lt;em&gt; still &lt;/em&gt;haven't figured it out)&lt;a title="Collection of Emacs Development Environment Tools" href="http://cedet.sourceforge.net/"&gt; &lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a title="Java Development Environment for Emacs" href="http://jdee.sunsite.dk/"&gt;JDEE&lt;/a&gt; (requires some or all of CEDET)&lt;/li&gt;
+	&lt;li&gt;&lt;a title="This is neat!" href="http://www.eaflux.com/cygwin/cyg-emacsclient/"&gt;cyg-emacsclient&lt;/a&gt; (wrapper to add Emacs to your SendTo folder, and have it actually work)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/blockquote&gt;
+
+CEDET and JDEE might be more trouble than they're worth, especially since I'm installing NetBeans anyway. They seem cool (especially the enhanced speedbar), but they're not exactly plug-and-play. Jury's still out.</description><category>Delicious</category><category>Microsoft</category><category>cygwin</category><category>dvorak</category><category>emacs</category><category>hacking</category><category>how-to</category><category>jEdit</category><category>java</category><category>lisp</category><category>media</category><category>shell</category><guid>http://milosophical.me/blog/2007/06/07/essential-tools-to-make-windows-almost-bareable.html</guid><pubDate>Wed, 06 Jun 2007 23:16:44 GMT</pubDate></item><item><title>Can't trust the papers…</title><link>http://milosophical.me/blog/2005/11/01/cant-trust-the-papers.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;&lt;em&gt;This post was originally published
+    at &lt;a href="http://sinewalker.blogspot.com.au/2005_11_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt; on 1 November 2005&lt;/em&gt;&lt;/p&gt;
+
+          &lt;hr&gt;
+
+&lt;p&gt;
+&lt;em&gt;In reference to &lt;a href="http://slashdot.org/article.pl?sid=05/10/31/2247225&amp;amp;tid=188&amp;amp;tid=95"&gt;this Slashdot article&lt;/a&gt; about the Internet killing
+  newspapers&lt;/em&gt;
+&lt;/p&gt;
+&lt;br&gt;
+
+&lt;p&gt;Why does "mainstream media" think blogging is such a huge hit? It's not that
+Internet is immediate, or that anyone can do it (which has big down-sides as
+well as it's egalitarian advantages). It is simply that people everywhere are
+fed-up with WWII-era propagandists telling us what to believe and have started
+researching it for themselves.&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+This is the Information Revolution: the Revolution is greatly improved access
+to the information. People are more educated now than they were 50 or even 20
+years ago and can make informed judgements. They don't need some "journalist"
+to do it for them. This is quite appart form the fact that today's journalism
+is extremely poor compared to yester-year's.
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+I don't buy papers because I know that I can't trust them to bring me news in
+an unbiased, non-politically or commercially influenced fashion, or full of
+Tabloid rubbish like British newspapers. I accept the risk that the news I
+learn via the Net can be from the "uninformed" masses and mitigate this by
+using many sources so I can judge for myself where the "truth" lies.
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+I won't even read over people's shoulders anymore.
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+For at least the last 10 years, newspapers have been good for only one thing:
+the ink used in newspaper presses is fantastic for removing streaks and smudges
+from my computer monitor!&lt;/p&gt;
+</description><category>blogging</category><category>media</category><category>rant</category><category>thoughts</category><guid>http://milosophical.me/blog/2005/11/01/cant-trust-the-papers.html</guid><pubDate>Tue, 01 Nov 2005 04:54:00 GMT</pubDate></item><item><title>RIAA verses the world, and a return to Music Guilds?</title><link>http://milosophical.me/blog/2005/08/31/riaa-verses-the-world-and-a-return-to-music-guilds.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;
+
+      &lt;/p&gt;&lt;p&gt;&lt;em&gt;This post was originally published
+    at &lt;a href="http://sinewalker.blogspot.com.au/2005_08_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
+    on 31 August 2005&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;
+&lt;em&gt;In reference to &lt;a href="http://yro.slashdot.org/article.pl?sid=05/09/01/0038213&amp;amp;from=rss"&gt;this Slashdot article&lt;/a&gt; about RIAA lawsuits&lt;/em&gt;
+&lt;/p&gt;
+&lt;br&gt;
+
+&lt;p&gt;Seems that RIAA are intent on sueing more 12-year old girls for sharing music... it sickens me.
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+I am not sure what to do to protest (beyond what seems to be happening already
+— consumers aren't buying today's crap, and RIAA/ARIA/MPAA etc are just blaming
+it on the Net anyway). I am considering what would happen if lots of fans
+started writing directly to their favourite artists and asking them these
+questions:
+
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;why do you have this deal with your distributor EMI? I can't play your
+  &lt;/li&gt;&lt;li&gt;why don't you consider putting sample tracks on your web site? For that matter, why don't you deal directly with Apple, or start your own pay-per-download site for your songs? I'm sure heaps of fans like me will buy them, and you could get a much larger cut per track than Warner Bros is giving you&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+Of course, there are costs to running a web site also. But I wonder if what may
+happen eventually is a return to music guilds, where a guild runs the site,
+member groups contribute content and all proffit goes to the members. It would
+probably be a good business to start, atracting new groups like the “Idol” TV
+shows do now. Shame I have hopeless business sense though.
+&lt;/p&gt;
+
+</description><category>copyright</category><category>media</category><category>rant</category><category>thoughts</category><guid>http://milosophical.me/blog/2005/08/31/riaa-verses-the-world-and-a-return-to-music-guilds.html</guid><pubDate>Wed, 31 Aug 2005 04:17:00 GMT</pubDate></item></channel></rss>
