@@ -4,11 +4,16 @@
 Kubuntu is nice, and I'm happy that I've tried it out, but it's not for me. It's nice enough if you want a simple desktop system, and APT rocks (especially with the aptitude front-end). But it's just not as good as openSUSE, sorry.
 
 
+<!-- TEASER_END -->
+<br/>
+<p>
+Kubuntu's KDE version of the apt installer (Adept) crashes during installs (not exactly inspiring confidence in the system) so I used Synaptic instead, why can't they just stick to the one that works? It's not like Adept is integrated with KDE in any way: it's menus don't go on the KDE menu bar for instance. Also Kubuntu's version of the KDE help system has every heading repeated. And the constant bickering between the GTK and QT factions of *buntu, with insane NIH arguments are just annoying (it's all *buntu, for crying out loud!).  Finally, having watched <a title="Blank ttys when using vesafb (vga=xxx)" href="https://bugs.launchpad.net/bugs/129910">bug #129910</a> continue in it's ridiculous way, I've decided I don't particularly like the development community behind *buntu either. I mean, come on! Six months to fix a reversion introduced to frame buffer consoles in Gutsy?! WTF! Okay that might be a bit mean: it's probably a tricky bug. But, the continuous "not a bug" comments from developers and "please consider the code of conduct" comments from moderators (in response to comments where the "code" has <em>not</em> been broken) are just insulting. Add in that other things weren't working (FreeNX being an important one for me) and I've had enough: I've moved on, or rather, back, to openSUSE.
+</p>
 
-<!-- TEASER_END -->Kubuntu's KDE version of the apt installer (Adept) crashes during installs (not exactly inspiring confidence in the system) so I used Synaptic instead, why can't they just stick to the one that works? It's not like Adept is integrated with KDE in any way: it's menus don't go on the KDE menu bar for instance. Also Kubuntu's version of the KDE help system has every heading repeated. And the constant bickering between the GTK and QT factions of *buntu, with insane NIH arguments are just anoying (it's all *buntu, for crying out loud!).  Finally, having watched <a title="Blank ttys when using vesafb (vga=xxx)" href="https://bugs.launchpad.net/bugs/129910">bug #129910</a> continue in it's ridiculous way, I've decided I don't particularly like the development community behind *buntu either. I mean, come on! Six months to fix a reversion introduced to frame buffer consoles in Gutsy?! WTF! Okay that might be a bit mean: it's probably a tricky bug. But, the continuous "not a bug" comments from developers and "please consider the code of conduct" comments from moderators (in response to comments where the "code" has <em>not</em> been broken) are just insulting. Add in that other things weren't working (FreeNX being an important one for me) and I've had enough: I've moved on, or rather, back, to openSUSE.
-
-
-
+<br/>
+<p>
 I briefly considered Debian, but went back to something I know. Besides, openSUSE 10.3 has removed the hideous mistake that was ZMD, and so updates and installs (using zypper, at least) are actually not too slow now, and boot times are comparible with *buntu too, at about 30 secs for my five-year-old AlthonXP, which were my biggest gripes with 10.2. YaST is still rather slow, but there are promising signs that this will improve for 11. KDE 4.0 should be standard with 11 also, and 4.1 won't be too far behind. Looking forward to it. It's nice to be using a distro where innovation is happening (Compiz; Kickoff, which I didn't like initially but has grown on me with KDE 4; KDE development in general)
+</p>
+<br/>
 
 </p><p align="center">I've taken the green pill and having a lot of fun ;)</p></body></html>

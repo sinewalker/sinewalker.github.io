@@ -1,8 +1,10 @@
 <html><body><p>There is a feature of OpenSSH, enabled by default, that causes the ssh daemon to do a name lookup for the client and confirm that it matches its IP address. This is supposed to check against some sort of IP spoof during SSH login attacks.  However on my local network which lacks a DNS, it results in lengthy delays during logins.
+</p>
 
+<!-- TEASER_END -->
+<br/>
+<p>I found good explanations and how to fix this in the <a title="OpenSUSE FAQ 3.3: ssh(1) takes a long time to connect or log in" href="http://www.openssh.com/faq.html#3.3">OpenSSH FAQ</a> and also on the<a title="SSH Login slow - NOVELL FORUMS" href="http://forums.novell.com/novell-product-support-forums/suse-linux-enterprise-server-sles/sles-configure-administer/340097-sles9-ssh-login-slow.html"> SUSE Linux Forums</a> and a <a title="Libel: UseDNS resolution and OpenSSH" href="http://ayaz.wordpress.com/2008/02/03/usedns-resolution-and-openssh/">couple</a> of <a title="SuSE Linux slow logins over SSH" href="http://www.carlosvazquez.org/Blog/index.cfm?blog_id=72">blogs</a>.  This issue also comes up as at least one <a title='Ubuntu bug #424371 - Logins to OpenSSH server slow due to "UseDNS yes" config' href="https://bugs.launchpad.net/ubuntu/+source/openssh/+bug/424371">bug</a> for Ubuntu (but it's not a bug, it's a <a title="Jargon file: Feature" href="http://www.catb.org/~esr/jargon/html/F/feature.html">feature</a>).</p>
+<br/>
 
-<!-- TEASER_END -->I found good explanations and how to fix this in the <a title="OpenSUSE FAQ 3.3: ssh(1) takes a long time to connect or log in" href="http://www.openssh.com/faq.html#3.3">OpenSSH FAQ</a> and also on the<a title="SSH Login slow - NOVELL FORUMS" href="http://forums.novell.com/novell-product-support-forums/suse-linux-enterprise-server-sles/sles-configure-administer/340097-sles9-ssh-login-slow.html"> SUSE Linux Forums</a> and a <a title="Libel: UseDNS resolution and OpenSSH" href="http://ayaz.wordpress.com/2008/02/03/usedns-resolution-and-openssh/">couple</a> of <a title="SuSE Linux slow logins over SSH" href="http://www.carlosvazquez.org/Blog/index.cfm?blog_id=72">blogs</a>.  This issue also comes up as at least one <a title='Ubuntu bug #424371 - Logins to OpenSSH server slow due to "UseDNS yes" config' href="https://bugs.launchpad.net/ubuntu/+source/openssh/+bug/424371">bug</a> for Ubuntu (but it's not a bug, it's a <a title="Jargon file: Feature" href="http://www.catb.org/~esr/jargon/html/F/feature.html">feature</a>).
-
-
-
+<p>
 In a nutshell: if you want to remove this delay and don't care about doing reverse lookups, set <strong>UseDNS no</strong> in <strong>/etc/ssh/sshd_config</strong> and then restart the daemon. The FAQ explains it better than me.</p></body></html>

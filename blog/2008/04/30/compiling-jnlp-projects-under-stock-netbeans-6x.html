@@ -28,7 +28,9 @@ article: http://ogp.me/ns/article#
     <meta name="og:description" content="This is a pretty simple issue that was easy to solve but took a bit of fumbling around...
 
 
-I recently checked out the new Java SwingSet3 project from it's SVN repo, to play around with it. It's a Net">
+
+
+I recently checked out the new Java SwingSet3 project from it's SVN repo, to play around with it. It's a N">
     <meta name="og:site_name" content="Milosophical Me">
     <meta name="og:type" content="article">
 
@@ -78,78 +80,92 @@ I recently checked out the new Java SwingSet3 project from it's SVN repo, to pla
         <div class="body">
             <p>This is a pretty simple issue that was easy to solve but took a bit of fumbling around...
 
-
+</p>
+<br>
+<p>
 I recently checked out the new Java <a title="SwingSet3 demo project on dev.java.net" href="https://swingset3.dev.java.net/">SwingSet3</a> project from it's <a title="browse SwingSet3 Subversion repository" href="https://swingset3.dev.java.net/source/browse/swingset3/">SVN repo</a>, to play around with it. It's a NetBeans project so it was simple enough to fire up NetBeans 6.0 and use it's built-in <a title="NetBeans' Subversion documentation" href="http://subversion.netbeans.org/">Subversion support</a> to check the project out from the repository directly...
+</p>
+<br>
 
 
-
+<p>
 My plan was very simple: check out the code with NetBeans, build it, run it (using JDK 1.6.0_10 beta for the new Nimbus look/feel too) and then hack at the code.
+</p>
+<br>
 
-
-
-<!-- TEASER_END -->Small problem: once the project is checked out and loaded, NetBeans pops up a warning dialog:
+<!-- TEASER_END -->
+<p>
+Small problem: once the project is checked out and loaded, NetBeans pops up a warning dialog:
 
 </p>
 <p style="padding-left:30px;"><img src="http://farm4.static.flickr.com/3070/2472351759_d9d7ff3f6b_o_d.png" alt="Alert box" width="533" height="255"></p>
 
 
-
+<p>
 Also the Projects view shows errors, and if you drill down to them, it's because NetBeans can't find the <strong><code>javax.jnlp</code></strong> package. Hmm, I thought JNLP was included with the JDK since 1.5? How odd...
+</p>
+<br>
 
-
-
+<p>
 Well, to make a long story short, the fix is to do the following steps (an explanation comes later):
-
+</p>
+<br>
 <ol>
-	<li>Resolve Problems by right-clicking the SwingSet3 project in the Projects view and choosing the "<strong>Resolve Problems...</strong>" menu item:
+	<li>Resolve Problems by right-clicking the SwingSet3 project in the Projects view and choosing the "<strong>Resolve Problems...</strong>" menu item:</li>
 <a href="http://farm4.static.flickr.com/3129/2473173812_52fe68032f_o_d.png"><img src="http://farm4.static.flickr.com/3129/2473173812_91b7f88edb_d.jpg" alt="NetBeans Project menu " width="500" height="351"></a>
-</li>
-	<li>This opens a dialog listing the problem (should only have one). Press the "<strong>Resolve</strong>..." button at right
+	<li>This opens a dialog listing the problem (should only have one). Press the "<strong>Resolve</strong>..." button at right</li>
 <img src="http://farm4.static.flickr.com/3201/2473173864_2a1f5444fc_o_d.png" alt="Resolve Reference Problems dialog" width="458" height="392">
-</li>
 	<li>NetBeans presents a dialog listing libraries and JARs. Our issue is that the SwingSet3 project has defined a library called "<strong>JavaWebStart</strong>" but if you look in the tree at left, there is no such library defined in NetBeans by default. No worries, let's make one</li>
-	<li>Press the button at bottom ("<strong>New Library...</strong>")
-<a href="http://farm4.static.flickr.com/3225/2472351987_1017ef91ec_o_d.png"><img src="http://farm4.static.flickr.com/3225/2472351987_747fefca8a_d.jpg" alt="NetBeans Library Manager -- New Library button" width="500" height="358"></a>
+	<li>Press the button at bottom ("<strong>New Library...</strong>")<br>
+<a href="http://farm4.static.flickr.com/3225/2472351987_1017ef91ec_o_d.png"><img src="http://farm4.static.flickr.com/3225/2472351987_747fefca8a_d.jpg" alt="NetBeans Library Manager -- New Library button" width="500" height="358"></a><br>
 
 This gives you the same dialog you get via Project Properties &gt; Libraries &gt; Add Library &gt; Create (in case you want to repeat later...). Give it the name that the Project wants ("<strong>JavaWebStart</strong>" in case of SwingSet3). It'll be a Class Library</li>
-	<li>Now you need to tell NetBeans about the JARs that belong to the library:
-<img src="http://farm4.static.flickr.com/3172/2472352043_0040e20d2b_d.jpg" alt="NetBeans Library Manager -- Add JAR/Folder" width="500" height="358">
+	<li>Now you need to tell NetBeans about the JARs that belong to the library:<br>
+<img src="http://farm4.static.flickr.com/3172/2472352043_0040e20d2b_d.jpg" alt="NetBeans Library Manager -- Add JAR/Folder" width="500" height="358"><br>
 
-We need <code><strong>jnlp.jar</strong></code>, but might as well add the other Java Web Start stuff to the library too. You can find these JARs in your JDK under <strong><code><em>&lt;JDK_HOME&gt;</em>/sample/jnlp/servlet</code></strong>. Add all the JARs form this directory (<strong><code>jnlp.jar</code></strong>,<code> <strong>jnlp-servlet.jar</strong></code>, <strong><code>jardiff.jar</code></strong>):
+We need <code><strong>jnlp.jar</strong></code>, but might as well add the other Java Web Start stuff to the library too. You can find these JARs in your JDK under <strong><code><em>&lt;JDK_HOME&gt;</em>/sample/jnlp/servlet</code></strong>. Add all the JARs form this directory (<strong><code>jnlp.jar</code></strong>,<code> <strong>jnlp-servlet.jar</strong></code>, <strong><code>jardiff.jar</code></strong>):<br>
 
 <a href="http://farm4.static.flickr.com/3227/2472352103_1a795fd8ca_o_d.png"><img src="http://farm4.static.flickr.com/3227/2472352103_339145900f_d.jpg" alt="Library Manager, JARs added" width="500" height="358"></a>
 </li>
-	<li>Add your new library to your project's Compile Libraries and you're done:
+	<li>Add your new library to your project's Compile Libraries and you're done:<br>
 <img src="http://farm4.static.flickr.com/3035/2473174102_8462fafb3d_d.jpg" alt="Resolved, click Close." width="458" height="392">
 </li>
 
 </ol>
+<p>
+Once you've done this, you can use your new "JavaWebStart" library for other
+projects requiring JWS/JNLP too:<br> 
+</p>
 
-Once you've done this, you can use your new "JavaWebStart" library for other projects requiring JWS/JNLP too:
-
-
+<br>
 
 <a href="http://farm3.static.flickr.com/2309/2485078298_865ae8cd92_o_d.png"><img src="http://farm3.static.flickr.com/2309/2485078298_25a83e9060_m_d.jpg" alt="Right-click Libraries in Projects view to get a menu, choose Add Library" width="240" height="169"></a><a href="http://farm3.static.flickr.com/2166/2484260383_92c8339077_o_d.png"><img src="http://farm3.static.flickr.com/2166/2484260383_acd1f1a6d9_t_d.jpg" alt="Find the JavaWebStart Library and press " width="92" height="100"></a><a href="http://farm4.static.flickr.com/3133/2485077758_c417209c53_o_d.png"><img src="http://farm4.static.flickr.com/3133/2485077758_1cc77bea3d_m_d.jpg" alt="The new Library's JARs are added to the Library tree of the Project view"></a>
 
-
-
+<br>
+<p>
 In the SwingSet3 project, there's also a broken reference to <code>C:/java/jnlp1.2/jnlp.jar</code>, but I don't think this matters (it compiles without the reference). You can probably remove it from the project.
 
+</p>
 
-
+<p>
 Now, what happened? It seems to me that the project file I checked out contained a reference to a non-standard NetBeans library called "JavaWebStart". This was probably defined by the project coders to refer to the JWS class libraries. For some reason, the JWS stuff ships as part of the JDK since 1.5, but only in the Samples directory. Why Sun chose to distribute it in the samples instead and not in <code><em>&lt;JKD_HOME&gt;</em>/lib</code> is a mystery to me... it causes two problems:
+<br>
+</p>
 
 <ul>
 	<li>Development libraries for JNLP is not accessible by default, unlike other <code>javax.<em>*</em></code> packages... so you'll need to go through this learning curve</li>
 	<li>If you chose not to install the samples with your JDK, you won't have <code>jnlp.jar</code>, and will need to add it (using the JDK installer, if you still have it), or download the <a title="Java Web Start Developer's Kit (older)" href="http://java.sun.com/products/javawebstart/download-jnlp.html">Java Web Start Developer's Kit</a> (which also mentions it's included with the JDK since 1.5...)</li>
 </ul>
-
+<br>
+<p>
 Anyway, problem's solved once your IDE knows how to find the library and JAR...
+<br>
+</p>
 
-
-
+<p>
 SwingSet3 rocks by the way, and I'm having lots of fun learning how to do Swing properly.
-
+<br>
+</p>
 
 
 <hr>

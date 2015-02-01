@@ -28,7 +28,8 @@ article: http://ogp.me/ns/article#
     <meta name="og:description" content="NetBeans 6.5 is out! You can run it with the Nimbus look and feel too! There's also an Early Access plugin for Python. All very nice.
 
 
-I recently had occasion to play with some Python at work (a smal">
+
+I recently had occasion to play with some Python at work (a sma">
     <meta name="og:site_name" content="Milosophical Me">
     <meta name="og:type" content="article">
 
@@ -78,34 +79,41 @@ I recently had occasion to play with some Python at work (a smal">
 
         </div>
         <div class="body">
-            <a title="NetBeans 6.5 release page" href="http://www.netbeans.org/community/releases/65/">NetBeans 6.5 is out</a>! You can <a title="Using Nimbus with NetBeans 6.5 -- noice!" href="http://mrhaki.blogspot.com/2008/11/start-netbeans-65-with-nimbus-look-and.html">run it with the</a> <a title="The Nimbus L&amp;F project page" href="https://nimbus.dev.java.net/">Nimbus look and feel</a> too! There's also an <a title="NetBeans 6.5 Python -- Early Access" href="http://www.netbeans.org/features/python/index.html">Early Access plugin for Python</a>. All very nice.
-
-
+            <p><a title="NetBeans 6.5 release page" href="http://www.netbeans.org/community/releases/65/">NetBeans 6.5 is out</a>! You can <a title="Using Nimbus with NetBeans 6.5 -- noice!" href="http://mrhaki.blogspot.com/2008/11/start-netbeans-65-with-nimbus-look-and.html">run it with the</a> <a title="The Nimbus L&amp;F project page" href="https://nimbus.dev.java.net/">Nimbus look and feel</a> too! There's also an <a title="NetBeans 6.5 Python -- Early Access" href="http://www.netbeans.org/features/python/index.html">Early Access plugin for Python</a>. All very nice.
+</p>
+<br>
+<p>
 I recently had occasion to play with some Python at work (a small script to do some configurations, and I didn't want to do them in bash), so I took the time to get all of this set up. It's all so very easy and not worth writing about. However I thought that the i<a title="NetBeans' integrated Jython debugger" href="http://wiki.netbeans.org/Python#section-Python-Debugger">nteractive debugger</a> (which is <em>awesome</em>, btw) has a small issue that needs resolving. Mean-time, here's a work-around.
+</p>
 
 
-
-<!-- TEASER_END --><strong>The issue is</strong>: the debugger (which runs in Jython) starts in the NetBeans 6.5 install directory, but the normal run-time is in the project's source directory. Normally this is not a problem, unless you're writing a script to pick up files from the current directory. If you just dump your data file in the project's source directory, then it'll work when you run it (with the F6 key), but not when you debug it (Ctrl-F5).
-
-
-
+<!-- TEASER_END -->
+<br>
+<p>
+<strong>The issue is</strong>: the debugger (which runs in Jython) starts in the NetBeans 6.5 install directory, but the normal run-time is in the project's source directory. Normally this is not a problem, unless you're writing a script to pick up files from the current directory. If you just dump your data file in the project's source directory, then it'll work when you run it (with the F6 key), but not when you debug it (Ctrl-F5).
+</p>
+<br>
+<p>
 <strong>The work-around</strong>:  The debugger is interactive and includes a Jython shell which is integrated into your debugging context (so cool)! Upon starting the debugger, your can just issue these commands:
-
-<code> </code>
-
-<pre style="padding-left:30px;">&gt;&gt;&gt; <strong>import os, sys</strong>
-
-&gt;&gt;&gt; <strong>os.chdir(os.path.dirname(sys.argv[0]))</strong></pre>
-
+</p>
+<br>
+<pre><code>&gt;&gt;&gt; <strong>import os, sys</strong>
+&gt;&gt;&gt; <strong>os.chdir(os.path.dirname(sys.argv[0]))</strong>
+</code></pre>
+<br>
+<p>
 This will set the CWD for the current debug session to the directory where your script file is. That's where the CWD is set when you run scripts normally with the F6 key.
+</p>
+<br>
 
-
-
+<p>
 <strong>The solution</strong>: I've sent an <a title="NetBeans Issue 153733" href="http://www.netbeans.org/issues/show_bug.cgi?id=153733">enhancement request</a> to the Python-IDE team in <a title="Python debugger" href="http://www.netbeans.org/issues/buglist.cgi?Submit+query=Submit+query&amp;component=python&amp;subcomponent=debugger&amp;issue_status=NEW&amp;issue_status=STARTED&amp;issue_status=REOPENED&amp;email1=&amp;emailtype1=exact&amp;emailassigned_to1=1&amp;email2=&amp;emailtype2=exact&amp;emailreporter2=1&amp;issueidtype=include&amp;issue_id=&amp;changedin=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;short_desc=&amp;short_desc_type=substring&amp;long_desc=&amp;long_desc_type=substring&amp;issue_file_loc=&amp;issue_file_loc_type=substring&amp;status_whiteboard=&amp;status_whiteboard_type=substring&amp;keywords=&amp;keywords_type=anytokens&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=&amp;cmdtype=doit&amp;newqueryname=&amp;order=Reuse+same+sort+as+last+time">NetBeans' issue tracker</a>. I'm not sure where the CWD should be set in the general case, but probably it should be in &lt;project-base&gt;/src to be consistent with the normal runtime.
+</p>
+<br>
 
 
-
-<strong>2009-01-11 Update</strong>: The<a href="http://www.netbeans.org/issues/show_bug.cgi?id=153733"> issue has been fixed</a>! Awesome work by jymen (Jean-Yves Mengant). I'll have to <a title="Building the NB Python plug-in from source" href="http://wiki.netbeans.org/NbPythonHgBuild">check out a recent build</a> from trunk and give it a whirl!
+<p>
+<strong>2009-01-11 Update</strong>: The<a href="http://www.netbeans.org/issues/show_bug.cgi?id=153733"> issue has been fixed</a>! Awesome work by jymen (Jean-Yves Mengant). I'll have to <a title="Building the NB Python plug-in from source" href="http://wiki.netbeans.org/NbPythonHgBuild">check out a recent build</a> from trunk and give it a whirl!</p>
         </div>
                 <ul class="pager">
             <li class="previous">

@@ -13,7 +13,7 @@ I want to have my cake and eat it too.
 
 </p><h3>Basic idea</h3>
 
-The idea is pretty simple. Keep a local SVN repository to which I commit changes. I would have 2 working copies, one form the main/public repo and a 2<sup>nd</sup> from my private repo. Most hacking would take place in the 2<sup>nd</sup> working copy, with planned commits back to the main repo via a copy from my 2<sup>nd</sup> (private) working copy of my private repo to my 1<sup>st</sup> working copy, then update/commit to public repo:
+The idea is pretty simple. Keep a local SVN repository to which I commit changes. I would have 2 working copies, one form the main/public repo and a 2<sup>nd</sup> from my private repo. Most hacking would take place in the 2<sup>nd</sup> working copy, with planned commits back to the main repo via a copy from my 2<sup>nd</sup> (private) working copy of my private repo to my 1<sup>st</sup> working copy, then update/commit to public repo:<br/>
 
 
 

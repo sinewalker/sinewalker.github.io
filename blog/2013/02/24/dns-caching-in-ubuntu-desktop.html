@@ -103,60 +103,37 @@ I have found that I can continue to use my own bind9 setup (not wishing to learn
 </li>
 	<li><code><strong>sudo restart network-manager</strong></code></li>
 </ol>
-
+<p>
 Now test it:
+</p>
 
-<blockquote><code><pre>
-
-mjl@hoppy:~$ <strong>time nslookup australia.gov.au</strong>
-
+<code><pre>mjl@hoppy:~$ <strong>time nslookup australia.gov.au</strong>
 Server:        127.0.0.1
-
 Address:    127.0.0.1#53
 
-
-
 Non-authoritative answer:
-
 Name:    australia.gov.au
-
 Address: 205.239.168.12
-
-
 
 <strong>real    0m0.630s</strong>
-
 user    0m0.008s
-
 sys     0m0.000s
-
 mjl@hoppy:~$ <strong>time nslookup australia.gov.au</strong>
-
 Server:        127.0.0.1
-
 Address:    127.0.0.1#53
 
-
-
 Non-authoritative answer:
-
 Name:    australia.gov.au
-
 Address: 205.239.168.12
 
-
-
 <strong>real    0m0.012s</strong>
-
 user    0m0.000s
-
-sys     0m0.008s
-
-</pre></code></blockquote>
-
+sys     0m0.008s</pre></code>
+<p>
 The (real) time dropped from nearly 2/3 of a second to under 1/64 seconds!
-
-Once again visiting sites with lots of DNS lookups is improved dramatically.
+</p>
+<p>
+Once again visiting sites with lots of DNS lookups is improved dramatically.</p>
         </div>
                 <ul class="pager">
             <li class="previous">

@@ -78,52 +78,62 @@ article: http://ogp.me/ns/article#
 
         </div>
         <div class="body">
-            <p>I recently upgraded my Cygwin install and noticed that Cygwin has switched it's X server <code>XWin.exe</code> from the XFree86 codebase to the Xorg codebase. Besides an updated logo, it also has some other side-effects.
+            <p>I recently upgraded my Cygwin install and noticed that Cygwin has switched it's X server <code>XWin.exe</code> from the XFree86 codebase to the Xorg codebase. Besides an updated logo, it also has some other side-effects.</p>
 
 
-<!-- TEASER_END -->The first one I noticed is that the xterm now has a menu turned on by default. If this annoys you (like it did me), you can turn it off by adding the following to your <code>~/.Xdefaults</code>:
+<!-- TEASER_END -->
+<br>
+<p>The first one I noticed is that the xterm now has a menu turned on by default. If this annoys you (like it did me), you can turn it off by adding the following to your <code>~/.Xdefaults</code>:
 
 </p>
-<p style="text-align:center;"><code><strong>XTerm*toolBar: off</strong></code></p>
+<br><p style="text-align:center;"><code><strong>XTerm*toolBar: off</strong></code></p>
 
 
-
+<br>
+<p>
 The next side-effect I haven't yet solved. I <a title="how to set up cygwin's xwin menu" href="http://sinewalker.wordpress.com/2006/04/18/cygwin-systray-menu/">use the XWin menu</a> to define some links to the servers I look after at work. I use <code>plink.exe</code> (part of <a title="PuTTY home page" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY</a>) to launch an xterm on the remote host, displayed locally, and using <code>pagent.exe</code> to do the authentication. For example:
-
+</p>
+<br>
 <pre><code><strong>MENU DEV_SERVERS {
     "Content Server" exec "D:/Programs/PuTTY/plink.exe -ssh -X -C -load someserverdef /usr/openwin/bin/xterm -name greenbackground -ls"
 </strong></code></pre>
-
+<br>
+<p>
 ...
-
-
-
+</p>
+<br>
+<p>
 This used to work, but now nothing happens.  Interestingly, the command <em>will </em>work if you execute it directly from a bash shell. If anyone has an idea, I'd be grateful for their help :)
+</p>
 
+<br>
 <h5>UPDATE: - 20081217 -- Use Xming, maybe</h5>
 
+<p>
 I haven't yet figured out ssh-agent. However one work-around that I tried earlier and added in the comments was no good: the X clients started in a terminal that is forked off this way don't come through for some reason, to do with the way the X packets are tunnelled I think. So, I was motivated to try <a title="Xming web site" href="http://www.straightrunning.com/XmingNotes/">Xming</a>.
+</p>
+<br>
 
-
-
+<p>
 Xming is being used quite successfully by my work colleagues who don't have a whole Cygwin stack on their machines. It's a lightweight X11 server for Windows, and it even uses Microsoft's OpenGL apparently. I'll have to try out some 3D clients from home soon to see what that gets me, but it could be good.
-
-
-
+</p>
+<br>
+<p>
 Anyway, for work, it seems to integrate very well with PuTTY. There's even a stand-alone putty you can <a title="Xming sourceforge" href="http://sourceforge.net/projects/xming">download</a> that's pre-integrated, though it seems to also require the Xming server.
-
-
-
+</p>
+<br>
+<p>
 I also found that it'll serve my local X clients quite well. The most important of these is my emacs, of course. For that to work well, I had to download the extra fonts since emacs uses servers-side fonts. But it works and is indistinguishable from the X11 server that's built into Cygwin.
-
-
-
+</p>
+<br>
+<p>
 I haven't yet un-installed Cygwin's X server: I fear it could also remove clients and libraries, and I don't want the hastle just now of figuring that out.
-
-
-
-A final note: It's menu config file is Xmingrc (no dot), which lives in Window's HOME %USERPROFILE%. Also, because it's got no Cygwin dependency, you can't launch local Cygwin X clients from this menu. At least, not without wrapping them in calls to Cygwin's run.exe, e.g.
-
+</p>
+<br>
+<p>
+A final note: It's menu config file is Xmingrc (no dot), which lives in Window's HOME <code>%USERPROFILE%</code>. Also, because it's got no Cygwin dependency, you can't launch local Cygwin X clients from this menu. At least, not without wrapping them in calls to Cygwin's run.exe, e.g.
+</p>
+<br>
 <p style="text-align:center;"><code>d:\cygwin\bin\run.exe -p /usr/X11R6/bin emacs -display 127.0.0.1:0.0 --debug-init</code></p>
         </div>
                 <ul class="pager">

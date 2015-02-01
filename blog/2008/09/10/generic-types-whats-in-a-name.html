@@ -25,8 +25,11 @@ article: http://ogp.me/ns/article#
     <meta name="author" content="Mike Lockhart">
         <meta name="og:title" content="&quot;generic&quot; types: what's in a name?">
     <meta name="og:url" content="http://milosophical.me/blog/2008/09/10/generic-types-whats-in-a-name.html">
-    <meta name="og:description" content="I've been stumbling over Java's generic types for a while now...  I think I finally understand what my problem is:
-They should be called specific types, or parametrised collections!
+    <meta name="og:description" content="I've been stumbling over Java's generic types for a while now... I think I
+finally understand what my problem is:
+
+
+They should be called specific types, or parametrised-collections!
 
 
 
@@ -34,7 +37,7 @@ They should be called specific types, or parametrised collections!
 
 
 
-I think the">
+I think th">
     <meta name="og:site_name" content="Milosophical Me">
     <meta name="og:type" content="article">
 
@@ -86,35 +89,42 @@ I think the">
 
         </div>
         <div class="body">
-            <span>I've been stumbling over Java's generic types for a while now...  I think I finally understand what my problem is:</span>
-<p style="text-align:center;">They should be called <strong>specific </strong>types, or <em><span>parametrised</span></em> <em>collections</em>!</p>
-
+            <p>I've been stumbling over Java's generic types for a while now... I think I
+finally understand what my problem is:
+</p>
+<br>
+<p style="text-align:center;">They should be called <strong>specific </strong>types, or <em><span>parametrised</span></em>-<em>collections</em>!</p>
+<br>
 
 
 <!-- TEASER_END -->
 
 
-
+<p>
 I think the feature is called "Java generics" because when you use a collection, say <code>List&lt;E&gt;</code>, that <code>List</code> contains elements of parameterised type <code>&lt;E&gt;</code>, a "generic type".  But the element type in the plain old-fashioned non-parametrised collection <code>List</code> is also generic!  In fact the non-parametrised <code>List</code> is more <em>generic</em> than the "generic" version (it can contain elements of <em>any</em> sub-class of <code>Object</code>)!  The distinction is that the elements in a <code>List&lt;String&gt;</code> are all of one <strong>specific</strong> type (<code>String</code>), whereas the elements in a <code>List</code> can be of any general type, and can even be of different types in the same <code>List</code> collection (leading to problems that "Java generics" was invented to address).
-
-
-
+</p>
+<br>
+<p>
 <span><code>&lt;sarcasm&gt;</code>Gosh, what an epiphany.<code>&lt;/sarcasm&gt;</code></span>
+</p>
+<br>
 
+<p>If you're a Java guru this is nothing new, of course. But that took
+  me <strong>ages</strong> to grasp. I think I wasn't helped by the
+  terminology. In fact whenever I'm reading Java literature, it helps if I swap
+  "generic" for "specific".  This makes much more sense to me. Actually I
+  already do word substitutions for much of the Java canon.  For instance:</p>
 
-
-<span>If you're a Java guru this is nothing new, of course.  But that took me <strong>ages</strong> to grasp.  I think I wasn't helped by the terminology.  </span>In fact whenever I'm reading Java literature, it helps if I swap "generic" for "specific".  This makes much more sense to me.  Actually I already do word substitutions for much of the Java canon.  For instance:
+<br>
 
 <ul>
-	<li>"class Foo is instantiated"
+	<li>"class Foo is instantiated"<br>
 Translation: "a Foo object is created"</li>
-	<li>"invoke method X of class Y"
-Translation: "send message X to a Y object",
-
+	<li>"invoke method X of class Y"<br>
+Translation: "send message X to a Y object",<br>
 or even "send class Y the X message"</li>
-
 </ul>
-
+<br>
 <span>Probably the Java literature is strictly more "correct" or explicit, but it'd be much more clear and concise if people used the older <span>OOP</span> words for things...</span>
         </div>
                 <ul class="pager">

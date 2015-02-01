@@ -112,8 +112,9 @@ article: http://ogp.me/ns/article#
             </div>
             <div class="body">
                 <p>Okay I'm still on the hunt for the elusive dark colour look-and-feel for NetBeans.  I found this site that has <a title="NetBeans - The dark side" href="http://www.mediabits.dk/php/netbeans-the-dark-side/" target="_blank">great information about the NimROD L&amp;F</a>.  This sets the widgets to a dark colour (or you could customise your own colours with NimROD).
-
-
+</p>
+<br>
+<p>
 Note that this is separate from the NetBeans colour themes which control editor colours. For that, I quite like <a title="NetBeans Twilight Theme!" href="http://net.tutsplus.com/freebies/themes/netbeans-twilight-theme/" target="_blank">Twilight</a> and <a title="Aloha Color Theme for NetBeans 6.1" href="http://blog.huikau.com/2008/04/28/aloha-color-theme-for-netbeans-61/" target="_blank">Aloha</a>, although each needs tweaking to fix highlight colours for things such as breakpoints and step colours, or for highlighting code differences. Still, it's a good start.</p>
             </div>
         </div>
@@ -168,9 +169,8 @@ Note that this is separate from the NetBeans colour themes which control editor 
             <div class="body">
                 <div>
 <p>There is a feature of OpenSSH, enabled by default, that causes the ssh daemon to do a name lookup for the client and confirm that it matches its IP address. This is supposed to check against some sort of IP spoof during SSH login attacks.  However on my local network which lacks a DNS, it results in lengthy delays during logins.
-
-
 </p>
+
 <p class="more"><a href="2010/04/07/openssh-slow-logins-and-dns.html">Read more…</a></p>
 </div>
             </div>
@@ -210,9 +210,10 @@ Note that this is separate from the NetBeans colour themes which control editor 
 	<li>I don't have to click on the window, just move the mouse and the window it's over is focussed</li>
 	<li>I can focus a window <em>without</em> bringing it to the front, which is sometimes handy. If I want it in front, I can click it.</li>
 </ul>
-
+<br>
+<p>
 However MS-Windows follows the old-fashioned, Macintosh/Smalltalk style of having users click on a window to focus it for the keyboard. How do you make MS-Windows behave more like X11?
-
+</p>
 
 
 <p class="more"><a href="2010/03/10/ms-windows-focus-follows-mouse-registry-hacks.html">Read more…</a></p>
@@ -247,9 +248,8 @@ However MS-Windows follows the old-fashioned, Macintosh/Smalltalk style of havin
             <div class="body">
                 <div>
 <p>The NetBeans online help <a title="NetBeans XML catalog help on Jiema" href="http://www.jiema.org/xref/netbeans/usersguide/javahelp/org/netbeans/modules/usersguide/xml/catalog/xmlcatalog_mount.html">describes the steps for registering a local DTD or XML file</a> with NetBeans' <em>DTDs and XML Schemas Manager</em>. It's succinct and to the point, but for the slow people in the room it's a bit confusing. So here's my tip for registering a local DTD file with NetBeans so that you can use NetBeans' awesome XML validation and completion features.
-
-
 </p>
+
 <p class="more"><a href="2009/05/12/registering-local-dtds-or-xml-schemas-with-netbeans.html">Read more…</a></p>
 </div>
             </div>
@@ -280,18 +280,18 @@ However MS-Windows follows the old-fashioned, Macintosh/Smalltalk style of havin
 
             </div>
             <div class="body">
-                <p>My work's notebook (Windows XP) is running Xming as it's X11 server, and it travels between work, home and on the train.
-
-
+                <p>My work's notebook (Windows XP) is running Xming as it's X11 server, and it travels between work, home and on the train.</p>
+<br>
+<p>
 My work office has  a docking station and a rotating second display. Typically if I start Xming with this display plugged in, Xming will adjust it's screen size to use both displays, but if I start it without the screen plugged in, it'll size to just the notebook screen. If I later add the 2nd screen (by docking the notebook), Xming won't use it without a restart. Also if I rotate the screen, only the top 1200 pixels will be used by Xming.
-
-
-
+</p>
+<br>
+<p>
 The solution is to specify a screen size to begin with that is as wide and tall as both of the screens.  On my docked notebook the two displays are the notebook's display (1920x1200 pixels)  and 2nd display (1600x1200 pixels, which rotates to 1200x1600). So that means the combined screen width is 3520 pixels, and the tallest screen hight is 1600 pixels.  Specify this to Xming when it starts:
 
 </p>
-<p style="text-align:center;"><code>path\to\xming.exe :0 -clipboard -multiwindow <strong><span style="color:#7722ff;">-screen 0 3520x1600</span></strong></code></p>
-
+<br><p style="text-align:center;"><code>path\to\xming.exe :0 -clipboard -multiwindow <strong><span style="color:#7722ff;">-screen 0 3520x1600</span></strong></code></p>
+<br>
 <p style="text-align:left;">Now I can add/remove/rotate the second screen and still use all of it without restarting Xming.</p>
             </div>
         </div>
@@ -404,10 +404,9 @@ It looks so much like my first ever computer (an <a title="Amstrad CPC" href="ht
             </div>
             <div class="body">
                 <div>
-<p>I recently upgraded my Cygwin install and noticed that Cygwin has switched it's X server <code>XWin.exe</code> from the XFree86 codebase to the Xorg codebase. Besides an updated logo, it also has some other side-effects.
+<p>I recently upgraded my Cygwin install and noticed that Cygwin has switched it's X server <code>XWin.exe</code> from the XFree86 codebase to the Xorg codebase. Besides an updated logo, it also has some other side-effects.</p>
 
 
-</p>
 <p class="more"><a href="2008/11/26/new-x11-server-in-cygwin.html">Read more…</a></p>
 </div>
             </div>

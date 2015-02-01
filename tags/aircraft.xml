@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (aircraft)</title><link>http://milosophical.me/</link><description></description><language>en</language><lastBuildDate>Sat, 31 Jan 2015 22:30:13 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Crashed Linux</title><link>http://milosophical.me/blog/2006/03/24/crashed-linux.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (aircraft)</title><link>http://milosophical.me/</link><description></description><language>en</language><lastBuildDate>Sun, 01 Feb 2015 12:29:49 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Crashed Linux</title><link>http://milosophical.me/blog/2006/03/24/crashed-linux.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;
 &lt;em&gt;This post was originally published
   at &lt;a href="http://sinewalker.blogspot.com.au/2006_03_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
   on 24 March 2006.&lt;/em&gt;
 &lt;/p&gt;
 &lt;hr&gt;
 
-&lt;a title="photo sharing" href="http://www.flickr.com/photos/milliped/116393699/"&gt;&lt;img src="http://static.flickr.com/50/116393699_612744e4f7_m.jpg" alt=""&gt;&lt;/a&gt;
+&lt;p&gt;
+This is a pretty neat shot of the in-flight entertainment system on an &lt;a href="http://en.wikipedia.org/wiki/Airbus_A330"&gt;Airbus A330&lt;/a&gt; having a boot-up issue. Note, the kernel is Linux.
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;&lt;a title="photo sharing" href="http://www.flickr.com/photos/milliped/116393699/"&gt;&lt;img src="http://static.flickr.com/50/116393699_612744e4f7_m.jpg" alt=""&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;a href="http://www.flickr.com/photos/milliped/116393699/"&gt;Crashed Linux&lt;/a&gt;
 
 
@@ -17,10 +23,6 @@ Originally uploaded by &lt;a href="http://www.flickr.com/people/milliped/"&gt;mi
 &lt;/p&gt;
 
 &lt;br&gt;
-
-&lt;p&gt;
-This is a pretty neat shot of the in-flight entertainment system on an &lt;a href="http://en.wikipedia.org/wiki/Airbus_A330"&gt;Airbus A330&lt;/a&gt; having a boot-up issue. Note, the kernel is Linux.
-&lt;/p&gt;
 
 &lt;br&gt;
 

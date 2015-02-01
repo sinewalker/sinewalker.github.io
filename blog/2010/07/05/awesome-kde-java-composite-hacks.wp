@@ -1,54 +1,52 @@
 <html><body><p>I've been experimenting with the <a title="This is gonna be LEGEN ... wait for it ... DARY" href="http://awesome.naquadah.org/">awesome</a> <a title="Wikipedia" href="http://en.wikipedia.org/wiki/Tiling_window_manager">tiling window manager</a> as a replacement to KDE's <a title="Wikipedia" href="http://en.wikipedia.org/wiki/KWin">kwin</a>, and I've managed to hack together a recipe for getting them up an running. It's surprisingly simple, although the learing curve was a little steep.
-
-
+</p>
+<p>
 This post documents what I've done to get things working nicely with the basic awesome config. No customisations here, see the <a title="Awesome's wiki" href="http://awesome.naquadah.org/wiki/Main_Page">awesome wiki</a> for some <a title="Customising Awesome" href="http://awesome.naquadah.org/wiki/Main_Page#Customization">ideas</a>.
-
+</p>
 <!-- TEASER_END -->
 
-</p><h2>Rationale</h2>
-
+<h2>Rationale</h2>
+<p>
 After living in emacs for a few years I've come to appreciate it's <a title="What's LCARS?" href="http://memory-alpha.org/wiki/LCARS">LCARS</a> style of window panels, so I started to investigate arranging windows at a more global level in my X desktop. I discovered <a title="Wikipedia" href="http://en.wikipedia.org/wiki/Tiling_window_manager">tiling window managers</a> and started researching them. I decided I want a light-weight, no-fuss tiling window manager for many reasons, not least being that overlapping windows become a mess, and the computer should really be taking care of arranging windows for me.  So I investigated several, narrowing down to <a title="Written in Haskel, not too bad" href="http://xmonad.org">xmonad</a>, <a title="Window Manager Improved 2" href="http://wmii.suckless.org">wmii</a> and finally settling on <a title="This is gonna be LEGEN ... wait for it ... DARY" href="http://awesome.naquadah.org/">awesome</a>.
+</p>
 
-
-
+<p>
 However I still like the general KDE environment with all it's facilities like <a title="The semantic desktop" href="http://nepomuk.semanticdesktop.org/xwiki/bin/view/Main1/">Nepomuk</a>, <a title="Plasma" href="http://plasma.kde.org/">Plasma</a>, the <a title="KDE Desktop COmmunications Protocol" href="http://developer.kde.org/documentation/other/dcop.html">DCOP</a>, knotify  integration, <a title="KDE Plasma desktop Run Command" href="http://userbase.kde.org/Plasma/Krunner">krunner</a>, hooks to Firefox and the trash can and so on -- all tools I can't live without. So I don't want to give  up KDE altogether just to have a better window manager. What I really want to do is run the KDE environment, but use awesome instead of kwin to manage my windows. If I can keep the eye-candy of transparent windows then that'd be a bonus.
+</p>
 
-
-
+<p>
 After a week-end of research and hacking, here are my results.
-
+</p>
 <h2>Installing awesome</h2>
-
+<p>
 This is a cinch on openSUSE, and probably also on most distro's.  In openSUSE I just used the <a title="Webpin integrated into Yast" href="http://en.opensuse.org/YaST/Research/YaST_Interface_for_Webpin">Webpin</a> module in YaST to find <a title="awesome packages in the OBS" href="https://build.opensuse.org/search/search">a package</a> on the <a title="OpenSUSE Build Service - for end-users, this is akin to Ubunto/Debian Universe" href="https://build.opensuse.org/">OBS</a> and then installed that directly from the Webpin module, which added the repository and downloaded and installed the packages for me.
+</p>
 
-
-
+<p>
 Once installed, this gives an additional Session type on the kdm login screen, which is neat for testing or using awesome by itself, but when you launch KDE it's still the same (as you would expect!)
-
+</p>
 <h2>Replacing the KDE window manager</h2>
-
+<p>
 After some searching on a few forums I found that KDE's window manager can be set by putting the following into a script in the per-user KDE environment directory (<code>~/.kde4/env</code> for KDE4)
-
+</p>
 <p style="padding-left:30px;"><code>KDEWM=/usr/bin/awesome</code></p>
-
+<p>
 This has the advantage that it only affects you, not everyone on the system who runs KDE.  Also it's easy to turn off and get the original kwin back if you want to.  I may look into adding KDE+awesome as a session type and then having a separate section in my <code>~/.xinitrc</code> in the future if I'll be swapping back more often.  I don't anticipate it today though.
-
+</p>
 <h2>Fixing Java</h2>
-
+<p>
 There is a <a title="Java reparinting window bug" href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6429775">bug</a> in Java 1.5 and 1.6 where it makes protocol assumptions that are not true in non-reparanting window managers (something along those lines anyway).  It results in Java GUIs appearing as just a grey box in certain window managers like xgl, dwm, wmii, xmonad and awesome. <a title="awesome tip to fix grey Java windows" href="http://awesome.naquadah.org/wiki/Problems_with_Java">Apparently</a> this'll be fixed in Java 1.7. In the mean-time, to fix it for 1.5 and 1.6 you can install a utility called <a title="wmname" href="http://tools.suckless.org/wmname">wmname</a> (I used Webpin again) and then put this in a script to run at start-up (i.e. in <code>~/.kde4/Autostart</code>)
-
+</p>
 <pre style="padding-left:30px;"><code>#!/bin/sh
-
 /usr/bin/wmname LG3D
-
 </code></pre>
-
+<p>
 The "LG3D" window manager name above is one of the strings that 1.5 and 1.6 JVMs look for and change their behavior if found. This value is the name of the<a title="Wikipedia" href="http://en.wikipedia.org/wiki/Project_Looking_Glass"> LookingGlass3D</a> window manager, by Sun. Appreciate the irony...
-
+</p>
 <h2>Composite effects (transparency and shadows)</h2>
-
+<p>
 I found <a title="explains xcompmgr and setting it up" href="http://wiki.archlinux.org/index.php/Xcompmgr">this link</a> on the ArchLinux wiki. It's very useful and describes how to enable <a title="Enabling composite extension in Xorg 7.1+" href="http://wiki.archlinux.org/index.php/Composite">composite</a> effects by default in your Xorg, and includes a <a title="start/stop xcompmgr" href="http://wiki.archlinux.org/index.php/Xcompmgr#Starting.2FStopping_xcompmgr_on_Demand">script</a> to turn effects on and off (quite useful on my aging AthlonXP  + Radeon, which can <em>only just</em> handle the effects, but works nice and snappy without them).
+</p>
 
-
-
-With all this done I have a nice stable and useful desktop which I can begin to tweak when I get a chance to play with the Lua language that Awesome is configured with. More toys to play with :)</body></html>
+<p>
+With all this done I have a nice stable and useful desktop which I can begin to tweak when I get a chance to play with the Lua language that Awesome is configured with. More toys to play with :)</p></body></html>

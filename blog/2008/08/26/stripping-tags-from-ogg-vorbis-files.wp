@@ -14,78 +14,41 @@ Here's a quick-and-dirty shell hack to remove the tags from the files and get th
 </p><pre>#!/bin/bash
 
 ###############################################################################
-
 #
-
 #   File:       fixvorbis.sh
-
 #   Language:   Bash shell script
-
 #   Time-stamp: &lt;2008-08-26 15:48:45 tzbblg&gt;
-
 #   Platform:   N/A (requirest ogg Vorbis tools installed)
-
 #   OS:         *nix
-
 #   Authors:    Michael Lockhart [MJL]
-
 #
-
 #   Rights:     Copyright © 2008 Michael James Lockhart, B.App.Comp(HONS)
-
 #
-
 #     This program is free software: you can redistribute it and/or
-
 #     modify it under the terms of th e GNU General Public License as
-
 #     published by the Free Software Foundation, either version 3 of the
-
 #     License, or (at your option) any later version.
-
 #
-
 #     This program is distributed in the hope that it will be useful,
-
 #     but WITHOUT ANY WARRANTY; without even the implied warranty of
-
 #     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-
 #     GNU General Public License for more details.
-
 #
-
 #     You should have received a copy of the GNU General Public License
-
 #     along with this program.  If not, see .
-
 #
-
 #   PURPOSE:
-
 #
-
 #     Script to strip out COVERART tags from ogg vorbis files (these
-
 #     tags break certain players...)
-
 #
-
 #   HISTORY:
-
 #
-
 #   MJL20080826 - Created.
-
 #
-
-
 
 # extract the comments, less the COVERART tags
-
 # (keep the art in separate files)
-
-
 
 for n in *.ogg; do
     echo "Extracting comments and COVERART from $n"
@@ -93,10 +56,7 @@ for n in *.ogg; do
     vorbiscomment -l $n | grep -v COVERART &gt; $n-comment.txt
 done
 
-
-
 #if there's a comments patch (stored in patch.txt in the current dir)
-
 # then apply the patch to the comments.
 
 if [ -f patch.txt ]; then
@@ -106,26 +66,17 @@ if [ -f patch.txt ]; then
 fi
 
 
-
 # edit the comments with new comment files, minus art, possibly patched.
-
 for n in *.ogg; do
     echo "Replacing comments in $n"
     vorbiscomment -c $n-comment.txt -w $n
 done
 
-
-
 #clean up
-
 rm *-comment.txt
 
-
-
 # clean-up of art is manual. There might be different cover-art from
-
 # each file, but if not (diff a*-art.txt b*.txt etc produces no
-
 # output) then just remove all but first and rename it...</pre>
 
 <hr>The smarts are all in the vorbis utilites included as part of Cygwin. Specifically the script uses vorbiscomment<sub>(1)</sub> to extract and apply tags in the Ogg files, and grep and (optionally) patch to manipulate the comments.
