@@ -1,50 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (DTD)</title><link>http://milosophical.me/</link><description></description><language>en</language><lastBuildDate>Sat, 31 Jan 2015 22:30:14 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Registering local DTDs or XML schemas with NetBeans</title><link>http://milosophical.me/blog/2009/05/12/registering-local-dtds-or-xml-schemas-with-netbeans.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;The NetBeans online help &lt;a title="NetBeans XML catalog help on Jiema" href="http://www.jiema.org/xref/netbeans/usersguide/javahelp/org/netbeans/modules/usersguide/xml/catalog/xmlcatalog_mount.html"&gt;describes the steps for registering a local DTD or XML file&lt;/a&gt; with NetBeans' &lt;em&gt;DTDs and XML Schemas Manager&lt;/em&gt;. It's succinct and to the point, but for the slow people in the room it's a bit confusing. So here's my tip for registering a local DTD file with NetBeans so that you can use NetBeans' awesome XML validation and completion features.
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (DTD)</title><link>http://milosophical.me/</link><description></description><language>en</language><lastBuildDate>Sun, 01 Feb 2015 11:20:24 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Registering local DTDs or XML schemas with NetBeans</title><link>http://milosophical.me/blog/2009/05/12/registering-local-dtds-or-xml-schemas-with-netbeans.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;The NetBeans online help &lt;a title="NetBeans XML catalog help on Jiema" href="http://www.jiema.org/xref/netbeans/usersguide/javahelp/org/netbeans/modules/usersguide/xml/catalog/xmlcatalog_mount.html"&gt;describes the steps for registering a local DTD or XML file&lt;/a&gt; with NetBeans' &lt;em&gt;DTDs and XML Schemas Manager&lt;/em&gt;. It's succinct and to the point, but for the slow people in the room it's a bit confusing. So here's my tip for registering a local DTD file with NetBeans so that you can use NetBeans' awesome XML validation and completion features.
 
 
-&lt;!--more--&gt;In my example, I'm trying to use NetBeans to validate an &lt;a title="Solaris SMF Quick start" href="http://www.sun.com/bigadmin/content/selfheal/smf-quickstart.jsp"&gt;SMF&lt;/a&gt; &lt;a title="Service development intro" href="http://www.sun.com/bigadmin/content/selfheal/sdev_intro.jsp"&gt;Manifest&lt;/a&gt;, which is an XML file defined by a &lt;code&gt;SYSTEM&lt;/code&gt; DTD called &lt;code&gt;service_bundle.dtd.1&lt;/code&gt;.  On Solaris 10 machines you can find a copy of the DTD file in &lt;code&gt;/usr/share/lib/xml/dtd/service_bundle.dtd.1&lt;/code&gt;, and most example SMF manifests that you can find &lt;a title="SMF Manifest Repository" href="http://www.blastwave.org/smf/manifests.php"&gt;on the Internet&lt;/a&gt; include the DOCTYPE like so:
-
-&lt;/p&gt;&lt;pre&gt;&amp;lt;!DOCTYPE service_bundle SYSTEM "/usr/share/lib/xml/dtd/service_bundle.dtd.1"&amp;gt;&lt;/pre&gt;
-
-If you run NetBeans on Solaris 10, I assume this will probably work out-of-the-box (though I haven't tried this...).  However for us hackers on other platforms, you need to copy this file down to your development machine, and then register it with NetBeans so that you can use it.
-
-
-
-NetBeans' DTDs and XML Schemas Manager contains a collection of XML Schema Catalogues for a whole bunch of technologies. You'll want to add your local DTDs/Schemas to the &lt;strong&gt;User Catalog&lt;/strong&gt; (&lt;em&gt;sic&lt;/em&gt;), which is the only one that's read-write. Do the following:
-
-&lt;ol&gt;
-	&lt;li&gt;&lt;strong&gt;Tools &lt;/strong&gt;menu, &lt;strong&gt;DTDs and XML Schemas&lt;/strong&gt;&lt;/li&gt;
-	&lt;li&gt;Choose &lt;strong&gt;User Catalog [read-write] &lt;/strong&gt;from the list of &lt;em&gt;DTDs and XML Schemas&lt;/em&gt;&lt;/li&gt;
-	&lt;li&gt;Press "&lt;strong&gt;Add Local DTD or Schema...&lt;/strong&gt;" button&lt;/li&gt;
-	&lt;li&gt;In our example, the DOCTYPE reads:
-&lt;pre&gt;SYSTEM "/usr/share/lib/xml/dtd/service_bundle.dtd.1"&lt;/pre&gt;
-
-So, we must map this SYSTEM ID  to a local URI on our development machine.  If it had said &lt;code&gt;PUBLIC "..."&lt;/code&gt; then we would map a PUBLIC ID instead.&lt;/li&gt;
-	&lt;li&gt;Click the radio button for the relevant ID type (&lt;strong&gt;System ID&lt;/strong&gt; in our case)&lt;/li&gt;
-	&lt;li&gt;Copy in the string ID from your XML file into the relevant field. Make sure you don't put in the double-quotes
-&lt;span style="text-decoration:underline;"&gt;&lt;strong&gt;IMPORTANT:&lt;/strong&gt;&lt;/span&gt; for a DTD that lives on the filesystem ID, like ours, &lt;strong&gt;the ID should begin with &lt;span style="color:#7744ee;"&gt;&lt;code&gt;file:&lt;/code&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/li&gt;
-	&lt;li&gt;Click the "&lt;strong&gt;Browse...&lt;/strong&gt;" button and locate the DTD file you downloaded&lt;/li&gt;
-	&lt;li&gt;Click "&lt;strong&gt;OK&lt;/strong&gt;"&lt;/li&gt;
-&lt;/ol&gt;
-
-You've now mapped the SYSTEM ID to your local copy of the DTD file for &lt;code&gt;service_bundle.dtd&lt;/code&gt;. If you try and validate the XML (&lt;strong&gt;Alt+Shift+F9&lt;/strong&gt;, or from the toolbar) it will stop complaining of a missing DTD and actually check your XML against the doctype definition.
-
-
-
-I got mislead by the Recommendation (both in the online help and on the dialog box). It says that the "common solution for XML documents specified by DTD is using the Public ID -&amp;gt; URI mapping." It goes on to say that "System ID -&amp;gt; URI mapping can also be used to redirect the DTD location specified by SYSTEM ID", but I got confused by that point.
-
-
-
-I also had a hard time working out that the System ID should begin with "file:".  The give-away that I didn't spot until later, was in the error message from the XML validator:
-
-&lt;pre&gt;XML validation started.
-
-Checking file:/D:/src/support/smf/emc/manifests/emc-fast-IndexServer.xml...
-
-Referenced entity at "&lt;strong&gt;file:&lt;/strong&gt;/usr/share/lib/xml/dtd/service_bundle.dtd.1".
-
-\usr\share\lib\xml\dtd\service_bundle.dtd.1 (The system cannot find the path specified) [30]
-
-XML validation finished.&lt;/pre&gt;
-
-Duh!  I could have also just copied that string &lt;em&gt;verbatim&lt;/em&gt;. Oh well, now I've blogged about it too, so hopefully I won't forget it next time :)</description><category>DTD</category><category>XML</category><category>hacking</category><category>howto</category><category>netbeans</category><category>tip</category><guid>http://milosophical.me/blog/2009/05/12/registering-local-dtds-or-xml-schemas-with-netbeans.html</guid><pubDate>Tue, 12 May 2009 00:27:55 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;&lt;p&gt;&lt;a href="http://milosophical.me/blog/2009/05/12/registering-local-dtds-or-xml-schemas-with-netbeans.html"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>DTD</category><category>XML</category><category>hacking</category><category>howto</category><category>netbeans</category><category>tip</category><guid>http://milosophical.me/blog/2009/05/12/registering-local-dtds-or-xml-schemas-with-netbeans.html</guid><pubDate>Tue, 12 May 2009 00:27:55 GMT</pubDate></item></channel></rss>

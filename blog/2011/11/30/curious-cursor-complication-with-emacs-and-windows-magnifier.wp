@@ -1,5 +1,5 @@
 <html><body><p>I recently noticed a bug when you start GNU Emacs win32 <em>after</em> starting <a title="Microsoft: Make items on the screen appear bigger (Magnifier)" href="http://windows.microsoft.com/en-AU/windows7/Make-items-on-the-screen-appear-bigger-Magnifier">Windows Magnifier</a>: Emacs' cursor becomes a single-pixel "caret" instead of the box cursor. This makes the cursor very hard to find.
-<!--more-->
+<!-- TEASER_END -->
 
 I usually leave Emacs' cursor at the default (<code>box</code>) because this is so much easier to see, especially if you also enable <code>blink-cursor-mode</code> (though<a title="How to stop blinking cursors" href="http://www.jurta.org/en/prog/noblink"> that's a matter of taste</a>, I suppose). The default settings also set the cursor to a <code>hollow</code> box when the <code>window</code> (or the entire <a title="Emacs frames and windows" href="http://emacsworld.blogspot.com/2008/08/emacs-frames-and-windows.html"><code>frame</code></a>) is inactive.
 

@@ -80,7 +80,8 @@ article: http://ogp.me/ns/article#
 
             </div>
             <div class="body">
-                <strong>MJL20080827 -- Update</strong>:  I Just realised that this is one of my top-visited pages and it's a totally disorganised and incongruent pile of... What's worse is, I've never updated it since the promised update back in March 2007!
+                <div>
+<strong>MJL20080827 -- Update</strong>:  I Just realised that this is one of my top-visited pages and it's a totally disorganised and incongruent pile of... What's worse is, I've never updated it since the promised update back in March 2007!
 
 
 Let me clear things up (and save you wading through the whole article): If you want remote access to your openSUSE desktop from a networked thin client, then forget about X11, XDMCP, VNC or tunneling X through SSH. Use the <a title="Nomachine's intro to NX" href="http://nomachine.com/documentation/html/intr-technology.html">NX</a> protocol. You'll need to do the following:
@@ -99,80 +100,8 @@ Read the rest of this article for the boring background and laughable false-star
 
 
 
-<!--more-->
-
-
-
-...
-
-
-
-What I would <em>really </em>love to be able to do is get a graphical log-in screen to my openSUSE box, and have the <a title="KDE Screenshots (Google)" href="http://images.google.com.au/images?q=kde%20screenshot&amp;ie=UTF-8&amp;oe=UTF-8&amp;aq=t&amp;rls=org.mozilla:en-US:official&amp;client=firefox-a&amp;um=1&amp;sa=N&amp;tab=wi">KDE </a>environment displayed onto a single window within the WinXP desktop on the notebook (sort of like Windows' Remote Desktop feature <code>mstsc.exe</code>, or the original <a title="X Terminal (Wikipedia)" href="http://en.wikipedia.org/wiki/X_terminal">X Terminals</a> we used when I was a student at <a title="School of Computing, University of Tasmania" href="http://www.comp.utas.edu.au">UTas</a> back in the nineties).  This way I'd have my full KDE desktop <em>and </em>it'd be really comfy to use.  So what do I need to do?
-
-
-
-Okay, I've finally had enough time at home  to play with connecting to my <a title="openSUSE home" href="http://en.opensuse.org/Welcome_to_openSUSE.org">openSUSE</a> box from my work's laptop (WinXP) over my wireless LAN.  It's all groovy:  I can use <a title="PuTTY home" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY</a>, or <a title="Cygwin download mirrors" href="http://cygwin.com/mirrors.html">Cygwin</a>'s <code>ssh</code> command (<code>ssh -Y</code> to enable X11 tunnelling) to log in, list files, run programs (even X clients, so long as I've started Cygwin's X server first) and it's all secured by an <a title="OpenSSH home" href="http://www.openssh.org/">SSH</a> tunnel through the air between my study and my back deck (favorite place to work :-) ).  Note that using <a title="Wireless standard 802.11b (Wikipedia)" href="http://en.wikipedia.org/wiki/802.11#802.11g">802.11g</a> is probably a little slow for running intensely graphical X clients like photo viewers or <a title="Xaos fractal zoomer home" href="http://wmi.math.u-szeged.hu/xaos/doku.php"><code>xaos</code></a> ( :-) ), even with a strong signal, but it's good for running an IDE or <a title="Konquerer (Wikipedia)" href="http://en.wikipedia.org/wiki/Konquerer">Konquerer</a>.  And if you add the <code>-C </code>(Compress) switch to <code>ssh</code>, it speeds up the intense app's nicely!
-
-
-
-Well, obviously I'll need to start X on the WinXP box, without <code>-multiwindow</code>, and to <code>-query</code> for an <a title="X Display Manager Control Protocol (Wikipedia)" href="http://en.wikipedia.org/wiki/Xdmcp">XDMCP</a> server on the openSUSE box.  This should work, since I use a graphical login on openSUSE, which means an XDMCP server is already running (KDM).  So I' tried that, and it doesn't work. Why?
-
-
-
-It turns out that nearly every Linux distro' has configured their X display managers (kdm, xdm or gdm) to <em>disable </em>XDMCP access from external servers and instead only allows connections from <code>localhost</code> (i.e. from the Linux machine itself).
-
-
-
-Why have they done that?  Because XDMCP is insecure:  it transmits passwords in clear.  Also, you cannot secure XDMCP with SSH, as XDMCP uses UDP as well as TCP protocols :-( .  So it's insecure and it cannot be fixed, therefore distribution providers (wisely) disable it.  If I want to have a remote <em>desktop</em> as opposed to just seeing individual <em>windows</em> in my Windows desktop (which is cool, but not what I want), then I'll need to either not use SSH and be insecure, or use something else like <a title="Tight VNC -- free VNC server/client" href="http://www.tightvnc.com/">VNC</a>.
-
-
-
-I'm going to opt for the (insecure) option of not using SSH for X desktop access, and stick to traditional XDMCP sessions.  My reasons for this are:
-
-<ul>
-	<li>I want it to be <em>simple</em>, and with as little overhead as possible (using VNC involves mucking about with session IDs, or <a href="http://www.linux-mag.com/id/1311?r=s">running an extra X server on the Linux side</a>)</li>
-	<li>I only intend to access my Linux desktop from within my (W)LAN.  I have a firewall in the router, so I can set it to disallow access to ports UDP/177 and TCP/6000 from the Internet (or, if it proves too difficult to do it at the router, I can set openSUSE's own firewall to do that)</li>
-	<li>My WLAN is encrypted  over the air anyway (WPA/PSK) and it's also using a silent SSID <em>and </em>a MAC-address white-list, so it's pretty secure already.  The only way for somebody to sniff out my password is to be physically attached to my router</li>
-	<li>So far I feel I can trust every computer attached to the LAN, since it's my own house.  If (<em>when</em>?) this changes (that is, once my son is old enough to hack the network, so maybe when he's about eight years old?), I might revisit tunneling XDMCP sessions via VNC through SSH.</li>
-</ul>
-
-So, how do you set up good ole' XDMCP under Linux? <a title="Linux XDMCP HOWTO (The Linux Documentation Project)" href="http://en.tldp.org/HOWTO/XDMCP-HOWTO/">READ THE FINE HOW-TO</a>.  It's that simple, just remember that this is <em>not </em>secure kids.  If you need security, use VNC, or just <code>ssh -Y</code> to your Linux host and run individual X clients (with an X server on your local machine). I've also read <a title="Cygwin X-Free mailing list archive" href="http://www.cygwin.com/ml/cygwin-xfree/2004-06/msg00204.html">in a mailing list</a> that it's possible to start KDE from an SSH session anyway.  I might give that a go first, since it would be nearly as simple as XDMCP, and also secure.  But I really want my desktop, so we'll see what happens first….
-
-
-
-<hr>
-<strong> 2007-03-26T08:22+1000 Update: </strong> — Some mixed success
-
-
-
-I've learned a couple of things over the week-end:
-
-<ol>
-	<li>
-<code> ssh -<span style="text-decoration:underline;">C</span>Y</code> (use gzip compression when transmitting packets) produces satisfactory speed for <code>xaos</code> or <code>gwenview</code>, even over my WLAN</li>
-	<li>PuTTY doesn't seem to work any faster, even with Compression Enabled. Perhaps it doesn't support OpenSSL's compression?  I don't know.  Anyway, I don't need PuTTY as long as I have Cygwin with <code>ssh</code>
-</li>
-	<li>You can start the KDE desktop from an <code>ssh</code> session with the <code>startkde</code> command.  However in openSUSE (at least my install) this takes a <em>long</em> time to start, and eventually <code>kwin</code> hangs on the notebook end.  On the client end (the openSUSE box), it maxes out the CPU</li>
-</ol>
-
-So that was exciting and a little disappointing.  I'll need to experiment a little more it seems.  I got expected warnings about missing font paths and ALSA not working, but I was still hoping to get the desktop up, just with some reduced functionality.  There were also warnings about certain X server extensions being unavailable on the Cygwin X server, which I didn't expect, but again, they aren't critical (no transparency support etc.).  Perhaps there's some environment variables that KDM sets which are causing kwin or other desktop subsystems some grief when missing?
-
-
-
-If I still can't get it working soon, I might start with XDMCP, or I might skip straight to VNC after all.  One other thing to try before getting too drastic is to see if the Linux on my notebook's VMWare can run my KDE desktop remotely, or to try booting the notebook from a LiveCD such as Knoppix….
-
-
-
-<hr>
-<strong> 2007-03-29T16:48+1000 Update: </strong> — RTFM.  Indeed!
-
-
-
-It's amazing what you can find out if you just read the manuals that come with your software.  Feeling silly now…I was exploring the <a title="Novell openSUSE Reference manual (PDF)" href="2007/03/22/www.novell.com/documentation/opensuse102/pdfdoc/opensuse102_reference/opensuse102_reference.pdf">openSUSE Reference manual</a> on the train home last night. Chapter nine is particularly interesting:  it describes FreeNX, a free remote desktop server, all ready to go on openSUSE, just install and follow the instructions.  There's even an <a title="NX Client for Windows (NoMachine)" href="http://www.nomachine.com/download-client-windows.php">NX client for Windows</a>. Much simpler, and still Free.
-
-
-
-Looks like this is the way to go.  I'll try it out and do a (hopefully) final  update.
+<p class="more"><a href="2007/03/22/remote-desktop-acces-suse-cygwin-x-and-xdmcp.html">Read more…</a></p>
+</div>
             </div>
         </div>
         <div class="post">
@@ -198,7 +127,8 @@ Looks like this is the way to go.  I'll try it out and do a (hopefully) final  u
 
             </div>
             <div class="body">
-                <p>I don't know how many other people get this issue, but it comes up at my work a bit: Some co-worker asks me if I know of a tool to do such-and-such, and invariably I think <em>“well, that's </em>easy<em> to do on Unix, but on </em>Windows<em>…”</em>.
+                <div>
+<p>I don't know how many other people get this issue, but it comes up at my work a bit: Some co-worker asks me if I know of a tool to do such-and-such, and invariably I think <em>“well, that's </em>easy<em> to do on Unix, but on </em>Windows<em>…”</em>.
 
 
 Then I remember Cygwin, and quickly find a Cygwin utility that does it, or can be scripted to do it with a small amount of work. So then co-worker asks if they can have a copy of this utility, and of course Cygwin is Free, so I say “sure, go download from <a title="Cygwin download mirrors" href="http://www.cygwin.com/mirrors.html">www.cygwin.com</a>.” Then they say, “yeah, but I don't want to install all of Cygwin, can't you just give me that one program?”
@@ -220,144 +150,8 @@ Find it under Happy hacker discovery #2. Keep reading if you're bored...
 
 
 
-<!--more-->
-
-
-
-...
-
-
-
-In the past, I used to just give the person the <code>cygwin1.dll</code> DLL and a program (<code>SPLIT.EXE</code>,say), let the person run it on their computer, explaining that it will crash with an error about a missing DLL. Then they would come back to me and say that they also need <code>cygintl-8.dll</code> and try again. It will crash <em>again</em> because <code>cygintl-8.dll</code> just happens to link to <code>cygiconv-2.dll</code>. After supplying this third DLL file, my co-worker can finally run <code>SPLIT.EXE</code> and break their huge data set into manageable chunks. Everyone's happy.
-
-
-
-The whole process is a bit embarrassing for me and annoying for them (though they <em>could</em> just download the base Cygwin install like I <em>asked</em>…) So, to solve this problem somewhat, I set about thinking <em>“I wonder if there's a Cygwin tool that can find DLLs in a program?”</em>.
-
-
-
-Well, a quick look at <code>info binutils</code> reveals that there is nothing that <em>directly</em> solves my problem of listing which DLLs a program links to. There is this thing called <code>dlltool</code>, but it is for creating PE dynamic libraries, not for listing the libraries used by a PE executable. Bummer.
-
-<h3>Happy hacker discovery #0</h3>
-
-Well, there is also a tool called <code>strings</code>, which will list text strings in binary files. Now, Windows PE executables happen to contain the name of their linked DLLs as text strings, yay! So all I need to do, is pass <code>strings</code> over a given program, filter for DLL names (to strip out error messages and such) and I have my list.
-
-
-
-Oh, but then I'll need to repeat for each DLL as well. So I need a script to do it:
-
-<pre>#!/bin/bash
-
-#
-
-# finds all the DLL files linked by a Win32 PE executable.
-
-# Useful for finding needed DLLs to supply with a Cygwin program when
-
-# sharing just that program with other people.
-
-#
-
-
-
-if [ x"$1" = x ]; then
-    PROG=`basename $0`
-    printf "Usage:  $PROG &lt;command to list DLLs for&gt;\\n"
-    printf "        (you should not add '.exe' to the end).\\n"
-    exit 1
-fi
-
-
-
-SEARCH_FILE=`which $1`.exe
-
-
-
-# This is not perfect, as it's too permissive, but should be good enough
-
-DLL_REGEXP='^[[:alnum:][:punct:]]*\\.[Dd][Ll][Ll]$'
-
-
-
-# We don't care about the Win32 kernel API library...
-
-KERNEL_REGEXP='[Kk][Ee][Rr][Nn][Ee][Ll]32\\.[Dd][Ll][Ll]'
-
-
-
-# Get list of program's DLLs:
-
-DLL_LIST=`strings -n 5 $SEARCH_FILE \\
-          |grep $DLL_REGEXP \\
-          |grep -v $KERNEL_REGEXP`
-
-
-# Print the DLLs used directly by the program
-
-printf "$SEARCH_FILE:\\n"
-
-for I in $DLL_LIST; do
-   printf "\\t$I\\n"
-done
-
-printf "\\t(KERNEL32.DLL)\\n\\n"
-
-
-
-#Now find each DLL's dependencies (only one level deep though)
-
-for CURR_DLL in $DLL_LIST; do
-    SEARCH_DLL=`which $CURR_DLL`
-    DLL_DLL_LIST=`strings -n 5 $SEARCH_DLL \\
-                  |grep $DLL_REGEXP \\
-                  |grep -v $KERNEL_REGEXP \\
-                  |grep -v $CURR_DLL`
-    printf " --&gt;\\t$CURR_DLL:\\n"
-    for I in $DLL_DLL_LIST; do
-       printf "\\t\\t$I\\n"
-    done
-    printf "\\t\\t(KERNEL32.DLL)\\n\\n"
-done</pre>
-
-There we are, a list of DLLs used by a given program, and the DLLs that those DLLs use.
-
-
-
-It's not perfect: <strong>it is not recursive</strong>, so only goes one level deep, but this should cover most cases. One day I might come back to this, when I figure out how to write a recursive function in bash.
-
-
-
-So now I know which DLLs to give to my co-worker along with the nifty tool they want. But where on my system are they? Cygwin installs most DLLs into <code>/usr/bin</code>. But sometimes they can be in <code>/usr/lib</code>. So do I have to make a search?
-
-<h3>Happy hacker discovery #1</h3>
-
-Well, no I don't. Cygwin's <code>which</code> command also works for DLLs, yay! You just have to go:
-
-<pre>  $ <strong>which cygwin1.dll</strong>
-  /usr/bin/cygwin1.dll<strong>
-</strong>  $ <strong>which cygintl-8.dll</strong>
-  /usr/bin/cygintl-8.dll
-  $ <strong>which cygiconv-2.dll</strong>
-  /usr/bin/cygiconv-2.dll</pre>
-There, problem solved.
-
-<h3>Happy hacker discovery #2</h3>
-
-<strong>Update: 2008-01-21 09:56+1100</strong>: There's an awesome tool that comes with Cygwin, called <code><strong>cygcheck</strong></code><sub>(1)</sub>, that does exactly what I need. Thanks for the tip, Leni! Here's a sample output for the SPLIT.EXE example:
-
-<pre>$ <strong>cygcheck split</strong>
-
-Found: d:\cygwin\bin\split.exe
-
-d:\cygwin\bin\split.exe
-  d:\cygwin\bin\cygwin1.dll
-    C:\WINDOWS\system32\ADVAPI32.DLL
-      C:\WINDOWS\system32\ntdll.dll
-      C:\WINDOWS\system32\KERNEL32.dll
-      C:\WINDOWS\system32\RPCRT4.dll
-        C:\WINDOWS\system32\Secur32.dll
-  d:\cygwin\bin\cygintl-8.dll
-    d:\cygwin\bin\cygiconv-2.dll</pre>
+<p class="more"><a href="2007/03/09/finding-dlls-used-by-a-cygwin-program.html">Read more…</a></p>
+</div>
             </div>
         </div>
         <div class="post">
@@ -387,7 +181,8 @@ d:\cygwin\bin\split.exe
 
             </div>
             <div class="body">
-                <p>It is useful to have different versions of the JVM installed, for a number of reasons:
+                <div>
+<p>It is useful to have different versions of the JVM installed, for a number of reasons:
 </p>
 <ul>
 	<li>Different optimisation features from different JVM implementations</li>
@@ -403,267 +198,8 @@ If I'm hacking in Linux, the <a title="JPackage home page" href="2007/03/09/www.
 
 
 
-<!--more-->
-
-
-
-<hr>
-<strong>2007-03-09T08:06+1100 - Update: Neater <code>JVersion</code> code</strong> I've recently upgraded to <em>Mustang</em> and noticed that this broke my function, since it installs to a different base directory <em>again</em>… So here is a new version that hopefully covers off future default directory names that Sun comes up with for <em>Dolphin</em> and the Open Source releases.
-
-<pre><code>
-
-# Path variables
-
-if [ x"$X_PATH_NO_JAVA" = x ]; then
-    export X_PATH_NO_JAVA=~/bin:$PATH     # save path without JAVA, for future switches
-fi
-
-
-
-if [ x"$JAVA_BASE" = x ]; then
-    JAVA_BASE=d:\\java    # default if not set in Windows
-fi
-
-
-
-# Functions
-
-function JVersion() {
-    # Select a Java Development Kit to use.
-    # This provides similar functionality in Cygwin, to the
-    # updatealternatives command of Debian/SuSE linux.
-    #
-    # Note, different releases have different standard dirs,
-    # so we just look for "k" which seems to be the
-    # thing they still have in common.  Also the sed scripts
-    # which pull out the version number installed, for
-    # reporting, must be specific for each release...
-
-    #Convert JAVA_BASE to Cygwin format
-    export JAVA_BASE=`cygpath -up $JAVA_BASE`
-
-    # Use function's argument to select, defaulting to Mantis
-    case $1 in
-        1.6 | 1.6.0 | 6.0 | 6 | mustang | Mustang | MUSTANG)
-            export JAVA_VER=`ls $JAVA_BASE | grep k1.6.0`
-            JVERNUM=`echo $JAVA_VER | sed s/^jdk//g`
-        ;;
-        1.5 | 1.5.0 | 5.0 | 5 | tiger | Tiger | TIGER)
-            export JAVA_VER=`ls $JAVA_BASE | grep k1.5.0`
-            JVERNUM=`echo $JAVA_VER | sed s/^j2sdk//g`
-        ;;
-        * | MANTIS)
-            export JAVA_VER=`ls $JAVA_BASE | grep k1.4.2`
-            JVERNUM=`echo $JAVA_VER | sed s/^j2sdk//g`
-        ;;
-    esac
-
-    #Set the JAVA_HOME variable (used by some Java programs, so
-    #must be in Windows format for those programs to understand)
-    export JAVA_HOME=`cygpath -wp $JAVA_BASE/$JAVA_VER`
-
-    #Add the correct JDK runtime to Cygwin's path
-    export PATH=$JAVA_BASE/$JAVA_VER/bin:$X_PATH_NO_JAVA
-
-    #Report what happened
-    echo Java Version: $JVERNUM
-    echo Java Base: $JAVA_BASE
-    echo "Java Home: $JAVA_HOME (`cygpath -up $JAVA_HOME`)"
-}
-
-
-
-#Now run it to set up initial Java environment:
-
-JVersion &gt; /dev/null
-
-</code></pre>
-
-This is all you need now, no complicated set-up variables and such rubbish. You'll notice that the setup steps are now just to set <code>$X_PATH_NO_JAVA</code> (save the <code>$PATH</code><em> without</em> Java in it), and set up <code>$JAVA_BASE</code> if necessary. Then after the function is declared and I run it to set a default Java environment for Cygwin (Still <em>Mantis</em> for now, since my work is using it for a system I support).
-
-
-
-Read on for old stuff and false-starts...
-
-
-
-...
-
-
-
-I have a shell function called <code>JVersion</code> which you use to select the version of the JVM you want to use, and a bunch of environment variables to make it all work.  Here's how you use it:
-
-<blockquote>
-
-<pre>$ <strong>JVersion tiger</strong>
-
-Java Version: 1.5.0_04
-
-Java Base: /cygdrive/d/java
-
-Java Home: /cygdrive/d/java/j2sdk1.5.0_04
-
-$ <strong>java -version
-
-</strong>java version "1.5.0_04"
-
-Java(TM) 2 Runtime Environment, Standard Edition (build 1.5.0_04-b05)
-
-Java HotSpot(TM) Client VM (build 1.5.0_04-b05, mixed mode, sharing)
-
-$
-
-$ <strong>JVersion mantis
-
-</strong>Java Version: 1.4.2_05
-
-Java Base: /cygdrive/d/java
-
-Java Home: /cygdrive/d/java/j2sdk1.4.2_05
-
-$ <strong>java -version
-
-</strong>java version "1.4.2_05"
-
-Java(TM) 2 Runtime Environment, Standard Edition (build 1.4.2_05-b04)
-
-Java HotSpot(TM) Client VM (build 1.4.2_05-b04, mixed mode)
-
-$</pre>
-
-</blockquote>
-
-When using Java from the command-line (DOS or Cygwin), you need to have the interpreter (for JRE) and development tools (for JDK) on the system search PATH. You also used to have to set the CLASSPATH for the JRE to find bootstrap and extension classes, but these are now found automatically via the System property "<code>sun.boot.class.path</code>" and the Java Extension Mechanism. However, it's still useful to have a JAVA_HOME variable for some third-party tools, such as IDEs.
-
-
-
-I've written a bash function which uses some control variables to allow easy switching of JVMs on Cygwin. It's still a bit of a hack, but I find it useful when I'm on Windows to work from the bash prompt as well as whatever IDE I'm hacking in.
-
-
-
-The control variables are
-
-<ul>
-	<li>
-<code>JAVA_BASE</code> = the base directory where all the JVMs are installed. I put each JVM in it's own directory under <code>D:\java</code>
-This variable should be in the Windows environment, but it defaults to <code>d:\java</code> in my <code>.bashrc</code> if it was not set (i.e. I forgot to):
-
-<pre>if [ x"$JAVA_BASE" = x ]; then
-     JAVA_BASE=d:\\java    # default if not set in Windows
-fi</pre>
-
-I'm sticking to DOS pathnames for this variable, as I intend to replicate this functionality with batch files one day, in case I'm mad enough to run Java from a Windows command shell.  Anyway, I then convert this to a Cygwin path with the following <a title="$man 1 sed" href="http://linux.ctyme.com/man/man2933.htm"><code>sed</code><sub>(1)</sub></a> and <a title="$man 1 gawk" href="http://linux.ctyme.com/man/man0898.htm"><code>awk</code><sub>(1)</sub></a> hack:
-
-<pre>JAVA_BASE=`echo $JAVA_BASE | sed 's////g'`   # fix DOS sloshes
-
-export JAVA_BASE=`echo $JAVA_BASE | awk '{print(tolower($1))}' \\
-                                  | sed 's/d://cygdrive/d/g'` # fix drive</pre>
-</li>
-	<li>
-<code>JAVA_MANTIS</code> = the version (without the release part) corresponding to “<em>Mantis</em>”</li>
-	<li>
-<code>JAVA_TIGER</code> = the version (without release) corresponding to “<em>Tiger</em>”</li>
-	<li>
-<code>JAVA_VER</code> = the specific version and release of the currently selected JVM (e.g. 1.5.0_04)
-<pre>if [ x"$JAVA_MANTIS" = x ]; then
-  export JAVA_MANTIS=`ls $JAVA_BASE | grep 1.4.2 \\
-                                    | sed s/^j2sdk//g`
-fi
-
-if [ x"$JAVA_TIGER" = x ]; then
-  export JAVA_TIGER=`ls $JAVA_BASE | grep 1.5.0 \\
-                                   | sed s/^j2sdk//g`
-fi
-
-if [ x"$JAVA_VER" = x ]; then
-  export JAVA_VER=$JAVA_MANTIS     # default if not set
-fi</pre>
-
-</li>
-	<li>
-<code>JAVA_HOME</code> = the install directory of the currently selected JVM (e.g. <code>d:\java\j2sdk1.4.2_05</code>)</li>
-	<li><code>X_PATH_NO_JAVA<code> = the system search path, without a JVM</code></code></li>
-	<li><code><code>PATH = the system search path</code></code></li>
-</ul>
-
-The aim is to set JAVA_HOME and PATH so that the Java tools can be found. They are set using the previous variables:
-
-<pre>export JAVA_HOME=$JAVA_BASE/j2sdk$JAVA_VER
-
-if [ x"$X_PATH_NO_JAVA" = x ]; then
-  export X_PATH_NO_JAVA=~/bin:$PATH  # save path without JAVA
-fi
-
-export PATH=$JAVA_HOME/bin:$X_PATH_NO_JAVA</pre>
-
-So, the above code is run inside my <code>.bashrc</code>, which takes care of finding the installed JVMs and setting Mantis as the default to use. But what about switching? Well, here's the shell function:
-
-<blockquote>
-
-<pre>function JVersion() {
-    case $1 in
-        1.5 | 1.5.0 | 5.0 | 5 | tiger | Tiger | TIGER)
-            export JAVA_VER=$JAVA_TIGER
-        ;;
-        *)
-        export JAVA_VER=$JAVA_MANTIS
-        ;;
-    esac
-
-    JAVA_BASE=`echo $JAVA_BASE | sed 's////g'`   # fix DOS sloshes
-    export JAVA_BASE=`echo $JAVA_BASE | awk '{print(tolower($1))}' \
-                                      | sed 's/d://cygdrive/d/g'` # fix drive
-    export JAVA_HOME=$JAVA_BASE/j2sdk$JAVA_VER
-    export PATH=$JAVA_HOME/bin:$X_PATH_NO_JAVA
-
-    echo Java Version: $JAVA_VER
-    echo Java Base: $JAVA_BASE
-    echo Java Home: $JAVA_HOME
-}</pre>
-
-</blockquote>
-
-You may have noticed that this hack is rather brittle. It works well, but only so long as you follow these steps:
-
-<ol>
-	<li>Install your Javas on your <code>D:</code> drive (or you have to fix all of the <code>sed</code> scripts!)</li>
-	<li>Have a “base” directory, such as <code>D:\java</code>
-</li>
-	<li>Have a Windows environment variable called <code>JAVA_BASE</code> equal to the “base” directory</li>
-	<li>Install your Javas each in a sub-directory of your “base”, called <code>j2sdk<em>w</em>.<em>x</em>.<em>y</em>_<em>z</em></code>
-</li>
-</ol>
-
-Additionally it only caters for a <em>single</em> release of each Java version, <em>and</em> only for <a title="Sun's internal J2SE release code names" href="http://java.sun.com/j2se/codenames.html">Java versions</a> “<em>Mantis</em>” (1.4.2) and “<em>Tiger</em>” (1.5.0). If you want to install “<em>Mustang</em>” and switch to it, you'll need to add a <code>JAVA_MUSTANG</code> variable, equal to 1.6.0 and also add a case for 1.6.0 to both the <code>JAVA_VER</code> setup code and the <code>JVersion</code> <code>case</code> statement… ugly, but I haven't come up with a more elegant solution yet.  Ultimately I'd like to make a proper replacement for <code>update-alternatives</code>, but since symlinks will only work for the Cygwin tools, and not the Java tools themselves, it seems unlikely I'll come up with a nicer solution.
-
-<h3>A note about paths in Java on Cygwin:</h3>
-
-This is noted in the Cygwin docs somewhere I think, but just a reminder: <code>java.exe</code>, <code>javac.exe</code>, etc. are Win32 programs, and are not linked to the Cygwin DLLs in any way. So <em>always</em> they will need DOS style paths (<code>D:\<em>somedir</em>\<em>etc</em></code>). They won't understand Cygwin's <code>/cygdrive/d/<em>whatever</em></code>. Also as I just alluded to, any Cygwin links will not be followed by the Java tools, for the same reason.  In <a title="$man 1 bash" href="http://linux.ctyme.com/man/man0210.htm"><code>bash</code><sub>(1)</sub></a>, you'll need to escape the sloshes if you're setting the classpath on the command line:
-
-<pre>java -classpath D:\\\\java\\\\special-classes\\\\somefile.jar MyClass</pre>
-
-Since java transposes the <code>/</code> and <code>\</code> characters itself, it <em>may</em> be possible to do the following:
-
-<pre>java -classpath D:/java/special-classes/somefile.jar MyClass</pre>
-
-But I haven't tested it…
-
-
-
-<hr>
-<strong>2006-06-17T16:39+1000 - Update: Cygwin's <code>cygpath</code><sub>(1)</sub> command</strong> I should have seen this before spending so long playing with sed and sloshes…Cygwin's <code>cygpath</code><sub>(1)</sub> command can be used to fix the Unix/DOS path stuff, much simpler than mucking about with <code>sed</code> and <code>awk</code>.  So in the above, instead of code like this:
-
-<pre>JAVA_BASE=`echo $JAVA_BASE | sed 's////g'`   # fix DOS sloshes
-
-export JAVA_BASE=`echo $JAVA_BASE | awk '{print(tolower($1))}' \\
-                                  | sed 's/d://cygdrive/d/g'` # fix drive</pre>
-… that mess can be replaced replaced with this:
-
-<pre><code>export JAVA_BASE=`cygpath -up $JAVA_BASE`</code></pre>
-
-… (using back-quotes, or the <code>$()</code> notation if you prefer).  Similarly, to run Java with a classpath specified in a Cygwin format (i.e. from a Cygwin script or prompt):
-
-<pre><code>java -classpath `cygpath -wp /cygdrive/d/java/special-classes/somefile.jar` MyClass</code></pre>
+<p class="more"><a href="2007/03/09/setting-up-multiple-java-vms-under-cygwin.html">Read more…</a></p>
+</div>
             </div>
         </div>
         <div class="post">
@@ -690,110 +226,13 @@ export JAVA_BASE=`echo $JAVA_BASE | awk '{print(tolower($1))}' \\
 
             </div>
             <div class="body">
-                <p>On the 32-bit Windows platform, JVM programs can only ever use up to about 1.5–1.6 GiB of memory in RAM per Java VM process. Allocating a heap size greater than this amount does not work. What's going on?
+                <div>
+<p>On the 32-bit Windows platform, JVM programs can only ever use up to about 1.5–1.6 GiB of memory in RAM per Java VM process. Allocating a heap size greater than this amount does not work. What's going on?
 
-
-<!--more-->
-
-
-
-<strong>UPDATE: 20110731 -- Some more answers and links at Stack Overflow</strong>
 
 </p>
-<ul>
-	<li>
-<a href="http://stackoverflow.com/questions/171205/java-maximum-memory-on-windows-xp">Java maximum memory on Windows XP </a> - see in particular the answers with links to IBM and Oracle JRockit, and especially an explanition about contiguous heap</li>
-	<li>
-<a href="http://stackoverflow.com/questions/1434779/maximum-java-heap-size-of-a-32-bit-jvm-on-a-64-bit-os">Mamimum Java heap size of a 32-bit JVM on a 64-bit OS</a> - this one has an answer from me where you can measure the maximum heap allocation using Java's Runtime class.</li>
-</ul>
-
-<strong>UPDATE: 20110428 -- An explanation of my vague "overheads"
-
-</strong>
-
-
-
-See this excellent post by <a title="Blogger profile" href="http://www.blogger.com/profile/05823921645971746143">Dharmir Singh</a> that explains the <a title="Memory Structure in JVM" href="http://java-espresso.blogspot.com/2011/04/memory-structure-in-jvm.html">JVM memory structure</a> and shows where some of the missing heap could be going, which I vaguely hand-waved away as "overheads" below.
-
-
-
-<strong>UPDATE: 20110228 -- Some corrections, more observation needed
-
-</strong>
-
-
-
-<strong>First</strong>, a correction:  "real" operating systems let processes use &lt;=4GiB on a 32bit system.  *BSD lets user processes access 3GiB (read <a href="http://www.freebsd.org/doc/en_US.ISO8859-1/books/design-44bsd/index.html">the Devil Book</a>) and Linux lets user processes <code>malloc</code> up to <code>TASK_SIZE</code> -- usually 3GiB on a 32-bit system (see "Professional Linux Kernel Architecture"). This is because in each of these operating systems, 1GiB of user space is reserved to map in system libraries (as opposed <a href="http://en.wikipedia.org/wiki/Hybrid_kernel">2GiB on Win32</a> with it's multiple personality disorder). Mapping parts of the kernel makes calling kernel services quicker. An alternative is Mac OS X (XNU): it's processes actually only map a <em>tiny</em> part of the kernel into user space, so they may <code>malloc</code> pretty much all of the 4GiB address space (see <a href="http://osxbook.com/book/bonus/misc/osxkernel/index.html">the OS X book</a>). This is at the cost of a slower context switch whenever a system call is made.
-
-
-
-<strong>Second</strong> is the observation Saar makes in the comments below. I <em>guess</em> that the overheads incurred by the JVM must increase in proportion to the heap size (perhaps some tables to manage references???), but to answer that for certain, I'd need to put the JVM in some sort of debugger and measure the actual overheads incurred (and to do that, I'd need to know what they are, instead of just my vague "overheads").
-
-
-
-Also, switching to 64-bit JVM isn't necessarily the answer: References are twice as long, usually, which means increased overhead.
-
-
-
-Clearly some more research is needed here.
-
-
-
-<strong>UPDATE: 20100819 -- Some interesting related posts</strong>
-
-
-
-Thanks to the people who took the time to check limits in their own systems and comment on this blog, it makes me seem more credible.
-
-
-
-I noticed Wordpress is generating some related pages links for this, and one of them is a very interesting and informative read. I recommend you take a look at <a title="Windows Server Tech Arena" href="http://windowsservertecharena.wordpress.com/">Esken AKSOY</a>'s <a title="Pishing the limits of Windows' Physical Memory" href="http://windowsservertecharena.wordpress.com/2010/08/03/pushing-the-limits-of-windows-physical-memory/">post</a> as a general background on how Windows maps memory for client processes (much more accessible than Microsoft's Knowledgebase article linked below).  It explains the 2GB per-process limit very well. There are also <a title="Phisycal Memory limits for Windows 7" href="http://obieosobalu.wordpress.com/2010/07/30/physical-memory-limits-for-windows-7/">two</a> <a title="Licensed Memory in 32-bit Windows Vista" href="http://www.geoffchappell.com/viewer.htm?doc=notes/windows/license/memory.htm">posts</a> for the cynics / conspiracy theorists among us :)
-
-
-
-<strong>UPDATE: 20081104 -- More recent info?</strong>
-
-
-
-I notice this page gets a lot of hits still. It's quite old and I haven't researched to see what is happening in OpenJDK or to see if 6u10 addresses any of this for Windows. If anyone has more info please comment or write to me, I'd like to update what I have.
-
-
-
---- Original post follows (2007) ---
-
-
-
-From my own research on this issue (and taking into account Microsoft's advice on <a href="http://support.microsoft.com/kb/283037/en-us">KnowledgeBase</a> about Win32 virtual memory allocation), this is what I understand about the limits of RAM usability, both for Win32 itself, and for 32-bit JVMs running on Windows. I haven't researched if this limit applies for 64-bit Windows or JVMs, nor what Vista might be doing. Also, though the 4GiB limit is inherent to 32-bit machines, the 2GiB limit seems to be peculiar to Windows, and I've not seen it anywhere in Linux, Solaris or BSD: when Unix runs on a 32-bit machine, there's a 4GiB limit, but not 2GiB.
-
-
-
-<!--more-->Any 32-bit binary processor has a hard limit of 4,294,967,296 which is the largest number that can be represented in a single 32 bit machine word: 2<sup>32</sup> = 4,294,967,296. On a byte-addressed computer like Intel IA32, that equates 4294967296 bytes = 4194304 KiB = 4096 MiB = 4GiB.
-
-
-
-Normal memory access techniques used by 32-bit Windows programs use standard linear byte addressing, and so are limited to 4GiB of addressable memory, whether it is real or virtual.
-
-
-
-On Windows, the amount of this 4GiB space that can actually occupy physical RAM is halved to 2GiB per process. Windows uses the other 2GiB of virtual address space as a per-process overhead for the kernel, and to speed up paging. This is <em>really dumb</em> because it means that if your process allocates &gt; 2GiB heap memory, then Windows must page some to virtual memory, even if you have &gt; 2GiB of actual RAM! Sort of like the DOS 640KiB limit reborn!
-
-
-
-To overcome this dumb design, Windows has a memory addressing scheme called the AWE API, which allows a process to allocate up to 3GiB of memory and have that memory reside on chips. To use this, the program must be specially written to use the AWE API.
-
-There's also another virtual memory technology in Windows called PAE. This is not useful to application programs — it is how the Windows kernel can use &gt; 4GiB of real memory to allocate physical memory to all processes on the system. Each process is still limited to the 4GiB address space each, with 2GiB mapped to RAM (or 3GiB, if the program uses the AWE API) and the rest having to be virtual (paged to disc). PAE just lets Windows keep more than one of these big processes in memory at once even if their combined total heap is more than 4GiB (and assuming you have more than 4GiB of RAM of course).
-
-
-
-Both Sun and BAE have refused to use the AWE API for implementing their Java VMs. This is probably because the AWE API does not allow for a contiguous address space of 3GiB, but rather breaks it at the 2GiB mark. <a href="http://java.sun.com/docs/books/jvms/second_edition/html/VMSpecTOC.doc.html">The Java VM spec'</a> used to require a contiguous addressed heap (though this <a href="http://java.sun.com/docs/books/jvms/second_edition/html/Overview.doc.html#15730">has changed</a> for the JVMS 2<sup>nd</sup> Ed.…). So any Java VM running on Windows is still limited to at most &lt; 2GiB per running program (actually, only about 1.5GiB is usable because of further overhead for the JVM itself). At least, so long as Win32 JVMs don't use the AWE API. I'm not sure how difficult it would be for Sun or BAE to change their JVMs to make use of the AWE API in Windows, but the fact that they haven't done so seems to indicate to me that it wouldn't be easy. I have been unable to determine if IBM's JVM uses it…
-
-
-
-The only workable solution for utilizing greater than about 1.5–1.6 GiB per JVM process on a 32-bit host is to not run it in Windows (i.e. use Solaris, Linux or BSD). Real operating systems can let processes use 4GiB on 32-bit machines without special programming tricks. Or, you could switch to a 64-bit platform. Although there is a Windows for IA-64, I'm not sure about the availability of a 64-bit JVM for that platform.
-
-
-
-It would be better to have a smaller heap on Win32, and if you need more, consider re-engineering the program to use less anyway. If your program is genuinely memory bound and you can't get away from needing more than 1.5GiB heap, you could work around the Win32 memory limit by splitting your Java program into more than once process, each running on its own JVM, allocating 1.5GiB to each JVM, and then having the processes communicate with an IPC mechanism as needed, such as JMS. However there's probably a lot more re-engineering work involved in this than there is to just migrate away from Win32 …
+<p class="more"><a href="2007/03/04/32-bit-windows-and-jvm-virtual-memory-limit.html">Read more…</a></p>
+</div>
             </div>
         </div>
         <div class="post">
@@ -820,7 +259,8 @@ It would be better to have a smaller heap on Win32, and if you need more, consid
 
             </div>
             <div class="body">
-                <p>When you first install cygwin and run bash, it'll usually display this error message:
+                <div>
+<p>When you first install cygwin and run bash, it'll usually display this error message:
 </p>
 <blockquote>
 
@@ -838,15 +278,8 @@ Note that the -d switch is necessary for domain users.</pre>
 
 </blockquote>
 
-<!--more-->If you happen to be in a corporate environment with a huge active directory, then the <code>mkpasswd</code><sub>(1)</sub> command can take a very long time.  A quicker way to fix this issue (provided only the current user uses cygwin on this machine, which is most likely) is to issue this command instead:
-
-<blockquote>
-
-<pre>mkpasswd -l -c &gt; /etc/passwd; mkgroup -l -d &gt; /etc/group</pre>
-
-</blockquote>
-
-The <code>mkgroup</code><sub>(1)</sub> command will still take a few minutes to complete, but typically there are much fewer groups than users, so it's bearable.
+<p class="more"><a href="2006/10/27/cygwin-users-and-groups.html">Read more…</a></p>
+</div>
             </div>
         </div>
         <div class="post">
@@ -873,80 +306,13 @@ The <code>mkgroup</code><sub>(1)</sub> command will still take a few minutes to 
 
             </div>
             <div class="body">
-                <p>In vanila SuSE 10.0, safely removing a <a title="Universal Serial Bus" href="http://en.wikipedia.org/wiki/USB">USB</a> <a title="Hey, I like my term better than the one's other people have come up with..." href="http://en.wikipedia.org/wiki/USB_flash_drive#Etymology">frob</a> can be a trial for non-root users.  It's a shame, but I've found a fix that I'm 95% happy with.
+                <div>
+<p>In vanila SuSE 10.0, safely removing a <a title="Universal Serial Bus" href="http://en.wikipedia.org/wiki/USB">USB</a> <a title="Hey, I like my term better than the one's other people have come up with..." href="http://en.wikipedia.org/wiki/USB_flash_drive#Etymology">frob</a> can be a trial for non-root users.  It's a shame, but I've found a fix that I'm 95% happy with.
 
-
-<!--more-->Here's a screen shot showing how easy it is to remove a USB device in KDE (I wish Windows was this easy, instead of having to play "hunt for the Safely Remove icon in the Systray...")
-
-
-
-<a title="photo sharing" href="http://www.flickr.com/photos/lockhart/202572577/"><img src="http://static.flickr.com/66/202572577_feca535e56_m.jpg" alt=""></a>
-
-<a href="http://www.flickr.com/photos/lockhart/202572577/">"Safely Remove" a USB frob under SuSE/KDE</a>
-
-Unfortunately, it doesn't work.  Instead of the icon disappearing (indicating you can pull out the frob safely), you get a nasty error:
-
-
-
-<a title="photo sharing" href="http://www.flickr.com/photos/lockhart/202572575/"><img src="http://static.flickr.com/25/202572575_35fb9cda79_o.png" alt=""></a>
-
-<a href="http://www.flickr.com/photos/lockhart/202572575/">Umount - mtab entry missing error</a>
-
-After reading a few man pages and surfing for a bit, I found out that this error is generated by the <code>umount</code> command.  The man page for <code>mount</code> actually recommends replacing the <code>/etc/mtab</code> file with a symlink to <code>/proc/mounts</code> under Linux.  So I did that and tried again.  Here's what I got:
-
-
-
-<a title="photo sharing" href="http://www.flickr.com/photos/lockhart/202572576/"><img src="http://static.flickr.com/74/202572576_973f7f47d0_o.png" alt=""></a>
-
-<a href="http://www.flickr.com/photos/lockhart/202572576/">Umount - fstab entry missing error</a>
-
-So, because <code>kio_media_mounthelper</code> has helpfully mounted the frob under a mountpoint with the same name as the VFAT volume label (which is actually pretty cool!), <code>umount</code> can't find this entry in <code>/etc/fstab</code> (not so cool).
-
-
-
-<code>/etc/fstab</code> is not supposed to be updated by machines, only people, so the work-around is to manually add entries for all of my USB frobs.  I only have two, so it's fairly easy:
 
 </p>
-<blockquote>
-
-<pre><code>
-
-
-
-#MJL20060731 - the following were added to try to appease umount/kio_media_mounthelper for USB frobs:
-
-
-
-/dev/sda1            /media/D_CHIP_00    subfs      noauto,fs=usbfs,users,nosuid 0 0
-
-
-
-/dev/sda1            /media/D_CHIP_01    subfs      noauto,fs=usbfs,users,nosuid 0 0</code></pre>
-
-</blockquote>
-
-Note:— I've done two things here:  added an entry for each of the USB frobs onto the <code>/dev/sda1</code> device (which is type <code>subfs</code>, because SuSE uses <a title="submount home on SourceForge" href="http://www.google.com.au/url?sa=t&amp;ct=res&amp;cd=1&amp;url=http%3A%2F%2Fsubmount.sourceforge.net%2F&amp;ei=Zp3ORJn1MIeKsAKp8rWtBA&amp;sig2=m6wLzB71BjAKWrwSKUU8Mg">submount</a> to mount removeable devices), and make it so that normal <code>users</code> can unmount.  It's also worth adding the <code>users</code> flag to other removeable devices too, such as CD-ROMs, since <code>umount</code> will complain about your not being root without it…
-
-
-
-I see three problems with this:
-
-<ol>
-	<li>Any new frob I buy (or if I rename a frob volume) will need an entry in <code>/etc/fstab</code> before normal users an safely unmount it. Ugly.</li>
-	<li>You have to be root to edit <code>/etc/fstab</code>, so only <em>I </em>can add new frobs to the list. Inconvinient.</li>
-	<li>The way I've edited <code>/etc/fstab</code> to have both frobs on the one device, means I can only use one at a time.</li>
-</ol>
-
-A work-around for the 1st and 2nd gripes is to add a third entry to <code>/etc/fstab</code> with a generic label, and always label my USB frobs that way.  Not sure if that is better or not.
-
-
-
-So, I've found my first SuSE gripe.  It's nothing major, and it was not a big problem to find a solution or work-around that is actually liveable for day-to-day tasks and only becomes an issue occasionally.
-
-
-
-<hr>
-<strong> 2007-03-09T10:42+1100 Update:</strong> Works okay in openSUSE 10.2, don't have to do anything with <code>/etc/fstab</code>
+<p class="more"><a href="2006/07/31/safely-remove-a-usb-fob-under-susekde.html">Read more…</a></p>
+</div>
             </div>
         </div>
         <div class="post">
@@ -971,29 +337,13 @@ So, I've found my first SuSE gripe.  It's nothing major, and it was not a big pr
 
             </div>
             <div class="body">
-                <p>Further to <a title="Are blogstats valid?" href="http://sinewalker.wordpress.com/2006/06/01/are-blog-stats-valid/">my queries about WordPress' blog stats accuracy</a>, I went <a title="Google -- hits counter free" href="http://www.google.com.au/search?q=web+hits+counter+free&amp;start=0&amp;ie=utf-8&amp;oe=utf-8&amp;client=firefox-a&amp;rls=org.mozilla:en-US:official">googling </a>for a free stats counter. <a title="Stat Counter -- free web stats." href="http://www.statcounter.com/">This one</a>'s pretty good.
-
-
-<!--more-->So, now I'll run both counters for a little while to see how they compare.  There's fuller stats on the new one.  I set it to start at 1415 (the value of the old counter when I looked just now).
-
-
-
-The new counter distinguishes between page loads and visits by using a cookie in your browser.  The cookie resets after 6 hours.  So if you visit the site twice or more within 6 hours, you are only counted once.
-
-
-
-Eventually I'll probably remove the WordPress counter.
-
+                <div>
+<p>Further to <a title="Are blogstats valid?" href="http://sinewalker.wordpress.com/2006/06/01/are-blog-stats-valid/">my queries about WordPress' blog stats accuracy</a>, I went <a title="Google -- hits counter free" href="http://www.google.com.au/search?q=web+hits+counter+free&amp;start=0&amp;ie=utf-8&amp;oe=utf-8&amp;client=firefox-a&amp;rls=org.mozilla:en-US:official">googling </a>for a free stats counter. <a title="Stat Counter -- free web stats." href="http://www.statcounter.com/">This one</a>'s pretty good.
 
 
 </p>
-<hr>
-<strong>MJL2006-07-19T12:20+1000 — Update:</strong> I just found where to set a cookie to stop StatCounter counting my own visits — statistics are currently heavily skewed to a certain visitor from Michigan with a dynamic IP address. Michigan is where my work's Internet access eventually pops out, so it's probably just me…  With the cookie set in my browser, hopefully this will stop it recording my own visits and then the stats will get more interesting.Apart from this, the stats already show that I have about 20 unique visitors.  Hi guys!  Now I know people actually read this stuff, I might have to think about putting <em>interesting</em> notes up here, rather than just the notes I keep for my own reference.
-
-
-
-<hr>
-<strong>MJL2006-08-01T16:00+1000 — Update:</strong> Well, it seems the new counter's stats are much more conservative, so I trust them more than the stock WordPress counter.  I've removed the WordPress counter.
+<p class="more"><a href="2006/07/14/stat-counter.html">Read more…</a></p>
+</div>
             </div>
         </div>
         <div class="post">
@@ -1021,52 +371,13 @@ Eventually I'll probably remove the WordPress counter.
 
             </div>
             <div class="body">
-                <p>I finally got fed up enough with Courier New to start searching for a legible, monospace font to use in jEdit. In Emacs, I'm particularly fond of the standard X font "misc-fixed" (though it's a little tough to tell appart O and 0 still). But for jEdit, the Java monospace font seems to map to Courier New in Windows, and to some God-awful font on Linux.
+                <div>
+<p>I finally got fed up enough with Courier New to start searching for a legible, monospace font to use in jEdit. In Emacs, I'm particularly fond of the standard X font "misc-fixed" (though it's a little tough to tell appart O and 0 still). But for jEdit, the Java monospace font seems to map to Courier New in Windows, and to some God-awful font on Linux.
 
-
-<!--more-->Playing with my neighbours Macintosh, I quite like the fonts you can see in the Terminal program and in Xcode:
 
 </p>
-<p align="center"><a title="photo sharing" href="http://www.flickr.com/photos/lockhart/172996926/"><img src="http://static.flickr.com/47/172996926_63583fe908_m.jpg" alt="Mac hacking screenshot (not mine)"></a>
-
-<a href="http://www.flickr.com/photos/lockhart/172996926/">Mac hacking screenshot (not mine)</a>
-
-
-
-I wish Windows and Linux had nice fonts too. Well, my wish is granted.  Thanks to <a title="Monospace font review" href="http://www.lowing.org/fonts/">this great site</a>, which reviews monospace fonts from a programmer's point of view, I've found three fonts I just love, and (no surprise), two of them come from Apple and are freely available.
-
-
-
-I agree with the review.  The best all-round monospace font is definitely <a title="Bitstream Inc. is a software development company that enables customers ... to render high-quality text, ... select from the largest collection of fonts online... Its core competencies include browsing, font, and publishing technologies." href="http://www.bitstream.com/">Bitstream</a>'s <a title="Download Vera Sans Mono from the GNOME project" href="http://www.gnome.org/fonts/">Vera Sans Mono</a>.  It's clear, and uncluttered with good distinction between the similar characters 1 i l | and o O 0.  Importantly, the font width doesn't change with different weights, so if your syntax highlighter makes some keywords <strong>bold</strong> or <em>slanted</em>,  they are still the same width as the normal words, meaning that the alignment doesn't break in jEdit.
-
-
-
-I really love <a title="Anonymous font's web page" href="http://www.ms-studio.com/FontSales/anonymous.html#">Anonymous</a> though. As it's home page describes it, this is based on Apple's Anonymous 9 font, which itself was a re-working of Monaco, the system font for the Macintosh.  Anonymous is highly legible, even more than Vera Sans.  I really love the zeros, they look like a backwards Ø character.  Also though it's a san-serif font, the i and l characters have serifs cleverly placed to distinguish from the 1 and | characters .  The only problem I've found with it, is that the bold characters are ever so slightly wider than the normal characters, so in syntax highlighting, the alignment gets slightly skewed.
-
-
-
-The <a title="Monaco.TTF" href="http://www.gringod.com/wp-upload/MONACO.TTF">Monaco</a> font, which is the basis for Anonymous, is also pretty nice but has the same issue with the font weights. It's interesting to compare the two and see what was changed.  The zero is a more traditional slashed 0 (sort of like Ø) and some of the round shapes are different.
-
-
-
-Here's a shot of my jEdit using Vera Sans Mono:
-
-</p>
-<p align="center"><a title="photo sharing" href="http://www.flickr.com/photos/lockhart/173061294/"><img src="http://static.flickr.com/65/173061294_8ec868bbaa.jpg?v=0" alt="jEdit Vera Sans Mono"></a>
-
-<a href="http://www.flickr.com/photos/lockhart/173061294/">jEdit Vera Sans Mono</a>
-
-</p>
-<p align="left">Since that's rather small, here's a close-up:</p>
-
-
-
-<p align="center"><a title="photo sharing" href="http://www.flickr.com/photos/lockhart/173067100/"><img src="http://static.flickr.com/77/173067100_b8c0524490_m.jpg" alt="jEdit Vera Sans Mono - Detail"></a>
-
-<a href="http://www.flickr.com/photos/lockhart/173061294/">jEdit Vera Sans Mono - Detail</a>
-
-</p>
-<p align="left"></p>
+<p class="more"><a href="2006/06/23/monospace-fonts.html">Read more…</a></p>
+</div>
             </div>
         </div>
         <div class="post">
@@ -1096,357 +407,13 @@ Here's a shot of my jEdit using Vera Sans Mono:
 
             </div>
             <div class="body">
-                <p>I've been playing with customising <a title="The jEdit programmer's editor home page" href="http://www.jedit.org">jEdit</a> a little bit, and decided to have a go at writing some simple date insertion macros.  These perform the same work as some old <a title="A fairly good elisp tutorial." href="http://www.glug.org/people/ttn/software/elisp-tutorial/">elisp</a> functions I wrote years ago in <a title="GNU Emacs, the One True Way..." href="http://www.gnu.org/software/emacs/">Emacs</a>, to insert date/time stamps in various formats.  In my <code>.emacs</code> file, I bind these functions to short-cut keys, and then use them for updating Changelogs in code and in offline journal entries.
+                <div>
+<p>I've been playing with customising <a title="The jEdit programmer's editor home page" href="http://www.jedit.org">jEdit</a> a little bit, and decided to have a go at writing some simple date insertion macros.  These perform the same work as some old <a title="A fairly good elisp tutorial." href="http://www.glug.org/people/ttn/software/elisp-tutorial/">elisp</a> functions I wrote years ago in <a title="GNU Emacs, the One True Way..." href="http://www.gnu.org/software/emacs/">Emacs</a>, to insert date/time stamps in various formats.  In my <code>.emacs</code> file, I bind these functions to short-cut keys, and then use them for updating Changelogs in code and in offline journal entries.
 
-
-<!--more-->Here are my original elisp functions, which are self describing:
-
-
-
-<!-- .syntax0 { color: #ffcc99; } .syntax1 { color: #15ee15; font-style: italic; } .syntax2 { color: #0be276; } .syntax3 { color: #99f433; } .syntax4 { color: #fc5b32; } .syntax5 { color: #ff0000; } .syntax6 { color: #ff9966; font-weight: bold; } .syntax7 { background: #ffffcc; color: #ff0066; } .syntax8 { color: #6087fa; font-weight: bold; } .syntax9 { color: #0099ff; font-weight: bold; } .syntax10 { color: #6699ff; font-weight: bold; } .syntax11 { color: #9999ff; font-weight: bold; } .syntax12 { background: #003333; color: #ff6600; font-weight: bold; } .syntax13 { color: #ff6666; } .syntax14 { color: #ff3333; } .syntax15 { color: #9933ff; } .syntax16 { color: #9900ff; } .syntax17 { color: #9966ff; font-weight: bold; } .syntax18 { color: #ffffff; font-weight: bold; }  -->
 
 </p>
-<blockquote>
-
-<pre><code>(defun insert-date-iso ()
-  "Inserts the current local date and time (to the minute) into the current buffer
-before Point. The data are formatted per ISO 8601 specification. This is useful for
-
-prefixing entries in a log book."
-  (interactive)
-  (setq now (decode-time)
-        final-string (format "%04d-%02d-%02dT%02d:%02d+%d"
-                             (nth 5 now)          ; yyyy
-                             (nth 4 now)          ; mm
-                             (nth 3 now)          ; dd
-                             (nth 2 now)          ; HH
-                             (nth 1 now)          ; MM
-                             (/ (nth 8 now) 36))) ; UTCO
-  (insert final-string))
-
-
-(defun insert-date-stamp ()
-  "Inserts the current local date into the current buffer before Point. The data are
-formatted per ISO 8601 short specification and prefixed with my initials 'MJL'. This
-
-is useful for inserting mod comments into code files."
-  (interactive)
-  (setq now (decode-time)
-        final-string (format "MJL%04d%02d%02d - "
-                             (nth 5 now)          ; yyyy
-                             (nth 4 now)          ; mm
-                             (nth 3 now)))        ; dd
-  (insert final-string))
-
-
-(defun insert-date-dow ()
-  "Inserts the current local date and the day of the week into the current buffer
-before Point. The date data are formatted per ISO 8601 specification. The DOW is
-
-expanded to the full name. This is useful for prefixing day entries in a log book."
-  (interactive)
-  (setq DOWlist '(Sunday Monday Tuesday Wednesday Thursday Friday Saturday))
-  (setq now (decode-time)
-        final-string (format "%04d-%02d-%02d %s"
-                             (nth 5 now)                 ; yyyy
-                             (nth 4 now)                 ; mm
-                             (nth 3 now)                 ; dd
-                             (nth (nth 6 now) DOWlist))) ; day
-  (insert final-string))</code></pre>
-</blockquote>
-
-These are fairly simple, the only obfuscated part is the way that the output list <code>now</code> has been created from the <code>(decode-time)</code> built-in, which then has to be picked appart to get the different date elements for formatting.
-
-
-
-Compare this with the jEdit equivalents, which are written in <a title="The BeanShell java scripting language" href="http://www.beanshell.org/">BeanShell</a>. Each macro is in it's own <code>.bsh</code> file, rather than all together in a single file like the elisp functions, and the documentation is done in XML, rather than as a doc-comment in elisp:
-
-<blockquote>
-
-<pre><code>
-
-/*
- * Insert_Time_ISO.bsh - a BeanShell macro script for the
- * jEdit text editor - inserts current system date in ISO 8601 format
- * Copyright © 2006 Michael Lockhart
- *
- * MJL20060603 - Created
- * MJL20060604 - Tidy code, fix meta-comments
- * MJL20060605 - Check object creation, just in case...
- * MJL20060606 - use Macros.error(), instead of Macros.message()
- *
- */
-
-
-import java.text.SimpleDateFormat;
-
-
-
-dateFmt = new SimpleDateFormat("yyyy-MM-dd");
-
-timeFmt = new SimpleDateFormat("HH:mmZZZZ");
-
-
-
-now = new Date();
-
-
-
-if ((now != null) &amp;&amp; (dateFmt != null) &amp;&amp; (timeFmt != null))
-    textArea.setSelectedText(dateFmt.format(now) + "T" +
-                             timeFmt.format(now) + " ");
-else
-    Macros.error(view,"Could not create system Date or SimpleDateFormat "
-                       + "objects!nJVM resources might be extremely low.");
-
-
-/*
-	Macro index data (in DocBook format)
-
-
-&lt;listitem&gt;
-    &lt;para&gt;&lt;filename&gt;Insert_Time_ISO.bsh&lt;/filename&gt;&lt;/para&gt;
-    &lt;abstract&gt;&lt;para&gt;
-        Inserts the current local date and time (to the minute) into the
-        current buffer before the cursor. The data are formatted per ISO
-        8601 specification. This is useful for prefixing entries in a log
-        book.
-    &lt;/para&gt;&lt;/abstract&gt;
-&lt;/listitem&gt;
-
-
-
-*/
-
-
-
-// end Insert_Time_ISO.bsh
-
-</code></pre>
-
-</blockquote>
-
-<blockquote>
-
-<pre><code>
-
-/*
- * Insert_Date_ISO-MJL.bsh - a BeanShell macro script for the
- * jEdit text editor - inserts current system date in ISO 8601 condensed format
- * Copyright © 2006 Michael Lockhart
- *
- * MJL20060603 - Created
- * MJL20060604 - Tidy code, fix meta-comments
- * MJL20060605 - Check object creation, just in case...
- * MJL20060606 - use Macros.error(), instead of Macros.message()
- */
-
-
-import java.text.SimpleDateFormat;
-
-
-
-dateFmt = new SimpleDateFormat("yyyyMMdd");
-
-now = new Date();
-
-
-
-if ((now != null) &amp;&amp; (dateFmt != null))
-    textArea.setSelectedText("MJL" + dateFmt.format(now) + " - ");
-else
-    Macros.error(view,"Could not create system Date or SimpleDateFormat "
-                    + "objects!nJVM resources might be extremely low.");
-
-
-/*
-	Macro index data (in DocBook format)
-
-
-&lt;listitem&gt;
-    &lt;para&gt;&lt;filename&gt;Insert_Date_ISO-MJL.bsh&lt;/filename&gt;&lt;/para&gt;
-    &lt;abstract&gt;&lt;para&gt;
-        Inserts the current local date into the current buffer before the
-        cursor. The data are formatted per ISO 8601 short specification and
-        prefixed with my initials 'MJL'. This is useful for inserting mod
-        comments into code files.
-    &lt;/para&gt;&lt;/abstract&gt;
-&lt;/listitem&gt;
-
-
-
-*/
-
-
-
-// end Insert_Date_ISO-MJL.bsh
-
-</code></pre>
-
-</blockquote>
-
-<blockquote>
-
-<pre><code>
-
-/*
- * Insert_Date_DOW.bsh - a BeanShell macro script for the
- * jEdit text editor - inserts current system in ISO 8601 format, with day-of-week
- * Copyright © 2006 Michael Lockhart
- *
- * MJL20060604 - Created
- * MJL20060605 - Check object creation, just in case...
- * MJL20060606 - use Macros.error(), instead of Macros.message()
- *
- */
-
-
-import java.text.SimpleDateFormat;
-
-
-
-dateFmt = new SimpleDateFormat("yyyy-MM-dd EEEE");
-
-
-
-now = new Date();
-
-
-
-if ((now != null) &amp;&amp; (dateFmt != null))
-    textArea.setSelectedText(dateFmt.format(now) + " ");
-else
-    Macros.error(view,"Could not create system Date or SimpleDateFormat "
-                    + "objects!nJVM resources might be extremely low.");
-
-
-/*
-	Macro index data (in DocBook format)
-
-
-&lt;listitem&gt;
-    &lt;para&gt;&lt;filename&gt;Insert_Date_DOW.bsh&lt;/filename&gt;&lt;/para&gt;
-    &lt;abstract&gt;&lt;para&gt;
-        Inserts the current local date and the day of the week into the
-        current buffer before the cursor. The date data are formatted per
-        ISO 8601 specification. The DOW is expanded to the full name. This
-        is useful for prefixing day entries in a log book.
-    &lt;/para&gt;&lt;/abstract&gt;
-&lt;/listitem&gt;
-
-
-
-*/
-
-
-
-// end Insert_Date_DOW.bsh
-
-</code></pre>
-
-</blockquote>
-
-The comments are  lot more verbose, but you can see the Insert_Date_ISO-MJL macro at work in the script comments above. Also, the Java <a title="Javadoc - J2SE5 documentation" href="http://java.sun.com/j2se/1.5.0/docs/api/java/text/SimpleDateFormat.html"><code>SimpleDateFormat</code></a> class makes formatting much simpler to read, I feel, but even with BeanShell's ability to use untyped variables (for example, in BeanShell you can say “<code>dateFormatter = new SimpleDateFormat</code>…”, instead of Java's “<code>DateFormat dateFormatter=new SimpleDateFormat</code>…”), the code is still not as <a title="//Elegant" href="http://www.catb.org/~esr/jargon/html/E/elegant.html"><em>elegant</em></a> as the elisp version.
-
-
-
-However, I think I'm starting to like jEdit over Emacs (blasphemy!).  Mind you it's slow: it makes Emacs seem zippy, and traditionaly Emacs stood for “EMACS Makes A Computer Slow”!
-
-
-
-On a side-note, there is a nice <a title="jEdit plugins page" href="http://plugins.jedit.org/">plugin</a> for jEdit, called <a title="The Code2HTML page" href="http://plugins.jedit.org/plugins/?Code2HTML">Code2HTML</a>, which renders your code in HTML, with syntax highlighting to match that done by jEdit (and jEdit knows a <em>lot</em> of languages!).  Unfortunately when I pasted the generated HTML into this WordPress post and then saved it, all the highlighting got removed… I wonder if it has something to do with the plugin's use of <code>&lt;SPAN&gt;</code>s and CSS Styles? But even if I paste the <code>&lt;STYLE&gt;</code> block into this post as well, the formatting gets eaten up by WordPress :(  Something to look into.
-
-
-
-<hr>
-<strong>2006-06-07T15:36+1000 - Update: </strong>I should make a point about the copyright on these scripts:  they're copy<em>left</em>, GNU GPL2.0.  I just snipped out the boilerplate to make this post shorter.  Feel free to copy/use as you like, subject to the GPL, and you should of course cite the author (me) and include the boilerplate disclamers on any copy you distribute to others.  The missing boilerplate is below:
-
-<blockquote>
-
-<pre><code> *
- *
- * Copyright © 2006 Michael Lockhart.
- *
- * This program is free software; you can redistribute it and/or
- * modify it under the terms of the GNU General Public License
- * as published by the Free Software Foundation; either version 2
- * of the License, or any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with the jEdit application; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
- *
-</code></pre>
-
-</blockquote>
-
-<hr>
-<strong>2008-07-15T10:45+1000 - Update: </strong> I've finally re-written these functions using <a title="format-time-string (Emacs manual)" href="http://www.gnu.org/software/emacs/elisp/html_node/Time-Parsing.html#Time-Parsing">format-time-string</a> as advised twice in the comments (!). Duh!
-
-<blockquote>
-
-<pre><code>
-
-(defun mjl-insert-date-iso ()
-  "Inserts the current local date and time (to the minute) into
-the current buffer before Point. The date is formatted per ISO
-
-8601 specification. This is useful for prefixing entries in a log
-
-book."
-  (interactive)
-  (insert (format-time-string "%Y-%m-%dT%R%z")))
-
-
-(defun mjl-insert-date-stamp ()
-  "Inserts the current local date into the current buffer before
-Point. The date is formatted per ISO 8601 short specification and
-
-prefixed with my initials 'MJL'. This is useful for inserting mod
-
-comments into code files."
-  (interactive)
-  (setq now (decode-time))
-  (insert (format-time-string "MJL%Y%m%d")))
-
-
-(defun mjl-insert-date-dow ()
-  "Inserts the current local date and the day of the week into
-the current buffer before Point. The date is formatted per ISO
-
-8601 specification. The DOW is expanded to the full name. This is
-
-useful for prefixing day entries in a log book."
-  (interactive)
-  (insert (format-time-string "%Y-%m-%d %A")))
-</code></pre>
-
-</blockquote>
-
-… and a new one, since I've become an <a title="Emacs Org mode (standard in Emacs 22)" href="http://orgmode.org/">Org</a> (and <a title="Emacs Remember mode (from Emacs Wiki)" href="http://www.emacswiki.org/cgi-bin/wiki/RememberMode">Remember</a>) fan:
-
-<blockquote>
-<code> </code>
-
-<pre>(defun mjl-insert-log-entry-org ()
-  "Inserts the current local date and time into
-the current buffer before Point. The date is formatted to suit
-
-Org mode's agenda and highlighting functions. The date is also
-
-formatted as a level 3 headline for inclusion in an org
-
-file."
-  (interactive)
-  (insert (format-time-string "*** &lt;%Y-%m-%d %A %R&gt; ")))</pre>
-</blockquote>
-
-I should add that my flirtation with jEdit is over, by the way. Back to emacs for me, and I'm repenting for my blasphemous ways...
+<p class="more"><a href="2006/06/07/jedit-macros-vs-emacs-functions.html">Read more…</a></p>
+</div>
             </div>
         </div>
         <div class="post">

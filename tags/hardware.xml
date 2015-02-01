@@ -1,95 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (hardware)</title><link>http://milosophical.me/</link><description></description><language>en</language><lastBuildDate>Sat, 31 Jan 2015 22:30:14 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Asus kEeeboard -- way kewl</title><link>http://milosophical.me/blog/2009/01/09/asus-keeeboard-way-kewl.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;Asus &lt;a title='Asuse Eee Keyboard, return to "home computers"?' href="http://stuff.tv/blogs/ces/archive/2009/01/07/ces-2009-the-asus-eee-keyboard-a-wafer-thin-media-centre.aspx"&gt;just unveiled their prototype Eee keyboard&lt;/a&gt; at the Consumer Electronics Show in Las Vegas.
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (hardware)</title><link>http://milosophical.me/</link><description></description><language>en</language><lastBuildDate>Sun, 01 Feb 2015 11:29:33 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Asus kEeeboard -- way kewl</title><link>http://milosophical.me/blog/2009/01/09/asus-keeeboard-way-kewl.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;Asus &lt;a title='Asuse Eee Keyboard, return to "home computers"?' href="http://stuff.tv/blogs/ces/archive/2009/01/07/ces-2009-the-asus-eee-keyboard-a-wafer-thin-media-centre.aspx"&gt;just unveiled their prototype Eee keyboard&lt;/a&gt; at the Consumer Electronics Show in Las Vegas.
 
 
 It looks so much like my first ever computer (an &lt;a title="Amstrad CPC" href="http://en.wikipedia.org/wiki/Amstrad_cpc"&gt;Amstrad CPC 6128&lt;/a&gt;). Check it out:
 
 
 
-&lt;a href="http://stuff.tv/blogs/ces/archive/2009/01/07/ces-2009-the-asus-eee-keyboard-a-wafer-thin-media-centre.aspx"&gt;&lt;img class="size-full wp-image-445" title="eeekeyboard" src="http://sinewalker.files.wordpress.com/2009/01/eeekeyboard.jpg" alt="Asus Eee keyboard" width="410" height="250"&gt;&lt;/a&gt;
+&lt;a href="http://stuff.tv/blogs/ces/archive/2009/01/07/ces-2009-the-asus-eee-keyboard-a-wafer-thin-media-centre.aspx"&gt;&lt;img class="size-full wp-image-445" title="eeekeyboard" src="http://milosophical.me/old/files/2009/01/eeekeyboard.jpg" alt="Asus Eee keyboard" width="410" height="250"&gt;&lt;/a&gt;
 
 
 
-&lt;img class="size-full wp-image-446" title="schneider_6128_keyboard" src="http://sinewalker.files.wordpress.com/2009/01/schneider_6128_en.jpg" alt="German Amstrad CPC6128 keyboard" width="510" height="248"&gt;
+&lt;img class="size-full wp-image-446" title="schneider_6128_keyboard" src="http://milosophical.me/old/files/2009/01/schneider_6128_en.jpg" alt="German Amstrad CPC6128 keyboard" width="510" height="248"&gt;
 
 
 
-&lt;!--more--&gt;It also has some really neat features. I hope it gets marketed, I want one! Especially if it boots in under a second like the old 8-bit machines. I remember when the computer was ready before the CRT had even finished warming up... those were the days.
+&lt;/p&gt;&lt;p&gt;&lt;a href="http://milosophical.me/blog/2009/01/09/asus-keeeboard-way-kewl.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>gadget</category><category>geek</category><category>hardware</category><category>microcomputers</category><category>nostalga</category><category>retro</category><guid>http://milosophical.me/blog/2009/01/09/asus-keeeboard-way-kewl.html</guid><pubDate>Thu, 08 Jan 2009 21:09:09 GMT</pubDate></item><item><title>"Safely Remove" a USB frob under SuSE/KDE</title><link>http://milosophical.me/blog/2006/07/31/safely-remove-a-usb-fob-under-susekde.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;In vanila SuSE 10.0, safely removing a &lt;a title="Universal Serial Bus" href="http://en.wikipedia.org/wiki/USB"&gt;USB&lt;/a&gt; &lt;a title="Hey, I like my term better than the one's other people have come up with..." href="http://en.wikipedia.org/wiki/USB_flash_drive#Etymology"&gt;frob&lt;/a&gt; can be a trial for non-root users.  It's a shame, but I've found a fix that I'm 95% happy with.
 
 
-
-&lt;img class="size-full wp-image-447" title="amstrad_cpc_6128" src="http://sinewalker.files.wordpress.com/2009/01/amstrad_cpc_6128.png" alt="Amstrad CPC 6128 and CRT" width="510" height="385"&gt;&lt;/p&gt;</description><category>gadget</category><category>geek</category><category>hardware</category><category>microcomputers</category><category>nostalga</category><category>retro</category><guid>http://milosophical.me/blog/2009/01/09/asus-keeeboard-way-kewl.html</guid><pubDate>Thu, 08 Jan 2009 21:09:09 GMT</pubDate></item><item><title>"Safely Remove" a USB frob under SuSE/KDE</title><link>http://milosophical.me/blog/2006/07/31/safely-remove-a-usb-fob-under-susekde.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;In vanila SuSE 10.0, safely removing a &lt;a title="Universal Serial Bus" href="http://en.wikipedia.org/wiki/USB"&gt;USB&lt;/a&gt; &lt;a title="Hey, I like my term better than the one's other people have come up with..." href="http://en.wikipedia.org/wiki/USB_flash_drive#Etymology"&gt;frob&lt;/a&gt; can be a trial for non-root users.  It's a shame, but I've found a fix that I'm 95% happy with.
-
-
-&lt;!--more--&gt;Here's a screen shot showing how easy it is to remove a USB device in KDE (I wish Windows was this easy, instead of having to play "hunt for the Safely Remove icon in the Systray...")
-
-
-
-&lt;a title="photo sharing" href="http://www.flickr.com/photos/lockhart/202572577/"&gt;&lt;img src="http://static.flickr.com/66/202572577_feca535e56_m.jpg" alt=""&gt;&lt;/a&gt;
-
-&lt;a href="http://www.flickr.com/photos/lockhart/202572577/"&gt;"Safely Remove" a USB frob under SuSE/KDE&lt;/a&gt;
-
-Unfortunately, it doesn't work.  Instead of the icon disappearing (indicating you can pull out the frob safely), you get a nasty error:
-
-
-
-&lt;a title="photo sharing" href="http://www.flickr.com/photos/lockhart/202572575/"&gt;&lt;img src="http://static.flickr.com/25/202572575_35fb9cda79_o.png" alt=""&gt;&lt;/a&gt;
-
-&lt;a href="http://www.flickr.com/photos/lockhart/202572575/"&gt;Umount - mtab entry missing error&lt;/a&gt;
-
-After reading a few man pages and surfing for a bit, I found out that this error is generated by the &lt;code&gt;umount&lt;/code&gt; command.  The man page for &lt;code&gt;mount&lt;/code&gt; actually recommends replacing the &lt;code&gt;/etc/mtab&lt;/code&gt; file with a symlink to &lt;code&gt;/proc/mounts&lt;/code&gt; under Linux.  So I did that and tried again.  Here's what I got:
-
-
-
-&lt;a title="photo sharing" href="http://www.flickr.com/photos/lockhart/202572576/"&gt;&lt;img src="http://static.flickr.com/74/202572576_973f7f47d0_o.png" alt=""&gt;&lt;/a&gt;
-
-&lt;a href="http://www.flickr.com/photos/lockhart/202572576/"&gt;Umount - fstab entry missing error&lt;/a&gt;
-
-So, because &lt;code&gt;kio_media_mounthelper&lt;/code&gt; has helpfully mounted the frob under a mountpoint with the same name as the VFAT volume label (which is actually pretty cool!), &lt;code&gt;umount&lt;/code&gt; can't find this entry in &lt;code&gt;/etc/fstab&lt;/code&gt; (not so cool).
-
-
-
-&lt;code&gt;/etc/fstab&lt;/code&gt; is not supposed to be updated by machines, only people, so the work-around is to manually add entries for all of my USB frobs.  I only have two, so it's fairly easy:
-
-&lt;/p&gt;&lt;blockquote&gt;
-
-&lt;pre&gt;&lt;code&gt;
-
-
-
-#MJL20060731 - the following were added to try to appease umount/kio_media_mounthelper for USB frobs:
-
-
-
-/dev/sda1            /media/D_CHIP_00    subfs      noauto,fs=usbfs,users,nosuid 0 0
-
-
-
-/dev/sda1            /media/D_CHIP_01    subfs      noauto,fs=usbfs,users,nosuid 0 0&lt;/code&gt;&lt;/pre&gt;
-
-&lt;/blockquote&gt;
-
-Note:— I've done two things here:  added an entry for each of the USB frobs onto the &lt;code&gt;/dev/sda1&lt;/code&gt; device (which is type &lt;code&gt;subfs&lt;/code&gt;, because SuSE uses &lt;a title="submount home on SourceForge" href="http://www.google.com.au/url?sa=t&amp;amp;ct=res&amp;amp;cd=1&amp;amp;url=http%3A%2F%2Fsubmount.sourceforge.net%2F&amp;amp;ei=Zp3ORJn1MIeKsAKp8rWtBA&amp;amp;sig2=m6wLzB71BjAKWrwSKUU8Mg"&gt;submount&lt;/a&gt; to mount removeable devices), and make it so that normal &lt;code&gt;users&lt;/code&gt; can unmount.  It's also worth adding the &lt;code&gt;users&lt;/code&gt; flag to other removeable devices too, such as CD-ROMs, since &lt;code&gt;umount&lt;/code&gt; will complain about your not being root without it…
-
-
-
-I see three problems with this:
-
-&lt;ol&gt;
-	&lt;li&gt;Any new frob I buy (or if I rename a frob volume) will need an entry in &lt;code&gt;/etc/fstab&lt;/code&gt; before normal users an safely unmount it. Ugly.&lt;/li&gt;
-	&lt;li&gt;You have to be root to edit &lt;code&gt;/etc/fstab&lt;/code&gt;, so only &lt;em&gt;I &lt;/em&gt;can add new frobs to the list. Inconvinient.&lt;/li&gt;
-	&lt;li&gt;The way I've edited &lt;code&gt;/etc/fstab&lt;/code&gt; to have both frobs on the one device, means I can only use one at a time.&lt;/li&gt;
-&lt;/ol&gt;
-
-A work-around for the 1st and 2nd gripes is to add a third entry to &lt;code&gt;/etc/fstab&lt;/code&gt; with a generic label, and always label my USB frobs that way.  Not sure if that is better or not.
-
-
-
-So, I've found my first SuSE gripe.  It's nothing major, and it was not a big problem to find a solution or work-around that is actually liveable for day-to-day tasks and only becomes an issue occasionally.
-
-
-
-&lt;hr&gt;&lt;strong&gt; 2007-03-09T10:42+1100 Update:&lt;/strong&gt; Works okay in openSUSE 10.2, don't have to do anything with &lt;code&gt;/etc/fstab&lt;/code&gt;</description><category>KDE</category><category>hacking</category><category>hardware</category><category>obsolete</category><guid>http://milosophical.me/blog/2006/07/31/safely-remove-a-usb-fob-under-susekde.html</guid><pubDate>Mon, 31 Jul 2006 06:03:19 GMT</pubDate></item><item><title>New Printer “Just Works” in SUSE 10</title><link>http://milosophical.me/blog/2006/03/22/new-printer-just-works-in-suse-10.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;
+&lt;/p&gt;&lt;p&gt;&lt;a href="http://milosophical.me/blog/2006/07/31/safely-remove-a-usb-fob-under-susekde.html"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>KDE</category><category>hacking</category><category>hardware</category><category>obsolete</category><guid>http://milosophical.me/blog/2006/07/31/safely-remove-a-usb-fob-under-susekde.html</guid><pubDate>Mon, 31 Jul 2006 06:03:19 GMT</pubDate></item><item><title>New Printer “Just Works” in SUSE 10</title><link>http://milosophical.me/blog/2006/03/22/new-printer-just-works-in-suse-10.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;
 &lt;em&gt;This post was originally published
   at &lt;a href="http://sinewalker.blogspot.com.au/2006_03_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
   on 22 March 2006.&lt;/em&gt;

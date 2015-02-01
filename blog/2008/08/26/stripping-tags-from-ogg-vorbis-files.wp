@@ -9,7 +9,7 @@ Here's a quick-and-dirty shell hack to remove the tags from the files and get th
 
 
 
-<!--more-->
+<!-- TEASER_END -->
 
 </p><pre>#!/bin/bash
 

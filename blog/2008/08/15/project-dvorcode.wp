@@ -1,7 +1,7 @@
 <html><body><p>I've just finished hacking together a simple little program to transcode my "dvorcodes" for when entering on a QWERTY keyboard. I've created a new <a title="Dvorcode project summary page on SourceForge" href="http://sourceforge.net/projects/dvorcode/">project on SourceForge</a> and I've uploaded the code and a pair of pre-compiled executable JARs (one for Java 5 and also a re-worked version that's been tested on Java 1.4.2).
 
 
-<!--more-->
+<!-- TEASER_END -->
 
 </p><h3>What!?</h3>
 

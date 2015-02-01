@@ -1,7 +1,7 @@
 <html><body><a title="GNU Emacs home page" href="http://www.gnu.org/software/emacs/">Emacs</a> long-awaited version 22.1 was released on 2007-07-02, and a package for Cygwin was available a few months later. The Cygwin package is still experimental, so Cygwin's setup program will select 21 by default.
 
 
-<!--more-->I've been hanging out for the new features of 22, happily use it in Linux daily and want to also use it in my Cygwin. It's pretty simple to get it working in Cygwin (it's installable from setup.exe), but since it's an experimental package, you need to take notice of the version of emacs you're installing and make sure you cycle through the install versions and pick 22.1-<em>x</em> for these packages:
+<!-- TEASER_END -->I've been hanging out for the new features of 22, happily use it in Linux daily and want to also use it in my Cygwin. It's pretty simple to get it working in Cygwin (it's installable from setup.exe), but since it's an experimental package, you need to take notice of the version of emacs you're installing and make sure you cycle through the install versions and pick 22.1-<em>x</em> for these packages:
 
 <ul>
 	<li><strong>emacs</strong></li>

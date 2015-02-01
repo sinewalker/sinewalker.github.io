@@ -77,7 +77,7 @@ article: http://ogp.me/ns/article#
             <p>One use-case we have at work for <a title="Xming sourceforge" href="http://sourceforge.net/projects/xming">Xming</a> is to be the X11 server on a Windows RDP terminal server. For security reasons (don't ask!) we can only access certain Unix hosts via an RDP session from our desktops, not directly over the campus LAN. So, we installed Xming on the TS and it works well. Except if two or more people wish to use it at once. Then it's first come, first served.
 
 
-<!--more-->I found a work-around for this that works, but is inelegant: start with a different display number argument.  For instance, the normal Xming start-up parameters are like this:
+<!-- TEASER_END -->I found a work-around for this that works, but is inelegant: start with a different display number argument.  For instance, the normal Xming start-up parameters are like this:
 
 </p>
 <p style="text-align:center;"><code>D:\Programs\Xming\Xming.exe <strong><span style="color:#7744ff;">:0</span></strong> -clipboard -multiwindow</code></p>

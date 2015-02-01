@@ -1,7 +1,7 @@
 <html><body><p>Quick note:-  I use <a title="K[ewl] Desktop Environment" href="http://www.kde.org">KDE</a> nearly all the time.  But sometimes I have occasion for a minimal desktop (e.g. when I plan to use just one, heavy program like <a title="FlightGear Flight Simulator" href="http://www.flightgear.org/">FlightGear</a> and need basically not much more than a window manager and X itself).  So an alternate "light" desktop session type is nice to have.
 
 
-<!--more--> There is the <a title="Xubuntu Linux" href="http://www.xubuntu.org/">Xubuntu</a> distribution of ubuntu, which uses <a title="Xfce home" href="http://www.xfce.org/">Xfce</a>.  But I don't need to switch my whole linux install over.  It's easy to add Xfce to an installed Kubuntu (or Ubuntu):
+<!-- TEASER_END --> There is the <a title="Xubuntu Linux" href="http://www.xubuntu.org/">Xubuntu</a> distribution of ubuntu, which uses <a title="Xfce home" href="http://www.xfce.org/">Xfce</a>.  But I don't need to switch my whole linux install over.  It's easy to add Xfce to an installed Kubuntu (or Ubuntu):
 
 <code>
 

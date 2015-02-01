@@ -71,7 +71,8 @@ article: http://ogp.me/ns/article#
 
             </div>
             <div class="body">
-                <p>This is a pretty simple issue that was easy to solve but took a bit of fumbling around...
+                <div>
+<p>This is a pretty simple issue that was easy to solve but took a bit of fumbling around...
 
 
 I recently checked out the new Java <a title="SwingSet3 demo project on dev.java.net" href="https://swingset3.dev.java.net/">SwingSet3</a> project from it's <a title="browse SwingSet3 Subversion repository" href="https://swingset3.dev.java.net/source/browse/swingset3/">SVN repo</a>, to play around with it. It's a NetBeans project so it was simple enough to fire up NetBeans 6.0 and use it's built-in <a title="NetBeans' Subversion documentation" href="http://subversion.netbeans.org/">Subversion support</a> to check the project out from the repository directly...
@@ -82,75 +83,9 @@ My plan was very simple: check out the code with NetBeans, build it, run it (usi
 
 
 
-<!--more-->Small problem: once the project is checked out and loaded, NetBeans pops up a warning dialog:
-
 </p>
-<p style="padding-left:30px;"><img src="http://farm4.static.flickr.com/3070/2472351759_d9d7ff3f6b_o_d.png" alt="Alert box" width="533" height="255"></p>
-
-
-
-Also the Projects view shows errors, and if you drill down to them, it's because NetBeans can't find the <strong><code>javax.jnlp</code></strong> package. Hmm, I thought JNLP was included with the JDK since 1.5? How odd...
-
-
-
-Well, to make a long story short, the fix is to do the following steps (an explanation comes later):
-
-<ol>
-	<li>Resolve Problems by right-clicking the SwingSet3 project in the Projects view and choosing the "<strong>Resolve Problems...</strong>" menu item:
-<a href="http://farm4.static.flickr.com/3129/2473173812_52fe68032f_o_d.png"><img src="http://farm4.static.flickr.com/3129/2473173812_91b7f88edb_d.jpg" alt="NetBeans Project menu " width="500" height="351"></a>
-</li>
-	<li>This opens a dialog listing the problem (should only have one). Press the "<strong>Resolve</strong>..." button at right
-<img src="http://farm4.static.flickr.com/3201/2473173864_2a1f5444fc_o_d.png" alt="Resolve Reference Problems dialog" width="458" height="392">
-</li>
-	<li>NetBeans presents a dialog listing libraries and JARs. Our issue is that the SwingSet3 project has defined a library called "<strong>JavaWebStart</strong>" but if you look in the tree at left, there is no such library defined in NetBeans by default. No worries, let's make one</li>
-	<li>Press the button at bottom ("<strong>New Library...</strong>")
-<a href="http://farm4.static.flickr.com/3225/2472351987_1017ef91ec_o_d.png"><img src="http://farm4.static.flickr.com/3225/2472351987_747fefca8a_d.jpg" alt="NetBeans Library Manager -- New Library button" width="500" height="358"></a>
-
-This gives you the same dialog you get via Project Properties &gt; Libraries &gt; Add Library &gt; Create (in case you want to repeat later...). Give it the name that the Project wants ("<strong>JavaWebStart</strong>" in case of SwingSet3). It'll be a Class Library</li>
-	<li>Now you need to tell NetBeans about the JARs that belong to the library:
-<img src="http://farm4.static.flickr.com/3172/2472352043_0040e20d2b_d.jpg" alt="NetBeans Library Manager -- Add JAR/Folder" width="500" height="358">
-
-We need <code><strong>jnlp.jar</strong></code>, but might as well add the other Java Web Start stuff to the library too. You can find these JARs in your JDK under <strong><code><em>&lt;JDK_HOME&gt;</em>/sample/jnlp/servlet</code></strong>. Add all the JARs form this directory (<strong><code>jnlp.jar</code></strong>,<code> <strong>jnlp-servlet.jar</strong></code>, <strong><code>jardiff.jar</code></strong>):
-
-<a href="http://farm4.static.flickr.com/3227/2472352103_1a795fd8ca_o_d.png"><img src="http://farm4.static.flickr.com/3227/2472352103_339145900f_d.jpg" alt="Library Manager, JARs added" width="500" height="358"></a>
-</li>
-	<li>Add your new library to your project's Compile Libraries and you're done:
-<img src="http://farm4.static.flickr.com/3035/2473174102_8462fafb3d_d.jpg" alt="Resolved, click Close." width="458" height="392">
-</li>
-
-</ol>
-
-Once you've done this, you can use your new "JavaWebStart" library for other projects requiring JWS/JNLP too:
-
-
-
-<a href="http://farm3.static.flickr.com/2309/2485078298_865ae8cd92_o_d.png"><img src="http://farm3.static.flickr.com/2309/2485078298_25a83e9060_m_d.jpg" alt="Right-click Libraries in Projects view to get a menu, choose Add Library" width="240" height="169"></a><a href="http://farm3.static.flickr.com/2166/2484260383_92c8339077_o_d.png"><img src="http://farm3.static.flickr.com/2166/2484260383_acd1f1a6d9_t_d.jpg" alt="Find the JavaWebStart Library and press " width="92" height="100"></a><a href="http://farm4.static.flickr.com/3133/2485077758_c417209c53_o_d.png"><img src="http://farm4.static.flickr.com/3133/2485077758_1cc77bea3d_m_d.jpg" alt="The new Library's JARs are added to the Library tree of the Project view"></a>
-
-
-
-In the SwingSet3 project, there's also a broken reference to <code>C:/java/jnlp1.2/jnlp.jar</code>, but I don't think this matters (it compiles without the reference). You can probably remove it from the project.
-
-
-
-Now, what happened? It seems to me that the project file I checked out contained a reference to a non-standard NetBeans library called "JavaWebStart". This was probably defined by the project coders to refer to the JWS class libraries. For some reason, the JWS stuff ships as part of the JDK since 1.5, but only in the Samples directory. Why Sun chose to distribute it in the samples instead and not in <code><em>&lt;JKD_HOME&gt;</em>/lib</code> is a mystery to me... it causes two problems:
-
-<ul>
-	<li>Development libraries for JNLP is not accessible by default, unlike other <code>javax.<em>*</em></code> packages... so you'll need to go through this learning curve</li>
-	<li>If you chose not to install the samples with your JDK, you won't have <code>jnlp.jar</code>, and will need to add it (using the JDK installer, if you still have it), or download the <a title="Java Web Start Developer's Kit (older)" href="http://java.sun.com/products/javawebstart/download-jnlp.html">Java Web Start Developer's Kit</a> (which also mentions it's included with the JDK since 1.5...)</li>
-</ul>
-
-Anyway, problem's solved once your IDE knows how to find the library and JAR...
-
-
-
-SwingSet3 rocks by the way, and I'm having lots of fun learning how to do Swing properly.
-
-
-
-<hr>
-<strong>2008-05-12 13:40 Update:--</strong> This post has become a community <a href="http://wiki.netbeans.org/TaT_CompileJNLPprojects">Tips and Tricks article</a> at the <a href="http://wiki.netbeans.org/">NetBeans community wiki</a>.
-
-
+<p class="more"><a href="2008/04/30/compiling-jnlp-projects-under-stock-netbeans-6x.html">Read more…</a></p>
+</div>
             </div>
         </div>
         <div class="post">
@@ -178,36 +113,12 @@ SwingSet3 rocks by the way, and I'm having lots of fun learning how to do Swing 
 
             </div>
             <div class="body">
-                <a title="GNU Emacs home page" href="http://www.gnu.org/software/emacs/">Emacs</a> long-awaited version 22.1 was released on 2007-07-02, and a package for Cygwin was available a few months later. The Cygwin package is still experimental, so Cygwin's setup program will select 21 by default.
+                <div>
+<a title="GNU Emacs home page" href="http://www.gnu.org/software/emacs/">Emacs</a> long-awaited version 22.1 was released on 2007-07-02, and a package for Cygwin was available a few months later. The Cygwin package is still experimental, so Cygwin's setup program will select 21 by default.
 
 
-<!--more-->I've been hanging out for the new features of 22, happily use it in Linux daily and want to also use it in my Cygwin. It's pretty simple to get it working in Cygwin (it's installable from setup.exe), but since it's an experimental package, you need to take notice of the version of emacs you're installing and make sure you cycle through the install versions and pick 22.1-<em>x</em> for these packages:
-
-<ul>
-	<li><strong>emacs</strong></li>
-	<li><strong>emacs-X11</strong></li>
-	<li>
-<strong>emacs-el</strong> (you will need to install this, even if you're not interested in the elisp code, because the pre-compiled lisp code for Cygwin has some errors that cause the .elc to not load properly :( )</li>
-</ul>
-
-<strong>There's also an important gotcha</strong>:  <span style="text-decoration:underline;"><strong>every</strong></span> time you run setup.exe to install/remove Cygwin packages, you need to make sure that these three emacs ones are cycled to "Keep" version 22! Otherwise you'll be unpleasantly surprised that emacs 21 is installed...
-
-
-
-Also: version 22 seems rather unstable for cygwin. It frequently crashes on my employer's WinXP SP2 platform. I'm not sure why, usually it happens in comint modes (like shell mode, for instance) but it can just crash mid-way through lisp operations also. This is annoying, but not critical (unless you're in the middle of a vi/emacs war with colleagues). My advice: make sure autosave is turned on, and make use of <code>M-x recover-session</code>.
-
-
-
-The Free Software Foundation <a title="GNU Emacs 22.2 NEWS file" href="http://www.gnu.org/software/emacs/NEWS.22.2">announced</a> on 2008-03-26 that version 22.2 of emacs has been released. Maybe when the cygwin package is built, it'll be more stable. In the mean-time, I find the new features too invaluable to move back to 21, so I'll put up with the occasional crash (and save my work often!)
-
-
-
-<hr>
-<strong>2008-05-07T1656+10 Update:</strong>
-
-
-
-I've just installed the version of emacs 22.2 compiled for Cygwin, prepared by <a title="Angelo Graziosi's emacs 22.2 compiled for Cygwin" href="http://www.webalice.it/angelo.graziosi/cygwin/emacs/Emacs.html">Angelo Graziosi</a>. It seems to be much more stable than the 22.1 version in Cygwin's repository, plus 22.2 has a few minor feature enhancements that are nice to boot!
+<p class="more"><a href="2008/04/04/cygwin-and-emacs-22.html">Read more…</a></p>
+</div>
             </div>
         </div>
         <div class="post">
@@ -238,21 +149,17 @@ I've just installed the version of emacs 22.2 compiled for Cygwin, prepared by <
 
             </div>
             <div class="body">
-                <p>Well, my stint in *buntu is over, and it ends with an award to openSUSE: this is the first Linux distro I've returned to.
+                <div>
+<p>Well, my stint in *buntu is over, and it ends with an award to openSUSE: this is the first Linux distro I've returned to.
 
 
 Kubuntu is nice, and I'm happy that I've tried it out, but it's not for me. It's nice enough if you want a simple desktop system, and APT rocks (especially with the aptitude front-end). But it's just not as good as openSUSE, sorry.
 
 
 
-<!--more-->Kubuntu's KDE version of the apt installer (Adept) crashes during installs (not exactly inspiring confidence in the system) so I used Synaptic instead, why can't they just stick to the one that works? It's not like Adept is integrated with KDE in any way: it's menus don't go on the KDE menu bar for instance. Also Kubuntu's version of the KDE help system has every heading repeated. And the constant bickering between the GTK and QT factions of *buntu, with insane NIH arguments are just anoying (it's all *buntu, for crying out loud!).  Finally, having watched <a title="Blank ttys when using vesafb (vga=xxx)" href="https://bugs.launchpad.net/bugs/129910">bug #129910</a> continue in it's ridiculous way, I've decided I don't particularly like the development community behind *buntu either. I mean, come on! Six months to fix a reversion introduced to frame buffer consoles in Gutsy?! WTF! Okay that might be a bit mean: it's probably a tricky bug. But, the continuous "not a bug" comments from developers and "please consider the code of conduct" comments from moderators (in response to comments where the "code" has <em>not</em> been broken) are just insulting. Add in that other things weren't working (FreeNX being an important one for me) and I've had enough: I've moved on, or rather, back, to openSUSE.
-
-
-
-I briefly considered Debian, but went back to something I know. Besides, openSUSE 10.3 has removed the hideous mistake that was ZMD, and so updates and installs (using zypper, at least) are actually not too slow now, and boot times are comparible with *buntu too, at about 30 secs for my five-year-old AlthonXP, which were my biggest gripes with 10.2. YaST is still rather slow, but there are promising signs that this will improve for 11. KDE 4.0 should be standard with 11 also, and 4.1 won't be too far behind. Looking forward to it. It's nice to be using a distro where innovation is happening (Compiz; Kickoff, which I didn't like initially but has grown on me with KDE 4; KDE development in general)
-
 </p>
-<p align="center">I've taken the green pill and having a lot of fun ;)</p>
+<p class="more"><a href="2008/03/31/back-to-opensuse.html">Read more…</a></p>
+</div>
             </div>
         </div>
         <div class="post">
@@ -314,34 +221,13 @@ Whatever your views on OOXML or Linux or Apple or DRM or FOSS/Proprietary softwa
 
             </div>
             <div class="body">
-                <p>Just sent the following letter to the Australian Standards rep for the proposal DIS29500 (Microsoft Office Open XML standard) which is being Fast Tracked through ISO, even with blatant interoperability, portability and cultural technical issues.  This is based on the <a title="Information for AU" href="http://www.groklaw.net/article.php?story=20070815125524759">instructions </a>posted at Groklaw. Also, instead of just cut-and-pasting the comments from the <a href="http://www.noooxml.org">No OOXML</a> web site, I've reviewed them and altered for Australian concerns, so that they really are my own comments.
+                <div>
+<p>Just sent the following letter to the Australian Standards rep for the proposal DIS29500 (Microsoft Office Open XML standard) which is being Fast Tracked through ISO, even with blatant interoperability, portability and cultural technical issues.  This is based on the <a title="Information for AU" href="http://www.groklaw.net/article.php?story=20070815125524759">instructions </a>posted at Groklaw. Also, instead of just cut-and-pasting the comments from the <a href="http://www.noooxml.org">No OOXML</a> web site, I've reviewed them and altered for Australian concerns, so that they really are my own comments.
 
-
-<!--more-->I hope that AS takes heed of my and other's submissions and votes no. Would be a shame (all senses) if this were to be supported by AS.
 
 </p>
-<blockquote>Sydney, August 17th 2007</blockquote>
-
-<blockquote>Subject: Public comments on DIS29500 (ECMA 376)</blockquote>
-
-<blockquote>Dear Michael Langdon, Member of Standards Australia,</blockquote>
-
-<blockquote>I am a professional knowledge worker and Australian citizen, with an interest in  Australian Standards' vote for the proposal of DIS29500. I have been following the debates by key players within Australia over Microsoft's proposed OOXML standard, and I have become concerned that, to date, the focus of discussion has been to avoid a dispassionate, technical discussion and instead focus on general issues around the OOXML proposal, and the benefits of having a document standard. It seems odd to me that that these meetings should proceed in this direction for consideration of a technical standard, especially when the bulk of objections to OOXML from other ISO participants (apart from there being an existing ISO standard already, with fully compliant implementations from multiple suppliers) are of a technical nature.</blockquote>
-
-<blockquote>To this regard, I would like to submit technical comments in the light of the vote on the DIS29500 specification that should happen before the end of the month.</blockquote>
-
-<blockquote>You can find here attached an 10-pages explanation on why the standard proposal does not fulfill the required criteria to be elected as an ISO international standard. I have also compiled a 20-page list of approximately 100 comments in the template requested by Standards Australia. In compiling this list, I have taken special consideration where the technical issues in OOXML would hurt it's portability and cultural adaptability for implementation by independent Australian vendors.</blockquote>
-
-<blockquote>
-<strong>By reading the JTC1 directives, my interpretation is that it is possible to vote no with comments if the specification presents serious technical problems, and that it is not possible to have a positive vote with technical comments.</strong> In the light of the numerous technical flaws of the specification, I hearty ask you to <strong>vote no with comments</strong> to the ballot that will happen before the 2nd of September.</blockquote>
-
-<blockquote>I also would be interested to participate in any meeting on the topic, in order to explain the contradictions mentioned in the documents attached.</blockquote>
-
-<blockquote>Best regards,</blockquote>
-
-<blockquote>Michael Lockhart
-
-Concerned Australian Citizen and IT professional</blockquote>
+<p class="more"><a href="2007/08/17/no-ooxml.html">Read more…</a></p>
+</div>
             </div>
         </div>
         <div class="post">
@@ -369,34 +255,13 @@ Concerned Australian Citizen and IT professional</blockquote>
 
             </div>
             <div class="body">
-                <p>Found <a title="Oxygen OpenOffice project (SourceForge)" href="http://sourceforge.net/projects/ooop/">this neat project in SourceForge</a>, which is a fork (?) of OpenOffice that adds some nice features, but the really cool part is that it has free clip art and templates, many of which are actually decent!
+                <div>
+<p>Found <a title="Oxygen OpenOffice project (SourceForge)" href="http://sourceforge.net/projects/ooop/">this neat project in SourceForge</a>, which is a fork (?) of OpenOffice that adds some nice features, but the really cool part is that it has free clip art and templates, many of which are actually decent!
 
 
-<!--more-->You can install the whole thing, but I already have OpenOffice (OOo) on all my systems.  So you can also just <a title="Oxygen OpenOffice Extensions (SourceForge)" href="http://sourceforge.net/project/showfiles.php?group_id=170021&amp;package_id=208656">download the extensions</a> (which are platform agnostic) and install only those (just run the .osx files from your file browser — it's MIME settings should open it in OOo's Extension Manager and install for you.
-
-
-
-There is one issue (attributable to a bug in the OpenOffice  UNO Extension mechanism I think): The gallery links to the photos from the <em>gallery.oxt</em> extension are not mapped to their actual installation directory. This means that you can see the thumbnails in the OOo gallery, but cannot include the actual photos into your documents :(
-
-
-
-For example, in my Windows install, it seems the OOo extension is incorrectly mapping the gallery photograph files to <code><em>&lt;user home&gt;</em>\Application Settings\OpenOffice.org2\user\gallery\Photos</code> .  The correct mapping should be <code><em>&lt;user home&gt;</em>\Application Settings\OpenOffice.org2\user\uno_packages\cache\uno_packages\<em>&lt;temp name&gt;</em>\OOOP-<em>&lt;version&gt;</em>-gallery.oxt\gallery\Photos</code> (either that, or the mapping is right and the photos are installed to the wrong place...)
-
-
-
-A work-around, I found, was to just move these photos into the directory that the OOo gallery link is expecting (that is, from the actual location above, to the expected location).  You can confirm the expected location by clicking on one of the photo thumbnails in the OOo gallery, and looking at the directory name at the top of the gallery.
-
-
-
-I have only tested this on Windows, but it if it occurs in Linux too, the work-around should be similar.
-
-
-
-The real fix of course would be to correct the bug in the UNO mapping for the extension.  Since both projects are OpenSource, I could theoretically do this and submit a patch to the relevant project, but I don't know enough about the mechanics of UNO or OOo extensions to identify where the bug is, or how to fix it, and I don't have the time to research it.  I also haven't had time to see if this bug has been reported in either project, so I'm just blogging my work-around.
-
-
-
-If anybody from the OOo project or the OOOP project finds this blog entry and knows what I'm talking about and how to fix, feel free to do so!</p>
+</p>
+<p class="more"><a href="2007/08/08/oxygen-openoffice-professional.html">Read more…</a></p>
+</div>
             </div>
         </div>
         <div class="post">
@@ -431,142 +296,13 @@ If anybody from the OOo project or the OOOP project finds this blog entry and kn
 
             </div>
             <div class="body">
-                <p>Okay, so I hate working in Windows, but on my employer's equipment at least, I must live with it. After having had this machine replaced twice (faulty Dell hardware) and rebuilt more times than I can remember (Windows BSODs), for a total of at least 3 system migrations this past year, I thought I'd better keep a list of what free software to install on top of Windows, and what adjustments to make, so that at least I don't feel like I'm wearing a straight jacket.  Here goes:
+                <div>
+<p>Okay, so I hate working in Windows, but on my employer's equipment at least, I must live with it. After having had this machine replaced twice (faulty Dell hardware) and rebuilt more times than I can remember (Windows BSODs), for a total of at least 3 system migrations this past year, I thought I'd better keep a list of what free software to install on top of Windows, and what adjustments to make, so that at least I don't feel like I'm wearing a straight jacket.  Here goes:
 
-
-<!--more-->
 
 </p>
-<h3>Useability</h3>
-
-Fix the keyboard to <a href="http://sinewalker.wordpress.com/2006/03/27/dvorak-keyboards/">Dvorak</a> (following is for Windows XP -- this will likely change for Vista... it shouldn't be this complicated!)
-
-<blockquote>
-
-<ol>
-	<li>Open Control Panel:  <strong>START &gt; Control Panel</strong>
-</li>
-	<li>Choose "<strong>Regional and Language Options</strong>" (why not Keyboard???)</li>
-	<li>Select "<strong>Languages</strong>" tab, press Details... button (sigh)</li>
-	<li>In the "<strong>Installed services</strong>" section, select "<strong>Keyboard</strong>", then press "<strong>Add...</strong>" to add a new keyboard layout</li>
-	<li>Find <strong>US-Dvorak</strong> in the list</li>
-	<li>In the "<strong>Default input language</strong>" section, set the default language to English (Australia) - United States-Dvorak</li>
-	<li>In the "<strong>Preferences</strong>" section, press "<strong>Language Bar...</strong>" button</li>
-	<li>Make sure that "<strong>Show the language bar on the desktop</strong>" is turned <em><strong>on</strong></em>, to make it easier to switch to QWERTY if needed</li>
-	<li>Back in "<strong>Preferences</strong>", press the "<strong>Key Settings...</strong>" button</li>
-	<li>Turn <strong><em>off </em></strong>all the language <strong>Hot keys</strong>
-</li>
-</ol>
-
-</blockquote>
-
-To get rid of that <a href="http://www.winsupersite.com/images/showcase/xp_n_05.jpg">horrible</a>, <a href="http://www.winsupersite.com/images/showcase/xp_n_03.jpg">garish </a>blue/green stock XP theme, I use the <a title="Zune -- it's still Microsoft, but it looks less garish" href="http://stevenharman.net/blog/archive/2006/12/09/WinXP__Zune_Theme.aspx">Zune theme</a> from Microsoft. It sucks less (the theme, that is, not the MP3 player, that sucks <em>more </em>than iPod).
-
-
-
-Make Explorer a bit useable.  Actually Explorer is total crap, and I'm still searching for a replacement. I like <a href="http://en.wikipedia.org/wiki/Midnight_Commander">MidnightCommander</a> in Cygwin (<code>mc</code>), and <a href="http://konqueror.kde.org/">Konqueror</a> in KDE.  But for Windows, there aren't a lot of <em>free </em>Explorer replacements, except maybe Windows File Explorer.  Anyway, follow these steps to have Explorer at least be not so stupid:
-
-<blockquote>
-
-<ol>
-	<li>Open an Explorer window (anywhere)</li>
-	<li>Select "<strong>Tools &gt; Folder Options...</strong>", "<strong>General</strong>" tab</li>
-	<li>Make sure that under "<strong>Browse folders</strong>", the option is to "<strong>Open each folder in the same window</strong>" (Explorer doesn't do multi-windows like Macintosh Finder: it screws them up)</li>
-	<li>In "<strong>Click items as follows</strong>", turn on "<strong>Single-click to open</strong>", and "<strong>Underline icons only when I point at them</strong>"</li>
-	<li>Select the "<strong>View</strong>" tab</li>
-	<li>Turn <em><strong>on </strong></em>the following:
-<ol>
-	<li>"Display the full path in the address bar"</li>
-	<li>"Display the full path in the title bar"</li>
-	<li>"Do not cache thumbnails"</li>
-	<li>"Show hidden files and folders"</li>
-	<li>"Show both parts and manage them individually" (for web pages and folders)</li>
-	<li>"Show encrypted or compressed NTFS files in color"</li>
-</ol>
-
-</li>
-	<li>Turn <em><strong>off </strong></em>the following:
-<ol>
-	<li>"Hide extensions for known file types"</li>
-	<li>"Launch folder windows in a separate process"</li>
-	<li>"Remember each folder'sview settings"</li>
-</ol>
-
-</li>
-	<li>Press the "<strong>Apply</strong>", then "<strong>Apply to All Folders</strong>" buttons</li>
-	<li>Press "<strong>OK</strong>"</li>
-</ol>
-
-</blockquote>
-
-<h3>Programs</h3>
-
-Install these programs at a minimum:
-
-<blockquote>
-
-<ul>
-	<li>
-<a title="Rediscover the Web" href="http://en.www.mozilla.com/en/firefox/">Firefox </a>(essential add-ons:  <a title="social web bookmarks" href="http://del.icio.us/help/firefox/extension">del.icio.us</a>, <a title="Download Accellerator (and a better manager)" href="http://www.downthemall.net/">DownThemAll</a>, <a title="Spell-check input boxes, in en_au language" href="http://www.justlocal.com.au/clients/oooau/">English (AU) Dictionary</a>, <a title="Block's Flash adds" href="https://addons.mozilla.org/en-US/firefox/addon/433">Flashblock</a>, <a title="Make inline images larger" href="http://imagezoom.yellowgorilla.net/">ImageZoom</a>, <a title="Turn on/off proxy settings with one click" href="https://addons.mozilla.org/en-US/firefox/addon/1557">QuickProxy</a>, <a title="Synchronise your local bookmarks between Firefox installations" href="http://www.foxmarks.com">Foxmarks</a>, <a title="Turn your google mail account into free online storage" href="http://www.getgspace.com/">GSpace</a>)</li>
-	<li><a title="Open Source keystroke starter for Windows" href="http://www.launchy.net">Launchy</a></li>
-	<li>
-<a title="WFE description page" href="http://www.freesoftlabs.com/fileexpl.asp">Windows File Explorer</a> (a free, sort-of <a href="http://en.wikipedia.org/wiki/Orthodox_file_manager">orthodox</a> file manager for Windows)</li>
-	<li>
-<a title="Brings Windows desktop up to status of 1990 Unix" href="http://virt-dimension.sourceforge.net">Virtual Dimension</a> (Virtual desktop support for Windows)</li>
-	<li>
-<a title="No Machine's Product listing page" href="http://www.nomachine.com/products.php">No Machine</a>'s <a title="NX Client - Windows - Download" href="http://www.nomachine.com/download-client-windows.php">NX Client for Windows</a> (so I can connect a <a title="NX Technology overview" href="http://www.nomachine.com/documentation/intr-technology.php">high speed X</a> session to my home machine)</li>
-	<li>
-<a href="http://www.openoffice.org">OpenOffice.org</a> (also use <a href="http://www.justlocal.com.au/clients/oooau/">JustLocal</a>'s dictionary / thesaurus files to get spell check working)</li>
-	<li>
-<a title="Unix compatibility layer for Windows" href="http://www.cygwin.com/">Cygwin </a>(include the X11 modules, Emacs [make sure to select ver 22], pdksh, subversion, python, clisp, fortune, mc, ssh, units, etc....)</li>
-	<li><a href="http://java.sun.com/javase/downloads/index.jsp">Java SE DevKit</a></li>
-	<li>
-<a title="Latest Windows Subversion binaries" href="http://subversion.tigris.org/servlets/ProjectDocumentList?folderID=91">Subversion for Windows</a> (version control)</li>
-	<li>
-<a href="http://www.netbeans.org/">NetBeans</a> (6.0 or greater has everything I need)</li>
-	<li>
-<a title="Audio editor and MP3/OGG converter" href="http://audacity.sourceforge.net/download/windows">Audacity</a> audio editor and encoder</li>
-	<li>
-<a title="Network streaming Video" href="http://www.videolan.org/vlc/download-windows.html">VideoLAN Client</a> movie player</li>
-	<li>
-<a href="http://www.illiminable.com/ogg/">Illiminable DirectShow filters</a> for <a href="http://www.vorbis.com/setup_windows/">OGG Vorbis</a> (to play .OGG files in Windows Media Player)</li>
-	<li>
-<a title="Amiga MOD player" href="http://www.modplug.com/">MODPlug</a> (because sometimes a good <a href="http://del.icio.us/sinewalker/modules">MOD</a> fits my mood)</li>
-	<li>
-<a title="GNU Image Manipulation Program" href="http://gimp-win.sourceforge.net/">GIMP</a> image editor</li>
-	<li>
-<a title="Image viewer" href="http://www.irfanview.com/">IrfanView</a> image viewer</li>
-</ul>
-
-</blockquote>
-
-<h3>Emacs</h3>
-
-Once Cygwin and Emacs are installed, I need to add my dotfiles (from backup), and also install these emacs add-ons:   <a title="Superior Lisp Interaction Mode for Emacs" href="http://common-lisp.net/project/slime/"></a>
-
-<blockquote>
-
-<ul>
-	<li>
-<a title="Superior Lisp Interaction Mode for Emacs" href="http://common-lisp.net/project/slime/">SLIME</a> <a href="http://sourceforge.net/projects/psgml"></a>
-</li>
-	<li>
-<a href="http://sourceforge.net/projects/psgml">PSGML</a> <a title="Subversion support for Emacs (pre-22)" href="http://www.xsteve.at/prg/emacs/psvn.el"></a>
-</li>
-	<li>
-<a title="Subversion support for Emacs (pre-22)" href="http://www.xsteve.at/prg/emacs/psvn.el">PSVN</a> (not strictly needed, since emacs22 adds SVN support in VC mode)</li>
-	<li>
-<a title="Collection of Emacs Development Environment Tools" href="http://cedet.sourceforge.net/">CEDET</a> (this is not trivial to install, I<em> still </em>haven't figured it out)<a title="Collection of Emacs Development Environment Tools" href="http://cedet.sourceforge.net/"> </a>
-</li>
-	<li>
-<a title="Java Development Environment for Emacs" href="http://jdee.sunsite.dk/">JDEE</a> (requires some or all of CEDET)</li>
-	<li>
-<a title="This is neat!" href="http://www.eaflux.com/cygwin/cyg-emacsclient/">cyg-emacsclient</a> (wrapper to add Emacs to your SendTo folder, and have it actually work)</li>
-</ul>
-
-</blockquote>
-
-CEDET and JDEE might be more trouble than they're worth, especially since I'm installing NetBeans anyway. They seem cool (especially the enhanced speedbar), but they're not exactly plug-and-play. Jury's still out.
+<p class="more"><a href="2007/06/07/essential-tools-to-make-windows-almost-bareable.html">Read more…</a></p>
+</div>
             </div>
         </div>
         <div class="post">
@@ -593,38 +329,13 @@ CEDET and JDEE might be more trouble than they're worth, especially since I'm in
 
             </div>
             <div class="body">
-                <p>Quick note:-  I use <a title="K[ewl] Desktop Environment" href="http://www.kde.org">KDE</a> nearly all the time.  But sometimes I have occasion for a minimal desktop (e.g. when I plan to use just one, heavy program like <a title="FlightGear Flight Simulator" href="http://www.flightgear.org/">FlightGear</a> and need basically not much more than a window manager and X itself).  So an alternate "light" desktop session type is nice to have.
+                <div>
+<p>Quick note:-  I use <a title="K[ewl] Desktop Environment" href="http://www.kde.org">KDE</a> nearly all the time.  But sometimes I have occasion for a minimal desktop (e.g. when I plan to use just one, heavy program like <a title="FlightGear Flight Simulator" href="http://www.flightgear.org/">FlightGear</a> and need basically not much more than a window manager and X itself).  So an alternate "light" desktop session type is nice to have.
 
-
-<!--more--> There is the <a title="Xubuntu Linux" href="http://www.xubuntu.org/">Xubuntu</a> distribution of ubuntu, which uses <a title="Xfce home" href="http://www.xfce.org/">Xfce</a>.  But I don't need to switch my whole linux install over.  It's easy to add Xfce to an installed Kubuntu (or Ubuntu):
-
-<code>
-
-</code>
 
 </p>
-<p align="center"><code> sudo aptitude update &amp;&amp; sudo aptitude install xubuntu-desktop</code></p>
-
-
-
-<code> </code>
-
-I got this incantation from <a title="Installing Xfce on Ubuntu" href="http://www.psychocats.net/ubuntu/xubuntu">over here</a>. This adds the packages for Xfce and puts a new session into your display manager's Session Type menu.  If you had kubuntu or xubuntu and wanted GNOME as well you could install GNOME into either of them with the <code>gnome-desktop-environment</code> master package, I suppose. GNOME isn't my cup of tea.
-
-
-
-I haven't played with <code>aptitude</code> yet, but you could substite <code>agt-get</code> for it in the commands above too I guess.
-
-
-
-Yes, I know, Xfce is more than a window manager; it also has it's own file manager, terminal program, and so on.  But the main feature is that it's <em>fast </em>and <em>small</em>, which matters most to me for it's purpose on my system.
-
-
-
-<hr>
-<strong>2007-05-21T10:37+1000 Update</strong> RTFM <em>again</em>!
-
-Since [k|x|ed]ubuntu is <a href="http://www.ubuntulinux.org/community/ubuntustory">built upon</a> <a href="http://www.debian.org">Debian</a>, all the documentation describing Debian packaging and tools (<code>dpkg</code>, <code>apt-get</code>, <code>apt-cache</code>, <code>aptitude</code>, <code>dselect</code> and so on) can be found at their site.  The <a href="http://www.debian.org/doc/manuals/apt-howto/">APT HOWTO</a> is also probably a good place to start…
+<p class="more"><a href="2007/05/17/kubuntu-other-desktops.html">Read more…</a></p>
+</div>
             </div>
         </div>
         <div class="post">
@@ -652,41 +363,17 @@ Since [k|x|ed]ubuntu is <a href="http://www.ubuntulinux.org/community/ubuntustor
 
             </div>
             <div class="body">
-                <p>Yes, I've joined the ubuntu train, and I'm travelling in the Kubuntu car (the caboose?).
+                <div>
+<p>Yes, I've joined the ubuntu train, and I'm travelling in the Kubuntu car (the caboose?).
 
 
 This will be, what, my <strong>fifth </strong>(or sixth if you count Knoppix, but I never put that on my hard drive) Linux distro since trying out RedHat 5.2 back in 1999.  Previous to this I was using openSUSE 10.2 which is not a bad distro either and I always had my eye on SuSE.  So, why yet another distro change?
 
 
 
-<!--more-->
-
 </p>
-<ul>
-	<li>openSUSE's YaST tool.  It's sssoooo sssllloooowww.  Even Gentoo's Portage is faster for installing software, and <em>that </em>has to compile the programs from source code!</li>
-	<li>ZMD doesn't work.  It keeps breaking, crashing or going ballistic with the CPU</li>
-	<li>What is with all the susefications?  I really don't like the system menu in openSUSE and couldn't  find a way to turn it off</li>
-	<li>Some vital programs don't run:  Rosegarden and Google Earth lock up, FlightGear just won't run</li>
-	<li>Like others in the community, I am grateful to Novell for what they have done in their fight with SCO, but unsure about their deal with Microsoft.  I like to think that perhaps the CEO is just a little naïve about M$ (or hasn't been bitten by them like me — I don't trust the Novell version of OpenOffice to be hands-off on my document, and not fiddle the format somehow)</li>
-</ul>
-
-It is a shame since I do really like openSUSE, but this issue, together with the technical nags has tipped me over the edge and I'm moving on.
-
-
-
-So, like was <a title="Comment on " href="http://sinewalker.wordpress.com/2006/01/24/linux-distro-woes/#comments">suggested to me</a> a bit over a year ago,  I'm switching to Kubuntu.  It's the latest favourite distro and has good reviews, from <a title="aseigo - key KDE developer" href="http://aseigo.blogspot.com/">people </a>I <a title="canllaith - KDE documentor" href="http://www.canllaith.org/">respect </a>in the KDE community, so my initial fears a year ago about it's KDE support being sub-par would seem to be unfounded.
-
-
-
-I have to say:  switching to kubuntu has been the easiest Linux distro migration I have ever undertaken in eight years! Twenty minutes to install on my three-year-old home-built PC (Athlon XP1800+, 512MiB RAM, IDE drives, Radeon rv280 GPU and a 48cm LCD, plus other bits). Also, this is the first time that I've been able to surf the Net while an operating system installs itself! Yes, most Linuxen let you switch to another VT and run console programs, but no other installer I've seen lets you run a graphical KDE session while it installs, which is impressive and also very useful — I can read the installation manual on the Net while I install, no need to print it out or have a second computer running to one side.
-
-
-
-Package installation is a breeze, and Feisty comes with the "universe" and "multiverse" repositories enabled, so getting "restricted formats" working took 10 minutes, and the installer was smart enough to configure APT to use a local mirror in Australia too! Very fast and very cool.
-
-
-
-And to top it off:  Google Earth works and Beryl was a snap to install compared to getting Compiz working properly in SUSE.  I haven't tried Rosegarden yet (there's a lot of audio and JACK stuff to set up for it first) but even if that still won't work, Kubuntu's already working better than SUSE on my hardware.  Very satisfied.
+<p class="more"><a href="2007/05/16/kubuntu-kaboose.html">Read more…</a></p>
+</div>
             </div>
         </div>
         <div class="post">

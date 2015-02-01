@@ -1,6 +1,6 @@
 <html><body><p>There is lots of information on the Web about concurrent programming with Java (or with other languages on the JVM). This post is a list of links I have found helpful and/or interesting.
 </p><ul>
-	<li><!--more-->Book: <a title="[Amazon]" href="http://www.amazon.com/Java-Concurrency-Practice-Brian-Goetz/dp/0321349601" target="_blank">Java Concurrency in Practice</a></li>
+	<li><!-- TEASER_END -->Book: <a title="[Amazon]" href="http://www.amazon.com/Java-Concurrency-Practice-Brian-Goetz/dp/0321349601" target="_blank">Java Concurrency in Practice</a></li>
 	<li><a title="Lesson: Concurrency [Essential classes]" href="http://java.sun.com/docs/books/tutorial/essential/concurrency/index.html" target="_blank">Sun Java Concurrency tutorial</a></li>
 	<li><a title="Lesson: Concurrency in Swing" href="http://java.sun.com/docs/books/tutorial/uiswing/concurrency/index.html" target="_blank">Sun Swing Concurrency tutorial</a></li>
 	<li>Chet Haas: <a title="Threadaches" href="http://weblogs.java.net/blog/kgh/archive/2004/10/multithreaded_t.html" target="_blank">why multi-threading complicates programs</a></li>

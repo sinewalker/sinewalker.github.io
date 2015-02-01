@@ -78,25 +78,13 @@ article: http://ogp.me/ns/article#
 
             </div>
             <div class="body">
-                <p>There is lots of information on the Web about concurrent programming with Java (or with other languages on the JVM). This post is a list of links I have found helpful and/or interesting.
+                <div>
+<p>There is lots of information on the Web about concurrent programming with Java (or with other languages on the JVM). This post is a list of links I have found helpful and/or interesting.
 </p>
 <ul>
-	<li>
-<!--more-->Book: <a title="[Amazon]" href="http://www.amazon.com/Java-Concurrency-Practice-Brian-Goetz/dp/0321349601" target="_blank">Java Concurrency in Practice</a>
-</li>
-	<li><a title="Lesson: Concurrency [Essential classes]" href="http://java.sun.com/docs/books/tutorial/essential/concurrency/index.html" target="_blank">Sun Java Concurrency tutorial</a></li>
-	<li><a title="Lesson: Concurrency in Swing" href="http://java.sun.com/docs/books/tutorial/uiswing/concurrency/index.html" target="_blank">Sun Swing Concurrency tutorial</a></li>
-	<li>Chet Haas: <a title="Threadaches" href="http://weblogs.java.net/blog/kgh/archive/2004/10/multithreaded_t.html" target="_blank">why multi-threading complicates programs</a>
-</li>
-	<li><a href="http://tutorials.jenkov.com/java-concurrency/index.html" target="_blank">Jenkov's Java Concurrency tutorial</a></li>
-	<li>
-<a href="http://clojure.org/concurrent_programming" target="_blank">Clojure - concurrent programming</a> (OOP and threads: you're doing it wrong!)</li>
-	<li>Rich Hickey's <a href="http://www.infoq.com/author/Rich-Hickey;jsessionid=A71BA221017576118321155C523FB39B" target="_blank">InfoQ presentations </a>(about clojure, state, concurrency)</li>
-	<li>More of Rich Hickey's<a title="Clojure episodes on blip.tv" href="http://clojure.blip.tv/posts?view=archive&amp;nsfw=dc" target="_blank"> Clojure / concurrency talks</a> at blip.tv</li>
-	<li>
-<a title="Vimeo profile" href="http://vimeo.com/seandevlin" target="_blank">Sean Delvin</a>'s <a title="Full Disclojure" href="http://vimeo.com/8320428" target="_blank">introductory series on Clojure 1.1</a>
-</li>
+	<li><p class="more"><a href="2010/05/31/java-concurrency-links.html">Read more…</a></p></li>
 </ul>
+</div>
             </div>
         </div>
         <div class="post">
@@ -178,14 +166,13 @@ Note that this is separate from the NetBeans colour themes which control editor 
 
             </div>
             <div class="body">
-                <p>There is a feature of OpenSSH, enabled by default, that causes the ssh daemon to do a name lookup for the client and confirm that it matches its IP address. This is supposed to check against some sort of IP spoof during SSH login attacks.  However on my local network which lacks a DNS, it results in lengthy delays during logins.
+                <div>
+<p>There is a feature of OpenSSH, enabled by default, that causes the ssh daemon to do a name lookup for the client and confirm that it matches its IP address. This is supposed to check against some sort of IP spoof during SSH login attacks.  However on my local network which lacks a DNS, it results in lengthy delays during logins.
 
 
-<!--more-->I found good explanations and how to fix this in the <a title="OpenSUSE FAQ 3.3: ssh(1) takes a long time to connect or log in" href="http://www.openssh.com/faq.html#3.3">OpenSSH FAQ</a> and also on the<a title="SSH Login slow - NOVELL FORUMS" href="http://forums.novell.com/novell-product-support-forums/suse-linux-enterprise-server-sles/sles-configure-administer/340097-sles9-ssh-login-slow.html"> SUSE Linux Forums</a> and a <a title="Libel: UseDNS resolution and OpenSSH" href="http://ayaz.wordpress.com/2008/02/03/usedns-resolution-and-openssh/">couple</a> of <a title="SuSE Linux slow logins over SSH" href="http://www.carlosvazquez.org/Blog/index.cfm?blog_id=72">blogs</a>.  This issue also comes up as at least one <a title='Ubuntu bug #424371 - Logins to OpenSSH server slow due to "UseDNS yes" config' href="https://bugs.launchpad.net/ubuntu/+source/openssh/+bug/424371">bug</a> for Ubuntu (but it's not a bug, it's a <a title="Jargon file: Feature" href="http://www.catb.org/~esr/jargon/html/F/feature.html">feature</a>).
-
-
-
-In a nutshell: if you want to remove this delay and don't care about doing reverse lookups, set <strong>UseDNS no</strong> in <strong>/etc/ssh/sshd_config</strong> and then restart the daemon. The FAQ explains it better than me.</p>
+</p>
+<p class="more"><a href="2010/04/07/openssh-slow-logins-and-dns.html">Read more…</a></p>
+</div>
             </div>
         </div>
         <div class="post">
@@ -216,7 +203,8 @@ In a nutshell: if you want to remove this delay and don't care about doing rever
 
             </div>
             <div class="body">
-                <p>I like the "focus follows mouse" window-focussing model from X11, because
+                <div>
+<p>I like the "focus follows mouse" window-focussing model from X11, because
 </p>
 <ul>
 	<li>I don't have to click on the window, just move the mouse and the window it's over is focussed</li>
@@ -227,54 +215,8 @@ However MS-Windows follows the old-fashioned, Macintosh/Smalltalk style of havin
 
 
 
-<!--more-->I used to install <strong>TweakUI </strong>from Microsoft, just so that I could turn on an X11-like focus-follows-mouse mode, but Microsoft don't make TweakUI for Vista (there is <strong>TweakVI </strong>instead, if you want to Google for it. It's by some other company. It's not bad, but overkill for what I want to do).
-
-
-
-In Vista, Microsoft added a GUI for this mode that's <em>almost</em> what I want. You can do this:
-
-
-
-Open Control Panel (new view, not Classic)
-
-<p style="padding-left:30px;">&gt; Ease of Access Center</p>
-
-<p style="padding-left:60px;">&gt; Make the mouse easier to use</p>
-
-<p style="padding-left:90px;">&gt; [ ] Activate a window by hovering over it with the mouse</p>
-
-But this also brings the window to the front when it's focussed.  If that's what you want, then you're done. If you're like me and you want the window under the mouse to have keyboard focus, but you <em>don't</em> want it brought to the front without clicking on it, you'll need to hack the Windows Registry. Here are some steps, which should be good for any release of Windows that is based on Windows NT (NT, 2000, XP, Vista, Win7):
-
-<ol>
-	<li>Run <strong>regedit </strong>(Win+R, regedit, OK)</li>
-	<li>Open up the key <strong>HKEY_CURRENT_USER\Control Panel\Mouse</strong>
-</li>
-	<li>Change the value of the REG_DWORD <strong>ActiveWindowTracking</strong> to 0x0000001 (1)</li>
-	<li>Open up the key <strong>HKEY_CURRENT_USER\Control Panel\Desktop</strong>
-</li>
-	<li>
-<strong>Logical OR</strong> the first byte of the REG_BINARY <strong>UserPreferencesMask</strong> with <strong>0</strong><strong></strong><strong>1</strong>.  That is, if the current value is df 3e 03 80 12 00 00 00, then leave the 'df' alone. If it's 9<strong><em>e</em></strong> 03 07 80 12 00 00 00 , change it to 9<strong><em>f</em> </strong>.. ..  and so on <strong style="color:#7744ee;">*</strong>
-</li>
-	<li>To make the focus a little slower, so that pop-up windows are useable, you also want to change the focus timing. Change the REG_DWORD <strong>ActiveWindTrkTimeout</strong> (also in HKEY_CURRENT_USER\Control Panel\Desktop) to the number of milliseconds to wait before focus shifts to the window under the mouse.  I like a value of 0x00000080 (128ms). You might like 200ms (c8), or some faster or slower value.</li>
-</ol>
-
-<strong style="color:#7744ee;">*</strong> If you can't do this hexadecimal bit twiddling math in your head (difficult if you're not a programmer), then Windows' Calc can do it for you: put it in Programmer and Hex modes, type the first byte (hex pair e.g. 9e), press the 'Or' button, then '1' and the '=' button.  If the number changes, that's what you replace the first byte with. Thanks to Erik in the comments below, I've finally figured this out and (I hope) clarified what to do..
-
-
-
-So, in summary, the Registry keys are as follows for X11-like window focus:
-
-<pre>HKEY_CURRENT_USERS\Control Panel\Mouse
-
-  REG_DWORD ActiveWindowTracking = 0x00000001  (1)
-
-HKEY_CURRENT_USERS\Control Panel\Desktop
-
-  REG_DWORD ActiveWindTrkTimeout = 0x00000080  (128)
-
-  REG_BINARY UserPreferencesMask OR= 01 .. .. .. .. .. .. .. ..</pre>
-
-These registry hacks require a reboot to take effect.
+<p class="more"><a href="2010/03/10/ms-windows-focus-follows-mouse-registry-hacks.html">Read more…</a></p>
+</div>
             </div>
         </div>
         <div class="post">
@@ -303,60 +245,13 @@ These registry hacks require a reboot to take effect.
 
             </div>
             <div class="body">
-                <p>The NetBeans online help <a title="NetBeans XML catalog help on Jiema" href="http://www.jiema.org/xref/netbeans/usersguide/javahelp/org/netbeans/modules/usersguide/xml/catalog/xmlcatalog_mount.html">describes the steps for registering a local DTD or XML file</a> with NetBeans' <em>DTDs and XML Schemas Manager</em>. It's succinct and to the point, but for the slow people in the room it's a bit confusing. So here's my tip for registering a local DTD file with NetBeans so that you can use NetBeans' awesome XML validation and completion features.
+                <div>
+<p>The NetBeans online help <a title="NetBeans XML catalog help on Jiema" href="http://www.jiema.org/xref/netbeans/usersguide/javahelp/org/netbeans/modules/usersguide/xml/catalog/xmlcatalog_mount.html">describes the steps for registering a local DTD or XML file</a> with NetBeans' <em>DTDs and XML Schemas Manager</em>. It's succinct and to the point, but for the slow people in the room it's a bit confusing. So here's my tip for registering a local DTD file with NetBeans so that you can use NetBeans' awesome XML validation and completion features.
 
-
-<!--more-->In my example, I'm trying to use NetBeans to validate an <a title="Solaris SMF Quick start" href="http://www.sun.com/bigadmin/content/selfheal/smf-quickstart.jsp">SMF</a> <a title="Service development intro" href="http://www.sun.com/bigadmin/content/selfheal/sdev_intro.jsp">Manifest</a>, which is an XML file defined by a <code>SYSTEM</code> DTD called <code>service_bundle.dtd.1</code>.  On Solaris 10 machines you can find a copy of the DTD file in <code>/usr/share/lib/xml/dtd/service_bundle.dtd.1</code>, and most example SMF manifests that you can find <a title="SMF Manifest Repository" href="http://www.blastwave.org/smf/manifests.php">on the Internet</a> include the DOCTYPE like so:
 
 </p>
-<pre>&lt;!DOCTYPE service_bundle SYSTEM "/usr/share/lib/xml/dtd/service_bundle.dtd.1"&gt;</pre>
-
-If you run NetBeans on Solaris 10, I assume this will probably work out-of-the-box (though I haven't tried this...).  However for us hackers on other platforms, you need to copy this file down to your development machine, and then register it with NetBeans so that you can use it.
-
-
-
-NetBeans' DTDs and XML Schemas Manager contains a collection of XML Schema Catalogues for a whole bunch of technologies. You'll want to add your local DTDs/Schemas to the <strong>User Catalog</strong> (<em>sic</em>), which is the only one that's read-write. Do the following:
-
-<ol>
-	<li>
-<strong>Tools </strong>menu, <strong>DTDs and XML Schemas</strong>
-</li>
-	<li>Choose <strong>User Catalog [read-write] </strong>from the list of <em>DTDs and XML Schemas</em>
-</li>
-	<li>Press "<strong>Add Local DTD or Schema...</strong>" button</li>
-	<li>In our example, the DOCTYPE reads:
-<pre>SYSTEM "/usr/share/lib/xml/dtd/service_bundle.dtd.1"</pre>
-
-So, we must map this SYSTEM ID  to a local URI on our development machine.  If it had said <code>PUBLIC "..."</code> then we would map a PUBLIC ID instead.</li>
-	<li>Click the radio button for the relevant ID type (<strong>System ID</strong> in our case)</li>
-	<li>Copy in the string ID from your XML file into the relevant field. Make sure you don't put in the double-quotes
-<span style="text-decoration:underline;"><strong>IMPORTANT:</strong></span> for a DTD that lives on the filesystem ID, like ours, <strong>the ID should begin with <span style="color:#7744ee;"><code>file:</code></span></strong>
-</li>
-	<li>Click the "<strong>Browse...</strong>" button and locate the DTD file you downloaded</li>
-	<li>Click "<strong>OK</strong>"</li>
-</ol>
-
-You've now mapped the SYSTEM ID to your local copy of the DTD file for <code>service_bundle.dtd</code>. If you try and validate the XML (<strong>Alt+Shift+F9</strong>, or from the toolbar) it will stop complaining of a missing DTD and actually check your XML against the doctype definition.
-
-
-
-I got mislead by the Recommendation (both in the online help and on the dialog box). It says that the "common solution for XML documents specified by DTD is using the Public ID -&gt; URI mapping." It goes on to say that "System ID -&gt; URI mapping can also be used to redirect the DTD location specified by SYSTEM ID", but I got confused by that point.
-
-
-
-I also had a hard time working out that the System ID should begin with "file:".  The give-away that I didn't spot until later, was in the error message from the XML validator:
-
-<pre>XML validation started.
-
-Checking file:/D:/src/support/smf/emc/manifests/emc-fast-IndexServer.xml...
-
-Referenced entity at "<strong>file:</strong>/usr/share/lib/xml/dtd/service_bundle.dtd.1".
-
-\usr\share\lib\xml\dtd\service_bundle.dtd.1 (The system cannot find the path specified) [30]
-
-XML validation finished.</pre>
-
-Duh!  I could have also just copied that string <em>verbatim</em>. Oh well, now I've blogged about it too, so hopefully I won't forget it next time :)
+<p class="more"><a href="2009/05/12/registering-local-dtds-or-xml-schemas-with-netbeans.html">Read more…</a></p>
+</div>
             </div>
         </div>
         <div class="post">
@@ -426,26 +321,25 @@ The solution is to specify a screen size to begin with that is as wide and tall 
 
             </div>
             <div class="body">
-                <p>Asus <a title='Asuse Eee Keyboard, return to "home computers"?' href="http://stuff.tv/blogs/ces/archive/2009/01/07/ces-2009-the-asus-eee-keyboard-a-wafer-thin-media-centre.aspx">just unveiled their prototype Eee keyboard</a> at the Consumer Electronics Show in Las Vegas.
+                <div>
+<p>Asus <a title='Asuse Eee Keyboard, return to "home computers"?' href="http://stuff.tv/blogs/ces/archive/2009/01/07/ces-2009-the-asus-eee-keyboard-a-wafer-thin-media-centre.aspx">just unveiled their prototype Eee keyboard</a> at the Consumer Electronics Show in Las Vegas.
 
 
 It looks so much like my first ever computer (an <a title="Amstrad CPC" href="http://en.wikipedia.org/wiki/Amstrad_cpc">Amstrad CPC 6128</a>). Check it out:
 
 
 
-<a href="http://stuff.tv/blogs/ces/archive/2009/01/07/ces-2009-the-asus-eee-keyboard-a-wafer-thin-media-centre.aspx"><img class="size-full wp-image-445" title="eeekeyboard" src="http://sinewalker.files.wordpress.com/2009/01/eeekeyboard.jpg" alt="Asus Eee keyboard" width="410" height="250"></a>
+<a href="http://stuff.tv/blogs/ces/archive/2009/01/07/ces-2009-the-asus-eee-keyboard-a-wafer-thin-media-centre.aspx"><img class="size-full wp-image-445" title="eeekeyboard" src="http://milosophical.me/old/files/2009/01/eeekeyboard.jpg" alt="Asus Eee keyboard" width="410" height="250"></a>
 
 
 
-<img class="size-full wp-image-446" title="schneider_6128_keyboard" src="http://sinewalker.files.wordpress.com/2009/01/schneider_6128_en.jpg" alt="German Amstrad CPC6128 keyboard" width="510" height="248">
+<img class="size-full wp-image-446" title="schneider_6128_keyboard" src="http://milosophical.me/old/files/2009/01/schneider_6128_en.jpg" alt="German Amstrad CPC6128 keyboard" width="510" height="248">
 
 
 
-<!--more-->It also has some really neat features. I hope it gets marketed, I want one! Especially if it boots in under a second like the old 8-bit machines. I remember when the computer was ready before the CRT had even finished warming up... those were the days.
-
-
-
-<img class="size-full wp-image-447" title="amstrad_cpc_6128" src="http://sinewalker.files.wordpress.com/2009/01/amstrad_cpc_6128.png" alt="Amstrad CPC 6128 and CRT" width="510" height="385"></p>
+</p>
+<p class="more"><a href="2009/01/09/asus-keeeboard-way-kewl.html">Read more…</a></p>
+</div>
             </div>
         </div>
         <div class="post">
@@ -472,28 +366,13 @@ It looks so much like my first ever computer (an <a title="Amstrad CPC" href="ht
 
             </div>
             <div class="body">
-                <p>One use-case we have at work for <a title="Xming sourceforge" href="http://sourceforge.net/projects/xming">Xming</a> is to be the X11 server on a Windows RDP terminal server. For security reasons (don't ask!) we can only access certain Unix hosts via an RDP session from our desktops, not directly over the campus LAN. So, we installed Xming on the TS and it works well. Except if two or more people wish to use it at once. Then it's first come, first served.
+                <div>
+<p>One use-case we have at work for <a title="Xming sourceforge" href="http://sourceforge.net/projects/xming">Xming</a> is to be the X11 server on a Windows RDP terminal server. For security reasons (don't ask!) we can only access certain Unix hosts via an RDP session from our desktops, not directly over the campus LAN. So, we installed Xming on the TS and it works well. Except if two or more people wish to use it at once. Then it's first come, first served.
 
-
-<!--more-->I found a work-around for this that works, but is inelegant: start with a different display number argument.  For instance, the normal Xming start-up parameters are like this:
 
 </p>
-<p style="text-align:center;"><code>D:\Programs\Xming\Xming.exe <strong><span style="color:#7744ff;">:0</span></strong> -clipboard -multiwindow</code></p>
-
-
-
-Change the <strong><span style="color:#7744ff;"><code>:0</code></span></strong> to be something else, and you can have a second (or third) instance running on the same host. Then, so long as you launch an xterm on the remote hosts using an item from your Xming menu, then it seems to pass the X11 packets back to your instance of the server, and not to other people on the same TS.
-
-
-
-There are at least a couple of issues with this:
-
-<ul>
-	<li>It's not very resource efficient. But I can't see a way around this, so long as we are using the RDP terminal server</li>
-	<li>You need to manually allocate display numbers to different people. If two people pick the same number, one will lose (first come, first served again). But at least your clients won't end up on their server...</li>
-</ul>
-
-If anybody can think of a way to snoop which displays are already taken, then choose the next one, it'd be neat!
+<p class="more"><a href="2008/12/17/multiple-xming-servers-on-a-single-windows-host.html">Read more…</a></p>
+</div>
             </div>
         </div>
         <div class="post">
@@ -524,53 +403,13 @@ If anybody can think of a way to snoop which displays are already taken, then ch
 
             </div>
             <div class="body">
-                <p>I recently upgraded my Cygwin install and noticed that Cygwin has switched it's X server <code>XWin.exe</code> from the XFree86 codebase to the Xorg codebase. Besides an updated logo, it also has some other side-effects.
+                <div>
+<p>I recently upgraded my Cygwin install and noticed that Cygwin has switched it's X server <code>XWin.exe</code> from the XFree86 codebase to the Xorg codebase. Besides an updated logo, it also has some other side-effects.
 
-
-<!--more-->The first one I noticed is that the xterm now has a menu turned on by default. If this annoys you (like it did me), you can turn it off by adding the following to your <code>~/.Xdefaults</code>:
 
 </p>
-<p style="text-align:center;"><code><strong>XTerm*toolBar: off</strong></code></p>
-
-
-
-The next side-effect I haven't yet solved. I <a title="how to set up cygwin's xwin menu" href="http://sinewalker.wordpress.com/2006/04/18/cygwin-systray-menu/">use the XWin menu</a> to define some links to the servers I look after at work. I use <code>plink.exe</code> (part of <a title="PuTTY home page" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY</a>) to launch an xterm on the remote host, displayed locally, and using <code>pagent.exe</code> to do the authentication. For example:
-
-<pre><code><strong>MENU DEV_SERVERS {
-    "Content Server" exec "D:/Programs/PuTTY/plink.exe -ssh -X -C -load someserverdef /usr/openwin/bin/xterm -name greenbackground -ls"
-</strong></code></pre>
-
-...
-
-
-
-This used to work, but now nothing happens.  Interestingly, the command <em>will </em>work if you execute it directly from a bash shell. If anyone has an idea, I'd be grateful for their help :)
-
-<h5>UPDATE: - 20081217 -- Use Xming, maybe</h5>
-
-I haven't yet figured out ssh-agent. However one work-around that I tried earlier and added in the comments was no good: the X clients started in a terminal that is forked off this way don't come through for some reason, to do with the way the X packets are tunnelled I think. So, I was motivated to try <a title="Xming web site" href="http://www.straightrunning.com/XmingNotes/">Xming</a>.
-
-
-
-Xming is being used quite successfully by my work colleagues who don't have a whole Cygwin stack on their machines. It's a lightweight X11 server for Windows, and it even uses Microsoft's OpenGL apparently. I'll have to try out some 3D clients from home soon to see what that gets me, but it could be good.
-
-
-
-Anyway, for work, it seems to integrate very well with PuTTY. There's even a stand-alone putty you can <a title="Xming sourceforge" href="http://sourceforge.net/projects/xming">download</a> that's pre-integrated, though it seems to also require the Xming server.
-
-
-
-I also found that it'll serve my local X clients quite well. The most important of these is my emacs, of course. For that to work well, I had to download the extra fonts since emacs uses servers-side fonts. But it works and is indistinguishable from the X11 server that's built into Cygwin.
-
-
-
-I haven't yet un-installed Cygwin's X server: I fear it could also remove clients and libraries, and I don't want the hastle just now of figuring that out.
-
-
-
-A final note: It's menu config file is Xmingrc (no dot), which lives in Window's HOME %USERPROFILE%. Also, because it's got no Cygwin dependency, you can't launch local Cygwin X clients from this menu. At least, not without wrapping them in calls to Cygwin's run.exe, e.g.
-
-<p style="text-align:center;"><code>d:\cygwin\bin\run.exe -p /usr/X11R6/bin emacs -display 127.0.0.1:0.0 --debug-init</code></p>
+<p class="more"><a href="2008/11/26/new-x11-server-in-cygwin.html">Read more…</a></p>
+</div>
             </div>
         </div>
             <nav class="postindexpager">

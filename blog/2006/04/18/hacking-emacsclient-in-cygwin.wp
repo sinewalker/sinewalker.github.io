@@ -13,7 +13,7 @@
 
 <br/>
 
-<!--more-->
+<!-- TEASER_END -->
 <p>First, have Emacs start it's server whenever Emacs is started.  Put this in your <code>.emacs</code> file:
 
 </p><pre><code>(server-start)</code></pre>

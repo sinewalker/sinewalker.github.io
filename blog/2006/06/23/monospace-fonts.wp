@@ -1,7 +1,7 @@
 <html><body><p>I finally got fed up enough with Courier New to start searching for a legible, monospace font to use in jEdit. In Emacs, I'm particularly fond of the standard X font "misc-fixed" (though it's a little tough to tell appart O and 0 still). But for jEdit, the Java monospace font seems to map to Courier New in Windows, and to some God-awful font on Linux.
 
 
-<!--more-->Playing with my neighbours Macintosh, I quite like the fonts you can see in the Terminal program and in Xcode:
+<!-- TEASER_END -->Playing with my neighbours Macintosh, I quite like the fonts you can see in the Terminal program and in Xcode:
 
 </p><p align="center"><a title="photo sharing" href="http://www.flickr.com/photos/lockhart/172996926/"><img src="http://static.flickr.com/47/172996926_63583fe908_m.jpg" alt="Mac hacking screenshot (not mine)"></a>
 

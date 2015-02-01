@@ -1,7 +1,7 @@
 <html><body><p>I recently upgraded my Cygwin install and noticed that Cygwin has switched it's X server <code>XWin.exe</code> from the XFree86 codebase to the Xorg codebase. Besides an updated logo, it also has some other side-effects.
 
 
-<!--more-->The first one I noticed is that the xterm now has a menu turned on by default. If this annoys you (like it did me), you can turn it off by adding the following to your <code>~/.Xdefaults</code>:
+<!-- TEASER_END -->The first one I noticed is that the xterm now has a menu turned on by default. If this annoys you (like it did me), you can turn it off by adding the following to your <code>~/.Xdefaults</code>:
 
 </p><p style="text-align:center;"><code><strong>XTerm*toolBar: off</strong></code></p>
 

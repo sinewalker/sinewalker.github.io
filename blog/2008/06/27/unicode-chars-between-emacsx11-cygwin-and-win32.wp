@@ -1,7 +1,7 @@
 <html><body><p>I'm using Emacs/X11 on cygwin as my main editor (when stuck on work's machine) and Emacs 22's Unicode support really rocks.  However, getting it to pass unicode between the kill ring and Windows /X11 clipboard doesn't work out-of-the-box (mainly because Emacs thinks it's on a Unix host).  The fix is easy though:
 
 
-<!--more-->
+<!-- TEASER_END -->
 
 </p><p style="text-align:center;">Set your MULE selection coding system to use the same unicode coding system that Windows employs
 

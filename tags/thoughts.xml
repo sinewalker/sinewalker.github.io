@@ -1,47 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (thoughts)</title><link>http://milosophical.me/</link><description></description><language>en</language><lastBuildDate>Sat, 31 Jan 2015 22:30:13 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>"generic" types: what's in a name?</title><link>http://milosophical.me/blog/2008/09/10/generic-types-whats-in-a-name.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;span&gt;I've been stumbling over Java's generic types for a while now...  I think I finally understand what my problem is:&lt;/span&gt;
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (thoughts)</title><link>http://milosophical.me/</link><description></description><language>en</language><lastBuildDate>Sun, 01 Feb 2015 11:20:24 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>"generic" types: what's in a name?</title><link>http://milosophical.me/blog/2008/09/10/generic-types-whats-in-a-name.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;div&gt;&lt;span&gt;I've been stumbling over Java's generic types for a while now...  I think I finally understand what my problem is:&lt;/span&gt;
 &lt;p style="text-align:center;"&gt;They should be called &lt;strong&gt;specific &lt;/strong&gt;types, or &lt;em&gt;&lt;span&gt;parametrised&lt;/span&gt;&lt;/em&gt; &lt;em&gt;collections&lt;/em&gt;!&lt;/p&gt;
 
 
 
-&lt;!--more--&gt;
-
-
-
-I think the feature is called "Java generics" because when you use a collection, say &lt;code&gt;List&amp;lt;E&amp;gt;&lt;/code&gt;, that &lt;code&gt;List&lt;/code&gt; contains elements of parameterised type &lt;code&gt;&amp;lt;E&amp;gt;&lt;/code&gt;, a "generic type".  But the element type in the plain old-fashioned non-parametrised collection &lt;code&gt;List&lt;/code&gt; is also generic!  In fact the non-parametrised &lt;code&gt;List&lt;/code&gt; is more &lt;em&gt;generic&lt;/em&gt; than the "generic" version (it can contain elements of &lt;em&gt;any&lt;/em&gt; sub-class of &lt;code&gt;Object&lt;/code&gt;)!  The distinction is that the elements in a &lt;code&gt;List&amp;lt;String&amp;gt;&lt;/code&gt; are all of one &lt;strong&gt;specific&lt;/strong&gt; type (&lt;code&gt;String&lt;/code&gt;), whereas the elements in a &lt;code&gt;List&lt;/code&gt; can be of any general type, and can even be of different types in the same &lt;code&gt;List&lt;/code&gt; collection (leading to problems that "Java generics" was invented to address).
-
-
-
-&lt;span&gt;&lt;code&gt;&amp;lt;sarcasm&amp;gt;&lt;/code&gt;Gosh, what an epiphany.&lt;code&gt;&amp;lt;/sarcasm&amp;gt;&lt;/code&gt;&lt;/span&gt;
-
-
-
-&lt;span&gt;If you're a Java guru this is nothing new, of course.  But that took me &lt;strong&gt;ages&lt;/strong&gt; to grasp.  I think I wasn't helped by the terminology.  &lt;/span&gt;In fact whenever I'm reading Java literature, it helps if I swap "generic" for "specific".  This makes much more sense to me.  Actually I already do word substitutions for much of the Java canon.  For instance:
-
-&lt;ul&gt;
-	&lt;li&gt;"class Foo is instantiated"
-Translation: "a Foo object is created"&lt;/li&gt;
-	&lt;li&gt;"invoke method X of class Y"
-Translation: "send message X to a Y object",
-
-or even "send class Y the X message"&lt;/li&gt;
-
-&lt;/ul&gt;
-
-&lt;span&gt;Probably the Java literature is strictly more "correct" or explicit, but it'd be much more clear and concise if people used the older &lt;span&gt;OOP&lt;/span&gt; words for things...&lt;/span&gt;</description><category>OOP</category><category>duh</category><category>generics</category><category>jargon</category><category>java</category><category>terminology</category><category>thoughts</category><guid>http://milosophical.me/blog/2008/09/10/generic-types-whats-in-a-name.html</guid><pubDate>Wed, 10 Sep 2008 04:00:37 GMT</pubDate></item><item><title>Back to openSUSE</title><link>http://milosophical.me/blog/2008/03/31/back-to-opensuse.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;Well, my stint in *buntu is over, and it ends with an award to openSUSE: this is the first Linux distro I've returned to.
+&lt;p&gt;&lt;a href="http://milosophical.me/blog/2008/09/10/generic-types-whats-in-a-name.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>OOP</category><category>duh</category><category>generics</category><category>jargon</category><category>java</category><category>terminology</category><category>thoughts</category><guid>http://milosophical.me/blog/2008/09/10/generic-types-whats-in-a-name.html</guid><pubDate>Wed, 10 Sep 2008 04:00:37 GMT</pubDate></item><item><title>Back to openSUSE</title><link>http://milosophical.me/blog/2008/03/31/back-to-opensuse.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;Well, my stint in *buntu is over, and it ends with an award to openSUSE: this is the first Linux distro I've returned to.
 
 
 Kubuntu is nice, and I'm happy that I've tried it out, but it's not for me. It's nice enough if you want a simple desktop system, and APT rocks (especially with the aptitude front-end). But it's just not as good as openSUSE, sorry.
 
 
 
-&lt;!--more--&gt;Kubuntu's KDE version of the apt installer (Adept) crashes during installs (not exactly inspiring confidence in the system) so I used Synaptic instead, why can't they just stick to the one that works? It's not like Adept is integrated with KDE in any way: it's menus don't go on the KDE menu bar for instance. Also Kubuntu's version of the KDE help system has every heading repeated. And the constant bickering between the GTK and QT factions of *buntu, with insane NIH arguments are just anoying (it's all *buntu, for crying out loud!).  Finally, having watched &lt;a title="Blank ttys when using vesafb (vga=xxx)" href="https://bugs.launchpad.net/bugs/129910"&gt;bug #129910&lt;/a&gt; continue in it's ridiculous way, I've decided I don't particularly like the development community behind *buntu either. I mean, come on! Six months to fix a reversion introduced to frame buffer consoles in Gutsy?! WTF! Okay that might be a bit mean: it's probably a tricky bug. But, the continuous "not a bug" comments from developers and "please consider the code of conduct" comments from moderators (in response to comments where the "code" has &lt;em&gt;not&lt;/em&gt; been broken) are just insulting. Add in that other things weren't working (FreeNX being an important one for me) and I've had enough: I've moved on, or rather, back, to openSUSE.
-
-
-
-I briefly considered Debian, but went back to something I know. Besides, openSUSE 10.3 has removed the hideous mistake that was ZMD, and so updates and installs (using zypper, at least) are actually not too slow now, and boot times are comparible with *buntu too, at about 30 secs for my five-year-old AlthonXP, which were my biggest gripes with 10.2. YaST is still rather slow, but there are promising signs that this will improve for 11. KDE 4.0 should be standard with 11 also, and 4.1 won't be too far behind. Looking forward to it. It's nice to be using a distro where innovation is happening (Compiz; Kickoff, which I didn't like initially but has grown on me with KDE 4; KDE development in general)
-
-&lt;/p&gt;&lt;p align="center"&gt;I've taken the green pill and having a lot of fun ;)&lt;/p&gt;</description><category>SUSE</category><category>alternatives</category><category>computers</category><category>hacking</category><category>kubuntu</category><category>observation</category><category>rant</category><category>thoughts</category><guid>http://milosophical.me/blog/2008/03/31/back-to-opensuse.html</guid><pubDate>Sun, 30 Mar 2008 22:44:49 GMT</pubDate></item><item><title>Hetrogeneous Operating Environments considered normal</title><link>http://milosophical.me/blog/2007/08/30/hetrogeneous-operating-environments-considered-normal.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;Was reading &lt;a title="an inside look at KDE 4.0" href="http://rackit.gartnerwebdev.com/2007/08/28/ready-for-a-new-k-an-inside-look-at-kde-40/" target="_blank"&gt;this interview&lt;/a&gt; with Wade Olson about KDE 4.0.  It is pretty interesting, but the best quote was at the end:
+&lt;/p&gt;&lt;p&gt;&lt;a href="http://milosophical.me/blog/2008/03/31/back-to-opensuse.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>SUSE</category><category>alternatives</category><category>computers</category><category>hacking</category><category>kubuntu</category><category>observation</category><category>rant</category><category>thoughts</category><guid>http://milosophical.me/blog/2008/03/31/back-to-opensuse.html</guid><pubDate>Sun, 30 Mar 2008 22:44:49 GMT</pubDate></item><item><title>Hetrogeneous Operating Environments considered normal</title><link>http://milosophical.me/blog/2007/08/30/hetrogeneous-operating-environments-considered-normal.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;Was reading &lt;a title="an inside look at KDE 4.0" href="http://rackit.gartnerwebdev.com/2007/08/28/ready-for-a-new-k-an-inside-look-at-kde-40/" target="_blank"&gt;this interview&lt;/a&gt; with Wade Olson about KDE 4.0.  It is pretty interesting, but the best quote was at the end:
 &lt;/p&gt;&lt;blockquote&gt;I often rant about how in all disruptive technologies, trends are always the same. Whether with the automobile, railroads, telephony or computers. A dominant company establishes ubiquity, but eventually competition settles in. Can you believe that Fords and Chevys can drive on the same roads and use the same gas? What a miracle of modern science that an AT&amp;amp;T user could call a Sprint user on the phone? A TGV and ICE train can ride on the same tracks? Madness! I can plug a lamp into the wall that my power company didn’t sell me? Now that’s what I call progress.
 
 Why would computing be any different? I can’t believe that some choose to write software for a large audience that isn’t cross platform, browser-based or interoperable - but some do. Over time, proprietary file formats will go from being a competitive advantage to disadvantage. Heterogeneous systems are the norm and expected in every industry. It’s just tough being patient in ours.&lt;/blockquote&gt;
@@ -57,7 +27,7 @@ What the?  "Designed to make it easier than ever to control PC media from your d
 
 
 
-Thanks, Microsoft, but … ahem, &lt;em&gt;no thanks&lt;/em&gt;!&lt;/p&gt;</description><category>Microsoft</category><category>geek</category><category>keyboards</category><category>silly</category><category>thoughts</category><guid>http://milosophical.me/blog/2007/03/22/microsoft-vista-keyboard.html</guid><pubDate>Thu, 22 Mar 2007 04:27:02 GMT</pubDate></item><item><title>Preserving the programming craft</title><link>http://milosophical.me/blog/2006/05/01/preserving-the-programming-craft.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;
+Thanks, Microsoft, but … ahem, &lt;em&gt;no thanks&lt;/em&gt;!&lt;/p&gt;</description><category>Microsoft</category><category>geek</category><category>keyboards</category><category>silly</category><category>thoughts</category><guid>http://milosophical.me/blog/2007/03/22/microsoft-vista-keyboard.html</guid><pubDate>Thu, 22 Mar 2007 04:27:02 GMT</pubDate></item><item><title>Preserving the programming craft</title><link>http://milosophical.me/blog/2006/05/01/preserving-the-programming-craft.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;
 &lt;em&gt;This post was originally published
   at &lt;a href="http://sinewalker.wordpress.com/2006/05/01/preserving-the-programming-craft/"&gt;sinewalker.wordpress.com&lt;/a&gt;
   on 1 May 2006.&lt;/em&gt;&lt;/p&gt;
@@ -82,66 +52,7 @@ and why would it be passed over by kids these days? Or would it?
 
 &lt;br&gt;
 
-&lt;!--more--&gt;
-&lt;p&gt;For instance, when all that my computer would do when I turned it on was
-blink a cursor and answer
-“&lt;a href="http://www.cpc-emu.org/firststeps.html"&gt;Syntax error&lt;/a&gt;” to
-everything I typed, why didn't I just get bored and do something fun, like read
-a good book, watch TV, or go outside and play? Why was I still motivated to
-program instead?&lt;/p&gt;
-
-&lt;br&gt;
-
-&lt;p&gt;
-I think that the answer is: &lt;strong&gt;I was fascinated by
-the &lt;em&gt;puzzle&lt;/em&gt;&lt;/strong&gt;. I was also keenly interested in figuring out how
-things work. I used to pull clocks apart, build electronic toys, re-wire
-stereos, that sort of thing: a computer is just another gadget to
-tweak. Although, because it was very very expensive (about AU$3500 for a Z-80
-based 8-bit micro in 1986!) I'd better figure out how it works by “programming”
-it—whatever that is—rather than by taking it apart.  I was encouraged in this
-because the book that came with the computer says “you can't break your
-computer by programming it”… (The book I refer to the is very
-good &lt;a title="Online archive copy of the Amstrad CPC 6128 manual." href="http://www.cpcwiki.eu/manuals/AmstradCPC6128-hypertext-en-Sinewalker.pdf"&gt;introductory
-manual&lt;/a&gt; for the &lt;a title="Some basic info in this 8-bit home micro" href="http://www.cpcwiki.eu/index.php/6128"&gt;CPC-6128&lt;/a&gt;, published by Amstrad
-Computer in 1985; I've not found one to better it yet, see especially Ch 2, 6
-and 8)
-&lt;/p&gt;
-
-&lt;br&gt;
-
-&lt;p&gt;
-If computers present a puzzle that is interesting, has a low entry barrier, and
-rewards exploration, then kids will program it. Other posts in this thread show
-that: the puzzle isn't interesting if the computer does nearly everything you
-want anyway, the entry barrier is very high (hidden or non-existent programming
-tools) and the reward for exploration is quite low (results gained through
-programming lower than you get from an Internet search, most of the time).
-&lt;/p&gt;
-
-&lt;br&gt;
-
-&lt;p&gt;
-It's sad. I have a very young son who (if he's interested later—he's only 6
-months old now :-D ) I'd &lt;em&gt;love&lt;/em&gt; to share my love of programming
-with. But in light of how
-“&lt;a href="http://ask.slashdot.org/comments.pl?sid=184329&amp;amp;cid=15234943"&gt;kids
-these days&lt;/a&gt;” view computers, I'm having a hard time coming up with
-interesting puzzles that are easy to get started in and reward
-exploration. &lt;a href="http://www.squeak.org"&gt;Squeak&lt;/a&gt; has
-a &lt;a href="http://www.squeakland.org/"&gt;low barrier&lt;/a&gt;, maybe using it to write
-a simple game, with the hope that the reward of “I did it myself” is good
-enough, would work? That is about the best I can come up with.
-&lt;/p&gt;
-
-&lt;br&gt;
-
-&lt;p&gt;
-Why do I think this is important? Why not just let kids
-be &lt;a href="http://www.squeakland.org/school/HTML/essays/dynabook_revisited.htm"&gt;computer
-illiterate&lt;/a&gt;? I don't know. I think it's out of a sense of preserving culture
-and skills, probably the same sense that a carpenter laments the passing of his
-craft.&lt;/p&gt;</description><category>hacking</category><category>observation</category><category>programming</category><category>thoughts</category><guid>http://milosophical.me/blog/2006/05/01/preserving-the-programming-craft.html</guid><pubDate>Mon, 01 May 2006 05:00:21 GMT</pubDate></item><item><title>Mystical jargon</title><link>http://milosophical.me/blog/2006/04/04/mystical-jargon.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;
+&lt;p&gt;&lt;a href="http://milosophical.me/blog/2006/05/01/preserving-the-programming-craft.html"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>hacking</category><category>observation</category><category>programming</category><category>thoughts</category><guid>http://milosophical.me/blog/2006/05/01/preserving-the-programming-craft.html</guid><pubDate>Mon, 01 May 2006 05:00:21 GMT</pubDate></item><item><title>Mystical jargon</title><link>http://milosophical.me/blog/2006/04/04/mystical-jargon.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;
 &lt;em&gt;This post was originally published
   at &lt;a href="http://sinewalker.wordpress.com/2006/04/04/mystical-jargon/"&gt;sinewalker.wordpress.com&lt;/a&gt;
   on 4 April 2006.&lt;/em&gt;
@@ -157,75 +68,7 @@ Have you ever noticed the prolific use of mystical/fantastical words in computer
 
 &lt;br&gt;
 
-&lt;!--more--&gt;
-&lt;p&gt;
-Anyway, here is a list I've compiled (mostly from the &lt;a href="http://www.jargon.org"&gt;Jargon File&lt;/a&gt;) of mystical/fantastical terms used in computing:
-
-&lt;/p&gt;
-
-&lt;br&gt;
-
-&lt;ul&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/A/Angband.html"&gt;Angband&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.ietf.org/rfc/rfc527.txt"&gt;ARPA-wocky&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/A/avatar.html"&gt;avatar&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/B/big-endian.html"&gt;big-endian&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/B/black-magic.html"&gt;black magic&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/B/buried-treasure.html"&gt;burried treasure&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/D/daemon.html"&gt;daemon&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/D/deep-magic.html"&gt;deep magic&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/D/demon.html"&gt;demon&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/D/Discordianism.html"&gt;Discordianism&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/D/dragon.html"&gt;dragon&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://dwarf.freestandards.org/Home.php"&gt;DWARF&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/E/elder-days.html"&gt;elder days&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://en.wikipedia.org/wiki/Executable_and_Linkable_Format"&gt;ELF&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/E/elvish.html"&gt;elvish&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/E/Eris.html"&gt;Eris&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/F/Frankenputer.html"&gt;Frankenputer&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://milosophical.me/blog/2006/04/04/www.gnome.org"&gt;GNOME&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/G/Great-Worm.html"&gt;Great Worm&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/G/guru.html"&gt;guru&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/G/guru-meditation.html"&gt;guru meditation&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/H/heavy-wizardry.html"&gt;heavy wizardry&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/H/heisenbug.html"&gt;heisenbug&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/H/hex.html"&gt;hex&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/I/incantation.html"&gt;incantation&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.sun.com/software/jini/"&gt;JINI&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/L/line-666.html"&gt;line 666&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/M/magic.html"&gt;magic&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/M/magic-number.html"&gt;magic number&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/M/magic-smoke.html"&gt;magic smoke&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/O/Oracle--the.html"&gt;Oracle&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://en.wikipedia.org/wiki/Pixel"&gt;pixel&lt;/a&gt; (from pixie)&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/P/pointy-hat.html"&gt;pointy hat&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/R/rain-dance.html"&gt;rain dance&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/R/reaper.html"&gt;reaper&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/R/reincarnation--cycle-of.html"&gt;reincarnation, cycle of&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/R/religious-issues.html"&gt;religious issues&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/R/runes.html"&gt;runes&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/S/sacred.html"&gt;sacred&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/S/smurf.html"&gt;smurf&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/S/spider.html"&gt;spider&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://en.wikipedia.org/wiki/Sprite_(computer_graphics)"&gt;sprite&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/T/tentacle.html"&gt;tentacle&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/T/theology.html"&gt;theology&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;various uses of trees&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/U/urchin.html"&gt;urchin&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/V/voodoo-programming.html"&gt;voodoo programming&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;web&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/W/wheel.html"&gt;wheel&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/W/wizard.html"&gt;wizard&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/W/Wizard-Book.html"&gt;Wizard Book&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/W/wizard-hat.html"&gt;wizard hat&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/X/xyzzy.html"&gt;xyzzy&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://en.wikipedia.org/wiki/Yggdrasil_Linux"&gt;yggdrasil&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/Z/zen.html"&gt;zen&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href="http://www.catb.org/~esr/jargon/html/Z/zombie.html"&gt;zombie&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;
-A similar list could be made of Lewis-Carrol references, or even Douglas Adams.&lt;/p&gt;</description><category>computers</category><category>geek</category><category>hacking</category><category>observation</category><category>thoughts</category><guid>http://milosophical.me/blog/2006/04/04/mystical-jargon.html</guid><pubDate>Tue, 04 Apr 2006 03:26:03 GMT</pubDate></item><item><title>Dvorak keyboards</title><link>http://milosophical.me/blog/2006/03/27/dvorak-keyboards.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;
+&lt;p&gt;&lt;a href="http://milosophical.me/blog/2006/04/04/mystical-jargon.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>computers</category><category>geek</category><category>hacking</category><category>observation</category><category>thoughts</category><guid>http://milosophical.me/blog/2006/04/04/mystical-jargon.html</guid><pubDate>Tue, 04 Apr 2006 03:26:03 GMT</pubDate></item><item><title>Dvorak keyboards</title><link>http://milosophical.me/blog/2006/03/27/dvorak-keyboards.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;
 &lt;em&gt;This post was originally published
   at &lt;a href="http://sinewalker.blogspot.com.au/2006_03_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
   on 27 March 2006.&lt;/em&gt;
@@ -249,41 +92,7 @@ speed after a month).&lt;/p&gt;
 
 
 
-&lt;!--more--&gt;
-&lt;p&gt;
-I don't believe Dvorak makes me a faster typist inherently (though I am faster now that I can touch-type), but it's &lt;em&gt;much&lt;/em&gt; more comfortable and the shooting pains in my arms have gone.&lt;/p&gt;
-
-&lt;br&gt;
-
-&lt;p&gt;
-&lt;img src="http://photos1.blogger.com/blogger/179/613/400/2350-1B.0.jpg" border="2" alt="My home keyboard is an A4 KBS23 wireless, very similar to this" align="left"&gt;At home, I use a slightly older model of the &lt;a href="http://www.A4Tech.com"&gt;A4&lt;/a&gt; &lt;a href="http://www.a4tech.com/en/product2.asp?CID=2&amp;amp;SCID=14&amp;amp;MNO=KB%28S%29-2350ZRP"&gt;KB(S)-2350ZRP&lt;/a&gt; (pictured). I chose this keyboard over more &lt;a title="A4 2580RP — keypad at left makes mouse closer" href="http://www.a4tech.com/en/product2.asp?CID=2&amp;amp;SCID=14&amp;amp;MNO=KB%28S%29-2580RP"&gt;radical&lt;/a&gt; &lt;a title="This is just so kewl, like something from seaQuest DSV" href="http://www.teleprint.com/"&gt;designs&lt;/a&gt; that &lt;a title="I nearly bought one of these — may yet when I no longer need to share…" href="http://www.logitech.com/index.cfm/products/details/US/EN,CRID=2295,contentid=6012,detail=1"&gt;I like&lt;/a&gt;, because the A4 2350 is not too different from a standard typewriter layout — so it plays nice with other people in the family.  The A-shaped keys help a lot with my lower-arm pains too, but not so much as the Dvorak layout, since most of the time I'm typing at work on a standard &lt;a href="http://www.dell.com"&gt;Dell &lt;/a&gt;&lt;a title="This keyboard is the same model as the one I use at work.  Ick" href="http://static.flickr.com/65/170195416_e3cba9cda7_o.png"&gt;SK-8125&lt;/a&gt;.&lt;/p&gt;
-
-&lt;br&gt;
-
-&lt;p&gt;
-Making up strong passwords with this keyboard layout is much easier now.  Think
-of a fairly good password (fee1bo7ch, for instance) and then type it on Dvorak
-as-if you were typing on QWERTY (becomes u..1br7jd).&lt;/p&gt;
-
-&lt;br&gt;
-
-&lt;p&gt;
-I'm thinking about teaching my left hand
-to &lt;a href="http://www.mwbrooks.com/dvorak/onehand.html"&gt;type one-handed&lt;/a&gt;
-dvorak too, to improve my mousing experience.&lt;/p&gt;
-
-&lt;br&gt;
-
-&lt;h4&gt;Issues I've encountered with Dvorak&lt;/h4&gt;
-
-&lt;p&gt;
-There are some minor annoyances when you switch away from QWERTY.  Anybody in a minority group (such as left-handed people) will identify with some of these.  None of these issues have been serious enough to cause me to switch back to QWERTY though, as the benefits I've gained (typing speed, no more pain) far outweigh any of them, even all considered together.
-
-&lt;/p&gt;&lt;ul&gt;
-	&lt;li&gt;Typing on someone else's QWERTY keyboard becomes very uncomfortable. I frequently shudder at the thought of having to touch someone's keyboard now (not because of hygiene, but it's the same feeling). I can still do it, and since I never learnt to type properly on QWERTY anyway, it's no trouble to look at the keyboard.  Years of familiarity with this layout means I don't need much reminding, so it's not like I have to hunt for keys, more like a mental changing of gears and putting up with awkward key combinations (like, for instance A-W-K-W-A-R-D)&lt;/li&gt;
-	&lt;li&gt;In the same vein, letting someone else use your keyboard can be fun!  Most operating systems allow an easy/quick way to switch layouts.  Windows sort-of does, but it only applies to the current window, not the whole system (what a stupid design!), so you need to remember that gotcha.  I sometimes use this as an opportunity to advocate Dvorak, but usually this is interpreted as “just Mike evangelising again…” ;-)&lt;/li&gt;
-	&lt;li&gt;Some programs and games make use of the QWERTY layout in selecting keyboard short-cuts.  For example, vi uses the H J K and L keys for cursor movement, since this arrangement is sensible in QWERTY.  On Dvorak, it's useless as those keys are located at the J C V and P positions.  But then again, &lt;a title="EMACS rules, vi drools" href="http://c2.com/cgi/wiki?ViSucks"&gt;vi sucks&lt;/a&gt; anyway, so it's not a problem.  Winamp uses Z X C V and B for pause, playback and track selection functions, but it can be re-programmed, at least for the global shortcuts.  Some games suffer, so you need to switch back to QWERTY for them&lt;/li&gt;
-	&lt;li&gt;Passwords can be tricky.  On systems that lock your account after too many bad tries, you have to be very confident that you know where the keys are!  An alternative is to use my password trick above, and always look at the keys when entering passwords.  This is accurate, but if you need to put in your password on a QWERTY keyboard, you have to know the real password, and not the easier QWERTY–Dvorak mapping you have memorised.&lt;/li&gt;&lt;/ul&gt;</description><category>dvorak</category><category>geek</category><category>keyboards</category><category>thoughts</category><category>tip</category><guid>http://milosophical.me/blog/2006/03/27/dvorak-keyboards.html</guid><pubDate>Mon, 27 Mar 2006 00:07:00 GMT</pubDate></item><item><title>Organised books</title><link>http://milosophical.me/blog/2006/03/24/organised-books.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;
+&lt;p&gt;&lt;a href="http://milosophical.me/blog/2006/03/27/dvorak-keyboards.html"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>dvorak</category><category>geek</category><category>keyboards</category><category>thoughts</category><category>tip</category><guid>http://milosophical.me/blog/2006/03/27/dvorak-keyboards.html</guid><pubDate>Mon, 27 Mar 2006 00:07:00 GMT</pubDate></item><item><title>Organised books</title><link>http://milosophical.me/blog/2006/03/24/organised-books.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;
 &lt;em&gt;This post was originally published
   at &lt;a href="http://sinewalker.blogspot.com.au/2006_03_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
   on 24 March 2006.&lt;/em&gt;
