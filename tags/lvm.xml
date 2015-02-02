@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (LVM)</title><link>http://milosophical.me/</link><description></description><language>en</language><lastBuildDate>Sat, 31 Jan 2015 22:30:14 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Mounting LUKS/LVM from a LiveUSB</title><link>http://milosophical.me/blog/mounting-lukslvm-from-a-liveusb.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (LVM)</title><link>http://milosophical.me/</link><description></description><atom:link href="http://milosophical.me/tags/lvm.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Mon, 02 Feb 2015 17:14:17 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Mounting LUKS/LVM from a LiveUSB</title><link>http://milosophical.me/blog/mounting-lukslvm-from-a-liveusb.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;
 After upgrading work's openSUSE laptop from 13.1 to 13.2 today it
 would not unlock the LUKS-encrypted LVM, which is a problem since the
 entire SSD is encrypted (except for /boot).  Bummer.
@@ -48,10 +48,10 @@ To mount a LUKS-encrypted drive you first need to unlock the LUKS
 container:
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;# cryptsetup luksOpen /dev/sdb1 myusb&lt;/span&gt;
-&lt;span class="n"&gt;Enter&lt;/span&gt; &lt;span class="n"&gt;passphrase&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sdb1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; 
-&lt;span class="n"&gt;No&lt;/span&gt; &lt;span class="n"&gt;key&lt;/span&gt; &lt;span class="n"&gt;available&lt;/span&gt; &lt;span class="n"&gt;with&lt;/span&gt; &lt;span class="n"&gt;this&lt;/span&gt; &lt;span class="n"&gt;passphrase&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
-&lt;span class="n"&gt;Enter&lt;/span&gt; &lt;span class="n"&gt;passphrase&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sdb1&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;# cryptsetup luksOpen /dev/sdb1 myusb
+Enter passphrase for /dev/sdb1: 
+No key available with this passphrase.
+Enter passphrase for /dev/sdb1:
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
@@ -65,8 +65,8 @@ this…
 So, need to unlock the volume on the laptop…
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#cryptsetup luksOpen /dev/sda3 laptop&lt;/span&gt;
-&lt;span class="n"&gt;Enter&lt;/span&gt; &lt;span class="n"&gt;passphrase&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sda3&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;#cryptsetup luksOpen /dev/sda3 laptop&lt;/span&gt;
+Enter passphrase &lt;span class="k"&gt;for&lt;/span&gt; /dev/sda3:
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
@@ -83,11 +83,11 @@ volume. It's part of an LVG…
 First, let's look at the logical volumes:
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;#lvs&lt;/span&gt;
-  &lt;span class="n"&gt;LV&lt;/span&gt;   &lt;span class="n"&gt;VG&lt;/span&gt;   &lt;span class="n"&gt;Attr&lt;/span&gt;      &lt;span class="n"&gt;LSize&lt;/span&gt;   &lt;span class="n"&gt;Pool&lt;/span&gt; &lt;span class="n"&gt;Origin&lt;/span&gt; &lt;span class="n"&gt;Data&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;  &lt;span class="n"&gt;Move&lt;/span&gt; &lt;span class="n"&gt;Log&lt;/span&gt; &lt;span class="n"&gt;Cpy&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;Sync&lt;/span&gt; &lt;span class="n"&gt;Convert&lt;/span&gt;
-  &lt;span class="n"&gt;home&lt;/span&gt; &lt;span class="n"&gt;lvg&lt;/span&gt;  &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;wi&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ao&lt;/span&gt;&lt;span class="o"&gt;---&lt;/span&gt; &lt;span class="mf"&gt;179.31&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;                                             
-  &lt;span class="n"&gt;root&lt;/span&gt; &lt;span class="n"&gt;lvg&lt;/span&gt;  &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;wi&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ao&lt;/span&gt;&lt;span class="o"&gt;---&lt;/span&gt;  &lt;span class="mf"&gt;50.00&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;                                             
-  &lt;span class="n"&gt;swap&lt;/span&gt; &lt;span class="n"&gt;lvg&lt;/span&gt;  &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;wi&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;ao&lt;/span&gt;&lt;span class="o"&gt;---&lt;/span&gt;   &lt;span class="mf"&gt;8.00&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;#lvs&lt;/span&gt;
+  LV   VG   Attr      LSize   Pool Origin Data%  Move Log Cpy%Sync Convert
+  home lvg  -wi-ao--- 179.31g                                             
+  root lvg  -wi-ao---  50.00g                                             
+  swap lvg  -wi-ao---   8.00g
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
@@ -96,9 +96,9 @@ convention. Bravo. Okay, the passwords file is somewhere in 'home',
 let's mount it
 &lt;/p&gt;
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;# mount /dev/laptop/home /mnt&lt;/span&gt;
-&lt;span class="cp"&gt;# ls /mnt&lt;/span&gt;
-&lt;span class="n"&gt;guest&lt;/span&gt; &lt;span class="n"&gt;mjl&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# mount /dev/laptop/home /mnt&lt;/span&gt;
+&lt;span class="c"&gt;# ls /mnt&lt;/span&gt;
+guest mjl
 &lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;
