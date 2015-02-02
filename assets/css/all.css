@@ -2833,7 +2833,7 @@ pre.literal-block, pre.doctest-block, pre.math, pre.code {
   margin-right: 2em }
 
 pre.code .ln { color: grey; } /* line numbers */
-pre.code, code { background-color: #eeeeee }
+pre.code, code { background-color: #eeeeee; }
 pre.code .comment, code .comment { color: #5C6576 }
 pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
 pre.code .literal.string, code .literal.string { color: #0C5404 }
@@ -2946,6 +2946,7 @@ pre.code .nt { color: #008000; font-weight: bold } /* Name.Tag */
 pre.code .nv { color: #19177C } /* Name.Variable */
 pre.code .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
 pre.code .w { color: #bbbbbb } /* Text.Whitespace */
+pre.code .mb { color: #666666 } /* Literal.Number.Bin */
 pre.code .mf { color: #666666 } /* Literal.Number.Float */
 pre.code .mh { color: #666666 } /* Literal.Number.Hex */
 pre.code .mi { color: #666666 } /* Literal.Number.Integer */

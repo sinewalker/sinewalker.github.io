@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (DVD-CSS)</title><link>http://milosophical.me/</link><description></description><atom:link href="http://milosophical.me/tags/dvd-css.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Mon, 02 Feb 2015 17:18:46 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>DVD-CSS in SUSE</title><link>http://milosophical.me/blog/2006/03/07/dvd-css-in-suse.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;
+&lt;em&gt;This post was origionally published
+  at &lt;a href="http://sinewalker.blogspot.com.au/2006_03_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt; on 7 March 2006&lt;/em&gt;
+&lt;/p&gt;
+&lt;hr&gt;
+
+
+&lt;p&gt;There
+are &lt;a href="http://softwareinreview.com/cms/content/view/2/1/"&gt;excellent
+instructions&lt;/a&gt; for installing/patching SUSE to play commercial
+(&lt;a href="http://en.wikipedia.org/wiki/Content-scrambling_system"&gt;CSS&lt;/a&gt;
+encrypted) &lt;a href="http://en.wikipedia.org/wiki/DVD"&gt;DVD&lt;/a&gt;s.  I had no
+trouble following them either.  Wonder of wonders.
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+The whole issue
+of &lt;a href="http://en.wikipedia.org/wiki/Libdvdcss"&gt;libdvdcss&lt;/a&gt; being
+“illegal”
+in &lt;a href="http://en.wikipedia.org/wiki/Digital_Millennium_Copyright_Act"&gt;DMCA&lt;/a&gt;-&lt;a href="http://www.fta.gov.au/default.aspx?FolderID=246"&gt;enlisted&lt;/a&gt;
+countries &lt;a href="http://slashdot.org/comments.pl?sid=174995&amp;amp;cid=14552396"&gt;seems
+to be mute&lt;/a&gt; now, from my perspective...  so long as your intent is only to
+watch movies that you have legally obtained (and not fincancial gain), then it
+should be fine — if it's good enough for the MPAA, then it's good enough for
+me.  This would seem to me to work well with Australia's existing copyright
+law, which specifically grants fair-use copying and playing anyway, and goes
+against the dogma of the DMCA.&lt;/p&gt;</description><category>DVD</category><category>DVD-CSS</category><category>copyright</category><category>hacking</category><guid>http://milosophical.me/blog/2006/03/07/dvd-css-in-suse.html</guid><pubDate>Tue, 07 Mar 2006 03:00:00 GMT</pubDate></item></channel></rss>

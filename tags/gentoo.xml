@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (gentoo)</title><link>http://milosophical.me/</link><description></description><atom:link href="http://milosophical.me/tags/gentoo.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Mon, 02 Feb 2015 17:18:47 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Linux distro woes</title><link>http://milosophical.me/blog/2006/01/24/linux-distro-woes.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;&lt;em&gt;This post was originally posted
+    at &lt;a href="http://sinewalker.blogspot.com.au/2006_01_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
+    on 24 January 2006.&lt;/em&gt;
+&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Well, my flirtations with gentoo didn't last too long.  I'm now trying SuSE 10.0 out, which — yes — is an RPM-based distro!
+&lt;/p&gt;
+ 
+&lt;br&gt;
+
+&lt;p&gt;
+So, why did I leave gentoo? I suppose that the "distro that doesn't get in your way" got in my way. With the arrival of our first baby, I'm rather short on the hours needed to learn how to configure everything in gentoo. While it's true that I could stand to learn a lot from getting it all to work, I can't afford to be hacking around getting pesky things like the scanner to go, or printing, or figuring out why I suddenly cannot burn a CD anymore. I need a "linux for dummies" that just works, and is more stable than winblows. Of course, if money was no object, I'd get myself a nice shiny new dual G5 Macintosh, but that's just for my dreams.
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+So, since Novel have decided to open up SuSE a bit more now, I'm trying it out. I downloaded the "Evaluation" version, rather than OpenSuse, since I'm not an OpenSource zealot, and frankly I'd like to visit web sites with flash animations. It has crippled xine/kaffeine and no DVDCSS, but I can live without movies for now until I get that sorted, or build from the source I have, or even (ick!) just boot to Windows (though I know of no free DVD players for win32 that expand a 16:9 movie to fill as much of my 4:3 screen as Kaffeine does).
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+So, it installed well, I now have working scanner, printer, cd-rw, dhcpd, cvs, mysql, java (yay!), apache, tomcat, kde. No Audacity or Rosegarden (important apps for me), no Eclipse (can wait). Slightly out-of-date jedit (4.1) and about 250MB of patches to upgrade to at some point, or not, since on dial-up I'm not exactly a cracker target...
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+I'm very happy with SuSE so far. It's as pleasant as I always thought it would be. YaST is nice too. Only problem: sometimes cdrecord bombs, still (!). Pisses me off, it worked once but not again, even as root. It can sit on the back-burner (oops) until after I've got my missing audio software installed
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+Major projects for linux are:
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Record old music tapes to OGG and burn to data and audio CDs&lt;/li&gt;
+	&lt;li&gt;Get nice video editing software (kino) working for baby and burn to VCDs&lt;/li&gt;
+	&lt;li&gt;Java hacking (install Sun Java Studio sharchives)&lt;/li&gt;
+	&lt;li&gt;Photo indexing and database, then archive to CDs&lt;/li&gt;
+	&lt;li&gt;Produce a CD database&lt;/li&gt;
+	&lt;li&gt;Get a working backup solution running&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+Obviously, I need to get cd-rw sorted as a priority... it's kinda central!&lt;/p&gt;
+</description><category>gentoo</category><category>hacking</category><category>linux</category><guid>http://milosophical.me/blog/2006/01/24/linux-distro-woes.html</guid><pubDate>Tue, 24 Jan 2006 02:39:00 GMT</pubDate></item><item><title>“Get into the habbit of reading source docs”</title><link>http://milosophical.me/blog/2005/10/27/get-into-the-habbit-of-reading-source-docs.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;&lt;em&gt;This post was originally published
+    at &lt;a href="http://sinewalker.blogspot.com.au/2005_10_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
+          on 27 October 2005&lt;/em&gt;&lt;/p&gt;
+
+      &lt;hr&gt;
+      
+
+&lt;blockquote&gt;&lt;em&gt; The great thing about Linux is that all the definitive
+documentation (including the source code) comes with the OS. &lt;/em&gt;&lt;/blockquote&gt;
+&lt;p&gt;
+(&lt;a href="http://books.slashdot.org/comments.pl?sid=166454&amp;amp;threshold=-1&amp;amp;commentsort=0&amp;amp;mode=thread&amp;amp;cid=13883477"&gt;Slashdot quote&lt;/a&gt;)
+&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;
+You know, I'm finding that for a lot of the “beginner” linux distro's, this is
+not true.  Yes, the source is &lt;em&gt;available&lt;/em&gt; but it doesn't &lt;em&gt;come with
+the OS&lt;/em&gt;.&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+Granted, not everyone wants to fill their harddrives with source tarballs or
+SRPMs on the off chance they might want to read them, but only a few distro's I
+know come with source, and those are not necessarily for noob's. the main
+example that comes to mind is Gentoo (since it's a “ports”-like
+distribution). This is not to wax lyrical on the benefits of Gentoo for
+learning Linux (Gentoo has many weaknesses in that regard too, among its
+inappropriateness as a general OS for noob's), just that it's the only one I've
+found where the source &lt;em&gt;comes with the OS&lt;/em&gt;.
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+Other distro's with source “available” are Debian and Fedora (on extra CDs you
+have to download, and Fedora locks the source into SRPMs which is another
+learning hurdle to leap over, especially bad if all you want to do is read the
+source comments, or documentation not included in the binary RPM). It makes me
+feel like a 2nd-class citizen, that the source is somehow “open” but you have
+to know the secret handshake to get at it.
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+All of this, just to say: while reading source docs is a laudable habbit and I
+share your wish to encourage it, I can also see how it is difficult for most
+Linux noob's to form this habbit so long as the source doesn't actually come
+with the OS, which for a great many distro's it does not. The extra steps to
+download (and in many cases extract from SRPMs) the source are probably enough
+of a deterrent to forming this habit.
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+unfortunately, hacker habbits require hacker motivation :-(
+&lt;/p&gt;
+</description><category>code</category><category>gentoo</category><category>hacking</category><category>observation</category><category>package</category><category>thoughts</category><guid>http://milosophical.me/blog/2005/10/27/get-into-the-habbit-of-reading-source-docs.html</guid><pubDate>Thu, 27 Oct 2005 00:22:00 GMT</pubDate></item></channel></rss>
