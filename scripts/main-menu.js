@@ -52,7 +52,7 @@
         // create the menu
         new Btn('Mike Lockhart').addClass('skin-main_menu')
             .append(new Btn('About').addClass('skin-about')
-                    .append(new Btn('Colophon').addClass('skin-blog').on('click', linkEvent('/pg/colophon.html')))
+                    .append(new Btn('Colophon').addClass('skin-blog').on('click', linkEvent('/about')))
                     .append(new Btn('LinkedIn').addClass('skin-linkedin').on('click', linkEvent('https://www.linkedin.com/in/mikelockhart')))
                     .append(new Btn('Google Plus').addClass('skin-gplus').on('click', linkEvent('https://plus.google.com/+MichaelLockhart')))
                     .append(new Btn('Stack Overflow').addClass('skin-stack-overflow').on('click', linkEvent('http://stackoverflow.com/users/776953/mike')))
