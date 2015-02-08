@@ -56,7 +56,7 @@ may be emailed to me using my public key with fingerprint
 
 **** How this web site is made
 
-Posts are typed using the [[http://milosophical.me/categories/dvorak.html][Dvorak keyboard]] layout into [[http://emacsrocks.com/][Emacs]] on a
+Posts are typed using the [[http://milosophical.me/tags/dvorak.html][Dvorak keyboard]] layout into [[http://emacsrocks.com/][Emacs]] on a
 computer running [[http://www.opensuse.org][openSUSE]], usually on a [[https://www.trulyergonomic.com/store/index.php][Truly Ergonomic Computer
 Keyboard]] or a [[http://www.bedroomlan.org/hardware/sun-keyboards-usb][Sun Type 6]] keyboard with rearranged key caps. They are
 generated from a mix of markup languages (typically Emacs [[http://orgmode.org][Org Mode]],
@@ -64,7 +64,7 @@ generated from a mix of markup languages (typically Emacs [[http://orgmode.org][
 blog generator, and published to [[https://pages.github.com/][GitHub Pages]]. 
 
 
-The [[https://bitbucket.org/sinewalker/blog/src][source files]] are stored at bitbucket because I prefer [[http://mercurial.selenic.com/][Mercurial]]
+The [[ are stored at bitbucket because I prefer [[http://mercurial.selenic.com/][Mercurial]]
 over git -- although peer pressure and [[https://magit.github.io/][magit]] may change my low opinion
 of git some day....
 

@@ -14,11 +14,11 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/rss.xml</loc>
-  <lastmod>2015-02-02</lastmod>
+  <lastmod>2015-02-08</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/sitemap.xml</loc>
-  <lastmod>2015-02-02</lastmod>
+  <lastmod>2015-02-08</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/aboutme.xml</loc>
@@ -190,7 +190,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/encryption.xml</loc>
-  <lastmod>2015-02-02</lastmod>
+  <lastmod>2015-02-08</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/fix.xml</loc>
@@ -302,7 +302,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/linux.xml</loc>
-  <lastmod>2015-02-02</lastmod>
+  <lastmod>2015-02-08</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/lisp.xml</loc>
@@ -318,11 +318,11 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/luks.xml</loc>
-  <lastmod>2015-02-02</lastmod>
+  <lastmod>2015-02-08</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/lvm.xml</loc>
-  <lastmod>2015-02-02</lastmod>
+  <lastmod>2015-02-08</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/magnifier.xml</loc>
