@@ -27,7 +27,7 @@ think it also serves to remind me that *one shouldn't slave to rules
 for their own sake*: they are a guide only.  Some rules are made to be
 broken too &mdash; relational databases should be 3rd Normal Form, for
 instance (not always). Some rules are more useful as you learn things
-and can be safely discarded when you know what you're doing too.
+and can be safely discarded when you know what you're doing.
 
 **Rule 1**: The First Law: Nothing works First time
 ----
@@ -40,13 +40,13 @@ I believe the quote was something along the following lines:
 > So, you type your program in, save it, run it and it crashes (Lukes'
 > first law of computing: nothing works first time). Now what? &hellip;
 
-and I remember who wrote the article because Peter Lukes articles in
-*ACU* were a big inspiration in my early computing years, and I fondly
+I remember who wrote the article because Peter Lukes' articles in
+*ACU* were a big inspiration in my early computing years.  I fondly
 recall learning about recursion (using CPC Locomotive BASIC, which
-does not have functions &hellip;) and other enlightening ways to think
-about computer programming. To this day, I still initial my code
-comments in a similar manner to his `LKS150987`, (although I use ISO
-8601 dates, at least since the Y2K jazz).
+does not have functions, or a stack&hellip;) and other enlightening
+ways to think about computer programming. To this day, I still initial
+my code comments in a similar manner to his `LKS870915`, (although I
+use 4-digit years, at least since the Y2K jazz).
 
 Anyway, besides the fun play on words, this rule reminds me to
 *relax*, step back and reflect that computing is non trivial.
@@ -62,13 +62,14 @@ this is good.
 
 The DRY Principle is pretty fundamental, and I believe most people
 come to this conclusion themselves independently. For me, it was when
-I started to program on the BBC Micro in BBC BASIC (which, unlike the
-Locomotive BASIC, *does* have functions and named procedures), and I
-started to make utility functions for my code. I also started to write
-programs using line-number blocks so that utility functions could be
-`CHAIN MERGE`d (CPC) or `*LOAD`ed (BBC) from different `.BAS` files
-without clobbering each other, and I could have commonly used routines
-**and only write them once** (kids today, with Python modules and name
+I started to program on the BBC Micro in high school, using BBC BASIC
+(which, unlike the Locomotive BASIC, *does* have functions and also
+named procedures), and I started to make utility functions for my
+code. I also started to write programs using line-number blocks so
+that utility functions could be `CHAIN MERGE`d (CPC) or `*LOAD`ed
+(BBC) from different `.BAS` files without clobbering each other, and I
+could start to collect a *library* of commonly used routines **and
+only write them once** (kids today, with Python modules and name
 spaces don't know how good they have it).
 
 In a nut-shell,
@@ -80,10 +81,12 @@ to:
   repeating the same number all over
 * store values in *one* well-known place only
 
-A corollary to DRY is that *computers* are *good* at repeating
+A **corollary** to DRY is that *computers are good* at repeating
 themselves. Whenever you have to perform a task repeatedly, think
 about automating it. I start to think about it after I've done
 something three times.
+
+Don't repeat yourself, make the computer do it.
 
 
 ** Rule 3**: `python <(echo import this)`
@@ -91,7 +94,7 @@ something three times.
 ([Python](https://www.python.org/about/gettingstarted/) [PEP 20](https://www.python.org/dev/peps/pep-0020/))
 
 I'm surprised to learn that PEP 20 was only published in 2004, and not
-sooner. Anyway, there is much wisdom in these
+earlier. Anyway, there is much wisdom in these
 19([+1](https://programmers.stackexchange.com/questions/69955/what-is-python-20th-and-final-guideline))
 aphorisms, which is why they make it so high up on my personal list.
 The nice thing about these is that they are really easy to review even

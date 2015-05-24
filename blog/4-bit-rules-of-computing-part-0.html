@@ -92,7 +92,7 @@ think it also serves to remind me that <em>one shouldn't slave to rules
 for their own sake</em>: they are a guide only.  Some rules are made to be
 broken too — relational databases should be 3rd Normal Form, for
 instance (not always). Some rules are more useful as you learn things
-and can be safely discarded when you know what you're doing too.</p>
+and can be safely discarded when you know what you're doing.</p>
 <h3>
 <strong>Rule 1</strong>: The First Law: Nothing works First time</h3>
 <p>— Peter Lukes, <em>Amstrad Computer User magazine</em>, Issue 32, September 1987</p>
@@ -102,13 +102,13 @@ I believe the quote was something along the following lines:</p>
 <p>So, you type your program in, save it, run it and it crashes (Lukes'
 first law of computing: nothing works first time). Now what? …</p>
 </blockquote>
-<p>and I remember who wrote the article because Peter Lukes articles in
-<em>ACU</em> were a big inspiration in my early computing years, and I fondly
+<p>I remember who wrote the article because Peter Lukes' articles in
+<em>ACU</em> were a big inspiration in my early computing years.  I fondly
 recall learning about recursion (using CPC Locomotive BASIC, which
-does not have functions …) and other enlightening ways to think
-about computer programming. To this day, I still initial my code
-comments in a similar manner to his <code>LKS150987</code>, (although I use ISO
-8601 dates, at least since the Y2K jazz).</p>
+does not have functions, or a stack…) and other enlightening
+ways to think about computer programming. To this day, I still initial
+my code comments in a similar manner to his <code>LKS870915</code>, (although I
+use 4-digit years, at least since the Y2K jazz).</p>
 <p>Anyway, besides the fun play on words, this rule reminds me to
 <em>relax</em>, step back and reflect that computing is non trivial.</p>
 <p>There are those who like to boast about their programs compiling on
@@ -120,13 +120,14 @@ this is good.</p>
 <p>(tip: computers are <em>good</em> at that…)</p>
 <p>The DRY Principle is pretty fundamental, and I believe most people
 come to this conclusion themselves independently. For me, it was when
-I started to program on the BBC Micro in BBC BASIC (which, unlike the
-Locomotive BASIC, <em>does</em> have functions and named procedures), and I
-started to make utility functions for my code. I also started to write
-programs using line-number blocks so that utility functions could be
-<code>CHAIN MERGE</code>d (CPC) or <code>*LOAD</code>ed (BBC) from different <code>.BAS</code> files
-without clobbering each other, and I could have commonly used routines
-<strong>and only write them once</strong> (kids today, with Python modules and name
+I started to program on the BBC Micro in high school, using BBC BASIC
+(which, unlike the Locomotive BASIC, <em>does</em> have functions and also
+named procedures), and I started to make utility functions for my
+code. I also started to write programs using line-number blocks so
+that utility functions could be <code>CHAIN MERGE</code>d (CPC) or <code>*LOAD</code>ed
+(BBC) from different <code>.BAS</code> files without clobbering each other, and I
+could start to collect a <em>library</em> of commonly used routines <strong>and
+only write them once</strong> (kids today, with Python modules and name
 spaces don't know how good they have it).</p>
 <p>In a nut-shell,
 <a href="http://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a> boils down
@@ -137,16 +138,17 @@ to:</p>
   repeating the same number all over</li>
 <li>store values in <em>one</em> well-known place only</li>
 </ul>
-<p>A corollary to DRY is that <em>computers</em> are <em>good</em> at repeating
+<p>A <strong>corollary</strong> to DRY is that <em>computers are good</em> at repeating
 themselves. Whenever you have to perform a task repeatedly, think
 about automating it. I start to think about it after I've done
 something three times.</p>
+<p>Don't repeat yourself, make the computer do it.</p>
 <h3>
 <strong> Rule 3</strong>: <code>python &lt;(echo import this)</code>
 </h3>
 <p>(<a href="https://www.python.org/about/gettingstarted/">Python</a> <a href="https://www.python.org/dev/peps/pep-0020/">PEP 20</a>)</p>
 <p>I'm surprised to learn that PEP 20 was only published in 2004, and not
-sooner. Anyway, there is much wisdom in these
+earlier. Anyway, there is much wisdom in these
 19(<a href="https://programmers.stackexchange.com/questions/69955/what-is-python-20th-and-final-guideline">+1</a>)
 aphorisms, which is why they make it so high up on my personal list.
 The nice thing about these is that they are really easy to review even
