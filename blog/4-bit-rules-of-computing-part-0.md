@@ -37,7 +37,7 @@ I don't have the magazine article any more to verify the citation, but
 I believe the quote was something along the following lines:
 
 
-> So, you type your program in, save it, run it and it crashes (Lukes'
+> So, you type your program in, save it, run it and it doesn't work (Lukes'
 > first law of computing: nothing works first time). Now what? &hellip;
 
 I remember who wrote the article because Peter Lukes' articles in
