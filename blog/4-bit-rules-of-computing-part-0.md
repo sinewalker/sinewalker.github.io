@@ -26,8 +26,11 @@ Okay I'll admit first up: this *is* a cover-your-butt rule, but I
 think it also serves to remind me that *one shouldn't slave to rules
 for their own sake*: they are a guide only.  Some rules are made to be
 broken too &mdash; relational databases should be 3rd Normal Form, for
-instance (not always). Some rules are more useful as you learn things
-and can be safely discarded when you know what you're doing.
+instance (not always).
+
+I agree that you should not break rules for special cases, but some
+rules are more useful as you learn things and can be safely discarded
+when you know what you're doing.
 
 **Rule 1**: The First Law: Nothing works First time
 ----
@@ -35,7 +38,6 @@ and can be safely discarded when you know what you're doing.
 
 I don't have the magazine article any more to verify the citation, but
 I believe the quote was something along the following lines:
-
 
 > So, you type your program in, save it, run it and it doesn't work (Lukes'
 > first law of computing: nothing works first time). Now what? &hellip;
