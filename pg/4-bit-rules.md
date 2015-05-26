@@ -55,9 +55,9 @@ keeping Rule 0 in mind.
 
 `A`: Fix Mistakes, don't break Promises
 
-`B`: Always know where you're going when you start writing
+`B`: You Ain't Gonna Need It
 
-`C`: You Ain't Gonna Need It
+`C`: Always know where you're going when you start writing
 
 `D`: DON'T PANIC, Read The Fine Manuals
 
