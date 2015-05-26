@@ -67,13 +67,14 @@ school. We are making new friends. And our new house is awesome.
 
 ** Time for reflections
 
-
+#+BEGIN_QUOTE
    Why do you go away? So that you can come back. So that you can see
    the place you came from with new eyes and extra colors. And the
    people there see you differently, too. Coming back to where you
    started is not the same as never leaving.
 
-                  -- Terry Pratchet, /A Hat Full of Sky/
+                  -- Terry Pratchett, /A Hat Full of Sky/
+#+END_QUOTE
 
 This new role in Hobart is a return to home in more than one sense. Yes
 I've come home to Tassie, but also I think I've finally found the role
