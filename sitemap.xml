@@ -46,7 +46,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/archive/2015/index.html</loc>
-  <lastmod>2015-05-24</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/archive/archive.html</loc>
@@ -398,7 +398,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/4-bit-rules-of-computing-part-0.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/firefox-spelling.html</loc>
@@ -406,39 +406,43 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-1.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-2.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-3.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-4.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-5.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-6.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-7.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-8.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
+ </url>
+ <url>
+  <loc>http://milosophical.me/blog/index-9.html</loc>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/index.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/mounting-lukslvm-from-a-liveusb.html</loc>
@@ -447,6 +451,14 @@
  <url>
   <loc>http://milosophical.me/blog/org-post.html</loc>
   <lastmod>2015-02-02</lastmod>
+ </url>
+ <url>
+  <loc>http://milosophical.me/blog/rotate-screen-kde-shortcut.html</loc>
+  <lastmod>2015-05-28</lastmod>
+ </url>
+ <url>
+  <loc>http://milosophical.me/blog/what-are-those-j-and-l-characters-in-email.html</loc>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/index.html</loc>
@@ -482,15 +494,15 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/4-bits.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/aboutme.html</loc>
-  <lastmod>2015-03-27</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/aircraft.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/alternatives.html</loc>
@@ -498,15 +510,15 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/audio.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/avian-carrier.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/awesome.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/bind.html</loc>
@@ -518,19 +530,19 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/blogger.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/blogging.html</loc>
-  <lastmod>2015-03-27</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/book.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/bug.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/build-deps.html</loc>
@@ -538,11 +550,19 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/c.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
+ </url>
+ <url>
+  <loc>http://milosophical.me/tags/cat_hacks.html</loc>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/certificates.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
+ </url>
+ <url>
+  <loc>http://milosophical.me/tags/characters.html</loc>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/cheat.html</loc>
@@ -550,7 +570,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/clojure.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/code.html</loc>
@@ -558,11 +578,11 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/colour.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/computers.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/concurrency.html</loc>
@@ -570,7 +590,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/concurrent-programming.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/copyright.html</loc>
@@ -578,19 +598,19 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/cursor.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/cygwin.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/debian.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/delicious.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/desktop.html</loc>
@@ -598,63 +618,67 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/development.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/display.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/dns.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/dtd.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/duh.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/dvd-css.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/dvd.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/dvorak.html</loc>
-  <lastmod>2015-03-27</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/dvorcode.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/easypg.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/emacs-org-mode-blogging-code.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/emacs.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/emacs24.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/email.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
+ </url>
+ <url>
+  <loc>http://milosophical.me/tags/emoticon.html</loc>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/encryption.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/fix.html</loc>
@@ -662,51 +686,51 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/flickr.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/fonts.html</loc>
-  <lastmod>2015-03-27</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/freedom.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/freenx.html</loc>
-  <lastmod>2015-03-27</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/gadget.html</loc>
-  <lastmod>2015-03-27</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/game.html</loc>
-  <lastmod>2015-03-27</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/geek.html</loc>
-  <lastmod>2015-03-27</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/general.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/generics.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/gentoo.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/gnupg.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/gui.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/hack.html</loc>
@@ -714,11 +738,11 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/hacking.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/hardware.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/help.html</loc>
@@ -726,83 +750,83 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/how-to.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/howto.html</loc>
-  <lastmod>2015-03-27</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/ide.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/index.html</loc>
-  <lastmod>2015-03-27</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/jargon.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/java.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/jedit.html</loc>
-  <lastmod>2015-03-27</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/jvm.html</loc>
-  <lastmod>2015-03-27</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/kde.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/keyboards.html</loc>
-  <lastmod>2015-03-27</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/kubuntu.html</loc>
-  <lastmod>2015-03-27</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/linux.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/lisp.html</loc>
-  <lastmod>2015-03-27</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/look-and-feel.html</loc>
-  <lastmod>2015-03-27</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/lore.html</loc>
-  <lastmod>2015-03-27</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/luks.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/lvm.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/magnifier.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/mainframe.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/media.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/meta-data.html</loc>
@@ -810,11 +834,11 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/microcomputers.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/microsoft.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/mit.html</loc>
@@ -822,103 +846,103 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/multi-core.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/multi-threading.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/netbeans.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/network.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/networkmanager.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/networks.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/nomachine.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/nostalga.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/nx.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/observation.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/obsolete.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/oop.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/openssh.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/opensuse.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/package.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/passwords.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/photgraphy.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/printer.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/problem.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/process.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/programming.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/projects.html</loc>
-  <lastmod>2015-03-27</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/public-dns.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/python.html</loc>
-  <lastmod>2015-03-27</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/quote.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/quotes.html</loc>
@@ -926,43 +950,43 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/radeon.html</loc>
-  <lastmod>2015-03-27</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/rant.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/registry.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/retro.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/rfc.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/screens.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/screenshot.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/shell.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/silly.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/sloshes.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/solaris.html</loc>
@@ -970,7 +994,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/ssh.html</loc>
-  <lastmod>2015-03-27</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/stability.html</loc>
@@ -978,63 +1002,63 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/subversion.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/suse.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/svn.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/tagging.html</loc>
-  <lastmod>2015-03-27</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/teleportation.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/terminology.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/thoughts.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/threads.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/tip-konsole-kde.html</loc>
-  <lastmod>2015-03-27</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/tip.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/tips.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/typsetting.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/ubuntu.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/unix.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/useability.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/virtual-memory.html</loc>
@@ -1042,7 +1066,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/vorbis.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/web.html</loc>
@@ -1050,15 +1074,15 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/windows.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/wordpress.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/x11.html</loc>
-  <lastmod>2015-03-27</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/xcompmgr.html</loc>
@@ -1066,23 +1090,23 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/xhtml.html</loc>
-  <lastmod>2015-03-27</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/xine.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/xming.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/xml.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/xorg.html</loc>
-  <lastmod>2015-05-26</lastmod>
+  <lastmod>2015-05-28</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/xrandr.html</loc>
