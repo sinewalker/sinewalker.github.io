@@ -17,7 +17,7 @@ built-in screen, and it's also larger.
 It's also *very* handy when viewing pages that are narrow and tall.
 
 All I need now is a way to quickly switch the screen's orientation
-without digging through a GUI.  Sounds like a job for `xrandr` and
+without digging through a GUI.  This looks like a job for `xrandr` and
 KDE's Global Keyboard Shortcuts
 
 <!-- TEASER_END -->
