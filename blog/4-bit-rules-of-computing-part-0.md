@@ -3,7 +3,7 @@
 .. slug: 4-bit-rules-of-computing-part-0
 .. date: 2015-05-24 20:41:35 UTC+10:00
 .. tags: 4-bit-rules, tips
-.. category: 
+.. category: blog
 .. link: 
 .. description: Mike's 4-bit rules explained, part 0
 .. type: text

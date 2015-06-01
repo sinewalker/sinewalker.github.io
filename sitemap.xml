@@ -405,6 +405,14 @@
   <lastmod>2015-06-01</lastmod>
  </url>
  <url>
+  <loc>http://milosophical.me/blog/first-post.html</loc>
+  <lastmod>2015-06-01</lastmod>
+ </url>
+ <url>
+  <loc>http://milosophical.me/blog/get-audio-from-youtube-video.html</loc>
+  <lastmod>2015-06-01</lastmod>
+ </url>
+ <url>
   <loc>http://milosophical.me/blog/index-1.html</loc>
   <lastmod>2015-06-01</lastmod>
  </url>
@@ -493,6 +501,10 @@
   <lastmod>2015-03-27</lastmod>
  </url>
  <url>
+  <loc>http://milosophical.me/pixels/dust/index.html</loc>
+  <lastmod>2015-06-01</lastmod>
+ </url>
+ <url>
   <loc>http://milosophical.me/pixels/index.html</loc>
   <lastmod>2015-06-01</lastmod>
  </url>
@@ -573,6 +585,10 @@
   <lastmod>2015-06-01</lastmod>
  </url>
  <url>
+  <loc>http://milosophical.me/tags/cat_blog.html</loc>
+  <lastmod>2015-06-01</lastmod>
+ </url>
+ <url>
   <loc>http://milosophical.me/tags/cat_hackingwithkids.html</loc>
   <lastmod>2015-06-01</lastmod>
  </url>
@@ -606,6 +622,10 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/colour.html</loc>
+  <lastmod>2015-06-01</lastmod>
+ </url>
+ <url>
+  <loc>http://milosophical.me/tags/comments.html</loc>
   <lastmod>2015-06-01</lastmod>
  </url>
  <url>
@@ -709,6 +729,10 @@
   <lastmod>2015-06-01</lastmod>
  </url>
  <url>
+  <loc>http://milosophical.me/tags/ffmpeg.html</loc>
+  <lastmod>2015-06-01</lastmod>
+ </url>
+ <url>
   <loc>http://milosophical.me/tags/fix.html</loc>
   <lastmod>2015-06-01</lastmod>
  </url>
@@ -802,6 +826,10 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/jedit.html</loc>
+  <lastmod>2015-06-01</lastmod>
+ </url>
+ <url>
+  <loc>http://milosophical.me/tags/journal.html</loc>
   <lastmod>2015-06-01</lastmod>
  </url>
  <url>
@@ -906,6 +934,10 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/nostalga.html</loc>
+  <lastmod>2015-06-01</lastmod>
+ </url>
+ <url>
+  <loc>http://milosophical.me/tags/notebook.html</loc>
   <lastmod>2015-06-01</lastmod>
  </url>
  <url>
@@ -1065,6 +1097,10 @@
   <lastmod>2015-06-01</lastmod>
  </url>
  <url>
+  <loc>http://milosophical.me/tags/testing.html</loc>
+  <lastmod>2015-06-01</lastmod>
+ </url>
+ <url>
   <loc>http://milosophical.me/tags/thoughts.html</loc>
   <lastmod>2015-06-01</lastmod>
  </url>
@@ -1150,6 +1186,10 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/xrandr.html</loc>
+  <lastmod>2015-06-01</lastmod>
+ </url>
+ <url>
+  <loc>http://milosophical.me/tags/youtube.html</loc>
   <lastmod>2015-06-01</lastmod>
  </url>
 </urlset>

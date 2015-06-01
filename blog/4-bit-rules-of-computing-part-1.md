@@ -1,9 +1,9 @@
 <!-- 
 .. title: 4-bit Rules of Computing, Part 1
 .. slug: 4-bit-rules-of-computing-part-1
-.. date: 2015-05-31 20:41:35 UTC+10:00
-.. tags: 4-bit-rules, tips, draft
-.. category: 
+.. date: 2015-06-01 22:11 UTC+10:00 
+.. tags: draft, 4-bit-rules, tips, notebook, journal, blogging, comments, testing
+.. category: blog
 .. link: 
 .. description: Mike's 4-bit rules explained, part 1
 .. type: text
@@ -12,14 +12,17 @@
 Here is the second part of my series expanding on my
 [4-bit rules of computing](/pg/4-bit-rules.html).
 
-In this instalment:  Rules 4 to 7 (the third bit), which is mainly about 
-documentation and experiments.
+In this instalment:  Rule 4, on keeping a notebook or journal.
+
+I had planned on including Rules 5,6 and 7 as well, but this is taking me
+more time to write up my thoughts about those rules, and I want to get
+something out every week.
 
 <!-- TEASER_END -->
 
 **Rule 4**: If you're exploring, keep a notebook/journal
 ----
-(or, indeed, a blog)
+*(or, indeed, a blog)*
 
 One of the undergrad modules in my 
 [UTas](http://www.utas.edu.au/computing-information-systems) degree was 
@@ -34,52 +37,60 @@ detailed notes*.
 Cliff demonstrates that careful notes are valuable for at least these reasons:
 
  * To accurately record and recall what happened
- * Gather Data from experiments for detailed analysis
+ * Gather data from experiments for detailed analysis
  * As evidence that a task was performed, or to support a hypothesis
  * As material to teach others
+ * A place to organise paths of inquiry
 
-I took a lot of Cliff's advice to heart &mdash; he's a [genuine Doc 
-Brown](http://www.ted.com/talks/clifford_stoll_on_everything?language=en) and 
-this book was very inspiring.
+I took a lot of Cliff's advice to heart &mdash; he's a
+[genuine Doc Brown](http://www.ted.com/talks/clifford_stoll_on_everything?language=en)
+and his book was very inspiring.  Having kept lab notes for about 20
+years now, I firmly believe this to be the most important practice
+I picked up during my University career.
 
-I have been following Cliff's advice for about 20 years now and I
-firmly believe this to be the most important practice I picked up
-during my Uni career.
+----
 
-<<<INSERT PICTURE OF UNI NOTES>>>
+Even if you don't keep your notebook online (and there are
+[good arguments for technical blogging](http://technicalblogging.com/why-every-professional-should-consider-blogging/)),
+you should *definately* keep some record (in a computer!) of your
+explorations and experiments.  It is such a relief and a boon to leave
+a project aside and know that you will be *able* to come back to it
+after an extended break &mdash; and pick up were you left off and what
+you were thinking &mdash; because you left careful, searchable notes.
 
-Even if you don't keep your journal online (and there are
-[good arguments to blog online](http://technicalblogging.com/why-every-professional-should-consider-blogging/)
-as well), you should *definately* keep some record of your
-explorations and experiments.  It is so useful to be able to come back
-to a project after an extended break and pick up what you were
-thinking because you left careful notes.  I like to record the
-following in my notes
+I like to record the following in my notes:
 
-* the date and time (I have automatic keys for this)
-* what are my goals?
-* concerns? where am I stuck?
-* a short plan for how to get unstuck
-* hypotheses for trouble-shooting. What data do I need? How will I get
-  those?
-* outcome of experiments
+* The date and time (I have key bindings for this in emacs)
+* What are my goals?
+* Hypotheses. What data do I need? How will I get those?
+* Steps for setting up build/test/run apparatus
+* Procedures for experiments
+* Outcome of experiments
+* Conclusions
+* Concerns? Where am I stuck or what don't I understand?
+* A short plan for how to get unstuck
 
-Looking at these, they form the basis of what we are taught in High
-School Science class about recording experiments, aren't they? I often
-find that the discipline of just writing down these things is helpful
-in my problem solving, so that I have some structure about how to
-aproach the problem, rather than just bash my head against the wall.
+Looking at these, they pretty much mirror what we are taught in High
+School Science class about keeping lab notes, don't they? 
 
-It helps that I can type almost as fast as I think now. Back when I
-kept hand-written notes it was a pain (literally) to write this much
-detail down, but I did it even then because it was helpful, and with a
-detailed map of where I had come and was going, I almost never got
-lost.
+I often find that the discipline of writing down these things is
+helpful in my problem solving, so that I have some structure about how
+to approach the goal, rather than just bashing my head against a wall.
 
+It helps that I can type almost as fast as I think now (yeah yeah, I'm
+not that fast at typing). Back when I kept hand-written notes it was a
+pain (literally) to write this much detail down, but I did it even
+then because it was helpful, and with a detailed map of where I had
+come and was going, I almost never got lost.
+
+<img src="/pixels/dust/virtual-heart-system-log.jpg">
+
+Save your wrist as well as your wits and keep an electronic journal or
+notebook when you explore, and do consider putting it online too.
 
 **Rule 5**: Comments considered harmful
 ----
-(embedded in code, as well as those on YouTube)
+*(embedded in code, as well as those on YouTube)*
 
 This
 [thought-provoking](http://simpleprogrammer.com/2015/04/13/why-comments-are-stupid-a-real-example/)
