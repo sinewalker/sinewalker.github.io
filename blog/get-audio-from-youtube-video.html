@@ -29,7 +29,7 @@ article: http://ogp.me/ns/article#
     <meta property="og:description" content="Suppose that there is a song on YouTube and you want the audio from
 it. For instance:
 Le Freak, by Chic. Questions
-of Copyright potential infringement left unexamined, how do you get
+of potential Copyright infringement left unexamined, how do you get
 it?
 
 
@@ -92,25 +92,26 @@ Step 1, dow">
 <p>Suppose that there is a song on YouTube and you want the audio from
 it. For instance:
 <a href="https://www.youtube.com/watch?v=EVZh4WcdC3s">Le Freak, by Chic</a>. Questions
-of Copyright potential infringement left unexamined, how do you get
+of potential Copyright infringement left unexamined, how do you get
 it?</p>
 <!--TEASER_END -->
 
-<h3>Step 1, download</h3>
+<h3>Step 1, download the audio</h3>
 <p>The tool to use for downloading streaming video on the Internet is
-youtube-dl. It works for other sites besides YouTube (vimeo, for
-instance), though I've not yet had luck with ABC/BBC's iView. </p>
+<a href="https://rg3.github.io/youtube-dl/">youtube-dl</a>. It works for other
+sites besides YouTube (vimeo, for instance), though I've not yet had
+luck with ABC/BBC's iView.</p>
 <p>First, you download only the audio. You <em>can</em> download the video and
 extract the audio stream, you'll just be wasting network
 bandwidth/quota.</p>
-<p>I like ogg audio if I can get it, so I look for any webm formats
-available (the audio stream is ogg in webm):</p>
+<p>I like ogg-vorbis audio if I can get it, so I look for any webm
+formats available (the audio stream is vorbis in webm):</p>
 <pre class="code literal-block"><span class="n">mjl</span><span class="p">@</span><span class="nl">tesla</span><span class="p">:</span><span class="o">~/</span><span class="n">Music</span><span class="o">&gt;</span> <span class="n">youtube</span><span class="o">-</span><span class="n">dl</span> <span class="o">-</span><span class="n">F</span> <span class="nl">https</span><span class="p">:</span><span class="c1">//www.youtube.com/watch?v=EVZh4WcdC3s</span>
-<span class="p">[</span><span class="n">youtube</span><span class="p">]</span> <span class="nl">EVZh4WcdC3s</span><span class="p">:</span> <span class="n">Downloading</span> <span class="n">webpage</span>                                                                                                                                                                         
-<span class="p">[</span><span class="n">youtube</span><span class="p">]</span> <span class="nl">EVZh4WcdC3s</span><span class="p">:</span> <span class="n">Extracting</span> <span class="n">video</span> <span class="n">information</span>                                                                                                                                                                
-<span class="p">[</span><span class="n">youtube</span><span class="p">]</span> <span class="nl">EVZh4WcdC3s</span><span class="p">:</span> <span class="n">Downloading</span> <span class="n">js</span> <span class="n">player</span> <span class="n">en_US</span><span class="o">-</span><span class="n">vfl3g8JP2</span>                                                                                                                                                       
-<span class="p">[</span><span class="n">youtube</span><span class="p">]</span> <span class="nl">EVZh4WcdC3s</span><span class="p">:</span> <span class="n">Downloading</span> <span class="n">DASH</span> <span class="n">manifest</span>                                                                                                                                                                   
-<span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Available</span> <span class="n">formats</span> <span class="k">for</span> <span class="nl">EVZh4WcdC3s</span><span class="p">:</span>                                                                                                                                                                          
+<span class="p">[</span><span class="n">youtube</span><span class="p">]</span> <span class="nl">EVZh4WcdC3s</span><span class="p">:</span> <span class="n">Downloading</span> <span class="n">webpage</span>
+<span class="p">[</span><span class="n">youtube</span><span class="p">]</span> <span class="nl">EVZh4WcdC3s</span><span class="p">:</span> <span class="n">Extracting</span> <span class="n">video</span> <span class="n">information</span>
+<span class="p">[</span><span class="n">youtube</span><span class="p">]</span> <span class="nl">EVZh4WcdC3s</span><span class="p">:</span> <span class="n">Downloading</span> <span class="n">js</span> <span class="n">player</span> <span class="n">en_US</span><span class="o">-</span><span class="n">vfl3g8JP2</span>
+<span class="p">[</span><span class="n">youtube</span><span class="p">]</span> <span class="nl">EVZh4WcdC3s</span><span class="p">:</span> <span class="n">Downloading</span> <span class="n">DASH</span> <span class="n">manifest</span>
+<span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Available</span> <span class="n">formats</span> <span class="k">for</span> <span class="nl">EVZh4WcdC3s</span><span class="p">:</span>
 <span class="n">format</span> <span class="n">code</span>  <span class="n">extension</span>  <span class="n">resolution</span> <span class="n">note</span>
 <span class="mi">140</span>          <span class="n">m4a</span>        <span class="n">audio</span> <span class="n">only</span> <span class="n">DASH</span> <span class="n">audio</span>  <span class="mi">127</span><span class="n">k</span> <span class="p">,</span> <span class="n">m4a_dash</span> <span class="n">container</span><span class="p">,</span> <span class="n">aac</span>  <span class="mi">@128</span><span class="n">k</span> <span class="p">(</span><span class="mi">44100</span><span class="n">Hz</span><span class="p">),</span> <span class="mf">3.71</span><span class="n">MiB</span>
 <span class="mi">171</span>          <span class="n">webm</span>       <span class="n">audio</span> <span class="n">only</span> <span class="n">DASH</span> <span class="n">audio</span>  <span class="mi">138</span><span class="n">k</span> <span class="p">,</span> <span class="n">audio</span><span class="mi">@128</span><span class="n">k</span> <span class="p">(</span><span class="mi">44100</span><span class="n">Hz</span><span class="p">),</span> <span class="mf">3.78</span><span class="n">MiB</span>
@@ -143,18 +144,25 @@ mjl@tesla:~/Music&gt;
 
 
 <h3>Step 2, extract the audio stream</h3>
-<p>Okay, now to get the Vorbis audio out of it. I use ffmpeg:</p>
+<p>Okay, you have the audio, but it's encoded in a webm container. It
+would be much easier to put Vorbis data in an Ogg container, as music
+players know how to work with that.  For this purpose, I use
+<a href="https://www.ffmpeg.org/">ffmpeg</a>:</p>
 <pre class="code literal-block">ffmpeg -i freakout.webm -vn -acodec 'copy' freakout.ogg
 </pre>
 
 
-<p>If you download a different format, you will need to know the embedded
-audio stream encoded in it if you want to extract that stream. For
+<p>(You can also use it's fork, libav and avconv, but that's a
+Debian/Ubuntu confusion that
+<a href="http://stackoverflow.com/questions/9477115/what-are-the-differences-and-similarities-between-ffmpeg-libav-and-avconv">you shouldn't need to worry about</a>).</p>
+<p>If you download a format other than webm (because webm is not
+available, for instance), you will need to know the embedded audio
+stream encoded in that format if you want to extract that stream. For
 instance an mp4 video will usually contain audio as mp3, but sometimes
-acc.  ffmpeg can usually tell you what it finds.</p>
+aac or something.  ffmpeg can usually tell you what it finds.</p>
 <h3>Step 3, play the stream</h3>
-<p>One you have the audio in a file, you can play it with a music player,
-any time I want, no unnecessary bandwidth use.</p>
+<p>One you have the audio stream in an audio container file, you can play
+it with a music player, any time I want, no unnecessary bandwidth use.</p>
 <p>You can also import it into an audio editor, such as
 <a href="http://web.audacityteam.org/">Audacity</a> and trim or add
 leading/trailing blank sound, filter out noise, remove skips between
@@ -167,7 +175,7 @@ tracks and so on.</p>
                 <a href="mounting-lukslvm-from-a-liveusb.html" rel="prev" title="Mounting LUKS/LVM from a LiveUSB">Previous post</a>
             </li>
             <li class="next">
-                <a href="firefox-spelling.html" rel="next" title="Firefox Spelling">Next post</a>
+                <a href="standing-desks.html" rel="next" title="Experience with Standing at Work">Next post</a>
             </li>
         </ul>
 
