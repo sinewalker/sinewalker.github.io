@@ -4,6 +4,7 @@ var quip404 = 'This is not the page you\'re looking for... move along.\n';
 var _text;
 
 var TEXT404 = [
+    [ ' ', 5000 ],
     [ '^C', 800 ],
     [ '^C', 1000 ],
     [ '^C', 750 ],
