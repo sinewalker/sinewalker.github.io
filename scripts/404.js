@@ -27,7 +27,7 @@ var TEXT404 = [
     [ '*\n', 50 ],
     [ '[www:~$] ', 350 ],
     
-    [ '*ssh mjl@milosophical.me\n', 600],
+    [ '*ssh sinewalker@milosophical.me\n', 600],
     [ 'The authenticity of host \'milosphical.me\' can\'t be established.\n', 150],
     [ 'ECDSA key fingerprint is 18:25:54:42:8d:33:f2:fd:17:ca:fe:34:ba:be:59:54 [MD5].\n', 150 ],
     [ 'Are you sure you want to continue connecting (yes/no)? ', 1500 ],
@@ -36,22 +36,22 @@ var TEXT404 = [
     [ 'Password: ', 3200 ],
     [ '*************\n', 1800],
     [ 'Last login: Sat Jul 18 10:13:35 2015 from console\n', 150 ],
-    [ 'Have a lot of fun...\n', 150 ],
-    [ 'mjl@tesla:~> ', 3500 ],
+    [ 'Welcome to GitHub Pages...\n', 150 ],
+    [ 'sinewalker@github.com:~> ', 3500 ],
     [ '*service nginx status\n', 600],
     [ 'Absolute path to \'service\' is \'/usr/sbin/service\', so running it may require superuser privileges (eg. root).\n', 150 ],
-    [ 'mjl@tesla:~> ', 2500 ],
+    [ 'sinewalker@github.com:~> ', 2500 ],
     [ '*sudo !!\n', 600 ],
     [ 'root\'s password: ', 1800 ],
     [ '*************\n', 3800],
     [ 'service nginx status\n', 100 ],
     [ 'service: no such service nginx\nmjl@tesla:~> ', 4200 ],
     [ '*sudo bash\n', 600],
-    [ 'tesla:/home/mjl # ', 1500 ],    
+    [ 'github:/home/sinewalker # ', 1500 ],    
     [ '*service httpd status\n', 600],
-    [ 'service: no such service httpd\ntesla:/home/mjl # ', 2000 ],
+    [ 'service: no such service httpd\ngithub:/home/sinewalker # ', 2000 ],
     [ '*service nginx status\n', 600],
-    [ 'service: no such service nginx\ntesla:/home/mjl # ', 4800 ],    
+    [ 'service: no such service nginx\ngithub:/home/sinewalker # ', 4800 ],    
     [ '*service openresty status\n', 800],
     [ 'openresty.service - LSB: Start the Openresty web service\n', 100],
     [ '   Loaded: loaded (/usr/lib/systemd/server/openresty.service; enabled)\n', 100],
@@ -60,11 +60,11 @@ var TEXT404 = [
     [ ' Main PID: 1385 (nginx)\n', 100],
     [ '   CGroup: /servier.slice/openresty.service\n', 100],
     [ '           └─1385 /usr/bin/nginx\n\n', 100 ],
-    [ ' Mar 18 21:13:26 tesla.locknet nginx[1385]: Server listening on 0.0.0.0 port 80.\n', 100 ],
-    [ 'tesla:/home/mjl # ', 4200],
+    [ ' Mar 18 21:13:26 github.com nginx[1385]: Server listening on 0.0.0.0 port 80.\n', 100 ],
+    [ 'github:/home/sinewalker # ', 4200],
     [ '*service openresty restart\n', 600 ],
 
-    [ 'tesla:/home/mjl # ', 0, 1000 ]
+    [ 'github:/home/sinewalker # ', 0, 1000 ]
 ];
 
 // not much point on GitHub Pages... but anyway...
