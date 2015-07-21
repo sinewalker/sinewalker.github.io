@@ -6,15 +6,15 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>http://milosophical.me/pixels/dust/rss.xml</loc>
-  <lastmod>2015-06-23</lastmod>
+  <lastmod>2015-07-21</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/pixels/minecraft/rss.xml</loc>
-  <lastmod>2015-06-23</lastmod>
+  <lastmod>2015-07-21</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/pixels/rss.xml</loc>
-  <lastmod>2015-06-23</lastmod>
+  <lastmod>2015-07-21</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/pixels/test/rss.xml</loc>
@@ -22,15 +22,15 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/rss.xml</loc>
-  <lastmod>2015-06-23</lastmod>
+  <lastmod>2015-07-09</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/sitemap.xml</loc>
-  <lastmod>2015-06-23</lastmod>
+  <lastmod>2015-07-21</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/4-bit-rules.xml</loc>
-  <lastmod>2015-06-23</lastmod>
+  <lastmod>2015-07-09</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/4-bits.xml</loc>
@@ -98,7 +98,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/cat_blog.xml</loc>
-  <lastmod>2015-06-23</lastmod>
+  <lastmod>2015-07-09</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/cat_hackingwithkids.xml</loc>
@@ -646,7 +646,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/tips.xml</loc>
-  <lastmod>2015-06-23</lastmod>
+  <lastmod>2015-07-09</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/typsetting.xml</loc>
