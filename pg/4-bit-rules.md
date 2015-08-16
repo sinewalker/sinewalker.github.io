@@ -18,7 +18,7 @@ advice, received and honed over about 30 years' experience in
 computing, since I began it as a hobby in primary school in the
 1980's.  Some of these rules are *also* applicable to Real Life. They
 are deliberately laconic (to make them easier to remember); I will
-blog about them to expand and explain &mdash; especially the
+[blog about them](/tags/4-bit-rules.html)  to expand and explain &mdash; especially the
 controversial-sounding ones like Rules 5 and 6.
 
 `salt:` These are computing rules that *I* work by and recommend to

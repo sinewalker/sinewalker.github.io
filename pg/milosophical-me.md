@@ -9,11 +9,12 @@
 #+END_COMMENT
 
 Welcome to my web site! This page is the seemingly obligatory "why did
-I switch from <insert some other blogging engine/> to a static site on
+I switch from `<insert some other blogging engine/>` to a static site on
 GitHub Pages?" story, and also a bit of a bridge since my last regular
 posts in 2012/2013.
 
-** Where have I been?
+Where have I been?
+----
 
 Readers who don't personally know me are probably unaware what has
 happened in my personal life.  Nothing tragic has occurred, or
@@ -23,8 +24,8 @@ it hurt.  The shock of suddenly having no sure income, and with four
 dependants and a mortgage was pretty stressful too. 
 
 In June of 2013 I was invited into HP's Sydney office for a
-personal meeting -- I didn't often come physically to work as I was a
-telecommuter living and [[https://www.facebook.com/media/set/?set=a.497711257701.272490.685372701&type=1&l=74e24db6bd][working from the Blue Mountains]]. I knew from
+personal meeting &mdash; I didn't often come physically to work as I was a
+telecommuter living and [working from the Blue Mountains](https://www.facebook.com/media/set/?set=a.497711257701.272490.685372701&type=1&l=74e24db6bd). I knew from
 colleagues at work what was happening, so it was no surprise what the
 meeting was about: my position had become redundant and unless gainful
 work could be found for me in three months, I would have to leave. HP
@@ -33,25 +34,26 @@ and support for finding a position outside the company in that time.
 
 The whole redundancy experience is overwhelming. I'm still
 adjusting. The worst is missing my old home, my work colleagues and
-friends. Also the uncertainty and anxiety. The *best* was /being/
-/offered a new position by phone in August 2013, just as I was being/
-/escorted out of the building after my exit interview at my old job!/
+friends. Also the uncertainty and anxiety. The **best** was *being*
+*offered a new position by phone in August 2013, just as I was being*
+*escorted out of the building after my exit interview at my old job!*
 
 The other good news is that I got a large redundancy package, and with
 it we were able to finance a return to Tasmania!
 
-** Why Tasmania?
+Why Tasmania?
+----
 
 Well, both Jenny and I grew up in north Tassie, and we both have
 family there (I also have some aunts and my sister in Hobart).  So
 when I was looking for new work, and seeing that most of the
 opportunities available "near" our Blue Mountains home were in Sydney
-/proper/ -- with a 2 hour commute in each direction between the CBD and
-home -- I decided to cast a wider net and see what jobs were on offer
+*proper* &mdash; with a 2 hour commute in each direction between the CBD and
+home &mdash; I decided to cast a wider net and see what jobs were on offer
 in Hobart.
 
 I applied for a couple of positions that looked promising and happily
-landed the one that I /really, really/ wanted.  The PD was very
+landed the one that I *really, really* wanted.  The PD was very
 seductive and fit my own strengths perfectly.  So, pack up, sell the
 house and off we go to Tasmania!
 
@@ -61,36 +63,37 @@ connections.  When we got here, we were living in a caravan park
 before finding a house to rent and hunt for a new home to buy.  There
 were many hurdles and it took until June 2014 before we had a new
 permanent home (and permanent job). But we came through rather well,
-and I think we are in a better place -- on the whole -- for it.
+and I think we are in a better place &mdash; on the whole &mdash; for it.
 Certainly my new job is much, much better, and so is our sons'
 school. We are making new friends. And our new house is awesome.
 
-** Time for reflections
+Time for reflections
+----
 
-#+BEGIN_QUOTE
+>
    Why do you go away? So that you can come back. So that you can see
    the place you came from with new eyes and extra colors. And the
    people there see you differently, too. Coming back to where you
    started is not the same as never leaving.
+>
+  &mdash; Terry Pratchett, *A Hat Full of Sky*
 
-                  -- Terry Pratchett, /A Hat Full of Sky/
-#+END_QUOTE
 
 This new role in Hobart is a return to home in more than one sense. Yes
 I've come home to Tassie, but also I think I've finally found the role
 I'm suited for. For years at EDS/HP I tried to be a developer, because
 I love the technical. I could never quite land the role I wanted or
 hold onto the opportunities that did come my way though, and the few
-times I did get to /write code/, it was last-minute fire-fighting that
+times I did get to *write code*, it was last-minute fire-fighting that
 turned into a lights-on support role after the project "went live" and
-the developers all moved on to new projects -- leaving me and a few
+the developers all moved on to new projects &mdash; leaving me and a few
 others to hold the fort. Our reward for saving the project.
 
 With the redundancy though, I was forced to take a look inward, at
 what I had and had not achieved in my career, where I am strongest and
 what I enjoy doing. It turns out I'm not a developer, and I'm okay
-with that. *What I do well, and have done for my whole career, is*
-*integration, teaching and* "*engaging people*". I've been doing "dev-ops"
+with that. **What I do well, and have done for my whole career, is**
+**integration, teaching and** "**engaging people**". I've been doing "dev-ops"
 since before there was a movement about it; being the connection point
 between the aloof developers and the grumpy sys-admins, and making
 parts and people fit together. And also between the business managers
@@ -99,28 +102,31 @@ and the IT managers, business analysts and my clients' customers (or
 description popped up for the role at Squiz, it seemed to fit like a
 glove. Clearly the Squiz HR managers felt the same.
 
-As I write this in early 2015, I've been here at [[http://www.squiz.net][Squiz]] for about 18
+As I write this in early 2015, I've been here at [Squiz](http://www.squiz.net) for about 18
 months. The honeymoon is over and I've seen the warts, but
-[[http://www.squiz.net/au/careers][this place is awesome]], with such potential both as a company and for me
+[this place is awesome](http://www.squiz.net/au/careers), with such potential both as a company and for me
 personally. I really am not only relieved, but excited to have received
 permanency here. Every day I come (physically) to work, I am
 surrounded by fantastic peers who challenge me and I reaffirm that I'm
 in the right place at last.
 
-** Appreciating where I am
+Appreciating where I am
+----
 
 The return to Tasmania is a welcome sea-change too. Yes, we are
 missing the events and travel opportunities in and around Sydney, and
 I miss our Blue Mountains home (and my tae kwon do club). But Tassie
-has it's own events and stuff that [[http://www.lonelyplanet.com/best-in-travel/regions/04-tasmania][draws people from all over the
-world]]. We love the life style here. We also like having family closer --
+has it's own events and stuff that [draws people from all over the
+world](http://www.lonelyplanet.com/best-in-travel/regions/04-tasmania).
+We love the life style here. We also like having family closer &mdash;
 something we've not had for 15 years while living in New South Wales
 and nine years of raising children.
 
-Also, we can finally travel to places *other* than Tasmania for
+Also, we can finally travel to places **other** *than* Tasmania for
 biannual our big summer trips ;-)
 
-** Milosophy
+Milosophy
+----
 
 (Mike's philosophy)
 
@@ -141,25 +147,27 @@ bull.
 
 So, you will start to see a change in my posts I think: more of the
 personal,reflective/introspective kinds of posts you would expect to
-read in a diary or memoir -- though I am aware that basking in that
+read in a diary or memoir &mdash; though I am aware that basking in that
 too much is boring for anyone not personally connected to me, and
 potentially embarrassing for anyone else who is. So I'll see if I can
-strike the right balance. I've got [[http://aseigo.blogspot.com][a few]] [[http://technomancy.us][excellent]] [[http://sachachua.com][examples]] to go on,
-so I [[http://technicalblogging.com][should be alright]].
+strike the right balance. I've got [a few](http://aseigo.blogspot.com) [excellent](http://technomancy.us)
+[examples](http://sachachua.com) to go on,
+so I [should be alright](http://technicalblogging.com).
 
-** Milosophical Me
+Milosophical Me
+----
 
-There are technical reasons for my move away from [[http://sinewalker.wordpress.com][Wordpress.com]] as a
-blogging platform -- it's slow and awkward to use (meaning I'm
-discouraged from blogging with it and focus on [[https://plus.google.com/+MichaelLockhart][microblogging]] instead),
+There are technical reasons for my move away from [Wordpress.com](http://sinewalker.wordpress.com) as a
+blogging platform &mdash; it's slow and awkward to use (meaning I'm
+discouraged from blogging with it and focus on [microblogging](https://plus.google.com/+MichaelLockhart) instead),
 convoluted to host and maintain for yourself, limited when hosted for
 free, and anyway dynamic pages built from databases are a silly waste
 of processor cycles when your site is mainly static, content-heavy pages,
 like a blog.
 
 Now that I'm in a web company, I want to hack with HTML/CSS/JavaScript
-(or [[http://clojure.org/clojurescript][languages]] that [[http://coffeescript.org/][compile]] to Javascript), and I need a place to
-publish [[http://milosophical.me/hax/matrix-rain/matrix.html][hacks]], and [[http://milosophical.me/pixels/][pictures]]. With a static site I can have my cake and
+(or [languages](http://clojure.org/clojurescript) that [compile](http://coffeescript.org/) to Javascript), and I need a place to
+publish [hacks](/hax/matrix-rain/matrix.html), and [pictures](/pixels/). With a static site I can have my cake and
 eat it: I have a templating/publishing framework for making blogging
 quick and painless when I need it to be, as well as being able to
 side-step it when I want full control over the web codes.  Plus I've
