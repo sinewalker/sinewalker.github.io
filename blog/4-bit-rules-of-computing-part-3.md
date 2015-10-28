@@ -9,22 +9,26 @@
 .. type: text
 --> 
 
-Here is the fourth part of my [blog series](/tags/4-bit-rules.html) expanding on my
+Here is the fourth part of my [blog series](/tags/4-bit-rules.html) expanding on 
+my
 [4-bit rules of computing](/pg/4-bit-rules.html).
 
-In this installment:  Rules 5, on comments.
+In this installment:  **Rule 6, on doc-comments**, which follows up [Rule 
+5](/blog/4-bit-rules-of-computing-part-2.html).
+
+Doc-Comments are the language-supported documentation strings that can
+optionally be added to function definitions and in some languages to variables. 
+Examples are LISP documentation strings, Javadoc strings, and Python's docstrings. They
+appear in many languages besides these.
+
+
 
 <!-- TEASER_END -->
 
 **Rule 6**: but Doc-Comments are a Force for Good
 ----
 
-Doc-Comments are the language-supported documentation strings that can
-optionally be added to function definitions. Examples are LISP
-documentation strings, Javadoc strings, and Python's docstrings. They
-appear in many languages besides these.
-
-These really are a Force for Good. Nearly every argument that John
+Doc-Comments really are a Force for Good. Nearly every argument that John
 Sonmez has about code comments can be refuted for doc-comments:
 
 * Some of them work to refine the function definition, or to assist
@@ -59,9 +63,14 @@ Balance
 Emacs
 ----
 
-The "extensible, customizable, self-documenting real-time display editor" uses docstrings extensively in the LISP code that makes up most of the editor. It uses conventions within the docstrings to assist in generating a hypertext interactive online help
+The "extensible, customizable, self-documenting real-time display editor" uses 
+docstrings extensively in the LISP code that makes up most of the editor. It 
+uses conventions within the docstrings to assist in generating a hypertext 
+interactive online help
 
- * A customisation variable example. In Emacs, knowing the true name of a variable or function really does give you some power (in the ancient Jewish sense):
+ * A customisation variable example. In Emacs, knowing the true name of a 
+variable or function really does give you some power (in the ancient Jewish 
+sense):
  
 ```lisp
 (defcustom confirm-nonexistent-file-or-buffer `after-completion
@@ -81,7 +90,9 @@ This affects commands like `switch-to-buffer' and `find-file'."
 
 ```
 
-Produces this interactive help (the u̲n̲i̲c̲o̲d̲e̲-̲u̲n̲d̲e̲r̲l̲i̲n̲e̲d̲ text here is actually a hyperlink in Emacs to the documentation for the function mentioned within the quotes):
+Produces this interactive help (the u̲n̲i̲c̲o̲d̲e̲-̲u̲n̲d̲e̲r̲l̲i̲n̲e̲d̲ text 
+here is actually a hyperlink in Emacs to the documentation for the function 
+mentioned within the quotes):
 
 
 ```text
@@ -92,11 +103,13 @@ Documentation:
 Whether confirmation is requested before visiting a new file or buffer.
 If nil, confirmation is not requested.
 If the value is `a̲f̲t̲e̲r̲-̲c̲o̲m̲p̲l̲e̲t̲i̲o̲n', confirmation is only
- requested if the user called `m̲i̲n̲i̲b̲u̲f̲f̲e̲r̲-̲c̲o̲m̲p̲l̲e̲t̲e' right before
+ requested if the user called `m̲i̲n̲i̲b̲u̲f̲f̲e̲r̲-̲c̲o̲m̲p̲l̲e̲t̲e' right 
+before
  `m̲i̲n̲i̲b̲u̲f̲f̲e̲r̲-̲c̲o̲m̲p̲l̲e̲t̲e̲-̲a̲n̲d̲-̲e̲x̲i̲t'.
 Any other non-nil value means to request confirmation.
 
-This affects commands like `s̲w̲i̲t̲c̲h̲-̲t̲o̲-̲b̲u̲f̲f̲e̲r' and `f̲i̲n̲d̲-̲f̲i̲l̲e'.
+This affects commands like `s̲w̲i̲t̲c̲h̲-̲t̲o̲-̲b̲u̲f̲f̲e̲r' and 
+`f̲i̲n̲d̲-̲f̲i̲l̲e'.
 
 You can c̲u̲s̲t̲o̲m̲i̲z̲e̲ this variable.
 
@@ -104,7 +117,10 @@ This variable was introduced, or its default value was changed, in
 version 23.1 of Emacs.
 ```
 
-Because the documentation is right inline with the code, Emacs' interactive help is very complete, and well maintaned. The `:group` and `:version` symbols are used by the documentation system to produce the advice in the help about the customisation group and the Emacs version when this variable was added.
+Because the documentation is right inline with the code, Emacs' interactive help 
+is very complete, and well maintaned. The `:group` and `:version` symbols are 
+used by the documentation system to produce the advice in the help about the 
+customisation group and the Emacs version when this variable was added.
 
  * An example of a an interactive function:
  
@@ -119,10 +135,12 @@ Use \\[read-only-mode] to permit editing."
   (find-file--read-only #'find-file-other-window filename wildcards))
 ```
 
-Here, the `\\[function-name]` is replaced with the key binding for that function, and produces this interactive help:
+Here, the `\\[function-name]` is replaced with the key binding for that 
+function, and produces this interactive help:
 
 ```text
-find-file-read-only is an interactive compiled Lisp function in `f̲i̲l̲e̲s̲.̲e̲l'.
+find-file-read-only is an interactive compiled Lisp function in 
+`f̲i̲l̲e̲s̲.̲e̲l'.
 
 It is bound to C-x C-r.
 
@@ -138,7 +156,12 @@ Use C-x C-q to permit editing.
 Getters/Setters (doc-comments considered harmful)
 ----
 
-I'll make an exception for commenting getter and setter functions with docstrings. They really *don't* add any value to your code: everyone knows what they do: they encapsulate a classes properties. They should really be generated for you *automatically* (and I think that's the trend now, at least in newer Javas, by decorating the properties?) You *should* document the properties though, like Emacs custom variables&hellip;.
+I'll make an exception for commenting getter and setter functions with 
+docstrings. They really *don't* add any value to your code: everyone knows what 
+they do: they encapsulate a classes properties. They should really be generated 
+for you *automatically* (and I think that's the trend now, at least in newer 
+Javas, by decorating the properties?) You *should* document the properties 
+though, like Emacs custom variables&hellip;.
 
 links/references to Rust tests in comments and Python doctests
 ----

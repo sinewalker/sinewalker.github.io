@@ -1,0 +1,46 @@
+--- jargoogle.html	2003-12-30 05:39:56.000000000 +1100
++++ jargoogle.html.mjl	2015-10-28 21:44:27.832939429 +1100
+@@ -31,13 +31,13 @@
+       <table bgcolor="#FFFFFF" summary="">
+         <tr>
+           <td><a
+-          href="http://www.google.com/advanced_search?q=site:www.catb.org:~war/jargon"><img
++          href="http://www.google.com/advanced_search?q=site:milosophical.me:~war/jargon"><img
+            src="../../../www.google.com/logos/Logo_40wht.gif" alt="Google Logo"
+           border="0" align="middle" /></a></td>
+ 
+           <td><input type="text" name="as_q" size="31" maxlength="255"
+           value="" /> <input type="hidden" name="as_sitesearch"
+-          value="www.catb.org" /> <input type="submit" name="btnG"
++          value="milosophical.me" /> <input type="submit" name="btnG"
+           value="Google Search" /> <input type="submit" name="btnI"
+           value="I'm Feeling Lucky" /></td>
+         </tr>
+@@ -67,11 +67,11 @@
+         <th>Netscape</th>
+ 
+         <td><a
+-        href="javascript:q=document.getSelection();for(i=0;i%3Cframes.length;i++){q=frames[i].document.getSelection();if(q)break;}if(!q)void(q=prompt('Enter%20text%20to%20search%20using%20Google.%20You%20can%20also%20highlight%20a%20word%20on%20this%20web%20page%20before%20clicking%20Google%20Search.',''));if(q)location.href='http://www.google.com/search?client=googlet&amp;q='+escape(q)+'+site:www.catb.org'">
++        href="javascript:q=document.getSelection();for(i=0;i%3Cframes.length;i++){q=frames[i].document.getSelection();if(q)break;}if(!q)void(q=prompt('Enter%20text%20to%20search%20using%20Google.%20You%20can%20also%20highlight%20a%20word%20on%20this%20web%20page%20before%20clicking%20Google%20Search.',''));if(q)location.href='http://www.google.com/search?client=googlet&amp;q='+escape(q)+'+site:milosophical.me'">
+         Jargoogle</a></td>
+ 
+         <td><a
+-        href="javascript:q=document.getSelection();for(i=0;i%3Cframes.length;i++){q=frames[i].document.getSelection();if(q)break;}if(!q)void(q=prompt('Enter%20text%20to%20search%20using%20Google.%20You%20can%20also%20highlight%20a%20word%20on%20this%20web%20page%20before%20clicking%20Google%20Search.',''));if(q)location.href='http://www.google.com/search?client=googlet&amp;btnI=Im+Feeling+Lucky&amp;q='+escape(q)+'+site:www.catb.org'">
++        href="javascript:q=document.getSelection();for(i=0;i%3Cframes.length;i++){q=frames[i].document.getSelection();if(q)break;}if(!q)void(q=prompt('Enter%20text%20to%20search%20using%20Google.%20You%20can%20also%20highlight%20a%20word%20on%20this%20web%20page%20before%20clicking%20Google%20Search.',''));if(q)location.href='http://www.google.com/search?client=googlet&amp;btnI=Im+Feeling+Lucky&amp;q='+escape(q)+'+site:milosophical.me'">
+         Lucky Jargoogle</a></td>
+       </tr>
+ 
+@@ -79,11 +79,11 @@
+         <th>MSIE</th>
+ 
+         <td><a
+-        href="javascript:q=(document.frames.length?'':document.selection.createRange().text);for(i=0;i%3Cdocument.frames.length;i++){q=document.frames[i].document.selection.createRange().text;if(q!='')break;}if(q=='')void(q=prompt('Enter%20text%20to%20search%20using%20Google.%20You%20can%20also%20highlight%20a%20word%20on%20this%20web%20page%20before%20clicking%20Google%20Search.',''));if(q)location.href='http://www.google.com/search?client=googlet&amp;q='+escape(q)+'+site:www.catb.org'">
++        href="javascript:q=(document.frames.length?'':document.selection.createRange().text);for(i=0;i%3Cdocument.frames.length;i++){q=document.frames[i].document.selection.createRange().text;if(q!='')break;}if(q=='')void(q=prompt('Enter%20text%20to%20search%20using%20Google.%20You%20can%20also%20highlight%20a%20word%20on%20this%20web%20page%20before%20clicking%20Google%20Search.',''));if(q)location.href='http://www.google.com/search?client=googlet&amp;q='+escape(q)+'+site:milosophical.me'">
+         Jargoogle</a></td>
+ 
+         <td><a
+-        href="javascript:q=(document.frames.length?'':document.selection.createRange().text);for(i=0;i%3Cdocument.frames.length;i++){q=document.frames[i].document.selection.createRange().text;if(q!='')break;}if(q=='')void(q=prompt('Enter%20text%20to%20search%20using%20Google.%20You%20can%20also%20highlight%20a%20word%20on%20this%20web%20page%20before%20clicking%20Google%20Search.',''));if(q)location.href='http://www.google.com/search?client=googlet&amp;btnI=Im+Feeling+Lucky&amp;q='+escape(q)+'+site:www.catb.org'">
++        href="javascript:q=(document.frames.length?'':document.selection.createRange().text);for(i=0;i%3Cdocument.frames.length;i++){q=document.frames[i].document.selection.createRange().text;if(q!='')break;}if(q=='')void(q=prompt('Enter%20text%20to%20search%20using%20Google.%20You%20can%20also%20highlight%20a%20word%20on%20this%20web%20page%20before%20clicking%20Google%20Search.',''));if(q)location.href='http://www.google.com/search?client=googlet&amp;btnI=Im+Feeling+Lucky&amp;q='+escape(q)+'+site:milosophical.me'">
+         Lucky Jargoogle</a></td>
+       </tr>
+     </table>
