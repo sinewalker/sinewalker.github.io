@@ -54,7 +54,7 @@
             .append(new Btn('About').addClass('skin-about')
                     .append(new Btn('Colophon').addClass('skin-blog').on('click', linkEvent('/pg/colophon.html')))
                     .append(new Btn('LinkedIn').addClass('skin-linkedin').on('click', linkEvent('https://www.linkedin.com/in/mikelockhart')))
-                    .append(new Btn('Google Plus').addClass('skin-gplus').on('click', linkEvent('https://plus.google.com/+MichaelLockhart')))
+                    .append(new Btn('Google Plus').addClass('skin-gplus').on('click', linkEvent('https://plus.google.com/+MichaelLockhart/posts')))
                     .append(new Btn('Stack Overflow').addClass('skin-stack-overflow').on('click', linkEvent('http://stackoverflow.com/users/776953/mike')))
                     .append(new Btn('Calendar').addClass('skin-gcal').on('click', linkEvent('https://www.google.com/calendar/embed?src=sinewalker%40gmail.com&ctz=Australia/Sydney')))
                     .append(new Btn('Facebook').addClass('skin-facebook').on('click', linkEvent('https://www.facebook.com/sinewalker')))
