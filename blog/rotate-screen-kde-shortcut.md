@@ -2,7 +2,7 @@
 .. title: Rotate screen KDE shortcut
 .. slug: rotate-screen-kde-shortcut
 .. date: 2015-05-28 08:21:52 UTC+10:00
-.. tags: tip, howto, KDE, XRandR
+.. tags: tip, how-to, KDE, XRandR
 .. category: hacks
 .. link: 
 .. description: 

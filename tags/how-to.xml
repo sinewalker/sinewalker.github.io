@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (how-to)</title><link>http://milosophical.me/</link><description></description><atom:link href="http://milosophical.me/tags/how-to.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Tue, 23 Jun 2015 13:18:48 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Build and install Emacs24 on Debian squeeze</title><link>http://milosophical.me/blog/2012/01/15/build-and-install-emacs24-on-debian-squeeze.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;Hacking in Debian is so easy (one of the reasons I switched). Take, for instance, building Emacs. This is such a piece of cake compared to the weird hoops you have to go through to get all the build dependencies on other platforms. It's something I never tried before, simply because it was too daunting trying to figure out all the packages I need to install. But apt-get has this awesome --build-deps switch...
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (how-to)</title><link>http://milosophical.me/</link><description></description><atom:link href="http://milosophical.me/tags/how-to.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 04 Nov 2015 21:49:37 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Rotate screen KDE shortcut</title><link>http://milosophical.me/blog/rotate-screen-kde-shortcut.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;We have a few spare monitors laying about at work, and I just grabbed
+one with a rotating stand, so I can switch it between Landscape and
+Portrait. This is nice, because it's got more pixels than my laptop's
+built-in screen, and it's also larger.&lt;/p&gt;
+&lt;p&gt;It's also &lt;em&gt;very&lt;/em&gt; handy when viewing pages that are narrow and tall.&lt;/p&gt;
+&lt;p&gt;All I need now is a way to quickly switch the screen's orientation
+without digging through a GUI.  This looks like a job for &lt;code&gt;xrandr&lt;/code&gt; and
+KDE's Global Keyboard Shortcuts&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://milosophical.me/blog/rotate-screen-kde-shortcut.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>KDE</category><category>XRandR</category><category>how-to</category><category>tip</category><guid>http://milosophical.me/blog/rotate-screen-kde-shortcut.html</guid><pubDate>Wed, 27 May 2015 22:21:52 GMT</pubDate></item><item><title>How to get audio from an online video</title><link>http://milosophical.me/blog/get-audio-from-youtube-video.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;Suppose that there is a song on YouTube and you want the audio from
+it. For instance:
+&lt;a href="https://www.youtube.com/watch?v=EVZh4WcdC3s"&gt;Le Freak, by Chic&lt;/a&gt;. Questions
+of potential Copyright infringement left unexamined, how do you get
+it?&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://milosophical.me/blog/get-audio-from-youtube-video.html"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>audio</category><category>ffmpeg</category><category>how-to</category><category>tip</category><category>youtube</category><guid>http://milosophical.me/blog/get-audio-from-youtube-video.html</guid><pubDate>Tue, 03 Mar 2015 23:54:14 GMT</pubDate></item><item><title>DNS Caching in Ubuntu Desktop</title><link>http://milosophical.me/blog/2013/02/24/dns-caching-in-ubuntu-desktop.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;In a &lt;a href="http://sinewalker.wordpress.com/2012/01/11/implementing-a-caching-only-dns-on-debian/"&gt;previous blog entry&lt;/a&gt; I described setting up a caching-only DNS server to speed up hostname resolution on Debian systems.  I've recently been playing with Ubuntu and noticed that this hack is not working.
+
+
+&lt;/p&gt;&lt;p&gt;&lt;a href="http://milosophical.me/blog/2013/02/24/dns-caching-in-ubuntu-desktop.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>DNS</category><category>NetworkManager</category><category>hacking</category><category>how-to</category><category>networks</category><category>ubuntu</category><guid>http://milosophical.me/blog/2013/02/24/dns-caching-in-ubuntu-desktop.html</guid><pubDate>Sun, 24 Feb 2013 00:32:32 GMT</pubDate></item><item><title>Build and install Emacs24 on Debian squeeze</title><link>http://milosophical.me/blog/2012/01/15/build-and-install-emacs24-on-debian-squeeze.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;Hacking in Debian is so easy (one of the reasons I switched). Take, for instance, building Emacs. This is such a piece of cake compared to the weird hoops you have to go through to get all the build dependencies on other platforms. It's something I never tried before, simply because it was too daunting trying to figure out all the packages I need to install. But apt-get has this awesome --build-deps switch...
 
 &lt;/p&gt;&lt;p&gt;&lt;a href="http://milosophical.me/blog/2012/01/15/build-and-install-emacs24-on-debian-squeeze.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>build-deps</category><category>debian</category><category>emacs</category><category>hacking</category><category>how-to</category><guid>http://milosophical.me/blog/2012/01/15/build-and-install-emacs24-on-debian-squeeze.html</guid><pubDate>Sun, 15 Jan 2012 11:57:54 GMT</pubDate></item><item><title>Implementing a caching-only DNS on openSUSE</title><link>http://milosophical.me/blog/2010/07/20/implementing-a-caching-only-dns-on-opensuse.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;Lately I've been noticing significant DNS latency when visiting certain sites. This is most obvious when my browser spends ages with "Looking up some.web.server.com..." in it's status bar. It's particularly bad at sites like &lt;em&gt;wordpress.com&lt;/em&gt; where many pages make reference to sub-domains of wordpress.com and typically also to &lt;em&gt;google.com&lt;/em&gt; for analytics or ads.
 &lt;/p&gt;
@@ -31,89 +47,10 @@ However MS-Windows follows the old-fashioned, Macintosh/Smalltalk style of havin
 &lt;/p&gt;
 
 
-&lt;p&gt;&lt;a href="http://milosophical.me/blog/2010/03/10/ms-windows-focus-follows-mouse-registry-hacks.html"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>desktop</category><category>geek</category><category>hacking</category><category>how-to</category><category>tip</category><category>useability</category><category>windows</category><category>x11</category><guid>http://milosophical.me/blog/2010/03/10/ms-windows-focus-follows-mouse-registry-hacks.html</guid><pubDate>Wed, 10 Mar 2010 03:42:26 GMT</pubDate></item><item><title>Essentials to make Windows almost bareable</title><link>http://milosophical.me/blog/2007/06/07/essential-tools-to-make-windows-almost-bareable.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;Okay, so I hate working in Windows, but on my employer's equipment at least, I must live with it. After having had this machine replaced twice (faulty Dell hardware) and rebuilt more times than I can remember (Windows BSODs), for a total of at least 3 system migrations this past year, I thought I'd better keep a list of what free software to install on top of Windows, and what adjustments to make, so that at least I don't feel like I'm wearing a straight jacket.  Here goes:
-
-
-&lt;/p&gt;&lt;p&gt;&lt;a href="http://milosophical.me/blog/2007/06/07/essential-tools-to-make-windows-almost-bareable.html"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>Delicious</category><category>Microsoft</category><category>cygwin</category><category>dvorak</category><category>emacs</category><category>hacking</category><category>how-to</category><category>jEdit</category><category>java</category><category>lisp</category><category>media</category><category>shell</category><guid>http://milosophical.me/blog/2007/06/07/essential-tools-to-make-windows-almost-bareable.html</guid><pubDate>Wed, 06 Jun 2007 23:16:44 GMT</pubDate></item><item><title>Remote desktop access on SuSE: Cygwin, X, XDMCP and SSH?  Nope.  FreeNX!</title><link>http://milosophical.me/blog/2007/03/22/remote-desktop-acces-suse-cygwin-x-and-xdmcp.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;div&gt;&lt;strong&gt;MJL20080827 -- Update&lt;/strong&gt;:  I Just realised that this is one of my top-visited pages and it's a totally disorganised and incongruent pile of... What's worse is, I've never updated it since the promised update back in March 2007!
-
-
-Let me clear things up (and save you wading through the whole article): If you want remote access to your openSUSE desktop from a networked thin client, then forget about X11, XDMCP, VNC or tunneling X through SSH. Use the &lt;a title="Nomachine's intro to NX" href="http://nomachine.com/documentation/html/intr-technology.html"&gt;NX&lt;/a&gt; protocol. You'll need to do the following:
-
-&lt;ol&gt;
-	&lt;li&gt;Install &lt;a title="FreeNX -- an opensource implementation of an NX protocol server" href="http://freenx.berlios.de/"&gt;FreeNX&lt;/a&gt; on your openSUSE host. Some (slightly outdated, but usable) instructions are in Chapter 9 of the &lt;a title="openSUSE 10.2 Reference manual (PDF)" href="http://www.novell.com/documentation/opensuse102/pdfdoc/opensuse102_reference/opensuse102_reference.pdf" target="_blank"&gt;openSUSE 10.2 Reference manual&lt;/a&gt;. If you're using openSUSE 11.0 or newer, &lt;a title="FreeNX" href="http://software.opensuse.org/search?baseproject=openSUSE%3A11.0&amp;amp;p=1&amp;amp;q=FreeNX"&gt;get the latest FreeNX package&lt;/a&gt; from the &lt;a title="All about openSUSE Build Service" href="http://build.opensuse.org/"&gt;openSUSE Build Service&lt;/a&gt; (there are &lt;a title="openSUSE one-click install standard" href="http://en.opensuse.org/Standards/One_Click_Install"&gt;one-click install&lt;/a&gt; buttons)&lt;/li&gt;
-	&lt;li&gt;Install an NX client on your remote terminal(s). &lt;a title="Nomachine home page" href="http://www.nomachine.com/"&gt;Nomachine&lt;/a&gt; has &lt;a title="Nomachine's downloads page" href="http://www.nomachine.com/download.php"&gt;free NX clients&lt;/a&gt; for Linux, Mac, Windows and Solaris (even some experimental ones for PlayStation 2 and Zaurus!). If your remote terminal is running openSUSE, you could alternatively &lt;a title="Free NX client from OBS" href="http://software.opensuse.org/search?baseproject=openSUSE%3A11.0&amp;amp;p=1&amp;amp;q=freenx-client"&gt;get an open-source NX client&lt;/a&gt; from the build service (or ask yourself: I'm running X locally, so why don't I just use good ole SSH and X11?)&lt;/li&gt;
-	&lt;li&gt;Configure your NX client to connect to the openSUSE host, then log in and enjoy!&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;strong&gt;The upshot: &lt;/strong&gt;I've done this with a FreeNX server and Nomachine's NX client for Windows XP, and it all "just works", except maybe for some font issues with older X clients like emacs (install extra font packages from nomachine to fix that), and some transparency effect issues I noticed in kwin4, probably to do with X11 extensions missing in the NX client. Not a big deal.
-
-
-
-Read the rest of this article for the boring background and laughable false-starts in my quest for remote desktops in X... &amp;lt;blush/&amp;gt;
-
-
-
-&lt;p&gt;&lt;a href="http://milosophical.me/blog/2007/03/22/remote-desktop-acces-suse-cygwin-x-and-xdmcp.html"&gt;Read more…&lt;/a&gt; (5 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>GUI</category><category>KDE</category><category>Unix</category><category>cygwin</category><category>freenx</category><category>hacking</category><category>how-to</category><category>linux</category><category>nomachine</category><category>nx</category><category>x11</category><category>xorg</category><guid>http://milosophical.me/blog/2007/03/22/remote-desktop-acces-suse-cygwin-x-and-xdmcp.html</guid><pubDate>Thu, 22 Mar 2007 02:59:02 GMT</pubDate></item><item><title>Cygwin users and groups</title><link>http://milosophical.me/blog/2006/10/27/cygwin-users-and-groups.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;When you first install cygwin and run bash, it'll usually display this error message:
-&lt;/p&gt;&lt;blockquote&gt;
-
-&lt;pre&gt;Your group is currently "mkpasswd".  This indicates that
-
-the /etc/passwd (and possibly /etc/group) files should be rebuilt.
-
-See the man pages for mkpasswd and mkgroup then, for example, run
-
-mkpasswd -l [-d] &amp;gt; /etc/passwd
-
-mkgroup  -l [-d] &amp;gt; /etc/group
-
-Note that the -d switch is necessary for domain users.&lt;/pre&gt;
-
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;a href="http://milosophical.me/blog/2006/10/27/cygwin-users-and-groups.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>cygwin</category><category>hacking</category><category>how-to</category><category>tip</category><guid>http://milosophical.me/blog/2006/10/27/cygwin-users-and-groups.html</guid><pubDate>Thu, 26 Oct 2006 21:47:02 GMT</pubDate></item><item><title>Xine performance</title><link>http://milosophical.me/blog/2005/10/31/xine-performance.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;&lt;em&gt;This post was originally published
-    at &lt;a href="http://sinewalker.blogspot.com.au/2005_10_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt; on 31 October 2005&lt;/em&gt;&lt;/p&gt;
-&lt;hr&gt;
-
-&lt;p&gt;Now playing with &lt;a href="http://www.gentoo.org/"&gt;Gentoo&lt;/a&gt; as my latest
-Linux of choice (I got fed up with RPM dependancy problems, and Gentoo being
-source-based solves my other issue with binary-based distributions, where I
-felt like a 2nd-class citizen when using or accessing source code).
+&lt;p&gt;&lt;a href="http://milosophical.me/blog/2010/03/10/ms-windows-focus-follows-mouse-registry-hacks.html"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>desktop</category><category>geek</category><category>hacking</category><category>how-to</category><category>tip</category><category>useability</category><category>windows</category><category>x11</category><guid>http://milosophical.me/blog/2010/03/10/ms-windows-focus-follows-mouse-registry-hacks.html</guid><pubDate>Wed, 10 Mar 2010 03:42:26 GMT</pubDate></item><item><title>Registering local DTDs or XML schemas with NetBeans</title><link>http://milosophical.me/blog/2009/05/12/registering-local-dtds-or-xml-schemas-with-netbeans.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;The NetBeans online help &lt;a title="NetBeans XML catalog help on Jiema" href="http://www.jiema.org/xref/netbeans/usersguide/javahelp/org/netbeans/modules/usersguide/xml/catalog/xmlcatalog_mount.html"&gt;describes the steps for registering a local DTD or XML file&lt;/a&gt; with NetBeans' &lt;em&gt;DTDs and XML Schemas Manager&lt;/em&gt;. It's succinct and to the point, but for the slow people in the room it's a bit confusing. So here's my tip for registering a local DTD file with NetBeans so that you can use NetBeans' awesome XML validation and completion features.
 &lt;/p&gt;
 
-&lt;br&gt;
+&lt;p&gt;&lt;a href="http://milosophical.me/blog/2009/05/12/registering-local-dtds-or-xml-schemas-with-netbeans.html"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>DTD</category><category>XML</category><category>hacking</category><category>how-to</category><category>netbeans</category><category>tip</category><guid>http://milosophical.me/blog/2009/05/12/registering-local-dtds-or-xml-schemas-with-netbeans.html</guid><pubDate>Tue, 12 May 2009 00:27:55 GMT</pubDate></item><item><title>Essentials to make Windows almost bareable</title><link>http://milosophical.me/blog/2007/06/07/essential-tools-to-make-windows-almost-bareable.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;Okay, so I hate working in Windows, but on my employer's equipment at least, I must live with it. After having had this machine replaced twice (faulty Dell hardware) and rebuilt more times than I can remember (Windows BSODs), for a total of at least 3 system migrations this past year, I thought I'd better keep a list of what free software to install on top of Windows, and what adjustments to make, so that at least I don't feel like I'm wearing a straight jacket.  Here goes:
 
-&lt;p&gt;
-So, I've got &lt;a href="http://xinehq.de/"&gt;Xine&lt;/a&gt; working, but can only use
-shared memory for the video decoding.  This is great if I want to capture
-screen shots, but not for high-speed movies such as The Matrix, or even just
-reading the credits on The Lord of the Ring.  So need to "fix" the performance.
-&lt;/p&gt;
 
-&lt;br&gt;
-
-&lt;p&gt;
-I used to have Mandrake
-running &lt;a href="http://linuxtv.org/v4lwiki/index.php/Main_Page"&gt;v4l&lt;/a&gt;
-+ &lt;a href="http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/video-playback.html"&gt;xv&lt;/a&gt;,
-but I can't have installed it right in Gentoo because, although xv is loaded,
-the performance is glacial if I try to use it.
-&lt;/p&gt;
-
-&lt;br&gt;
-
-&lt;p&gt;
-I
-found &lt;a href="http://dvd.sourceforge.net/xine-howto/en_GB/html/howto-9.html"&gt;this
-old How-to&lt;/a&gt; with some advice to try... but I might also want to look at
-the &lt;a href="http://xinehq.de/index.php/faq"&gt;FAQ&lt;/a&gt;.... probably I haven't
-built something into the kernel.
-&lt;/p&gt;
-
-&lt;br&gt;
-
-&lt;p&gt;
-Also while reading around, I
-discovered &lt;a href="http://www.mplayerhq.hu/"&gt;Mplayer&lt;/a&gt;.  This looks
-like it's worth a download...&lt;/p&gt;
-
-</description><category>DVD</category><category>hacking</category><category>how-to</category><category>tip</category><category>xine</category><guid>http://milosophical.me/blog/2005/10/31/xine-performance.html</guid><pubDate>Mon, 31 Oct 2005 02:43:00 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;&lt;p&gt;&lt;a href="http://milosophical.me/blog/2007/06/07/essential-tools-to-make-windows-almost-bareable.html"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>Delicious</category><category>Microsoft</category><category>cygwin</category><category>dvorak</category><category>emacs</category><category>hacking</category><category>how-to</category><category>jEdit</category><category>java</category><category>lisp</category><category>media</category><category>shell</category><guid>http://milosophical.me/blog/2007/06/07/essential-tools-to-make-windows-almost-bareable.html</guid><pubDate>Wed, 06 Jun 2007 23:16:44 GMT</pubDate></item></channel></rss>

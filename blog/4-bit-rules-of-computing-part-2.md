@@ -2,7 +2,7 @@
 .. title: 4-bit Rules of Computing, Part 2
 .. slug: 4-bit-rules-of-computing-part-2
 .. date: 2015-07-22 21:15 UTC+10:00 
-.. tags: 4-bit-rules, tips, comments, literate
+.. tags: 4-bit-rules, tip, comments, literate
 .. category: lore
 .. link: 
 .. description: Mike's 4-bit rules explained, part 2

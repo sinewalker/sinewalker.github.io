@@ -2,7 +2,7 @@
 .. title: How to get audio from an online video
 .. slug: get-audio-from-youtube-video
 .. date: 2015-03-04 10:54:14 UTC+11:00
-.. tags: howto, tip, youtube, ffmpeg, audio
+.. tags: how-to, tip, youtube, ffmpeg, audio
 .. category: hacks
 .. link: 
 .. description: 

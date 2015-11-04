@@ -2,7 +2,7 @@
 .. title: 4-bit Rules of Computing, Part 1
 .. slug: 4-bit-rules-of-computing-part-1
 .. date: 2015-06-02 18:47 UTC+10:00 
-.. tags: 4-bit-rules, tips, notebook, journal, blogging
+.. tags: 4-bit-rules, tip, notebook, journal, blogging
 .. category: blog
 .. link: 
 .. description: Mike's 4-bit rules explained, part 1
