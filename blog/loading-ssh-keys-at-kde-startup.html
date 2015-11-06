@@ -26,12 +26,12 @@ article: http://ogp.me/ns/article#
         <meta property="og:site_name" content="Milosophical Me">
     <meta property="og:title" content="Loading SSH keys at KDE startup">
     <meta property="og:url" content="http://milosophical.me/blog/loading-ssh-keys-at-kde-startup.html">
-    <meta property="og:description" content="In []:">
+    <meta property="og:description" content="It's really handy to have all my SSH authentication be passwordless, but in a secure way. In openSUSE, the ssh-agent is started for you automatically, but you still need to add your identities manuall">
     <meta property="og:type" content="article">
     <meta property="article:published_time" content="2015-11-04T21:33:18+11:00">
            <meta property="article:tag" content="KDE">
-           <meta property="article:tag" content="SSH">
            <meta property="article:tag" content="howto">
+           <meta property="article:tag" content="ssh">
            <meta property="article:tag" content="tip">
 
     
@@ -71,8 +71,8 @@ article: http://ogp.me/ns/article#
         <ul>
         Tags : 
            <li><a class="tag p-category" href="../tags/kde.html" rel="tag">KDE</a></li>
-           <li><a class="tag p-category" href="../tags/ssh.html" rel="tag">SSH</a></li>
            <li><a class="tag p-category" href="../tags/howto.html" rel="tag">howto</a></li>
+           <li><a class="tag p-category" href="../tags/ssh.html" rel="tag">ssh</a></li>
            <li><a class="tag p-category" href="../tags/tip.html" rel="tag">tip</a></li>
         </ul>
         </div>
@@ -82,26 +82,126 @@ article: http://ogp.me/ns/article#
             <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
+<div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
-In []:
 </div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class="highlight"><pre> 
-</pre></div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It's really handy to have all my SSH authentication be passwordless, but in a secure way. In openSUSE, the <code>ssh-agent</code> is started for you automatically, but you still need to add your identities manually (and enter passphrases when you do this).  That's a bit of a pain to do every time you login.</p>
+<p>Here are some simple scripts and steps I use to set up my KDE session so that it will automatically load my SSH identities when I login.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<!-- TEASER_END -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are three parts for this:</p>
+<ol>
+<li>
+<strong>Set up KDE's KWallet</strong> with a master password.  KWallet will be remembering the passphrases for my SSH keys (as well as other passwords within KDE such as those for web sites visited with Konqueror and Chrome, or email passwords, SQL Connections and so on).  This makes it so that I only have to remember the KWallet master password to open my wallet at login, not all the different passphrases (you should use a different passphrase for each SSH key pair)</li>
+<li>
+<strong>Start <code>ssh-add</code> at login</strong>, using the KDE password tool <code>ksshaskpass</code> to ask for the passphrases (and that will save them to my wallet)</li>
+<li>
+<strong>Automatically load all my SSH identities</strong> (I have several, for work and for different code hosting systems on the net:  bitbucket and github)</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="setting-up-kwallet">Setting up KWallet</h3>
+<p>You should only need to do this once:</p>
+<ol>
+<li>Launch "KDE Wallet Configuration" (press <strong>Alt-F2</strong> or whichever shortcun runs <strong>KRunner</strong> in your setup) type <strong>wallet</strong> and pick the configuration tool from the list</li>
+<li>Make sure <strong>Enable the KDE wallet subsystem</strong> is checked</li>
+<li>
+<strong>Launch Wallet Manager</strong> and create a new wallet if you need to, setting the passphrase. <em>This is the one you need to remember and type every time you login to KDE</em>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="setting-up-ssh-add-">Setting up <code>ssh-add</code>
+</h3>
+<p>I use this script:</p>
+<pre><code class="language-bash"><span class="shebang">#!/bin/sh</span>
+export SSH_ASKPASS=/usr/lib/ssh/ksshaskpass
+/usr/bin/ssh-add
+</code></pre>
+<p>Save this script to a location you keep your shell scripts, <code>chmod +x</code> it so it is executable. Then, it needs to be run automatically at KDE Startup. For this, you add it to the KDE Autostarts.</p>
+<ol>
+<li>Launch the "Autostart" KDE Control Module (<strong>Alt-F2</strong>, <strong>Autostart</strong>)</li>
+<li>Add a new Script File linking to where you saved the above script</li>
+</ol>
+<p>From now on, every time you start KDE, it'll run <code>ssh-add</code> and set it's password tool to be the KDE graphical password tool, <code>ksshaskpass</code>. That in turn uses KWallet for password storage, so if you need a password that's in the wallet, it'll retrieve it from there.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="adding-my-ssh-identities-at-login">Adding my SSH identities at login</h3>
+<p>I use a second script:</p>
+<pre><code class="language-bash"><span class="shebang">#!/bin/bash</span>
+<span class="comment"># Finds all private key files (that are protected, based on mode bits) </span>
+<span class="comment"># and adds each to ssh agent</span>
+<span class="keyword">for</span> filename <span class="keyword">in</span> ~/.ssh/*; <span class="keyword">do</span>
+  perms=$(stat $filename|sed -n <span class="string">'/^Access: (/{s/Access: (\([0-9]\+\).*$/\1/;p}'</span>)
 
-</div>
-</div>
-</div>
+  filetype=$(file $filename)
 
+  <span class="keyword">if</span> <span class="test_condition">[[ <span class="string">"$perms" == "0600" &amp;&amp; "$filetype"</span> == *<span class="string">"private key"</span> ]]</span>; <span class="keyword">then</span>
+    ssh-add <span class="variable">$filename</span>
+  <span class="keyword">fi</span>
+<span class="keyword">done</span>
+</code></pre>
+<p>This one will pick out all the private keys from my SSH directory <code>~/.ssh</code>, adding them to my SSH agent's keychain.</p>
+<p>Add this to Autostart as another Script File. I've saved it as <code>~/.ssh/addkeys</code>.</p>
+<p>You need to <code>chmod +x addkeys</code> and run it once to add all the keys and enter their passphrases (so that they get added to your Wallet).</p>
+<p>Once the script has been run, whenever I need to login to an SSH session, if the identity is already in the agent's chain, I can get in without needing to type the passphrase.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So now that my wallet is set up, the two scripts are in place at Autostart, and I've run the <code>addkeys</code> script at least once to add the passphrasses to my wallet, I never need to enter passwords or passphrases when SSHing again (unless keys change or it's a new host).</p>
+</div>
+</div>
 </div>
     </div>
   </div>
 
         </div>
-        
+                <ul class="pager">
+            <li class="previous">
+                <a href="4-bit-rules-of-computing-part-2.html" rel="prev" title="4-bit Rules of Computing, Part 2">Previous post</a>
+            </li>
+        </ul>
+
                     <script src="https://apis.google.com/js/plusone.js"></script>
 <div class="g-comments" data-href="http://milosophical.me/blog/loading-ssh-keys-at-kde-startup.html" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">
 </div>

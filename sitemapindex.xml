@@ -22,11 +22,11 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/rss.xml</loc>
-  <lastmod>2015-11-04</lastmod>
+  <lastmod>2015-11-06</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/sitemap.xml</loc>
-  <lastmod>2015-11-04</lastmod>
+  <lastmod>2015-11-06</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/4-bit-rules.xml</loc>
@@ -326,7 +326,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/howto.xml</loc>
-  <lastmod>2015-06-23</lastmod>
+  <lastmod>2015-11-06</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/ide.xml</loc>
@@ -354,7 +354,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/kde.xml</loc>
-  <lastmod>2015-11-04</lastmod>
+  <lastmod>2015-11-06</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/keyboards.xml</loc>
@@ -598,7 +598,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/ssh.xml</loc>
-  <lastmod>2015-06-23</lastmod>
+  <lastmod>2015-11-06</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/stability.xml</loc>
@@ -650,7 +650,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/tip.xml</loc>
-  <lastmod>2015-11-04</lastmod>
+  <lastmod>2015-11-06</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/tips.xml</loc>
