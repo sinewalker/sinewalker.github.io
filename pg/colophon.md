@@ -3,12 +3,12 @@
 .. slug: colophon
 .. date: 2015-01-22 21:31:17 UTC+11:00
 .. tags: about
-.. link:
+.. link: 
 .. description: Some information about me.
 .. type: text
 #+END_COMMENT
 
-Introductions
+Introductions 
 ----
 
 My name is Mike Lockhart, and this is my web log. I am a senior
@@ -23,14 +23,15 @@ I live in [Tasmania](http://discovertasmania.com.au), where I grew up, returning
 Wales, in late 2013 with my family (my lovely wife [Jenny](http://www.pinterest.com/jen2779/), [three sons](http://xkcd.com/946)
 and a dog). We all feel very lucky to be living here, with family
 close at hand and an awesome, friendly and welcoming community around
-us.
+us. Well, maybe not the 2-year-old, but he's a pretty happy guy
+anyway.
 
 This web
 ----
 
 *On this web site you will find posts, pages, pictures and code that is in*
 *connection with my interests. I try to keep the stuff here as general*
-*as possible &mdash; any work-specific writings live behind a company*
+*as possible -- any work-specific writings live behind a company*
 *firewall. This means that what you see and read here is (or* ***was*** *) my*
 *own opinion and does not necessarily reflect the opinions or directions*
 *of my employers (past, present or future).*
@@ -38,7 +39,7 @@ This web
 
 Having made the physical move from New South Wales, I've
 also made a virtual move from Wordpress. The [archive](/archive/archive.html) has old posts
-that I've migrated from [old](http://sinewalker.blogspot.com.au/) [blogs](https://sinewalker.wordpress.com/), though those are still online to be
+that I've migrated from [old](http://sinewalker.blogspot.com.au/] [blogs](https://sinewalker.wordpress.com/], though those are still online to be
 read in their original form. On the Net, I go by the handle
 *sinewalker*, and while after 20 years I think I've outgrown it, it's
 still a [unique username](https://duckduckgo.com/?q=sinewalker) in most places.
@@ -52,7 +53,7 @@ won't mind being attributed to it... no anonymous cowards here `;-)`
 Contacting me
 ----
 
-Feel free to contact me [on g+](https://plus.google.com/+MichaelLockhart) or by [e-mail](mailto:sinewalker@gmail.com), to share your thoughts.
+Feel free to contact me [on g+](https://plus.google.com/+MichaelLockhart) or by [e-mail](mailto:sinewalker@gmail.com), to share your thoughts. 
 Insightful letters may be published as new posts or as an addendum to an
 existing post &mdash; but *only with your express permission and attribution*.
 
@@ -66,9 +67,10 @@ Posts are typed using the [Dvorak keyboard](http://milosophical.me/tags/dvorak.h
 computer running [openSUSE](http://www.opensuse.org), usually on a [Truly Ergonomic Computer
 Keyboard](https://www.trulyergonomic.com/store/index.php) or a *Sun Type 6* keyboard with rearranged key caps. They are
 generated from a mix of markup languages (typically [Markdown](http://daringfireball.net/projects/markdown/) or [iPython](http://ipython.org/) [Notebooks](http://ipython.org/notebook.html)), using the [Nikola](http://getnikola.com) static web site and
-blog generator, and published to [GitHub Pages](https://pages.github.com/) (via a `git commit/push`).
+blog generator, and published to [GitHub Pages](https://pages.github.com/) (via a `git commit/push`). 
 
 The [source markup](https://bitbucket.org/sinewalker/blog) files and Nikola configuration are stored at
 bitbucket, because I am a fan of [Mercurial](http://mercurial.selenic.com/).
 
 Prose content of all articles are licensed under a [Creative Commons Attribution-ShareAlike 4.0 License](http://creativecommons.org/licenses/by-nc-sa/4.0/), unless otherwise specified.
+
