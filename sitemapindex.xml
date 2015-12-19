@@ -22,11 +22,11 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/rss.xml</loc>
-  <lastmod>2015-12-16</lastmod>
+  <lastmod>2015-12-19</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/sitemap.xml</loc>
-  <lastmod>2015-12-16</lastmod>
+  <lastmod>2015-12-19</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/4-bit-rules.xml</loc>
@@ -193,6 +193,10 @@
   <lastmod>2015-12-16</lastmod>
  </sitemap>
  <sitemap>
+  <loc>http://milosophical.me/tags/drm.xml</loc>
+  <lastmod>2015-12-19</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>http://milosophical.me/tags/dtd.xml</loc>
   <lastmod>2015-12-16</lastmod>
  </sitemap>
@@ -221,6 +225,10 @@
   <lastmod>2015-12-16</lastmod>
  </sitemap>
  <sitemap>
+  <loc>http://milosophical.me/tags/ebook.xml</loc>
+  <lastmod>2015-12-19</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>http://milosophical.me/tags/emacs-org-mode-blogging-code.xml</loc>
   <lastmod>2015-12-16</lastmod>
  </sitemap>
@@ -243,6 +251,10 @@
  <sitemap>
   <loc>http://milosophical.me/tags/encryption.xml</loc>
   <lastmod>2015-12-16</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://milosophical.me/tags/epub.xml</loc>
+  <lastmod>2015-12-19</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/ergonomics.xml</loc>
@@ -330,7 +342,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/howto.xml</loc>
-  <lastmod>2015-12-16</lastmod>
+  <lastmod>2015-12-19</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/ide.xml</loc>
@@ -363,6 +375,10 @@
  <sitemap>
   <loc>http://milosophical.me/tags/keyboards.xml</loc>
   <lastmod>2015-12-16</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://milosophical.me/tags/kobo.xml</loc>
+  <lastmod>2015-12-19</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/kubuntu.xml</loc>
