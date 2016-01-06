@@ -6,15 +6,15 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>http://milosophical.me/pixels/dust/rss.xml</loc>
-  <lastmod>2015-12-16</lastmod>
+  <lastmod>2016-01-06</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/pixels/minecraft/rss.xml</loc>
-  <lastmod>2015-12-16</lastmod>
+  <lastmod>2016-01-06</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/pixels/rss.xml</loc>
-  <lastmod>2015-12-16</lastmod>
+  <lastmod>2016-01-06</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/pixels/test/rss.xml</loc>
@@ -22,11 +22,11 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/rss.xml</loc>
-  <lastmod>2015-12-19</lastmod>
+  <lastmod>2016-01-06</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/sitemap.xml</loc>
-  <lastmod>2015-12-19</lastmod>
+  <lastmod>2016-01-06</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/4-bit-rules.xml</loc>
@@ -101,6 +101,10 @@
   <lastmod>2015-12-16</lastmod>
  </sitemap>
  <sitemap>
+  <loc>http://milosophical.me/tags/cat_hacking.xml</loc>
+  <lastmod>2016-01-06</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>http://milosophical.me/tags/cat_hackingwithkids.xml</loc>
   <lastmod>2015-12-16</lastmod>
  </sitemap>
@@ -155,6 +159,10 @@
  <sitemap>
   <loc>http://milosophical.me/tags/concurrent-programming.xml</loc>
   <lastmod>2015-12-16</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://milosophical.me/tags/configuration.xml</loc>
+  <lastmod>2016-01-06</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/copyright.xml</loc>
@@ -229,12 +237,16 @@
   <lastmod>2015-12-19</lastmod>
  </sitemap>
  <sitemap>
+  <loc>http://milosophical.me/tags/elisp.xml</loc>
+  <lastmod>2016-01-06</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>http://milosophical.me/tags/emacs-org-mode-blogging-code.xml</loc>
   <lastmod>2015-12-16</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/emacs.xml</loc>
-  <lastmod>2015-12-16</lastmod>
+  <lastmod>2016-01-06</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/emacs24.xml</loc>
@@ -242,7 +254,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/email.xml</loc>
-  <lastmod>2015-12-16</lastmod>
+  <lastmod>2016-01-06</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/emoticon.xml</loc>
@@ -374,7 +386,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/keyboards.xml</loc>
-  <lastmod>2015-12-16</lastmod>
+  <lastmod>2016-01-06</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/kobo.xml</loc>
@@ -615,6 +627,10 @@
  <sitemap>
   <loc>http://milosophical.me/tags/solaris.xml</loc>
   <lastmod>2015-12-16</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://milosophical.me/tags/spacemacs.xml</loc>
+  <lastmod>2016-01-06</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/ssh.xml</loc>
