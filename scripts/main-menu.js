@@ -95,7 +95,7 @@
                             .append(new Btn('Technomancy').addClass('skin-blog').on('click', linkEvent('http://technomancy.us/')))
                             .append(new Btn('Sacha Chua').addClass('skin-blog').on('click', linkEvent('http://sachachua.com/blog/')))
                             .append(new Btn('Spacemacs Rocks').addClass('skin-blog').on('click',linkEvent('http://spacemacs.brianthicks.com/')))
-                            .append(new Btn('Brian Hicks').addClass('skin-blog').on('click',linkEvent('https://www.brianthicks.com/')))
+                            .append(new Btn('Dirt and Boogers').addClass('skin-blog').on('click',linkEvent('http://dirtandboogers.com/')))
                             .append(new Btn('aseigo').addClass('skin-blog').on('click', linkEvent('https://exote.ch/blogs/aseigo/'))))
                     .append(new Btn('Pocket').addClass('skin-www').on('click', linkEvent('http://getpocket.com/a/queue/')))
                     .append(new Btn('Pinterest').addClass('skin-www').on('click', linkEvent('http://www.pinterest.com/'))) // I may pick this up again: Jenny is quite active...
