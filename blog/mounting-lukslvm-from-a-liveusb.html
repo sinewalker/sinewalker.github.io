@@ -9,12 +9,7 @@ article: http://ogp.me/ns/article#
     <meta name="viewport" content="width=device-width">
     <title>Mounting LUKS/LVM from a LiveUSB | Milosophical Me</title>
 
-                <link href="../assets/css/bitter.css" rel="stylesheet" type="text/css">
-        <link href="../assets/css/main.css" rel="stylesheet" type="text/css">
-        <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
-        <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
-        <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
-        <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+                <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 
                 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 
@@ -119,18 +114,18 @@ line ;-)</p>
 <h2>3 Unlock LUKS volumes</h2>
 <p>To mount a LUKS-encrypted drive you first need to unlock the LUKS
 container:</p>
-<pre class="code shell"><a name="rest_code_9bdd174fb8a44dce85aab0e0b53025c4-1"></a><span class="c"># cryptsetup luksOpen /dev/sdb1 myusb</span>
-<a name="rest_code_9bdd174fb8a44dce85aab0e0b53025c4-2"></a>Enter passphrase <span class="k">for</span> /dev/sdb1:
-<a name="rest_code_9bdd174fb8a44dce85aab0e0b53025c4-3"></a>No key available with this passphrase.
-<a name="rest_code_9bdd174fb8a44dce85aab0e0b53025c4-4"></a>Enter passphrase <span class="k">for</span> /dev/sdb1:
+<pre class="code shell"><a name="rest_code_98189031b9aa42ab88b8c3ba45942c73-1"></a><span class="c"># cryptsetup luksOpen /dev/sdb1 myusb</span>
+<a name="rest_code_98189031b9aa42ab88b8c3ba45942c73-2"></a>Enter passphrase <span class="k">for</span> /dev/sdb1:
+<a name="rest_code_98189031b9aa42ab88b8c3ba45942c73-3"></a>No key available with this passphrase.
+<a name="rest_code_98189031b9aa42ab88b8c3ba45942c73-4"></a>Enter passphrase <span class="k">for</span> /dev/sdb1:
 </pre>
 <p>Ah, yes. Got to get that passphrase. Of course, being in KeePass2 it's
 a random generated hex string that no human will ever remember (that is what
 password database are for, after all)... Well, we'll come back to
 this...</p>
 <p>So, need to unlock the volume on the laptop...</p>
-<pre class="code sh"><a name="rest_code_4c58bfb6163646a3b0fecc833b8eb193-1"></a><span class="c">#cryptsetup luksOpen /dev/sda3 laptop</span>
-<a name="rest_code_4c58bfb6163646a3b0fecc833b8eb193-2"></a>Enter passphrase <span class="k">for</span> /dev/sda3:
+<pre class="code sh"><a name="rest_code_55aa3f8919ee4f55910987a33f472a38-1"></a><span class="c">#cryptsetup luksOpen /dev/sda3 laptop</span>
+<a name="rest_code_55aa3f8919ee4f55910987a33f472a38-2"></a>Enter passphrase <span class="k">for</span> /dev/sda3:
 </pre>
 <p>Okay, so it opened, great! (The problem after the upgrade was that it
 wouldn't even get this far). Now I just need to mount the home
@@ -139,27 +134,27 @@ volume. It's part of an LVG...</p>
 <div class="section" id="mount-the-lvg-s">
 <h2>4 Mount the LVG(s)</h2>
 <p>First, let's look at the logical volumes:</p>
-<pre class="code sh"><a name="rest_code_9402bd5379b84da38d1c910cc7cb2ea7-1"></a><span class="c">#lvs</span>
-<a name="rest_code_9402bd5379b84da38d1c910cc7cb2ea7-2"></a>  LV   VG   Attr      LSize   Pool Origin Data%  Move Log Cpy%Sync Convert
-<a name="rest_code_9402bd5379b84da38d1c910cc7cb2ea7-3"></a>  home lvg  -wi-ao--- 179.31g
-<a name="rest_code_9402bd5379b84da38d1c910cc7cb2ea7-4"></a>  root lvg  -wi-ao---  50.00g
-<a name="rest_code_9402bd5379b84da38d1c910cc7cb2ea7-5"></a>  swap lvg  -wi-ao---   8.00g
+<pre class="code sh"><a name="rest_code_0d03a0581f7e49e1b2da571cb63de55e-1"></a><span class="c">#lvs</span>
+<a name="rest_code_0d03a0581f7e49e1b2da571cb63de55e-2"></a>  LV   VG   Attr      LSize   Pool Origin Data%  Move Log Cpy%Sync Convert
+<a name="rest_code_0d03a0581f7e49e1b2da571cb63de55e-3"></a>  home lvg  -wi-ao--- 179.31g
+<a name="rest_code_0d03a0581f7e49e1b2da571cb63de55e-4"></a>  root lvg  -wi-ao---  50.00g
+<a name="rest_code_0d03a0581f7e49e1b2da571cb63de55e-5"></a>  swap lvg  -wi-ao---   8.00g
 </pre>
 <p>That's right, I used a very simple/guessable naming
 convention. Bravo. Okay, the passwords file is somewhere in 'home',
 let's mount it</p>
-<pre class="code sh"><a name="rest_code_35bad3ede3af48a5a6e8d50c4dcd2aab-1"></a><span class="c"># mount /dev/laptop/home /mnt</span>
-<a name="rest_code_35bad3ede3af48a5a6e8d50c4dcd2aab-2"></a><span class="c"># ls /mnt</span>
-<a name="rest_code_35bad3ede3af48a5a6e8d50c4dcd2aab-3"></a>guest mjl
+<pre class="code sh"><a name="rest_code_79de3dcfc2bd4973aa47604a11d2733d-1"></a><span class="c"># mount /dev/laptop/home /mnt</span>
+<a name="rest_code_79de3dcfc2bd4973aa47604a11d2733d-2"></a><span class="c"># ls /mnt</span>
+<a name="rest_code_79de3dcfc2bd4973aa47604a11d2733d-3"></a>guest mjl
 </pre>
 <p>W00t! Alright, now I can grab that KeePass database, shove it on an SD
 chip and then load it up in Keepass2Android on my smart phone (the
 LiveUSB doesn't have any KeePass software... hmm, better do something
 about that later).</p>
-<pre class="code sh"><a name="rest_code_0cbe4386865d4b24ac3068a63b254c11-1"></a><span class="c"># mkdir /var/tmp/sdc</span>
-<a name="rest_code_0cbe4386865d4b24ac3068a63b254c11-2"></a><span class="c"># mount /dev/sdc1 /var/tmp/sdc</span>
-<a name="rest_code_0cbe4386865d4b24ac3068a63b254c11-3"></a><span class="c"># cp /mnt/home/mjl/keys/db.kdbx /var/tmp/sdc</span>
-<a name="rest_code_0cbe4386865d4b24ac3068a63b254c11-4"></a><span class="c"># umount /var/tmp/sdc</span>
+<pre class="code sh"><a name="rest_code_c05ca8bbe01f4d588aca739d2f592cae-1"></a><span class="c"># mkdir /var/tmp/sdc</span>
+<a name="rest_code_c05ca8bbe01f4d588aca739d2f592cae-2"></a><span class="c"># mount /dev/sdc1 /var/tmp/sdc</span>
+<a name="rest_code_c05ca8bbe01f4d588aca739d2f592cae-3"></a><span class="c"># cp /mnt/home/mjl/keys/db.kdbx /var/tmp/sdc</span>
+<a name="rest_code_c05ca8bbe01f4d588aca739d2f592cae-4"></a><span class="c"># umount /var/tmp/sdc</span>
 </pre>
 <p>Awesome. Now I can open up the password database, and laboriously
 transcribe that generated passphrase to unlock the backup drive, when
@@ -188,15 +183,15 @@ you're looking for</li>
 </li>
 <li>pick a volume (e.g. "myvolume") and mount it</li>
 </ol>
-<pre class="code sh"><a name="rest_code_2391e68f6a4c45b687152ac17a321542-1"></a><span class="c"># mount /dev/mapper/mybackup/myvolume /recover</span>
+<pre class="code sh"><a name="rest_code_ce88b81e9bf64093b45c1d9ce83e564f-1"></a><span class="c"># mount /dev/mapper/mybackup/myvolume /recover</span>
 </pre>
 <p>Now you can navigate the volume and view/copy files.</p>
 </div>
 <div class="section" id="unmounting">
 <h2>6 Unmounting</h2>
 <p>You need to first umount the volume, and then close the LUKS:</p>
-<pre class="code sh"><a name="rest_code_0f60eb2f5663455b89444fa08ecb386d-1"></a><span class="c"># umount /recover</span>
-<a name="rest_code_0f60eb2f5663455b89444fa08ecb386d-2"></a><span class="c"># cryptsetup luksClose mybackup</span>
+<pre class="code sh"><a name="rest_code_4220f91a2cda4d6c92fd623c1176e23a-1"></a><span class="c"># umount /recover</span>
+<a name="rest_code_4220f91a2cda4d6c92fd623c1176e23a-2"></a><span class="c"># cryptsetup luksClose mybackup</span>
 </pre>
 </div>
 </div>
@@ -228,9 +223,7 @@ you're looking for</li>
     </section>
     <script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-65364237-1', 'auto');  ga('send', 'pageview');</script>
     
-                <script src="../assets/js/jquery-1.10.2.min.js" type="text/javascript"></script>
-            <script src="../assets/js/jquery.timeago.js" type="text/javascript"></script>
-        <script src="../assets/js/mathjax.js" type="text/javascript"></script>
+                <script src="../assets/js/all-nocdn.js" type="text/javascript"></script>
     
 <!-- Social buttons -->
 <div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
