@@ -18,6 +18,9 @@
  * MJL20160110 - new "blog roll" style blogs section under Links
  *               (replaces Google Bookmarks which is not as useful first thought)
  *             - Be nice to web servers, put trailing / on directory URLs
+ * MJL20160127 - Tom Limoncelli's blog is more awesome than Brian Hicks'
+ *               Spacemacs one.
+ *             - Note the Jargon file is a mirror
  *
  * Note:- all the styling is done in CSS, this just builds the menu Btns
  *
@@ -66,7 +69,7 @@
                    )
             .append(new Btn('Blog').addClass('skin-blog').on('click', linkEvent('/blog/')))
             .append(new Btn('Codex').addClass('skin-codex')
-                    .append(new Btn('Jargon').addClass('skin-codex').on('click', linkEvent('/jargon/index.html')))
+                    .append(new Btn('Jargon (MIRROR)').addClass('skin-codex').on('click', linkEvent('/jargon/index.html')))
                     .append(new Btn('Writings').addClass('skin-codex').on('click', linkEvent('/pg/index.html'))))
             .append(new Btn('Pixels').addClass('skin-gallery').on('click', linkEvent('/pixels/')))
             .append(new Btn('Code').addClass('skin-code')
@@ -94,7 +97,7 @@
                             .append(new Btn('Lyte\'s Blog').addClass('skin-blog').on('click', linkEvent('https://lyte.id.au/')))
                             .append(new Btn('Technomancy').addClass('skin-blog').on('click', linkEvent('http://technomancy.us/')))
                             .append(new Btn('Sacha Chua').addClass('skin-blog').on('click', linkEvent('http://sachachua.com/blog/')))
-                            .append(new Btn('Spacemacs Rocks').addClass('skin-blog').on('click',linkEvent('http://spacemacs.brianthicks.com/')))
+                            .append(new Btn('Everything Sysadmin').addClass('skin-blog').on('click',linkEvent('http://everythingsysadmin.com/')))
                             .append(new Btn('Dirt and Boogers').addClass('skin-blog').on('click',linkEvent('http://dirtandboogers.com/')))
                             .append(new Btn('aseigo').addClass('skin-blog').on('click', linkEvent('https://exote.ch/blogs/aseigo/'))))
                     .append(new Btn('Pocket').addClass('skin-www').on('click', linkEvent('http://getpocket.com/a/queue/')))
