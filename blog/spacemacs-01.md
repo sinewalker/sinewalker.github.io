@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-It's been a month since I started using [Spacemacs](https://github.com/syl20bnr/spacemacs) for my Emacs configuration, and adopted it as my main editor. What's been happening?
+It's been a month since I started using [Spacemacs](https://spacemacs.org) for my Emacs configuration, and adopted it as my main editor. What's been happening?
 
 Well, mostly not a lot, which is exactly why I wanted to use it. Oh, sure, [my commit history](https://github.com/sinewalker/dotspacemacs/commits/master) shows I've been fairly busy making small adjustments, but they are just tweaks here and there, nothing to blog about.
 
