@@ -26,11 +26,11 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/rss.xml</loc>
-  <lastmod>2016-01-27</lastmod>
+  <lastmod>2016-02-07</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/sitemap.xml</loc>
-  <lastmod>2016-01-27</lastmod>
+  <lastmod>2016-02-07</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/4-bit-rules.xml</loc>
@@ -106,7 +106,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/cat_hacking.xml</loc>
-  <lastmod>2016-01-27</lastmod>
+  <lastmod>2016-02-07</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/cat_hackingwithkids.xml</loc>
@@ -166,7 +166,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/configuration.xml</loc>
-  <lastmod>2016-01-27</lastmod>
+  <lastmod>2016-02-07</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/copyright.xml</loc>
@@ -242,7 +242,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/elisp.xml</loc>
-  <lastmod>2016-01-27</lastmod>
+  <lastmod>2016-02-07</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/emacs-org-mode-blogging-code.xml</loc>
@@ -250,7 +250,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/emacs.xml</loc>
-  <lastmod>2016-01-27</lastmod>
+  <lastmod>2016-02-07</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/emacs24.xml</loc>
@@ -258,7 +258,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/email.xml</loc>
-  <lastmod>2016-01-27</lastmod>
+  <lastmod>2016-02-07</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/emoticon.xml</loc>
@@ -390,7 +390,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/keyboards.xml</loc>
-  <lastmod>2016-01-27</lastmod>
+  <lastmod>2016-02-07</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/kobo.xml</loc>
@@ -634,7 +634,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/spacemacs.xml</loc>
-  <lastmod>2016-01-27</lastmod>
+  <lastmod>2016-02-07</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/ssh.xml</loc>

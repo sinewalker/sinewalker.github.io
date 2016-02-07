@@ -16,6 +16,7 @@ I tried last year to overhaul my `~/.emacs.d` structure and I had some success, 
 So, in December 2015 I declared **Emacs Configuration Bankruptcy**.
 
 <!-- TEASER_END -->
+----
 
 I was casting about for ideas about what to do.  I see a few people doing Literate programming for their emacs configs, using [Org-mode](http://orgmode.org/worg/org-contrib/babel/intro.html) (a really good examlpe is [Sacha Chua's emacs config](http://pages.sachachua.com/.emacs.d/Sacha.html)), but I don't really like this: org-mode is a moving target, it's something else I'd have to manage and update, and I'd hate a change to break my whole emacs config. It's bad enough when it breaks just the org parts...
 
