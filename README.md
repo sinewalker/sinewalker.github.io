@@ -1,7 +1,5 @@
-Personal public blog using Github Pages
+## Milosophical hax
 
-At present the raw input to this is on a [BitBucket Mercurial repo](https://bitbucket.org/sinewalker/blog/src) but 
-this will soon change to the standard Github Pages practice of maintaning a separate branch for the source, with the actual
-web site on the master branch.
+This branch is an off-shoot for weird hacks I have only half-thought of, or for resources I want to keep arounnd, but haven't woven into the site.
 
-I'm just not there, yet.
+DO NOT MERGE THIS BRANCH!

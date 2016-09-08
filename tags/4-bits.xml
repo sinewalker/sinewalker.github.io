@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (4-bits)</title><link>http://milosophical.me/</link><description></description><atom:link href="http://milosophical.me/tags/4-bits.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Tue, 26 May 2015 15:04:03 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>4-bit Rules of Computing, Part 0</title><link>http://milosophical.me/blog/4-bit-rules-of-computing-part-0.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;A little while ago, I published my
-&lt;a href="http://milosophical.me/pg/4-bit-rules.html"&gt;4-bit rules of computing&lt;/a&gt; and I promised to
-blog about them. So here is my first instalment in a series to
-explain these simple rules, a bit about why I like these over others,
-and my own take on this wisdom (since it isn't mine).&lt;/p&gt;
-&lt;p&gt;In this instalment:  Rules 0 to 3 (the first 2 bits).&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://milosophical.me/blog/4-bit-rules-of-computing-part-0.html"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>4-bits</category><category>tips</category><guid>http://milosophical.me/blog/4-bit-rules-of-computing-part-0.html</guid><pubDate>Sun, 24 May 2015 10:41:35 GMT</pubDate></item></channel></rss>
