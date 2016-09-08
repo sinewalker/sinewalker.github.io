@@ -1,313 +1,245 @@
 <!DOCTYPE html>
-<html prefix="
-og: http://ogp.me/ns#
-article: http://ogp.me/ns/article#
-" lang="en">
-    <head>
-    <meta charset="utf-8">
-    <meta name="description" content="A geek's notebook">
-    <meta name="viewport" content="width=device-width">
-    <title>Milosophical Me (old posts, page 8) | Milosophical Me</title>
-
-                <link href="../assets/css/bitter.css" rel="stylesheet" type="text/css">
-        <link href="../assets/css/main.css" rel="stylesheet" type="text/css">
-        <link href="../assets/css/rst.css" rel="stylesheet" type="text/css">
-        <link href="../assets/css/code.css" rel="stylesheet" type="text/css">
-        <link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
-        <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-
-                <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
-
-      <link rel="canonical" href="http://milosophical.me/blog/index-8.html">
-
-
-
-    
-        <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]-->
-
-    
-
-    
-    <style>
-    div.input_prompt {
-      display: none;
-    }
-    </style>
-
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<base href="http://milosophical.me/blog/index-8.html">
+<meta name="description" content="A geek's notebook">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Milosophical Me (old posts, page 8) | Milosophical Me</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="canonical" href="http://milosophical.me/blog/index-8.html">
+<link rel="prev" href="index-9.html" type="text/html">
+<link rel="next" href="index-7.html" type="text/html">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]-->
 </head>
 <body>
-    <section class="social">
-        <ul>
-                    <li><a href="../index.html" title="Home"><i class="icon-compass"></i></a></li>
-            <li><a href="../archive/archive.html" title="Archive"><i class="icon-folder-open-alt"></i></a></li>
-            <li><a href="../tags/index.html" title="Tags"><i class="icon-tags"></i></a></li>
-            <li><a href="../pg/index.html" title="Codex"><i class="icon-book"></i></a></li>
-            <li><a href="../rss.xml" title="RSS"><i class="icon-rss"></i></a></li>
-            <li><a href="https://plus.google.com/+MichaelLockhart/posts" title="Microblog"><i class="icon-google-plus"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/mikelockhart" title="My LinkedIn profile"><i class="icon-linkedin"></i></a></li>
-            <li><a href="https://bitbucket.com/sinewalker" title="My Bitbucket"><i class="icon-bitbucket"></i></a></li>
-            <li><a href="https://github.com/sinewalker" title="My Github"><i class="icon-github"></i></a></li>
-            <li><a href="http://stackoverflow.com/users/776953/mike" title="Stack Overflow"><i class="icon-stackexchange"></i></a></li>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
-        </ul>
-    </section>
-    <section class="page-content">
-        <div class="content" rel="main">
-        <div class="post">
-            <h1 class="title"><a href="2012/01/11/implementing-a-caching-only-dns-on-debian.html">Implementing a caching-only DNS on Debian</a></h1>
-            <div class="meta">
-                <div class="authordate">
-                    <time class="timeago" datetime="2012-01-11T14:35:59+11:00">2012-01-11 14:35</time>
-                </div>
-                <div class="stats">
-                            <div class="g-commentcount" data-href="/blog/2012/01/11/implementing-a-caching-only-dns-on-debian.html"></div>
-<script src="https://apis.google.com/js/plusone.js"></script>
+<!-- Menubar -->
 
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://milosophical.me/">
 
-                </div>
-                        <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="../tags/dns.html" rel="tag">DNS</a></li>
-           <li><a class="tag p-category" href="../tags/bind.html" rel="tag">bind</a></li>
-           <li><a class="tag p-category" href="../tags/debian.html" rel="tag">debian</a></li>
-           <li><a class="tag p-category" href="../tags/hacking.html" rel="tag">hacking</a></li>
-           <li><a class="tag p-category" href="../tags/network.html" rel="tag">network</a></li>
-        </ul>
+                <span id="blog-title">Milosophical Me</span>
+            </a>
         </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="index.html">Blog</a>
+                </li>
+<li>
+<a href="../archive/archive.html">Archive</a>
+                </li>
+<li>
+<a href="../tags/index.html">Tags</a>
+                </li>
+<li>
+<a href="../pg/index.html">Codex</a>
+                </li>
+<li>
+<a href="../rss.xml">RSS</a>
+                </li>
+<li>
+<a href="https://plus.google.com/+MichaelLockhart/posts">Microblog</a>
+                </li>
+<li>
+<a href="https://www.linkedin.com/in/mikelockhart">LinkedIn</a>
+                </li>
+<li>
+<a href="https://bitbucket.com/sinewalker">Bitbucket</a>
+                </li>
+<li>
+<a href="https://github.com/sinewalker">Github</a>
+                </li>
+<li>
+<a href="http://stackoverflow.com/users/776953/mike">Stack Overflow</a>
 
-            </div>
-            <div class="body">
-                <div>
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+
+    
+<div class="postindex">
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2012/01/11/implementing-a-caching-only-dns-on-debian.html" class="u-url">Implementing a caching-only DNS on Debian</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="2012/01/11/implementing-a-caching-only-dns-on-debian.html" rel="bookmark"><time class="published dt-published" datetime="2012-01-11T14:35:59+11:00" title="2012-01-11 14:35">2012-01-11 14:35</time></a></p>
+                <p class="commentline">
+        
+</p>
+<div class="g-commentcount" data-href="/blog/2012/01/11/implementing-a-caching-only-dns-on-debian.html"></div>
+<script src="https://apis.google.com/js/plusone.js"></script>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
 <p>After 3 years of sticking with Novell, I recently switched away from openSUSE to <a title="Debian GNU/Linux" href="http://www.debian.org" target="_blank">Debian</a>. There are a few reasons why, but I won't bore you with them. So far I'm liking it. There are a few things to set up before I settle in, and one is slow DNS lookup.
 
 
 </p>
 <p class="more"><a href="2012/01/11/implementing-a-caching-only-dns-on-debian.html">Read more…</a></p>
 </div>
-            </div>
-        </div>
-        <div class="post">
-            <h1 class="title"><a href="2011/12/15/blogging-with-emacs-org-mode.html">Blogging with Emacs Org Mode</a></h1>
-            <div class="meta">
-                <div class="authordate">
-                    <time class="timeago" datetime="2011-12-15T21:53:00+11:00">2011-12-15 21:53</time>
-                </div>
-                <div class="stats">
-                            <div class="g-commentcount" data-href="/blog/2011/12/15/blogging-with-emacs-org-mode.html"></div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2011/12/15/blogging-with-emacs-org-mode.html" class="u-url">Blogging with Emacs Org Mode</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="2011/12/15/blogging-with-emacs-org-mode.html" rel="bookmark"><time class="published dt-published" datetime="2011-12-15T21:53:00+11:00" title="2011-12-15 21:53">2011-12-15 21:53</time></a></p>
+                <p class="commentline">
+        
+</p>
+<div class="g-commentcount" data-href="/blog/2011/12/15/blogging-with-emacs-org-mode.html"></div>
 <script src="https://apis.google.com/js/plusone.js"></script>
-
-
-                </div>
-                        <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="../tags/emacs-org-mode-blogging-code.html" rel="tag">emacs org-mode blogging code</a></li>
-           <li><a class="tag p-category" href="../tags/hacking.html" rel="tag">hacking</a></li>
-        </ul>
-        </div>
-
-            </div>
-            <div class="body">
-                <div>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
 <p>My blog is really in need of some love. One of the reasons I'm not posting very frequently (apart from just not having much to say or making time to say it) is that it is such a pain to write posts in WordPress' built in editor.  I briefly considered editing in a text editor and then cut/pasting, but usually there's a mess to clean up anyway, so it's not much fun either. </p> 
 
 
 <p class="more"><a href="2011/12/15/blogging-with-emacs-org-mode.html">Read more…</a></p>
 </div>
-            </div>
-        </div>
-        <div class="post">
-            <h1 class="title"><a href="2011/11/30/curious-cursor-complication-with-emacs-and-windows-magnifier.html">Curious cursor complication with Emacs and Windows Magnifier</a></h1>
-            <div class="meta">
-                <div class="authordate">
-                    <time class="timeago" datetime="2011-11-30T14:17:06+11:00">2011-11-30 14:17</time>
-                </div>
-                <div class="stats">
-                            <div class="g-commentcount" data-href="/blog/2011/11/30/curious-cursor-complication-with-emacs-and-windows-magnifier.html"></div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2011/11/30/curious-cursor-complication-with-emacs-and-windows-magnifier.html" class="u-url">Curious cursor complication with Emacs and Windows Magnifier</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="2011/11/30/curious-cursor-complication-with-emacs-and-windows-magnifier.html" rel="bookmark"><time class="published dt-published" datetime="2011-11-30T14:17:06+11:00" title="2011-11-30 14:17">2011-11-30 14:17</time></a></p>
+                <p class="commentline">
+        
+</p>
+<div class="g-commentcount" data-href="/blog/2011/11/30/curious-cursor-complication-with-emacs-and-windows-magnifier.html"></div>
 <script src="https://apis.google.com/js/plusone.js"></script>
-
-
-                </div>
-                        <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="../tags/bug.html" rel="tag">bug</a></li>
-           <li><a class="tag p-category" href="../tags/cursor.html" rel="tag">cursor</a></li>
-           <li><a class="tag p-category" href="../tags/emacs.html" rel="tag">emacs</a></li>
-           <li><a class="tag p-category" href="../tags/hacking.html" rel="tag">hacking</a></li>
-           <li><a class="tag p-category" href="../tags/magnifier.html" rel="tag">magnifier</a></li>
-           <li><a class="tag p-category" href="../tags/registry.html" rel="tag">registry</a></li>
-           <li><a class="tag p-category" href="../tags/windows.html" rel="tag">windows</a></li>
-        </ul>
-        </div>
-
-            </div>
-            <div class="body">
-                <div>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
 <p>I recently noticed a bug when you start GNU Emacs win32 <em>after</em> starting <a title="Microsoft: Make items on the screen appear bigger (Magnifier)" href="http://windows.microsoft.com/en-AU/windows7/Make-items-on-the-screen-appear-bigger-Magnifier">Windows Magnifier</a>: Emacs' cursor becomes a single-pixel "caret" instead of the box cursor. This makes the cursor very hard to find.
 </p>
 <p class="more"><a href="2011/11/30/curious-cursor-complication-with-emacs-and-windows-magnifier.html">Read more…</a></p>
 </div>
-            </div>
-        </div>
-        <div class="post">
-            <h1 class="title"><a href="2011/08/09/java-7-lacking-the-dolphins-grace.html">Java 7 is here - but it's lacking the dolphin's grace</a></h1>
-            <div class="meta">
-                <div class="authordate">
-                    <time class="timeago" datetime="2011-08-09T22:38:54+10:00">2011-08-09 22:38</time>
-                </div>
-                <div class="stats">
-                            <div class="g-commentcount" data-href="/blog/2011/08/09/java-7-lacking-the-dolphins-grace.html"></div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2011/08/09/java-7-lacking-the-dolphins-grace.html" class="u-url">Java 7 is here - but it's lacking the dolphin's grace</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="2011/08/09/java-7-lacking-the-dolphins-grace.html" rel="bookmark"><time class="published dt-published" datetime="2011-08-09T22:38:54+10:00" title="2011-08-09 22:38">2011-08-09 22:38</time></a></p>
+                <p class="commentline">
+        
+</p>
+<div class="g-commentcount" data-href="/blog/2011/08/09/java-7-lacking-the-dolphins-grace.html"></div>
 <script src="https://apis.google.com/js/plusone.js"></script>
-
-
-                </div>
-                        <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="../tags/hacking.html" rel="tag">hacking</a></li>
-           <li><a class="tag p-category" href="../tags/java.html" rel="tag">java</a></li>
-           <li><a class="tag p-category" href="../tags/rant.html" rel="tag">rant</a></li>
-        </ul>
-        </div>
-
-            </div>
-            <div class="body">
-                <div>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
 <p>Well, after 5 years and the setting of the Sun, Java SE 1.7 (originally code-named "dolphin") has finally been released. Joyous celebrations from the land of Duke.</p>
 
 
 <p class="more"><a href="2011/08/09/java-7-lacking-the-dolphins-grace.html">Read more…</a></p>
 </div>
-            </div>
-        </div>
-        <div class="post">
-            <h1 class="title"><a href="2011/03/17/using-emacs-easypg-in-text-terminals.html">Using Emacs' EasyPG in text terminals</a></h1>
-            <div class="meta">
-                <div class="authordate">
-                    <time class="timeago" datetime="2011-03-17T16:04:59+11:00">2011-03-17 16:04</time>
-                </div>
-                <div class="stats">
-                            <div class="g-commentcount" data-href="/blog/2011/03/17/using-emacs-easypg-in-text-terminals.html"></div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2011/03/17/using-emacs-easypg-in-text-terminals.html" class="u-url">Using Emacs' EasyPG in text terminals</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="2011/03/17/using-emacs-easypg-in-text-terminals.html" rel="bookmark"><time class="published dt-published" datetime="2011-03-17T16:04:59+11:00" title="2011-03-17 16:04">2011-03-17 16:04</time></a></p>
+                <p class="commentline">
+        
+</p>
+<div class="g-commentcount" data-href="/blog/2011/03/17/using-emacs-easypg-in-text-terminals.html"></div>
 <script src="https://apis.google.com/js/plusone.js"></script>
-
-
-                </div>
-                        <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="../tags/code.html" rel="tag">code</a></li>
-           <li><a class="tag p-category" href="../tags/easypg.html" rel="tag">easypg</a></li>
-           <li><a class="tag p-category" href="../tags/emacs.html" rel="tag">emacs</a></li>
-           <li><a class="tag p-category" href="../tags/gnupg.html" rel="tag">gnupg</a></li>
-           <li><a class="tag p-category" href="../tags/hack.html" rel="tag">hack</a></li>
-           <li><a class="tag p-category" href="../tags/hacking.html" rel="tag">hacking</a></li>
-        </ul>
-        </div>
-
-            </div>
-            <div class="body">
-                <div>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
 <p>There is a bug in the integration between Emacs' EasyPG and the "new" GnuPG2 that causes Emacs to not load <code>.gpg</code> files when running in a text terminal.  It's being worked on, apparently, but in the mean-time, here is how to fix it.
 
 
 </p>
 <p class="more"><a href="2011/03/17/using-emacs-easypg-in-text-terminals.html">Read more…</a></p>
 </div>
-            </div>
-        </div>
-        <div class="post">
-            <h1 class="title"><a href="2011/02/14/old-mit-quotes-file.html">Old MIT Quotes file</a></h1>
-            <div class="meta">
-                <div class="authordate">
-                    <time class="timeago" datetime="2011-02-14T15:37:32+11:00">2011-02-14 15:37</time>
-                </div>
-                <div class="stats">
-                            <div class="g-commentcount" data-href="/blog/2011/02/14/old-mit-quotes-file.html"></div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2011/02/14/old-mit-quotes-file.html" class="u-url">Old MIT Quotes file</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="2011/02/14/old-mit-quotes-file.html" rel="bookmark"><time class="published dt-published" datetime="2011-02-14T15:37:32+11:00" title="2011-02-14 15:37">2011-02-14 15:37</time></a></p>
+                <p class="commentline">
+        
+</p>
+<div class="g-commentcount" data-href="/blog/2011/02/14/old-mit-quotes-file.html"></div>
 <script src="https://apis.google.com/js/plusone.js"></script>
-
-
-                </div>
-                        <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="../tags/c.html" rel="tag">C</a></li>
-           <li><a class="tag p-category" href="../tags/mit.html" rel="tag">MIT</a></li>
-           <li><a class="tag p-category" href="../tags/unix.html" rel="tag">Unix</a></li>
-           <li><a class="tag p-category" href="../tags/geek.html" rel="tag">geek</a></li>
-           <li><a class="tag p-category" href="../tags/hacking.html" rel="tag">hacking</a></li>
-           <li><a class="tag p-category" href="../tags/programming.html" rel="tag">programming</a></li>
-           <li><a class="tag p-category" href="../tags/quotes.html" rel="tag">quotes</a></li>
-        </ul>
-        </div>
-
-            </div>
-            <div class="body">
-                <div>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
 <em>I found <a title="Just So Quotes" href="http://www.ubiquit.us/retrohomepage/jsq.html">these quotes</a> on a random blogger's site, who in turn found this whole file randomly looking through a Terry Pratchett  ftp directory on an MIT machine, back in 1995 or 96. He  luckily saved a copy and I'm reposting here because I don't want to lose them to the fickleness of the Net.</em>
 
 
 <p class="more"><a href="2011/02/14/old-mit-quotes-file.html">Read more…</a></p>
 </div>
-            </div>
-        </div>
-        <div class="post">
-            <h1 class="title"><a href="2011/01/19/2010-in-review.html">2010 in review</a></h1>
-            <div class="meta">
-                <div class="authordate">
-                    <time class="timeago" datetime="2011-01-19T20:45:02+11:00">2011-01-19 20:45</time>
-                </div>
-                <div class="stats">
-                            <div class="g-commentcount" data-href="/blog/2011/01/19/2010-in-review.html"></div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2011/01/19/2010-in-review.html" class="u-url">2010 in review</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="2011/01/19/2010-in-review.html" rel="bookmark"><time class="published dt-published" datetime="2011-01-19T20:45:02+11:00" title="2011-01-19 20:45">2011-01-19 20:45</time></a></p>
+                <p class="commentline">
+        
+</p>
+<div class="g-commentcount" data-href="/blog/2011/01/19/2010-in-review.html"></div>
 <script src="https://apis.google.com/js/plusone.js"></script>
-
-
-                </div>
-                        <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="../tags/blogging.html" rel="tag">blogging</a></li>
-           <li><a class="tag p-category" href="../tags/general.html" rel="tag">general</a></li>
-        </ul>
-        </div>
-
-            </div>
-            <div class="body">
-                <div>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
 <p>The stats helper monkeys at WordPress.com mulled over how this blog did in 2010, and here's a high level summary of its overall blog health.
 </p>
 
 <p class="more"><a href="2011/01/19/2010-in-review.html">Read more…</a></p>
 </div>
-            </div>
-        </div>
-        <div class="post">
-            <h1 class="title"><a href="2010/07/20/implementing-a-caching-only-dns-on-opensuse.html">Implementing a caching-only DNS on openSUSE</a></h1>
-            <div class="meta">
-                <div class="authordate">
-                    <time class="timeago" datetime="2010-07-20T11:07:54+10:00">2010-07-20 11:07</time>
-                </div>
-                <div class="stats">
-                            <div class="g-commentcount" data-href="/blog/2010/07/20/implementing-a-caching-only-dns-on-opensuse.html"></div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2010/07/20/implementing-a-caching-only-dns-on-opensuse.html" class="u-url">Implementing a caching-only DNS on openSUSE</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="2010/07/20/implementing-a-caching-only-dns-on-opensuse.html" rel="bookmark"><time class="published dt-published" datetime="2010-07-20T11:07:54+10:00" title="2010-07-20 11:07">2010-07-20 11:07</time></a></p>
+                <p class="commentline">
+        
+</p>
+<div class="g-commentcount" data-href="/blog/2010/07/20/implementing-a-caching-only-dns-on-opensuse.html"></div>
 <script src="https://apis.google.com/js/plusone.js"></script>
-
-
-                </div>
-                        <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="../tags/dns.html" rel="tag">DNS</a></li>
-           <li><a class="tag p-category" href="../tags/hacking.html" rel="tag">hacking</a></li>
-           <li><a class="tag p-category" href="../tags/how-to.html" rel="tag">how-to</a></li>
-           <li><a class="tag p-category" href="../tags/opensuse.html" rel="tag">openSUSE</a></li>
-           <li><a class="tag p-category" href="../tags/public-dns.html" rel="tag">public DNS</a></li>
-        </ul>
-        </div>
-
-            </div>
-            <div class="body">
-                <div>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
 <p>Lately I've been noticing significant DNS latency when visiting certain sites. This is most obvious when my browser spends ages with "Looking up some.web.server.com..." in it's status bar. It's particularly bad at sites like <em>wordpress.com</em> where many pages make reference to sub-domains of wordpress.com and typically also to <em>google.com</em> for analytics or ads.
 </p>
 <p>
@@ -315,34 +247,21 @@ While my ISP's DNS infrastructure is pretty good, there are a couple of things I
 </p>
 <p class="more"><a href="2010/07/20/implementing-a-caching-only-dns-on-opensuse.html">Read more…</a></p>
 </div>
-            </div>
-        </div>
-        <div class="post">
-            <h1 class="title"><a href="2010/07/09/what-happened-to-my-ctrl-zoom-in-xorg.html">What happened to my Ctrl-+/- zoom in Xorg?</a></h1>
-            <div class="meta">
-                <div class="authordate">
-                    <time class="timeago" datetime="2010-07-09T17:17:58+10:00">2010-07-09 17:17</time>
-                </div>
-                <div class="stats">
-                            <div class="g-commentcount" data-href="/blog/2010/07/09/what-happened-to-my-ctrl-zoom-in-xorg.html"></div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2010/07/09/what-happened-to-my-ctrl-zoom-in-xorg.html" class="u-url">What happened to my Ctrl-+/- zoom in Xorg?</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="2010/07/09/what-happened-to-my-ctrl-zoom-in-xorg.html" rel="bookmark"><time class="published dt-published" datetime="2010-07-09T17:17:58+10:00" title="2010-07-09 17:17">2010-07-09 17:17</time></a></p>
+                <p class="commentline">
+        
+</p>
+<div class="g-commentcount" data-href="/blog/2010/07/09/what-happened-to-my-ctrl-zoom-in-xorg.html"></div>
 <script src="https://apis.google.com/js/plusone.js"></script>
-
-
-                </div>
-                        <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="../tags/xrandr.html" rel="tag">XRandR</a></li>
-           <li><a class="tag p-category" href="../tags/hacking.html" rel="tag">hacking</a></li>
-           <li><a class="tag p-category" href="../tags/how-to.html" rel="tag">how-to</a></li>
-           <li><a class="tag p-category" href="../tags/screens.html" rel="tag">screens</a></li>
-           <li><a class="tag p-category" href="../tags/x11.html" rel="tag">x11</a></li>
-        </ul>
-        </div>
-
-            </div>
-            <div class="body">
-                <div>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
 <p>Older X.org and XFree86 used to have this neat feature where pressing Ctrl+&lt;numpad +&gt; and Ctrl+&lt;numpad -&gt; would cycle through the screen modes defined in your config file in the "Screen" section, effectively switching screen modes on the fly and letting you pan around the full virtual screen size with the mouse.
 
 
@@ -355,37 +274,21 @@ But since about X.org 1.7 this feature seems to be missing.  I've been research
 </p>
 <p class="more"><a href="2010/07/09/what-happened-to-my-ctrl-zoom-in-xorg.html">Read more…</a></p>
 </div>
-            </div>
-        </div>
-        <div class="post">
-            <h1 class="title"><a href="2010/07/05/awesome-kde-java-composite-hacks.html">Awesome KDE, Java composite hacks</a></h1>
-            <div class="meta">
-                <div class="authordate">
-                    <time class="timeago" datetime="2010-07-05T14:54:32+10:00">2010-07-05 14:54</time>
-                </div>
-                <div class="stats">
-                            <div class="g-commentcount" data-href="/blog/2010/07/05/awesome-kde-java-composite-hacks.html"></div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2010/07/05/awesome-kde-java-composite-hacks.html" class="u-url">Awesome KDE, Java composite hacks</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="2010/07/05/awesome-kde-java-composite-hacks.html" rel="bookmark"><time class="published dt-published" datetime="2010-07-05T14:54:32+10:00" title="2010-07-05 14:54">2010-07-05 14:54</time></a></p>
+                <p class="commentline">
+        
+</p>
+<div class="g-commentcount" data-href="/blog/2010/07/05/awesome-kde-java-composite-hacks.html"></div>
 <script src="https://apis.google.com/js/plusone.js"></script>
-
-
-                </div>
-                        <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="../tags/kde.html" rel="tag">KDE</a></li>
-           <li><a class="tag p-category" href="../tags/awesome.html" rel="tag">awesome</a></li>
-           <li><a class="tag p-category" href="../tags/desktop.html" rel="tag">desktop</a></li>
-           <li><a class="tag p-category" href="../tags/geek.html" rel="tag">geek</a></li>
-           <li><a class="tag p-category" href="../tags/hacking.html" rel="tag">hacking</a></li>
-           <li><a class="tag p-category" href="../tags/how-to.html" rel="tag">how-to</a></li>
-           <li><a class="tag p-category" href="../tags/useability.html" rel="tag">useability</a></li>
-           <li><a class="tag p-category" href="../tags/xcompmgr.html" rel="tag">xcompmgr</a></li>
-        </ul>
-        </div>
-
-            </div>
-            <div class="body">
-                <div>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
 <p>I've been experimenting with the <a title="This is gonna be LEGEN ... wait for it ... DARY" href="http://awesome.naquadah.org/">awesome</a> <a title="Wikipedia" href="http://en.wikipedia.org/wiki/Tiling_window_manager">tiling window manager</a> as a replacement to KDE's <a title="Wikipedia" href="http://en.wikipedia.org/wiki/KWin">kwin</a>, and I've managed to hack together a recipe for getting them up an running. It's surprisingly simple, although the learing curve was a little steep.
 </p>
 <p>
@@ -393,63 +296,33 @@ This post documents what I've done to get things working nicely with the basic a
 </p>
 <p class="more"><a href="2010/07/05/awesome-kde-java-composite-hacks.html">Read more…</a></p>
 </div>
-            </div>
-        </div>
-            <nav class="postindexpager">
-        <ul class="pager">
-            <li class="previous">
+    </div>
+    </article>
+</div>
+
+        <nav class="postindexpager"><ul class="pager">
+<li class="previous">
                 <a href="index-9.html" rel="prev">Newer posts</a>
             </li>
             <li class="next">
                 <a href="index-7.html" rel="next">Older posts</a>
             </li>
-        </ul>
-        </nav>
+        </ul></nav>
+</div>
+        <!--End of body content-->
 
-            
-
-                    <footer id="footer" role="contentinfo">
-            <p></p>
-<hr>Contents Copyright © 
+        <footer id="footer"><hr>Contents Copyright © 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a> 2005 — 2016         <a href="mailto:sinewalker@gmail.com">Mike Lockhart</a>. Powered by <a href="http://getnikola.com" rel="nofollow">Nikola</a> with <a href="https://github.com/getnikola/nikola-themes/tree/master/v7/zen-ipython">Zen-IPython</a> theme.
+<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a> 2005 — 2016         <a href="mailto:sinewalker@gmail.com">Michael Lockhart</a>. Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
             
         </footer>
-
-        </div>
-    </section>
-    <script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-65364237-1', 'auto');  ga('send', 'pageview');</script>
-    
-                <script src="../assets/js/jquery-1.10.2.min.js" type="text/javascript"></script>
-            <script src="../assets/js/jquery.timeago.js" type="text/javascript"></script>
-        <script src="../assets/js/mathjax.js" type="text/javascript"></script>
-    
-<!-- Social buttons -->
-<div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
-<a class="addthis_button_more">Share</a>
-<ul>
-<li>
-<a class="addthis_button_facebook"></a>
-</li>
-<li>
-<a class="addthis_button_google_plusone_share"></a>
-</li>
-<li>
-<a class="addthis_button_linkedin"></a>
-</li>
-<li>
-<a class="addthis_button_twitter"></a>
-</li>
-</ul>
 </div>
-<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script>
-<!-- End of social buttons -->
+</div>
 
 
-        <script type="text/javascript">
-            $(function(){
-                $('.timeago').timeago();
-            });
-        </script>
+            <script src="../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-65364237-1', 'auto');  ga('send', 'pageview');</script>
 </body>
 </html>
