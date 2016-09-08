@@ -3,7 +3,7 @@
 #   File:       conf.py
 #   Created:    2014-08-21
 #   Language:   Python
-#   Time-stamp: <2016-09-08 22:14:54 mjl>
+#   Time-stamp: <2016-09-08 22:29:26 mjl>
 #   Platform:   (Nikola 7.1 configuration file)
 #   OS:         *nix
 #   Author:     [MJL] Michael J. Lockhart (mlockhart@squiz.net)
@@ -31,6 +31,7 @@
 #   MJL20151104 - DEPLOY_COMMANDS added
 #   MJL20160907 - Upgraded to Nikola 7, using bootstrap3 theme
 #   MJL20160908 - use default output location
+#               - configure github_deploy (not sure if...)
 
 from __future__ import unicode_literals
 import time
@@ -601,11 +602,11 @@ DEPLOY_COMMANDS = {
 # https://getnikola.com/handbook.html#deploying-to-github
 # For user.github.io OR organization.github.io pages, the DEPLOY branch
 # MUST be 'master', and 'gh-pages' for other repositories.
-# GITHUB_SOURCE_BRANCH = 'master'
-# GITHUB_DEPLOY_BRANCH = 'gh-pages'
+GITHUB_SOURCE_BRANCH = 'src'
+GITHUB_DEPLOY_BRANCH = 'master'
 
 # The name of the remote where you wish to push to, using github_deploy.
-# GITHUB_REMOTE_NAME = 'origin'
+GITHUB_REMOTE_NAME = 'origin'
 
 # Whether or not github_deploy should commit to the source branch automatically
 # before deploying.
