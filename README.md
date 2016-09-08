@@ -1,7 +1,5 @@
-Personal public blog using Github Pages
+## Milosophical Me - master branch
 
-At present the raw input to this is on a [BitBucket Mercurial repo](https://bitbucket.org/sinewalker/blog/src) but 
-this will soon change to the standard Github Pages practice of maintaning a separate branch for the source, with the actual
-web site on the master branch.
+Personal public blog and web site using Github Pages
 
-I'm just not there, yet.
+The site is built from the `src` branch, which is where all the action happens. This branch is the one served by GHP to my CNAME domain milosophical.me
