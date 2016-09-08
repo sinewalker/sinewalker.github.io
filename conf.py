@@ -3,7 +3,7 @@
 #   File:       conf.py
 #   Created:    2014-08-21
 #   Language:   Python
-#   Time-stamp: <2016-09-08 22:29:26 mjl>
+#   Time-stamp: <2016-09-08 22:50:41 mjl>
 #   Platform:   (Nikola 7.1 configuration file)
 #   OS:         *nix
 #   Author:     [MJL] Michael J. Lockhart (mlockhart@squiz.net)
@@ -32,6 +32,7 @@
 #   MJL20160907 - Upgraded to Nikola 7, using bootstrap3 theme
 #   MJL20160908 - use default output location
 #               - configure github_deploy (not sure if...)
+#               - main site nav: blog index instead of Homepage
 
 from __future__ import unicode_literals
 import time
@@ -164,7 +165,7 @@ TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ('/index.html', 'Home'),
+        ('/blog/index.html', 'Blog'),
         ('/archive/archive.html', 'Archive'),
         ('/tags/index.html', 'Tags'),
         ('/pg/index.html', 'Codex'),
