@@ -1,123 +1,86 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
-<head>
-<meta charset="utf-8">
-<base href="http://milosophical.me/blog/4-bit-rules-of-computing-part-2.html">
-<meta name="description" content="Mike's 4-bit rules explained, part 2">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>4-bit Rules of Computing, Part 2 | Milosophical Me</title>
-<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta content="#5670d4" name="theme-color">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
-<link rel="canonical" href="http://milosophical.me/blog/4-bit-rules-of-computing-part-2.html">
-<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="description" itemprop="description" content="Mike's 4-bit rules explained, part 2">
-<meta name="author" content="Michael Lockhart">
-<link rel="prev" href="setting-up-nikola.html" title="Meta: Setting up Nikola blogging" type="text/html">
-<link rel="next" href="loading-ssh-keys-at-kde-startup.html" title="Loading SSH keys at KDE startup" type="text/html">
-<meta property="og:site_name" content="Milosophical Me">
-<meta property="og:title" content="4-bit Rules of Computing, Part 2">
-<meta property="og:url" content="http://milosophical.me/blog/4-bit-rules-of-computing-part-2.html">
-<meta property="og:description" content="Mike's 4-bit rules explained, part 2">
-<meta property="og:type" content="article">
-<meta property="article:published_time" content="2015-07-22T21:15:00+10:00">
-<meta property="article:tag" content="4-bit-rules">
-<meta property="article:tag" content="comments">
-<meta property="article:tag" content="literate">
-<meta property="article:tag" content="tip">
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Mike's 4-bit rules explained, part 2">
+    <meta name="viewport" content="width=device-width">
+    <title>4-bit Rules of Computing, Part 2 | Milosophical Me</title>
+
+                <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+
+                <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+
+      <link rel="canonical" href="http://milosophical.me/blog/4-bit-rules-of-computing-part-2.html">
+
+
+
+    
+        <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]-->
+
+    
+
+    
+    <meta name="author" content="Mike Lockhart">
+        <meta property="og:site_name" content="Milosophical Me">
+    <meta property="og:title" content="4-bit Rules of Computing, Part 2">
+    <meta property="og:url" content="http://milosophical.me/blog/4-bit-rules-of-computing-part-2.html">
+    <meta property="og:description" content="Mike's 4-bit rules explained, part 2">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2015-07-22T21:15:00+10:00">
+           <meta property="article:tag" content="4-bit-rules">
+           <meta property="article:tag" content="comments">
+           <meta property="article:tag" content="literate">
+           <meta property="article:tag" content="tip">
+
+    
+    
+
 </head>
 <body>
-<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <section class="social">
+        <ul>
+                    <li><a href="../index.html" title="Home"><i class="icon-compass"></i></a></li>
+            <li><a href="../archive/archive.html" title="Archive"><i class="icon-folder-open-alt"></i></a></li>
+            <li><a href="../tags/index.html" title="Tags"><i class="icon-tags"></i></a></li>
+            <li><a href="../pg/index.html" title="Codex"><i class="icon-book"></i></a></li>
+            <li><a href="../rss.xml" title="RSS"><i class="icon-rss"></i></a></li>
+            <li><a href="https://plus.google.com/+MichaelLockhart/posts" title="Microblog"><i class="icon-google-plus"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/mikelockhart" title="My LinkedIn profile"><i class="icon-linkedin"></i></a></li>
+            <li><a href="https://bitbucket.com/sinewalker" title="My Bitbucket"><i class="icon-bitbucket"></i></a></li>
+            <li><a href="https://github.com/sinewalker" title="My Github"><i class="icon-github"></i></a></li>
+            <li><a href="http://stackoverflow.com/users/776953/mike" title="Stack Overflow"><i class="icon-stackexchange"></i></a></li>
 
-<!-- Menubar -->
+        </ul>
+    </section>
+    <section class="page-content">
+        <div class="content" rel="main">
+    <div class="post">
+        <h1 class="p-name entry-title" itemprop="headline name">4-bit Rules of Computing, Part 2</h1>
 
-<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
-<!-- This keeps the margins nice -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="http://milosophical.me/">
+        <div class="meta">
+            <div class="authordate">
+                <time class="timeago" datetime="2015-07-22T21:15:00+10:00">2015-07-22 21:15</time>
+            
+                      |  
+        <a href="4-bit-rules-of-computing-part-2.md" id="sourcelink">Source</a>
 
-                <span id="blog-title">Milosophical Me</span>
-            </a>
+            </div>
+                    <div itemprop="keywords" class="tags">
+        <ul>
+        Tags : 
+           <li><a class="tag p-category" href="../tags/4-bit-rules.html" rel="tag">4-bit-rules</a></li>
+           <li><a class="tag p-category" href="../tags/comments.html" rel="tag">comments</a></li>
+           <li><a class="tag p-category" href="../tags/literate.html" rel="tag">literate</a></li>
+           <li><a class="tag p-category" href="../tags/tip.html" rel="tag">tip</a></li>
+        </ul>
         </div>
-<!-- /.navbar-header -->
-        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
-            <ul class="nav navbar-nav">
-<li>
-<a href="index.html">Blog</a>
-                </li>
-<li>
-<a href="../archive/archive.html">Archive</a>
-                </li>
-<li>
-<a href="../tags/index.html">Tags</a>
-                </li>
-<li>
-<a href="../pg/index.html">Codex</a>
-                </li>
-<li>
-<a href="../rss.xml">RSS</a>
-                </li>
-<li>
-<a href="https://plus.google.com/+MichaelLockhart/posts">Microblog</a>
-                </li>
-<li>
-<a href="https://www.linkedin.com/in/mikelockhart">LinkedIn</a>
-                </li>
-<li>
-<a href="https://bitbucket.com/sinewalker">Bitbucket</a>
-                </li>
-<li>
-<a href="https://github.com/sinewalker">Github</a>
-                </li>
-<li>
-<a href="http://stackoverflow.com/users/776953/mike">Stack Overflow</a>
 
-                
-            </li>
-</ul>
-<ul class="nav navbar-nav navbar-right">
-<li>
-    <a href="4-bit-rules-of-computing-part-2.md" id="sourcelink">Source</a>
-    </li>
-
-                
-            </ul>
-</div>
-<!-- /.navbar-collapse -->
-    </div>
-<!-- /.container -->
-</nav><!-- End of Menubar --><div class="container" id="content" role="main">
-    <div class="body-content">
-        <!--Body content-->
-        <div class="row">
-            
-            
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">4-bit Rules of Computing, Part 2</a></h1>
-
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                    <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
-            </span></p>
-            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2015-07-22T21:15:00+10:00" itemprop="datePublished" title="2015-07-22 21:15">2015-07-22 21:15</time></a></p>
-                <p class="commentline">
-        
-</p>
-<div class="g-commentcount" data-href="/blog/4-bit-rules-of-computing-part-2.html"></div>
-<script src="https://apis.google.com/js/plusone.js"></script><p class="sourceline"><a href="4-bit-rules-of-computing-part-2.md" id="sourcelink">Source</a></p>
-
-                <meta name="description" itemprop="description" content="Mike's 4-bit rules explained, part 2">
-</div>
-        
-
-    </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
+        </div>
+        <div class="body">
+            <div>
 <p>Here is the third part of my <a href="../tags/4-bit-rules.html">blog series</a> expanding on my
 <a href="../pg/4-bit-rules.html">4-bit rules of computing</a>.</p>
 <p>In this installment:  Rules 5, on comments.  Rule 5 is a bit contentious and I've taken too long in writing my thoughts on it — which is probably telling. Nonetheless I still want to press ahead and get these words out.  I also wanted to include Rule 6 with this post, but I'm taking my own advice and breaking the post into two, because it really was getting quite long.</p>
@@ -200,7 +163,7 @@ where you can.</p>
 writing simple (or at least clear and explicit), readable code</em></strong>.</p>
 <h3>Some examples</h3>
 <p>Here's what I'm told is an example of a <em>good</em> comment:</p>
-<pre class="code literal-block"><span></span><span class="x">    $pid = $this-&gt;fork();</span>
+<pre class="code literal-block"><span class="x">    $pid = $this-&gt;fork();</span>
 <span class="x">      if (!$pid) {</span>
 <span class="x">        // reconnect because child disconnects DB when it exits</span>
 <span class="x">        $this-&gt;_reconnectDB();</span>
@@ -214,7 +177,7 @@ and this is why" (although, I'm not sure that the <em>why</em> is clear. I
 think that the child process must <em>start</em> with the DB connection
 disconnected, not disconnect when it <em>exits</em> — so maybe this is actually <em>not</em> a good comment?)</p>
 <p>Here is a <em>bad</em> comment:</p>
-<pre class="code literal-block"><span></span><span class="x">    this.client_jobs = _.filter(data.result,</span>
+<pre class="code literal-block"><span class="x">    this.client_jobs = _.filter(data.result,</span>
 <span class="x">        /* Filter to only the jobs we want to see */</span>
 <span class="x">        function(obj, i)</span>
 <span class="x">            {return (obj.hours_remaining &gt; 0.08 /* ~5 min */) &amp;&amp;</span>
@@ -237,7 +200,7 @@ as clear, or a perhaps make a function to convert <code>minutes-to-hours(5)</cod
 <p>To test some dynamic web pages, a colleague removed a suspicious HTML <code>div</code> that was embedded as part of an HTML snippet within a JSON blob, to be insterted into a page. He removed it by surrounding the <code>div</code> with HTML comments <code>&lt;!-- ... --&gt;</code>.  However, when the JSON gets parsed by JavaScript, the HTML snippet that was embedded causes a syntax error, because the HTML comment is not valid JavaScript and it broke the JSON encapsulation.</p>
 <p>The resulting error was easy to find this time, but it <em>may</em> have caused a subtle flaw, or caused the code to not exercise the logic that was under investigation.</p>
 <p>In general, commenting out code for troubleshooting <em>is</em> a pragmatic way to find the cause of a problem. In this situation though, it's better to backup the original (ideally with revision control if you can), and then <em>actually</em> remove bits to trouble-shoot, rather than comment them out.</p>
-<pre class="code literal-block"><span></span>// Sometimes, I believe the compiler ignores all my comments.
+<pre class="code literal-block">// Sometimes, I believe the compiler ignores all my comments.
 </pre>
 
 
@@ -253,14 +216,15 @@ as clear, or a perhaps make a function to convert <code>minutes-to-hours(5)</cod
 </li>
 </ul>
 <p><a href="https://plus.google.com/116269726157614459607/posts/263et4zQMh3">
-  <img src="../pixels/dust/SoManyLies.jpg" width="50%" height="50%"></a></p>
+  <img src="../pixels/dust/SoManyLies.jpg" width="50%" height="50%">
+</a></p>
 <p>Please don't do these things. At best, you're filling your code
    with noise, and doubling your maintenance debt (because you must
    now ensure that comments are still true after you change the code
    — see <strong>Rule A</strong>, and <strong>Rule 2</strong>).  At worst though, you're misleading
    readers, the equivalent of doing the old signpost vandalism prank.</p>
 <p>Oh, and if you find yourself writing comments like this</p>
-<pre class="code literal-block"><span></span><span class="c1">//MJL20150609 Increased size from 384, for ticket 23940129</span>
+<pre class="code literal-block"><span class="c1">//MJL20150609 Increased size from 384, for ticket 23940129</span>
 <span class="kt">int</span> <span class="n">MaximumFobs</span> <span class="o">=</span> <span class="mi">512</span>
 </pre>
 
@@ -309,43 +273,62 @@ ignoring them.</p>
 </ol>
 <p>Thanks if you read this far.</p>
 </div>
-    </div>
-    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../tags/4-bit-rules.html" rel="tag">4-bit-rules</a></li>
-            <li><a class="tag p-category" href="../tags/comments.html" rel="tag">comments</a></li>
-            <li><a class="tag p-category" href="../tags/literate.html" rel="tag">literate</a></li>
-            <li><a class="tag p-category" href="../tags/tip.html" rel="tag">tip</a></li>
-        </ul>
-<ul class="pager hidden-print">
-<li class="previous">
+        </div>
+                <ul class="pager">
+            <li class="previous">
                 <a href="setting-up-nikola.html" rel="prev" title="Meta: Setting up Nikola blogging">Previous post</a>
             </li>
             <li class="next">
                 <a href="loading-ssh-keys-at-kde-startup.html" rel="next" title="Loading SSH keys at KDE startup">Next post</a>
             </li>
-        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
-        
-        
-<script src="https://apis.google.com/js/plusone.js"></script><div class="g-comments" data-href="http://milosophical.me/blog/4-bit-rules-of-computing-part-2.html" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">
+        </ul>
+
+                    <script src="https://apis.google.com/js/plusone.js"></script>
+<div class="g-comments" data-href="http://milosophical.me/blog/4-bit-rules-of-computing-part-2.html" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">
 </div>
 
 
-        </section></article>
-</div>
-        <!--End of body content-->
-
-        <footer id="footer"><hr>Contents Copyright © 
+    </div>
+                    <footer id="footer" role="contentinfo">
+            <p></p>
+<hr>Contents Copyright © 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a> 2005 — 2016         <a href="mailto:sinewalker@gmail.com">Michael Lockhart</a>. Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
+<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a> 2005 — 2016         <a href="mailto:sinewalker@gmail.com">Mike Lockhart</a>. Powered by <a href="http://getnikola.com" rel="nofollow">Nikola</a> with <a href="https://github.com/getnikola/nikola-themes/tree/master/v7/zen-ipython">Zen-IPython</a> theme.
             
         </footer>
+
+        </div>
+    </section>
+    <script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-65364237-1', 'auto');  ga('send', 'pageview');</script>
+    
+                <script src="../assets/js/all-nocdn.js" type="text/javascript"></script>
+    
+<!-- Social buttons -->
+<div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+<a class="addthis_button_more">Share</a>
+<ul>
+<li>
+<a class="addthis_button_facebook"></a>
+</li>
+<li>
+<a class="addthis_button_google_plusone_share"></a>
+</li>
+<li>
+<a class="addthis_button_linkedin"></a>
+</li>
+<li>
+<a class="addthis_button_twitter"></a>
+</li>
+</ul>
 </div>
-</div>
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script>
+<!-- End of social buttons -->
 
 
-            <script src="../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
-    moment.locale("en");
-    fancydates(0, "YYYY-MM-DD HH:mm");
-    </script><!-- end fancy dates --><script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-65364237-1', 'auto');  ga('send', 'pageview');</script>
+        <script type="text/javascript">
+            $(function(){
+                $('.timeago').timeago();
+            });
+        </script>
 </body>
 </html>

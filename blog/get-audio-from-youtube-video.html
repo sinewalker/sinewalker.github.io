@@ -1,23 +1,32 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
-<head>
-<meta charset="utf-8">
-<base href="http://milosophical.me/blog/get-audio-from-youtube-video.html">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How to get audio from an online video | Milosophical Me</title>
-<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta content="#5670d4" name="theme-color">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
-<link rel="canonical" href="http://milosophical.me/blog/get-audio-from-youtube-video.html">
-<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Michael Lockhart">
-<link rel="prev" href="mounting-lukslvm-from-a-liveusb.html" title="Mounting LUKS/LVM from a LiveUSB" type="text/html">
-<link rel="next" href="standing-desks.html" title="Experience with Standing at Work" type="text/html">
-<meta property="og:site_name" content="Milosophical Me">
-<meta property="og:title" content="How to get audio from an online video">
-<meta property="og:url" content="http://milosophical.me/blog/get-audio-from-youtube-video.html">
-<meta property="og:description" content="Suppose that there is a song on YouTube and you want the audio from
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>How to get audio from an online video | Milosophical Me</title>
+
+                <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+
+                <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+
+      <link rel="canonical" href="http://milosophical.me/blog/get-audio-from-youtube-video.html">
+
+
+
+    
+        <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]-->
+
+    
+
+    
+    <meta name="author" content="Mike Lockhart">
+        <meta property="og:site_name" content="Milosophical Me">
+    <meta property="og:title" content="How to get audio from an online video">
+    <meta property="og:url" content="http://milosophical.me/blog/get-audio-from-youtube-video.html">
+    <meta property="og:description" content="Suppose that there is a song on YouTube and you want the audio from
 it. For instance:
 Le Freak, by Chic. Questions
 of potential Copyright infringement left unexamined, how do you get
@@ -25,104 +34,61 @@ it?
 
 
 Step 1, dow">
-<meta property="og:type" content="article">
-<meta property="article:published_time" content="2015-03-04T10:54:14+11:00">
-<meta property="article:tag" content="audio">
-<meta property="article:tag" content="ffmpeg">
-<meta property="article:tag" content="how-to">
-<meta property="article:tag" content="tip">
-<meta property="article:tag" content="youtube">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2015-03-04T10:54:14+11:00">
+           <meta property="article:tag" content="audio">
+           <meta property="article:tag" content="ffmpeg">
+           <meta property="article:tag" content="how-to">
+           <meta property="article:tag" content="tip">
+           <meta property="article:tag" content="youtube">
+
+    
+    
+
 </head>
 <body>
-<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <section class="social">
+        <ul>
+                    <li><a href="../index.html" title="Home"><i class="icon-compass"></i></a></li>
+            <li><a href="../archive/archive.html" title="Archive"><i class="icon-folder-open-alt"></i></a></li>
+            <li><a href="../tags/index.html" title="Tags"><i class="icon-tags"></i></a></li>
+            <li><a href="../pg/index.html" title="Codex"><i class="icon-book"></i></a></li>
+            <li><a href="../rss.xml" title="RSS"><i class="icon-rss"></i></a></li>
+            <li><a href="https://plus.google.com/+MichaelLockhart/posts" title="Microblog"><i class="icon-google-plus"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/mikelockhart" title="My LinkedIn profile"><i class="icon-linkedin"></i></a></li>
+            <li><a href="https://bitbucket.com/sinewalker" title="My Bitbucket"><i class="icon-bitbucket"></i></a></li>
+            <li><a href="https://github.com/sinewalker" title="My Github"><i class="icon-github"></i></a></li>
+            <li><a href="http://stackoverflow.com/users/776953/mike" title="Stack Overflow"><i class="icon-stackexchange"></i></a></li>
 
-<!-- Menubar -->
+        </ul>
+    </section>
+    <section class="page-content">
+        <div class="content" rel="main">
+    <div class="post">
+        <h1 class="p-name entry-title" itemprop="headline name">How to get audio from an online video</h1>
 
-<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
-<!-- This keeps the margins nice -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="http://milosophical.me/">
+        <div class="meta">
+            <div class="authordate">
+                <time class="timeago" datetime="2015-03-04T10:54:14+11:00">2015-03-04 10:54</time>
+            
+                      |  
+        <a href="get-audio-from-youtube-video.md" id="sourcelink">Source</a>
 
-                <span id="blog-title">Milosophical Me</span>
-            </a>
+            </div>
+                    <div itemprop="keywords" class="tags">
+        <ul>
+        Tags : 
+           <li><a class="tag p-category" href="../tags/audio.html" rel="tag">audio</a></li>
+           <li><a class="tag p-category" href="../tags/ffmpeg.html" rel="tag">ffmpeg</a></li>
+           <li><a class="tag p-category" href="../tags/how-to.html" rel="tag">how-to</a></li>
+           <li><a class="tag p-category" href="../tags/tip.html" rel="tag">tip</a></li>
+           <li><a class="tag p-category" href="../tags/youtube.html" rel="tag">youtube</a></li>
+        </ul>
         </div>
-<!-- /.navbar-header -->
-        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
-            <ul class="nav navbar-nav">
-<li>
-<a href="index.html">Blog</a>
-                </li>
-<li>
-<a href="../archive/archive.html">Archive</a>
-                </li>
-<li>
-<a href="../tags/index.html">Tags</a>
-                </li>
-<li>
-<a href="../pg/index.html">Codex</a>
-                </li>
-<li>
-<a href="../rss.xml">RSS</a>
-                </li>
-<li>
-<a href="https://plus.google.com/+MichaelLockhart/posts">Microblog</a>
-                </li>
-<li>
-<a href="https://www.linkedin.com/in/mikelockhart">LinkedIn</a>
-                </li>
-<li>
-<a href="https://bitbucket.com/sinewalker">Bitbucket</a>
-                </li>
-<li>
-<a href="https://github.com/sinewalker">Github</a>
-                </li>
-<li>
-<a href="http://stackoverflow.com/users/776953/mike">Stack Overflow</a>
-
-                
-            </li>
-</ul>
-<ul class="nav navbar-nav navbar-right">
-<li>
-    <a href="get-audio-from-youtube-video.md" id="sourcelink">Source</a>
-    </li>
-
-                
-            </ul>
-</div>
-<!-- /.navbar-collapse -->
-    </div>
-<!-- /.container -->
-</nav><!-- End of Menubar --><div class="container" id="content" role="main">
-    <div class="body-content">
-        <!--Body content-->
-        <div class="row">
-            
-            
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">How to get audio from an online video</a></h1>
-
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                    <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
-            </span></p>
-            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2015-03-04T10:54:14+11:00" itemprop="datePublished" title="2015-03-04 10:54">2015-03-04 10:54</time></a></p>
-                <p class="commentline">
-        
-</p>
-<div class="g-commentcount" data-href="/blog/get-audio-from-youtube-video.html"></div>
-<script src="https://apis.google.com/js/plusone.js"></script><p class="sourceline"><a href="get-audio-from-youtube-video.md" id="sourcelink">Source</a></p>
 
         </div>
-        
-
-    </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
+        <div class="body">
+            <div>
 <p>Suppose that there is a song on YouTube and you want the audio from
 it. For instance:
 <a href="https://www.youtube.com/watch?v=EVZh4WcdC3s">Le Freak, by Chic</a>. Questions
@@ -140,7 +106,7 @@ extract the audio stream, you'll just be wasting network
 bandwidth/quota.</p>
 <p>I like ogg-vorbis audio if I can get it, so I look for any webm
 formats available (the audio stream is vorbis in webm):</p>
-<pre class="code literal-block"><span></span><span class="n">mjl</span><span class="p">@</span><span class="nl">tesla</span><span class="p">:</span><span class="o">~/</span><span class="n">Music</span><span class="o">&gt;</span> <span class="n">youtube</span><span class="o">-</span><span class="n">dl</span> <span class="o">-</span><span class="n">F</span> <span class="nl">https</span><span class="p">:</span><span class="c1">//www.youtube.com/watch?v=EVZh4WcdC3s</span>
+<pre class="code literal-block"><span class="n">mjl</span><span class="p">@</span><span class="nl">tesla</span><span class="p">:</span><span class="o">~/</span><span class="n">Music</span><span class="o">&gt;</span> <span class="n">youtube</span><span class="o">-</span><span class="n">dl</span> <span class="o">-</span><span class="n">F</span> <span class="nl">https</span><span class="p">:</span><span class="c1">//www.youtube.com/watch?v=EVZh4WcdC3s</span>
 <span class="p">[</span><span class="n">youtube</span><span class="p">]</span> <span class="nl">EVZh4WcdC3s</span><span class="p">:</span> <span class="n">Downloading</span> <span class="n">webpage</span>
 <span class="p">[</span><span class="n">youtube</span><span class="p">]</span> <span class="nl">EVZh4WcdC3s</span><span class="p">:</span> <span class="n">Extracting</span> <span class="n">video</span> <span class="n">information</span>
 <span class="p">[</span><span class="n">youtube</span><span class="p">]</span> <span class="nl">EVZh4WcdC3s</span><span class="p">:</span> <span class="n">Downloading</span> <span class="n">js</span> <span class="n">player</span> <span class="n">en_US</span><span class="o">-</span><span class="n">vfl3g8JP2</span>
@@ -167,7 +133,7 @@ formats available (the audio stream is vorbis in webm):</p>
 
 <p>Here, format 171 is the best quality webm audio stream available, so
 I'll download that:</p>
-<pre class="code literal-block"><span></span>mjl@tesla:~/Music&gt; youtube-dl -f 171 https://www.youtube.com/watch?v=EVZh4WcdC3s -o freakout.webm
+<pre class="code literal-block">mjl@tesla:~/Music&gt; youtube-dl -f 171 https://www.youtube.com/watch?v=EVZh4WcdC3s -o freakout.webm
 [youtube] EVZh4WcdC3s: Downloading webpage
 [youtube] EVZh4WcdC3s: Extracting video information
 [youtube] EVZh4WcdC3s: Downloading DASH manifest
@@ -182,7 +148,7 @@ mjl@tesla:~/Music&gt;
 would be much easier to put Vorbis data in an Ogg container, as music
 players know how to work with that.  For this purpose, I use
 <a href="https://www.ffmpeg.org/">ffmpeg</a>:</p>
-<pre class="code literal-block"><span></span>ffmpeg -i freakout.webm -vn -acodec 'copy' freakout.ogg
+<pre class="code literal-block">ffmpeg -i freakout.webm -vn -acodec 'copy' freakout.ogg
 </pre>
 
 
@@ -203,44 +169,62 @@ leading/trailing blank sound, filter out noise, remove skips between
 tracks and so on.</p>
 <p>Happy hacking!</p>
 </div>
-    </div>
-    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../tags/audio.html" rel="tag">audio</a></li>
-            <li><a class="tag p-category" href="../tags/ffmpeg.html" rel="tag">ffmpeg</a></li>
-            <li><a class="tag p-category" href="../tags/how-to.html" rel="tag">how-to</a></li>
-            <li><a class="tag p-category" href="../tags/tip.html" rel="tag">tip</a></li>
-            <li><a class="tag p-category" href="../tags/youtube.html" rel="tag">youtube</a></li>
-        </ul>
-<ul class="pager hidden-print">
-<li class="previous">
+        </div>
+                <ul class="pager">
+            <li class="previous">
                 <a href="mounting-lukslvm-from-a-liveusb.html" rel="prev" title="Mounting LUKS/LVM from a LiveUSB">Previous post</a>
             </li>
             <li class="next">
                 <a href="standing-desks.html" rel="next" title="Experience with Standing at Work">Next post</a>
             </li>
-        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
-        
-        
-<script src="https://apis.google.com/js/plusone.js"></script><div class="g-comments" data-href="http://milosophical.me/blog/get-audio-from-youtube-video.html" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">
+        </ul>
+
+                    <script src="https://apis.google.com/js/plusone.js"></script>
+<div class="g-comments" data-href="http://milosophical.me/blog/get-audio-from-youtube-video.html" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">
 </div>
 
 
-        </section></article>
-</div>
-        <!--End of body content-->
-
-        <footer id="footer"><hr>Contents Copyright © 
+    </div>
+                    <footer id="footer" role="contentinfo">
+            <p></p>
+<hr>Contents Copyright © 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a> 2005 — 2016         <a href="mailto:sinewalker@gmail.com">Michael Lockhart</a>. Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
+<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a> 2005 — 2016         <a href="mailto:sinewalker@gmail.com">Mike Lockhart</a>. Powered by <a href="http://getnikola.com" rel="nofollow">Nikola</a> with <a href="https://github.com/getnikola/nikola-themes/tree/master/v7/zen-ipython">Zen-IPython</a> theme.
             
         </footer>
+
+        </div>
+    </section>
+    <script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-65364237-1', 'auto');  ga('send', 'pageview');</script>
+    
+                <script src="../assets/js/all-nocdn.js" type="text/javascript"></script>
+    
+<!-- Social buttons -->
+<div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+<a class="addthis_button_more">Share</a>
+<ul>
+<li>
+<a class="addthis_button_facebook"></a>
+</li>
+<li>
+<a class="addthis_button_google_plusone_share"></a>
+</li>
+<li>
+<a class="addthis_button_linkedin"></a>
+</li>
+<li>
+<a class="addthis_button_twitter"></a>
+</li>
+</ul>
 </div>
-</div>
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script>
+<!-- End of social buttons -->
 
 
-            <script src="../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
-    moment.locale("en");
-    fancydates(0, "YYYY-MM-DD HH:mm");
-    </script><!-- end fancy dates --><script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-65364237-1', 'auto');  ga('send', 'pageview');</script>
+        <script type="text/javascript">
+            $(function(){
+                $('.timeago').timeago();
+            });
+        </script>
 </body>
 </html>

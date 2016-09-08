@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (observation)</title><link>http://milosophical.me</link><description></description><atom:link href="http://milosophical.me/tags/observation.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 08 Sep 2016 12:16:04 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Back to openSUSE</title><link>http://milosophical.me/blog/2008/03/31/back-to-opensuse.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;Well, my stint in *buntu is over, and it ends with an award to openSUSE: this is the first Linux distro I've returned to.
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (observation)</title><link>http://milosophical.me/</link><description></description><atom:link href="http://milosophical.me/tags/observation.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 16 Dec 2015 13:46:21 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Back to openSUSE</title><link>http://milosophical.me/blog/2008/03/31/back-to-opensuse.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;Well, my stint in *buntu is over, and it ends with an award to openSUSE: this is the first Linux distro I've returned to.
 
 
 Kubuntu is nice, and I'm happy that I've tried it out, but it's not for me. It's nice enough if you want a simple desktop system, and APT rocks (especially with the aptitude front-end). But it's just not as good as openSUSE, sorry.
 
 
-&lt;/p&gt;&lt;p&gt;&lt;a href="http://milosophical.me/blog/2008/03/31/back-to-opensuse.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>alternatives</category><category>computers</category><category>hacking</category><category>kubuntu</category><category>observation</category><category>rant</category><category>SUSE</category><category>thoughts</category><guid>http://milosophical.me/blog/2008/03/31/back-to-opensuse.html</guid><pubDate>Sun, 30 Mar 2008 22:44:49 GMT</pubDate></item><item><title>Preserving the programming craft</title><link>http://milosophical.me/blog/2006/05/01/preserving-the-programming-craft.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;
+&lt;/p&gt;&lt;p&gt;&lt;a href="http://milosophical.me/blog/2008/03/31/back-to-opensuse.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>SUSE</category><category>alternatives</category><category>computers</category><category>hacking</category><category>kubuntu</category><category>observation</category><category>rant</category><category>thoughts</category><guid>http://milosophical.me/blog/2008/03/31/back-to-opensuse.html</guid><pubDate>Sun, 30 Mar 2008 22:44:49 GMT</pubDate></item><item><title>Preserving the programming craft</title><link>http://milosophical.me/blog/2006/05/01/preserving-the-programming-craft.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;
 &lt;em&gt;This post was originally published
   at &lt;a href="http://sinewalker.wordpress.com/2006/05/01/preserving-the-programming-craft/"&gt;sinewalker.wordpress.com&lt;/a&gt;
   on 1 May 2006.&lt;/em&gt;&lt;/p&gt;
@@ -30,7 +30,7 @@ and why would it be passed over by kids these days? Or would it?
 
 &lt;br&gt;
 
-&lt;p&gt;&lt;a href="http://milosophical.me/blog/2006/05/01/preserving-the-programming-craft.html"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>hacking</category><category>observation</category><category>programming</category><category>thoughts</category><guid>http://milosophical.me/blog/2006/05/01/preserving-the-programming-craft.html</guid><pubDate>Mon, 01 May 2006 05:00:21 GMT</pubDate></item><item><title>Mystical jargon</title><link>http://milosophical.me/blog/2006/04/04/mystical-jargon.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;
+&lt;p&gt;&lt;a href="http://milosophical.me/blog/2006/05/01/preserving-the-programming-craft.html"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>hacking</category><category>observation</category><category>programming</category><category>thoughts</category><guid>http://milosophical.me/blog/2006/05/01/preserving-the-programming-craft.html</guid><pubDate>Mon, 01 May 2006 05:00:21 GMT</pubDate></item><item><title>Mystical jargon</title><link>http://milosophical.me/blog/2006/04/04/mystical-jargon.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;
 &lt;em&gt;This post was originally published
   at &lt;a href="http://sinewalker.wordpress.com/2006/04/04/mystical-jargon/"&gt;sinewalker.wordpress.com&lt;/a&gt;
   on 4 April 2006.&lt;/em&gt;
@@ -46,7 +46,7 @@ Have you ever noticed the prolific use of mystical/fantastical words in computer
 
 &lt;br&gt;
 
-&lt;p&gt;&lt;a href="http://milosophical.me/blog/2006/04/04/mystical-jargon.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>computers</category><category>geek</category><category>hacking</category><category>observation</category><category>thoughts</category><guid>http://milosophical.me/blog/2006/04/04/mystical-jargon.html</guid><pubDate>Tue, 04 Apr 2006 03:26:03 GMT</pubDate></item><item><title>Crashed Linux</title><link>http://milosophical.me/blog/2006/03/24/crashed-linux.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;p&gt;
+&lt;p&gt;&lt;a href="http://milosophical.me/blog/2006/04/04/mystical-jargon.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>computers</category><category>geek</category><category>hacking</category><category>observation</category><category>thoughts</category><guid>http://milosophical.me/blog/2006/04/04/mystical-jargon.html</guid><pubDate>Tue, 04 Apr 2006 03:26:03 GMT</pubDate></item><item><title>Crashed Linux</title><link>http://milosophical.me/blog/2006/03/24/crashed-linux.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;
 &lt;em&gt;This post was originally published
   at &lt;a href="http://sinewalker.blogspot.com.au/2006_03_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
   on 24 March 2006.&lt;/em&gt;
@@ -75,7 +75,7 @@ Originally uploaded by &lt;a href="http://www.flickr.com/people/milliped/"&gt;mi
 
 
 &lt;p&gt;
-This photo has a big rant in the flickr comments about whether or not it's a Linux crash. Well, what's a Linux crash? Most of the public Windows crashes do not involve the Windows kernel (except for blue-screens) but they get called Windows crashes. So, to be fair, this is a Linux crash, even if it appears that the kernel itself is fine.&lt;/p&gt;</description><category>aircraft</category><category>geek</category><category>linux</category><category>observation</category><category>screenshot</category><guid>http://milosophical.me/blog/2006/03/24/crashed-linux.html</guid><pubDate>Fri, 24 Mar 2006 03:11:22 GMT</pubDate></item><item><title>“Free as in Coke”</title><link>http://milosophical.me/blog/2006/02/10/free-as-in-coke.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;p&gt;&lt;em&gt;This post was originally posted
+This photo has a big rant in the flickr comments about whether or not it's a Linux crash. Well, what's a Linux crash? Most of the public Windows crashes do not involve the Windows kernel (except for blue-screens) but they get called Windows crashes. So, to be fair, this is a Linux crash, even if it appears that the kernel itself is fine.&lt;/p&gt;</description><category>aircraft</category><category>geek</category><category>linux</category><category>observation</category><category>screenshot</category><guid>http://milosophical.me/blog/2006/03/24/crashed-linux.html</guid><pubDate>Fri, 24 Mar 2006 03:11:22 GMT</pubDate></item><item><title>“Free as in Coke”</title><link>http://milosophical.me/blog/2006/02/10/free-as-in-coke.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;&lt;em&gt;This post was originally posted
     at &lt;a href="http://sinewalker.blogspot.com.au/2006_02_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
     on 10 February 2006.&lt;/em&gt;
 &lt;/p&gt;
@@ -93,7 +93,7 @@ Beer is actually already nearly Free as in Freedom, since the process to produce
 &lt;br&gt;
 
 &lt;p&gt;
-Just a thought, anyway.&lt;/p&gt;</description><category>freedom</category><category>observation</category><category>thoughts</category><guid>http://milosophical.me/blog/2006/02/10/free-as-in-coke.html</guid><pubDate>Thu, 09 Feb 2006 23:31:00 GMT</pubDate></item><item><title>Alaska could learn from Massachusetts</title><link>http://milosophical.me/blog/2006/01/24/alaska-could-learn-from-massachusetts.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;p&gt;&lt;em&gt;This post was originally posted
+Just a thought, anyway.&lt;/p&gt;</description><category>freedom</category><category>observation</category><category>thoughts</category><guid>http://milosophical.me/blog/2006/02/10/free-as-in-coke.html</guid><pubDate>Thu, 09 Feb 2006 23:31:00 GMT</pubDate></item><item><title>Alaska could learn from Massachusetts</title><link>http://milosophical.me/blog/2006/01/24/alaska-could-learn-from-massachusetts.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;&lt;em&gt;This post was originally posted
     at &lt;a href="http://sinewalker.blogspot.com.au/2006_01_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
     on 24 January 2006.&lt;/em&gt;
 &lt;/p&gt;
@@ -107,7 +107,7 @@ Just a thought, anyway.&lt;/p&gt;</description><category>freedom</category><cate
 &lt;p&gt;Adopting Open voting/documententation standards would curtail
 these sorts of issues, without the FUD of forcing constituents to switch…
 However, I think that blaming it on Diebold is only a scape-goat to hide
-corruption in the voting system, so it's likely to remain…&lt;/p&gt;</description><category>freedom</category><category>observation</category><category>thoughts</category><guid>http://milosophical.me/blog/2006/01/24/alaska-could-learn-from-massachusetts.html</guid><pubDate>Tue, 24 Jan 2006 03:49:00 GMT</pubDate></item><item><title>“Get into the habbit of reading source docs”</title><link>http://milosophical.me/blog/2005/10/27/get-into-the-habbit-of-reading-source-docs.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;p&gt;&lt;em&gt;This post was originally published
+corruption in the voting system, so it's likely to remain…&lt;/p&gt;</description><category>freedom</category><category>observation</category><category>thoughts</category><guid>http://milosophical.me/blog/2006/01/24/alaska-could-learn-from-massachusetts.html</guid><pubDate>Tue, 24 Jan 2006 03:49:00 GMT</pubDate></item><item><title>“Get into the habbit of reading source docs”</title><link>http://milosophical.me/blog/2005/10/27/get-into-the-habbit-of-reading-source-docs.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;&lt;em&gt;This post was originally published
     at &lt;a href="http://sinewalker.blogspot.com.au/2005_10_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
           on 27 October 2005&lt;/em&gt;&lt;/p&gt;
 
@@ -165,7 +165,7 @@ of a deterrent to forming this habit.
 &lt;p&gt;
 unfortunately, hacker habbits require hacker motivation :-(
 &lt;/p&gt;
-</description><category>code</category><category>gentoo</category><category>hacking</category><category>observation</category><category>package</category><category>thoughts</category><guid>http://milosophical.me/blog/2005/10/27/get-into-the-habbit-of-reading-source-docs.html</guid><pubDate>Thu, 27 Oct 2005 00:22:00 GMT</pubDate></item><item><title>Mainframe is process-centred, *nix/windoze is not</title><link>http://milosophical.me/blog/2005/07/18/mainframe-is-process-centred-nixwindoze-is-not.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;p&gt;&lt;em&gt;This post was originally published
+</description><category>code</category><category>gentoo</category><category>hacking</category><category>observation</category><category>package</category><category>thoughts</category><guid>http://milosophical.me/blog/2005/10/27/get-into-the-habbit-of-reading-source-docs.html</guid><pubDate>Thu, 27 Oct 2005 00:22:00 GMT</pubDate></item><item><title>Mainframe is process-centred, *nix/windoze is not</title><link>http://milosophical.me/blog/2005/07/18/mainframe-is-process-centred-nixwindoze-is-not.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;&lt;em&gt;This post was originally published
     at &lt;a href="http://sinewalker.blogspot.com.au/2005_07_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt; on 18 July 2005&lt;/em&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;
@@ -248,4 +248,4 @@ company that built it, or was stupid enough to agree to use the off-the-shelf
 product in the first place, so there is nothing to drive a change of behaviour
 from the clients.&lt;/p&gt;
 
-</description><category>development</category><category>hacking</category><category>mainframe</category><category>observation</category><category>process</category><category>stability</category><category>Unix</category><guid>http://milosophical.me/blog/2005/07/18/mainframe-is-process-centred-nixwindoze-is-not.html</guid><pubDate>Sun, 17 Jul 2005 22:52:00 GMT</pubDate></item></channel></rss>
+</description><category>Unix</category><category>development</category><category>hacking</category><category>mainframe</category><category>observation</category><category>process</category><category>stability</category><guid>http://milosophical.me/blog/2005/07/18/mainframe-is-process-centred-nixwindoze-is-not.html</guid><pubDate>Sun, 17 Jul 2005 22:52:00 GMT</pubDate></item></channel></rss>

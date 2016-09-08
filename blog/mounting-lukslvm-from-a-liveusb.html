@@ -1,123 +1,86 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
-<head>
-<meta charset="utf-8">
-<base href="http://milosophical.me/blog/mounting-lukslvm-from-a-liveusb.html">
-<meta name="description" content="How do you mount an encrypted hard drive to recover">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mounting LUKS/LVM from a LiveUSB | Milosophical Me</title>
-<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
-<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
-<meta content="#5670d4" name="theme-color">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
-<link rel="canonical" href="http://milosophical.me/blog/mounting-lukslvm-from-a-liveusb.html">
-<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="description" itemprop="description" content="How do you mount an encrypted hard drive to recover">
-<meta name="author" content="Mike Lockhart..">
-<link rel="prev" href="2013/05/24/fixing-java-ca-certificates-on-opensuse.html" title="Fixing Java CA Certificates on openSUSE" type="text/html">
-<link rel="next" href="get-audio-from-youtube-video.html" title="How to get audio from an online video" type="text/html">
-<meta property="og:site_name" content="Milosophical Me">
-<meta property="og:title" content="Mounting LUKS/LVM from a LiveUSB">
-<meta property="og:url" content="http://milosophical.me/blog/mounting-lukslvm-from-a-liveusb.html">
-<meta property="og:description" content="How do you mount an encrypted hard drive to recover">
-<meta property="og:type" content="article">
-<meta property="article:published_time" content="2014-11-09T21:30:25+11:00">
-<meta property="article:tag" content="encryption">
-<meta property="article:tag" content="linux">
-<meta property="article:tag" content="LUKS">
-<meta property="article:tag" content="LVM">
+<html prefix="
+og: http://ogp.me/ns#
+article: http://ogp.me/ns/article#
+" lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="description" content="How do you mount an encrypted hard drive to recover">
+    <meta name="viewport" content="width=device-width">
+    <title>Mounting LUKS/LVM from a LiveUSB | Milosophical Me</title>
+
+                <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+
+                <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+
+      <link rel="canonical" href="http://milosophical.me/blog/mounting-lukslvm-from-a-liveusb.html">
+
+
+
+    
+        <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]-->
+
+    
+
+    
+    <meta name="author" content="Mike Lockhart..">
+        <meta property="og:site_name" content="Milosophical Me">
+    <meta property="og:title" content="Mounting LUKS/LVM from a LiveUSB">
+    <meta property="og:url" content="http://milosophical.me/blog/mounting-lukslvm-from-a-liveusb.html">
+    <meta property="og:description" content="How do you mount an encrypted hard drive to recover">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2014-11-09T21:30:25+11:00">
+           <meta property="article:tag" content="LUKS">
+           <meta property="article:tag" content="LVM">
+           <meta property="article:tag" content="encryption">
+           <meta property="article:tag" content="linux">
+
+    
+    
+
 </head>
 <body>
-<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <section class="social">
+        <ul>
+                    <li><a href="../index.html" title="Home"><i class="icon-compass"></i></a></li>
+            <li><a href="../archive/archive.html" title="Archive"><i class="icon-folder-open-alt"></i></a></li>
+            <li><a href="../tags/index.html" title="Tags"><i class="icon-tags"></i></a></li>
+            <li><a href="../pg/index.html" title="Codex"><i class="icon-book"></i></a></li>
+            <li><a href="../rss.xml" title="RSS"><i class="icon-rss"></i></a></li>
+            <li><a href="https://plus.google.com/+MichaelLockhart/posts" title="Microblog"><i class="icon-google-plus"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/mikelockhart" title="My LinkedIn profile"><i class="icon-linkedin"></i></a></li>
+            <li><a href="https://bitbucket.com/sinewalker" title="My Bitbucket"><i class="icon-bitbucket"></i></a></li>
+            <li><a href="https://github.com/sinewalker" title="My Github"><i class="icon-github"></i></a></li>
+            <li><a href="http://stackoverflow.com/users/776953/mike" title="Stack Overflow"><i class="icon-stackexchange"></i></a></li>
 
-<!-- Menubar -->
+        </ul>
+    </section>
+    <section class="page-content">
+        <div class="content" rel="main">
+    <div class="post">
+        <h1 class="p-name entry-title" itemprop="headline name">Mounting LUKS/LVM from a LiveUSB</h1>
 
-<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
-<!-- This keeps the margins nice -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="http://milosophical.me/">
+        <div class="meta">
+            <div class="authordate">
+                <time class="timeago" datetime="2014-11-09T21:30:25+11:00">2014-11-09 21:30</time>
+            
+                      |  
+        <a href="mounting-lukslvm-from-a-liveusb.rst" id="sourcelink">Source</a>
 
-                <span id="blog-title">Milosophical Me</span>
-            </a>
+            </div>
+                    <div itemprop="keywords" class="tags">
+        <ul>
+        Tags : 
+           <li><a class="tag p-category" href="../tags/luks.html" rel="tag">LUKS</a></li>
+           <li><a class="tag p-category" href="../tags/lvm.html" rel="tag">LVM</a></li>
+           <li><a class="tag p-category" href="../tags/encryption.html" rel="tag">encryption</a></li>
+           <li><a class="tag p-category" href="../tags/linux.html" rel="tag">linux</a></li>
+        </ul>
         </div>
-<!-- /.navbar-header -->
-        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
-            <ul class="nav navbar-nav">
-<li>
-<a href="index.html">Blog</a>
-                </li>
-<li>
-<a href="../archive/archive.html">Archive</a>
-                </li>
-<li>
-<a href="../tags/index.html">Tags</a>
-                </li>
-<li>
-<a href="../pg/index.html">Codex</a>
-                </li>
-<li>
-<a href="../rss.xml">RSS</a>
-                </li>
-<li>
-<a href="https://plus.google.com/+MichaelLockhart/posts">Microblog</a>
-                </li>
-<li>
-<a href="https://www.linkedin.com/in/mikelockhart">LinkedIn</a>
-                </li>
-<li>
-<a href="https://bitbucket.com/sinewalker">Bitbucket</a>
-                </li>
-<li>
-<a href="https://github.com/sinewalker">Github</a>
-                </li>
-<li>
-<a href="http://stackoverflow.com/users/776953/mike">Stack Overflow</a>
 
-                
-            </li>
-</ul>
-<ul class="nav navbar-nav navbar-right">
-<li>
-    <a href="mounting-lukslvm-from-a-liveusb.rst" id="sourcelink">Source</a>
-    </li>
-
-                
-            </ul>
-</div>
-<!-- /.navbar-collapse -->
-    </div>
-<!-- /.container -->
-</nav><!-- End of Menubar --><div class="container" id="content" role="main">
-    <div class="body-content">
-        <!--Body content-->
-        <div class="row">
-            
-            
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Mounting LUKS/LVM from a LiveUSB</a></h1>
-
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                    <a href="../authors/mike-lockhart.html">Mike Lockhart..</a>
-            </span></p>
-            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2014-11-09T21:30:25+11:00" itemprop="datePublished" title="2014-11-09 21:30">2014-11-09 21:30</time></a></p>
-                <p class="commentline">
-        
-</p>
-<div class="g-commentcount" data-href="/blog/mounting-lukslvm-from-a-liveusb.html"></div>
-<script src="https://apis.google.com/js/plusone.js"></script><p class="sourceline"><a href="mounting-lukslvm-from-a-liveusb.rst" id="sourcelink">Source</a></p>
-
-                <meta name="description" itemprop="description" content="How do you mount an encrypted hard drive to recover">
-</div>
-        
-
-    </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
+        </div>
+        <div class="body">
+            <div>
 <p>After upgrading work's openSUSE laptop from 13.1 to 13.2 today it
 would not unlock the LUKS-encrypted LVM, which is a problem since the
 entire SSD is encrypted (except for /boot).  Bummer.</p>
@@ -151,18 +114,18 @@ line ;-)</p>
 <h2>3 Unlock LUKS volumes</h2>
 <p>To mount a LUKS-encrypted drive you first need to unlock the LUKS
 container:</p>
-<pre class="code shell"><a name="rest_code_6838ca1eac33441e91be78c8ee9e98e3-1"></a><span class="c1"># cryptsetup luksOpen /dev/sdb1 myusb</span>
-<a name="rest_code_6838ca1eac33441e91be78c8ee9e98e3-2"></a>Enter passphrase <span class="k">for</span> /dev/sdb1:
-<a name="rest_code_6838ca1eac33441e91be78c8ee9e98e3-3"></a>No key available with this passphrase.
-<a name="rest_code_6838ca1eac33441e91be78c8ee9e98e3-4"></a>Enter passphrase <span class="k">for</span> /dev/sdb1:
+<pre class="code shell"><a name="rest_code_98189031b9aa42ab88b8c3ba45942c73-1"></a><span class="c"># cryptsetup luksOpen /dev/sdb1 myusb</span>
+<a name="rest_code_98189031b9aa42ab88b8c3ba45942c73-2"></a>Enter passphrase <span class="k">for</span> /dev/sdb1:
+<a name="rest_code_98189031b9aa42ab88b8c3ba45942c73-3"></a>No key available with this passphrase.
+<a name="rest_code_98189031b9aa42ab88b8c3ba45942c73-4"></a>Enter passphrase <span class="k">for</span> /dev/sdb1:
 </pre>
 <p>Ah, yes. Got to get that passphrase. Of course, being in KeePass2 it's
 a random generated hex string that no human will ever remember (that is what
 password database are for, after all)... Well, we'll come back to
 this...</p>
 <p>So, need to unlock the volume on the laptop...</p>
-<pre class="code sh"><a name="rest_code_32ceace2aa0445f79c933caf8ee881cb-1"></a><span class="c1">#cryptsetup luksOpen /dev/sda3 laptop</span>
-<a name="rest_code_32ceace2aa0445f79c933caf8ee881cb-2"></a>Enter passphrase <span class="k">for</span> /dev/sda3:
+<pre class="code sh"><a name="rest_code_55aa3f8919ee4f55910987a33f472a38-1"></a><span class="c">#cryptsetup luksOpen /dev/sda3 laptop</span>
+<a name="rest_code_55aa3f8919ee4f55910987a33f472a38-2"></a>Enter passphrase <span class="k">for</span> /dev/sda3:
 </pre>
 <p>Okay, so it opened, great! (The problem after the upgrade was that it
 wouldn't even get this far). Now I just need to mount the home
@@ -171,27 +134,27 @@ volume. It's part of an LVG...</p>
 <div class="section" id="mount-the-lvg-s">
 <h2>4 Mount the LVG(s)</h2>
 <p>First, let's look at the logical volumes:</p>
-<pre class="code sh"><a name="rest_code_9899a0f17323406ab9f54ffa15177f9b-1"></a><span class="c1">#lvs</span>
-<a name="rest_code_9899a0f17323406ab9f54ffa15177f9b-2"></a>  LV   VG   Attr      LSize   Pool Origin Data%  Move Log Cpy%Sync Convert
-<a name="rest_code_9899a0f17323406ab9f54ffa15177f9b-3"></a>  home lvg  -wi-ao--- 179.31g
-<a name="rest_code_9899a0f17323406ab9f54ffa15177f9b-4"></a>  root lvg  -wi-ao---  50.00g
-<a name="rest_code_9899a0f17323406ab9f54ffa15177f9b-5"></a>  swap lvg  -wi-ao---   8.00g
+<pre class="code sh"><a name="rest_code_0d03a0581f7e49e1b2da571cb63de55e-1"></a><span class="c">#lvs</span>
+<a name="rest_code_0d03a0581f7e49e1b2da571cb63de55e-2"></a>  LV   VG   Attr      LSize   Pool Origin Data%  Move Log Cpy%Sync Convert
+<a name="rest_code_0d03a0581f7e49e1b2da571cb63de55e-3"></a>  home lvg  -wi-ao--- 179.31g
+<a name="rest_code_0d03a0581f7e49e1b2da571cb63de55e-4"></a>  root lvg  -wi-ao---  50.00g
+<a name="rest_code_0d03a0581f7e49e1b2da571cb63de55e-5"></a>  swap lvg  -wi-ao---   8.00g
 </pre>
 <p>That's right, I used a very simple/guessable naming
 convention. Bravo. Okay, the passwords file is somewhere in 'home',
 let's mount it</p>
-<pre class="code sh"><a name="rest_code_bf1120f0dffb44a3afe94b3c77c954f7-1"></a><span class="c1"># mount /dev/laptop/home /mnt</span>
-<a name="rest_code_bf1120f0dffb44a3afe94b3c77c954f7-2"></a><span class="c1"># ls /mnt</span>
-<a name="rest_code_bf1120f0dffb44a3afe94b3c77c954f7-3"></a>guest mjl
+<pre class="code sh"><a name="rest_code_79de3dcfc2bd4973aa47604a11d2733d-1"></a><span class="c"># mount /dev/laptop/home /mnt</span>
+<a name="rest_code_79de3dcfc2bd4973aa47604a11d2733d-2"></a><span class="c"># ls /mnt</span>
+<a name="rest_code_79de3dcfc2bd4973aa47604a11d2733d-3"></a>guest mjl
 </pre>
 <p>W00t! Alright, now I can grab that KeePass database, shove it on an SD
 chip and then load it up in Keepass2Android on my smart phone (the
 LiveUSB doesn't have any KeePass software... hmm, better do something
 about that later).</p>
-<pre class="code sh"><a name="rest_code_92bc790bdf77458297cba6cc2853a3b5-1"></a><span class="c1"># mkdir /var/tmp/sdc</span>
-<a name="rest_code_92bc790bdf77458297cba6cc2853a3b5-2"></a><span class="c1"># mount /dev/sdc1 /var/tmp/sdc</span>
-<a name="rest_code_92bc790bdf77458297cba6cc2853a3b5-3"></a><span class="c1"># cp /mnt/home/mjl/keys/db.kdbx /var/tmp/sdc</span>
-<a name="rest_code_92bc790bdf77458297cba6cc2853a3b5-4"></a><span class="c1"># umount /var/tmp/sdc</span>
+<pre class="code sh"><a name="rest_code_c05ca8bbe01f4d588aca739d2f592cae-1"></a><span class="c"># mkdir /var/tmp/sdc</span>
+<a name="rest_code_c05ca8bbe01f4d588aca739d2f592cae-2"></a><span class="c"># mount /dev/sdc1 /var/tmp/sdc</span>
+<a name="rest_code_c05ca8bbe01f4d588aca739d2f592cae-3"></a><span class="c"># cp /mnt/home/mjl/keys/db.kdbx /var/tmp/sdc</span>
+<a name="rest_code_c05ca8bbe01f4d588aca739d2f592cae-4"></a><span class="c"># umount /var/tmp/sdc</span>
 </pre>
 <p>Awesome. Now I can open up the password database, and laboriously
 transcribe that generated passphrase to unlock the backup drive, when
@@ -220,55 +183,74 @@ you're looking for</li>
 </li>
 <li>pick a volume (e.g. "myvolume") and mount it</li>
 </ol>
-<pre class="code sh"><a name="rest_code_ab1b9d9ad5154f9da7167847d1f9975b-1"></a><span class="c1"># mount /dev/mapper/mybackup/myvolume /recover</span>
+<pre class="code sh"><a name="rest_code_ce88b81e9bf64093b45c1d9ce83e564f-1"></a><span class="c"># mount /dev/mapper/mybackup/myvolume /recover</span>
 </pre>
 <p>Now you can navigate the volume and view/copy files.</p>
 </div>
 <div class="section" id="unmounting">
 <h2>6 Unmounting</h2>
 <p>You need to first umount the volume, and then close the LUKS:</p>
-<pre class="code sh"><a name="rest_code_c358b0bd907547f3b44776b38d1d1c8c-1"></a><span class="c1"># umount /recover</span>
-<a name="rest_code_c358b0bd907547f3b44776b38d1d1c8c-2"></a><span class="c1"># cryptsetup luksClose mybackup</span>
+<pre class="code sh"><a name="rest_code_4220f91a2cda4d6c92fd623c1176e23a-1"></a><span class="c"># umount /recover</span>
+<a name="rest_code_4220f91a2cda4d6c92fd623c1176e23a-2"></a><span class="c"># cryptsetup luksClose mybackup</span>
 </pre>
 </div>
 </div>
-    </div>
-    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../tags/encryption.html" rel="tag">encryption</a></li>
-            <li><a class="tag p-category" href="../tags/linux.html" rel="tag">linux</a></li>
-            <li><a class="tag p-category" href="../tags/luks.html" rel="tag">LUKS</a></li>
-            <li><a class="tag p-category" href="../tags/lvm.html" rel="tag">LVM</a></li>
-        </ul>
-<ul class="pager hidden-print">
-<li class="previous">
+        </div>
+                <ul class="pager">
+            <li class="previous">
                 <a href="2013/05/24/fixing-java-ca-certificates-on-opensuse.html" rel="prev" title="Fixing Java CA Certificates on openSUSE">Previous post</a>
             </li>
             <li class="next">
                 <a href="get-audio-from-youtube-video.html" rel="next" title="How to get audio from an online video">Next post</a>
             </li>
-        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
-        
-        
-<script src="https://apis.google.com/js/plusone.js"></script><div class="g-comments" data-href="http://milosophical.me/blog/mounting-lukslvm-from-a-liveusb.html" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">
+        </ul>
+
+                    <script src="https://apis.google.com/js/plusone.js"></script>
+<div class="g-comments" data-href="http://milosophical.me/blog/mounting-lukslvm-from-a-liveusb.html" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">
 </div>
 
 
-        </section></article>
-</div>
-        <!--End of body content-->
-
-        <footer id="footer"><hr>Contents Copyright © 
+    </div>
+                    <footer id="footer" role="contentinfo">
+            <p></p>
+<hr>Contents Copyright © 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a> 2005 — 2016         <a href="mailto:sinewalker@gmail.com">Michael Lockhart</a>. Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
+<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a> 2005 — 2016         <a href="mailto:sinewalker@gmail.com">Mike Lockhart</a>. Powered by <a href="http://getnikola.com" rel="nofollow">Nikola</a> with <a href="https://github.com/getnikola/nikola-themes/tree/master/v7/zen-ipython">Zen-IPython</a> theme.
             
         </footer>
+
+        </div>
+    </section>
+    <script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-65364237-1', 'auto');  ga('send', 'pageview');</script>
+    
+                <script src="../assets/js/all-nocdn.js" type="text/javascript"></script>
+    
+<!-- Social buttons -->
+<div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
+<a class="addthis_button_more">Share</a>
+<ul>
+<li>
+<a class="addthis_button_facebook"></a>
+</li>
+<li>
+<a class="addthis_button_google_plusone_share"></a>
+</li>
+<li>
+<a class="addthis_button_linkedin"></a>
+</li>
+<li>
+<a class="addthis_button_twitter"></a>
+</li>
+</ul>
 </div>
-</div>
+<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script>
+<!-- End of social buttons -->
 
 
-            <script src="../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
-    moment.locale("en");
-    fancydates(0, "YYYY-MM-DD HH:mm");
-    </script><!-- end fancy dates --><script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-65364237-1', 'auto');  ga('send', 'pageview');</script>
+        <script type="text/javascript">
+            $(function(){
+                $('.timeago').timeago();
+            });
+        </script>
 </body>
 </html>

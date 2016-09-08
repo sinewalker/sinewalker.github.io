@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (tagging)</title><link>http://milosophical.me</link><description></description><atom:link href="http://milosophical.me/tags/tagging.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Thu, 08 Sep 2016 12:16:04 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Organised books</title><link>http://milosophical.me/blog/2006/03/24/organised-books.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (tagging)</title><link>http://milosophical.me/</link><description></description><atom:link href="http://milosophical.me/tags/tagging.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 16 Dec 2015 13:46:20 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Organised books</title><link>http://milosophical.me/blog/2006/03/24/organised-books.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;
 &lt;em&gt;This post was originally published
   at &lt;a href="http://sinewalker.blogspot.com.au/2006_03_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
   on 24 March 2006.&lt;/em&gt;
@@ -27,7 +27,7 @@ Only, you'd have to have some sort of catalogue with the book's colour to be abl
 
 
 &lt;p&gt;
-Still, it looks nice :-)&lt;/p&gt;</description><category>book</category><category>colour</category><category>Flickr</category><category>tagging</category><category>thoughts</category><guid>http://milosophical.me/blog/2006/03/24/organised-books.html</guid><pubDate>Fri, 24 Mar 2006 03:56:00 GMT</pubDate></item><item><title>Organising my bookmarks</title><link>http://milosophical.me/blog/2006/03/20/organising-my-bookmarks.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;p&gt;
+Still, it looks nice :-)&lt;/p&gt;</description><category>Flickr</category><category>book</category><category>colour</category><category>tagging</category><category>thoughts</category><guid>http://milosophical.me/blog/2006/03/24/organised-books.html</guid><pubDate>Fri, 24 Mar 2006 03:56:00 GMT</pubDate></item><item><title>Organising my bookmarks</title><link>http://milosophical.me/blog/2006/03/20/organising-my-bookmarks.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;
 &lt;em&gt;This post was originally published
   at &lt;a href="http://sinewalker.blogspot.com.au/2006_03_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
   on 20 March 2006.&lt;/em&gt;
@@ -57,7 +57,7 @@ research? Should I even try?&lt;/p&gt;
 &lt;br&gt;
 
 &lt;p&gt;
-I guess only experience will help. So I'll keep persevering :-).  Also, since tags are social, looking at how other people have tagged their stuff could be instructive too.&lt;/p&gt;</description><category>blog</category><category>Delicious</category><category>general</category><category>tagging</category><guid>http://milosophical.me/blog/2006/03/20/organising-my-bookmarks.html</guid><pubDate>Mon, 20 Mar 2006 01:16:00 GMT</pubDate></item><item><title>meta-data standards</title><link>http://milosophical.me/blog/2005/08/27/meta-data-standards.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;p&gt;&lt;em&gt;This post was originally published
+I guess only experience will help. So I'll keep persevering :-).  Also, since tags are social, looking at how other people have tagged their stuff could be instructive too.&lt;/p&gt;</description><category>Delicious</category><category>blog</category><category>general</category><category>tagging</category><guid>http://milosophical.me/blog/2006/03/20/organising-my-bookmarks.html</guid><pubDate>Mon, 20 Mar 2006 01:16:00 GMT</pubDate></item><item><title>meta-data standards</title><link>http://milosophical.me/blog/2005/08/27/meta-data-standards.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;&lt;em&gt;This post was originally published
     at &lt;a href="http://sinewalker.blogspot.com.au/2005_08_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
     on 27 August 2005&lt;/em&gt;&lt;/p&gt;
 &lt;hr&gt;

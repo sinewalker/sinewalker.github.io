@@ -1,4 +1,2 @@
 Sitemap: http://milosophical.me/sitemapindex.xml
 
-User-Agent: *
-Host: milosophical.me
