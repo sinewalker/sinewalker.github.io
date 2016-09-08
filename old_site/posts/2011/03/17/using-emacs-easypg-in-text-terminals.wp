@@ -1,0 +1,30 @@
+<html><body><p>There is a bug in the integration between Emacs' EasyPG and the "new" GnuPG2 that causes Emacs to not load <code>.gpg</code> files when running in a text terminal.  It's being worked on, apparently, but in the mean-time, here is how to fix it.
+
+
+<!-- TEASER_END -->
+
+
+
+The only solution I've found that works is to install a copy of GnuPG1 concurrent with the new GnuPG2.  They can live happily side-by-side.  Once you've done that, you need to tell EasyPG to use the old program rather than the new one. Full details are on the <a href="http://www.emacswiki.org/emacs/EasyPG">Emacs Wiki</a>, here it is in a nutshell:
+
+</p><ul>
+	<li>You can find an RPM package of GnuPG1 for openSUSE on the <a title="gpg1" href="https://build.opensuse.org/package/binary?arch=i586&amp;filename=gpg1-1.4.9-2.1.i586.rpm&amp;package=gpg1&amp;project=security%3Aprivacy&amp;repository=openSUSE_11.2">openSUSE Build Service</a></li>
+	<li>Once installed, you need to customize the variable <code><strong>epg-gpg-program</strong></code>.  Either use <code>M-x customize</code> to set it for all future sessions, or see my code snippet below that I put in my start-up scripts.  It should be set to the value <em>"/usr/bin/gpg1"</em> (or wherever <code>gpg1</code> is installed on your platform)</li>
+	<li>Now when EasyPG opens a <code>.gpg</code> file, it will prompt for the passphrase in the Emacs minibuffer, instead of trying to use the <code>gpg-agent</code> and calling the <code>pinentry</code> program (which causes Emacs to hang in text mode)</li>
+</ul>
+
+ 
+
+
+
+If you like to use the gpg agent and graphical pinentry programs and only want to override GnuPG2 with GnuPG1 when running Emacs in a text terminial, then you can put code like this in your Emacs start-up (mine goes in <code>~/.emacs.d/&lt;username&gt;.el</code> because I use the <a href="https://github.com/technomancy/emacs-starter-kit">Emacs Starter Kit</a>):
+
+
+
+<blockquote><code>
+
+<pre><span style="color:#7f7f7f;">(</span><span style="color:#00ffff;">when</span> <span style="color:#7f7f7f;">(</span>not <span style="color:#7f7f7f;">(</span>display-graphic-p<span style="color:#7f7f7f;">))</span>
+  (setq epg-gpg-program "/usr/bin/gpg1")) ; use GnuPG1 in text terminals</pre> </code>
+</blockquote>
+
+Enjoy!</body></html>

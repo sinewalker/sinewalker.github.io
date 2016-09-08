@@ -1,0 +1,67 @@
+==================================================================
+https://keybase.io/sinewalker
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://milosophical.me
+  * I am sinewalker (https://keybase.io/sinewalker) on keybase.
+  * I have a public key with fingerprint 8400 93B4 16FE A604 8473  A2F6 3CCA 2E6E BCBE 8795
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "840093b416fea6048473a2f63cca2e6ebcbe8795",
+            "host": "keybase.io",
+            "key_id": "3cca2e6ebcbe8795",
+            "kid": "0101b417526826d92ce3b9a427c018b2b0414dd77b6ff484173b00272500f9b0a4a20a",
+            "uid": "bc37337f60fa46022d0a83d19b19c100",
+            "username": "sinewalker"
+        },
+        "service": {
+            "hostname": "milosophical.me",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1422013578,
+    "expire_in": 157680000,
+    "prev": "aaae793c071948983be80905ce63bfbc03cf4f63cd58a41bf163165e9dc0b24e",
+    "seqno": 5,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.1
+Comment: https://keybase.io/crypto
+
+yMImAnicbVJbSFRBGD52T7phuF2EzEORxWIz5362yKisHrpgLWQlLTNz5rgHd8/Z
+9qy3tSC6molmSJTYxW5W2EMQPSWmBUJhFEFCVkSXh8Q0lEJDqjlSb83LMN///d//
+/9/8j2dO5FJTPm3Nbrg/278k5WnHxhIu2ClVV/LYMSr4QCVfTMcv07KLaDwWt+wE
+H+A1CQBdxBJUTIoUIGmSKiLBVERCkEAVigmmmqrLvJ8PO66XwWQwcmmO5TCMPUKW
+wdD/8IvHAwACyORVWVA0QTF0gVAR60gSVAKghgUMJCgZhqpixTRZeaiKGABBFWQA
+TB0DJCEBICZXMi6HiaiKomoqwESSAgTBAEgTDahjqBMIgEd0adxGUcrYrmXTMhQp
+pnH+oJ9neKlFqGeCN8tfTtSKOK4TC1sERXIY4udjcSfhECfCguFEIuYGvORERcxj
+l1Ec+qsTwpZtMDNZRimNu5Zj8wHImCRhecJQEgQARVnV/Dwtj1lxGrI8hqwqGmDH
+q0NLmSRCiKq6SIAKdUnTNZE5CHQgE6qI2MQEiMSUvB8xZA1JEJtQEaEiU90gAAuS
+17FL99sOH5BZm6hofO4iGyVK4pQ/2PmwcBKXkspNmTzBWwcudfqcf0sS7Jj6O/9M
+Rl7y2NWV2Werrx2+kNtyfd3poiuJnKVzewbenxpOnzT6K3d+bFU090PB3UPVlbhP
+vxfOaMssODd2sjmwbSy7+1BFS97lyO3tq6P8G1/dwNaLuzaXB7/UAVLzfMbXR6vX
+tnLBpKye2FGXtjx/cdeKpf1Vp5sv9vl8Wv2v9idZd1Ye7Z9+c9GLG1sa/Mqe5017
+j59NO/Bq1gvt48ZLn18OLfMVpp3/aV+91dhzbdXbfd97a/cls0ZRe//IiXqnqrXm
+wd30tobapkzaN/Tsx4beUCZKX7EweORdzfqRud0Ljrc3Dq/Z2VXKcYPLjHnTbiTT
+LnXVvm7M/ca59wd3V33cVL+uP/MPiSMoaw==
+=Gucv
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/sinewalker
+
+==================================================================

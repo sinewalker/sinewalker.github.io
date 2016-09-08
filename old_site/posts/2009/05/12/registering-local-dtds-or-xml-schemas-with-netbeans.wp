@@ -1,0 +1,51 @@
+<html><body><p>The NetBeans online help <a title="NetBeans XML catalog help on Jiema" href="http://www.jiema.org/xref/netbeans/usersguide/javahelp/org/netbeans/modules/usersguide/xml/catalog/xmlcatalog_mount.html">describes the steps for registering a local DTD or XML file</a> with NetBeans' <em>DTDs and XML Schemas Manager</em>. It's succinct and to the point, but for the slow people in the room it's a bit confusing. So here's my tip for registering a local DTD file with NetBeans so that you can use NetBeans' awesome XML validation and completion features.
+</p>
+
+<!-- TEASER_END -->
+<br/>
+<p>In my example, I'm trying to use NetBeans to validate an <a title="Solaris SMF Quick start" href="http://www.sun.com/bigadmin/content/selfheal/smf-quickstart.jsp">SMF</a> <a title="Service development intro" href="http://www.sun.com/bigadmin/content/selfheal/sdev_intro.jsp">Manifest</a>, which is an XML file defined by a <code>SYSTEM</code> DTD called <code>service_bundle.dtd.1</code>.  On Solaris 10 machines you can find a copy of the DTD file in <code>/usr/share/lib/xml/dtd/service_bundle.dtd.1</code>, and most example SMF manifests that you can find <a title="SMF Manifest Repository" href="http://www.blastwave.org/smf/manifests.php">on the Internet</a> include the DOCTYPE like so:
+
+</p><br/><pre>&lt;!DOCTYPE service_bundle SYSTEM "/usr/share/lib/xml/dtd/service_bundle.dtd.1"&gt;</pre>
+<br/>
+<p>
+If you run NetBeans on Solaris 10, I assume this will probably work out-of-the-box (though I haven't tried this...).  However for us hackers on other platforms, you need to copy this file down to your development machine, and then register it with NetBeans so that you can use it.
+</p>
+<br/>
+<p>
+NetBeans' DTDs and XML Schemas Manager contains a collection of XML Schema Catalogues for a whole bunch of technologies. You'll want to add your local DTDs/Schemas to the <strong>User Catalog</strong> (<em>sic</em>), which is the only one that's read-write. Do the following:
+</p>
+<br/>
+<ol>
+	<li><strong>Tools </strong>menu, <strong>DTDs and XML Schemas</strong></li>
+	<li>Choose <strong>User Catalog [read-write] </strong>from the list of <em>DTDs and XML Schemas</em></li>
+	<li>Press "<strong>Add Local DTD or Schema...</strong>" button</li>
+	<li>In our example, the DOCTYPE reads:<br/>
+<pre>SYSTEM "/usr/share/lib/xml/dtd/service_bundle.dtd.1"</pre>
+So, we must map this SYSTEM ID  to a local URI on our development machine.  If it had said <code>PUBLIC "..."</code><br/> then we would map a PUBLIC ID instead.</li>
+	<li>Click the radio button for the relevant ID type (<strong>System ID</strong> in our case)</li>
+	<li>Copy in the string ID from your XML file into the relevant field. Make sure you don't put in the double-quotes
+<span style="text-decoration:underline;"><strong>IMPORTANT:</strong></span> for a DTD that lives on the filesystem ID, like ours, <strong>the ID should begin with <span style="color:#7744ee;"><code>file:</code></span></strong></li>
+	<li>Click the "<strong>Browse...</strong>" button and locate the DTD file you downloaded</li>
+	<li>Click "<strong>OK</strong>"</li>
+</ol>
+<br/>
+<p>
+You've now mapped the SYSTEM ID to your local copy of the DTD file for <code>service_bundle.dtd</code>. If you try and validate the XML (<strong>Alt+Shift+F9</strong>, or from the toolbar) it will stop complaining of a missing DTD and actually check your XML against the doctype definition.
+</p>
+<br/>
+<p>
+I got mislead by the Recommendation (both in the online help and on the dialog box). It says that the "common solution for XML documents specified by DTD is using the Public ID -&gt; URI mapping." It goes on to say that "System ID -&gt; URI mapping can also be used to redirect the DTD location specified by SYSTEM ID", but I got confused by that point.
+</p>
+<br/>
+<p>
+I also had a hard time working out that the System ID should begin with "file:".  The give-away that I didn't spot until later, was in the error message from the XML validator:
+</p>
+<br>
+<pre>XML validation started.
+Checking file:/D:/src/support/smf/emc/manifests/emc-fast-IndexServer.xml...
+Referenced entity at "<strong>file:</strong>/usr/share/lib/xml/dtd/service_bundle.dtd.1".
+\usr\share\lib\xml\dtd\service_bundle.dtd.1 (The system cannot find the path specified) [30]
+XML validation finished.</pre>
+<br/>
+<p>
+Duh!  I could have also just copied that string <em>verbatim</em>. Oh well, now I've blogged about it too, so hopefully I won't forget it next time :)</p></body></html>

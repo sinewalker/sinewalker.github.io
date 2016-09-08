@@ -1,0 +1,39 @@
+** instructions 
+https://en.opensuse.org/SDB:Live_USB_stick
+
+issues with image-writer not booting
+
+** live-fat-stick
+
+milo:/home/mjl/Downloads # live-fat-stick -l
+Here is the list of possible usb storage devices on your computer,
+use the correct one, usually the one with a number at the end:
+/dev/sdb1
+/dev/sdb
+milo:/home/mjl/Downloads # live-fat-stick --suse /home/mjl/Downloads/openSUSE-13.2-KDE-Live-x86_64.iso /dev/sdb1
+Please make sure the following information is correct:
+iso name: openSUSE-13.2-KDE-Live-x86_64.iso distro: suse stick device: /dev/sdb
+stick uuid: /dev/disk/by-uuid/F2F9-4A01 stick partition: 1
+continue ? [y/n]? y
+installing syslinux on /dev/sdb1
+replacing mbr of /dev/sdb with syslinux mbr.bin
+setting /dev/sdb partition 1 active
+copying kernel and initrd from iso image to /dev/sdb1
+creating menu entries
+copying openSUSE-13.2-KDE-Live-x86_64.iso to usb stick
+dd_rescue: (info): Using softbs=4096.0kiB, hardbs=4.0kiB
+dd_rescue: (info): expect to copy 930592.0kiB from /tmp/tmp.hWu6wcWJMW
+dd_rescue: (info): ipos:    929792.0k, opos:    929792.0k, xferd:    929792.0k
+                   errs:      0, errxfer:         0.0k, succxfer:    929792.0k
+             +curr.rate:     4751kB/s, avg.rate:     4450kB/s, avg.load:  0.6%
+             >----------------------------------------.<  99%  ETA:  0:00:00 
+dd_rescue: (info): read /tmp/tmp.hWu6wcWJMW (930592.0kiB): EOF
+dd_rescue: (info): Summary for /tmp/tmp.hWu6wcWJMW -> /tmp/tmp.ZhDA0Erx5N/openSUSE-13.2-KDE-Live-x86_64.iso
+dd_rescue: (info): ipos:    930592.0k, opos:    930592.0k, xferd:    930592.0k
+                   errs:      0, errxfer:         0.0k, succxfer:    930592.0k
+             +curr.rate:     3842kB/s, avg.rate:     4439kB/s, avg.load:  0.6%
+             >-----------------------------------------< 100%  TOT:  0:03:30 
+cleaning up
+Your bootable usb stick is now ready
+have a lot of fun...
+milo:/home/mjl/Downloads #

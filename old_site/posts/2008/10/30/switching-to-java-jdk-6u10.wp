@@ -1,0 +1,28 @@
+<html><body><p>I've been using 6u10 beta for a while and keeping 6u3 as my main JDK. It's also the default JDK for NetBeans but now that update 10 of <em>Mustang </em>is out of beta, it's time for me to ditch 6u3 and swtich to 6u10 final.
+<!-- TEASER_END -->
+
+This is fairly straight forward. Here's what I did:
+
+</p><ol>
+	<li>Install JDK 6u10 (it'll find 6u10b and offer to remove it)</li>
+	<li>Start NetBeans, add the new 6u10 and remove the (now missing) 6u10b java platforms. Do this from the <strong>Tools &gt; Java Platforms</strong> menu</li>
+	<li>To change the default JDK (which is the one running NetBeans itself)
+<ol>
+	<li>edit <code>/<em>path</em>/<em>to</em>/<em>NetBeans</em>/etc/netbeans.conf</code> (you can do this in NB if you like)</li>
+	<li>change the <strong><code>netbeans_jdkhome</code></strong> property to be the path to your 6u10. On my Windows machine, this is <code>"D:\Java\jdk1.6.0_10"</code></li>
+	<li>Restart NetBeans</li>
+</ol>
+
+</li>
+	<li>(optional) Uninstall your other jdk6 and remove it from NetBeans' list.</li>
+</ol>
+
+More tips for <code>netbeans.conf</code> can be found on the <a title="NetBeans FAQ on netbeans.conf" href="http://wiki.netbeans.org/FaqNetbeansConf">NetBeans Community Wiki</a>.
+
+
+
+My policy is to keep around only the latest stable update of each JDK, so I still have 1.4.2_17 and 1.5.0_15, in addition to (now) 1.6.0_10. Mainly this is because I still use 1.4.2 for work and 1.5.0 for testing. But there's no point in keeping two updates of the same version because their APIs are the same.
+
+
+
+Same goes for the javadoc: it shouldn't have changed between 1.6.0 and 1.6.0_10 so I haven't bothered to check it or to download a newer copy. I also keep (zipped) javadocs for 1.4.2 and 1.5.0.</body></html>

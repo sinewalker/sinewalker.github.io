@@ -1,0 +1,101 @@
+<html><body><p>On the 32-bit Windows platform, JVM programs can only ever use up to about 1.5–1.6 GiB of memory in RAM per Java VM process. Allocating a heap size greater than this amount does not work. What's going on?
+
+
+<!-- TEASER_END -->
+
+
+
+<strong>UPDATE: 20110731 -- Some more answers and links at Stack Overflow</strong>
+
+</p><ul>
+	<li><a href="http://stackoverflow.com/questions/171205/java-maximum-memory-on-windows-xp">Java maximum memory on Windows XP </a> - see in particular the answers with links to IBM and Oracle JRockit, and especially an explanition about contiguous heap</li>
+	<li><a href="http://stackoverflow.com/questions/1434779/maximum-java-heap-size-of-a-32-bit-jvm-on-a-64-bit-os">Mamimum Java heap size of a 32-bit JVM on a 64-bit OS</a> - this one has an answer from me where you can measure the maximum heap allocation using Java's Runtime class.</li>
+</ul>
+
+<strong>UPDATE: 20110428 -- An explanation of my vague "overheads"
+
+</strong>
+
+
+
+See this excellent post by <a title="Blogger profile" href="http://www.blogger.com/profile/05823921645971746143">Dharmir Singh</a> that explains the <a title="Memory Structure in JVM" href="http://java-espresso.blogspot.com/2011/04/memory-structure-in-jvm.html">JVM memory structure</a> and shows where some of the missing heap could be going, which I vaguely hand-waved away as "overheads" below.
+
+
+
+<strong>UPDATE: 20110228 -- Some corrections, more observation needed
+
+</strong>
+
+
+
+<strong>First</strong>, a correction:  "real" operating systems let processes use &lt;=4GiB on a 32bit system.  *BSD lets user processes access 3GiB (read <a href="http://www.freebsd.org/doc/en_US.ISO8859-1/books/design-44bsd/index.html">the Devil Book</a>) and Linux lets user processes <code>malloc</code> up to <code>TASK_SIZE</code> -- usually 3GiB on a 32-bit system (see "Professional Linux Kernel Architecture"). This is because in each of these operating systems, 1GiB of user space is reserved to map in system libraries (as opposed <a href="http://en.wikipedia.org/wiki/Hybrid_kernel">2GiB on Win32</a> with it's multiple personality disorder). Mapping parts of the kernel makes calling kernel services quicker. An alternative is Mac OS X (XNU): it's processes actually only map a <em>tiny</em> part of the kernel into user space, so they may <code>malloc</code> pretty much all of the 4GiB address space (see <a href="http://osxbook.com/book/bonus/misc/osxkernel/index.html">the OS X book</a>). This is at the cost of a slower context switch whenever a system call is made.
+
+
+
+<strong>Second</strong> is the observation Saar makes in the comments below. I <em>guess</em> that the overheads incurred by the JVM must increase in proportion to the heap size (perhaps some tables to manage references???), but to answer that for certain, I'd need to put the JVM in some sort of debugger and measure the actual overheads incurred (and to do that, I'd need to know what they are, instead of just my vague "overheads").
+
+
+
+Also, switching to 64-bit JVM isn't necessarily the answer: References are twice as long, usually, which means increased overhead.
+
+
+
+Clearly some more research is needed here.
+
+
+
+<strong>UPDATE: 20100819 -- Some interesting related posts</strong>
+
+
+
+Thanks to the people who took the time to check limits in their own systems and comment on this blog, it makes me seem more credible.
+
+
+
+I noticed Wordpress is generating some related pages links for this, and one of them is a very interesting and informative read. I recommend you take a look at <a title="Windows Server Tech Arena" href="http://windowsservertecharena.wordpress.com/">Esken AKSOY</a>'s <a title="Pishing the limits of Windows' Physical Memory" href="http://windowsservertecharena.wordpress.com/2010/08/03/pushing-the-limits-of-windows-physical-memory/">post</a> as a general background on how Windows maps memory for client processes (much more accessible than Microsoft's Knowledgebase article linked below).  It explains the 2GB per-process limit very well. There are also <a title="Phisycal Memory limits for Windows 7" href="http://obieosobalu.wordpress.com/2010/07/30/physical-memory-limits-for-windows-7/">two</a> <a title="Licensed Memory in 32-bit Windows Vista" href="http://www.geoffchappell.com/viewer.htm?doc=notes/windows/license/memory.htm">posts</a> for the cynics / conspiracy theorists among us :)
+
+
+
+<strong>UPDATE: 20081104 -- More recent info?</strong>
+
+
+
+I notice this page gets a lot of hits still. It's quite old and I haven't researched to see what is happening in OpenJDK or to see if 6u10 addresses any of this for Windows. If anyone has more info please comment or write to me, I'd like to update what I have.
+
+
+
+--- Original post follows (2007) ---
+
+
+
+From my own research on this issue (and taking into account Microsoft's advice on <a href="http://support.microsoft.com/kb/283037/en-us">KnowledgeBase</a> about Win32 virtual memory allocation), this is what I understand about the limits of RAM usability, both for Win32 itself, and for 32-bit JVMs running on Windows. I haven't researched if this limit applies for 64-bit Windows or JVMs, nor what Vista might be doing. Also, though the 4GiB limit is inherent to 32-bit machines, the 2GiB limit seems to be peculiar to Windows, and I've not seen it anywhere in Linux, Solaris or BSD: when Unix runs on a 32-bit machine, there's a 4GiB limit, but not 2GiB.
+
+
+
+<!-- TEASER_END -->Any 32-bit binary processor has a hard limit of 4,294,967,296 which is the largest number that can be represented in a single 32 bit machine word: 2<sup>32</sup> = 4,294,967,296. On a byte-addressed computer like Intel IA32, that equates 4294967296 bytes = 4194304 KiB = 4096 MiB = 4GiB.
+
+
+
+Normal memory access techniques used by 32-bit Windows programs use standard linear byte addressing, and so are limited to 4GiB of addressable memory, whether it is real or virtual.
+
+
+
+On Windows, the amount of this 4GiB space that can actually occupy physical RAM is halved to 2GiB per process. Windows uses the other 2GiB of virtual address space as a per-process overhead for the kernel, and to speed up paging. This is <em>really dumb</em> because it means that if your process allocates &gt; 2GiB heap memory, then Windows must page some to virtual memory, even if you have &gt; 2GiB of actual RAM! Sort of like the DOS 640KiB limit reborn!
+
+
+
+To overcome this dumb design, Windows has a memory addressing scheme called the AWE API, which allows a process to allocate up to 3GiB of memory and have that memory reside on chips. To use this, the program must be specially written to use the AWE API.
+
+There's also another virtual memory technology in Windows called PAE. This is not useful to application programs — it is how the Windows kernel can use &gt; 4GiB of real memory to allocate physical memory to all processes on the system. Each process is still limited to the 4GiB address space each, with 2GiB mapped to RAM (or 3GiB, if the program uses the AWE API) and the rest having to be virtual (paged to disc). PAE just lets Windows keep more than one of these big processes in memory at once even if their combined total heap is more than 4GiB (and assuming you have more than 4GiB of RAM of course).
+
+
+
+Both Sun and BAE have refused to use the AWE API for implementing their Java VMs. This is probably because the AWE API does not allow for a contiguous address space of 3GiB, but rather breaks it at the 2GiB mark. <a href="http://java.sun.com/docs/books/jvms/second_edition/html/VMSpecTOC.doc.html">The Java VM spec'</a> used to require a contiguous addressed heap (though this <a href="http://java.sun.com/docs/books/jvms/second_edition/html/Overview.doc.html#15730">has changed</a> for the JVMS 2<sup>nd</sup> Ed.…). So any Java VM running on Windows is still limited to at most &lt; 2GiB per running program (actually, only about 1.5GiB is usable because of further overhead for the JVM itself). At least, so long as Win32 JVMs don't use the AWE API. I'm not sure how difficult it would be for Sun or BAE to change their JVMs to make use of the AWE API in Windows, but the fact that they haven't done so seems to indicate to me that it wouldn't be easy. I have been unable to determine if IBM's JVM uses it…
+
+
+
+The only workable solution for utilizing greater than about 1.5–1.6 GiB per JVM process on a 32-bit host is to not run it in Windows (i.e. use Solaris, Linux or BSD). Real operating systems can let processes use 4GiB on 32-bit machines without special programming tricks. Or, you could switch to a 64-bit platform. Although there is a Windows for IA-64, I'm not sure about the availability of a 64-bit JVM for that platform.
+
+
+
+It would be better to have a smaller heap on Win32, and if you need more, consider re-engineering the program to use less anyway. If your program is genuinely memory bound and you can't get away from needing more than 1.5GiB heap, you could work around the Win32 memory limit by splitting your Java program into more than once process, each running on its own JVM, allocating 1.5GiB to each JVM, and then having the processes communicate with an IPC mechanism as needed, such as JMS. However there's probably a lot more re-engineering work involved in this than there is to just migrate away from Win32 …</body></html>

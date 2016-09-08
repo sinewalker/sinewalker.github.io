@@ -1,0 +1,100 @@
+<html><body><p>Well, after 5 years and the setting of the Sun, Java SE 1.7 (originally code-named "dolphin") has finally been released. Joyous celebrations from the land of Duke.</p>
+
+
+<!-- TEASER_END -->
+
+
+<p>
+There's much that has been long looked for in this release, and I'm happy about it &mdash; especially the nio.2 filesystem API and the improved support on the platform for scripting languages and dynamic languages. But the "improvements" to the Java language itself only highlight to me that this language is pretty well into zombie status (it's dead and yet it keeps trying to live and eat more developers' brains).
+</p>
+
+<p>
+Take this enhancement to the language that finally allows you to do a switch on Strings. This bit of syntactic sugar has been on my own wish list since 1997 (when I first started to play with Java and discovered you couldn't switch on Strings). But of course, the bureaucrats have bodged it. Look at this code:
+</p>
+
+
+<pre>
+public class StringSwitch {
+    public static String getFruitColour(String name) {
+        switch (name) {
+        case "apple":
+        case "raspberry":
+        case "strawberry":
+            return "Red";
+        case "banana":
+        case "lemmon":
+            return "Yellow";
+        case "kiwi":
+        case "grapes":
+        case "lime":
+            return "Green";
+        case "orange":
+        case "pawpaw":
+            return "Orange";
+        default:
+            return "Unknown";
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(getFruitColour("guava"));  // should fall through to default
+        System.out.println(getFruitColour(null));     // actually causes NPE at the switch
+    }
+}
+</pre>
+
+<p>
+This should work, and the null string should cause the switch to fall through. Seems reasonable, yes? Well, no. You get an NPE:
+
+</p><blockquote>
+
+<pre>$ <strong>java StringSwitch</strong>
+
+Unknown
+
+Exception in thread "main" java.lang.NullPointerException
+	at StringSwitch.getFruitColour(StringSwitch.java:4)
+	at StringSwitch.main(StringSwitch.java:26)</pre>
+</blockquote>
+<p>
+Damn it, guys! How does this make my coding simpler? Now I have to remember that if I'm switching on String, I have to guard against NPEs. Okay, it's better than nested <code>if</code>'s, but it's a serious gotcha. Again. Here's one solution, though of course, being Java, it's fugly:
+
+
+<pre>
+public class StringSwitch {
+    public static String getFruitColour(String name) {
+        if (name != null) {
+            switch (name) {
+                case "apple":
+                case "raspberry":
+                case "strawberry":
+                    return "Red";
+                case "banana":
+                case "lemmon":
+                    return "Yellow";
+                case "kiwi":
+                case "grapes":
+                case "lime":
+                    return "Green";
+                case "orange":
+                case "pawpaw":
+                    return "Orange";
+                default:
+                    return "Unknown";
+            }
+        } else {
+            return "Unknown (NULL)"; // bleah.
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(getFruitColour("guava"));  // should fall through to default
+        System.out.println(getFruitColour(null));     // this time the NPE is guarded
+    }
+}
+</pre>
+<p>
+If anything, Java 7 demonstrates that the JVM is a great platform for dynamic languages other than Java. Like for instance Scala and Clojure... How disappointing.
+</p>
+</body>
+</html>

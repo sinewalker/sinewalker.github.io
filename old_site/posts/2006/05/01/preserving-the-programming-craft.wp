@@ -1,0 +1,89 @@
+<html><body>
+
+<p>
+<em>This post was originally published
+  at <a href="http://sinewalker.wordpress.com/2006/05/01/preserving-the-programming-craft/">sinewalker.wordpress.com</a>
+  on 1 May 2006.</em></p>
+<hr/>
+
+<p>I
+  posted <a href="http://ask.slashdot.org/comments.pl?sid=184329&cid=15234982">this
+    reply </a>to an Ask
+  Slashdot:  <a href="http://ask.slashdot.org/article.pl?sid=06/04/28/2236239">Do
+    Kids still program?</a> I found myself commenting all over that thread… it
+  must be close to my heart :-) Reproducing here, and exploring a little
+  further.</p>
+
+<br/>
+
+
+<p>
+Many of the observations made on Slashdot are right. I wonder what it is that
+drives me to hack, that is missing from what is covered? Why do I like to hack,
+and why would it be passed over by kids these days? Or would it?
+</p>
+
+<br/>
+
+<!-- TEASER_END -->
+<p>For instance, when all that my computer would do when I turned it on was
+blink a cursor and answer
+“<a href="http://www.cpc-emu.org/firststeps.html">Syntax error</a>” to
+everything I typed, why didn't I just get bored and do something fun, like read
+a good book, watch TV, or go outside and play? Why was I still motivated to
+program instead?</p>
+
+<br/>
+
+<p>
+I think that the answer is: <strong>I was fascinated by
+the <em>puzzle</em></strong>. I was also keenly interested in figuring out how
+things work. I used to pull clocks apart, build electronic toys, re-wire
+stereos, that sort of thing: a computer is just another gadget to
+tweak. Although, because it was very very expensive (about AU$3500 for a Z-80
+based 8-bit micro in 1986!) I'd better figure out how it works by “programming”
+it—whatever that is—rather than by taking it apart.  I was encouraged in this
+because the book that came with the computer says “you can't break your
+computer by programming it”… (The book I refer to the is very
+good <a title="Online archive copy of the Amstrad CPC 6128 manual."
+href="http://www.cpcwiki.eu/manuals/AmstradCPC6128-hypertext-en-Sinewalker.pdf">introductory
+manual</a> for the <a title="Some basic info in this 8-bit home micro"
+href="http://www.cpcwiki.eu/index.php/6128">CPC-6128</a>, published by Amstrad
+Computer in 1985; I've not found one to better it yet, see especially Ch 2, 6
+and 8)
+</p>
+
+<br/>
+
+<p>
+If computers present a puzzle that is interesting, has a low entry barrier, and
+rewards exploration, then kids will program it. Other posts in this thread show
+that: the puzzle isn't interesting if the computer does nearly everything you
+want anyway, the entry barrier is very high (hidden or non-existent programming
+tools) and the reward for exploration is quite low (results gained through
+programming lower than you get from an Internet search, most of the time).
+</p>
+
+<br/>
+
+<p>
+It's sad. I have a very young son who (if he's interested later—he's only 6
+months old now :-D ) I'd <em>love</em> to share my love of programming
+with. But in light of how
+“<a href="http://ask.slashdot.org/comments.pl?sid=184329&amp;cid=15234943">kids
+these days</a>” view computers, I'm having a hard time coming up with
+interesting puzzles that are easy to get started in and reward
+exploration. <a href="http://www.squeak.org">Squeak</a> has
+a <a href="http://www.squeakland.org/">low barrier</a>, maybe using it to write
+a simple game, with the hope that the reward of “I did it myself” is good
+enough, would work? That is about the best I can come up with.
+</p>
+
+<br/>
+
+<p>
+Why do I think this is important? Why not just let kids
+be <a href="http://www.squeakland.org/resources/articles/article.jsp?id=1007">computer
+illiterate</a>? I don't know. I think it's out of a sense of preserving culture
+and skills, probably the same sense that a carpenter laments the passing of his
+craft.</p></body></html>

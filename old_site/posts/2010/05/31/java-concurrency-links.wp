@@ -1,0 +1,12 @@
+<html><body><p>There is lots of information on the Web about concurrent programming with Java (or with other languages on the JVM). This post is a list of links I have found helpful and/or interesting.
+</p><ul>
+	<li><!-- TEASER_END -->Book: <a title="[Amazon]" href="http://www.amazon.com/Java-Concurrency-Practice-Brian-Goetz/dp/0321349601" target="_blank">Java Concurrency in Practice</a></li>
+	<li><a title="Lesson: Concurrency [Essential classes]" href="http://java.sun.com/docs/books/tutorial/essential/concurrency/index.html" target="_blank">Sun Java Concurrency tutorial</a></li>
+	<li><a title="Lesson: Concurrency in Swing" href="http://java.sun.com/docs/books/tutorial/uiswing/concurrency/index.html" target="_blank">Sun Swing Concurrency tutorial</a></li>
+	<li>Chet Haas: <a title="Threadaches" href="http://weblogs.java.net/blog/kgh/archive/2004/10/multithreaded_t.html" target="_blank">why multi-threading complicates programs</a></li>
+	<li><a href="http://tutorials.jenkov.com/java-concurrency/index.html" target="_blank">Jenkov's Java Concurrency tutorial</a></li>
+	<li><a href="http://clojure.org/concurrent_programming" target="_blank">Clojure - concurrent programming</a> (OOP and threads: you're doing it wrong!)</li>
+	<li>Rich Hickey's <a href="http://www.infoq.com/author/Rich-Hickey;jsessionid=A71BA221017576118321155C523FB39B" target="_blank">InfoQ presentations </a>(about clojure, state, concurrency)</li>
+	<li>More of Rich Hickey's<a title="Clojure episodes on blip.tv" href="http://clojure.blip.tv/posts?view=archive&amp;nsfw=dc" target="_blank"> Clojure / concurrency talks</a> at blip.tv</li>
+	<li><a title="Vimeo profile" href="http://vimeo.com/seandevlin" target="_blank">Sean Delvin</a>'s <a title="Full Disclojure" href="http://vimeo.com/8320428" target="_blank">introductory series on Clojure 1.1</a></li>
+</ul></body></html>

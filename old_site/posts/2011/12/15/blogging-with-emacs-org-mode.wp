@@ -1,0 +1,57 @@
+<html><body>
+
+<p>My blog is really in need of some love. One of the reasons I'm not posting very frequently (apart from just not having much to say or making time to say it) is that it is such a pain to write posts in WordPress' built in editor.  I briefly considered editing in a text editor and then cut/pasting, but usually there's a mess to clean up anyway, so it's not much fun either. </p> 
+
+
+<!-- TEASER_END -->
+
+<p> I recently started looking for ways to blog offline in emacs and then
+  publish posts up to WordPress. I won't say I was surprised to find more than
+  one solution, but it was pleasant nonetheless… :) </p> 
+<br/>
+<p> The one I'm using to write this post with is a package
+  called <a href="https://github.com/punchagan/org2blog">org2blog</a>. It
+  supports WordPress posts via it's XML RPC interface and can publish to as
+  many different WordPress blogs as you like.  This suits me because I also
+  have an internal work blog at HP (they use WordPress MU, so it'll be
+  interesting to find out how/if that works). </p>
+<br/>
+ <p> You can configure it fairly easily with some elisp. Here's mine: </p>    
+
+
+
+<code><pre>;; Note - I installed org2blog with ELPA from Marmalade, so this
+;; `require' declaration is probably just documentation
+
+(require 'org2blog-autoloads)
+
+(setq org2blog/wp-blog-alist
+       '(("sinewalker"
+          :url "http://sinewalker.wordpress.com/xmlrpc.php"
+          :username "sinewalker"
+          :default-categories ("hacking")
+          :tags-as-categories nil
+     <strong>     :wp-code t)</strong>
+         ("hp-hacks"
+          :url "http://blogs.hp.com/hphacks/xmlrpc.php"
+          :username "michael.lockhart@hp.com"
+          :track-posts "~/Documents/blogs/hp-hacks/posts.log")))</pre></code>
+
+     <p> Note that the directive on line 12 is what causes the code above to be
+       encased in
+       Wordpress' <a href="http://en.support.wordpress.com/code/posting-source-code/">sourcecode
+         shortcut</a>.  In my org version of this post, the code is surrounded
+       by "#+BEGIN_SRC emacs-lisp" and "#+END_SRC", which allows me to edit in
+       emacs using emacs-lisp-mode, right inline of the rest of this
+       post. Unfortunately the sourcecode shortcut in Wordpress doesn't
+       understand emacs lisp, so there's no syntax highlighting. </p>
+
+<br/>
+ <p> There are still some things for me to figure out (such as how to mark code
+   within the text of a paragraph, as above), but already this is looking a lot
+   better. </p> 
+<hr/>
+This post was originally published
+at <a href="https://sinewalker.wordpress.com/2011/12/15/blogging-with-emacs-org-mode/">sinewalker.wordpress.com</a>
+on 15 December 2011
+</body></html>

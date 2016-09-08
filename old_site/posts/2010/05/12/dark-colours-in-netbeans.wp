@@ -1,0 +1,5 @@
+<html><body><p>Okay I'm still on the hunt for the elusive dark colour look-and-feel for NetBeans.  I found this site that has <a title="NetBeans - The dark side" href="http://www.mediabits.dk/php/netbeans-the-dark-side/" target="_blank">great information about the NimROD L&amp;F</a>.  This sets the widgets to a dark colour (or you could customise your own colours with NimROD).
+</p>
+<br/>
+<p>
+Note that this is separate from the NetBeans colour themes which control editor colours. For that, I quite like <a title="NetBeans Twilight Theme!" href="http://net.tutsplus.com/freebies/themes/netbeans-twilight-theme/" target="_blank">Twilight</a> and <a title="Aloha Color Theme for NetBeans 6.1" href="http://blog.huikau.com/2008/04/28/aloha-color-theme-for-netbeans-61/" target="_blank">Aloha</a>, although each needs tweaking to fix highlight colours for things such as breakpoints and step colours, or for highlighting code differences. Still, it's a good start.</p></body></html>
