@@ -105,7 +105,7 @@ Don't repeat yourself, make the computer do it.
 
 I'm surprised to learn that PEP 20 was only published in 2004, and not
 earlier. Anyway, there is much wisdom in these
-19([+1](https://programmers.stackexchange.com/questions/69955/what-is-python-20th-and-final-guideline))
+19([+1](http://stackoverflow.com/questions/4504487/the-zen-of-python-distils-the-guiding-principles-for-python-into-20-aphorisms-bu))
 aphorisms, which is why they make it so high up on my personal list.
 
 I think these aphorisms highlight that *the hardest part of computers
