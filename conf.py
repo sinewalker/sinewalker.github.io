@@ -3,7 +3,7 @@
 #   File:       conf.py
 #   Created:    2014-08-21
 #   Language:   Python
-#   Time-stamp: <2016-09-08 22:50:41 mjl>
+#   Time-stamp: <2016-09-09 11:14:48 mjl>
 #   Platform:   (Nikola 7.1 configuration file)
 #   OS:         *nix
 #   Author:     [MJL] Michael J. Lockhart (mlockhart@squiz.net)
@@ -55,7 +55,7 @@ BLOG_AUTHOR = "Michael Lockhart"  # (translatable)
 BLOG_TITLE = "Milosophical Me"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
-SITE_URL = "http://milosophical.me"
+SITE_URL = "http://milosophical.me/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "http://milosophical.me/"
@@ -169,13 +169,36 @@ NAVIGATION_LINKS = {
         ('/archive/archive.html', 'Archive'),
         ('/tags/index.html', 'Tags'),
         ('/pg/index.html', 'Codex'),
-#        ('/pixels/index.html', 'Pixels', 'icon-picture'),
-        ('/rss.xml', 'RSS'),
-        ('https://plus.google.com/+MichaelLockhart/posts', 'Microblog'),
-        ('https://www.linkedin.com/in/mikelockhart', 'LinkedIn'),
-        ('https://bitbucket.com/sinewalker', 'Bitbucket'),
-        ('https://github.com/sinewalker', 'Github'),
-        ('http://stackoverflow.com/users/776953/mike', 'Stack Overflow'),
+        ('/pixels/index.html', 'Pixels'),
+        (
+            (
+                ('https://plus.google.com/+MichaelLockhart/posts', 'Microblog'),
+                ('https://www.facebook.com/sinewalker', 'Facebook'),
+                ('mailto:sinewalker@gmail.com', 'Email'),
+            ),
+            'Social'
+        ),
+        (
+            (
+                ('https://github.com/sinewalker', 'GitHub'),
+                ('https://bitbucket.com/sinewalker', 'Bitbucket'),
+                ('https://codepen.io/sinewalker/','Codepen'),
+                ('',''),
+                ('https://sourceforge.net/u/sinewalker/profile/', 'SourceForge'),
+            ),
+            'Code'
+        ),
+        (
+            (
+                ('https://about.me/mikelockhart', 'About.me'),
+                ('http://milosophical.me/pg/colophon.html', 'About this site'),
+                ('https://calendar.google.com/calendar/embed?src=sinewalker@gmail.com&ctz=Australia/Sydney/', 'My calendar'),
+                ('https://www.linkedin.com/in/mikelockhart', 'LinkedIn'),
+                ('http://stackoverflow.com/users/776953/mike', 'Stack Overflow'),
+            ),
+            'About'
+        ),
+        ('/rss.xml', 'RSS')
     )
 }
 
