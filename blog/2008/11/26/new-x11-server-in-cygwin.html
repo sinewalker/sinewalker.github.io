@@ -1,205 +1,250 @@
 <!DOCTYPE html>
-<html prefix="
-og: http://ogp.me/ns#
-article: http://ogp.me/ns/article#
-" lang="en">
-    <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Trouble with the New X11 server in Cygwin | Milosophical Me</title>
-
-                <link href="../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
-
-                <link rel="alternate" type="application/rss+xml" title="RSS" href="../../../../rss.xml">
-
-      <link rel="canonical" href="http://milosophical.me/blog/2008/11/26/new-x11-server-in-cygwin.html">
-
-
-
-    
-        <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]-->
-
-    
-
-    
-    <meta name="author" content="Mike Lockhart">
-        <meta property="og:site_name" content="Milosophical Me">
-    <meta property="og:title" content="Trouble with the New X11 server in Cygwin">
-    <meta property="og:url" content="http://milosophical.me/blog/2008/11/26/new-x11-server-in-cygwin.html">
-    <meta property="og:description" content="I recently upgraded my Cygwin install and noticed that Cygwin has switched it's X server XWin.exe from the XFree86 codebase to the Xorg codebase. Besides an updated logo, it also has some other side-e">
-    <meta property="og:type" content="article">
-    <meta property="article:published_time" content="2008-11-26T10:07:34+11:00">
-           <meta property="article:tag" content="cygwin">
-           <meta property="article:tag" content="hacking">
-           <meta property="article:tag" content="help">
-           <meta property="article:tag" content="problem">
-           <meta property="article:tag" content="tip">
-           <meta property="article:tag" content="x11">
-           <meta property="article:tag" content="xming">
-           <meta property="article:tag" content="xorg">
-
-    
-    
-
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<base href="http://milosophical.me/blog/2008/11/26/new-x11-server-in-cygwin.html">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trouble with the New X11 server in Cygwin | Milosophical Me</title>
+<link href="../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../../../rss.xml">
+<link rel="canonical" href="http://milosophical.me/blog/2008/11/26/new-x11-server-in-cygwin.html">
+<!--[if lt IE 9]><script src="../../../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Michael Lockhart">
+<link rel="prev" href="../24/netbeans-65-and-python.html" title="NetBeans 6.5 and Python" type="text/html">
+<link rel="next" href="../../12/17/multiple-xming-servers-on-a-single-windows-host.html" title="Multiple Xming servers on a single Windows host" type="text/html">
+<meta property="og:site_name" content="Milosophical Me">
+<meta property="og:title" content="Trouble with the New X11 server in Cygwin">
+<meta property="og:url" content="http://milosophical.me/blog/2008/11/26/new-x11-server-in-cygwin.html">
+<meta property="og:description" content="I recently upgraded my Cygwin install and noticed that Cygwin has switched it's X server XWin.exe from the XFree86 codebase to the Xorg codebase. Besides an updated logo, it also has some other side-e">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2008-11-26T10:07:34+11:00">
+<meta property="article:tag" content="cygwin">
+<meta property="article:tag" content="hacking">
+<meta property="article:tag" content="help">
+<meta property="article:tag" content="problem">
+<meta property="article:tag" content="tip">
+<meta property="article:tag" content="x11">
+<meta property="article:tag" content="xming">
+<meta property="article:tag" content="xorg">
 </head>
 <body>
-    <section class="social">
-        <ul>
-                    <li><a href="../../../../index.html" title="Home"><i class="icon-compass"></i></a></li>
-            <li><a href="../../../../archive/archive.html" title="Archive"><i class="icon-folder-open-alt"></i></a></li>
-            <li><a href="../../../../tags/index.html" title="Tags"><i class="icon-tags"></i></a></li>
-            <li><a href="../../../../pg/index.html" title="Codex"><i class="icon-book"></i></a></li>
-            <li><a href="../../../../rss.xml" title="RSS"><i class="icon-rss"></i></a></li>
-            <li><a href="https://plus.google.com/+MichaelLockhart/posts" title="Microblog"><i class="icon-google-plus"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/mikelockhart" title="My LinkedIn profile"><i class="icon-linkedin"></i></a></li>
-            <li><a href="https://bitbucket.com/sinewalker" title="My Bitbucket"><i class="icon-bitbucket"></i></a></li>
-            <li><a href="https://github.com/sinewalker" title="My Github"><i class="icon-github"></i></a></li>
-            <li><a href="http://stackoverflow.com/users/776953/mike" title="Stack Overflow"><i class="icon-stackexchange"></i></a></li>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
-        </ul>
-    </section>
-    <section class="page-content">
-        <div class="content" rel="main">
-    <div class="post">
-        <h1 class="p-name entry-title" itemprop="headline name">Trouble with the New X11 server in Cygwin</h1>
+<!-- Menubar -->
 
-        <div class="meta">
-            <div class="authordate">
-                <time class="timeago" datetime="2008-11-26T10:07:34+11:00">2008-11-26 10:07</time>
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://milosophical.me/">
+
+                <span id="blog-title">Milosophical Me</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../../../index.html">Blog</a>
+                </li>
+<li>
+<a href="../../../../archive/archive.html">Archive</a>
+                </li>
+<li>
+<a href="../../../../tags/index.html">Tags</a>
+                </li>
+<li>
+<a href="../../../../pg/index.html">Codex</a>
+                </li>
+<li>
+<a href="../../../../pixels/index.html">Pixels</a>
+            </li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Social <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://plus.google.com/+MichaelLockhart/posts">Microblog</a>
+                    </li>
+<li>
+<a href="https://www.facebook.com/sinewalker">Facebook</a>
+                    </li>
+<li>
+<a href="mailto:sinewalker@gmail.com">Email</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://github.com/sinewalker">GitHub</a>
+                    </li>
+<li>
+<a href="https://bitbucket.com/sinewalker">Bitbucket</a>
+                    </li>
+<li>
+<a href="https://codepen.io/sinewalker/">Codepen</a>
+                    </li>
+<li class="active">
+<a href="#"> <span class="sr-only">(active)</span></a>
+                    </li>
+<li>
+<a href="https://sourceforge.net/u/sinewalker/profile/">SourceForge</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://about.me/mikelockhart">About.me</a>
+                    </li>
+<li>
+<a href="http://milosophical.me/pg/colophon.html">About this site</a>
+                    </li>
+<li>
+<a href="https://calendar.google.com/calendar/embed?src=sinewalker@gmail.com&amp;ctz=Australia/Sydney/">My calendar</a>
+                    </li>
+<li>
+<a href="https://www.linkedin.com/in/mikelockhart">LinkedIn</a>
+                    </li>
+<li>
+<a href="http://stackoverflow.com/users/776953/mike">Stack Overflow</a>
+            </li>
+</ul>
+</li>
+<li>
+<a href="../../../../rss.xml">RSS</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="new-x11-server-in-cygwin.wp" id="sourcelink">Source</a>
+    </li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
             
-                      |  
-        <a href="new-x11-server-in-cygwin.wp" id="sourcelink">Source</a>
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Trouble with the New X11 server in Cygwin</a></h1>
 
-            </div>
-                    <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="../../../../tags/cygwin.html" rel="tag">cygwin</a></li>
-           <li><a class="tag p-category" href="../../../../tags/hacking.html" rel="tag">hacking</a></li>
-           <li><a class="tag p-category" href="../../../../tags/help.html" rel="tag">help</a></li>
-           <li><a class="tag p-category" href="../../../../tags/problem.html" rel="tag">problem</a></li>
-           <li><a class="tag p-category" href="../../../../tags/tip.html" rel="tag">tip</a></li>
-           <li><a class="tag p-category" href="../../../../tags/x11.html" rel="tag">x11</a></li>
-           <li><a class="tag p-category" href="../../../../tags/xming.html" rel="tag">xming</a></li>
-           <li><a class="tag p-category" href="../../../../tags/xorg.html" rel="tag">xorg</a></li>
-        </ul>
-        </div>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                    <a href="../../../../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2008-11-26T10:07:34+11:00" itemprop="datePublished" title="2008-11-26 10:07">2008-11-26 10:07</time></a></p>
+                <p class="commentline">
+        
+</p>
+<div class="g-commentcount" data-href="/blog/2008/11/26/new-x11-server-in-cygwin.html"></div>
+<script src="https://apis.google.com/js/plusone.js"></script><p class="sourceline"><a href="new-x11-server-in-cygwin.wp" id="sourcelink">Source</a></p>
 
         </div>
-        <div class="body">
-            <p>I recently upgraded my Cygwin install and noticed that Cygwin has switched it's X server <code>XWin.exe</code> from the XFree86 codebase to the Xorg codebase. Besides an updated logo, it also has some other side-effects.</p>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>I recently upgraded my Cygwin install and noticed that Cygwin has switched it's X server <code>XWin.exe</code> from the XFree86 codebase to the Xorg codebase. Besides an updated logo, it also has some other side-effects.</p>
 
 
 <!-- TEASER_END -->
-<br>
-<p>The first one I noticed is that the xterm now has a menu turned on by default. If this annoys you (like it did me), you can turn it off by adding the following to your <code>~/.Xdefaults</code>:
+<br><p>The first one I noticed is that the xterm now has a menu turned on by default. If this annoys you (like it did me), you can turn it off by adding the following to your <code>~/.Xdefaults</code>:
 
 </p>
 <br><p style="text-align:center;"><code><strong>XTerm*toolBar: off</strong></code></p>
 
 
-<br>
-<p>
+<br><p>
 The next side-effect I haven't yet solved. I <a title="how to set up cygwin's xwin menu" href="http://sinewalker.wordpress.com/2006/04/18/cygwin-systray-menu/">use the XWin menu</a> to define some links to the servers I look after at work. I use <code>plink.exe</code> (part of <a title="PuTTY home page" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY</a>) to launch an xterm on the remote host, displayed locally, and using <code>pagent.exe</code> to do the authentication. For example:
 </p>
-<br>
-<pre><code><strong>MENU DEV_SERVERS {
+<br><pre><code><strong>MENU DEV_SERVERS {
     "Content Server" exec "D:/Programs/PuTTY/plink.exe -ssh -X -C -load someserverdef /usr/openwin/bin/xterm -name greenbackground -ls"
 </strong></code></pre>
-<br>
-<p>
+<br><p>
 ...
 </p>
-<br>
-<p>
+<br><p>
 This used to work, but now nothing happens.  Interestingly, the command <em>will </em>work if you execute it directly from a bash shell. If anyone has an idea, I'd be grateful for their help :)
 </p>
 
-<br>
-<h5>UPDATE: - 20081217 -- Use Xming, maybe</h5>
+<br><h5>UPDATE: - 20081217 -- Use Xming, maybe</h5>
 
 <p>
 I haven't yet figured out ssh-agent. However one work-around that I tried earlier and added in the comments was no good: the X clients started in a terminal that is forked off this way don't come through for some reason, to do with the way the X packets are tunnelled I think. So, I was motivated to try <a title="Xming web site" href="http://www.straightrunning.com/XmingNotes/">Xming</a>.
 </p>
-<br>
-
-<p>
+<br><p>
 Xming is being used quite successfully by my work colleagues who don't have a whole Cygwin stack on their machines. It's a lightweight X11 server for Windows, and it even uses Microsoft's OpenGL apparently. I'll have to try out some 3D clients from home soon to see what that gets me, but it could be good.
 </p>
-<br>
-<p>
+<br><p>
 Anyway, for work, it seems to integrate very well with PuTTY. There's even a stand-alone putty you can <a title="Xming sourceforge" href="http://sourceforge.net/projects/xming">download</a> that's pre-integrated, though it seems to also require the Xming server.
 </p>
-<br>
-<p>
+<br><p>
 I also found that it'll serve my local X clients quite well. The most important of these is my emacs, of course. For that to work well, I had to download the extra fonts since emacs uses servers-side fonts. But it works and is indistinguishable from the X11 server that's built into Cygwin.
 </p>
-<br>
-<p>
+<br><p>
 I haven't yet un-installed Cygwin's X server: I fear it could also remove clients and libraries, and I don't want the hastle just now of figuring that out.
 </p>
-<br>
-<p>
+<br><p>
 A final note: It's menu config file is Xmingrc (no dot), which lives in Window's HOME <code>%USERPROFILE%</code>. Also, because it's got no Cygwin dependency, you can't launch local Cygwin X clients from this menu. At least, not without wrapping them in calls to Cygwin's run.exe, e.g.
 </p>
-<br>
-<p style="text-align:center;"><code>d:\cygwin\bin\run.exe -p /usr/X11R6/bin emacs -display 127.0.0.1:0.0 --debug-init</code></p>
-        </div>
-                <ul class="pager">
-            <li class="previous">
+<br><p style="text-align:center;"><code>d:\cygwin\bin\run.exe -p /usr/X11R6/bin emacs -display 127.0.0.1:0.0 --debug-init</code></p>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../../../tags/cygwin.html" rel="tag">cygwin</a></li>
+            <li><a class="tag p-category" href="../../../../tags/hacking.html" rel="tag">hacking</a></li>
+            <li><a class="tag p-category" href="../../../../tags/help.html" rel="tag">help</a></li>
+            <li><a class="tag p-category" href="../../../../tags/problem.html" rel="tag">problem</a></li>
+            <li><a class="tag p-category" href="../../../../tags/tip.html" rel="tag">tip</a></li>
+            <li><a class="tag p-category" href="../../../../tags/x11.html" rel="tag">x11</a></li>
+            <li><a class="tag p-category" href="../../../../tags/xming.html" rel="tag">xming</a></li>
+            <li><a class="tag p-category" href="../../../../tags/xorg.html" rel="tag">xorg</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
                 <a href="../24/netbeans-65-and-python.html" rel="prev" title="NetBeans 6.5 and Python">Previous post</a>
             </li>
             <li class="next">
                 <a href="../../12/17/multiple-xming-servers-on-a-single-windows-host.html" rel="next" title="Multiple Xming servers on a single Windows host">Next post</a>
             </li>
-        </ul>
-
-                    <script src="https://apis.google.com/js/plusone.js"></script>
-<div class="g-comments" data-href="http://milosophical.me/blog/2008/11/26/new-x11-server-in-cygwin.html" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+<script src="https://apis.google.com/js/plusone.js"></script><div class="g-comments" data-href="http://milosophical.me/blog/2008/11/26/new-x11-server-in-cygwin.html" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">
 </div>
 
 
-    </div>
-                    <footer id="footer" role="contentinfo">
-            <p></p>
-<hr>Contents Copyright © 
+        </section></article>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer"><hr>Contents Copyright © 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a> 2005 — 2016         <a href="mailto:sinewalker@gmail.com">Mike Lockhart</a>. Powered by <a href="http://getnikola.com" rel="nofollow">Nikola</a> with <a href="https://github.com/getnikola/nikola-themes/tree/master/v7/zen-ipython">Zen-IPython</a> theme.
+<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a> 2005 — 2016         <a href="mailto:sinewalker@gmail.com">Michael Lockhart</a>. Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
             
         </footer>
-
-        </div>
-    </section>
-    <script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-65364237-1', 'auto');  ga('send', 'pageview');</script>
-    
-                <script src="../../../../assets/js/all-nocdn.js" type="text/javascript"></script>
-    
-<!-- Social buttons -->
-<div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
-<a class="addthis_button_more">Share</a>
-<ul>
-<li>
-<a class="addthis_button_facebook"></a>
-</li>
-<li>
-<a class="addthis_button_google_plusone_share"></a>
-</li>
-<li>
-<a class="addthis_button_linkedin"></a>
-</li>
-<li>
-<a class="addthis_button_twitter"></a>
-</li>
-</ul>
 </div>
-<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script>
-<!-- End of social buttons -->
+</div>
 
 
-        <script type="text/javascript">
-            $(function(){
-                $('.timeago').timeago();
-            });
-        </script>
+            <script src="../../../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-65364237-1', 'auto');  ga('send', 'pageview');</script>
 </body>
 </html>

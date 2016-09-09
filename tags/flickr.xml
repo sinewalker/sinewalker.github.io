@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (Flickr)</title><link>http://milosophical.me/</link><description></description><atom:link href="http://milosophical.me/tags/flickr.xml" type="application/rss+xml" rel="self"></atom:link><language>en</language><lastBuildDate>Wed, 16 Dec 2015 13:46:19 GMT</lastBuildDate><generator>http://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Organised books</title><link>http://milosophical.me/blog/2006/03/24/organised-books.html</link><dc:creator>Mike Lockhart</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Milosophical Me (Flickr)</title><link>http://milosophical.me/</link><description></description><atom:link type="application/rss+xml" rel="self" href="http://milosophical.me/tags/flickr.xml"></atom:link><language>en</language><lastBuildDate>Fri, 09 Sep 2016 01:03:36 GMT</lastBuildDate><generator>https://getnikola.com/</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Organised books</title><link>http://milosophical.me/blog/2006/03/24/organised-books.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;p&gt;
 &lt;em&gt;This post was originally published
   at &lt;a href="http://sinewalker.blogspot.com.au/2006_03_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
   on 24 March 2006.&lt;/em&gt;
@@ -27,4 +27,4 @@ Only, you'd have to have some sort of catalogue with the book's colour to be abl
 
 
 &lt;p&gt;
-Still, it looks nice :-)&lt;/p&gt;</description><category>Flickr</category><category>book</category><category>colour</category><category>tagging</category><category>thoughts</category><guid>http://milosophical.me/blog/2006/03/24/organised-books.html</guid><pubDate>Fri, 24 Mar 2006 03:56:00 GMT</pubDate></item></channel></rss>
+Still, it looks nice :-)&lt;/p&gt;</description><category>book</category><category>colour</category><category>Flickr</category><category>tagging</category><category>thoughts</category><guid>http://milosophical.me/blog/2006/03/24/organised-books.html</guid><pubDate>Fri, 24 Mar 2006 03:56:00 GMT</pubDate></item></channel></rss>

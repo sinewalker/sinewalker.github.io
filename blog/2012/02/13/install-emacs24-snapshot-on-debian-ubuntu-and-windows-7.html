@@ -1,91 +1,165 @@
 <!DOCTYPE html>
-<html prefix="
-og: http://ogp.me/ns#
-article: http://ogp.me/ns/article#
-" lang="en">
-    <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Install Emacs24 Snapshot on Debian, Ubuntu and Windows 7 | Milosophical Me</title>
-
-                <link href="../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
-
-                <link rel="alternate" type="application/rss+xml" title="RSS" href="../../../../rss.xml">
-
-      <link rel="canonical" href="http://milosophical.me/blog/2012/02/13/install-emacs24-snapshot-on-debian-ubuntu-and-windows-7.html">
-
-
-
-    
-        <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]-->
-
-    
-
-    
-    <meta name="author" content="Mike Lockhart">
-        <meta property="og:site_name" content="Milosophical Me">
-    <meta property="og:title" content="Install Emacs24 Snapshot on Debian, Ubuntu and Windows 7">
-    <meta property="og:url" content="http://milosophical.me/blog/2012/02/13/install-emacs24-snapshot-on-debian-ubuntu-and-windows-7.html">
-    <meta property="og:description" content="I just can't wait for Emacs24 to be released! (I know, it's in beta and it'll be officially released Real Soon Now, but my catalyst is Technomancy's ESK2 which is such an improvement over ESK1, and it">
-    <meta property="og:type" content="article">
-    <meta property="article:published_time" content="2012-02-13T11:15:29+11:00">
-           <meta property="article:tag" content="debian">
-           <meta property="article:tag" content="emacs">
-           <meta property="article:tag" content="emacs24">
-           <meta property="article:tag" content="hacking">
-           <meta property="article:tag" content="tip">
-           <meta property="article:tag" content="ubuntu">
-           <meta property="article:tag" content="windows">
-
-    
-    
-
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<base href="http://milosophical.me/blog/2012/02/13/install-emacs24-snapshot-on-debian-ubuntu-and-windows-7.html">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Install Emacs24 Snapshot on Debian, Ubuntu and Windows 7 | Milosophical Me</title>
+<link href="../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../../../rss.xml">
+<link rel="canonical" href="http://milosophical.me/blog/2012/02/13/install-emacs24-snapshot-on-debian-ubuntu-and-windows-7.html">
+<!--[if lt IE 9]><script src="../../../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Michael Lockhart">
+<link rel="prev" href="../../01/15/build-and-install-emacs24-on-debian-squeeze.html" title="Build and install Emacs24 on Debian squeeze" type="text/html">
+<link rel="next" href="../../05/18/windows-7-logon-background-hack.html" title="Windows 7 logon background hack" type="text/html">
+<meta property="og:site_name" content="Milosophical Me">
+<meta property="og:title" content="Install Emacs24 Snapshot on Debian, Ubuntu and Windows 7">
+<meta property="og:url" content="http://milosophical.me/blog/2012/02/13/install-emacs24-snapshot-on-debian-ubuntu-and-windows-7.html">
+<meta property="og:description" content="I just can't wait for Emacs24 to be released! (I know, it's in beta and it'll be officially released Real Soon Now, but my catalyst is Technomancy's ESK2 which is such an improvement over ESK1, and it">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2012-02-13T11:15:29+11:00">
+<meta property="article:tag" content="debian">
+<meta property="article:tag" content="emacs">
+<meta property="article:tag" content="emacs24">
+<meta property="article:tag" content="hacking">
+<meta property="article:tag" content="tip">
+<meta property="article:tag" content="ubuntu">
+<meta property="article:tag" content="windows">
 </head>
 <body>
-    <section class="social">
-        <ul>
-                    <li><a href="../../../../index.html" title="Home"><i class="icon-compass"></i></a></li>
-            <li><a href="../../../../archive/archive.html" title="Archive"><i class="icon-folder-open-alt"></i></a></li>
-            <li><a href="../../../../tags/index.html" title="Tags"><i class="icon-tags"></i></a></li>
-            <li><a href="../../../../pg/index.html" title="Codex"><i class="icon-book"></i></a></li>
-            <li><a href="../../../../rss.xml" title="RSS"><i class="icon-rss"></i></a></li>
-            <li><a href="https://plus.google.com/+MichaelLockhart/posts" title="Microblog"><i class="icon-google-plus"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/mikelockhart" title="My LinkedIn profile"><i class="icon-linkedin"></i></a></li>
-            <li><a href="https://bitbucket.com/sinewalker" title="My Bitbucket"><i class="icon-bitbucket"></i></a></li>
-            <li><a href="https://github.com/sinewalker" title="My Github"><i class="icon-github"></i></a></li>
-            <li><a href="http://stackoverflow.com/users/776953/mike" title="Stack Overflow"><i class="icon-stackexchange"></i></a></li>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
-        </ul>
-    </section>
-    <section class="page-content">
-        <div class="content" rel="main">
-    <div class="post">
-        <h1 class="p-name entry-title" itemprop="headline name">Install Emacs24 Snapshot on Debian, Ubuntu and Windows 7</h1>
+<!-- Menubar -->
 
-        <div class="meta">
-            <div class="authordate">
-                <time class="timeago" datetime="2012-02-13T11:15:29+11:00">2012-02-13 11:15</time>
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://milosophical.me/">
+
+                <span id="blog-title">Milosophical Me</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../../../index.html">Blog</a>
+                </li>
+<li>
+<a href="../../../../archive/archive.html">Archive</a>
+                </li>
+<li>
+<a href="../../../../tags/index.html">Tags</a>
+                </li>
+<li>
+<a href="../../../../pg/index.html">Codex</a>
+                </li>
+<li>
+<a href="../../../../pixels/index.html">Pixels</a>
+            </li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Social <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://plus.google.com/+MichaelLockhart/posts">Microblog</a>
+                    </li>
+<li>
+<a href="https://www.facebook.com/sinewalker">Facebook</a>
+                    </li>
+<li>
+<a href="mailto:sinewalker@gmail.com">Email</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://github.com/sinewalker">GitHub</a>
+                    </li>
+<li>
+<a href="https://bitbucket.com/sinewalker">Bitbucket</a>
+                    </li>
+<li>
+<a href="https://codepen.io/sinewalker/">Codepen</a>
+                    </li>
+<li class="active">
+<a href="#"> <span class="sr-only">(active)</span></a>
+                    </li>
+<li>
+<a href="https://sourceforge.net/u/sinewalker/profile/">SourceForge</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://about.me/mikelockhart">About.me</a>
+                    </li>
+<li>
+<a href="http://milosophical.me/pg/colophon.html">About this site</a>
+                    </li>
+<li>
+<a href="https://calendar.google.com/calendar/embed?src=sinewalker@gmail.com&amp;ctz=Australia/Sydney/">My calendar</a>
+                    </li>
+<li>
+<a href="https://www.linkedin.com/in/mikelockhart">LinkedIn</a>
+                    </li>
+<li>
+<a href="http://stackoverflow.com/users/776953/mike">Stack Overflow</a>
+            </li>
+</ul>
+</li>
+<li>
+<a href="../../../../rss.xml">RSS</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="install-emacs24-snapshot-on-debian-ubuntu-and-windows-7.wp" id="sourcelink">Source</a>
+    </li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
             
-                      |  
-        <a href="install-emacs24-snapshot-on-debian-ubuntu-and-windows-7.wp" id="sourcelink">Source</a>
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Install Emacs24 Snapshot on Debian, Ubuntu and Windows 7</a></h1>
 
-            </div>
-                    <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="../../../../tags/debian.html" rel="tag">debian</a></li>
-           <li><a class="tag p-category" href="../../../../tags/emacs.html" rel="tag">emacs</a></li>
-           <li><a class="tag p-category" href="../../../../tags/emacs24.html" rel="tag">emacs24</a></li>
-           <li><a class="tag p-category" href="../../../../tags/hacking.html" rel="tag">hacking</a></li>
-           <li><a class="tag p-category" href="../../../../tags/tip.html" rel="tag">tip</a></li>
-           <li><a class="tag p-category" href="../../../../tags/ubuntu.html" rel="tag">ubuntu</a></li>
-           <li><a class="tag p-category" href="../../../../tags/windows.html" rel="tag">windows</a></li>
-        </ul>
-        </div>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                    <a href="../../../../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2012-02-13T11:15:29+11:00" itemprop="datePublished" title="2012-02-13 11:15">2012-02-13 11:15</time></a></p>
+                <p class="commentline">
+        
+</p>
+<div class="g-commentcount" data-href="/blog/2012/02/13/install-emacs24-snapshot-on-debian-ubuntu-and-windows-7.html"></div>
+<script src="https://apis.google.com/js/plusone.js"></script><p class="sourceline"><a href="install-emacs24-snapshot-on-debian-ubuntu-and-windows-7.wp" id="sourcelink">Source</a></p>
 
         </div>
-        <div class="body">
-            <p>I just can't wait for <a title="An overview of what's coming in Emacs 24" href="http://www.masteringemacs.org/articles/2011/12/06/what-is-new-in-emacs-24-part-1/">Emacs24</a> to be released! (I know, it's in beta and it'll be officially released Real Soon Now, but my catalyst is Technomancy's ESK2 which is such an improvement over ESK1, and it needs Emacs 24).
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>I just can't wait for <a title="An overview of what's coming in Emacs 24" href="http://www.masteringemacs.org/articles/2011/12/06/what-is-new-in-emacs-24-part-1/">Emacs24</a> to be released! (I know, it's in beta and it'll be officially released Real Soon Now, but my catalyst is Technomancy's ESK2 which is such an improvement over ESK1, and it needs Emacs 24).
 </p>
 <p>
 In <a title="Build/Install emacs 24 on debian" href="http://sinewalker.wordpress.com/2012/01/15/build-and-install-emacs24-on-debian-squeeze/">my last post</a> I had steps to build emacs from source-code. This is worth following for hacker cred, but it soon gets tedious if you have a lot of systems to put emacs on. As pointed out by a few readers, there are some snapshot builds available for different platforms. This post lists steps for installing the pre-built snapshots, for the three operating systems that I use.
@@ -103,7 +177,7 @@ As pointed out earlier, you can get <a href="http://emacs.naquadah.org/">emacs-s
 
 
 <ol>
- <li>Import the key (this is a one-line pipeline, broken for display only):
+<li>Import the key (this is a one-line pipeline, broken for display only):
 <pre>
 $ <strong>wget -q -O - http://emacs.naquadah.org/key.gpg 
 | sudo apt-key add -</strong>
@@ -130,9 +204,6 @@ $ <strong>sudo aptitude install <code>emacs-snapshot</code></strong>
 </pre>
  </li>
 </ol>
-
-
-
 <h3>Ubuntu</h3>
 <p>
 I'm running Ubuntu 11.10 in a VirtualBox on work's Windows 7 machine. As mentioned at Julien Danjou's page,
@@ -142,7 +213,7 @@ Damien Cassou makes a version of the same emacs-snapshot for Ubuntu, which is ho
 
 
 <ol>
- <li>Add the PPA (Personal Package Archive). This also imports the key:
+<li>Add the PPA (Personal Package Archive). This also imports the key:
 <pre>
 $ <strong>sudo add-apt-repository ppa:cassou/emacs</strong>
 
@@ -161,9 +232,6 @@ $ <strong>sudo apt-get install emacs-snapshot</strong>
 </pre>
  </li>
 </ol>
-
-
-
 <h3>Windows</h3>
 <p>
 It's handy to have a native Windows emacs as well as the one in the VM. Of course being Windows, it's more complicated to install and configure... This has been tested on Windows 7:
@@ -171,7 +239,7 @@ It's handy to have a native Windows emacs as well as the one in the VM. Of cours
 
 
 <ol>
- <li>Download the latest PKZIP-ed binary from <a href="http://code.google.com/p/emacs-for-windows/updates/list">Google Code</a>
+<li>Download the latest PKZIP-ed binary from <a href="http://code.google.com/p/emacs-for-windows/updates/list">Google Code</a>
 </li>
  <li>Unpack the ZIP (Windows Explorer <em>can</em> open ZIP files -- but <a href="http://www.7-zip.org">7zip</a> is mich nicer). I like to unpack emacs in <code><strong>c:\Applications\emacs</strong></code><em>&lt;version&gt;</em> so I can maintain several different versions at once</li>
  <li>(<em>optional</em>) Put a windows symlink to the version of emacs you want to use.  This assumes your C: drive is formatted with NTFS, which on most Windows systems it is. The symlink can then be used for your %PATH% later and you won't have to edit the variable again to change versions, which for some odd reason is a convoluted operation in Windows... Type the following in a <strong>CMD.EXE</strong> prompt:
@@ -183,7 +251,7 @@ C:\Applications\&gt; <strong>MKLINK /D emacs emacs</strong><em>&lt;version&gt;</
  </li>
  <li>Create an <em>Environment Variable</em> called <code><strong>%HOME%</strong></code> that refers to your Windows home directory (<code>C:\Users\</code><em>&lt;username&gt;</em>). This is so that you can put your <code>.emacs.d</code> in your home directory, and Emacs will find it:
  <ol type="a">
-  <li>Open <strong>Windows Explorer</strong>
+<li>Open <strong>Windows Explorer</strong>
 </li>
   <li>Right-click on "<strong>My Computer</strong>", choose "<strong>Properties</strong>"</li>
   <li>Choose "<strong>Advance system settings</strong>" (Really? what's so advanced about an environment variable?)</li>
@@ -193,12 +261,9 @@ C:\Applications\&gt; <strong>MKLINK /D emacs emacs</strong><em>&lt;version&gt;</
   <li>Press the other "<strong>OK</strong>" button to dismiss the Environment Varables dialog</li>
   <li>Press yet another "<strong>OK</strong>" button to dismiss the System Properties dialog</li>
  </ol>
- </li>
+</li>
  <li>Put emacs in your <code><strong>%PATH%</strong></code>. Use the same steps above to edit the Sytem variable PATH and add the path to Emacs (<code><strong>;C:\Applications\emacs\bin</strong></code> if you put a symlink in step 3)</li>
 </ol>
-
-
-
 <h3>Personal Emacs settings</h3>
 <p>
 You can now put your emacs settings into <code>~/.emacs.d</code> (that's <code>%HOME%\.emacs.d</code> for Windows). I highly recommend <a title="Technomany's home" href="http://technomancy.us/">Technomancy</a>'s <a title="GitHub ESK2 branch" href="https://github.com/technomancy/emacs-starter-kit">Emacs Starter Kit</a> (version 2).
@@ -231,62 +296,46 @@ One package I'd like to mention here is "<a href="http://xahlee.org/emacs/ergono
 
 
 
-        </div>
-                <ul class="pager">
-            <li class="previous">
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../../../tags/debian.html" rel="tag">debian</a></li>
+            <li><a class="tag p-category" href="../../../../tags/emacs.html" rel="tag">emacs</a></li>
+            <li><a class="tag p-category" href="../../../../tags/emacs24.html" rel="tag">emacs24</a></li>
+            <li><a class="tag p-category" href="../../../../tags/hacking.html" rel="tag">hacking</a></li>
+            <li><a class="tag p-category" href="../../../../tags/tip.html" rel="tag">tip</a></li>
+            <li><a class="tag p-category" href="../../../../tags/ubuntu.html" rel="tag">ubuntu</a></li>
+            <li><a class="tag p-category" href="../../../../tags/windows.html" rel="tag">windows</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
                 <a href="../../01/15/build-and-install-emacs24-on-debian-squeeze.html" rel="prev" title="Build and install Emacs24 on Debian squeeze">Previous post</a>
             </li>
             <li class="next">
                 <a href="../../05/18/windows-7-logon-background-hack.html" rel="next" title="Windows 7 logon background hack">Next post</a>
             </li>
-        </ul>
-
-                    <script src="https://apis.google.com/js/plusone.js"></script>
-<div class="g-comments" data-href="http://milosophical.me/blog/2012/02/13/install-emacs24-snapshot-on-debian-ubuntu-and-windows-7.html" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+<script src="https://apis.google.com/js/plusone.js"></script><div class="g-comments" data-href="http://milosophical.me/blog/2012/02/13/install-emacs24-snapshot-on-debian-ubuntu-and-windows-7.html" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">
 </div>
 
 
-    </div>
-                    <footer id="footer" role="contentinfo">
-            <p></p>
-<hr>Contents Copyright © 
+        </section></article>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer"><hr>Contents Copyright © 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a> 2005 — 2016         <a href="mailto:sinewalker@gmail.com">Mike Lockhart</a>. Powered by <a href="http://getnikola.com" rel="nofollow">Nikola</a> with <a href="https://github.com/getnikola/nikola-themes/tree/master/v7/zen-ipython">Zen-IPython</a> theme.
+<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a> 2005 — 2016         <a href="mailto:sinewalker@gmail.com">Michael Lockhart</a>. Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
             
         </footer>
-
-        </div>
-    </section>
-    <script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-65364237-1', 'auto');  ga('send', 'pageview');</script>
-    
-                <script src="../../../../assets/js/all-nocdn.js" type="text/javascript"></script>
-    
-<!-- Social buttons -->
-<div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
-<a class="addthis_button_more">Share</a>
-<ul>
-<li>
-<a class="addthis_button_facebook"></a>
-</li>
-<li>
-<a class="addthis_button_google_plusone_share"></a>
-</li>
-<li>
-<a class="addthis_button_linkedin"></a>
-</li>
-<li>
-<a class="addthis_button_twitter"></a>
-</li>
-</ul>
 </div>
-<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script>
-<!-- End of social buttons -->
+</div>
 
 
-        <script type="text/javascript">
-            $(function(){
-                $('.timeago').timeago();
-            });
-        </script>
+            <script src="../../../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-65364237-1', 'auto');  ga('send', 'pageview');</script>
 </body>
 </html>

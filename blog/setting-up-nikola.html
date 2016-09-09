@@ -1,83 +1,161 @@
 <!DOCTYPE html>
-<html prefix="
-og: http://ogp.me/ns#
-article: http://ogp.me/ns/article#
-" lang="en">
-    <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Meta: Setting up Nikola blogging | Milosophical Me</title>
-
-                <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
-
-                <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
-
-      <link rel="canonical" href="http://milosophical.me/blog/setting-up-nikola.html">
-
-
-
-    
-        <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]-->
-
-    
-
-    
-    <meta name="author" content="Mike Lockhart">
-        <meta property="og:site_name" content="Milosophical Me">
-    <meta property="og:title" content="Meta: Setting up Nikola blogging">
-    <meta property="og:url" content="http://milosophical.me/blog/setting-up-nikola.html">
-    <meta property="og:description" content="Tonight I thought that I'd sit down at my home server, Tesla, and do a bit of blogging.  This server's recently been rebuilt after a bad run-in with a hard-drive problem and I had not got around to pu">
-    <meta property="og:type" content="article">
-    <meta property="article:published_time" content="2015-06-08T21:57:43+10:00">
-           <meta property="article:tag" content="blogging">
-           <meta property="article:tag" content="meta">
-           <meta property="article:tag" content="nikola">
-
-    
-    
-
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<base href="http://milosophical.me/blog/setting-up-nikola.html">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meta: Setting up Nikola blogging | Milosophical Me</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="canonical" href="http://milosophical.me/blog/setting-up-nikola.html">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><meta name="author" content="Michael Lockhart">
+<link rel="prev" href="4-bit-rules-of-computing-part-1.html" title="4-bit Rules of Computing, Part 1" type="text/html">
+<link rel="next" href="4-bit-rules-of-computing-part-2.html" title="4-bit Rules of Computing, Part 2" type="text/html">
+<meta property="og:site_name" content="Milosophical Me">
+<meta property="og:title" content="Meta: Setting up Nikola blogging">
+<meta property="og:url" content="http://milosophical.me/blog/setting-up-nikola.html">
+<meta property="og:description" content="Tonight I thought that I'd sit down at my home server, Tesla, and do a bit of blogging.  This server's recently been rebuilt after a bad run-in with a hard-drive problem and I had not got around to pu">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2015-06-08T21:57:43+10:00">
+<meta property="article:tag" content="blogging">
+<meta property="article:tag" content="meta">
+<meta property="article:tag" content="nikola">
 </head>
 <body>
-    <section class="social">
-        <ul>
-                    <li><a href="../index.html" title="Home"><i class="icon-compass"></i></a></li>
-            <li><a href="../archive/archive.html" title="Archive"><i class="icon-folder-open-alt"></i></a></li>
-            <li><a href="../tags/index.html" title="Tags"><i class="icon-tags"></i></a></li>
-            <li><a href="../pg/index.html" title="Codex"><i class="icon-book"></i></a></li>
-            <li><a href="../rss.xml" title="RSS"><i class="icon-rss"></i></a></li>
-            <li><a href="https://plus.google.com/+MichaelLockhart/posts" title="Microblog"><i class="icon-google-plus"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/mikelockhart" title="My LinkedIn profile"><i class="icon-linkedin"></i></a></li>
-            <li><a href="https://bitbucket.com/sinewalker" title="My Bitbucket"><i class="icon-bitbucket"></i></a></li>
-            <li><a href="https://github.com/sinewalker" title="My Github"><i class="icon-github"></i></a></li>
-            <li><a href="http://stackoverflow.com/users/776953/mike" title="Stack Overflow"><i class="icon-stackexchange"></i></a></li>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
-        </ul>
-    </section>
-    <section class="page-content">
-        <div class="content" rel="main">
-    <div class="post">
-        <h1 class="p-name entry-title" itemprop="headline name">Meta: Setting up Nikola blogging</h1>
+<!-- Menubar -->
 
-        <div class="meta">
-            <div class="authordate">
-                <time class="timeago" datetime="2015-06-08T21:57:43+10:00">2015-06-08 21:57</time>
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://milosophical.me/">
+
+                <span id="blog-title">Milosophical Me</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="index.html">Blog</a>
+                </li>
+<li>
+<a href="../archive/archive.html">Archive</a>
+                </li>
+<li>
+<a href="../tags/index.html">Tags</a>
+                </li>
+<li>
+<a href="../pg/index.html">Codex</a>
+                </li>
+<li>
+<a href="../pixels/index.html">Pixels</a>
+            </li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Social <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://plus.google.com/+MichaelLockhart/posts">Microblog</a>
+                    </li>
+<li>
+<a href="https://www.facebook.com/sinewalker">Facebook</a>
+                    </li>
+<li>
+<a href="mailto:sinewalker@gmail.com">Email</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://github.com/sinewalker">GitHub</a>
+                    </li>
+<li>
+<a href="https://bitbucket.com/sinewalker">Bitbucket</a>
+                    </li>
+<li>
+<a href="https://codepen.io/sinewalker/">Codepen</a>
+                    </li>
+<li class="active">
+<a href="#"> <span class="sr-only">(active)</span></a>
+                    </li>
+<li>
+<a href="https://sourceforge.net/u/sinewalker/profile/">SourceForge</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://about.me/mikelockhart">About.me</a>
+                    </li>
+<li>
+<a href="http://milosophical.me/pg/colophon.html">About this site</a>
+                    </li>
+<li>
+<a href="https://calendar.google.com/calendar/embed?src=sinewalker@gmail.com&amp;ctz=Australia/Sydney/">My calendar</a>
+                    </li>
+<li>
+<a href="https://www.linkedin.com/in/mikelockhart">LinkedIn</a>
+                    </li>
+<li>
+<a href="http://stackoverflow.com/users/776953/mike">Stack Overflow</a>
+            </li>
+</ul>
+</li>
+<li>
+<a href="../rss.xml">RSS</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="setting-up-nikola.ipynb" id="sourcelink">Source</a>
+    </li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
             
-                      |  
-        <a href="setting-up-nikola.ipynb" id="sourcelink">Source</a>
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Meta: Setting up Nikola blogging</a></h1>
 
-            </div>
-                    <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="../tags/blogging.html" rel="tag">blogging</a></li>
-           <li><a class="tag p-category" href="../tags/meta.html" rel="tag">meta</a></li>
-           <li><a class="tag p-category" href="../tags/nikola.html" rel="tag">nikola</a></li>
-        </ul>
-        </div>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                    <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2015-06-08T21:57:43+10:00" itemprop="datePublished" title="2015-06-08 21:57">2015-06-08 21:57</time></a></p>
+                <p class="commentline">
+        
+</p>
+<div class="g-commentcount" data-href="/blog/setting-up-nikola.html"></div>
+<script src="https://apis.google.com/js/plusone.js"></script><p class="sourceline"><a href="setting-up-nikola.ipynb" id="sourcelink">Source</a></p>
 
         </div>
-        <div class="body">
-            <div tabindex="-1" id="notebook" class="border-box-sizing">
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
 <div class="cell border-box-sizing text_cell rendered">
@@ -88,6 +166,7 @@ article: http://ogp.me/ns/article#
 <p>Tonight I thought that I'd sit down at my home server, <em>Tesla</em>, and do a bit of blogging.  This server's recently been rebuilt after a bad run-in with a hard-drive problem and I had not got around to putting my blog onto it.  Instead I was blogging with work's laptop.</p>
 <p>After spending an hour cloning and installing my blog repositories and the necessary software through trial-and-error, I thought it best to write down what is necessary to bootstrap my blogging environment, and save myself some trouble in the future.</p>
 <p>Ideally I will make a script to get most of this going soon … but in the meantime, you are treated to a meta-blog.</p>
+
 </div>
 </div>
 </div>
@@ -105,8 +184,10 @@ article: http://ogp.me/ns/article#
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="step-0-clone-the-repositories">Step 0, clone the repositories</h3>
+<h3 id="Step-0,-clone-the-repositories">Step 0, clone the repositories<a class="anchor-link" href="setting-up-nikola.html#Step-0,-clone-the-repositories">¶</a>
+</h3>
 <p>I need to generate some SSH keys and register them to BitBucket and GitHub. So, one for BitBucket:</p>
+
 <pre><code>mjl@tesla:~&gt; ssh-keygen 
 Generating public/private rsa key pair.
 Enter file in which to save the key (/home/mjl/.ssh/id_rsa): /home/mjl/keys/bitbucket
@@ -128,9 +209,9 @@ The key's randomart image is:
 |       . . = +..o|                                                                                                                                                                     
 |        o.. .o..+|                                                                                                                                                                     
 +--[MD5]----------+                                                                                                                                                                     
-mjl@tesla:~&gt;
-</code></pre>
+mjl@tesla:~&gt;</code></pre>
 <p>And also another for GitHub:</p>
+
 <pre><code>mjl@tesla:~&gt; ssh-keygen                                                                                                                                                                 
 Generating public/private rsa key pair.
 Enter file in which to save the key (/home/mjl/.ssh/id_rsa): /home/mjl/keys/github
@@ -152,31 +233,30 @@ The key's randomart image is:
 |          o..o o |
 |         ..E*..  |
 +--[MD5]----------+
-mjl@tesla:~&gt;
-</code></pre>
+mjl@tesla:~&gt;</code></pre>
 <p>Then add them to my ssh-agent:</p>
+
 <pre><code>mjl@tesla:~&gt; ssh-add keys/bitbucket
 Enter passphrase for keys/bitbucket: 
 Identity added: keys/bitbucket (keys/bitbucket)
 mjl@tesla:~&gt; ssh-add keys/github
 Enter passphrase for keys/github: 
 Identity added: keys/github (keys/github)
-mjl@tesla:~&gt;
-</code></pre>
+mjl@tesla:~&gt;</code></pre>
 <p>(and also register them at each web site using the profile settings)</p>
 <p>Now I can clone the repositories:</p>
 <ul>
 <li>
 <p>Clone my BitBucket Mercurial repository for the blog markup</p>
+
 <pre><code>mjl@tesla:~&gt; mkdir blogs; cd blogs
-mjl@tesla:~/blogs&gt; hg clone ssh://hg@bitbucket.org/sinewalker/blog milosophical.me
-</code></pre>
+mjl@tesla:~/blogs&gt; hg clone ssh://hg@bitbucket.org/sinewalker/blog milosophical.me</code></pre>
 </li>
 <li>
 <p>and clone my GitHub Git repository for deploying at GitHub Pages</p>
+
 <pre><code>mjl@tesla:~/blogs&gt; cd milosophical.me
-mjl@tesla:~/blogs/milosophical.me&gt; git clone git@github.com:sinewalker/sinewalker.github.io.git
-</code></pre>
+mjl@tesla:~/blogs/milosophical.me&gt; git clone git@github.com:sinewalker/sinewalker.github.io.git</code></pre>
 </li>
 </ul>
 </div>
@@ -187,10 +267,12 @@ mjl@tesla:~/blogs/milosophical.me&gt; git clone git@github.com:sinewalker/sinewa
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="step-1-build-environment">Step 1: Build environment</h3>
+<h3 id="Step-1:-Build-environment">Step 1: Build environment<a class="anchor-link" href="setting-up-nikola.html#Step-1:-Build-environment">¶</a>
+</h3>
 <p><a href="https://getnikola.com/">Nikola</a> is built with Python, so it is best to use a <a href="http://docs.python-guide.org/en/latest/dev/virtualenvs/">VirtualEnv</a> and install all the libraries. I'm using the <a href="http://virtualenvwrapper.readthedocs.org/en/latest/index.html">VirtualEnv Wrapper scripts</a>. Nikola's dependencies also require a few things to be installed at the operating system layer. So before starting with my virtual environment, I install the base development tools <em>outside</em> of Python, but using the operating system's package management:</p>
-<pre><code>sudo zypper install python-virtualenv-wrapper python-devel nodejs libxml-devel libxml2-devel libxslt-devel
-</code></pre>
+
+<pre><code>sudo zypper install python-virtualenv-wrapper python-devel nodejs libxml-devel libxml2-devel libxslt-devel</code></pre>
+
 </div>
 </div>
 </div>
@@ -199,21 +281,23 @@ mjl@tesla:~/blogs/milosophical.me&gt; git clone git@github.com:sinewalker/sinewa
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="step-2-install-nikola">Step 2: Install Nikola</h3>
+<h3 id="Step-2:-Install-Nikola">Step 2: Install Nikola<a class="anchor-link" href="setting-up-nikola.html#Step-2:-Install-Nikola">¶</a>
+</h3>
 <p>Once the build environment is all installed, we can begin. We'll make a new virtual environment for our blog, making sure to use Python 2.7 (Nikola supports Python 3, but my blog doesn't, yet):</p>
+
 <pre><code>mjl@tesla:~&gt; source /usr/bin/virtualenvwrapper-2.7.sh
 mjl@tesla:~&gt; mkvirtualenv -p /usr/bin/python2.7 blog
 Running virtualenv with interpreter /usr/bin/python2.7
 New python executable in test/bin/python2.7
 Also creating executable in blog/bin/python
 Installing setuptools, pip...done.
-(blog)mjl@tesla:~&gt;
-</code></pre>
+(blog)mjl@tesla:~&gt;</code></pre>
 <p>Now switch to our blog working copy and install Nikola using <code>pip</code> and the <code>requirements.txt</code> I have saved:</p>
+
 <pre><code>(blog)mjl@tesla:~&gt; cd blogs/milosophical.me
-(blog)mjl@tesla:~/blogs/milosophical.me&gt; pip install -r notes/requirements.txt
-</code></pre>
+(blog)mjl@tesla:~/blogs/milosophical.me&gt; pip install -r notes/requirements.txt</code></pre>
 <p>This will take a while. You can repeat the <code>pip</code> command until it succeeds, installing anything I have left out (base development packages, for instance — like C compilers and libraries — although I <em>think</em> that these should be installed by <code>python-devel</code>'s dependencies if you haven't already installed them).</p>
+
 </div>
 </div>
 </div>
@@ -222,9 +306,11 @@ Installing setuptools, pip...done.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="step-3-test-nikola">Step 3: Test Nikola</h3>
+<h3 id="Step-3:-Test-Nikola">Step 3: Test Nikola<a class="anchor-link" href="setting-up-nikola.html#Step-3:-Test-Nikola">¶</a>
+</h3>
 <p>You should be able to run <code>nikola</code> commands now and see that things are working.</p>
 <p>Make a test post:</p>
+
 <pre><code>(blog)mjl@tesla:~/blogs/milosophical.me&gt; nikola new_post -f markdown
 Creating New Post
 -----------------
@@ -232,75 +318,57 @@ Creating New Post
 Title: Test Post
 Scanning posts..........done!
 [2015-06-08T12:29:03Z] INFO: new_post: Your post's text is at: posts/test-post.md
-(blog)mjl@tesla:~/blogs/milosophical.me&gt;
-</code></pre>
+(blog)mjl@tesla:~/blogs/milosophical.me&gt;</code></pre>
 <p>Serve the site:</p>
+
 <pre><code>(blog)mjl@tesla:~/blogs/milosophical.me&gt; nikola serve
-[2015-06-08T12:29:27Z] INFO: serve: Serving HTTP on 0.0.0.0 port 8000...
-</code></pre>
+[2015-06-08T12:29:27Z] INFO: serve: Serving HTTP on 0.0.0.0 port 8000...</code></pre>
 <p>Nice.  Now I can blog (i.e. this post).  Remember when done with a VirtualEnv environment, you leave it by typing <code>deactivate</code>. Just think of <strong><em>Cars 2</em></strong> …</p>
+
 </div>
 </div>
 </div>
     </div>
   </div>
 
-        </div>
-                <ul class="pager">
-            <li class="previous">
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../tags/blogging.html" rel="tag">blogging</a></li>
+            <li><a class="tag p-category" href="../tags/meta.html" rel="tag">meta</a></li>
+            <li><a class="tag p-category" href="../tags/nikola.html" rel="tag">nikola</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
                 <a href="4-bit-rules-of-computing-part-1.html" rel="prev" title="4-bit Rules of Computing, Part 1">Previous post</a>
             </li>
             <li class="next">
                 <a href="4-bit-rules-of-computing-part-2.html" rel="next" title="4-bit Rules of Computing, Part 2">Next post</a>
             </li>
-        </ul>
-
-                    <script src="https://apis.google.com/js/plusone.js"></script>
-<div class="g-comments" data-href="http://milosophical.me/blog/setting-up-nikola.html" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+<script src="https://apis.google.com/js/plusone.js"></script><div class="g-comments" data-href="http://milosophical.me/blog/setting-up-nikola.html" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">
 </div>
 
 
-    </div>
-                    <footer id="footer" role="contentinfo">
-            <p></p>
-<hr>Contents Copyright © 
+        </section><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script><script type="text/x-mathjax-config">
+            MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+            </script></article>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer"><hr>Contents Copyright © 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a> 2005 — 2016         <a href="mailto:sinewalker@gmail.com">Mike Lockhart</a>. Powered by <a href="http://getnikola.com" rel="nofollow">Nikola</a> with <a href="https://github.com/getnikola/nikola-themes/tree/master/v7/zen-ipython">Zen-IPython</a> theme.
+<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a> 2005 — 2016         <a href="mailto:sinewalker@gmail.com">Michael Lockhart</a>. Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
             
         </footer>
-
-        </div>
-    </section>
-    <script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-65364237-1', 'auto');  ga('send', 'pageview');</script>
-    
-                <script src="../assets/js/all-nocdn.js" type="text/javascript"></script>
-    
-<!-- Social buttons -->
-<div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
-<a class="addthis_button_more">Share</a>
-<ul>
-<li>
-<a class="addthis_button_facebook"></a>
-</li>
-<li>
-<a class="addthis_button_google_plusone_share"></a>
-</li>
-<li>
-<a class="addthis_button_linkedin"></a>
-</li>
-<li>
-<a class="addthis_button_twitter"></a>
-</li>
-</ul>
 </div>
-<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script>
-<!-- End of social buttons -->
+</div>
 
 
-        <script type="text/javascript">
-            $(function(){
-                $('.timeago').timeago();
-            });
-        </script>
+            <script src="../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-65364237-1', 'auto');  ga('send', 'pageview');</script>
 </body>
 </html>

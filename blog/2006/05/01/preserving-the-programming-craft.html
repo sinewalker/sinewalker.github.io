@@ -1,32 +1,23 @@
 <!DOCTYPE html>
-<html prefix="
-og: http://ogp.me/ns#
-article: http://ogp.me/ns/article#
-" lang="en">
-    <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Preserving the programming craft | Milosophical Me</title>
-
-                <link href="../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
-
-                <link rel="alternate" type="application/rss+xml" title="RSS" href="../../../../rss.xml">
-
-      <link rel="canonical" href="http://milosophical.me/blog/2006/05/01/preserving-the-programming-craft.html">
-
-
-
-    
-        <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]-->
-
-    
-
-    
-    <meta name="author" content="Mike Lockhart">
-        <meta property="og:site_name" content="Milosophical Me">
-    <meta property="og:title" content="Preserving the programming craft">
-    <meta property="og:url" content="http://milosophical.me/blog/2006/05/01/preserving-the-programming-craft.html">
-    <meta property="og:description" content="This post was originally published
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<base href="http://milosophical.me/blog/2006/05/01/preserving-the-programming-craft.html">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preserving the programming craft | Milosophical Me</title>
+<link href="../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../../../rss.xml">
+<link rel="canonical" href="http://milosophical.me/blog/2006/05/01/preserving-the-programming-craft.html">
+<!--[if lt IE 9]><script src="../../../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Michael Lockhart">
+<link rel="prev" href="../../04/18/cygwin-systray-menu.html" title="Cygwin systray menu" type="text/html">
+<link rel="next" href="../30/google-mail.html" title="Google Mail" type="text/html">
+<meta property="og:site_name" content="Milosophical Me">
+<meta property="og:title" content="Preserving the programming craft">
+<meta property="og:url" content="http://milosophical.me/blog/2006/05/01/preserving-the-programming-craft.html">
+<meta property="og:description" content="This post was originally published
   at sinewalker.wordpress.com
   on 1 May 2006.
 
@@ -36,64 +27,149 @@ I
     reply to an Ask
   Slashdot:  Do
     Kids still program? I found myself commenting all over that ">
-    <meta property="og:type" content="article">
-    <meta property="article:published_time" content="2006-05-01T15:00:21+10:00">
-           <meta property="article:tag" content="hacking">
-           <meta property="article:tag" content="observation">
-           <meta property="article:tag" content="programming">
-           <meta property="article:tag" content="thoughts">
-
-    
-    
-
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2006-05-01T15:00:21+10:00">
+<meta property="article:tag" content="hacking">
+<meta property="article:tag" content="observation">
+<meta property="article:tag" content="programming">
+<meta property="article:tag" content="thoughts">
 </head>
 <body>
-    <section class="social">
-        <ul>
-                    <li><a href="../../../../index.html" title="Home"><i class="icon-compass"></i></a></li>
-            <li><a href="../../../../archive/archive.html" title="Archive"><i class="icon-folder-open-alt"></i></a></li>
-            <li><a href="../../../../tags/index.html" title="Tags"><i class="icon-tags"></i></a></li>
-            <li><a href="../../../../pg/index.html" title="Codex"><i class="icon-book"></i></a></li>
-            <li><a href="../../../../rss.xml" title="RSS"><i class="icon-rss"></i></a></li>
-            <li><a href="https://plus.google.com/+MichaelLockhart/posts" title="Microblog"><i class="icon-google-plus"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/mikelockhart" title="My LinkedIn profile"><i class="icon-linkedin"></i></a></li>
-            <li><a href="https://bitbucket.com/sinewalker" title="My Bitbucket"><i class="icon-bitbucket"></i></a></li>
-            <li><a href="https://github.com/sinewalker" title="My Github"><i class="icon-github"></i></a></li>
-            <li><a href="http://stackoverflow.com/users/776953/mike" title="Stack Overflow"><i class="icon-stackexchange"></i></a></li>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
-        </ul>
-    </section>
-    <section class="page-content">
-        <div class="content" rel="main">
-    <div class="post">
-        <h1 class="p-name entry-title" itemprop="headline name">Preserving the programming craft</h1>
+<!-- Menubar -->
 
-        <div class="meta">
-            <div class="authordate">
-                <time class="timeago" datetime="2006-05-01T15:00:21+10:00">2006-05-01 15:00</time>
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://milosophical.me/">
+
+                <span id="blog-title">Milosophical Me</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../../../index.html">Blog</a>
+                </li>
+<li>
+<a href="../../../../archive/archive.html">Archive</a>
+                </li>
+<li>
+<a href="../../../../tags/index.html">Tags</a>
+                </li>
+<li>
+<a href="../../../../pg/index.html">Codex</a>
+                </li>
+<li>
+<a href="../../../../pixels/index.html">Pixels</a>
+            </li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Social <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://plus.google.com/+MichaelLockhart/posts">Microblog</a>
+                    </li>
+<li>
+<a href="https://www.facebook.com/sinewalker">Facebook</a>
+                    </li>
+<li>
+<a href="mailto:sinewalker@gmail.com">Email</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://github.com/sinewalker">GitHub</a>
+                    </li>
+<li>
+<a href="https://bitbucket.com/sinewalker">Bitbucket</a>
+                    </li>
+<li>
+<a href="https://codepen.io/sinewalker/">Codepen</a>
+                    </li>
+<li class="active">
+<a href="#"> <span class="sr-only">(active)</span></a>
+                    </li>
+<li>
+<a href="https://sourceforge.net/u/sinewalker/profile/">SourceForge</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://about.me/mikelockhart">About.me</a>
+                    </li>
+<li>
+<a href="http://milosophical.me/pg/colophon.html">About this site</a>
+                    </li>
+<li>
+<a href="https://calendar.google.com/calendar/embed?src=sinewalker@gmail.com&amp;ctz=Australia/Sydney/">My calendar</a>
+                    </li>
+<li>
+<a href="https://www.linkedin.com/in/mikelockhart">LinkedIn</a>
+                    </li>
+<li>
+<a href="http://stackoverflow.com/users/776953/mike">Stack Overflow</a>
+            </li>
+</ul>
+</li>
+<li>
+<a href="../../../../rss.xml">RSS</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="preserving-the-programming-craft.wp" id="sourcelink">Source</a>
+    </li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
             
-                      |  
-        <a href="preserving-the-programming-craft.wp" id="sourcelink">Source</a>
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Preserving the programming craft</a></h1>
 
-            </div>
-                    <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="../../../../tags/hacking.html" rel="tag">hacking</a></li>
-           <li><a class="tag p-category" href="../../../../tags/observation.html" rel="tag">observation</a></li>
-           <li><a class="tag p-category" href="../../../../tags/programming.html" rel="tag">programming</a></li>
-           <li><a class="tag p-category" href="../../../../tags/thoughts.html" rel="tag">thoughts</a></li>
-        </ul>
-        </div>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                    <a href="../../../../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2006-05-01T15:00:21+10:00" itemprop="datePublished" title="2006-05-01 15:00">2006-05-01 15:00</time></a></p>
+                <p class="commentline">
+        
+</p>
+<div class="g-commentcount" data-href="/blog/2006/05/01/preserving-the-programming-craft.html"></div>
+<script src="https://apis.google.com/js/plusone.js"></script><p class="sourceline"><a href="preserving-the-programming-craft.wp" id="sourcelink">Source</a></p>
 
         </div>
-        <div class="body">
-            <p>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>
 <em>This post was originally published
   at <a href="http://sinewalker.wordpress.com/2006/05/01/preserving-the-programming-craft/">sinewalker.wordpress.com</a>
   on 1 May 2006.</em></p>
 <hr>
-
 <p>I
   posted <a href="http://ask.slashdot.org/comments.pl?sid=184329&amp;cid=15234982">this
     reply </a>to an Ask
@@ -102,28 +178,20 @@ I
   must be close to my heart :-) Reproducing here, and exploring a little
   further.</p>
 
-<br>
-
-
-<p>
+<br><p>
 Many of the observations made on Slashdot are right. I wonder what it is that
 drives me to hack, that is missing from what is covered? Why do I like to hack,
 and why would it be passed over by kids these days? Or would it?
 </p>
 
-<br>
-
-<!-- TEASER_END -->
-<p>For instance, when all that my computer would do when I turned it on was
+<br><!-- TEASER_END --><p>For instance, when all that my computer would do when I turned it on was
 blink a cursor and answer
 “<a href="http://www.cpc-emu.org/firststeps.html">Syntax error</a>” to
 everything I typed, why didn't I just get bored and do something fun, like read
 a good book, watch TV, or go outside and play? Why was I still motivated to
 program instead?</p>
 
-<br>
-
-<p>
+<br><p>
 I think that the answer is: <strong>I was fascinated by
 the <em>puzzle</em></strong>. I was also keenly interested in figuring out how
 things work. I used to pull clocks apart, build electronic toys, re-wire
@@ -139,9 +207,7 @@ Computer in 1985; I've not found one to better it yet, see especially Ch 2, 6
 and 8)
 </p>
 
-<br>
-
-<p>
+<br><p>
 If computers present a puzzle that is interesting, has a low entry barrier, and
 rewards exploration, then kids will program it. Other posts in this thread show
 that: the puzzle isn't interesting if the computer does nearly everything you
@@ -150,9 +216,7 @@ tools) and the reward for exploration is quite low (results gained through
 programming lower than you get from an Internet search, most of the time).
 </p>
 
-<br>
-
-<p>
+<br><p>
 It's sad. I have a very young son who (if he's interested later—he's only 6
 months old now :-D ) I'd <em>love</em> to share my love of programming
 with. But in light of how
@@ -165,70 +229,49 @@ a simple game, with the hope that the reward of “I did it myself” is good
 enough, would work? That is about the best I can come up with.
 </p>
 
-<br>
-
-<p>
+<br><p>
 Why do I think this is important? Why not just let kids
 be <a href="http://www.squeakland.org/resources/articles/article.jsp?id=1007">computer
 illiterate</a>? I don't know. I think it's out of a sense of preserving culture
 and skills, probably the same sense that a carpenter laments the passing of his
 craft.</p>
-        </div>
-                <ul class="pager">
-            <li class="previous">
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../../../tags/hacking.html" rel="tag">hacking</a></li>
+            <li><a class="tag p-category" href="../../../../tags/observation.html" rel="tag">observation</a></li>
+            <li><a class="tag p-category" href="../../../../tags/programming.html" rel="tag">programming</a></li>
+            <li><a class="tag p-category" href="../../../../tags/thoughts.html" rel="tag">thoughts</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
                 <a href="../../04/18/cygwin-systray-menu.html" rel="prev" title="Cygwin systray menu">Previous post</a>
             </li>
             <li class="next">
                 <a href="../30/google-mail.html" rel="next" title="Google Mail">Next post</a>
             </li>
-        </ul>
-
-                    <script src="https://apis.google.com/js/plusone.js"></script>
-<div class="g-comments" data-href="http://milosophical.me/blog/2006/05/01/preserving-the-programming-craft.html" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+<script src="https://apis.google.com/js/plusone.js"></script><div class="g-comments" data-href="http://milosophical.me/blog/2006/05/01/preserving-the-programming-craft.html" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">
 </div>
 
 
-    </div>
-                    <footer id="footer" role="contentinfo">
-            <p></p>
-<hr>Contents Copyright © 
+        </section></article>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer"><hr>Contents Copyright © 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a> 2005 — 2016         <a href="mailto:sinewalker@gmail.com">Mike Lockhart</a>. Powered by <a href="http://getnikola.com" rel="nofollow">Nikola</a> with <a href="https://github.com/getnikola/nikola-themes/tree/master/v7/zen-ipython">Zen-IPython</a> theme.
+<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a> 2005 — 2016         <a href="mailto:sinewalker@gmail.com">Michael Lockhart</a>. Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
             
         </footer>
-
-        </div>
-    </section>
-    <script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-65364237-1', 'auto');  ga('send', 'pageview');</script>
-    
-                <script src="../../../../assets/js/all-nocdn.js" type="text/javascript"></script>
-    
-<!-- Social buttons -->
-<div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
-<a class="addthis_button_more">Share</a>
-<ul>
-<li>
-<a class="addthis_button_facebook"></a>
-</li>
-<li>
-<a class="addthis_button_google_plusone_share"></a>
-</li>
-<li>
-<a class="addthis_button_linkedin"></a>
-</li>
-<li>
-<a class="addthis_button_twitter"></a>
-</li>
-</ul>
 </div>
-<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script>
-<!-- End of social buttons -->
+</div>
 
 
-        <script type="text/javascript">
-            $(function(){
-                $('.timeago').timeago();
-            });
-        </script>
+            <script src="../../../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-65364237-1', 'auto');  ga('send', 'pageview');</script>
 </body>
 </html>

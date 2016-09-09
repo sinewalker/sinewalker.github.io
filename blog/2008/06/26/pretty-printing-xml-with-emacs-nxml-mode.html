@@ -1,91 +1,165 @@
 <!DOCTYPE html>
-<html prefix="
-og: http://ogp.me/ns#
-article: http://ogp.me/ns/article#
-" lang="en">
-    <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Pretty-printing XML with Emacs' NXML-mode | Milosophical Me</title>
-
-                <link href="../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
-
-                <link rel="alternate" type="application/rss+xml" title="RSS" href="../../../../rss.xml">
-
-      <link rel="canonical" href="http://milosophical.me/blog/2008/06/26/pretty-printing-xml-with-emacs-nxml-mode.html">
-
-
-
-    
-        <!--[if lt IE 9]><script src="/assets/js/html5.js"></script><![endif]-->
-
-    
-
-    
-    <meta name="author" content="Mike Lockhart">
-        <meta property="og:site_name" content="Milosophical Me">
-    <meta property="og:title" content="Pretty-printing XML with Emacs' NXML-mode">
-    <meta property="og:url" content="http://milosophical.me/blog/2008/06/26/pretty-printing-xml-with-emacs-nxml-mode.html">
-    <meta property="og:description" content="Did you ever get a stream of XML out of a log file, or in a data stream, and it's all mashed together without line-breaks so that it just appears as gobble-de-gook? If there's a data error (not an XML">
-    <meta property="og:type" content="article">
-    <meta property="article:published_time" content="2008-06-26T12:46:03+10:00">
-           <meta property="article:tag" content="XHTML">
-           <meta property="article:tag" content="code">
-           <meta property="article:tag" content="emacs">
-           <meta property="article:tag" content="geek">
-           <meta property="article:tag" content="hacking">
-           <meta property="article:tag" content="lisp">
-           <meta property="article:tag" content="tip">
-
-    
-    
-
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<base href="http://milosophical.me/blog/2008/06/26/pretty-printing-xml-with-emacs-nxml-mode.html">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pretty-printing XML with Emacs' NXML-mode | Milosophical Me</title>
+<link href="../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../../../rss.xml">
+<link rel="canonical" href="http://milosophical.me/blog/2008/06/26/pretty-printing-xml-with-emacs-nxml-mode.html">
+<!--[if lt IE 9]><script src="../../../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Michael Lockhart">
+<link rel="prev" href="../18/solaris-x11-and-dvorak-simplified-keyboard-layout.html" title="Solaris X11 and Dvorak simplified keyboard layout" type="text/html">
+<link rel="next" href="../27/unicode-chars-between-emacsx11-cygwin-and-win32.html" title="Unicode chars between Emacs/X11 cygwin and Win32" type="text/html">
+<meta property="og:site_name" content="Milosophical Me">
+<meta property="og:title" content="Pretty-printing XML with Emacs' NXML-mode">
+<meta property="og:url" content="http://milosophical.me/blog/2008/06/26/pretty-printing-xml-with-emacs-nxml-mode.html">
+<meta property="og:description" content="Did you ever get a stream of XML out of a log file, or in a data stream, and it's all mashed together without line-breaks so that it just appears as gobble-de-gook? If there's a data error (not an XML">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2008-06-26T12:46:03+10:00">
+<meta property="article:tag" content="code">
+<meta property="article:tag" content="emacs">
+<meta property="article:tag" content="geek">
+<meta property="article:tag" content="hacking">
+<meta property="article:tag" content="lisp">
+<meta property="article:tag" content="tip">
+<meta property="article:tag" content="XHTML">
 </head>
 <body>
-    <section class="social">
-        <ul>
-                    <li><a href="../../../../index.html" title="Home"><i class="icon-compass"></i></a></li>
-            <li><a href="../../../../archive/archive.html" title="Archive"><i class="icon-folder-open-alt"></i></a></li>
-            <li><a href="../../../../tags/index.html" title="Tags"><i class="icon-tags"></i></a></li>
-            <li><a href="../../../../pg/index.html" title="Codex"><i class="icon-book"></i></a></li>
-            <li><a href="../../../../rss.xml" title="RSS"><i class="icon-rss"></i></a></li>
-            <li><a href="https://plus.google.com/+MichaelLockhart/posts" title="Microblog"><i class="icon-google-plus"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/mikelockhart" title="My LinkedIn profile"><i class="icon-linkedin"></i></a></li>
-            <li><a href="https://bitbucket.com/sinewalker" title="My Bitbucket"><i class="icon-bitbucket"></i></a></li>
-            <li><a href="https://github.com/sinewalker" title="My Github"><i class="icon-github"></i></a></li>
-            <li><a href="http://stackoverflow.com/users/776953/mike" title="Stack Overflow"><i class="icon-stackexchange"></i></a></li>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
-        </ul>
-    </section>
-    <section class="page-content">
-        <div class="content" rel="main">
-    <div class="post">
-        <h1 class="p-name entry-title" itemprop="headline name">Pretty-printing XML with Emacs' NXML-mode</h1>
+<!-- Menubar -->
 
-        <div class="meta">
-            <div class="authordate">
-                <time class="timeago" datetime="2008-06-26T12:46:03+10:00">2008-06-26 12:46</time>
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://milosophical.me/">
+
+                <span id="blog-title">Milosophical Me</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../../../index.html">Blog</a>
+                </li>
+<li>
+<a href="../../../../archive/archive.html">Archive</a>
+                </li>
+<li>
+<a href="../../../../tags/index.html">Tags</a>
+                </li>
+<li>
+<a href="../../../../pg/index.html">Codex</a>
+                </li>
+<li>
+<a href="../../../../pixels/index.html">Pixels</a>
+            </li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Social <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://plus.google.com/+MichaelLockhart/posts">Microblog</a>
+                    </li>
+<li>
+<a href="https://www.facebook.com/sinewalker">Facebook</a>
+                    </li>
+<li>
+<a href="mailto:sinewalker@gmail.com">Email</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://github.com/sinewalker">GitHub</a>
+                    </li>
+<li>
+<a href="https://bitbucket.com/sinewalker">Bitbucket</a>
+                    </li>
+<li>
+<a href="https://codepen.io/sinewalker/">Codepen</a>
+                    </li>
+<li class="active">
+<a href="#"> <span class="sr-only">(active)</span></a>
+                    </li>
+<li>
+<a href="https://sourceforge.net/u/sinewalker/profile/">SourceForge</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://about.me/mikelockhart">About.me</a>
+                    </li>
+<li>
+<a href="http://milosophical.me/pg/colophon.html">About this site</a>
+                    </li>
+<li>
+<a href="https://calendar.google.com/calendar/embed?src=sinewalker@gmail.com&amp;ctz=Australia/Sydney/">My calendar</a>
+                    </li>
+<li>
+<a href="https://www.linkedin.com/in/mikelockhart">LinkedIn</a>
+                    </li>
+<li>
+<a href="http://stackoverflow.com/users/776953/mike">Stack Overflow</a>
+            </li>
+</ul>
+</li>
+<li>
+<a href="../../../../rss.xml">RSS</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="pretty-printing-xml-with-emacs-nxml-mode.wp" id="sourcelink">Source</a>
+    </li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
             
-                      |  
-        <a href="pretty-printing-xml-with-emacs-nxml-mode.wp" id="sourcelink">Source</a>
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Pretty-printing XML with Emacs' NXML-mode</a></h1>
 
-            </div>
-                    <div itemprop="keywords" class="tags">
-        <ul>
-        Tags : 
-           <li><a class="tag p-category" href="../../../../tags/xhtml.html" rel="tag">XHTML</a></li>
-           <li><a class="tag p-category" href="../../../../tags/code.html" rel="tag">code</a></li>
-           <li><a class="tag p-category" href="../../../../tags/emacs.html" rel="tag">emacs</a></li>
-           <li><a class="tag p-category" href="../../../../tags/geek.html" rel="tag">geek</a></li>
-           <li><a class="tag p-category" href="../../../../tags/hacking.html" rel="tag">hacking</a></li>
-           <li><a class="tag p-category" href="../../../../tags/lisp.html" rel="tag">lisp</a></li>
-           <li><a class="tag p-category" href="../../../../tags/tip.html" rel="tag">tip</a></li>
-        </ul>
-        </div>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                    <a href="../../../../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2008-06-26T12:46:03+10:00" itemprop="datePublished" title="2008-06-26 12:46">2008-06-26 12:46</time></a></p>
+                <p class="commentline">
+        
+</p>
+<div class="g-commentcount" data-href="/blog/2008/06/26/pretty-printing-xml-with-emacs-nxml-mode.html"></div>
+<script src="https://apis.google.com/js/plusone.js"></script><p class="sourceline"><a href="pretty-printing-xml-with-emacs-nxml-mode.wp" id="sourcelink">Source</a></p>
 
         </div>
-        <div class="body">
-            <p>Did you ever get a stream of XML out of a log file, or in a data stream, and it's all mashed together without line-breaks so that it just appears as gobble-de-gook? If there's a data error (not an XML parsing error) then you have to read it so that you can find where the error is, but you don't have XML-spy and NetBeans is overkill or takes forever to fire up...
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>Did you ever get a stream of XML out of a log file, or in a data stream, and it's all mashed together without line-breaks so that it just appears as gobble-de-gook? If there's a data error (not an XML parsing error) then you have to read it so that you can find where the error is, but you don't have XML-spy and NetBeans is overkill or takes forever to fire up...
 
 
 Emacs to the rescue! <a title="Benjamin Ferrari's blog (seems to lack an " href="http://blog.bookworm.at/">Benjamin Ferrari</a> wrote this <em>increadibly useful</em> (and simple) <a title="Benjamin Ferrari's original blog post for below code" href="http://blog.bookworm.at/2007/03/pretty-print-xml-with-emacs.html">elisp function</a> to pretty-print a block of XML code:
@@ -113,62 +187,46 @@ Indeed, why isn't this included with NXML-mode?  Ah well, at least my problem's
 
 
 Benjamin's blog has lots of useful Emacs stuff. <a title="Benjamin's intro essay to his emacs hacks, and why anyone might care" href="http://blog.bookworm.at/2007/03/introduction-to-all-these-emacs.html">Worth a read</a>.
-        </div>
-                <ul class="pager">
-            <li class="previous">
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../../../tags/code.html" rel="tag">code</a></li>
+            <li><a class="tag p-category" href="../../../../tags/emacs.html" rel="tag">emacs</a></li>
+            <li><a class="tag p-category" href="../../../../tags/geek.html" rel="tag">geek</a></li>
+            <li><a class="tag p-category" href="../../../../tags/hacking.html" rel="tag">hacking</a></li>
+            <li><a class="tag p-category" href="../../../../tags/lisp.html" rel="tag">lisp</a></li>
+            <li><a class="tag p-category" href="../../../../tags/tip.html" rel="tag">tip</a></li>
+            <li><a class="tag p-category" href="../../../../tags/xhtml.html" rel="tag">XHTML</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
                 <a href="../18/solaris-x11-and-dvorak-simplified-keyboard-layout.html" rel="prev" title="Solaris X11 and Dvorak simplified keyboard layout">Previous post</a>
             </li>
             <li class="next">
                 <a href="../27/unicode-chars-between-emacsx11-cygwin-and-win32.html" rel="next" title="Unicode chars between Emacs/X11 cygwin and Win32">Next post</a>
             </li>
-        </ul>
-
-                    <script src="https://apis.google.com/js/plusone.js"></script>
-<div class="g-comments" data-href="http://milosophical.me/blog/2008/06/26/pretty-printing-xml-with-emacs-nxml-mode.html" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+<script src="https://apis.google.com/js/plusone.js"></script><div class="g-comments" data-href="http://milosophical.me/blog/2008/06/26/pretty-printing-xml-with-emacs-nxml-mode.html" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD">
 </div>
 
 
-    </div>
-                    <footer id="footer" role="contentinfo">
-            <p></p>
-<hr>Contents Copyright © 
+        </section></article>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer"><hr>Contents Copyright © 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a> 2005 — 2016         <a href="mailto:sinewalker@gmail.com">Mike Lockhart</a>. Powered by <a href="http://getnikola.com" rel="nofollow">Nikola</a> with <a href="https://github.com/getnikola/nikola-themes/tree/master/v7/zen-ipython">Zen-IPython</a> theme.
+<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a> 2005 — 2016         <a href="mailto:sinewalker@gmail.com">Michael Lockhart</a>. Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
             
         </footer>
-
-        </div>
-    </section>
-    <script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-65364237-1', 'auto');  ga('send', 'pageview');</script>
-    
-                <script src="../../../../assets/js/all-nocdn.js" type="text/javascript"></script>
-    
-<!-- Social buttons -->
-<div id="addthisbox" class="addthis_toolbox addthis_peekaboo_style addthis_default_style addthis_label_style addthis_32x32_style">
-<a class="addthis_button_more">Share</a>
-<ul>
-<li>
-<a class="addthis_button_facebook"></a>
-</li>
-<li>
-<a class="addthis_button_google_plusone_share"></a>
-</li>
-<li>
-<a class="addthis_button_linkedin"></a>
-</li>
-<li>
-<a class="addthis_button_twitter"></a>
-</li>
-</ul>
 </div>
-<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f7088a56bb93798"></script>
-<!-- End of social buttons -->
+</div>
 
 
-        <script type="text/javascript">
-            $(function(){
-                $('.timeago').timeago();
-            });
-        </script>
+            <script src="../../../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-65364237-1', 'auto');  ga('send', 'pageview');</script>
 </body>
 </html>
