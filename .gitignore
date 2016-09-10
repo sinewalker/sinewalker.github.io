@@ -1,6 +1,0 @@
-.doit.db
-__pycache__/
-cache/
-output/
-plugins/
-state_data.json
