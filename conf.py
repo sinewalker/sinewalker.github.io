@@ -3,7 +3,7 @@
 #   File:       conf.py
 #   Created:    2014-08-21
 #   Language:   Python
-#   Time-stamp: <2016-09-10 10:19:49 mjl>
+#   Time-stamp: <2016-09-10 21:04:05 mjl>
 #   Platform:   (Nikola 7.1 configuration file)
 #   OS:         *nix
 #   Author:     [MJL] Michael J. Lockhart (mlockhart@squiz.net)
@@ -208,7 +208,7 @@ THEME = "bootstrap3"
 
 # Primary color of your theme. This will be used to customize your theme and
 # auto-generate related colors in POSTS_SECTION_COLORS. Must be a HEX value.
-#THEME_COLOR = '#5670d4'
+THEME_COLOR = '#5670d4'
 
 # POSTS and PAGES contains (wildcard, destination, template) tuples.
 #
@@ -604,7 +604,7 @@ ARCHIVE_PATH = "archive"
 # relative URL.
 #
 # If you don't need any of these, just set to []
-#REDIRECTIONS = [("about.html", "/pg/colophon.html")]
+REDIRECTIONS = []
 
 # Presets of commands to execute to deploy. Can be anything, for
 # example, you may use rsync:
@@ -616,11 +616,11 @@ ARCHIVE_PATH = "archive"
 # to `nikola deploy`.  If no arguments are specified, a preset
 # named `default` will be executed.  You can use as many presets
 # in a `nikola deploy` command as you like.
-DEPLOY_COMMANDS = {
-     'default': [
-         "cd sinewalker.github.io; git commit -a -m 'deployed';git push",
-     ]
- }
+# DEPLOY_COMMANDS = {
+#     'default': [
+#         "rsync -rav --delete output/ joe@my.site:/srv/www/site",
+#     ]
+# }
 
 # github_deploy configuration
 # For more details, read the manual:
@@ -1153,7 +1153,7 @@ SEARCH_FORM = """
 # <input type="text" name="q" class="form-control" placeholder="Search">
 # </div>
 # <button type="submit" class="btn btn-primary">
-#     <span class="glyphicon glyphicon-search"></span>
+# 	<span class="glyphicon glyphicon-search"></span>
 # </button>
 # <input type="hidden" name="sitesearch" value="%s">
 # </form>
