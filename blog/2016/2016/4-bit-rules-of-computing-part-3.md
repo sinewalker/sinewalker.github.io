@@ -1,9 +1,8 @@
 <!-- 
 .. title: 4-bit Rules of Computing, Part 3
-.. slug: 4-bit-rules-of-computing-part-3
+.. slug: 2016/4-bit-rules-of-computing-part-3
 .. date: 2015-07-22 22:17 UTC+10:00 
 .. tags: draft, 4-bit-rules, tip, comments, literate
-.. category: lore
 .. link: 
 .. description: Mike's 4-bit rules explained, part 3
 .. type: text

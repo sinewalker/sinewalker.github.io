@@ -1,7 +1,7 @@
 #+BEGIN_COMMENT
 .. title: Colophon
 .. slug: colophon
-.. date: 2015-01-22 21:31:17 UTC+11:00
+.. date: 2016-09-11 09:11:11 UTC+10:00
 .. tags: about
 .. link:
 .. description: Some information about me.
@@ -11,19 +11,19 @@
 Introductions
 ----
 
-My name is Mike Lockhart, and this is my web log. I am a senior
-support sysadmin and larval web hacker for a well known Australian
-Open Source web content management company. I do mainly Linux and
-[Matrix](http://www.squiz.net/au/platform/matrix) work, and dabble in some other languages and projects in my
-*Copious Free Time*. Before this, I worked for nearly 15 years in EDS
-and Hewlett Packard on lots of different systems.
+My name is Mike Lockhart, and this is my web log. I am a senior support sysadmin
+and larval web hacker for a well known Australian Open Source web content
+management company. I do mainly Linux and
+[Matrix](http://www.squiz.net/au/platform/matrix) work, and dabble in some other
+languages and projects in my *Copious Free Time*. Before this, I worked for
+nearly 15 years in EDS and Hewlett Packard on lots of different systems.
 
 
-I live in [Tasmania](http://discovertasmania.com.au), where I grew up, returning here from New South
-Wales, in late 2013 with my family (my lovely wife [Jenny](http://www.pinterest.com/jen2779/), [three sons](http://xkcd.com/946)
-and a dog). We all feel very lucky to be living here, with family
-close at hand and an awesome, friendly and welcoming community around
-us.
+I live in [Tasmania](http://discovertasmania.com.au), where I grew up, returning
+here from New South Wales, in late 2013 with my family (my lovely wife
+[Jenny](http://www.pinterest.com/jen2779/), [three sons](http://xkcd.com/946)
+and a dog). We all feel very lucky to be living here, with family close at hand
+and an awesome, friendly and welcoming community around us.
 
 This web
 ----
@@ -36,39 +36,48 @@ This web
 *of my employers (past, present or future).*
 
 
-Having made the physical move from New South Wales, I've
-also made a virtual move from Wordpress. The [archive](/archive/archive.html) has old posts
-that I've migrated from [old](http://sinewalker.blogspot.com.au/) [blogs](https://sinewalker.wordpress.com/), though those are still online to be
-read in their original form. On the Net, I go by the handle
-*sinewalker*, and while after 20 years I think I've outgrown it, it's
-still a [unique username](https://duckduckgo.com/?q=sinewalker) in most places.
+This is the third iteration of my blog. The [archive](/archive/archive.html) has
+old posts that I've migrated from [blogger](http://sinewalker.blogspot.com.au/)
+and [wordpress](https://sinewalker.wordpress.com/), though those are still
+online to be read in their original form. On the Net, I go by the handle
+*sinewalker*, and while after 20 years I think I've outgrown it, it's still a
+[unique username](https://duckduckgo.com/?q=sinewalker) in most places.
 
 
 **If you wish to comment on a blog post, you will need a Google Plus account.**
-I feel this imposition is not too great given the number of Android
-phones out there now.  Besides, if your comment has merit then you
-won't mind being attributed to it... no anonymous cowards here `;-)`
+I feel this imposition is not too great given the number of Android phones out
+there now. Besides, if your comment has merit then you won't mind being
+attributed to it... no anonymous cowards here `;-)`
 
 Contacting me
 ----
 
-Feel free to contact me [on g+](https://plus.google.com/+MichaelLockhart) or by [e-mail](mailto:sinewalker@gmail.com), to share your thoughts.
-Insightful letters may be published as new posts or as an addendum to an
-existing post &mdash; but *only with your express permission and attribution*.
+Feel free to contact me [on g+](https://plus.google.com/+MichaelLockhart) or by
+[e-mail](mailto:sinewalker@gmail.com), to share your thoughts.
 
-Sensitive data may be emailed to me using my public key with
-fingerprint [3CCA2E6EBCBE8795](https://keybase.io/sinewalker/key.asc)(keybase.io).
+Sensitive data may be emailed to me using my public key with fingerprint
+[3CCA2E6EBCBE8795](https://keybase.io/sinewalker/key.asc)(keybase.io).
 
 How this web site is made
 ----
 
-Posts are typed using the [Dvorak keyboard](http://milosophical.me/tags/dvorak.html) layout into [Emacs](http://emacsrocks.com/) on a
-computer running [openSUSE](http://www.opensuse.org), usually on a [Truly Ergonomic Computer
-Keyboard](https://www.trulyergonomic.com/store/index.php) or a *Sun Type 6* keyboard with rearranged key caps. They are
-generated from a mix of markup languages (typically [Markdown](http://daringfireball.net/projects/markdown/) or [iPython](http://ipython.org/) [Notebooks](http://ipython.org/notebook.html)), using the [Nikola](http://getnikola.com) static web site and
-blog generator, and published to [GitHub Pages](https://pages.github.com/) (via a `git commit/push`).
+Posts are typed using the
+[Dvorak keyboard](http://milosophical.me/tags/dvorak.html) layout into
+[Emacs](http://spacemacs.org/) on either a PowerBook Mac, or a computer running
+[openSUSE](http://www.opensuse.org), usually on a
+[Truly Ergonomic Computer Keyboard](https://www.trulyergonomic.com/store/truly-ergonomic-mechanical-ergonomic-keyboard)
+or a [Sun Type 6 keyboard](https://deskthority.net/wiki/Sun_Type_6) with
+rearranged key caps.
 
-The [source markup](https://bitbucket.org/sinewalker/blog) files and Nikola configuration are stored at
-bitbucket, because I am a fan of [Mercurial](http://mercurial.selenic.com/).
+Posts are generated from a mix of markup languages
+(typically [Markdown](http://daringfireball.net/projects/markdown/) or
+[iPython](http://ipython.org/) [Notebooks](http://ipython.org/notebook.html)),
+using the [Nikola](http://getnikola.com) static web site and blog generator, and
+published to [GitHub Pages](https://pages.github.com/) (via Nikola's `github_deploy` command).
 
-Prose content of all articles are licensed under a [Creative Commons Attribution-ShareAlike 4.0 License](http://creativecommons.org/licenses/by-nc-sa/4.0/), unless otherwise specified.
+The [source markup](https://github.com/sinewalker/sinewalker.github.io/tree/src)
+files and Nikola configuration are stored my GHP repo on the `src` branch.
+
+Prose content of all articles are licensed under a
+[Creative Commons Attribution-ShareAlike 4.0 License](http://creativecommons.org/licenses/by-nc-sa/4.0/),
+unless otherwise specified.
