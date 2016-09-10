@@ -3,7 +3,7 @@
 #   File:       conf.py
 #   Created:    2014-08-21
 #   Language:   Python
-#   Time-stamp: <2016-09-10 21:04:05 mjl>
+#   Time-stamp: <2016-09-10 22:24:57 mjl>
 #   Platform:   (Nikola 7.1 configuration file)
 #   OS:         *nix
 #   Author:     [MJL] Michael J. Lockhart (mlockhart@squiz.net)
@@ -604,7 +604,29 @@ ARCHIVE_PATH = "archive"
 # relative URL.
 #
 # If you don't need any of these, just set to []
-REDIRECTIONS = []
+REDIRECTIONS = [
+    ("blog/mounting-lukslvm-from-a-liveusb.html", "/blog/2014/mounting-lukslvm-from-a-liveusb.html"),
+
+    ("blog/minecraft-python-0.html", "/blog/2015/minecraft-python-0.html"),
+    ("blog/4-bit-rules-of-computing-part-0.html", "/blog/2015/4-bit-rules-of-computing-part-0.html"),
+    ("blog/4-bit-rules-of-computing-part-1.html", "/blog/2015/4-bit-rules-of-computing-part-1.html"),
+    ("blog/4-bit-rules-of-computing-part-2.html", "/blog/2015/4-bit-rules-of-computing-part-1.html"),
+    ("blog/firefox-spelling.html", "/blog/2015/firefox-spelling.html"),
+    ("blog/get-audio-from-youtube-video.html", "/blog/2015/get-audio-from-youtube-video.html"),
+    ("blog/import-library-ebooks-into-kobo.html", "/blog/2015/import-library-ebooks-into-kobo.html"),
+    ("blog/loading-ssh-keys-at-kde-startup.html", "/blog/2015/loading-ssh-keys-at-kde-startup"),
+    ("blog/setting-up-nikola.html", "/blog/2015/setting-up-nikola.html"),
+    ("blog/resetting-firefox.html", "/blog/2015/resetting-firefox.html"),
+    ("blog/rotate-screen-kde-shortcut.html", "/blog/2015/rotate-screen-kde-shortcut.html"),
+    ("blog/spacemacs-00.html", "/blog/2015/spacemacs-00.html"),
+    ("blog/standing-desks.html", "/blog/2015/standing-desks.html"),
+    ("blog/what-are-those-j-and-l-characters-in-email.html", "/blog/2015/what-are-those-j-and-l-characters-in-email.html"),
+
+    ("blog/spacemacs-01.html", "/blog/2016/spacemacs-01.html"),
+    ("blog/standing-desk-update.html", "/blog/2016/standing-desk-update.html"),
+
+    ("about.html", "/pg/colophon.html"),
+]
 
 # Presets of commands to execute to deploy. Can be anything, for
 # example, you may use rsync:
