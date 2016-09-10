@@ -69,14 +69,16 @@ Posts are typed using the
 or a [Sun Type 6 keyboard](https://deskthority.net/wiki/Sun_Type_6) with
 rearranged key caps.
 
-Posts are generated from a mix of markup languages
-(typically [Markdown](http://daringfireball.net/projects/markdown/) or
+Posts are generated from a mix of markup languages (typically
+[Markdown](http://daringfireball.net/projects/markdown/) or
 [iPython](http://ipython.org/) [Notebooks](http://ipython.org/notebook.html)),
 using the [Nikola](http://getnikola.com) static web site and blog generator, and
-published to [GitHub Pages](https://pages.github.com/) (via Nikola's `github_deploy` command).
+published to [GitHub Pages](https://pages.github.com/) (via Nikola's
+`github_deploy` command). The site is reachable via my own DNS, or the GitHub
+one: http://sinewalker.github.com
 
 The [source markup](https://github.com/sinewalker/sinewalker.github.io/tree/src)
-files and Nikola configuration are stored my GHP repo on the `src` branch.
+files and Nikola configuration are stored in my GHP repository on the `src` branch.
 
 Prose content of all articles are licensed under a
 [Creative Commons Attribution-ShareAlike 4.0 License](http://creativecommons.org/licenses/by-nc-sa/4.0/),
