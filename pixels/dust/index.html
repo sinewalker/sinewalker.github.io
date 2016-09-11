@@ -5,7 +5,12 @@
 <base href="http://milosophical.me/pixels/dust/index.html">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>dust | Milosophical Me</title>
-<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/colorbox.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta content="#5670d4" name="theme-color">
@@ -149,12 +154,12 @@
             <img src="SoManyLies.thumbnail.jpg" alt="Somanylies"></a>
         </li>
 <li>
-<a href="virtual-heart-system-log.jpg" class="thumbnail image-reference" title="Virtual heart system log">
-            <img src="virtual-heart-system-log.thumbnail.jpg" alt="Virtual heart system log"></a>
-        </li>
-<li>
 <a href="work-desk-box.jpg" class="thumbnail image-reference" title="Work desk box">
             <img src="work-desk-box.thumbnail.jpg" alt="Work desk box"></a>
+        </li>
+<li>
+<a href="virtual-heart-system-log.jpg" class="thumbnail image-reference" title="Virtual heart system log">
+            <img src="virtual-heart-system-log.thumbnail.jpg" alt="Virtual heart system log"></a>
 </li>
 </ul>
 </noscript>
@@ -171,11 +176,11 @@
 </div>
 
 
-            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+            <script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/moment-with-locales.min.js"></script><script src="../../assets/js/fancydates.js"></script><script src="../../assets/js/jquery.colorbox-min.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
     moment.locale("en");
     fancydates(0, "YYYY-MM-DD HH:mm");
     </script><!-- end fancy dates --><script src="../../assets/js/flowr.plugin.js"></script><script>
-jsonContent = [{"size": {"h": 180, "w": 111}, "title": "Somanylies", "url": "SoManyLies.jpg", "url_thumb": "SoManyLies.thumbnail.jpg"}, {"size": {"h": 101, "w": 180}, "title": "Virtual heart system log", "url": "virtual-heart-system-log.jpg", "url_thumb": "virtual-heart-system-log.thumbnail.jpg"}, {"size": {"h": 101, "w": 180}, "title": "Work desk box", "url": "work-desk-box.jpg", "url_thumb": "work-desk-box.thumbnail.jpg"}];
+jsonContent = [{"size": {"h": 180, "w": 111}, "title": "Somanylies", "url": "SoManyLies.jpg", "url_thumb": "SoManyLies.thumbnail.jpg"}, {"size": {"h": 101, "w": 180}, "title": "Work desk box", "url": "work-desk-box.jpg", "url_thumb": "work-desk-box.thumbnail.jpg"}, {"size": {"h": 101, "w": 180}, "title": "Virtual heart system log", "url": "virtual-heart-system-log.jpg", "url_thumb": "virtual-heart-system-log.thumbnail.jpg"}];
 $("#gallery_container").flowr({
         data : jsonContent,
         height : 180*.6,
