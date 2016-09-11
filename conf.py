@@ -3,7 +3,7 @@
 #   File:       conf.py
 #   Created:    2014-08-21
 #   Language:   Python
-#   Time-stamp: <2016-09-11 10:55:59 mjl>
+#   Time-stamp: <2016-09-11 13:58:03 mjl>
 #   Platform:   (Nikola 7.1 configuration file)
 #   OS:         *nix
 #   Author:     [MJL] Michael J. Lockhart (mlockhart@squiz.net)
@@ -34,7 +34,9 @@
 #               - configure github_deploy (not sure if...)
 #               - main site nav: blog index instead of Homepage
 #   MJL20160909 - search box
-#   MJL20160911 - spacemacs badge
+#   MJL20160911 - Spacemacs badge
+#               - Nikola badge
+#               - navigation: keep local links relative
 
 from __future__ import unicode_literals
 import time
@@ -193,7 +195,7 @@ NAVIGATION_LINKS = {
         (
             (
                 ('https://about.me/mikelockhart', 'About.me'),
-                ('http://milosophical.me/pg/colophon.html', 'About this site'),
+                ('/pg/colophon.html', 'About this site'),
                 ('https://calendar.google.com/calendar/embed?src=sinewalker@gmail.com&ctz=Australia/Sydney/', 'My calendar'),
                 ('https://www.linkedin.com/in/mikelockhart', 'LinkedIn'),
                 ('http://stackoverflow.com/users/776953/mike', 'Stack Overflow'),
@@ -929,7 +931,7 @@ LICENSE = """
 
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
-CONTENT_FOOTER = '<hr/>Contents Copyright &copy; {license} 2005 &mdash; {date}         <a href="mailto:{email}">{author}</a>. Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>, <a href="https://github.com/syl20bnr/spacemacs"><img src="https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg" alt="built with Spacemacs"/></a>'
+CONTENT_FOOTER = '<hr/>Contents Copyright &copy; {license} 2005 &mdash; {date}         <a href="mailto:{email}">{author}</a>. Powered by <a href="https://getnikola.com" rel="nofollow"><img src="/img/nikola.png" alt="Nikola"/></a>, <a href="https://github.com/syl20bnr/spacemacs"><img src="https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg" alt="built with Spacemacs"/></a>'
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
 # for translatability, as dicts are not formattable.  Nikola will
