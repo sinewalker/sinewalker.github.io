@@ -3,7 +3,7 @@
 #   File:       conf.py
 #   Created:    2014-08-21
 #   Language:   Python
-#   Time-stamp: <2016-09-11 10:52:15 mjl>
+#   Time-stamp: <2016-09-11 10:55:59 mjl>
 #   Platform:   (Nikola 7.1 configuration file)
 #   OS:         *nix
 #   Author:     [MJL] Michael J. Lockhart (mlockhart@squiz.net)
@@ -929,7 +929,7 @@ LICENSE = """
 
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
-CONTENT_FOOTER = '<hr/>Contents Copyright &copy; {license} 2005 &mdash; {date}         <a href="mailto:{email}">{author}</a>. Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>, <a href="https://github.com/syl20bnr/spacemacs"><img src="https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg" /></a>'
+CONTENT_FOOTER = '<hr/>Contents Copyright &copy; {license} 2005 &mdash; {date}         <a href="mailto:{email}">{author}</a>. Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>, <a href="https://github.com/syl20bnr/spacemacs"><img src="https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg" alt="built with Spacemacs"/></a>'
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
 # for translatability, as dicts are not formattable.  Nikola will
