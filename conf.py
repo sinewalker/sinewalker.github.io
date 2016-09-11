@@ -3,7 +3,7 @@
 #   File:       conf.py
 #   Created:    2014-08-21
 #   Language:   Python
-#   Time-stamp: <2016-09-10 22:24:57 mjl>
+#   Time-stamp: <2016-09-11 10:52:15 mjl>
 #   Platform:   (Nikola 7.1 configuration file)
 #   OS:         *nix
 #   Author:     [MJL] Michael J. Lockhart (mlockhart@squiz.net)
@@ -34,6 +34,7 @@
 #               - configure github_deploy (not sure if...)
 #               - main site nav: blog index instead of Homepage
 #   MJL20160909 - search box
+#   MJL20160911 - spacemacs badge
 
 from __future__ import unicode_literals
 import time
@@ -928,7 +929,7 @@ LICENSE = """
 
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
-CONTENT_FOOTER = '<hr/>Contents Copyright &copy; {license} 2005 &mdash; {date}         <a href="mailto:{email}">{author}</a>. Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>'
+CONTENT_FOOTER = '<hr/>Contents Copyright &copy; {license} 2005 &mdash; {date}         <a href="mailto:{email}">{author}</a>. Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>, <a href="https://github.com/syl20bnr/spacemacs"><img src="https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg" /></a>'
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
 # for translatability, as dicts are not formattable.  Nikola will
