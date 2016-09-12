@@ -43,11 +43,9 @@ online to be read in their original form. On the Net, I go by the handle
 *sinewalker*, and while after 20 years I think I've outgrown it, it's still a
 [unique username](https://duckduckgo.com/?q=sinewalker) in most places.
 
-
-**If you wish to comment on a blog post, you will need a Google Plus account.**
-I feel this imposition is not too great given the number of Android phones out
-there now. Besides, if your comment has merit then you won't mind being
-attributed to it... no anonymous cowards here `;-)`
+**20160912 - I've decided to remove the comment system (Google Plus)**: No-one
+comments anyway, and it adds heaps to the site load time and bandwidth. There's
+not much point in costing visitors that overhead for something that isn't used.
 
 Contacting me
 ----
