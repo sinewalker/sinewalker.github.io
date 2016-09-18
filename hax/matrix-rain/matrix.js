@@ -26,7 +26,7 @@ var chinese = "田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄�
 var japanese = "あいうえおかがきぎくぐけげこごさざしじすずせぜそぞただちぢつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみむめもゃやゆよらりるれろわゐゑをんアイウエオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモャヤユヨラリルレロワヰヱヲンヴヵヶ";
 var english = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var greek = "ͰͲͶ͹΂΃Ά΋ΐΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡ΢ΣΤΥΦΧΨΩΪΫάέήίΰαβγδεζηθικλμνξοπρςστυφχψωϊϋόύώϏϐϑϒϓϔϕϖϗϘϙϚϛϜϝϞϟϠϢϤϦϨϪϬϭϮϯϰϱϲϳϴϵ϶ϷϸϹϺϻϼϽϾϿ";
-var numbers = "0123456789"
+var numbers = "0123456789";
 
 var characters = chinese.concat(japanese, english, greek, numbers);
 
