@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <meta charset="utf-8"></meta>
+    <script type="text/javascript" src="flip.js"></script>
+    <link rel="stylesheet" href="/assets/css/custom.css" type="text/css" media="screen">
+  </head>
+  <body>
+    <h1>Unicodify</h1>
+    <form name="f">
+      <em>input</em> :<br />
+      <textarea rows="3" cols="40" name="original" onKeyUp="flip()"></textarea>
+      <br />
+      <em>transform</em> :
+      <select name="flipType">
+        <option value="flip">Flip</option>
+        <option value="weird">Weird</option>
+        <option value="script">MATHEMATICAL SCRIPT</option>
+        <option value="fraktur">FRAKTUR</option>
+      </select>
+      <input value="Go!" onclick="flip()" type="button">
+      <br />
+      <em> result</em> :<br />
+      <textarea rows="3" cols="40" name="flipped"></textarea>
+    </form>
+    <p>
+      The original code is at <a href="http://www.revfad.com/flip.html">http://www.revfad.com/flip.html</a>
+      and is copyright David Faden (dfaden@gmail.com)
+      <a href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0 Unported License</a>.
+    </p>
+    <p>
+      Going by the headers at www.revfad.com/flip.html, this dates from about 26 Jul 2009:
+      <pre><code>
+          Accept-Ranges:bytes
+          Content-Length:2197
+          Content-Type:text/html
+          Date:Wed, 14 Sep 2016 05:41:58 GMT
+          ETag:"895-46fa33a1a5800"
+          Last-Modified:Sun, 26 Jul 2009 22:19:12 GMT
+          Server:Apache
+      </code></pre>
+    </p>
+  </body>
+</html>
