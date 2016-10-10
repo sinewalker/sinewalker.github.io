@@ -55,23 +55,23 @@
  </url>
  <url>
   <loc>http://milosophical.me/archive/2016/index.html</loc>
-  <lastmod>2016-09-12T06:22:00Z</lastmod>
+  <lastmod>2016-10-10T00:21:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/archive/archive.html</loc>
-  <lastmod>2016-09-12T06:22:00Z</lastmod>
+  <lastmod>2016-10-09T06:04:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/authors/index.html</loc>
-  <lastmod>2016-09-17T07:24:00Z</lastmod>
+  <lastmod>2016-10-10T00:24:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/authors/michael-lockhart.html</loc>
-  <lastmod>2016-09-17T07:24:00Z</lastmod>
+  <lastmod>2016-10-10T00:24:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/authors/mike-lockhart.html</loc>
-  <lastmod>2016-09-17T07:24:00Z</lastmod>
+  <lastmod>2016-10-10T00:24:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/2005/03/30/radeon-performance-enhancement.html</loc>
@@ -478,8 +478,12 @@
   <lastmod>2016-09-12T06:22:00Z</lastmod>
  </url>
  <url>
+  <loc>http://milosophical.me/blog/2016/geocache-tomtom.html</loc>
+  <lastmod>2016-10-10T00:21:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://milosophical.me/blog/2016/spacemacs-01.html</loc>
-  <lastmod>2016-09-12T06:22:00Z</lastmod>
+  <lastmod>2016-10-09T06:04:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/2016/standing-desk-update.html</loc>
@@ -491,7 +495,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-10.html</loc>
-  <lastmod>2016-09-12T06:22:00Z</lastmod>
+  <lastmod>2016-10-09T06:04:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-2.html</loc>
@@ -527,7 +531,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/index.html</loc>
-  <lastmod>2016-09-12T06:22:00Z</lastmod>
+  <lastmod>2016-10-10T00:21:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/index.html</loc>
@@ -1038,8 +1042,20 @@
   <lastmod>2016-09-12T06:22:00Z</lastmod>
  </url>
  <url>
+  <loc>http://milosophical.me/tags/geocaching.html</loc>
+  <lastmod>2016-10-10T00:21:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://milosophical.me/tags/gnupg.html</loc>
   <lastmod>2016-09-12T06:22:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://milosophical.me/tags/gps.html</loc>
+  <lastmod>2016-10-10T00:21:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://milosophical.me/tags/gsak.html</loc>
+  <lastmod>2016-10-10T00:21:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/gui.html</loc>
@@ -1067,7 +1083,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/howto.html</loc>
-  <lastmod>2016-09-12T06:22:00Z</lastmod>
+  <lastmod>2016-10-10T00:21:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/ide.html</loc>
@@ -1396,6 +1412,10 @@
  <url>
   <loc>http://milosophical.me/tags/tip.html</loc>
   <lastmod>2016-09-12T06:22:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://milosophical.me/tags/tomtom.html</loc>
+  <lastmod>2016-10-10T00:21:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/typsetting.html</loc>
