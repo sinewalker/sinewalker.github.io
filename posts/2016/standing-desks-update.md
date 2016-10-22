@@ -20,8 +20,9 @@ out quite nicely.
 Making a real desktop
 ====
 
-You may recall from my [earlier post about standing desks](standing-desks.html)
-that I was using a convenient cardboard box, with a table-top on it, and my
+You may recall from my
+[earlier post about standing desks](/blog/2015/standing-desks.html) that I was
+using a convenient cardboard box, with a table-top on it, and my
 [TEK209](https://www.trulyergonomic.com) keyboard. I had played with sticking a
 book under the table-top to make a
 [negative tilt](http://ergo.human.cornell.edu/AHTutorials/typingposture.html),
