@@ -2,9 +2,9 @@
 <html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
 <head>
 <meta charset="utf-8">
-<base href="http://milosophical.me/blog/2016/geocache-tomtom.html">
+<base href="http://milosophical.me/blog/2016/home-dir-maintenance.html">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Loading Geocache Pocket-queries on TomTom XL | Milosophical Me</title>
+<title>Organising my digital stuff | Milosophical Me</title>
 <link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
@@ -15,21 +15,24 @@
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta content="#5670d4" name="theme-color">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
-<link rel="canonical" href="http://milosophical.me/blog/2016/geocache-tomtom.html">
+<link rel="canonical" href="http://milosophical.me/blog/2016/home-dir-maintenance.html">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Michael Lockhart">
-<link rel="prev" href="spacemacs-01.html" title="One Spacemacs Config to Rule Them All" type="text/html">
-<link rel="next" href="filesystems-home.html" title="Choosing Filesystems and devices for home server" type="text/html">
+<meta name="robots" content="noindex">
 <meta property="og:site_name" content="Milosophical Me">
-<meta property="og:title" content="Loading Geocache Pocket-queries on TomTom XL">
-<meta property="og:url" content="http://milosophical.me/blog/2016/geocache-tomtom.html">
-<meta property="og:description" content="We're back from a two-weeks family trip to Victoria, along the Great Ocean Road.  We planned to do some GeoCaching along the way and we even purchased a store-display model Magellan eXplorist 510 whic">
+<meta property="og:title" content="Organising my digital stuff">
+<meta property="og:url" content="http://milosophical.me/blog/2016/home-dir-maintenance.html">
+<meta property="og:description" content="blah blah...
+
+
+mention messy workshop and pic.
+My Home directory
+While I describe my home, lets list the other directories. These all live in the /home volume:
+Fully named directories
+Free Desktop-ins">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2016-10-09T14:08:46+11:00">
-<meta property="article:tag" content="geocaching">
-<meta property="article:tag" content="gps">
-<meta property="article:tag" content="gsak">
-<meta property="article:tag" content="howto">
-<meta property="article:tag" content="tomtom">
+<meta property="article:published_time" content="2016-10-22T18:24:54+11:00">
+<meta property="article:tag" content="organisation">
+<meta property="article:tag" content="tips">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -136,7 +139,7 @@
 
             <ul class="nav navbar-nav navbar-right">
 <li>
-    <a href="geocache-tomtom.md" id="sourcelink">Source</a>
+    <a href="home-dir-maintenance.md" id="sourcelink">Source</a>
     </li>
 
                 
@@ -151,72 +154,104 @@
         <div class="row">
             
             
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Loading Geocache Pocket-queries on TomTom XL</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Organising my digital stuff</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                     <a href="../../authors/michael-lockhart.html">Michael Lockhart</a>
             </span></p>
-            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2016-10-09T14:08:46+11:00" itemprop="datePublished" title="2016-10-09 14:08">2016-10-09 14:08</time></a></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2016-10-22T18:24:54+11:00" itemprop="datePublished" title="2016-10-22 18:24">2016-10-22 18:24</time></a></p>
             
-        <p class="sourceline"><a href="geocache-tomtom.md" id="sourcelink">Source</a></p>
+        <p class="sourceline"><a href="home-dir-maintenance.md" id="sourcelink">Source</a></p>
 
         </div>
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
-<p>We're back from a two-weeks family trip to <a href="http://www.visitvictoria.com/">Victoria</a>, along the <a href="http://greatoceanrd.org.au">Great Ocean Road</a>.  We planned to do some <a href="https://www.geocaching.com/guide/">GeoCaching</a> along the way and we even purchased a store-display model <a href="http://www.magellangps.com/Store/eXploristSeries/eXplorist-510">Magellan eXplorist 510</a> which has support for paper-less caching. It's great, if a bit heavy on the batteries.</p>
-<p>The trip was so epic and busy, and we did so many things along the way that we barely had time to stop for caches - we only found six! But it was still a fun diversion.</p>
-<p>This article's about the <strong>TomTom XL</strong> though, our venerable old in-car sat' nav', which needs a little help to do GeoCaching. The device dates from around 2006/2007 I think.  Before our trip, we purchased a (long overdue) map update for it, and then the night before we left home I sat down for a bit to re-learn how to upload caches into it as Points Of Interest. This makes driving to the nearest cache much simpler because the TomTom can plan the route. Or else you will see caches popping up along your way if you have a different route already planned.</p>
-<!--TEASER_END-->
-
+<p>blah blah...
+<!--TEASER_END --></p>
 <hr>
-<p>There are three steps:</p>
-<ol>
+<p>mention messy workshop and pic.</p>
+<h3>My Home directory</h3>
+<p>While I describe my home, lets list the other directories. These all live in the <code>/home</code> volume:</p>
+<h4>Fully named directories</h4>
+<p>Free Desktop-inspired directories. They all start with a capital letter and are spelled out in full, not abbreviated. They are lie the familiar ones you see in User Folders of Windows and Mac OS.</p>
+<ul>
 <li>
-<strong>Get the cache data</strong> - Generate a Pocket-Query from GeoCaching.com and download it</li>
+<code>Audio</code>: sounds (as distinct from music)</li>
 <li>
-<strong>Convert the query results into a TomTom</strong> <code>.ov</code> <strong>file</strong> (POI "overlay"?)</li>
-<li><strong>Upload the POI file into the TomTom</strong></li>
-</ol>
-<h3>Get the cache data</h3>
-<p>The first step is just to go to <a href="https://www.geocaching.com/">geocaching.com</a>, generate a <a href="https://www.geocaching.com/pocket/">pocket query</a> (or more than one) that covers your trip areas, and when the query is complete, download it in GPX format.  This format has all the details about each cache matching the query, with descriptions, clues,  waypoints and recent logs — enough to do paper-less caching and ready to upload into a dedicated geocaching device (say, the Magellan eXplorist).</p>
-<p>Note that the GPX format is a Premium Groundspeak Member feature.  Free accounts can download Pocket Queries in LOC format which has the position data only, and might actually be enough to convert and upload to a TomTom, but I've not tried this.  Premium membership is pretty reasonable and worth it I reckon, if you get into caching a bit.</p>
-<p>You can upload the GSX files directly into the Magellan by attaching it to your computer and placing the files in its <code>Geocaching</code> directory (with Windows Explorer or Mac Finder).  The TomTom XL is older and needs the GPX converted to a proprietary Points-Of-Intrest overlay file before doing something similar.</p>
-<h3>Convert for TomTom</h3>
-<p>Years ago some fellow Cachers recommended a Windows program called <a href="http://gsak.net/">GSAK</a> - <em>Geocaching Swiss Army Knife</em>. It does a great many things that I've not played with.  For my purpose though it's fairly easy:</p>
-<ol>
-<li>(optional, but simplest) Make a fresh database</li>
-<li>Import the GSX file(s) into your new empty database</li>
-<li>Export the database to TomTom (there's a menu item for it)</li>
-</ol>
-<p>This produces an output file with a <code>.ov</code> extension. That goes to the TomTom next.</p>
-<p><em>For bonus points</em>: when exporting the database to TomTom format from GSAK, you can set an image on the database and TomTom will use that to show the points of interest. We use the Geocaching logo (in Windows <code>.bmp</code> format) so that caches will appear in the TomTom with Geospeak's little-man-and-flag icon.</p>
-<h3>Upload to TomTom</h3>
-<p>So now we have a file to put on the TomTom. I always forget where to put it. It's easy:</p>
-<ol>
-<li>Attach the TomTom to your computer, Windows will recognise it as a USB Drive and assign a drive-letter. Open that in Windows Explorer</li>
-<li>Copy the file exported by GSAK into your map directory on the TomTom.  <strong>What that means is</strong>:  <em>copy it to the directory on the TomTom drive that is named for the map you have installed on the TomTom</em>.  Say you have Australia in your TomTom, as I do, and your TomTom is attached as drive <code>E:</code>, then you copy your exported <code>.ov</code> file to <code>E:\Australia\</code>.  The TomTom will load this as an overlay on that map.</li>
-</ol>
-<p>"Safely remove" and then detach the TomTom. It'll restart, and now there should be Points Of Interest for each cache in your pocket-query, ready to set as destinations for the navigator.</p>
-<p>Happy Caching.</p>
+<code>Desktop</code>:  Not used a lot now. This is the Freedesktop desktop folder</li>
+<li>
+<code>Documents</code>: Again, Free Deskktop (also Windows and Mac OS) location for "documents"</li>
+<li>
+<code>Downloads</code>: default download location.  It should get periodically cleaned...</li>
+<li>
+<code>Links</code>: for desktop shortcuts (KDE <code>.desktop</code> files) to other places</li>
+<li>
+<code>Movies</code>: Not used a lot. This is for motion pictures, as distinct from video in general</li>
+<li>
+<code>Music</code>: music (as distinct from audio, which is not music)</li>
+<li>
+<code>Pictures</code>: picture files</li>
+<li>
+<code>Projects</code>: for project directories (many will be <code>git</code>/<code>hg</code> repositories)</li>
+<li>
+<code>Public</code>: contains a link to <code>~/pub</code> and another to <code>html -&gt; /data/srv/html/${USER}</code>
+</li>
+<li>
+<p><code>Video</code>: video files (not movies, e.g. generated animations and such)</p>
+</li>
+<li>
+<p><code>public_html -&gt; /data/srv/html/${USER}</code>: this is a SUSE thing to automatically make web pages with Apache I think.</p>
+</li>
+</ul>
+<h4>3-letter nubbles</h4>
+<p>These are more pithy named directories that are quick to type and more friendly to my geek sensibilities</p>
+<ul>
+<li>
+<code>bak</code>: backups</li>
+<li>
+<code>bin</code>: binaries (small programs/scripts)</li>
+<li>
+<code>buz -&gt; Audio/buz</code>: system sounds and other effects.</li>
+<li>
+<code>fun</code>: games and/or game saves (e.g. Minecraft)</li>
+<li>
+<code>hax</code>: quick-and-dirty hacking space (throw-away data/scripts)</li>
+<li>
+<code>key</code>: encryption key files (gpg, ssh and so on)</li>
+<li>
+<code>lib</code>: library (private code modules, or ones not managed by a packaging system)</li>
+<li>
+<code>mem -&gt; /data/mem/${USER}</code>: fast storage</li>
+<li>
+<code>org -&gt; MEGA/org</code>: organiser files (Emacs Org Mode)</li>
+<li>
+<code>pub -&gt; /data/pub</code>: shared files</li>
+<li>
+<code>ram</code>: mount point for a RAM drive</li>
+<li>
+<code>src</code>: source (untarred source code, not retrieved from a revision control system)</li>
+<li>
+<code>tmp -&gt; /data/mem/${USER}/tmp</code>:  temporary files</li>
+<li>
+<code>vms -&gt; /data/vms</code> virtual machine storage</li>
+</ul>
+<p>There are also symlinks used as short names for the Fully named directories:</p>
+<ul>
+<li><code>doc -&gt; Documents</code></li>
+<li><code>pix -&gt; Pictures</code></li>
+<li>
+<code>prj -&gt; Projects</code>'</li>
+<li><code>vid -&gt; Video</code></li>
+</ul>
+<p>There's also <code>net -&gt; MEGA</code> for my main cloud drive</p>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../../tags/geocaching.html" rel="tag">geocaching</a></li>
-            <li><a class="tag p-category" href="../../tags/gps.html" rel="tag">gps</a></li>
-            <li><a class="tag p-category" href="../../tags/gsak.html" rel="tag">gsak</a></li>
-            <li><a class="tag p-category" href="../../tags/howto.html" rel="tag">howto</a></li>
-            <li><a class="tag p-category" href="../../tags/tomtom.html" rel="tag">tomtom</a></li>
-        </ul>
-<ul class="pager hidden-print">
-<li class="previous">
-                <a href="spacemacs-01.html" rel="prev" title="One Spacemacs Config to Rule Them All">Previous post</a>
-            </li>
-            <li class="next">
-                <a href="filesystems-home.html" rel="next" title="Choosing Filesystems and devices for home server">Next post</a>
-            </li>
+<li><a class="tag p-category" href="../../tags/organisation.html" rel="tag">organisation</a></li>
+            <li><a class="tag p-category" href="../../tags/tips.html" rel="tag">tips</a></li>
         </ul></nav></aside></article>
 </div>
         <!--End of body content-->

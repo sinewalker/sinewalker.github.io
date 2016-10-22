@@ -38,7 +38,7 @@ gorillas is a broken approach.
 
 I agree that you should not break rules for special cases, but some
 rules are more useful as you learn things and can be safely discarded
-when you know what you're doing.
+when you know what you're doing. Also "practicality beats purity"...
 
 **Rule 1**: The First Law: Nothing works First time
 ----

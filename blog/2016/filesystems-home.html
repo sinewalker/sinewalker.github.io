@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<base href="http://milosophical.me/blog/2016/filesystems-home.html">
+<meta name="description" content="Filesystem considerations as I prepare to re-partition my home machine for an upgrade">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Choosing Filesystems and devices for home server | Milosophical Me</title>
+<link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/rst.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/colorbox.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/theme.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta content="#5670d4" name="theme-color">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="http://milosophical.me/blog/2016/filesystems-home.html">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="description" itemprop="description" content="Filesystem considerations as I prepare to re-partition my home machine for an upgrade">
+<meta name="author" content="Michael Lockhart">
+<link rel="prev" href="geocache-tomtom.html" title="Loading Geocache Pocket-queries on TomTom XL" type="text/html">
+<meta property="og:site_name" content="Milosophical Me">
+<meta property="og:title" content="Choosing Filesystems and devices for home server">
+<meta property="og:url" content="http://milosophical.me/blog/2016/filesystems-home.html">
+<meta property="og:description" content="Filesystem considerations as I prepare to re-partition my home machine for an upgrade">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2016-10-22T11:55:50+11:00">
+<meta property="article:tag" content="btrfs">
+<meta property="article:tag" content="cloud">
+<meta property="article:tag" content="ext4fs">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="LVM">
+<meta property="article:tag" content="ssd">
+<meta property="article:tag" content="tiered storage">
+<meta property="article:tag" content="xfs">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://milosophical.me/">
+
+                <span id="blog-title">Milosophical Me</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../index.html">Blog</a>
+                </li>
+<li>
+<a href="../../archive/archive.html">Archive</a>
+                </li>
+<li>
+<a href="../../tags/index.html">Tags</a>
+                </li>
+<li>
+<a href="../../pg/index.html">Codex</a>
+                </li>
+<li>
+<a href="../../pixels/index.html">Pixels</a>
+            </li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Social <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://plus.google.com/+MichaelLockhart/posts">Microblog</a>
+                    </li>
+<li>
+<a href="https://www.facebook.com/sinewalker">Facebook</a>
+                    </li>
+<li>
+<a href="mailto:sinewalker@gmail.com">Email</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://github.com/sinewalker">GitHub</a>
+                    </li>
+<li>
+<a href="https://bitbucket.com/sinewalker">Bitbucket</a>
+                    </li>
+<li>
+<a href="https://codepen.io/sinewalker/">Codepen</a>
+                    </li>
+<li class="active">
+<a href="#"> <span class="sr-only">(active)</span></a>
+                    </li>
+<li>
+<a href="https://sourceforge.net/u/sinewalker/profile/">SourceForge</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://about.me/mikelockhart">About.me</a>
+                    </li>
+<li>
+<a href="../../pg/colophon.html">About this site</a>
+                    </li>
+<li>
+<a href="https://calendar.google.com/calendar/embed?src=sinewalker@gmail.com&amp;ctz=Australia/Sydney/">My calendar</a>
+                    </li>
+<li>
+<a href="https://www.linkedin.com/in/mikelockhart">LinkedIn</a>
+                    </li>
+<li>
+<a href="http://stackoverflow.com/users/776953/mike">Stack Overflow</a>
+            </li>
+</ul>
+</li>
+<li>
+<a href="../../rss.xml">RSS</a>
+
+                
+            </li>
+</ul>
+<!-- DuckDuckGo custom search --><form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form navbar-right" role="search">
+<input type="hidden" name="sites" value="http://milosophical.me/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="Search…" class="form-control"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+
+            <ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="filesystems-home.md" id="sourcelink">Source</a>
+    </li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Choosing Filesystems and devices for home server</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                    <a href="../../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2016-10-22T11:55:50+11:00" itemprop="datePublished" title="2016-10-22 11:55">2016-10-22 11:55</time></a></p>
+            
+        <p class="sourceline"><a href="filesystems-home.md" id="sourcelink">Source</a></p>
+
+                <meta name="description" itemprop="description" content="Filesystem considerations as I prepare to re-partition my home machine for an upgrade">
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>With the release of <a href="https://en.opensuse.org/Portal:42.2">openSUSE Leap 42.2</a> just 25 days away, I'm considering to move to it, from my current <a href="https://en.opensuse.org/Portal:13.2">openSUSE 13.2</a> <em>Harlequin</em>. I had skipped <a href="https://en.opensuse.org/Portal:42.1">Leap 42.1</a> <em>Malachite</em> not for any technical issues with Leap itself, but because I've been pretty tied up learning about Mac OS for work, and because I've been very happy with <em>Harlequin</em> anyway.  But it'll reach end of life in Q1 2017 so it's time to upgrade, and I will go to the newest Leap release when it's out. The rolling release <em>Tumbleweed</em> is still not an option for me: not when I have an NVidia GPU and also want to play with CUDA and run VirtualBox VMs.</p>
+<p>When I moved house back in 2013, I made a number of rushed decisions and among those was to accept the default filesystem suggestion from Harlequin's YaST installer:  use <strong>btrfs</strong> for the <code>/root</code> volume, and <strong>XFS</strong> for <code>/home</code>.  I also put both of these into LVM volumes on the computer's 128G SSD, with about 40G for <code>/root</code>, 8G for <code>swap</code> and the rest for <code>/home</code> thinking "It's LVM, so I can resize the volumes later if this doesn't work out." .... Well, yes, you <em>can</em> resize LVM volumes, but the filesystems contained within behave differently. It turned out that I wanted to grow <code>/root</code> by taking away some space from <code>/home</code>, but I hit a snag:  XFS filesystems can't be shrunk, only grown.  Bummer.</p>
+<p>This time around I will take the opportunity of the upgrade to reformat my <code>/home</code> volume, but the questions are:</p>
+<ul>
+<li>Which filesystems to choose from?</li>
+<li>Which filesystem for <code>/home</code> is best?</li>
+<li>Where to put <code>/home</code>?</li>
+</ul>
+<p>Should I have my home on my fast, but pokey SSD, or should I move it to a slow(er) but expansive HDD? Come to think of it, what about tiered storage in general? (SSD, HDD, "cloud", backups, archives). How should I manage these volumes in a non-intrusive way?</p>
+<p>So here are my thoughts and plans.</p>
+<!--TEASER_END -->
+
+<hr>
+<h3>Choosing a <code>/home</code> filesystem</h3>
+<p>The <a href="https://en.opensuse.org/Portal:13.2">openSUSE 13.2 Portal</a> mentions a switch to using "the tried and tested XFS" for <code>/home</code> but not <em>why</em>.  There's <a href="https://www.reddit.com/r/openSUSE/comments/3dambq/why_btrfs_for_but_xfs_for_home/">speculation on Redit</a> (for what that's worth) that SUSE made this choice because using btrfs in <code>/home</code> is not that great if you're storing a database, or a VM, or something that doesn't play well with a COW filesystem. I found that running snapper on <code>/home</code> was taking up quite a bit of space on 13.1 until I turned it off too.</p>
+<p>But then, why use XFS and not ext4fs?</p>
+<p><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Storage_Administration_Guide/ch06s09.html">RedHat switched from ext3/4 to XFS for RHEL 7</a>, so there may be technical reasons I don't understand (fragmentation, preallocation, perhaps performance?)  Maybe a similar decision was made for SLE?  Anyway, the biggest down-side for me personally is that you can't shrink an XFS filesystem, only grow it. And to do that you must take the filesystem offline.</p>
+<p>So: I'm probably going against the experts here, but I think I <em>wont'</em> use XFS again, simply because I want/need the ability to resize volumes.  I also understand the ext tools better than the xfs ones.</p>
+<h4>What about butter?</h4>
+<p>Well, yes, I suppose btrfs is able to optimise for SSD if I place <code>/home</code> there, so it could be useful.  So long as I turn off COW, and don't run snapshots on it. Seems a bit of a hassle, plus I'm turning off many of btrfs' features. I think this is why SUSE decided not to use it in home, and I agree with that.</p>
+<h4>So then, ext4fs?</h4>
+<p>I <em>think</em> so?</p>
+<ul>
+<li>It's a journaled filesystem, not a COW</li>
+<li>It can be grown <em>and</em> shrunk. It can even be grown while online.</li>
+<li>It's simple, I don't have to tweak settings</li>
+<li>Its limitations don't impact my uses (I actually can't find very conclusive arguments that any of the three filesystems ext4fs, XFS or btrfs is better than another in terms of limitations, performance or stability, at least not for a home PC)</li>
+</ul>
+<h3>Choosing the storage medium for <code>/home</code>
+</h3>
+<p>On my home PC, I have a choice of where I could store the <code>/home</code> volume:</p>
+<ul>
+<li>On an SSD (Solid-state device: flash memory)</li>
+<li>On a SATA drive (traditional hard disc)</li>
+</ul>
+<p>The pros and cons are pretty straight forward: SSD is fast, but SATA is bigger (and still <em>pretty darn fast</em>).</p>
+<p>When I bought the SSD I was thinking "gee whiz wow, I should use this thing as much as I can!".  Now with some experience, I think that the choice I make should balance the devices' abilities with the requirements I have for a <code>/home</code> volume, which in my case actually favours size over speed for the most part.  That means: <strong>use SATA</strong>.</p>
+<h3>Storage Tiers</h3>
+<p>What I've been doing is a sort-of <em>ad-hoc</em> <a href="https://en.wikipedia.org/wiki/Hierarchical_storage_management#Tiered_storage">tiered storage</a> approach:</p>
+<ul>
+<li>
+<p><code>/home</code> was (comparitively) small, but fast because it's on an SSD. The system would boot and load a desktop without needing to spool up the hard drive at all.</p>
+</li>
+<li>
+<p>I have a big hard drive with a partition for user data mounted at <code>/data/usr</code>. In there went large data sets (video, photos, audio, databases and so on...), both shared data in <code>/data/usr/pub</code> and individual/"private" data in <code>/data/usr/${USER}</code></p>
+</li>
+<li>
+<p>In my home directory, I symlinked:  <code>~/data -&gt; /data/usr/${USER}</code> and <code>~/public -&gt; /data/usr/pub</code></p>
+</li>
+<li>
+<p>I symlink: <code>~/vms -&gt; /data/vms</code> for virtual machine images (a separate disc lv)</p>
+</li>
+<li>
+<p>I also "sync to the cloud" at <code>~/MEGA</code></p>
+</li>
+</ul>
+<p>I'm fairly happy with the arrangement, except that I have to think before I save: "oh, this is a big file, I better put it under <code>~/data</code>".  Occasionally I'll forget to and then end up shuffling data off the SSD to the SATA when the SSD fills, or when I discover something I didn't think about (Downloads, or a program that stores huge datasets in <code>~/.blackhole</code>), so I'm starting to think maybe I should actually think about my tiered storage approach, rather than just be <em>ad-hoc</em> and have to keep moving stuff around, risking loss and making backups....</p>
+<p>Since I've decided to make <code>/home</code> be the hard drive now, then I shouldn't need to shift files around as often.  Instead I can use the SSD as a "memory" tier for data access that's <em>speed critical</em>, that can be mounted at <code>/data/mem</code>.</p>
+<p>My tiered storage approach is now like this:</p>
+<ul>
+<li>
+<p><code>/home</code> is a large lv on a <em>pretty fast</em> SATA disc drive</p>
+<ul>
+<li>personal / "private" files just go into home like normal</li>
+<li>there are still symlinks from <code>${HOME}</code> to other places, for exceptions. See below.</li>
+</ul>
+</li>
+<li>
+<p><code>/data/pub</code> is a large lv on SATA disc for shared data</p>
+<ul>
+<li>the size of current <code>/data/pub</code> can be reduced a bit and given to <code>/home</code>
+</li>
+<li>the filesystems of <code>/data/home</code> and <code>/data/pub</code> will both be <strong>ext4fs</strong> so I can adjust the balance of their sizes</li>
+<li>there's no longer a need for <code>/data/usr</code>: give that to <code>/home</code> too</li>
+</ul>
+</li>
+<li>
+<p><code>/data/vms</code> is a large lv on SATA for virtual machines</p>
+<ul>
+<li>It will be formatted as <strong>btrfs</strong> with subvolumes for COW or non-COW depending on the virtualisation technology (Docker can use btrfs for host-native COW, VirtualBox works better on a journaled filesystem since it does it's own COW within its virtual disc image files)</li>
+</ul>
+</li>
+<li>
+<p><code>/data/mem</code> is a (comparitively) small but fast lv on the SSD (the old home volume, repurposed)</p>
+<ul>
+<li>the filesystem for <code>/data/mem</code> there will be <strong>btrfs</strong>
+</li>
+<li>private subvolumes within, for users:  <code>/data/mem/${USER}</code> (can turn on/off btrfs features for these)</li>
+</ul>
+</li>
+<li>
+<p>If the SSD is not fast enough, I can still make and mount a <a href="https://en.wikipedia.org/wiki/RAM_drive">RAM drive</a> for super-duper fast things access to temporary things, if I want to (with 32GB RAM, I've certainly got the space!): e.g. a SQLite database, so long as I copy it out if it's not so temporary...</p>
+</li>
+<li>
+<p>Backups are written to a secondary (removable) SATA disc drive.</p>
+</li>
+<li>
+<p>Archives get burnt to DVD-Rs for offline storage</p>
+</li>
+</ul>
+<h4>Cloud drives</h4>
+<p>I use two cloud drive providers:</p>
+<ul>
+<li>Dropbox (syncs to <code>~/Dropbox</code>): for syncing stuff with my Android devices. It's small and I'm not a fan of the Board members.</li>
+<li>
+<a href="http://mega.nz">MEGA.nz</a> (syncs to <code>~/MEGA</code>): my main cloud drive. Much larger and more secure, but doesn't do hot sync to Android: you have to "download" files to the phone, so it's no good for automatic sharing password databases for instance.</li>
+</ul>
+<p>Cloud drives are interesting: they provide automatic sync and backup, but they're fairly small (50G is considered large) and the sync is slow because it goes over encrypted internet links.  However local editing is as fast as the device you've synced to.</p>
+<p>I use my cloud drives for data that I want to automatically share. Mostly it's in MEGA but I use Dropbox where I must.</p>
+<p>I have a symlink: <code>~/net -&gt; MEGA</code> for the Net.</p>
+<h3>Exceptions: new structure for <code>$HOME</code>
+</h3>
+<p>Remember <a href="../2015/4-bit-rules-of-computing-part-0.html">Rule 0</a>?  Not everything I keep on my PC belongs in my <code>${HOME}</code> of course. For the exceptions I like to use symlinks, because it makes it easy to find everything:</p>
+<ul>
+<li>
+<code>~/pub -&gt; /data/pub</code> for shared/public data sets (e.g. photo albums, calibre library, music and video)</li>
+<li>
+<code>~/vms -&gt; /data/vms</code> which is a separate lv just for virtual machines, but having the link makes configuration simpler</li>
+<li>
+<code>~/mem -&gt; /data/mem/${USER}</code> for private data sets on the fast memory storage</li>
+<li>
+<code>~/tmp -&gt; /data/mem/${USER]/tmp}</code> so that temporary files are still fast</li>
+</ul>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../tags/btrfs.html" rel="tag">btrfs</a></li>
+            <li><a class="tag p-category" href="../../tags/cloud.html" rel="tag">cloud</a></li>
+            <li><a class="tag p-category" href="../../tags/ext4fs.html" rel="tag">ext4fs</a></li>
+            <li><a class="tag p-category" href="../../tags/linux.html" rel="tag">linux</a></li>
+            <li><a class="tag p-category" href="../../tags/lvm.html" rel="tag">LVM</a></li>
+            <li><a class="tag p-category" href="../../tags/ssd.html" rel="tag">ssd</a></li>
+            <li><a class="tag p-category" href="../../tags/tiered-storage.html" rel="tag">tiered storage</a></li>
+            <li><a class="tag p-category" href="../../tags/xfs.html" rel="tag">xfs</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="geocache-tomtom.html" rel="prev" title="Loading Geocache Pocket-queries on TomTom XL">Previous post</a>
+            </li>
+        </ul></nav></aside></article>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer"><hr>Contents Copyright © 
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a> 2005 — 2016         <a href="mailto:sinewalker@gmail.com">Michael Lockhart</a>. Powered by <a href="https://getnikola.com" rel="nofollow"><img src="../../img/nikola.png" alt="Nikola"></a>, <a href="https://github.com/syl20bnr/spacemacs"><img src="https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg" alt="built with Spacemacs"></a>
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/bootstrap.min.js"></script><script src="../../assets/js/moment-with-locales.min.js"></script><script src="../../assets/js/fancydates.js"></script><script src="../../assets/js/jquery.colorbox-min.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-65364237-1', 'auto');  ga('send', 'pageview');</script>
+</body>
+</html>
