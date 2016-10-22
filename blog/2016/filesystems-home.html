@@ -188,7 +188,7 @@
 <p>The <a href="https://en.opensuse.org/Portal:13.2">openSUSE 13.2 Portal</a> mentions a switch to using "the tried and tested XFS" for <code>/home</code> but not <em>why</em>.  There's <a href="https://www.reddit.com/r/openSUSE/comments/3dambq/why_btrfs_for_but_xfs_for_home/">speculation on Redit</a> (for what that's worth) that SUSE made this choice because using btrfs in <code>/home</code> is not that great if you're storing a database, or a VM, or something that doesn't play well with a COW filesystem. I found that running snapper on <code>/home</code> was taking up quite a bit of space on 13.1 until I turned it off too.</p>
 <p>But then, why use XFS and not ext4fs?</p>
 <p><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Storage_Administration_Guide/ch06s09.html">RedHat switched from ext3/4 to XFS for RHEL 7</a>, so there may be technical reasons I don't understand (fragmentation, preallocation, perhaps performance?)  Maybe a similar decision was made for SLE?  Anyway, the biggest down-side for me personally is that you can't shrink an XFS filesystem, only grow it. And to do that you must take the filesystem offline.</p>
-<p>So: I'm probably going against the experts here, but I think I <em>wont'</em> use XFS again, simply because I want/need the ability to resize volumes.  I also understand the ext tools better than the xfs ones.</p>
+<p>So: I'm probably going against the experts here, but I think I <em>won't</em> use XFS again, simply because I want/need the ability to grow <em>and shrink</em> volumes.  I also understand the ext tools better than the xfs ones.</p>
 <h4>What about butter?</h4>
 <p>Well, yes, I suppose btrfs is able to optimise for SSD if I place <code>/home</code> there, so it could be useful.  So long as I turn off COW, and don't run snapshots on it. Seems a bit of a hassle, plus I'm turning off many of btrfs' features. I think this is why SUSE decided not to use it in home, and I agree with that.</p>
 <h4>So then, ext4fs?</h4>
@@ -212,7 +212,7 @@
 <p>What I've been doing is a sort-of <em>ad-hoc</em> <a href="https://en.wikipedia.org/wiki/Hierarchical_storage_management#Tiered_storage">tiered storage</a> approach:</p>
 <ul>
 <li>
-<p><code>/home</code> was (comparitively) small, but fast because it's on an SSD. The system would boot and load a desktop without needing to spool up the hard drive at all.</p>
+<p><code>/home</code> was (comparatively) small, but fast because it's on an SSD. The system would boot and load a desktop without needing to spool up the hard drive at all.</p>
 </li>
 <li>
 <p>I have a big hard drive with a partition for user data mounted at <code>/data/usr</code>. In there went large data sets (video, photos, audio, databases and so on...), both shared data in <code>/data/usr/pub</code> and individual/"private" data in <code>/data/usr/${USER}</code></p>
@@ -228,7 +228,7 @@
 </li>
 </ul>
 <p>I'm fairly happy with the arrangement, except that I have to think before I save: "oh, this is a big file, I better put it under <code>~/data</code>".  Occasionally I'll forget to and then end up shuffling data off the SSD to the SATA when the SSD fills, or when I discover something I didn't think about (Downloads, or a program that stores huge datasets in <code>~/.blackhole</code>), so I'm starting to think maybe I should actually think about my tiered storage approach, rather than just be <em>ad-hoc</em> and have to keep moving stuff around, risking loss and making backups....</p>
-<p>Since I've decided to make <code>/home</code> be the hard drive now, then I shouldn't need to shift files around as often.  Instead I can use the SSD as a "memory" tier for data access that's <em>speed critical</em>, that can be mounted at <code>/data/mem</code>.</p>
+<p>Since I've decided to make <code>/home</code> be the hard drive now, then I shouldn't need to shift files around as often.  Instead I can use the SSD as a "memory" tier for data access that's <em>speed critical</em>; that can be mounted at <code>/data/mem</code>.</p>
 <p>My tiered storage approach is now like this:</p>
 <ul>
 <li>
@@ -241,9 +241,9 @@
 <li>
 <p><code>/data/pub</code> is a large lv on SATA disc for shared data</p>
 <ul>
-<li>the size of current <code>/data/pub</code> can be reduced a bit and given to <code>/home</code>
+<li>the size of current <code>/data/pub</code> will be reduced a bit and given to <code>/home</code>
 </li>
-<li>the filesystems of <code>/data/home</code> and <code>/data/pub</code> will both be <strong>ext4fs</strong> so I can adjust the balance of their sizes</li>
+<li>the filesystems <code>/data/home</code> and <code>/data/pub</code> will both be formatted <strong>ext4fs</strong> so I can adjust the balance of their sizes</li>
 <li>there's no longer a need for <code>/data/usr</code>: give that to <code>/home</code> too</li>
 </ul>
 </li>
@@ -254,15 +254,15 @@
 </ul>
 </li>
 <li>
-<p><code>/data/mem</code> is a (comparitively) small but fast lv on the SSD (the old home volume, repurposed)</p>
+<p><code>/data/mem</code> is a (comparatively) small but fast lv on the SSD (the old home volume, repurposed)</p>
 <ul>
-<li>the filesystem for <code>/data/mem</code> there will be <strong>btrfs</strong>
+<li>the filesystem for <code>/data/mem</code>  will be <strong>btrfs</strong>
 </li>
 <li>private subvolumes within, for users:  <code>/data/mem/${USER}</code> (can turn on/off btrfs features for these)</li>
 </ul>
 </li>
 <li>
-<p>If the SSD is not fast enough, I can still make and mount a <a href="https://en.wikipedia.org/wiki/RAM_drive">RAM drive</a> for super-duper fast things access to temporary things, if I want to (with 32GB RAM, I've certainly got the space!): e.g. a SQLite database, so long as I copy it out if it's not so temporary...</p>
+<p>If the SSD is not fast enough, I can still make and mount a <a href="https://en.wikipedia.org/wiki/RAM_drive">RAM drive</a> for super-duper fast access to temporary things, if I want to (with 32GB RAM, I've certainly got the space!): e.g. a SQLite database, so long as I copy it out if it's not so temporary...</p>
 </li>
 <li>
 <p>Backups are written to a secondary (removable) SATA disc drive.</p>
@@ -272,15 +272,14 @@
 </li>
 </ul>
 <h4>Cloud drives</h4>
-<p>I use two cloud drive providers:</p>
+<p>Cloud drives are interesting: they provide automatic sync and backup, but they're fairly small (50G is considered large) and the sync is slow because it goes over encrypted internet links.  However local editing is as fast as the device you've synced to.  I use two cloud drive providers:</p>
 <ul>
-<li>Dropbox (syncs to <code>~/Dropbox</code>): for syncing stuff with my Android devices. It's small and I'm not a fan of the Board members.</li>
+<li>Dropbox (syncs to <code>~/Dropbox</code>): for syncing stuff with my Android devices. It's small and I'm not a fan of the Board members</li>
 <li>
-<a href="http://mega.nz">MEGA.nz</a> (syncs to <code>~/MEGA</code>): my main cloud drive. Much larger and more secure, but doesn't do hot sync to Android: you have to "download" files to the phone, so it's no good for automatic sharing password databases for instance.</li>
+<a href="http://mega.nz">MEGA.nz</a> (syncs to <code>~/MEGA</code>): my main cloud drive. Ten times larger and more secure, but it doesn't do hot sync to Android: you have to "download" files to the phone, so it's no good for automatic sharing of KeePass password databases for instance</li>
 </ul>
-<p>Cloud drives are interesting: they provide automatic sync and backup, but they're fairly small (50G is considered large) and the sync is slow because it goes over encrypted internet links.  However local editing is as fast as the device you've synced to.</p>
 <p>I use my cloud drives for data that I want to automatically share. Mostly it's in MEGA but I use Dropbox where I must.</p>
-<p>I have a symlink: <code>~/net -&gt; MEGA</code> for the Net.</p>
+<p>I have a symlink: <code>~/net -&gt; MEGA</code> for the stuff that I keep on the Net.</p>
 <h3>Exceptions: new structure for <code>$HOME</code>
 </h3>
 <p>Remember <a href="../2015/4-bit-rules-of-computing-part-0.html">Rule 0</a>?  Not everything I keep on my PC belongs in my <code>${HOME}</code> of course. For the exceptions I like to use symlinks, because it makes it easy to find everything:</p>
@@ -294,6 +293,7 @@
 <li>
 <code>~/tmp -&gt; /data/mem/${USER]/tmp}</code> so that temporary files are still fast</li>
 </ul>
+<p>Actually the structure of my Home directory is evolving and deserves its own post.</p>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">

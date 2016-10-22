@@ -36,7 +36,7 @@ But then, why use XFS and not ext4fs?
 
 [RedHat switched from ext3/4 to XFS for RHEL 7](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Storage_Administration_Guide/ch06s09.html), so there may be technical reasons I don't understand (fragmentation, preallocation, perhaps performance?)  Maybe a similar decision was made for SLE?  Anyway, the biggest down-side for me personally is that you can't shrink an XFS filesystem, only grow it. And to do that you must take the filesystem offline.
 
-So: I'm probably going against the experts here, but I think I *wont'* use XFS again, simply because I want/need the ability to resize volumes.  I also understand the ext tools better than the xfs ones.
+So: I'm probably going against the experts here, but I think I *won't* use XFS again, simply because I want/need the ability to grow *and shrink* volumes.  I also understand the ext tools better than the xfs ones.
 
 ### What about butter?
 
@@ -66,7 +66,7 @@ When I bought the SSD I was thinking "gee whiz wow, I should use this thing as m
 
 What I've been doing is a sort-of *ad-hoc* [tiered storage](https://en.wikipedia.org/wiki/Hierarchical_storage_management#Tiered_storage) approach:
 
- * `/home` was (comparitively) small, but fast because it's on an SSD. The system would boot and load a desktop without needing to spool up the hard drive at all.
+ * `/home` was (comparatively) small, but fast because it's on an SSD. The system would boot and load a desktop without needing to spool up the hard drive at all.
 
  * I have a big hard drive with a partition for user data mounted at `/data/usr`. In there went large data sets (video, photos, audio, databases and so on...), both shared data in `/data/usr/pub` and individual/"private" data in `/data/usr/${USER}`
 
@@ -78,7 +78,7 @@ What I've been doing is a sort-of *ad-hoc* [tiered storage](https://en.wikipedia
 
 I'm fairly happy with the arrangement, except that I have to think before I save: "oh, this is a big file, I better put it under `~/data`".  Occasionally I'll forget to and then end up shuffling data off the SSD to the SATA when the SSD fills, or when I discover something I didn't think about (Downloads, or a program that stores huge datasets in `~/.blackhole`), so I'm starting to think maybe I should actually think about my tiered storage approach, rather than just be *ad-hoc* and have to keep moving stuff around, risking loss and making backups....
 
-Since I've decided to make `/home` be the hard drive now, then I shouldn't need to shift files around as often.  Instead I can use the SSD as a "memory" tier for data access that's *speed critical*, that can be mounted at `/data/mem`.
+Since I've decided to make `/home` be the hard drive now, then I shouldn't need to shift files around as often.  Instead I can use the SSD as a "memory" tier for data access that's *speed critical*; that can be mounted at `/data/mem`.
 
 My tiered storage approach is now like this:
 
@@ -87,18 +87,18 @@ My tiered storage approach is now like this:
      * there are still symlinks from `${HOME}` to other places, for exceptions. See below.
 
  * `/data/pub` is a large lv on SATA disc for shared data
-     * the size of current `/data/pub` can be reduced a bit and given to `/home`
-     * the filesystems of `/data/home` and `/data/pub` will both be **ext4fs** so I can adjust the balance of their sizes
+     * the size of current `/data/pub` will be reduced a bit and given to `/home`
+     * the filesystems `/data/home` and `/data/pub` will both be formatted **ext4fs** so I can adjust the balance of their sizes
      * there's no longer a need for `/data/usr`: give that to `/home` too
 
  * `/data/vms` is a large lv on SATA for virtual machines
      * It will be formatted as **btrfs** with subvolumes for COW or non-COW depending on the virtualisation technology (Docker can use btrfs for host-native COW, VirtualBox works better on a journaled filesystem since it does it's own COW within its virtual disc image files)
 
- * `/data/mem` is a (comparitively) small but fast lv on the SSD (the old home volume, repurposed)
-     * the filesystem for `/data/mem` there will be **btrfs**
+ * `/data/mem` is a (comparatively) small but fast lv on the SSD (the old home volume, repurposed)
+     * the filesystem for `/data/mem`  will be **btrfs**
      * private subvolumes within, for users:  `/data/mem/${USER}` (can turn on/off btrfs features for these)
 
- * If the SSD is not fast enough, I can still make and mount a [RAM drive](https://en.wikipedia.org/wiki/RAM_drive) for super-duper fast things access to temporary things, if I want to (with 32GB RAM, I've certainly got the space!): e.g. a SQLite database, so long as I copy it out if it's not so temporary...
+ * If the SSD is not fast enough, I can still make and mount a [RAM drive](https://en.wikipedia.org/wiki/RAM_drive) for super-duper fast access to temporary things, if I want to (with 32GB RAM, I've certainly got the space!): e.g. a SQLite database, so long as I copy it out if it's not so temporary...
 
  * Backups are written to a secondary (removable) SATA disc drive.
 
@@ -106,16 +106,15 @@ My tiered storage approach is now like this:
 
 ### Cloud drives
 
-I use two cloud drive providers:
 
- * Dropbox (syncs to `~/Dropbox`): for syncing stuff with my Android devices. It's small and I'm not a fan of the Board members.
- * [MEGA.nz](http://mega.nz) (syncs to `~/MEGA`): my main cloud drive. Much larger and more secure, but doesn't do hot sync to Android: you have to "download" files to the phone, so it's no good for automatic sharing password databases for instance.
+Cloud drives are interesting: they provide automatic sync and backup, but they're fairly small (50G is considered large) and the sync is slow because it goes over encrypted internet links.  However local editing is as fast as the device you've synced to.  I use two cloud drive providers:
 
-Cloud drives are interesting: they provide automatic sync and backup, but they're fairly small (50G is considered large) and the sync is slow because it goes over encrypted internet links.  However local editing is as fast as the device you've synced to.
+ * Dropbox (syncs to `~/Dropbox`): for syncing stuff with my Android devices. It's small and I'm not a fan of the Board members
+ * [MEGA.nz](http://mega.nz) (syncs to `~/MEGA`): my main cloud drive. Ten times larger and more secure, but it doesn't do hot sync to Android: you have to "download" files to the phone, so it's no good for automatic sharing of KeePass password databases for instance
 
 I use my cloud drives for data that I want to automatically share. Mostly it's in MEGA but I use Dropbox where I must.
 
-I have a symlink: `~/net -> MEGA` for the Net.
+I have a symlink: `~/net -> MEGA` for the stuff that I keep on the Net.
 
 
 ## Exceptions: new structure for `$HOME`
@@ -126,3 +125,5 @@ Remember [Rule 0](/blog/2015/4-bit-rules-of-computing-part-0.html)?  Not everyth
   * `~/vms -> /data/vms` which is a separate lv just for virtual machines, but having the link makes configuration simpler
   * `~/mem -> /data/mem/${USER}` for private data sets on the fast memory storage
   * `~/tmp -> /data/mem/${USER]/tmp}` so that temporary files are still fast
+
+Actually the structure of my Home directory is evolving and deserves its own post.
