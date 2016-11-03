@@ -175,7 +175,7 @@ These are short-named directories that are quick to type and more friendly to my
  * `bak`: backups (e.g. emacs can be set to automatically put its twiddle-files here)
  * `bin`: binaries (small programs/scripts)
  * `buz -> Audio/buz/`: system sounds and other effects.
- * `fun -> Grid/fun`: games and/or game saves (e.g. Minecraft), sync'd on the Grid
+ * `fun -> net/fun`: games and/or game saves (e.g. Minecraft), sync'd on the Grid
  * `key -> net/private/keys/`: encryption key files (gpg, ssh and so on), sync'd on the Grid
  * `lib`: code library (private code modules, or includes; Python virtual environments, ruby/go/whatever runtimes)
  * `org -> net/org/`: organiser files (Emacs Org Mode)
@@ -186,8 +186,11 @@ The following stubs go to other devices on the system:
  * `mem -> /data/mem/${USER}/`: fast, solid-state storage (on a Macbook, it's all fast SSD, but leave the stub here)
  * `net -> Grid/MEGA/`: my main grid drive (currently it's MEGA, but it *could change one day*&hellip;)
  * `pub -> /data/pub/`: public files shared on this computer (on a Macbook: `pub -> Public/`)
- * `tmp -> /data/mem/${USER}/tmp/`:  temporary files use fast storage, should be emptied upon logout (just another directory on a Macbook)
+ * `tmp -> mem/tmp/`:  temporary files use fast storage, should be emptied upon logout (just another directory on a Macbook)
  * `vms -> /data/vms/` virtual machine storage (again, just another directory on a Macbook)
+
+It'd be *realy nice* if there was such a thing as `~/etc` for personal settings, but alas there is not. On Linux `$XDG_CONFIG_HOME=${HOME}/.config`, already, plus not all programs use this variable anyway, they just stuff their things into `${HOME}/.whatever`.  I *could* configure and move stuff, but it's more hassle than it's worth.  What I *am* thinking of doing though, is to place [dotfile](https://github.com/sinewalker/dotfiles) collections that [I have](https://github.com/sinewalker/dotspacemacs) in version control into an `etc` stub, then linking from there back to `${HOME}`.  I'm still considering this&hellip;.
+
 
 There are also stubs used as short names for the long-named directories:
 
@@ -234,6 +237,6 @@ For work, things are a little more intricate (but any of these locations in the 
  * `~/Work/net -> ~/Grid/Squiz Drive/` (my personal work grid drive)
  * `~/Work/squiz -> /Volumes/squiz/` (company-wide file share)
 
-And ***that***, I belive, is how things should stay now. Well, for another decade or so anyway&hellip ;-)
+And ***that***, I belive, is how things should stay now. Well, for another decade or so anyway&hellip; ;-)
 
 The next thing to do is write some bash/powershell scripts to build a fresh home on new computers, using this blog post as a specification.
