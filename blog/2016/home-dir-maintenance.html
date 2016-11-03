@@ -329,7 +329,7 @@ in the case of Linux/X11 desktops, the <a href="https://specifications.freedeskt
 <li>
 <code>buz -&gt; Audio/buz/</code>: system sounds and other effects.</li>
 <li>
-<code>fun -&gt; Grid/fun</code>: games and/or game saves (e.g. Minecraft), sync'd on the Grid</li>
+<code>fun -&gt; net/fun</code>: games and/or game saves (e.g. Minecraft), sync'd on the Grid</li>
 <li>
 <code>key -&gt; net/private/keys/</code>: encryption key files (gpg, ssh and so on), sync'd on the Grid</li>
 <li>
@@ -348,10 +348,11 @@ in the case of Linux/X11 desktops, the <a href="https://specifications.freedeskt
 <li>
 <code>pub -&gt; /data/pub/</code>: public files shared on this computer (on a Macbook: <code>pub -&gt; Public/</code>)</li>
 <li>
-<code>tmp -&gt; /data/mem/${USER}/tmp/</code>:  temporary files use fast storage, should be emptied upon logout (just another directory on a Macbook)</li>
+<code>tmp -&gt; mem/tmp/</code>:  temporary files use fast storage, should be emptied upon logout (just another directory on a Macbook)</li>
 <li>
 <code>vms -&gt; /data/vms/</code> virtual machine storage (again, just another directory on a Macbook)</li>
 </ul>
+<p>It'd be <em>realy nice</em> if there was such a thing as <code>~/etc</code> for personal settings, but alas there is not. On Linux <code>$XDG_CONFIG_HOME=${HOME}/.config</code>, already, plus not all programs use this variable anyway, they just stuff their things into <code>${HOME}/.whatever</code>.  I <em>could</em> configure and move stuff, but it's more hassle than it's worth.  What I <em>am</em> thinking of doing though, is to place <a href="https://github.com/sinewalker/dotfiles">dotfile</a> collections that <a href="https://github.com/sinewalker/dotspacemacs">I have</a> in version control into an <code>etc</code> stub, then linking from there back to <code>${HOME}</code>.  I'm still considering this….</p>
 <p>There are also stubs used as short names for the long-named directories:</p>
 <ul>
 <li><code>doc -&gt; Documents/</code></li>
@@ -400,7 +401,7 @@ mjl@milo:~$
 <li>
 <code>~/Work/squiz -&gt; /Volumes/squiz/</code> (company-wide file share)</li>
 </ul>
-<p>And <strong><em>that</em></strong>, I belive, is how things should stay now. Well, for another decade or so anyway&amp;hellip ;-)</p>
+<p>And <strong><em>that</em></strong>, I belive, is how things should stay now. Well, for another decade or so anyway… ;-)</p>
 <p>The next thing to do is write some bash/powershell scripts to build a fresh home on new computers, using this blog post as a specification.</p>
 </div>
     </div>

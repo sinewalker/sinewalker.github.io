@@ -7,11 +7,11 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>http://milosophical.me/authors/michael-lockhart.xml</loc>
-  <lastmod>2016-11-03T12:21:00Z</lastmod>
+  <lastmod>2016-11-03T21:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/authors/mike-lockhart.xml</loc>
-  <lastmod>2016-11-03T03:11:00Z</lastmod>
+  <lastmod>2016-11-03T21:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/pixels/dust/rss.xml</loc>
@@ -31,11 +31,11 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/rss.xml</loc>
-  <lastmod>2016-11-03T12:21:00Z</lastmod>
+  <lastmod>2016-11-03T21:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/sitemap.xml</loc>
-  <lastmod>2016-11-03T12:21:00Z</lastmod>
+  <lastmod>2016-11-03T21:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/4-bit-rules.xml</loc>
@@ -87,7 +87,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/boring.xml</loc>
-  <lastmod>2016-11-03T12:21:00Z</lastmod>
+  <lastmod>2016-11-03T21:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/btrfs.xml</loc>
@@ -559,7 +559,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/organisation.xml</loc>
-  <lastmod>2016-11-03T12:21:00Z</lastmod>
+  <lastmod>2016-11-03T21:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/package.xml</loc>
@@ -727,7 +727,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/tips.xml</loc>
-  <lastmod>2016-11-03T12:21:00Z</lastmod>
+  <lastmod>2016-11-03T21:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/tomtom.xml</loc>
