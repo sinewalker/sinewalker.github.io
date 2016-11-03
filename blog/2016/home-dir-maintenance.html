@@ -17,20 +17,15 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="http://milosophical.me/blog/2016/home-dir-maintenance.html">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Michael Lockhart">
-<meta name="robots" content="noindex">
+<link rel="prev" href="filesystems-home.html" title="Choosing Filesystems and devices for home server" type="text/html">
 <meta property="og:site_name" content="Milosophical Me">
 <meta property="og:title" content="Organising my digital stuff">
 <meta property="og:url" content="http://milosophical.me/blog/2016/home-dir-maintenance.html">
-<meta property="og:description" content="blah blah...
-
-
-mention messy workshop and pic.
-My Home directory
-While I describe my home, lets list the other directories. These all live in the /home volume:
-Fully named directories
-Free Desktop-ins">
+<meta property="og:description" content="I started to write about my ${HOME} directory structure in my post about /home filesystem choices but then it got terribly long and complicated. So I'm writing about it here.
+Since switching to a new ">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2016-10-22T18:24:54+11:00">
+<meta property="article:published_time" content="2016-11-03T23:20:10+11:00">
+<meta property="article:tag" content="boring">
 <meta property="article:tag" content="organisation">
 <meta property="article:tag" content="tips">
 </head>
@@ -160,7 +155,7 @@ Free Desktop-ins">
             <p class="byline author vcard"><span class="byline-name fn">
                     <a href="../../authors/michael-lockhart.html">Michael Lockhart</a>
             </span></p>
-            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2016-10-22T18:24:54+11:00" itemprop="datePublished" title="2016-10-22 18:24">2016-10-22 18:24</time></a></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2016-11-03T23:20:10+11:00" itemprop="datePublished" title="2016-11-03 23:20">2016-11-03 23:20</time></a></p>
             
         <p class="sourceline"><a href="home-dir-maintenance.md" id="sourcelink">Source</a></p>
 
@@ -169,89 +164,255 @@ Free Desktop-ins">
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
-<p>blah blah...
-<!--TEASER_END --></p>
+<p>I started to write about my <code>${HOME}</code> directory structure in <a href="filesystems-home.html">my post about /home filesystem choices</a> but then it got terribly long and complicated. So I'm writing about it here.</p>
+<p>Since switching to a new computer at work I have been reviewing my hodge-podge of directories that I moved from my old work laptop.  Same as with my <a href="spacemacs-01.html">emacs configuration</a>, I like my <code>${HOME}</code> to be familiar and friendly no matter what computer and operating system I'm using. Also like emacs at the beginning of this year, it's presently a mess. So I'm documenting how I'd like it to look, be that on my home Linux computer, the Windows mode of the same, or on my work's Macintosh.</p>
+<p>This long and detailed article is for my own purpose. Others MAY find it frightfully dull and of little value.</p>
+<!--TEASER_END-->
+
 <hr>
-<p>mention messy workshop and pic.</p>
-<h3>My Home directory</h3>
-<p>While I describe my home, lets list the other directories. These all live in the <code>/home</code> volume:</p>
-<h4>Fully named directories</h4>
-<p>Free Desktop-inspired directories. They all start with a capital letter and are spelled out in full, not abbreviated. They are lie the familiar ones you see in User Folders of Windows and Mac OS.</p>
+<p>Okay, so you're still here despite the warning, and you're probably thinking "<em>Mike, you've been using computers since the 1980s, and Unix systems since the early 1990s, but you're just now blogging about</em> <strong><em>how to organise your home directory! In 2016?! I mean, come on!</em></strong>"</p>
+<p>Yep.</p>
+<p>I think, like most people, I invented a very simple structure, almost with no thought, and it kind of grew un-tended over the decades.</p>
+<p>Later as I moved from DOS to Unix (wow long names!), to Windows (short names … and then long ones again), then Linux and now <em>also</em> macOS… each environment has added <em>its own pieces</em> to the pie….</p>
+<p>So my <code>${HOME}</code> has an accumulation of crufty files, and weird directories, with no particular place for anything, and files/folders left lying around wherever they were last used.</p>
+<p>To get a feel for the state of this mess, take a look at my real-life work bench, which reflects my computer work benches a little too closely:</p>
+<p><img alt="" src="../../pixels/dust/messy-workbench.jpg"></p>
+<p>(I know, right…?)</p>
+<p>I've put some time on the bus to good use, and cleared up my work laptop's <code>${HOME}</code> quite a bit. I've also put a bit of thought into what directories to have, and their purpose.</p>
+<h3>Overview of my Home directory</h3>
+<p>There are only three kinds of things in my <code>${HOME}</code>:</p>
+<ul>
+<li>configuration files/directories (or "dotfiles") — usually hidden</li>
+<li>directories with names that start with a capital letter</li>
+<li>three-letter-named <em>stubs</em>
+</li>
+</ul>
+<p>I'll describe all these things in a bit, but let's first see how it looks.</p>
+<p>Here's my new, squeaky clean <code>${HOME}</code> directory on my work's Macintosh:</p>
+<pre class="code literal-block"><span></span>mjl@milo:~$ ls -F /Users/mjl
+Applications/ Links/        Uploads/      doc@          org@
+Audio/        Maildir/      Video/        fun@          pix@
+Desktop/      Movies/       Work/         hax@          pub@
+Documents/    Music/        bak/          key@          tmp/
+Downloads/    Pictures/     bin/          lib/          vid@
+Grid/         Projects/     buz@          mem/          vms/
+Library/      Public/       dev@          net@
+</pre>
+
+
+<p>My home PC should be almost the same, except the Mac things will be missing, and some of the 3-letter-stubs swap between links and true directories (because of different storage volumes):</p>
+<pre class="code literal-block"><span></span>mjl@tesla:~$ ls -F /home/mjl
+Audio/     Links/     Uploads/   dev@       lib/       pub@
+Desktop/   Movies/    Video/     doc@       mem@       tmp@
+Documents/ Music/     bak/       fun@       net@       vid@
+Downloads/ Pictures/  bin/       hax@       org@       vms@
+Grid/      Projects/  buz@       key@       pix@       web@
+</pre>
+
+
+<p>Here's how <code>%USERPROFILE%</code> SHOULD look in Windows: (fewer stubs - depending on the Windows version, I use either <code>mklink</code> or <code>junction</code> to make the 3-letter-stubs, and I move <code>OneDrive</code> within <code>Grid</code> if it's present):</p>
+<pre class="code literal-block"><span></span>PS C:\Users\mjl&gt; dir | format-wide -column 5
+
+
+    Directory: C:\Users\mjl
+
+bak             bin             Contacts        Desktop         doc
+Documents       Downloads       Favorites       fun             Grid
+hax             key             lib             Links           Music
+net             org             Pictures        pix             Projects
+Saved Games     Searches        tmp             Uploads         Videos
+</pre>
+
+
+<p>Now I'll explore these directories and what they contain, by category.</p>
+<h3>Directories with Long Names starting with a Capital Letter</h3>
+<p>These are the familiar ones you see in the <em>Users</em> folders of Windows and macOS, placed there by the makers of the operating system (i.e. by Apple/Microsoft, or by Linux desktop environments that follow similar convention). Interestingly
+in the case of Linux/X11 desktops, the <a href="https://specifications.freedesktop.org">Free Desktop Project</a> does not prescribe these things. Rather they seem to be a loose convention, although the <a href="https://userbase.kde.org/System_Settings/Account_Details#Paths">KDE Documentation mentions where to change the defaults</a>.</p>
+<p>The names of these directories all start with a capital letter and are spelled out in full, not abbreviated.</p>
+<p>I used to replace these with symlinks, but that's actually a big hassle when you set up a new home directory.  Generally it's more trouble to (re)move them than to leave them there, so that's what I'll now do:  they are all <em>genuine directories</em>, not links to elsewhere (though they may <em>contain</em> links).</p>
+<h3>"Standard" directories</h3>
+<p>Most modern systems come with half a dozen pre-made directories in their user areas.  Here's how I use them:</p>
+<ul>
+<li>
+<code>Desktop</code>:  This directory contains the files shown on a traditional GUI desktop. On a Mac it is shared by all the "Spaces"/virtual desktops. On KDE the desktop could be set to show <em>anything else</em>, so I use it less there</li>
+<li>
+<code>Documents</code>: general location for "documents". <em>It SHOULD NOT contain any files</em>, only symlinks to the <code>Documents</code> directory in other locations. e.g. <code>Documents/net -&gt; ~/net/Documents</code> or <code>Documents/work -&gt; ~/Work/Documents</code>. In general I dislike this approach of grouping files by kind: better to group files by project/task</li>
+<li>
+<code>Downloads</code>: default download location of web browsers.  It should get periodically cleaned…</li>
+<li>
+<code>Movies</code>: Not used a lot. I reserve this for motion pictures, as distinct from video in general. Some applications save here by default</li>
+<li>
+<code>Music</code>: for <em>music</em> (as distinct from audio, which is not music). Could contain a link to a shared library on some other volume</li>
+<li>
+<code>Pictures</code>: general picture files (<em>pixels</em>: still images, fractals, photographs, wall paper…). Generated images from Projects usually go with the project</li>
+</ul>
+<h4>Apple Macintosh additions</h4>
+<ul>
+<li>
+<code>Applications</code>: locally/personally installed macOS applications (so that one may install macOS app's without needing root access). This is akin to <code>~/bin</code> I guess, but for the Apple/NeXT style <code>.app</code> Bundles. I generally install applications system-wide, even if I'm the only user of a computer</li>
+<li>
+<code>Library</code>: (<em>hidden</em> in Finder) macOS application settings (like the hidden <code>${XDG_CONFIG_HOME}</code> directory on Linux, or <code>%USERPROFILE%\AppData</code> on Windows - but Windows also stores some of these things in its <em>Registry</em>)</li>
+<li>
+<code>Public</code>: macOS lets you <a href="https://support.apple.com/kb/PH18719?locale=en_US">share files with other Macs on your local network</a> by placing them in here (if the feature is <a href="https://support.apple.com/kb/PH18715?locale=en_US">turned on</a>)</li>
+</ul>
+<h4>Microsoft Windows additions</h4>
+<p><em>So many more things added</em>:</p>
+<ul>
+<li>
+<code>Contacts</code>: Microsoft's <em>Windows Contacts</em> address book. Unused</li>
+<li>
+<code>Favorites</code>: Web browser bookmarks (<em>IE</em> and <em>Edge</em>). Unused</li>
+<li>
+<code>OneDrive</code>: Microsoft's grid drive. Unused, but it's <a href="https://support.microsoft.com/en-au/instantanswers/346c0dc9-68fb-4189-9674-8011c670c3de/change-the-location-of-your-onedrive-folder">relatively painless to move this</a> (you just unlink the directory from OneDrive, move the directory, and re-link; same as you would for other services like this), so I move it under <code>Grid</code> with the others</li>
+<li>
+<code>Saved Games</code>: This is where Microsoft would like games to put their saves, I think. Generally unused. <em>Most</em> Microsoft games use it, but as a rule games will save wherever the heck they like (some even add keys to the Windows Registry)</li>
+<li>
+<code>Searches</code>: Windows <a href="http://www.howtogeek.com/howto/5316/how-to-save-searches-in-windows-7/">Saved Searches</a>. Unused</li>
+</ul>
+<p>Two of the Microsoft standard directories are actually useful to me:</p>
+<ul>
+<li>
+<code>Links</code>: GUI Shortcuts. This was a Windows 10 addition (previously this was only found under <code>Favorites\Links</code>. Now it's in both places). I use KDE/<a href="https://specifications.freedesktop.org/desktop-entry-spec/latest/">Free Desktop</a> <code>.desktop</code> files quite a bit; it's nice to have one place to put them</li>
+<li>
+<code>Videos</code>: Video files. It's like the "standard" <code>Movies</code> but with a bit better name. I drop the <code>s</code> myself…  <em>Audio</em> and <em>Video</em>, rather than <em>Audios</em> / <em>Videos</em>
+</li>
+</ul>
+<h4>openSUSE additions:</h4>
+<ul>
+<li>
+<code>public_html</code>: this is a SUSE thing to automatically serve users' web pages with Apache I think.   I remove it and replace it with a link: <code>web -&gt; /data/srv/www/${USER}/</code> and configure Apache to serve from there instead of home directories.</li>
+</ul>
+<h3>My "general" directories</h3>
+<p>In principle I don't like dumping files into general buckets in home</p>
+<ul>
+<li>It makes it hard to find files</li>
+<li>Sometimes home is small (e.g. it must be on <code>C:</code> drive in Windows, unless you want to fiddle <em>a lot</em>)</li>
+<li>Files usually belong together in folders for a project, not scattered haphazardly</li>
+</ul>
+<p>But in <em>practice</em> I do dump files quite a bit. So I should have obvious places for files that are more general, or not part of some project.</p>
 <ul>
 <li>
 <code>Audio</code>: sounds (as distinct from music)</li>
 <li>
-<code>Desktop</code>:  Not used a lot now. This is the Freedesktop desktop folder</li>
+<code>Grid</code>: (from <em>Tron</em>) "cloud"-synchronised directories are in here (Dropbox, Google Drive, MEGA, etc.) I don't like the term "cloud", so I called it "Grid"</li>
 <li>
-<code>Documents</code>: Again, Free Deskktop (also Windows and Mac OS) location for "documents"</li>
+<code>Links</code>: (from <em>Windows</em>) for desktop shortcuts to other places. <code>Links/browsers</code> SHOULD contain launchers for different web browsers, to be linked to a Dock or Plasma panel</li>
 <li>
-<code>Downloads</code>: default download location.  It should get periodically cleaned...</li>
+<code>Maildir</code>: (from <em>Unix</em>, deprecated: I use Web Mail now): local copy of email, in maildir format. Used by emacs mu4e to view old emails</li>
 <li>
-<code>Links</code>: for desktop shortcuts (KDE <code>.desktop</code> files) to other places</li>
+<code>Projects</code>: the base for project directories (many will be <code>git</code>/<code>hg</code> repositories)</li>
 <li>
-<code>Movies</code>: Not used a lot. This is for motion pictures, as distinct from video in general</li>
+<code>Uploads</code>: (goes with <em>Downloads</em>) general staging area for files to be uploaded (i.e. to servers, or Raspberry Pi). Shared with some VirtualBox machines. As with <code>Downloads</code>, this should be periodically cleaned out</li>
 <li>
-<code>Music</code>: music (as distinct from audio, which is not music)</li>
+<code>Video</code>: video files (<em>not</em> movies, e.g. generated animations and such)</li>
 <li>
-<code>Pictures</code>: picture files</li>
-<li>
-<code>Projects</code>: for project directories (many will be <code>git</code>/<code>hg</code> repositories)</li>
-<li>
-<code>Public</code>: contains a link to <code>~/pub</code> and another to <code>html -&gt; /data/srv/html/${USER}</code>
-</li>
-<li>
-<p><code>Video</code>: video files (not movies, e.g. generated animations and such)</p>
-</li>
-<li>
-<p><code>public_html -&gt; /data/srv/html/${USER}</code>: this is a SUSE thing to automatically make web pages with Apache I think.</p>
-</li>
+<code>Work</code>: (from <em>AmigaOS</em>) work-related directory structure</li>
 </ul>
-<h4>3-letter nubbles</h4>
-<p>These are more pithy named directories that are quick to type and more friendly to my geek sensibilities</p>
+<p>The distinction between <code>Audio</code> and <code>Music</code>; or <code>Video</code> and <code>Movies</code> deserves some clarification. My <code>Audio</code>/<code>Video</code> directories are intended for files that are not a song or a movie. In general, songs and movies don't belong in my <code>${HOME}</code> anyway: they should be in a shared library location.</p>
+<h4>Grid volumes:</h4>
+<p>Locally stored files synchronised <em>on the Grid</em> ("to the Cloud"… <em>ugh</em>). Each may, or may not, be present, depending on the computer or the operating system. I put them all within <code>${HOME}/Grid</code>:</p>
+<ul>
+<li><code>Dropbox</code></li>
+<li><code>MEGA</code></li>
+<li><code>Google Drive</code></li>
+<li>
+<code>OneDrive</code> (I don't use it, but I'll move it on Windows 10+)</li>
+</ul>
+<p>While I use many services, only one is my main grid volume, and that is pointed to by the <code>${HOME}/net</code> stub</p>
+<h3>3-letter "stubs"</h3>
+<p>These are short-named directories that are quick to type and more friendly to my geek sensibilities. They come from the days of old, when 8.3 letter filenames were the limit. Some are inspired by Unix, others are my own invention. They are all well-worn, familiar little pebbles in my life now….</p>
 <ul>
 <li>
-<code>bak</code>: backups</li>
+<code>bak</code>: backups (e.g. emacs can be set to automatically put its twiddle-files here)</li>
 <li>
 <code>bin</code>: binaries (small programs/scripts)</li>
 <li>
-<code>buz -&gt; Audio/buz</code>: system sounds and other effects.</li>
+<code>buz -&gt; Audio/buz/</code>: system sounds and other effects.</li>
 <li>
-<code>fun</code>: games and/or game saves (e.g. Minecraft)</li>
+<code>fun -&gt; Grid/fun</code>: games and/or game saves (e.g. Minecraft), sync'd on the Grid</li>
 <li>
-<code>hax</code>: quick-and-dirty hacking space (throw-away data/scripts)</li>
+<code>key -&gt; net/private/keys/</code>: encryption key files (gpg, ssh and so on), sync'd on the Grid</li>
 <li>
-<code>key</code>: encryption key files (gpg, ssh and so on)</li>
+<code>lib</code>: code library (private code modules, or includes; Python virtual environments, ruby/go/whatever runtimes)</li>
 <li>
-<code>lib</code>: library (private code modules, or ones not managed by a packaging system)</li>
-<li>
-<code>mem -&gt; /data/mem/${USER}</code>: fast storage</li>
-<li>
-<code>org -&gt; MEGA/org</code>: organiser files (Emacs Org Mode)</li>
-<li>
-<code>pub -&gt; /data/pub</code>: shared files</li>
-<li>
-<code>ram</code>: mount point for a RAM drive</li>
-<li>
-<code>src</code>: source (untarred source code, not retrieved from a revision control system)</li>
-<li>
-<code>tmp -&gt; /data/mem/${USER}/tmp</code>:  temporary files</li>
-<li>
-<code>vms -&gt; /data/vms</code> virtual machine storage</li>
+<code>org -&gt; net/org/</code>: organiser files (Emacs Org Mode)</li>
 </ul>
-<p>There are also symlinks used as short names for the Fully named directories:</p>
+<p>The following stubs go to other devices on the system:</p>
 <ul>
-<li><code>doc -&gt; Documents</code></li>
-<li><code>pix -&gt; Pictures</code></li>
 <li>
-<code>prj -&gt; Projects</code>'</li>
-<li><code>vid -&gt; Video</code></li>
+<code>dev -&gt; /run/media/${USER}/</code> mounted removable devices (on a Macbook: <code>dev -&gt; /Volumes/</code>)</li>
+<li>
+<code>mem -&gt; /data/mem/${USER}/</code>: fast, solid-state storage (on a Macbook, it's all fast SSD, but leave the stub here)</li>
+<li>
+<code>net -&gt; Grid/MEGA/</code>: my main grid drive (currently it's MEGA, but it <em>could change one day</em>…)</li>
+<li>
+<code>pub -&gt; /data/pub/</code>: public files shared on this computer (on a Macbook: <code>pub -&gt; Public/</code>)</li>
+<li>
+<code>tmp -&gt; /data/mem/${USER}/tmp/</code>:  temporary files use fast storage, should be emptied upon logout (just another directory on a Macbook)</li>
+<li>
+<code>vms -&gt; /data/vms/</code> virtual machine storage (again, just another directory on a Macbook)</li>
 </ul>
-<p>There's also <code>net -&gt; MEGA</code> for my main cloud drive</p>
+<p>There are also stubs used as short names for the long-named directories:</p>
+<ul>
+<li><code>doc -&gt; Documents/</code></li>
+<li><code>hax -&gt; Projects/</code></li>
+<li><code>pix -&gt; Pictures/</code></li>
+<li><code>vid -&gt; Video/</code></li>
+</ul>
+<p>I have noticed that this mixture of old-world names in my <code>${HOME}</code> with the new-world ones is nicely mirrored in Apple's arrangement of the root directory of macOS:</p>
+<pre class="code literal-block"><span></span>mjl@milo:~$ ls -F /
+Applications/ Users/        dev/          opt/          usr/
+Library/      Volumes/      etc@          private/      var@
+Network/      bin/          home/         sbin/
+System/       cores/        net/          tmp@
+mjl@milo:~$
+</pre>
+
+
+<p>So I feel that I'm in good company with my new design.</p>
+<h3>Documents, Projects, Work, Oh My</h3>
+<p>"Where's that Work Document about my expense claims?".  Well, it should be under <code>Work/Documents</code>, but it's reasonable that I might also look in <code>Documents/work</code>, so … "Why Not Both?"</p>
+<p>These links line up so that you can find the same place by either path (the target of the link is where the files <em>really</em> belong):</p>
+<ul>
+<li>
+<code>~/Audio/net -&gt; ~/net/Audio/</code>:  audio on the Grid</li>
+<li>
+<code>~/Documents/net -&gt; ~/net/Documents/</code>: documents on the Grid</li>
+<li>
+<code>~/Music/pub -&gt; ~/pub/Music/</code>:  public/shared music</li>
+<li>
+<code>~/Pictures/net -&gt; ~/net/Pictures/</code>: pictures on the Grid</li>
+<li>
+<code>~/Pictures/pub -&gt; ~/pub/Pictures/</code>: public/shared pictures</li>
+<li>
+<code>~/Projects/net -&gt; ~/net/Projects/</code>: projects on the Grid</li>
+<li>
+<code>~/Video/net -&gt; ~/net/Video/</code>: video on the Grid</li>
+<li>
+<code>~/Video/pub -&gt; ~/pub/Video/</code>: public/shared video</li>
+</ul>
+<p>For work, things are a little more intricate (but any of these locations in the chain is equivalent):</p>
+<ul>
+<li><code>~/Documents/work -&gt; ~/Work/Documents -&gt; ~/Grid/Squiz Drive/Documents/</code></li>
+<li><code>~/Projects/work -&gt; ~/Work/Projects  -&gt; ~/Grid/Squiz Drive/Projects</code></li>
+<li>
+<code>~/Work/net -&gt; ~/Grid/Squiz Drive/</code> (my personal work grid drive)</li>
+<li>
+<code>~/Work/squiz -&gt; /Volumes/squiz/</code> (company-wide file share)</li>
+</ul>
+<p>And <strong><em>that</em></strong>, I belive, is how things should stay now. Well, for another decade or so anyway&amp;hellip ;-)</p>
+<p>The next thing to do is write some bash/powershell scripts to build a fresh home on new computers, using this blog post as a specification.</p>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../../tags/organisation.html" rel="tag">organisation</a></li>
+<li><a class="tag p-category" href="../../tags/boring.html" rel="tag">boring</a></li>
+            <li><a class="tag p-category" href="../../tags/organisation.html" rel="tag">organisation</a></li>
             <li><a class="tag p-category" href="../../tags/tips.html" rel="tag">tips</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="filesystems-home.html" rel="prev" title="Choosing Filesystems and devices for home server">Previous post</a>
+            </li>
         </ul></nav></aside></article>
 </div>
         <!--End of body content-->
