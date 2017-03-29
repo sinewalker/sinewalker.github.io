@@ -2,14 +2,14 @@
 .. title: Upgrading Nikola: some pitfalls and how I climbed out of them
 .. slug: upgrade-nikola-783
 .. date: 2017-03-23 07:48:48 UTC+11:00
-.. tags: meta, blog, draft
+.. tags: meta, nikola, hacking
 .. category: 
 .. link: 
 .. description: Upgrading Nikola needs some thought
 .. type: text
 -->
 
-After [some hacking]() of [my dotfiles]() and [python settings](), I lost my `nikola` virtual environment (I think it broke after a brew update or something.  The hacking's only partly recorded in the issues on GitHub).
+After [some](https://github.com/sinewalker/dotfiles/issues/7) [hacking](https://github.com/sinewalker/dotfiles/issues/17) of [my dotfiles](https://github.com/sinewalker/dotfiles) and [python settings](https://github.com/sinewalker/dotfiles/blob/master/source/50_python.sh), I lost my `nikola` virtual environment (I think it broke after a brew update or something.  The hacking's only partly recorded in the issues on GitHub).
 
 But that's no biggie, just make a new one and re-install, right?  Well, not quite. The re-install gives you the *latest* Nikola (great!) and that means I have to review and update my `conf.py` (okay...) and figure out runtime errors like this:
 
@@ -61,7 +61,7 @@ Installing setuptools, pip, wheel...done.
 [22:02](nikola)$ pip install "Nikola[extras]"
 Collecting Nikola[extras]
 
-&hellip;
+…
 
 Installing collected packages: natsort, Yapsy, docutils, Pygments, piexif, PyRSS2Gen, lxml, MarkupSafe, mako, logbook, blinker, unidec
 ode, cloudpickle, macfsevents, doit, requests, olefile, Pillow, six, python-dateutil, ws4py, argh, PyYAML, pathtools, watchdog, pygal,
@@ -79,7 +79,7 @@ re-0.7.4 piexif-1.0.12 prompt-toolkit-1.0.13 ptyprocess-0.5.1 pygal-2.3.1 pyphen
 e-0.4.20 watchdog-0.8.3 wcwidth-0.1.7 webassets-0.12.1 webencodings-0.5 ws4py-0.3.5
 ```
 
-Cool, that was easy. Okay, let's see what we've got
+Okay, that was easy, let's see what we've got:
 
 ```
 [src:?][mjl@milo:~/hax/net/blog/milosophical.me]
@@ -106,7 +106,7 @@ KeyError: 'page_index_folder_index'
 [22:18](nikola) 1 $
 ```
 
-Um, what?  Well, this has come up in the past, so let's first just check that basic nikola can load from a directory that doesn't have a `conf.py` in it, like `$HOME`:
+Um, what?  Well, this sort of thing has come up in the past after an upgrade of Nikola, so let's first just check that basic nikola can load from a directory that doesn't have a `conf.py` in it, like `$HOME`:
 
 ```
 [src:?][mjl@milo:~/hax/net/blog/milosophical.me]
@@ -117,16 +117,16 @@ Um, what?  Well, this has come up in the past, so let's first just check that ba
 Nikola v7.8.3
 ```
 
-Okay that worked.  So, it must be an issue with an old `conf.py` in my project.  I'll have to update it.
+Yes that worked.  So, there must be an issue with the old `conf.py` in my project.  I'll have to update it.
 
 
-Get the latest `conf.py` from https://getnikola.com/conf.html
+ 1. Get the latest `conf.py` from [Nikola's web site](https://getnikola.com/conf.html)
 
-Compare that to mine using Ediff and selectively merge in the changes.
+ 1. Compare that to mine using Ediff and selectively merge in the changes.
 
-fael (first error in this blog)
+ 1. Try `nikola version` again → **FAIL** (the first error in this blog)
 
-Only this is with the *new* `conf.py` settings *and removal of deprecated stuff*.  Granted, the values of the variables set to customise for this site, **but that Should Work!**  Why not?
+Now, this failure is with the *new* `conf.py` settings *and removal of deprecated stuff*.  Granted, the values of the variables are set to customise for this site, **but that Should Work!**  Why not?
 
 One of the changes imported was this:
 
@@ -151,13 +151,13 @@ One of the changes imported was this:
  # COMMENTS_IN_GALLERIES = False
 ```
 
-Since I *was* using `STORY_INDEX = True` before, I set `PAGE_INDEX = True` when I merged.  But the error has been about the page index all along: 
+Since I *was* using `STORY_INDEX = True` before, and the first run had the warning about this setting being deprecated, I set `PAGE_INDEX = True` when I merged.  But the error has been about the page index all along: 
 
 ```
 KeyError: 'page_index_folder_index'
 ```
 
-So, what if I try (on the bus this morning) disabling `PAGE_INDEX = True`?
+Now, what if I try (on the bus this morning) disabling `PAGE_INDEX = True`?
 
 ```
 [src:+!?][mjl@milo:~/hax/net/blog/milosophical.me]
@@ -167,9 +167,9 @@ Nikola v7.8.3
 
 **Success!** 
 
-In Nikola <= 7.7.1 I used `STORY_INDEX = True` to have this page: http://milosophical.me/pg/index.html
+In Nikola <= 7.7.1 I used `STORY_INDEX = True` to have this page: [http://milosophical.me/pg/index.html](http://milosophical.me/pg/index.html).
 
-I still want a page (ne "story") index, so now I'll have to work out why that is breaking.  Time to go exploring:
+I still want a page (ne "story") index, so now I'll have to work out why that is breaking.  Time to go exploring, let's blog about it ([Rule 4](/blog/2015/4-bit-rules-of-computing-part-1.html)):
 
 ```
 [src:+!?][mjl@milo:~/hax/net/blog/milosophical.me]
@@ -185,10 +185,42 @@ Scanning posts..........done!
 [07:48](nikola)$ mv posts/2017/upgrading-nikola-some-pitfalls-and-how-i-climbed-out-of-them.md posts/2017/upgrade-nikola-783.md
 ```
 
-```quote
-**There's benefits to upgrading too**:  I really like the new `-d` switch to put your posts into date folders (formatted by the new `NEW_POST_DATE_PATH_FORMAT = '%Y'`)!  I should figure out how to specify a shorter *slug* though.
-```
+
+> **There's benefits to upgrading too**:  I really like the new `-d` switch to put your posts into date folders (formatted by the new `NEW_POST_DATE_PATH_FORMAT = '%Y'`)!  I should figure out how to specify a shorter *slug* though.
+
 
 ----
 
 
+A quick Google for "`Nikola KeyError: page_index_folder_index`" lead me to [Nikola Issue #2646](https://github.com/getnikola/nikola/issues/2646) with a patch to fix a programming error. Awesome.  Since this is marked for Nikola's next release 7.8.4, which wasn't released yet, I applied the patch to my local install manually, rather than update with `pip`.
+
+```
+[src:+!?][mjl@milo:~/hax/net/blog/milosophical.me]
+[22:14](nikola)$ nikola version
+Nikola v7.8.3
+```
+
+That fixed the crash, only... 
+
+```
+[src:!][mjl@milo:~/hax/net/blog/milosophical.me]
+[22:15]$ ls output/pg/
+4-bit-rules.html  4-bit-rules.md  colophon.html  colophon.md  milosophical-me.html  milosophical-me.md	unforgetable-mega-chilli.html  unforgetable-mega-chilli.md
+
+[src:!][mjl@milo:~/hax/net/blog/milosophical.me]
+[22:15]$
+```
+
+There's still no page `index.html`?
+
+So I tried the (deprecated) `STORY_INDEX = True` again.  No dice.  That is when I [commented on the Issue](https://github.com/getnikola/nikola/issues/2646#issuecomment-288998636).  Which prompted [Pull Request #2701](https://github.com/getnikola/nikola/pull/2701) by one of the developers, and a promotion of the release 7.8.4
+
+Nikola [7.8.4 was then released](https://getnikola.com/blog/nikola-v784-is-out.html), so a quick
+
+```
+pip install --upgrade "Nikola[extras]"
+```
+
+And I'm again away with a working blog system.  It was just a bug, no drama.
+
+I've now updated my `conf.py` and imported a vanilla conf for 7.8.3 to compare my changes against (must work on my own [Issue 12](https://github.com/sinewalker/sinewalker.github.io/issues/12) to have a diffing tool, instead of doing this) and made a new post, plus [some CSS fixes](https://github.com/sinewalker/sinewalker.github.io/commit/c089aaf0793c3018da8fea215c99042046bb1ad1#diff-74d17458a7d2f1b3543e24ddb0f2115f) for old Wordpress posts and Notebook pages.

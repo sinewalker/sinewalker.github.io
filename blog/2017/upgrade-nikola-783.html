@@ -13,15 +13,16 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="http://milosophical.me/blog/2017/upgrade-nikola-783.html">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Michael Lockhart">
-<meta name="robots" content="noindex">
+<link rel="prev" href="../2016/home-dir-maintenance.html" title="Organising my digital stuff" type="text/html">
 <meta property="og:site_name" content="Milosophical Me">
 <meta property="og:title" content="Upgrading Nikola: some pitfalls and how I climbed out of them">
 <meta property="og:url" content="http://milosophical.me/blog/2017/upgrade-nikola-783.html">
 <meta property="og:description" content="Upgrading Nikola needs some thought">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2017-03-23T07:48:48+11:00">
-<meta property="article:tag" content="blog">
+<meta property="article:tag" content="hacking">
 <meta property="article:tag" content="meta">
+<meta property="article:tag" content="nikola">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -158,7 +159,7 @@
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
-<p>After <a href="#">some hacking</a> of <a href="#">my dotfiles</a> and <a href="#">python settings</a>, I lost my <code>nikola</code> virtual environment (I think it broke after a brew update or something.  The hacking's only partly recorded in the issues on GitHub).</p>
+<p>After <a href="https://github.com/sinewalker/dotfiles/issues/7">some</a> <a href="https://github.com/sinewalker/dotfiles/issues/17">hacking</a> of <a href="https://github.com/sinewalker/dotfiles">my dotfiles</a> and <a href="https://github.com/sinewalker/dotfiles/blob/master/source/50_python.sh">python settings</a>, I lost my <code>nikola</code> virtual environment (I think it broke after a brew update or something.  The hacking's only partly recorded in the issues on GitHub).</p>
 <p>But that's no biggie, just make a new one and re-install, right?  Well, not quite. The re-install gives you the <em>latest</em> Nikola (great!) and that means I have to review and update my <code>conf.py</code> (okay...) and figure out runtime errors like this:</p>
 <pre class="code literal-block"><span></span><span class="k">[src:?][mjl@milo:~/hax/net/blog/milosophical.me]</span>
 <span class="na">[07:27](nikola)$ nikola version</span>
@@ -203,7 +204,7 @@
 <span class="na">[22:02](nikola)$ pip install "Nikola[extras]"</span>
 <span class="na">Collecting Nikola[extras]</span>
 
-<span class="na">&amp;hellip;</span>
+<span class="na">…</span>
 
 <span class="na">Installing collected packages: natsort, Yapsy, docutils, Pygments, piexif, PyRSS2Gen, lxml, MarkupSafe, mako, logbook, blinker, unidec</span>
 <span class="na">ode, cloudpickle, macfsevents, doit, requests, olefile, Pillow, six, python-dateutil, ws4py, argh, PyYAML, pathtools, watchdog, pygal,</span>
@@ -222,7 +223,7 @@
 </pre>
 
 
-<p>Cool, that was easy. Okay, let's see what we've got</p>
+<p>Okay, that was easy, let's see what we've got:</p>
 <pre class="code literal-block"><span></span><span class="k">[src:?][mjl@milo:~/hax/net/blog/milosophical.me]</span>
 <span class="na">[22:16](nikola)$ nikola version</span>
 <span class="na">[2017-03-22T11:18:23Z] WARNING: Nikola: The STORY_INDEX option is deprecated, use PAGE_INDEX instead.</span>
@@ -248,7 +249,7 @@
 </pre>
 
 
-<p>Um, what?  Well, this has come up in the past, so let's first just check that basic nikola can load from a directory that doesn't have a <code>conf.py</code> in it, like <code>$HOME</code>:</p>
+<p>Um, what?  Well, this sort of thing has come up in the past after an upgrade of Nikola, so let's first just check that basic nikola can load from a directory that doesn't have a <code>conf.py</code> in it, like <code>$HOME</code>:</p>
 <pre class="code literal-block"><span></span><span class="k">[src:?][mjl@milo:~/hax/net/blog/milosophical.me]</span>
 <span class="na">[22:18](nikola) 1 $ cd</span>
 
@@ -258,11 +259,19 @@
 </pre>
 
 
-<p>Okay that worked.  So, it must be an issue with an old <code>conf.py</code> in my project.  I'll have to update it.</p>
-<p>Get the latest <code>conf.py</code> from https://getnikola.com/conf.html</p>
+<p>Yes that worked.  So, there must be an issue with the old <code>conf.py</code> in my project.  I'll have to update it.</p>
+<ol>
+<li>
+<p>Get the latest <code>conf.py</code> from <a href="https://getnikola.com/conf.html">Nikola's web site</a></p>
+</li>
+<li>
 <p>Compare that to mine using Ediff and selectively merge in the changes.</p>
-<p>fael (first error in this blog)</p>
-<p>Only this is with the <em>new</em> <code>conf.py</code> settings <em>and removal of deprecated stuff</em>.  Granted, the values of the variables set to customise for this site, <strong>but that Should Work!</strong>  Why not?</p>
+</li>
+<li>
+<p>Try <code>nikola version</code> again → <strong>FAIL</strong> (the first error in this blog)</p>
+</li>
+</ol>
+<p>Now, this failure is with the <em>new</em> <code>conf.py</code> settings <em>and removal of deprecated stuff</em>.  Granted, the values of the variables are set to customise for this site, <strong>but that Should Work!</strong>  Why not?</p>
 <p>One of the changes imported was this:</p>
 <pre class="code literal-block"><span></span><span class="gu">@@ -975,13 +1032,13 @@ COMMENT_SYSTEM_ID = ""</span>
  # the "noannotations" metadata.
@@ -285,12 +294,12 @@
 </pre>
 
 
-<p>Since I <em>was</em> using <code>STORY_INDEX = True</code> before, I set <code>PAGE_INDEX = True</code> when I merged.  But the error has been about the page index all along: </p>
+<p>Since I <em>was</em> using <code>STORY_INDEX = True</code> before, and the first run had the warning about this setting being deprecated, I set <code>PAGE_INDEX = True</code> when I merged.  But the error has been about the page index all along: </p>
 <pre class="code literal-block"><span></span>KeyError: 'page_index_folder_index'
 </pre>
 
 
-<p>So, what if I try (on the bus this morning) disabling <code>PAGE_INDEX = True</code>?</p>
+<p>Now, what if I try (on the bus this morning) disabling <code>PAGE_INDEX = True</code>?</p>
 <pre class="code literal-block"><span></span><span class="k">[src:+!?][mjl@milo:~/hax/net/blog/milosophical.me]</span>
 <span class="na">[07:42](nikola)$ nikola version</span>
 <span class="na">Nikola v7.8.3</span>
@@ -298,8 +307,8 @@
 
 
 <p><strong>Success!</strong> </p>
-<p>In Nikola &lt;= 7.7.1 I used <code>STORY_INDEX = True</code> to have this page: http://milosophical.me/pg/index.html</p>
-<p>I still want a page (ne "story") index, so now I'll have to work out why that is breaking.  Time to go exploring:</p>
+<p>In Nikola &lt;= 7.7.1 I used <code>STORY_INDEX = True</code> to have this page: <a href="http://milosophical.me/pg/index.html">http://milosophical.me/pg/index.html</a>.</p>
+<p>I still want a page (ne "story") index, so now I'll have to work out why that is breaking.  Time to go exploring, let's blog about it (<a href="../2015/4-bit-rules-of-computing-part-1.html">Rule 4</a>):</p>
 <pre class="code literal-block"><span></span><span class="k">[src:+!?][mjl@milo:~/hax/net/blog/milosophical.me]</span>
 <span class="na">[07:48](nikola)$ nikola new_post -d -f markdown</span>
 <span class="na">Creating New Post</span>
@@ -314,16 +323,47 @@
 </pre>
 
 
-<pre class="code literal-block"><span></span>**There's benefits to upgrading too**:  I really like the new `-d` switch to put your posts into date folders (formatted by the new `NEW_POST_DATE_PATH_FORMAT = '%Y'`)!  I should figure out how to specify a shorter *slug* though.
+<blockquote>
+<p><strong>There's benefits to upgrading too</strong>:  I really like the new <code>-d</code> switch to put your posts into date folders (formatted by the new <code>NEW_POST_DATE_PATH_FORMAT = '%Y'</code>)!  I should figure out how to specify a shorter <em>slug</em> though.</p>
+</blockquote>
+<hr>
+<p>A quick Google for "<code>Nikola KeyError: page_index_folder_index</code>" lead me to <a href="https://github.com/getnikola/nikola/issues/2646">Nikola Issue #2646</a> with a patch to fix a programming error. Awesome.  Since this is marked for Nikola's next release 7.8.4, which wasn't released yet, I applied the patch to my local install manually, rather than update with <code>pip</code>.</p>
+<pre class="code literal-block"><span></span><span class="k">[src:+!?][mjl@milo:~/hax/net/blog/milosophical.me]</span>
+<span class="na">[22:14](nikola)$ nikola version</span>
+<span class="na">Nikola v7.8.3</span>
 </pre>
 
 
-<hr>
+<p>That fixed the crash, only... </p>
+<pre class="code literal-block"><span></span><span class="k">[src:!][mjl@milo:~/hax/net/blog/milosophical.me]</span>
+<span class="na">[22:15]$ ls output/pg/</span>
+<span class="na">4-bit-rules.html  4-bit-rules.md  colophon.html  colophon.md  milosophical-me.html  milosophical-me.md  unforgetable-mega-chilli.html  unforgetable-mega-chilli.md</span>
+
+<span class="k">[src:!][mjl@milo:~/hax/net/blog/milosophical.me]</span>
+<span class="na">[22:15]$</span>
+</pre>
+
+
+<p>There's still no page <code>index.html</code>?</p>
+<p>So I tried the (deprecated) <code>STORY_INDEX = True</code> again.  No dice.  That is when I <a href="https://github.com/getnikola/nikola/issues/2646#issuecomment-288998636">commented on the Issue</a>.  Which prompted <a href="https://github.com/getnikola/nikola/pull/2701">Pull Request #2701</a> by one of the developers, and a promotion of the release 7.8.4</p>
+<p>Nikola <a href="https://getnikola.com/blog/nikola-v784-is-out.html">7.8.4 was then released</a>, so a quick</p>
+<pre class="code literal-block"><span></span>pip install --upgrade "Nikola[extras]"
+</pre>
+
+
+<p>And I'm again away with a working blog system.  It was just a bug, no drama.</p>
+<p>I've now updated my <code>conf.py</code> and imported a vanilla conf for 7.8.3 to compare my changes against (must work on my own <a href="https://github.com/sinewalker/sinewalker.github.io/issues/12">Issue 12</a> to have a diffing tool, instead of doing this) and made a new post, plus <a href="https://github.com/sinewalker/sinewalker.github.io/commit/c089aaf0793c3018da8fea215c99042046bb1ad1#diff-74d17458a7d2f1b3543e24ddb0f2115f">some CSS fixes</a> for old Wordpress posts and Notebook pages.</p>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../../categories/blog.html" rel="tag">blog</a></li>
-            <li><a class="tag p-category" href="../../categories/meta.html" rel="tag">meta</a></li>
+<li><a class="tag p-category" href="../../tags/hacking.html" rel="tag">hacking</a></li>
+            <li><a class="tag p-category" href="../../tags/meta.html" rel="tag">meta</a></li>
+            <li><a class="tag p-category" href="../../tags/nikola.html" rel="tag">nikola</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../2016/home-dir-maintenance.html" rel="prev" title="Organising my digital stuff">Previous post</a>
+            </li>
         </ul></nav></aside></article>
 </div>
         <!--End of body content-->

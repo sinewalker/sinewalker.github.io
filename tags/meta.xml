@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Milosophical Me (Posts about meta)</title><link>http://milosophical.me/</link><description></description><atom:link href="http://milosophical.me/tags/meta.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 29 Mar 2017 04:02:58 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Meta: Setting up Nikola blogging</title><link>http://milosophical.me/blog/2015/setting-up-nikola.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Milosophical Me (Posts about meta)</title><link>http://milosophical.me/</link><description></description><atom:link href="http://milosophical.me/tags/meta.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 29 Mar 2017 22:16:05 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Upgrading Nikola: some pitfalls and how I climbed out of them</title><link>http://milosophical.me/blog/2017/upgrade-nikola-783.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;After &lt;a href="https://github.com/sinewalker/dotfiles/issues/7"&gt;some&lt;/a&gt; &lt;a href="https://github.com/sinewalker/dotfiles/issues/17"&gt;hacking&lt;/a&gt; of &lt;a href="https://github.com/sinewalker/dotfiles"&gt;my dotfiles&lt;/a&gt; and &lt;a href="https://github.com/sinewalker/dotfiles/blob/master/source/50_python.sh"&gt;python settings&lt;/a&gt;, I lost my &lt;code&gt;nikola&lt;/code&gt; virtual environment (I think it broke after a brew update or something.  The hacking's only partly recorded in the issues on GitHub).&lt;/p&gt;
+&lt;p&gt;But that's no biggie, just make a new one and re-install, right?  Well, not quite. The re-install gives you the &lt;em&gt;latest&lt;/em&gt; Nikola (great!) and that means I have to review and update my &lt;code&gt;conf.py&lt;/code&gt; (okay...) and figure out runtime errors like this:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;[src:?][mjl@milo:~/hax/net/blog/milosophical.me]&lt;/span&gt;
+&lt;span class="na"&gt;[07:27](nikola)$ nikola version&lt;/span&gt;
+&lt;span class="na"&gt;Traceback (most recent call last):&lt;/span&gt;
+  &lt;span class="na"&gt;File "/Users/mjl/lib/nikola/bin/nikola", line 11, in &amp;lt;module&amp;gt;&lt;/span&gt;
+    &lt;span class="na"&gt;sys.exit(main())&lt;/span&gt;
+  &lt;span class="na"&gt;File "/Users/mjl/lib/nikola/lib/python3.6/site-packages/nikola/__main__.py", line 171, in main&lt;/span&gt;
+    &lt;span class="na"&gt;_&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;DN.run(oargs)&lt;/span&gt;
+&lt;span class="s"&gt;  File "/Users/mjl/lib/nikola/lib/python3.6/site-packages/nikola/__main__.py", line 339, in run&lt;/span&gt;
+&lt;span class="s"&gt;    self.nikola.init_plugins()&lt;/span&gt;
+&lt;span class="s"&gt;  File "/Users/mjl/lib/nikola/lib/python3.6/site-packages/nikola/nikola.py", line 1077, in init_plugins&lt;/span&gt;
+&lt;span class="s"&gt;    self._activate_plugins_of_category("SignalHandler")&lt;/span&gt;
+&lt;span class="s"&gt;  File "/Users/mjl/lib/nikola/lib/python3.6/site-packages/nikola/nikola.py", line 1233, in _activate_plugins_of_category&lt;/span&gt;
+&lt;span class="s"&gt;    plugin_info.plugin_object.set_site(self)&lt;/span&gt;
+&lt;span class="s"&gt;  File "/Users/mjl/lib/nikola/lib/python3.6/site-packages/nikola/plugins/misc/taxonomies_classifier.py", line 328, in set_site&lt;/span&gt;
+&lt;span class="s"&gt;    self._register_path_handlers(taxonomy)&lt;/span&gt;
+&lt;span class="s"&gt;  File "/Users/mjl/lib/nikola/lib/python3.6/site-packages/nikola/plugins/misc/taxonomies_classifier.py", line 316, in _register_path_handlers&lt;/span&gt;
+&lt;span class="s"&gt;    doc = taxonomy.path_handler_docstrings[name]&lt;/span&gt;
+&lt;span class="na"&gt;KeyError: 'page_index_folder_index'&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;(well, pooh).&lt;/p&gt;
+&lt;p&gt;I decided a while back that I wasn't going to meta-blog (otherwise most of my posts would be about blogging!), but I think in this case, Rule 4 will come to the rescue.  Anyway at least you know this story has a happy ending, or else I wouldn't be able to add this &lt;code&gt;new_post&lt;/code&gt;!&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://milosophical.me/blog/2017/upgrade-nikola-783.html"&gt;Read more…&lt;/a&gt; (5 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>hacking</category><category>meta</category><category>nikola</category><guid>http://milosophical.me/blog/2017/upgrade-nikola-783.html</guid><pubDate>Wed, 22 Mar 2017 20:48:48 GMT</pubDate></item><item><title>Meta: Setting up Nikola blogging</title><link>http://milosophical.me/blog/2015/setting-up-nikola.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;

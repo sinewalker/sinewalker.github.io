@@ -132,7 +132,44 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2016/home-dir-maintenance.html" class="u-url">Organising my digital stuff</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2017/upgrade-nikola-783.html" class="u-url">Upgrading Nikola: some pitfalls and how I climbed out of them</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="2017/upgrade-nikola-783.html" rel="bookmark"><time class="published dt-published" datetime="2017-03-23T07:48:48+11:00" title="2017-03-23 07:48">2017-03-23 07:48</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>After <a href="https://github.com/sinewalker/dotfiles/issues/7">some</a> <a href="https://github.com/sinewalker/dotfiles/issues/17">hacking</a> of <a href="https://github.com/sinewalker/dotfiles">my dotfiles</a> and <a href="https://github.com/sinewalker/dotfiles/blob/master/source/50_python.sh">python settings</a>, I lost my <code>nikola</code> virtual environment (I think it broke after a brew update or something.  The hacking's only partly recorded in the issues on GitHub).</p>
+<p>But that's no biggie, just make a new one and re-install, right?  Well, not quite. The re-install gives you the <em>latest</em> Nikola (great!) and that means I have to review and update my <code>conf.py</code> (okay...) and figure out runtime errors like this:</p>
+<pre class="code literal-block"><span></span><span class="k">[src:?][mjl@milo:~/hax/net/blog/milosophical.me]</span>
+<span class="na">[07:27](nikola)$ nikola version</span>
+<span class="na">Traceback (most recent call last):</span>
+  <span class="na">File "/Users/mjl/lib/nikola/bin/nikola", line 11, in &lt;module&gt;</span>
+    <span class="na">sys.exit(main())</span>
+  <span class="na">File "/Users/mjl/lib/nikola/lib/python3.6/site-packages/nikola/__main__.py", line 171, in main</span>
+    <span class="na">_</span> <span class="o">=</span> <span class="s">DN.run(oargs)</span>
+<span class="s">  File "/Users/mjl/lib/nikola/lib/python3.6/site-packages/nikola/__main__.py", line 339, in run</span>
+<span class="s">    self.nikola.init_plugins()</span>
+<span class="s">  File "/Users/mjl/lib/nikola/lib/python3.6/site-packages/nikola/nikola.py", line 1077, in init_plugins</span>
+<span class="s">    self._activate_plugins_of_category("SignalHandler")</span>
+<span class="s">  File "/Users/mjl/lib/nikola/lib/python3.6/site-packages/nikola/nikola.py", line 1233, in _activate_plugins_of_category</span>
+<span class="s">    plugin_info.plugin_object.set_site(self)</span>
+<span class="s">  File "/Users/mjl/lib/nikola/lib/python3.6/site-packages/nikola/plugins/misc/taxonomies_classifier.py", line 328, in set_site</span>
+<span class="s">    self._register_path_handlers(taxonomy)</span>
+<span class="s">  File "/Users/mjl/lib/nikola/lib/python3.6/site-packages/nikola/plugins/misc/taxonomies_classifier.py", line 316, in _register_path_handlers</span>
+<span class="s">    doc = taxonomy.path_handler_docstrings[name]</span>
+<span class="na">KeyError: 'page_index_folder_index'</span>
+</pre>
+
+
+<p>(well, pooh).</p>
+<p>I decided a while back that I wasn't going to meta-blog (otherwise most of my posts would be about blogging!), but I think in this case, Rule 4 will come to the rescue.  Anyway at least you know this story has a happy ending, or else I wouldn't be able to add this <code>new_post</code>!</p>
+<p class="more"><a href="2017/upgrade-nikola-783.html">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2016/home-dir-maintenance.html" class="u-url">Organising my digital stuff</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
@@ -297,21 +334,6 @@ out quite nicely.</p>
 </div>
 </div>
 </div>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2015/4-bit-rules-of-computing-part-2.html" class="u-url">4-bit Rules of Computing, Part 2</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
-            </span></p>
-            <p class="dateline"><a href="2015/4-bit-rules-of-computing-part-2.html" rel="bookmark"><time class="published dt-published" datetime="2015-07-22T21:15:00+10:00" title="2015-07-22 21:15">2015-07-22 21:15</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>Here is the third part of my <a href="../tags/4-bit-rules.html">blog series</a> expanding on my
-<a href="../pg/4-bit-rules.html">4-bit rules of computing</a>.</p>
-<p>In this installment:  Rules 5, on comments.  Rule 5 is a bit contentious and I've taken too long in writing my thoughts on it — which is probably telling. Nonetheless I still want to press ahead and get these words out.  I also wanted to include Rule 6 with this post, but I'm taking my own advice and breaking the post into two, because it really was getting quite long.</p>
-<p class="more"><a href="2015/4-bit-rules-of-computing-part-2.html">Read more…</a></p>
 </div>
     </div>
     </article>
