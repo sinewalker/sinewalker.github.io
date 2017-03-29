@@ -185,28 +185,28 @@ extract the audio stream, you'll just be wasting network
 bandwidth/quota.</p>
 <p>I like ogg-vorbis audio if I can get it, so I look for any webm
 formats available (the audio stream is vorbis in webm):</p>
-<pre class="code literal-block"><span></span><span class="n">mjl</span><span class="p">@</span><span class="nl">tesla</span><span class="p">:</span><span class="o">~/</span><span class="n">Music</span><span class="o">&gt;</span> <span class="n">youtube</span><span class="o">-</span><span class="n">dl</span> <span class="o">-</span><span class="n">F</span> <span class="nl">https</span><span class="p">:</span><span class="c1">//www.youtube.com/watch?v=EVZh4WcdC3s</span>
-<span class="p">[</span><span class="n">youtube</span><span class="p">]</span> <span class="nl">EVZh4WcdC3s</span><span class="p">:</span> <span class="n">Downloading</span> <span class="n">webpage</span>
-<span class="p">[</span><span class="n">youtube</span><span class="p">]</span> <span class="nl">EVZh4WcdC3s</span><span class="p">:</span> <span class="n">Extracting</span> <span class="n">video</span> <span class="n">information</span>
-<span class="p">[</span><span class="n">youtube</span><span class="p">]</span> <span class="nl">EVZh4WcdC3s</span><span class="p">:</span> <span class="n">Downloading</span> <span class="n">js</span> <span class="n">player</span> <span class="n">en_US</span><span class="o">-</span><span class="n">vfl3g8JP2</span>
-<span class="p">[</span><span class="n">youtube</span><span class="p">]</span> <span class="nl">EVZh4WcdC3s</span><span class="p">:</span> <span class="n">Downloading</span> <span class="n">DASH</span> <span class="n">manifest</span>
-<span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Available</span> <span class="n">formats</span> <span class="k">for</span> <span class="nl">EVZh4WcdC3s</span><span class="p">:</span>
-<span class="n">format</span> <span class="n">code</span>  <span class="n">extension</span>  <span class="n">resolution</span> <span class="n">note</span>
-<span class="mi">140</span>          <span class="n">m4a</span>        <span class="n">audio</span> <span class="n">only</span> <span class="n">DASH</span> <span class="n">audio</span>  <span class="mi">127</span><span class="n">k</span> <span class="p">,</span> <span class="n">m4a_dash</span> <span class="n">container</span><span class="p">,</span> <span class="n">aac</span>  <span class="mi">@128</span><span class="n">k</span> <span class="p">(</span><span class="mi">44100</span><span class="n">Hz</span><span class="p">),</span> <span class="mf">3.71</span><span class="n">MiB</span>
-<span class="mi">171</span>          <span class="n">webm</span>       <span class="n">audio</span> <span class="n">only</span> <span class="n">DASH</span> <span class="n">audio</span>  <span class="mi">138</span><span class="n">k</span> <span class="p">,</span> <span class="n">audio</span><span class="mi">@128</span><span class="n">k</span> <span class="p">(</span><span class="mi">44100</span><span class="n">Hz</span><span class="p">),</span> <span class="mf">3.78</span><span class="n">MiB</span>
-<span class="mi">141</span>          <span class="n">m4a</span>        <span class="n">audio</span> <span class="n">only</span> <span class="n">DASH</span> <span class="n">audio</span>  <span class="mi">255</span><span class="n">k</span> <span class="p">,</span> <span class="n">m4a_dash</span> <span class="n">container</span><span class="p">,</span> <span class="n">aac</span>  <span class="mi">@256</span><span class="n">k</span> <span class="p">(</span><span class="mi">44100</span><span class="n">Hz</span><span class="p">),</span> <span class="mf">7.44</span><span class="n">MiB</span>
-<span class="mi">242</span>          <span class="n">webm</span>       <span class="mi">320</span><span class="n">x240</span>    <span class="n">DASH</span> <span class="n">video</span>   <span class="mi">55</span><span class="n">k</span> <span class="p">,</span> <span class="mf">1f</span><span class="n">ps</span><span class="p">,</span> <span class="n">video</span> <span class="n">only</span><span class="p">,</span> <span class="mf">1.36</span><span class="n">MiB</span>
-<span class="mi">160</span>          <span class="n">mp4</span>        <span class="mi">192</span><span class="n">x144</span>    <span class="n">DASH</span> <span class="n">video</span>  <span class="mi">119</span><span class="n">k</span> <span class="p">,</span> <span class="mf">15f</span><span class="n">ps</span><span class="p">,</span> <span class="n">video</span> <span class="n">only</span><span class="p">,</span> <span class="mf">2.41</span><span class="n">MiB</span>
-<span class="mi">243</span>          <span class="n">webm</span>       <span class="mi">480</span><span class="n">x360</span>    <span class="n">DASH</span> <span class="n">video</span>  <span class="mi">143</span><span class="n">k</span> <span class="p">,</span> <span class="mf">1f</span><span class="n">ps</span><span class="p">,</span> <span class="n">video</span> <span class="n">only</span><span class="p">,</span> <span class="mf">2.80</span><span class="n">MiB</span>
-<span class="mi">134</span>          <span class="n">mp4</span>        <span class="mi">480</span><span class="n">x360</span>    <span class="n">DASH</span> <span class="n">video</span>  <span class="mi">241</span><span class="n">k</span> <span class="p">,</span> <span class="mf">30f</span><span class="n">ps</span><span class="p">,</span> <span class="n">video</span> <span class="n">only</span><span class="p">,</span> <span class="mf">4.37</span><span class="n">MiB</span>
-<span class="mi">133</span>          <span class="n">mp4</span>        <span class="mi">320</span><span class="n">x240</span>    <span class="n">DASH</span> <span class="n">video</span>  <span class="mi">268</span><span class="n">k</span> <span class="p">,</span> <span class="mf">30f</span><span class="n">ps</span><span class="p">,</span> <span class="n">video</span> <span class="n">only</span><span class="p">,</span> <span class="mf">3.08</span><span class="n">MiB</span>
-<span class="mi">244</span>          <span class="n">webm</span>       <span class="mi">640</span><span class="n">x480</span>    <span class="n">DASH</span> <span class="n">video</span>  <span class="mi">285</span><span class="n">k</span> <span class="p">,</span> <span class="mf">1f</span><span class="n">ps</span><span class="p">,</span> <span class="n">video</span> <span class="n">only</span><span class="p">,</span> <span class="mf">5.37</span><span class="n">MiB</span>
-<span class="mi">135</span>          <span class="n">mp4</span>        <span class="mi">640</span><span class="n">x480</span>    <span class="n">DASH</span> <span class="n">video</span>  <span class="mi">497</span><span class="n">k</span> <span class="p">,</span> <span class="mf">30f</span><span class="n">ps</span><span class="p">,</span> <span class="n">video</span> <span class="n">only</span><span class="p">,</span> <span class="mf">8.75</span><span class="n">MiB</span>
-<span class="mi">17</span>           <span class="mi">3</span><span class="n">gp</span>        <span class="mi">176</span><span class="n">x144</span>    
-<span class="mi">36</span>           <span class="mi">3</span><span class="n">gp</span>        <span class="mi">320</span><span class="n">x240</span>    
-<span class="mi">5</span>            <span class="n">flv</span>        <span class="mi">400</span><span class="n">x240</span>    
-<span class="mi">43</span>           <span class="n">webm</span>       <span class="mi">640</span><span class="n">x360</span>    
-<span class="mi">18</span>           <span class="n">mp4</span>        <span class="mi">640</span><span class="n">x360</span>    <span class="p">(</span><span class="n">best</span><span class="p">)</span>
+<pre class="code literal-block"><span></span>mjl@tesla:~/Music&gt; youtube-dl -F https://www.youtube.com/watch?v=EVZh4WcdC3s
+[youtube] EVZh4WcdC3s: Downloading webpage
+[youtube] EVZh4WcdC3s: Extracting video information
+[youtube] EVZh4WcdC3s: Downloading js player en_US-vfl3g8JP2
+[youtube] EVZh4WcdC3s: Downloading DASH manifest
+[info] Available formats for EVZh4WcdC3s:
+format code  extension  resolution note
+140          m4a        audio only DASH audio  127k , m4a_dash container, aac  @128k (44100Hz), 3.71MiB
+171          webm       audio only DASH audio  138k , audio@128k (44100Hz), 3.78MiB
+141          m4a        audio only DASH audio  255k , m4a_dash container, aac  @256k (44100Hz), 7.44MiB
+242          webm       320x240    DASH video   55k , 1fps, video only, 1.36MiB
+160          mp4        192x144    DASH video  119k , 15fps, video only, 2.41MiB
+243          webm       480x360    DASH video  143k , 1fps, video only, 2.80MiB
+134          mp4        480x360    DASH video  241k , 30fps, video only, 4.37MiB
+133          mp4        320x240    DASH video  268k , 30fps, video only, 3.08MiB
+244          webm       640x480    DASH video  285k , 1fps, video only, 5.37MiB
+135          mp4        640x480    DASH video  497k , 30fps, video only, 8.75MiB
+17           3gp        176x144    
+36           3gp        320x240    
+5            flv        400x240    
+43           webm       640x360    
+18           mp4        640x360    (best)
 </pre>
 
 
@@ -227,11 +227,11 @@ mjl@tesla:~/Music&gt;
 would be much easier to put Vorbis data in an Ogg container, as music
 players know how to work with that.  For this purpose, I use
 <a href="https://www.ffmpeg.org/">ffmpeg</a>:</p>
-<pre class="code literal-block"><span></span>ffmpeg -i freakout.webm -vn -acodec 'copy' freakout.ogg
+<pre class="code literal-block"><span></span>ffmpeg -i freakout.webm -vn -acodec <span class="s1">'copy'</span> freakout.ogg
 </pre>
 
 
-<p>(You can also use it's fork, libav and avconv, but that's a
+<p>(You can also use it's fork, <em>libav</em> and <em>avconv</em>, but that's a
 Debian/Ubuntu confusion that
 <a href="http://stackoverflow.com/questions/9477115/what-are-the-differences-and-similarities-between-ffmpeg-libav-and-avconv">you shouldn't need to worry about</a>).</p>
 <p>If you download a format other than webm (because webm is not

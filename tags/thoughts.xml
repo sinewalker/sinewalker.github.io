@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Milosophical Me (Posts about thoughts)</title><link>http://milosophical.me/</link><description></description><atom:link href="http://milosophical.me/tags/thoughts.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 29 Mar 2017 04:02:58 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>"generic" types: what's in a name?</title><link>http://milosophical.me/blog/2008/09/10/generic-types-whats-in-a-name.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;I've been stumbling over Java's generic types for a while now... I think I
+finally understand what my problem is:
+&lt;/p&gt;
+&lt;br&gt;
+&lt;p style="text-align:center;"&gt;They should be called &lt;strong&gt;specific &lt;/strong&gt;types, or &lt;em&gt;&lt;span&gt;parametrised&lt;/span&gt;&lt;/em&gt;-&lt;em&gt;collections&lt;/em&gt;!&lt;/p&gt;
+&lt;br&gt;
+
+
+&lt;p&gt;&lt;a href="http://milosophical.me/blog/2008/09/10/generic-types-whats-in-a-name.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>duh</category><category>generics</category><category>jargon</category><category>java</category><category>OOP</category><category>terminology</category><category>thoughts</category><guid>http://milosophical.me/blog/2008/09/10/generic-types-whats-in-a-name.html</guid><pubDate>Wed, 10 Sep 2008 04:00:37 GMT</pubDate></item><item><title>Back to openSUSE</title><link>http://milosophical.me/blog/2008/03/31/back-to-opensuse.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;Well, my stint in *buntu is over, and it ends with an award to openSUSE: this is the first Linux distro I've returned to.
+
+
+Kubuntu is nice, and I'm happy that I've tried it out, but it's not for me. It's nice enough if you want a simple desktop system, and APT rocks (especially with the aptitude front-end). But it's just not as good as openSUSE, sorry.
+
+
+&lt;/p&gt;&lt;p&gt;&lt;a href="http://milosophical.me/blog/2008/03/31/back-to-opensuse.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>alternatives</category><category>computers</category><category>hacking</category><category>kubuntu</category><category>observation</category><category>rant</category><category>SUSE</category><category>thoughts</category><guid>http://milosophical.me/blog/2008/03/31/back-to-opensuse.html</guid><pubDate>Sun, 30 Mar 2008 22:44:49 GMT</pubDate></item><item><title>Hetrogeneous Operating Environments considered normal</title><link>http://milosophical.me/blog/2007/08/30/hetrogeneous-operating-environments-considered-normal.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;p&gt;Was reading &lt;a title="an inside look at KDE 4.0" href="http://rackit.gartnerwebdev.com/2007/08/28/ready-for-a-new-k-an-inside-look-at-kde-40/" target="_blank"&gt;this interview&lt;/a&gt; with Wade Olson about KDE 4.0.  It is pretty interesting, but the best quote was at the end:
+&lt;/p&gt;&lt;blockquote&gt;I often rant about how in all disruptive technologies, trends are always the same. Whether with the automobile, railroads, telephony or computers. A dominant company establishes ubiquity, but eventually competition settles in. Can you believe that Fords and Chevys can drive on the same roads and use the same gas? What a miracle of modern science that an AT&amp;amp;T user could call a Sprint user on the phone? A TGV and ICE train can ride on the same tracks? Madness! I can plug a lamp into the wall that my power company didn’t sell me? Now that’s what I call progress.
+
+Why would computing be any different? I can’t believe that some choose to write software for a large audience that isn’t cross platform, browser-based or interoperable - but some do. Over time, proprietary file formats will go from being a competitive advantage to disadvantage. Heterogeneous systems are the norm and expected in every industry. It’s just tough being patient in ours.&lt;/blockquote&gt;
+
+Whatever your views on OOXML or Linux or Apple or DRM or FOSS/Proprietary software, or other contentious issues in the IT  industry, you've got to admit, these are pretty sensible aims.</description><category>alternatives</category><category>computers</category><category>GUI</category><category>KDE</category><category>quote</category><category>thoughts</category><category>useability</category><guid>http://milosophical.me/blog/2007/08/30/hetrogeneous-operating-environments-considered-normal.html</guid><pubDate>Thu, 30 Aug 2007 01:47:52 GMT</pubDate></item><item><title>Microsoft Vista keyboard?</title><link>http://milosophical.me/blog/2007/03/22/microsoft-vista-keyboard.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;p&gt;I spotted a "Vista compatable" keyboard in K-Mart the other day, which set me thinking... what would a Vista keyboard actually &lt;em&gt;do&lt;/em&gt; that a "non-Vista" keyboard can't?
+
+
+Then I Googled for "Microsoft Keyboard Vista" and found &lt;a title="Vista media keyboard??? (Microsoft)" href="http://www.microsoft.com/hardware/mouseandkeyboard/productdetails.aspx?pid=080"&gt;this ad from Microsoft&lt;/a&gt; (&lt;a title="Vista media keyboard??? (Google cache)" href="http://72.14.203.104/search?q=cache:tFfrA9Y1WiEJ:www.microsoft.com/hardware/mouseandkeyboard/productdetails.aspx%3Fpid%3D080+microsoft+keyboard+vista&amp;amp;hl=en&amp;amp;ct=clnk&amp;amp;cd=2&amp;amp;gl=au&amp;amp;client=firefox-a"&gt;Google Cache&lt;/a&gt;).
+
+
+
+What the?  "Designed to make it easier than ever to control PC media from your desk, your lap–or even from the comfort of your couch".  So… if I use this keyboard's Play button to try and play media that Vista's &lt;a title="Digital Rights Management (Wikipedia)" href="http://en.wikipedia.org/wiki/Digital_Rights_Management"&gt;DRM&lt;/a&gt; system &lt;em&gt;thinks &lt;/em&gt;I shouldn't be playing, does it administer an electric shock?  What if I have the keyboard in my lap :-D  Ouch! No so &lt;em&gt;comfortable &lt;/em&gt;now…
+
+
+
+Thanks, Microsoft, but … ahem, &lt;em&gt;no thanks&lt;/em&gt;!&lt;/p&gt;</description><category>geek</category><category>keyboards</category><category>Microsoft</category><category>silly</category><category>thoughts</category><guid>http://milosophical.me/blog/2007/03/22/microsoft-vista-keyboard.html</guid><pubDate>Thu, 22 Mar 2007 04:27:02 GMT</pubDate></item><item><title>Preserving the programming craft</title><link>http://milosophical.me/blog/2006/05/01/preserving-the-programming-craft.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;
+&lt;em&gt;This post was originally published
+  at &lt;a href="http://sinewalker.wordpress.com/2006/05/01/preserving-the-programming-craft/"&gt;sinewalker.wordpress.com&lt;/a&gt;
+  on 1 May 2006.&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+
+&lt;p&gt;I
+  posted &lt;a href="http://ask.slashdot.org/comments.pl?sid=184329&amp;amp;cid=15234982"&gt;this
+    reply &lt;/a&gt;to an Ask
+  Slashdot:  &lt;a href="http://ask.slashdot.org/article.pl?sid=06/04/28/2236239"&gt;Do
+    Kids still program?&lt;/a&gt; I found myself commenting all over that thread… it
+  must be close to my heart :-) Reproducing here, and exploring a little
+  further.&lt;/p&gt;
+
+&lt;br&gt;
+
+
+&lt;p&gt;
+Many of the observations made on Slashdot are right. I wonder what it is that
+drives me to hack, that is missing from what is covered? Why do I like to hack,
+and why would it be passed over by kids these days? Or would it?
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;&lt;a href="http://milosophical.me/blog/2006/05/01/preserving-the-programming-craft.html"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>hacking</category><category>observation</category><category>programming</category><category>thoughts</category><guid>http://milosophical.me/blog/2006/05/01/preserving-the-programming-craft.html</guid><pubDate>Mon, 01 May 2006 05:00:21 GMT</pubDate></item><item><title>Mystical jargon</title><link>http://milosophical.me/blog/2006/04/04/mystical-jargon.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;
+&lt;em&gt;This post was originally published
+  at &lt;a href="http://sinewalker.wordpress.com/2006/04/04/mystical-jargon/"&gt;sinewalker.wordpress.com&lt;/a&gt;
+  on 4 April 2006.&lt;/em&gt;
+&lt;/p&gt;
+&lt;hr&gt;
+
+&lt;p&gt;I'm sure this observation has been made elsewhere, but I can't find reference to it online.&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+Have you ever noticed the prolific use of mystical/fantastical words in computer jargon? I'm sure there is a significance, or at least a tongue-in-cheek pointing to the wizardly ways of early and contemporary computer experts.  It is funny I suppose, and when you look at how wide-spread it is, it may be revealing of the hacker psych.&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;&lt;a href="http://milosophical.me/blog/2006/04/04/mystical-jargon.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>computers</category><category>geek</category><category>hacking</category><category>observation</category><category>thoughts</category><guid>http://milosophical.me/blog/2006/04/04/mystical-jargon.html</guid><pubDate>Tue, 04 Apr 2006 03:26:03 GMT</pubDate></item><item><title>Dvorak keyboards</title><link>http://milosophical.me/blog/2006/03/27/dvorak-keyboards.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;
+&lt;em&gt;This post was originally published
+  at &lt;a href="http://sinewalker.blogspot.com.au/2006_03_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
+  on 27 March 2006.&lt;/em&gt;
+&lt;/p&gt;
+&lt;hr&gt;
+
+&lt;p&gt;I prefer &lt;a title="how keyboards should work" href="http://www.mwbrooks.com/dvorak/"&gt;Dvorak keyboards&lt;/a&gt;
+  to &lt;a href="http://en.wikipedia.org/wiki/QWERTY"&gt;QWERTY&lt;/a&gt;, which confounds
+  my work colleagues no end :-)&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+I've been typing on Dvorak for about 3 years now [&lt;em&gt;ed: That is, since
+2003&lt;/em&gt;]. The main reason I use the Dvorak keyboard layout is because, after
+15 years of six-finger typing on QWERTY, I decided to learn to touch-type, and
+Dvorak is very easy to learn (I learnt it in 2 weeks, back to my old typing
+speed after a month).&lt;/p&gt;
+
+&lt;br&gt;
+
+
+
+&lt;p&gt;&lt;a href="http://milosophical.me/blog/2006/03/27/dvorak-keyboards.html"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>dvorak</category><category>geek</category><category>keyboards</category><category>thoughts</category><category>tip</category><guid>http://milosophical.me/blog/2006/03/27/dvorak-keyboards.html</guid><pubDate>Mon, 27 Mar 2006 00:07:00 GMT</pubDate></item><item><title>Organised books</title><link>http://milosophical.me/blog/2006/03/24/organised-books.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;p&gt;
+&lt;em&gt;This post was originally published
+  at &lt;a href="http://sinewalker.blogspot.com.au/2006_03_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
+  on 24 March 2006.&lt;/em&gt;
+&lt;/p&gt;
+&lt;hr&gt;
+
+&lt;p&gt;
+Wouldn't it be nice to organise your books like this?
+&lt;/p&gt;
+
+&lt;br&gt;
+&lt;p&gt;&lt;a title="photo sharing" href="http://www.flickr.com/photos/rodcorp/60832828/"&gt;&lt;img src="http://static.flickr.com/30/60832828_a153590482_m.jpg" alt=""&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.flickr.com/photos/rodcorp/60832828/"&gt;Richard Of York Graded Books In Vain&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+Originally uploaded by &lt;a href="http://www.flickr.com/people/rodcorp/"&gt;rodcorp&lt;/a&gt;.&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+Only, you'd have to have some sort of catalogue with the book's colour to be able to find anything (probably use &lt;a href="http://www.librarything.com"&gt;LibraryThing&lt;/a&gt; and add a colour tag).
+&lt;/p&gt;
+
+&lt;br&gt;
+
+
+&lt;p&gt;
+Still, it looks nice :-)&lt;/p&gt;</description><category>book</category><category>colour</category><category>Flickr</category><category>tagging</category><category>thoughts</category><guid>http://milosophical.me/blog/2006/03/24/organised-books.html</guid><pubDate>Fri, 24 Mar 2006 03:56:00 GMT</pubDate></item><item><title>Shifting Interfaces</title><link>http://milosophical.me/blog/2006/03/22/shifting-interfaces.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;p&gt;
+&lt;em&gt;This post was originally published
+  at &lt;a href="http://sinewalker.blogspot.com.au/2006_03_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
+  on 22 March 2006.&lt;/em&gt;
+&lt;/p&gt;
+&lt;hr&gt;
+
+&lt;p&gt;Once again, Microsoft have &lt;a href="http://www.microsoft.com/office/preview/uioverview.mspx"&gt;drastically changed their Office interface&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+While the new interface is very nice eye-candy and probably has some new features that could help (arguably), it represents yet another need to re-train.
+&lt;/p&gt;
+
+&lt;br&gt;
+
+
+&lt;p&gt;
+The old argument that &lt;a href="http://www.openoffice.org"&gt;OpenOffice &lt;/a&gt;is too different from &lt;a href="http://office.microsoft.com"&gt;MS-Office&lt;/a&gt; to be quickly useable has just vanished.  &lt;a href="http://www.desktoplinux.com/articles/AT8171250759.html"&gt;OpenOffice is more like MS-Office 97&lt;/a&gt; than MS-Office 2007 will be, and really, who has needed any of the features in Office XP or Office 2003?  What were they, again…?  Oh yeah, anoying interface changes, and removal of the stupid Paperclip.
+&lt;/p&gt;
+
+&lt;br&gt;
+
+
+&lt;p&gt;
+I think I'll be distributing my work documents in PDF, created by OOo now, except where I must absolutely use MSO documents for work.  Everthing else will be OOo.  Now I just need to convince my wife that it's not worth continually purchasing MSO, or even having it on our home PC.&lt;/p&gt;</description><category>GUI</category><category>Microsoft</category><category>rant</category><category>thoughts</category><guid>http://milosophical.me/blog/2006/03/22/shifting-interfaces.html</guid><pubDate>Wed, 22 Mar 2006 06:00:00 GMT</pubDate></item><item><title>“Free as in Coke”</title><link>http://milosophical.me/blog/2006/02/10/free-as-in-coke.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;p&gt;&lt;em&gt;This post was originally posted
+    at &lt;a href="http://sinewalker.blogspot.com.au/2006_02_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
+    on 10 February 2006.&lt;/em&gt;
+&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Was thinking about the &lt;a href="http://www.gnu.org/philosophy/philosophy.html"&gt;Free as in Freedom&lt;/a&gt;, vs Free as in Beer analogy and I found a problem with the Free as in Beer offering.
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+Beer is actually already nearly Free as in Freedom, since the process to produce your own beer, and many good recipes are public domain. So maybe the analogy should be “free as in Coke™”. This works better, because someone can give away Coke bottles full of CocaCola™, and this is not the same as being given the secret recipe to make your own Coke.
+&lt;/p&gt;
+
+
+&lt;br&gt;
+
+&lt;p&gt;
+Just a thought, anyway.&lt;/p&gt;</description><category>freedom</category><category>observation</category><category>thoughts</category><guid>http://milosophical.me/blog/2006/02/10/free-as-in-coke.html</guid><pubDate>Thu, 09 Feb 2006 23:31:00 GMT</pubDate></item></channel></rss>

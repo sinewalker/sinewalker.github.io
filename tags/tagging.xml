@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Milosophical Me (Posts about tagging)</title><link>http://milosophical.me/</link><description></description><atom:link href="http://milosophical.me/tags/tagging.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 29 Mar 2017 04:02:58 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Organised books</title><link>http://milosophical.me/blog/2006/03/24/organised-books.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;p&gt;
+&lt;em&gt;This post was originally published
+  at &lt;a href="http://sinewalker.blogspot.com.au/2006_03_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
+  on 24 March 2006.&lt;/em&gt;
+&lt;/p&gt;
+&lt;hr&gt;
+
+&lt;p&gt;
+Wouldn't it be nice to organise your books like this?
+&lt;/p&gt;
+
+&lt;br&gt;
+&lt;p&gt;&lt;a title="photo sharing" href="http://www.flickr.com/photos/rodcorp/60832828/"&gt;&lt;img src="http://static.flickr.com/30/60832828_a153590482_m.jpg" alt=""&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.flickr.com/photos/rodcorp/60832828/"&gt;Richard Of York Graded Books In Vain&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+Originally uploaded by &lt;a href="http://www.flickr.com/people/rodcorp/"&gt;rodcorp&lt;/a&gt;.&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+Only, you'd have to have some sort of catalogue with the book's colour to be able to find anything (probably use &lt;a href="http://www.librarything.com"&gt;LibraryThing&lt;/a&gt; and add a colour tag).
+&lt;/p&gt;
+
+&lt;br&gt;
+
+
+&lt;p&gt;
+Still, it looks nice :-)&lt;/p&gt;</description><category>book</category><category>colour</category><category>Flickr</category><category>tagging</category><category>thoughts</category><guid>http://milosophical.me/blog/2006/03/24/organised-books.html</guid><pubDate>Fri, 24 Mar 2006 03:56:00 GMT</pubDate></item><item><title>Organising my bookmarks</title><link>http://milosophical.me/blog/2006/03/20/organising-my-bookmarks.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;p&gt;
+&lt;em&gt;This post was originally published
+  at &lt;a href="http://sinewalker.blogspot.com.au/2006_03_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
+  on 20 March 2006.&lt;/em&gt;
+&lt;/p&gt;
+&lt;hr&gt;
+
+&lt;p&gt;I've added the new “tag roll” and “link roll” to the right in
+      this blog's template.  Looks great, but examining my tags reveals I'm a
+      bit disorganised, huh?&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+That's nothing, you should check out my tags in Flickr.  Definitely could do with some improvement there.
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+&lt;a href="http://del.icio.us/help/tags"&gt;Tags&lt;/a&gt; are a great idea.  The trouble is, I'm uncertain how best to use them.
+That is, what are the best tag words to attach to a link or photo so that I can
+find the right one again? How can I best group my del.icio.us tags
+into &lt;a href="http://del.icio.us/help/bundles"&gt;Bundles &lt;/a&gt;to facilitate
+research? Should I even try?&lt;/p&gt;
+
+
+&lt;br&gt;
+
+&lt;p&gt;
+I guess only experience will help. So I'll keep persevering :-).  Also, since tags are social, looking at how other people have tagged their stuff could be instructive too.&lt;/p&gt;</description><category>blog</category><category>Delicious</category><category>general</category><category>tagging</category><guid>http://milosophical.me/blog/2006/03/20/organising-my-bookmarks.html</guid><pubDate>Mon, 20 Mar 2006 01:16:00 GMT</pubDate></item><item><title>meta-data standards</title><link>http://milosophical.me/blog/2005/08/27/meta-data-standards.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;p&gt;&lt;em&gt;This post was originally published
+    at &lt;a href="http://sinewalker.blogspot.com.au/2005_08_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
+    on 27 August 2005&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;
+&lt;em&gt;In reference to &lt;a href="http://slashdot.org/article.pl?sid=05/08/27/1555249&amp;amp;from=rss"&gt;this Slashdot article&lt;/a&gt; about Internet meta-data
+  standards&lt;/em&gt;
+&lt;/p&gt;
+
+    
+&lt;p&gt;I would like to see more web sites adopt meta-data labelling standards and
+their presence be a factor in the ranking of the page. If more sensible pages
+had been indexed, Library-Of-Congress style (or whichever standard is adopted)
+then we would get many more relevant hits.
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+We would also get many people hacking the index by putting popular but
+irelevant meta-data into their pages… I haven't figured this one out
+yet. Perhaps if the meta-data is combined with some sort of AI that can read
+the page and judge if the tags are for-real, or just to seed the search engine…
+no this is far-out-future innovation stuff.&lt;/p&gt;
+
+</description><category>meta-data</category><category>tagging</category><category>thoughts</category><guid>http://milosophical.me/blog/2005/08/27/meta-data-standards.html</guid><pubDate>Sat, 27 Aug 2005 09:42:00 GMT</pubDate></item></channel></rss>

@@ -33,7 +33,7 @@ bandwidth/quota.
 I like ogg-vorbis audio if I can get it, so I look for any webm
 formats available (the audio stream is vorbis in webm):
 
-```
+```text
 mjl@tesla:~/Music> youtube-dl -F https://www.youtube.com/watch?v=EVZh4WcdC3s
 [youtube] EVZh4WcdC3s: Downloading webpage
 [youtube] EVZh4WcdC3s: Extracting video information
@@ -61,7 +61,7 @@ format code  extension  resolution note
 Here, format 171 is the best quality webm audio stream available, so
 I'll download that:
 
-```
+```text
 mjl@tesla:~/Music> youtube-dl -f 171 https://www.youtube.com/watch?v=EVZh4WcdC3s -o freakout.webm
 [youtube] EVZh4WcdC3s: Downloading webpage
 [youtube] EVZh4WcdC3s: Extracting video information
@@ -79,11 +79,11 @@ would be much easier to put Vorbis data in an Ogg container, as music
 players know how to work with that.  For this purpose, I use
 [ffmpeg](https://www.ffmpeg.org/):
 
-```
+```shell
 ffmpeg -i freakout.webm -vn -acodec 'copy' freakout.ogg
 ```
 
-(You can also use it's fork, libav and avconv, but that's a
+(You can also use it's fork, *libav* and *avconv*, but that's a
 Debian/Ubuntu confusion that
 [you shouldn't need to worry about](http://stackoverflow.com/questions/9477115/what-are-the-differences-and-similarities-between-ffmpeg-libav-and-avconv)).
 
