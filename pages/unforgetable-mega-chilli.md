@@ -64,3 +64,15 @@ Remove bay leaves and rosemary twig before serving. Add more chilli for
 extra kick if too mild.
 
 **Serves 6.**
+
+Variants?
+----
+
+Don't like the idea of rosemary in your chilli? That's okay, leave it out. Or better yet, substitute something else! Maybe ginger? Could whisky be made to work?
+
+If you come up with something rad', then definately you
+should
+[check out my mercurial repo on BitBucket](https://bitbucket.org/sinewalker/mega-chilli/overview),
+Fork it, make a branch and a Pull Request.
+
+Recipies have always been Free/OpenSource...
