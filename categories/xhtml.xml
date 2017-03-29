@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Milosophical Me (Posts about XHTML)</title><link>http://milosophical.me/</link><description></description><atom:link href="http://milosophical.me/categories/xhtml.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 24 Mar 2017 11:24:16 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Pretty-printing XML with Emacs' NXML-mode</title><link>http://milosophical.me/blog/2008/06/26/pretty-printing-xml-with-emacs-nxml-mode.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;Did you ever get a stream of XML out of a log file, or in a data stream, and it's all mashed together without line-breaks so that it just appears as gobble-de-gook? If there's a data error (not an XML parsing error) then you have to read it so that you can find where the error is, but you don't have XML-spy and NetBeans is overkill or takes forever to fire up...
+
+
+Emacs to the rescue! &lt;a title="Benjamin Ferrari's blog (seems to lack an " href="http://blog.bookworm.at/"&gt;Benjamin Ferrari&lt;/a&gt; wrote this &lt;em&gt;increadibly useful&lt;/em&gt; (and simple) &lt;a title="Benjamin Ferrari's original blog post for below code" href="http://blog.bookworm.at/2007/03/pretty-print-xml-with-emacs.html"&gt;elisp function&lt;/a&gt; to pretty-print a block of XML code:
+
+&lt;/p&gt;&lt;pre&gt;&lt;p&gt;&lt;a href="http://milosophical.me/blog/2008/06/26/pretty-printing-xml-with-emacs-nxml-mode.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/pre&gt;&lt;/div&gt;</description><category>code</category><category>emacs</category><category>geek</category><category>hacking</category><category>lisp</category><category>tip</category><category>XHTML</category><guid>http://milosophical.me/blog/2008/06/26/pretty-printing-xml-with-emacs-nxml-mode.html</guid><pubDate>Thu, 26 Jun 2008 02:46:03 GMT</pubDate></item><item><title>Using punctuation entity names in XHTML</title><link>http://milosophical.me/blog/2006/03/22/using-punctuation-entity-names-in-xhtml.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;p&gt;
+&lt;em&gt;This post was originally published
+  at &lt;a href="http://sinewalker.blogspot.com.au/2006_03_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
+  on 22 March 2006.&lt;/em&gt;
+&lt;/p&gt;
+&lt;hr&gt;
+
+&lt;p&gt;You can use the following XHTML entity names to put propper punctuation symbols into your web pages.
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+The W3C maintains &lt;a href="http://www.w3.org/TR/html4/sgml/entities.html"&gt;a complete list&lt;/a&gt;, though finding what you need can be a bit tricky.  I'm working on a complete list that actually displays the characters together with the other detail from W3C's table, a lot neater coding than this Blogger post too, I hope…
+&lt;/p&gt;
+
+&lt;br&gt;
+
+
+&lt;p&gt;
+In the mean-time, here's a short-list of common characters that I use quite a
+lot:&lt;/p&gt;
+
+&lt;br&gt;
+
+
+
+Double quotes: &lt;b&gt;“     ”&lt;/b&gt; ⇒  use  &lt;b&gt;&amp;amp;ldquo;&lt;/b&gt;
+and   &lt;b&gt;&amp;amp;rdquo;&lt;/b&gt;
+&lt;br&gt;
+
+
+Single quotes: &lt;b&gt;‘     ’&lt;/b&gt; ⇒  use  &lt;b&gt;&amp;amp;lsquo;&lt;/b&gt;
+and &lt;b&gt;&amp;amp;rsquo;&lt;/b&gt;
+&lt;br&gt;
+
+
+Ellipsis:      &lt;b&gt;…&lt;/b&gt;  ⇒ use  &lt;b&gt;&amp;amp;hellip;&lt;/b&gt;
+&lt;br&gt;
+
+
+En-dash:       &lt;b&gt;–&lt;/b&gt; ⇒ use      &lt;b&gt;&amp;amp;ndash;&lt;/b&gt;
+&lt;br&gt;
+
+
+Em-dash:       &lt;b&gt;—&lt;/b&gt; ⇒ use     &lt;b&gt;&amp;amp;mdash;&lt;/b&gt;
+&lt;br&gt;
+
+
+Minus sign:    &lt;b&gt;−&lt;/b&gt; ⇒ use   &lt;b&gt;&amp;amp;minus;&lt;/b&gt;
+&lt;br&gt;
+
+
+
+
+Multiplication: &lt;b&gt;×&lt;/b&gt;   ⇒ use  &lt;b&gt;&amp;amp;times;&lt;/b&gt;
+&lt;br&gt;
+
+
+Division:       &lt;b&gt;÷&lt;/b&gt;    ⇒ use   &lt;b&gt;&amp;amp;divide;&lt;/b&gt;
+&lt;br&gt;
+
+
+Approximately equal: &lt;b&gt;≈&lt;/b&gt;   ⇒ use  &lt;b&gt;&amp;amp;asymp;&lt;/b&gt;
+&lt;br&gt;
+
+
+
+
+Trade Mark:  ™   ⇒ use &lt;b&gt;&amp;amp;trade;&lt;/b&gt;
+&lt;br&gt;
+
+
+Copyright:   &lt;b&gt;©&lt;/b&gt; ⇒ use &lt;b&gt;&amp;amp;copy;&lt;/b&gt;
+&lt;br&gt;
+
+
+Registered:  &lt;b&gt;®&lt;/b&gt; ⇒ use &lt;b&gt;&amp;amp;reg;&lt;/b&gt;
+&lt;br&gt;
+
+
+
+
+Right-arrow: &lt;b&gt;⇒&lt;/b&gt; ⇒ use &lt;b&gt;&amp;amp;rArr;&lt;/b&gt;
+&lt;br&gt;
+
+
+</description><category>hacking</category><category>typsetting</category><category>web</category><category>XHTML</category><guid>http://milosophical.me/blog/2006/03/22/using-punctuation-entity-names-in-xhtml.html</guid><pubDate>Wed, 22 Mar 2006 02:56:00 GMT</pubDate></item></channel></rss>

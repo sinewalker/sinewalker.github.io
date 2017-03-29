@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Milosophical Me (Posts about useability)</title><link>http://milosophical.me/</link><description></description><atom:link href="http://milosophical.me/categories/useability.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 24 Mar 2017 11:24:18 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Awesome KDE, Java composite hacks</title><link>http://milosophical.me/blog/2010/07/05/awesome-kde-java-composite-hacks.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;I've been experimenting with the &lt;a title="This is gonna be LEGEN ... wait for it ... DARY" href="http://awesome.naquadah.org/"&gt;awesome&lt;/a&gt; &lt;a title="Wikipedia" href="http://en.wikipedia.org/wiki/Tiling_window_manager"&gt;tiling window manager&lt;/a&gt; as a replacement to KDE's &lt;a title="Wikipedia" href="http://en.wikipedia.org/wiki/KWin"&gt;kwin&lt;/a&gt;, and I've managed to hack together a recipe for getting them up an running. It's surprisingly simple, although the learing curve was a little steep.
+&lt;/p&gt;
+&lt;p&gt;
+This post documents what I've done to get things working nicely with the basic awesome config. No customisations here, see the &lt;a title="Awesome's wiki" href="http://awesome.naquadah.org/wiki/Main_Page"&gt;awesome wiki&lt;/a&gt; for some &lt;a title="Customising Awesome" href="http://awesome.naquadah.org/wiki/Main_Page#Customization"&gt;ideas&lt;/a&gt;.
+&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://milosophical.me/blog/2010/07/05/awesome-kde-java-composite-hacks.html"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>awesome</category><category>desktop</category><category>geek</category><category>hacking</category><category>how-to</category><category>KDE</category><category>useability</category><category>xcompmgr</category><guid>http://milosophical.me/blog/2010/07/05/awesome-kde-java-composite-hacks.html</guid><pubDate>Mon, 05 Jul 2010 04:54:32 GMT</pubDate></item><item><title>MS-Windows focus-follows-mouse Registry hacks</title><link>http://milosophical.me/blog/2010/03/10/ms-windows-focus-follows-mouse-registry-hacks.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;I like the "focus follows mouse" window-focussing model from X11, because
+&lt;/p&gt;&lt;ul&gt;
+	&lt;li&gt;I don't have to click on the window, just move the mouse and the window it's over is focussed&lt;/li&gt;
+	&lt;li&gt;I can focus a window &lt;em&gt;without&lt;/em&gt; bringing it to the front, which is sometimes handy. If I want it in front, I can click it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;p&gt;
+However MS-Windows follows the old-fashioned, Macintosh/Smalltalk style of having users click on a window to focus it for the keyboard. How do you make MS-Windows behave more like X11?
+&lt;/p&gt;
+
+
+&lt;p&gt;&lt;a href="http://milosophical.me/blog/2010/03/10/ms-windows-focus-follows-mouse-registry-hacks.html"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>desktop</category><category>geek</category><category>hacking</category><category>how-to</category><category>tip</category><category>useability</category><category>windows</category><category>x11</category><guid>http://milosophical.me/blog/2010/03/10/ms-windows-focus-follows-mouse-registry-hacks.html</guid><pubDate>Wed, 10 Mar 2010 03:42:26 GMT</pubDate></item><item><title>Solaris X11 and Dvorak simplified keyboard layout</title><link>http://milosophical.me/blog/2008/06/18/solaris-x11-and-dvorak-simplified-keyboard-layout.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;I've recently been playing with &lt;a title="OpenSolaris web site" href="http://opensolaris.org"&gt;OpenSolaris&lt;/a&gt; and &lt;a title="SDN Solaris Express DE Community web site" href="http://developers.sun.com/sxde/community.jsp"&gt;Solaris Express DE&lt;/a&gt; running in &lt;a title="Sun's xVM VirtualBox web site" href="http://virtualbox.org"&gt;VirtualBox&lt;/a&gt;. They're fine so far (except audio isn't working) but I stumbled on a usability issue that was nearly a show-stopper: dratted QWERTY layouts! The GNOME GUI for switching to Dvorak doesn't work, and &lt;code&gt;setxkbmap&lt;/code&gt;&lt;sub&gt;(1)&lt;/sub&gt; can't find the rules file for dvorak either (they don't seem to be installed where the man page indicates)...
+
+
+&lt;/p&gt;&lt;p&gt;&lt;a href="http://milosophical.me/blog/2008/06/18/solaris-x11-and-dvorak-simplified-keyboard-layout.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>alternatives</category><category>dvorak</category><category>hacking</category><category>keyboards</category><category>solaris</category><category>tip</category><category>useability</category><guid>http://milosophical.me/blog/2008/06/18/solaris-x11-and-dvorak-simplified-keyboard-layout.html</guid><pubDate>Wed, 18 Jun 2008 04:00:46 GMT</pubDate></item><item><title>Hetrogeneous Operating Environments considered normal</title><link>http://milosophical.me/blog/2007/08/30/hetrogeneous-operating-environments-considered-normal.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;p&gt;Was reading &lt;a title="an inside look at KDE 4.0" href="http://rackit.gartnerwebdev.com/2007/08/28/ready-for-a-new-k-an-inside-look-at-kde-40/" target="_blank"&gt;this interview&lt;/a&gt; with Wade Olson about KDE 4.0.  It is pretty interesting, but the best quote was at the end:
+&lt;/p&gt;&lt;blockquote&gt;I often rant about how in all disruptive technologies, trends are always the same. Whether with the automobile, railroads, telephony or computers. A dominant company establishes ubiquity, but eventually competition settles in. Can you believe that Fords and Chevys can drive on the same roads and use the same gas? What a miracle of modern science that an AT&amp;amp;T user could call a Sprint user on the phone? A TGV and ICE train can ride on the same tracks? Madness! I can plug a lamp into the wall that my power company didn’t sell me? Now that’s what I call progress.
+
+Why would computing be any different? I can’t believe that some choose to write software for a large audience that isn’t cross platform, browser-based or interoperable - but some do. Over time, proprietary file formats will go from being a competitive advantage to disadvantage. Heterogeneous systems are the norm and expected in every industry. It’s just tough being patient in ours.&lt;/blockquote&gt;
+
+Whatever your views on OOXML or Linux or Apple or DRM or FOSS/Proprietary software, or other contentious issues in the IT  industry, you've got to admit, these are pretty sensible aims.</description><category>alternatives</category><category>computers</category><category>GUI</category><category>KDE</category><category>quote</category><category>thoughts</category><category>useability</category><guid>http://milosophical.me/blog/2007/08/30/hetrogeneous-operating-environments-considered-normal.html</guid><pubDate>Thu, 30 Aug 2007 01:47:52 GMT</pubDate></item><item><title>New Printer “Just Works” in SUSE 10</title><link>http://milosophical.me/blog/2006/03/22/new-printer-just-works-in-suse-10.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;p&gt;
+&lt;em&gt;This post was originally published
+  at &lt;a href="http://sinewalker.blogspot.com.au/2006_03_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
+  on 22 March 2006.&lt;/em&gt;
+&lt;/p&gt;
+&lt;hr&gt;
+
+&lt;p&gt;Well, here's a first for me:  go to local Dick Smith's, buy a
+      cheap printer, for my wife  (HP Deskjet 3940, AU$66).  Because I don't
+      really care about printing from Linux, I didn't care if it works or not
+      on that OS, just bought whatever Windows printer was cheapest.&lt;/p&gt;
+
+&lt;br&gt;
+
+
+&lt;p&gt;
+Brought it home, plugged it into my PC (in Windows) and it works, after installing drivers and software and about 15 mins of setup time.&lt;/p&gt;
+
+&lt;br&gt;
+
+
+&lt;p&gt;
+For the heck of it, I rebooted to Linux to see what would happen.  Well lordy
+“New hardware detected:  HPdeskjet3940” and an offer to set it up. After 5
+minutes — just accepting all the standard options — out comes a test page, in
+colour, bi-directional and fast.&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+Neat.  Linux is ready for me....&lt;/p&gt;</description><category>hacking</category><category>hardware</category><category>linux</category><category>printer</category><category>useability</category><guid>http://milosophical.me/blog/2006/03/22/new-printer-just-works-in-suse-10.html</guid><pubDate>Tue, 21 Mar 2006 22:45:00 GMT</pubDate></item></channel></rss>
