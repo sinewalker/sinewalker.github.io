@@ -43,7 +43,7 @@ I decided a while back that I wasn't going to meta-blog (otherwise most of my po
 
 Okay so starting over, how actually did I get to this point?
 
-First I made a fresh python virtual environment using [my nifty python venv wrapper]():
+First I made a fresh python virtual environment using [my nifty python venv wrapper](https://github.com/sinewalker/dotfiles/blob/master/source/50_python.sh#L17):
 
 ```
 [src:?][mjl@milo:~/hax/net/blog/milosophical.me]
