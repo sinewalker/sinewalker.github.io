@@ -204,14 +204,21 @@ That fixed the crash, only...
 
 ```
 [src:!][mjl@milo:~/hax/net/blog/milosophical.me]
-[22:15]$ ls output/pg/
+[22:15](nikola)$ nikola build
+Scanning posts..........done!
+.  render_sources:output/blog/2017/upgrade-nikola-783.md
+.  render_posts:timeline_changes
+…
+
+[src:!][mjl@milo:~/hax/net/blog/milosophical.me]
+[22:17](nikola)$ ls output/pg/
 4-bit-rules.html  4-bit-rules.md  colophon.html  colophon.md  milosophical-me.html  milosophical-me.md	unforgetable-mega-chilli.html  unforgetable-mega-chilli.md
 
 [src:!][mjl@milo:~/hax/net/blog/milosophical.me]
-[22:15]$
+[22:17]$
 ```
 
-There's still no page `index.html`?
+There's still no page `index.html` rendered (after building)?
 
 So I tried the (deprecated) `STORY_INDEX = True` again.  No dice.  That is when I [commented on the Issue](https://github.com/getnikola/nikola/issues/2646#issuecomment-288998636).  Which prompted [Pull Request #2701](https://github.com/getnikola/nikola/pull/2701) by one of the developers, and a promotion of the release 7.8.4
 
