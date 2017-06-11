@@ -153,7 +153,7 @@
             </span></p>
             <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2007-03-04T11:59:48+11:00" itemprop="datePublished" title="2007-03-04 11:59">2007-03-04 11:59</time></a></p>
             
-        <p class="sourceline"><a href="32-bit-windows-and-jvm-virtual-memory-limit.wp" id="sourcelink">Source</a></p>
+        <p class="sourceline"><a href="32-bit-windows-and-jvm-virtual-memory-limit.wp" class="sourcelink">Source</a></p>
 
         </div>
         
@@ -264,10 +264,10 @@ The only workable solution for utilizing greater than about 1.5–1.6 GiB per JV
 It would be better to have a smaller heap on Win32, and if you need more, consider re-engineering the program to use less anyway. If your program is genuinely memory bound and you can't get away from needing more than 1.5GiB heap, you could work around the Win32 memory limit by splitting your Java program into more than once process, each running on its own JVM, allocating 1.5GiB to each JVM, and then having the processes communicate with an IPC mechanism as needed, such as JMS. However there's probably a lot more re-engineering work involved in this than there is to just migrate away from Win32 …
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../../../../categories/hacking.html" rel="tag">hacking</a></li>
-            <li><a class="tag p-category" href="../../../../categories/java.html" rel="tag">java</a></li>
-            <li><a class="tag p-category" href="../../../../categories/microsoft.html" rel="tag">Microsoft</a></li>
-            <li><a class="tag p-category" href="../../../../categories/tip.html" rel="tag">tip</a></li>
+<li><a class="tag p-category" href="../../../../tags/hacking.html" rel="tag">hacking</a></li>
+            <li><a class="tag p-category" href="../../../../tags/java.html" rel="tag">java</a></li>
+            <li><a class="tag p-category" href="../../../../tags/microsoft.html" rel="tag">Microsoft</a></li>
+            <li><a class="tag p-category" href="../../../../tags/tip.html" rel="tag">tip</a></li>
         </ul>
 <ul class="pager hidden-print">
 <li class="previous">

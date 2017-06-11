@@ -160,7 +160,7 @@ I don't know why I haven't ever got around to this, but here—finally—is a ha
             </span></p>
             <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2006-04-18T15:57:29+10:00" itemprop="datePublished" title="2006-04-18 15:57">2006-04-18 15:57</time></a></p>
             
-        <p class="sourceline"><a href="hacking-emacsclient-in-cygwin.wp" id="sourcelink">Source</a></p>
+        <p class="sourceline"><a href="hacking-emacsclient-in-cygwin.wp" class="sourcelink">Source</a></p>
 
         </div>
         
@@ -190,10 +190,10 @@ Next, add the following function to your <code>.bashrc</code> file</p>
 Now, whenever you type <code>emacs somefile</code>, instead of loading a fresh emacs process (expensive operation in Windows/cygwin), <code>emacsclient</code> will be run, and attempt to connect to a running emacs server to edit <code>somefile</code>. If there is no server (e.g. emacs has not been started), then <code>emacsclient</code> will fail. In this case, <code>emacs</code> will be started instead to edit the file, and the <code>.emacs</code> file makes sure that the server is ready for <code>emacsclient</code> next time.</p>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../../../../categories/code.html" rel="tag">code</a></li>
-            <li><a class="tag p-category" href="../../../../categories/cygwin.html" rel="tag">cygwin</a></li>
-            <li><a class="tag p-category" href="../../../../categories/emacs.html" rel="tag">emacs</a></li>
-            <li><a class="tag p-category" href="../../../../categories/hacking.html" rel="tag">hacking</a></li>
+<li><a class="tag p-category" href="../../../../tags/code.html" rel="tag">code</a></li>
+            <li><a class="tag p-category" href="../../../../tags/cygwin.html" rel="tag">cygwin</a></li>
+            <li><a class="tag p-category" href="../../../../tags/emacs.html" rel="tag">emacs</a></li>
+            <li><a class="tag p-category" href="../../../../tags/hacking.html" rel="tag">hacking</a></li>
         </ul>
 <ul class="pager hidden-print">
 <li class="previous">

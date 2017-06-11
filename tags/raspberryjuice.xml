@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Milosophical Me (Posts about RaspberryJuice)</title><link>http://milosophical.me/</link><description></description><atom:link href="http://milosophical.me/tags/raspberryjuice.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 29 Mar 2017 04:02:59 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacking Minecraft with Python</title><link>http://milosophical.me/blog/2015/minecraft-python-0.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Milosophical Me (Posts about RaspberryJuice)</title><link>http://milosophical.me/</link><description></description><atom:link href="http://milosophical.me/tags/raspberryjuice.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sun, 11 Jun 2017 22:05:07 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Hacking Minecraft with Python</title><link>http://milosophical.me/blog/2015/minecraft-python-0.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -13,8 +12,7 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;
-&lt;div class="prompt input_prompt"&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
