@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>http://milosophical.me/authors/michael-lockhart.xml</loc>
-  <lastmod>2017-06-16T22:53:00Z</lastmod>
+  <lastmod>2017-06-16T22:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/authors/mike-lockhart.xml</loc>
@@ -31,11 +31,11 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/rss.xml</loc>
-  <lastmod>2017-06-16T22:53:00Z</lastmod>
+  <lastmod>2017-06-16T22:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/sitemap.xml</loc>
-  <lastmod>2017-06-16T22:53:00Z</lastmod>
+  <lastmod>2017-06-16T22:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/4-bit-rules.xml</loc>
@@ -59,7 +59,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/avahi.xml</loc>
-  <lastmod>2017-06-16T22:53:00Z</lastmod>
+  <lastmod>2017-06-16T22:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/avian-carrier.xml</loc>
@@ -219,7 +219,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/dns.xml</loc>
-  <lastmod>2017-06-15T21:55:00Z</lastmod>
+  <lastmod>2017-06-16T22:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/drm.xml</loc>
@@ -371,7 +371,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/hack.xml</loc>
-  <lastmod>2017-06-16T22:53:00Z</lastmod>
+  <lastmod>2017-06-16T22:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/hacking.xml</loc>
@@ -468,6 +468,10 @@
  <sitemap>
   <loc>http://milosophical.me/tags/mainframe.xml</loc>
   <lastmod>2017-06-15T21:55:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://milosophical.me/tags/mdns.xml</loc>
+  <lastmod>2017-06-16T22:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/media.xml</loc>
@@ -627,7 +631,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/raspberrypi.xml</loc>
-  <lastmod>2017-06-16T22:53:00Z</lastmod>
+  <lastmod>2017-06-16T22:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/registry.xml</loc>

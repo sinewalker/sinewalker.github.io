@@ -59,7 +59,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/archive/2017/index.html</loc>
-  <lastmod>2017-06-16T22:53:00Z</lastmod>
+  <lastmod>2017-06-16T22:59:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/archive/archive.html</loc>
@@ -71,7 +71,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/authors/michael-lockhart.html</loc>
-  <lastmod>2017-06-16T22:53:00Z</lastmod>
+  <lastmod>2017-06-16T22:59:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/authors/mike-lockhart.html</loc>
@@ -503,7 +503,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/2017/bonjour-raspi.html</loc>
-  <lastmod>2017-06-16T22:53:00Z</lastmod>
+  <lastmod>2017-06-16T22:59:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/2017/upgrade-nikola-783.html</loc>
@@ -551,7 +551,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/index.html</loc>
-  <lastmod>2017-06-16T22:53:00Z</lastmod>
+  <lastmod>2017-06-16T22:59:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/hax/codec/URL%20Decoder_Encoder.html</loc>
@@ -791,7 +791,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/avahi.html</loc>
-  <lastmod>2017-06-16T22:53:00Z</lastmod>
+  <lastmod>2017-06-16T22:59:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/avian-carrier.html</loc>
@@ -951,7 +951,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/dns.html</loc>
-  <lastmod>2017-06-15T21:55:00Z</lastmod>
+  <lastmod>2017-06-16T22:59:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/drm.html</loc>
@@ -1103,7 +1103,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/hack.html</loc>
-  <lastmod>2017-06-16T22:53:00Z</lastmod>
+  <lastmod>2017-06-16T22:59:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/hacking.html</loc>
@@ -1131,7 +1131,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/index.html</loc>
-  <lastmod>2017-06-15T21:55:00Z</lastmod>
+  <lastmod>2017-06-16T22:59:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/jargon.html</loc>
@@ -1204,6 +1204,10 @@
  <url>
   <loc>http://milosophical.me/tags/mainframe.html</loc>
   <lastmod>2017-06-15T21:55:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://milosophical.me/tags/mdns.html</loc>
+  <lastmod>2017-06-16T22:59:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/media.html</loc>
@@ -1363,7 +1367,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/raspberrypi.html</loc>
-  <lastmod>2017-06-16T22:53:00Z</lastmod>
+  <lastmod>2017-06-16T22:59:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/registry.html</loc>

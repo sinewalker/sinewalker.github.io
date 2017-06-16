@@ -2,10 +2,10 @@
 .. title: Bonjour Raspberry Pi
 .. slug: bonjour-raspi
 .. date: 2017-06-15 23:19:40 UTC+10:00
-.. tags: RaspberryPi, avahi, hack
+.. tags: RaspberryPi, avahi, hack, DNS, mDNS
 .. category: 
 .. link: 
-.. description: 
+.. description: Adding mDNS to a Raspbian image
 .. type: text
 -->
 
