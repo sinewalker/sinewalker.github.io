@@ -3,7 +3,7 @@
 #   File:       conf.py
 #   Created:    2014-08-21
 #   Language:   Python
-#   Time-stamp: <2017-06-12 10:53:05 mjl>
+#   Time-stamp: <2017-06-16 07:51:51 mjl>
 #   Platform:   (Nikola 7.1 configuration file)
 #   OS:         *nix
 #   Author:     [MJL] Michael J. Lockhart (mlockhart@squiz.net)
@@ -945,7 +945,7 @@ IMAGE_FOLDERS = {'images': 'images'}
 # paraiso-light, pastie, perldoc, rrt, tango, trac, vim, vs, xcode
 # This list MAY be incomplete since pygments adds styles every now and then.
 # Check with list(pygments.styles.get_all_styles()) in an interpreter.
-# CODE_COLOR_SCHEME = 'default'
+CODE_COLOR_SCHEME = 'native'
 
 # FAVICONS contains (name, file, size) tuples.
 # Used to create favicon link like this:
