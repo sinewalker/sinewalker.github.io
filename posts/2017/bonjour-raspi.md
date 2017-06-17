@@ -19,7 +19,7 @@ I had to do just a couple of things
 
  * Install *Avahi-Daemon* and enable it on boot
  * Tell it to ignore the Apple gear in my house
- * Reset the *hostname* on my image to something less generic than `raspberrypi` since there could be more than one at the Huon Robotics Lab.
+ * Reset the *hostname* on my image to something less generic than `raspberrypi` since there could be more than one at the [Huon Robotics](http://www.mrelliott.info/huonbots/) Lab.
 
 ## Intall Avahi-Daemon
 
@@ -31,6 +31,19 @@ $ sudo apt-get install avahi-daemon
 ## Tell Avahi to ignore the Apples
 
 Edit `/etc/default/avahi-daemon` and set `AVAHI_DAEMON_DETECT_LOCAL=0`
+
+## Enable avahi-daemon on boot
+
+I'm unsure if this is enabled after you install it.  In Raspbian/Debian the daemons are enabled [Unix System V "runlevels"](https://www.debian.org/doc/manuals/debian-reference/ch03.en.html) style, using links to rc-files.  These can be managed in a friendly way with a tool called [sysv-rc-conf](https://packages.debian.org/wheezy/sysv-rc-conf).  This gives you a text-mode screen with a list of daemons and the runlevels they are enabled for.
+
+```
+$ sudo apt-get install sysv-conf-tool
+$ sudo sysv-conf-tool
+```
+
+Make sure `avahi-daemon` is enabled (has X's) for run-levels **3**, **4** and **5** (the multi-user/network run-levels).
+
+
 
 ## Set hostname
 
