@@ -14,7 +14,7 @@ Today's project was to bootstrap a WiFi LAN connection for Raspberry Pi 2, with 
 <!--TEASER_END-->
 ----
 
-At the Huon Robotics lab I borrowed Bob's Ralink Technology Corp RT5370 USB WiFi adapter and plugged it into my Pi.  It works [without any weird jiggery-pokery](https://www.modmypi.com/blog/how-to-set-up-the-ralink-rt5370-wifi-dongle-on-raspian)! (I should [get myself one of these](https://www.modmypi.com/raspberry-pi/accessories/wifi-dongles/wifi-dongle-nano-usb/) - [$6.64 from BangGood](https://www.banggood.com/Wholesale-New-Mini-150Mbps-USB-WiFi-Wireless-Adapter-150M-Network-LAN-Card-802_11-ngb-p-39274.html?rmmds=detail-left-hotproducts)).  Here's the `dmesg` output snippet for the WiFi device:
+At the [Huon Robotics](http://www.mrelliott.info/huonbots/) lab I borrowed Bob's Ralink Technology Corp RT5370 USB WiFi adapter and plugged it into my Pi.  It works [without any weird jiggery-pokery](https://www.modmypi.com/blog/how-to-set-up-the-ralink-rt5370-wifi-dongle-on-raspian)! (I should [get myself one of these](https://www.modmypi.com/raspberry-pi/accessories/wifi-dongles/wifi-dongle-nano-usb/) - [$6.64 from BangGood](https://www.banggood.com/Wholesale-New-Mini-150Mbps-USB-WiFi-Wireless-Adapter-150M-Network-LAN-Card-802_11-ngb-p-39274.html?rmmds=detail-left-hotproducts)).  Here's the `dmesg` output snippet for the WiFi device:
 
 ```
 [    3.437549] usb 1-1.2: new high-speed USB device number 4 using dwc_otg
