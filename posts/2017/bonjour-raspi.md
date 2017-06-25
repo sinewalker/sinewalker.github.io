@@ -12,7 +12,7 @@
 In preparation for some robotics I've dug out my [Raspberry Pi 2 B](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/) and I'm reacquainting myself with it.  Tonight's goal: Boot up an old [Raspbian](https://www.raspbian.org/) *Squeeze* SD card and get the Pi to identify on the LAN with a domain-name -- rather than having to learn it's IP address -- using [avahi](http://www.avahi.org/) (AKA [Bonjour](https://developer.apple.com/bonjour/) or *zero-conf* mDNS networking).
 
 <!-- TEASER_END -->
-
+----
 I went with the Squeeze image I have from 2015 because it was already installed -- to install Jesse past first-boot I'd have to hook up a TV/keyboard/mouse and my home lab is drk and cold tonight.
 
 I had to do just a couple of things
