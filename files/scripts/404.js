@@ -45,7 +45,7 @@ var TEXT404 = [
     [ 'root\'s password: ', 1800 ],
     [ '*************\n', 3800],
     [ 'service nginx status\n', 100 ],
-    [ 'service: no such service nginx\nmjl@tesla:~> ', 4200 ],
+    [ 'service: no such service nginx\nsinewalker@gmail.com:~> ', 4200 ],
     [ '*sudo bash\n', 600],
     [ 'github:/home/sinewalker # ', 1500 ],    
     [ '*service httpd status\n', 600],
@@ -62,7 +62,7 @@ var TEXT404 = [
     [ '           └─1385 /usr/bin/nginx\n\n', 100 ],
     [ ' Mar 18 21:13:26 github.com nginx[1385]: Server listening on 0.0.0.0 port 80.\n', 100 ],
     [ 'github:/home/sinewalker # ', 4200],
-    [ '*service openresty restart\n', 600 ],
+    [ '*systemctl restart openresty\n', 600 ],
 
     [ 'github:/home/sinewalker # ', 0, 1000 ]
 ];
