@@ -77,8 +77,7 @@ void loop() {
       }
     } // ctr <= threshold
     ctr = 0;
-  } 
-  else  // switchState != HIGH
+  } else  // switchState != HIGH
     {
       myFile.close();
       Serial.println("closed");
