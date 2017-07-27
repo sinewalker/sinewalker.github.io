@@ -75,8 +75,8 @@ void loop() {
       else {  // the file didn’t open, print an error:
         Serial.println("error opening test.txt");
       }
-      ctr = 0;
     } // ctr <= threshold
+    ctr = 0;
   } 
   else  // switchState != HIGH
     {
