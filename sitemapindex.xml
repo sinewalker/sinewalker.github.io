@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>http://milosophical.me/authors/michael-lockhart.xml</loc>
-  <lastmod>2017-06-25T02:10:00Z</lastmod>
+  <lastmod>2017-07-27T22:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/authors/mike-lockhart.xml</loc>
@@ -31,11 +31,11 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/rss.xml</loc>
-  <lastmod>2017-06-25T02:10:00Z</lastmod>
+  <lastmod>2017-07-27T22:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/sitemap.xml</loc>
-  <lastmod>2017-06-25T02:10:00Z</lastmod>
+  <lastmod>2017-07-27T22:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/4-bit-rules.xml</loc>
@@ -146,6 +146,10 @@
   <lastmod>2017-06-15T21:55:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>http://milosophical.me/tags/children.xml</loc>
+  <lastmod>2017-07-27T22:59:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>http://milosophical.me/tags/clojure.xml</loc>
   <lastmod>2017-06-15T21:55:00Z</lastmod>
  </sitemap>
@@ -155,7 +159,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/code.xml</loc>
-  <lastmod>2017-06-15T21:55:00Z</lastmod>
+  <lastmod>2017-07-27T22:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/codekids.xml</loc>
@@ -375,11 +379,11 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/hacking.xml</loc>
-  <lastmod>2017-06-15T21:55:00Z</lastmod>
+  <lastmod>2017-07-27T22:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/hardware.xml</loc>
-  <lastmod>2017-06-15T21:55:00Z</lastmod>
+  <lastmod>2017-07-27T22:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/help.xml</loc>
@@ -731,7 +735,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/tip.xml</loc>
-  <lastmod>2017-06-15T21:55:00Z</lastmod>
+  <lastmod>2017-07-27T22:59:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/tips.xml</loc>

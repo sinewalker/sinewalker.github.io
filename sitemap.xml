@@ -59,19 +59,19 @@
  </url>
  <url>
   <loc>http://milosophical.me/archive/2017/index.html</loc>
-  <lastmod>2017-06-25T02:10:00Z</lastmod>
+  <lastmod>2017-07-27T22:59:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/archive/archive.html</loc>
-  <lastmod>2017-06-20T03:10:00Z</lastmod>
+  <lastmod>2017-07-27T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/authors/index.html</loc>
-  <lastmod>2017-06-20T03:10:00Z</lastmod>
+  <lastmod>2017-07-27T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/authors/michael-lockhart.html</loc>
-  <lastmod>2017-06-25T02:10:00Z</lastmod>
+  <lastmod>2017-07-27T22:59:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/authors/mike-lockhart.html</loc>
@@ -502,12 +502,16 @@
   <lastmod>2017-06-15T21:55:00Z</lastmod>
  </url>
  <url>
+  <loc>http://milosophical.me/blog/2017/accelerologger.html</loc>
+  <lastmod>2017-07-27T22:59:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://milosophical.me/blog/2017/bonjour-raspi.html</loc>
   <lastmod>2017-06-25T02:10:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/2017/raspi-wifi.html</loc>
-  <lastmod>2017-06-25T02:05:00Z</lastmod>
+  <lastmod>2017-07-27T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/2017/upgrade-nikola-783.html</loc>
@@ -519,7 +523,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-10.html</loc>
-  <lastmod>2017-06-20T03:10:00Z</lastmod>
+  <lastmod>2017-07-27T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-2.html</loc>
@@ -555,7 +559,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/index.html</loc>
-  <lastmod>2017-06-25T02:10:00Z</lastmod>
+  <lastmod>2017-07-27T22:59:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/hax/codec/URL%20Decoder_Encoder.html</loc>
@@ -738,6 +742,10 @@
   <lastmod>2016-11-17T20:30:00Z</lastmod>
  </url>
  <url>
+  <loc>http://milosophical.me/listings/index.html</loc>
+  <lastmod>2016-11-03T03:11:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://milosophical.me/pg/4-bit-rules.html</loc>
   <lastmod>2017-06-15T21:55:00Z</lastmod>
  </url>
@@ -882,6 +890,10 @@
   <lastmod>2017-06-15T21:55:00Z</lastmod>
  </url>
  <url>
+  <loc>http://milosophical.me/tags/children.html</loc>
+  <lastmod>2017-07-27T22:59:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://milosophical.me/tags/clojure.html</loc>
   <lastmod>2017-06-15T21:55:00Z</lastmod>
  </url>
@@ -891,7 +903,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/code.html</loc>
-  <lastmod>2017-06-15T21:55:00Z</lastmod>
+  <lastmod>2017-07-27T22:59:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/codekids.html</loc>
@@ -1111,11 +1123,11 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/hacking.html</loc>
-  <lastmod>2017-06-15T21:55:00Z</lastmod>
+  <lastmod>2017-07-27T22:59:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/hardware.html</loc>
-  <lastmod>2017-06-15T21:55:00Z</lastmod>
+  <lastmod>2017-07-27T22:59:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/help.html</loc>
@@ -1135,7 +1147,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/index.html</loc>
-  <lastmod>2017-06-20T03:10:00Z</lastmod>
+  <lastmod>2017-07-27T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/jargon.html</loc>
@@ -1471,7 +1483,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/tip.html</loc>
-  <lastmod>2017-06-15T21:55:00Z</lastmod>
+  <lastmod>2017-07-27T22:59:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/tips.html</loc>
