@@ -123,7 +123,7 @@ void loop() {
 
 ## Some more insights
 
-Why is EJBlogger using a counter here to only print every `threshold`th reading?  If he wanted to print fewer numbers he could instead `sleep` to slow it down.  I think the reason is that the `threshold` (set to 1,500 in the `setup` function, not reproduced here) is meant to smooth out the readings from the accelerometer, which can be a bit erratic.
+Why is EJBlogger using a counter here to only print every `threshold`th reading?  If he wanted to print fewer numbers he could instead `sleep` to slow it down.  I think the reason is that the `threshold` (set to 1,499 in the `setup` function, not reproduced here) is meant to smooth out the readings from the accelerometer, which can be a bit erratic.
 
 But printing only every 1,500th reading doesn't smooth anything, it just takes a sample at that time.  Instead I think he should be *averaging* the values and then printing the average every `threshold`:
 
