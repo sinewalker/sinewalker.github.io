@@ -1,3 +1,4 @@
+
 <!-- 
 .. title: Help with Accelerologger
 .. slug: accelerologger
@@ -47,7 +48,8 @@ void loop() {
 The problem is that the `println(y)` statements never execute.  It is difficult to see why. Let's break it down a bit in psudocode:
 
 ```
- * Sets up some `x`,`y`,`z` variables and a `switchState`, and then reads in the values from the accelerometer and a switch.
+ * Sets up some `x`,`y`,`z` variables and a `switchState`, and then reads in
+   the values from the accelerometer and a switch.
 
  * When the `switchState` is `HIGH`:
    * Increment `ctr`
