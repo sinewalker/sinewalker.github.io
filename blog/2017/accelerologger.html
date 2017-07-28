@@ -270,7 +270,7 @@
 
 <hr>
 <h3>Some more insights</h3>
-<p>Why is EJBlogger using a counter here to only print every <code>threshold</code>th reading?  If he wanted to print fewer numbers he could instead <code>sleep</code> to slow it down.  I think the reason is that the <code>threshold</code> (set to 1,500 in the <code>setup</code> function, not reproduced here) is meant to smooth out the readings from the accelerometer, which can be a bit erratic.</p>
+<p>Why is EJBlogger using a counter here to only print every <code>threshold</code>th reading?  If he wanted to print fewer numbers he could instead <code>sleep</code> to slow it down.  I think the reason is that the <code>threshold</code> (set to 1,499 in the <code>setup</code> function, not reproduced here) is meant to smooth out the readings from the accelerometer, which can be a bit erratic.</p>
 <p>But printing only every 1,500th reading doesn't smooth anything, it just takes a sample at that time.  Instead I think he should be <em>averaging</em> the values and then printing the average every <code>threshold</code>:</p>
 <pre class="code literal-block"><span></span><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
   <span class="c1">//define int x, y, z in setup instead</span>
