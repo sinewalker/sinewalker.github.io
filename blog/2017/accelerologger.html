@@ -193,25 +193,19 @@
 </pre>
 
 
-<p>The problem is that the <code>println(y)</code> statements never execute.  It is difficult to see why. Let's break it down a bit.</p>
-<ul>
-<li>
-<p>The code sets up some <code>x</code>,<code>y</code>,<code>z</code> variables and a <code>switchState</code>, and then reads in the values from the accelerometer and a switch.</p>
-</li>
-<li>
-<p>When the <code>switchState</code> is <code>HIGH</code>:</p>
-</li>
-<li>Increment <code>ctr</code>
-</li>
-<li>If the <code>ctr</code> is over <code>threshold</code> then print the <code>y</code> accelerometer reading</li>
-<li>
-<p>reset the counter</p>
-</li>
-<li>
-<p>When the <code>switchState</code> is not <code>HIGH</code> (i.e. it's <code>LOW</code>):</p>
-</li>
-<li>close the logging file</li>
-</ul>
+<p>The problem is that the <code>println(y)</code> statements never execute.  It is difficult to see why. Let's break it down a bit in psudocode:</p>
+<pre class="code literal-block"><span></span> * Sets up some `x`,`y`,`z` variables and a `switchState`, and then reads in the values from the accelerometer and a switch.
+
+ * When the `switchState` is `HIGH`:
+   * Increment `ctr`
+   * If the `ctr` is over `threshold` then print the `y` accelerometer reading
+   * reset the counter
+
+ * When the `switchState` is not `HIGH` (i.e. it's `LOW`):
+   * close the logging file
+</pre>
+
+
 <p>You can probably already see the logic error now. If I Annotate EJBlogger's code with comments (gasp!, but see <a href="../../pg/4-bit-rules.html">Rule 0</a>) then it should really pop out:</p>
 <pre class="code literal-block"><span></span><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
   <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">;</span>
