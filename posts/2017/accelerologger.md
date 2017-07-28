@@ -44,9 +44,10 @@ void loop() {
 }
 ```
 
-The problem is that the `println(y)` statements never execute.  It is difficult to see why. Let's break it down a bit.
+The problem is that the `println(y)` statements never execute.  It is difficult to see why. Let's break it down a bit in psudocode:
 
- * The code sets up some `x`,`y`,`z` variables and a `switchState`, and then reads in the values from the accelerometer and a switch.
+```
+ * Sets up some `x`,`y`,`z` variables and a `switchState`, and then reads in the values from the accelerometer and a switch.
 
  * When the `switchState` is `HIGH`:
    * Increment `ctr`
@@ -55,7 +56,8 @@ The problem is that the `println(y)` statements never execute.  It is difficult 
 
  * When the `switchState` is not `HIGH` (i.e. it's `LOW`):
    * close the logging file
-
+```
+   
 You can probably already see the logic error now. If I Annotate EJBlogger's code with comments (gasp!, but see [Rule 0](/pg/4-bit-rules.html)) then it should really pop out:
 
 
