@@ -8,19 +8,19 @@
  * MJL20150117 - This is horribly hard-coded. For now I wish to just
  *               get a site up, so I'll follow along, but I'd love to
  *               make this dynamic somehow
- *
  * MJL20150119 - on reflection, the code is no more 'hard coded' than
  *               HTML, it's just imperative rather than
  *               declarative. As such, I think I can live with this
  *               as-is, though I think I'll format it more to my own
  *               taste.
- *
  * MJL20160110 - new "blog roll" style blogs section under Links
  *               (replaces Google Bookmarks which is not as useful first thought)
  *             - Be nice to web servers, put trailing / on directory URLs
  * MJL20160127 - Tom Limoncelli's blog is more awesome than Brian Hicks'
  *               Spacemacs one.
  *             - Note the Jargon file is a mirror
+ *
+ * MJL20170805 - history in the git log
  *
  * Note:- all the styling is done in CSS, this just builds the menu Btns
  *
@@ -75,6 +75,7 @@
             .append(new Btn('Code').addClass('skin-code')
                     .append(new Btn('Source Forge').addClass('skin-sourceforge').on('click', linkEvent('https://sourceforge.net/u/sinewalker/profile/')))
                     .append(new Btn('Github').addClass('skin-github').on('click', linkEvent('http://www.github.com/sinewalker/')))
+                    .append(new Btn('Gists').addClass('skin-github').on('click', linkEvent('http://gist.github.com/sinewalker/')))
                     .append(new Btn('Bit Bucket').addClass('skin-bitbucket').on('click', linkEvent('http://www.bitbucket.com/sinewalker/')))
                    )
             .append(new Btn('Hacks').addClass('skin-hax')

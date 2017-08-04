@@ -3,7 +3,7 @@
 #   File:       conf.py
 #   Created:    2014-08-21
 #   Language:   Python
-#   Time-stamp: <2017-06-16 07:51:51 mjl>
+#   Time-stamp: <2017-08-05 08:02:55 mjl>
 #   Platform:   (Nikola 7.1 configuration file)
 #   OS:         *nix
 #   Author:     [MJL] Michael J. Lockhart (mlockhart@squiz.net)
@@ -182,6 +182,7 @@ NAVIGATION_LINKS = {
         (
             (
                 ('https://plus.google.com/+MichaelLockhart/posts', 'Microblog'),
+                ('https://gist.github.com/sinewalker', 'Gists - social code'),
                 ('https://www.facebook.com/sinewalker', 'Facebook'),
                 ('mailto:sinewalker@gmail.com', 'Email'),
             ),
@@ -190,6 +191,7 @@ NAVIGATION_LINKS = {
         (
             (
                 ('https://github.com/sinewalker', 'GitHub'),
+                ('https://gist.github.com/sinewalker', 'Gists'),
                 ('https://bitbucket.com/sinewalker', 'Bitbucket'),
                 ('https://codepen.io/sinewalker/','Codepen'),
                 ('',''),
