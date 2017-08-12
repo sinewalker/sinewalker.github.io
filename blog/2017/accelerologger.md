@@ -3,7 +3,7 @@
 .. title: Help with Accelerologger
 .. slug: accelerologger
 .. date: 2017-07-28 06:46:44 UTC+10:00
-.. tags: code, tip, hacking, hardware, children
+.. tags: code, tip, hacking, hardware, children, arduino
 .. category: 
 .. link: 
 .. description: EJBlogger asked for some code help on Bob's Drone Blog. Here is my input
