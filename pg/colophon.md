@@ -99,7 +99,7 @@ one: [http://sinewalker.github.com](http://sinewalker.github.com).
 The [source markup](https://github.com/sinewalker/sinewalker.github.io/tree/src)
 files and Nikola [configuration](https://github.com/sinewalker/sinewalker.github.io/blob/src/conf.py) are stored in my [GHP repository](https://github.com/sinewalker/sinewalker.github.io) on the `src` branch.
 
-The repository [wiki](https://github.com/sinewalker/sinewalker.github.io/wiki) and [issues log](https://github.com/sinewalker/sinewalker.github.io/issues?utf8=%E2%9C%93&q=) are where I keep notes about the site itself, rather than fill this site with [meta-blog](/tags/meta.html) posts.
+The repository [wiki](https://github.com/sinewalker/sinewalker.github.io/wiki) and [issues log](https://github.com/sinewalker/sinewalker.github.io/issues?q=) are where I keep notes about the site itself, rather than fill this site with [meta-blog](/tags/meta.html) posts.
 
 Copyleft
 ----
