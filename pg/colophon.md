@@ -2,9 +2,9 @@
 .. title: Colophon
 .. slug: colophon
 .. date: 2017-08-13 07:27 UTC+10:00
-.. tags: about
+.. tags: about, meta
 .. link:
-.. description: Some information about me.
+.. description: Some information about the site.
 .. type: text
 #+END_COMMENT
 
@@ -97,7 +97,9 @@ published to [GitHub Pages](https://pages.github.com/) (via Nikola's
 one: [http://sinewalker.github.com](http://sinewalker.github.com).
 
 The [source markup](https://github.com/sinewalker/sinewalker.github.io/tree/src)
-files and Nikola [configuration](https://github.com/sinewalker/sinewalker.github.io/blob/src/conf.py) are stored in my GHP repository on the `src` branch.
+files and Nikola [configuration](https://github.com/sinewalker/sinewalker.github.io/blob/src/conf.py) are stored in my [GHP repository](https://github.com/sinewalker/sinewalker.github.io) on the `src` branch.
+
+The repository [wiki](https://github.com/sinewalker/sinewalker.github.io/wiki) and [issues log](https://github.com/sinewalker/sinewalker.github.io/issues?utf8=%E2%9C%93&q=) are where I keep notes about the site itself, rather than fill this site with [meta-blog](/tags/meta.html) posts.
 
 Copyleft
 ----
