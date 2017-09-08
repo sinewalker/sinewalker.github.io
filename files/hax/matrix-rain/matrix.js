@@ -54,48 +54,47 @@ function resize(){
     //x below is the x coordinate
     //1 = y co-ordinate of the drop(same for every drop initially)
     for(var x = 0; x < columns; x++)
-	      drops[x] = c.height*Math.random();
+        drops[x] = c.height*Math.random();
 }
 
 //drawing the characters
 function draw()
 {
-	//Black BG for the canvas
-	//translucent BG to show trail. smaller = longer trail,
-        //originally 0.05
-	ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-	ctx.fillRect(0, 0, c.width, c.height);
-        var matrixGreen = "#0F5";
-        var phospherGrn = "#F00";
+    //Black BG for the canvas
+    //translucent BG to show trail. smaller = longer trail,
+    //originally 0.05
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, c.width, c.height);
+    var matrixGreen = "#0F5";
+    var phospherGrn = "#F00";
 
-	ctx.fillStyle = matrixGreen; //green text
-	ctx.font = font_size + "px arial";
-	//looping over drops
-	for(var i = 0; i < drops.length; i++)
-	{
-		//a random character to print
-		var text = characters[Math.floor(Math.random()*characters.length)];
-		//var text= characters[i];
-                //x = i*font_size, y = value of drops[i]*font_size
+    ctx.fillStyle = matrixGreen; //green text
+    ctx.font = font_size + "px arial";
+    //looping over drops
+    for(var i = 0; i < drops.length; i++)
+    {
+        //a random character to print
+        var text = characters[Math.floor(Math.random()*characters.length)];
+        //var text= characters[i];
+        //x = i*font_size, y = value of drops[i]*font_size
 
-                //ctx.fillStyle = phospherGrn;
-                ctx.fillText(text, i*font_size, drops[i]*font_size);
+        //ctx.fillStyle = phospherGrn;
+        ctx.fillText(text, i*font_size, drops[i]*font_size);
 
-                //ctx.fillStyle = matrixGreen;
-		//ctx.fillText(text, i*font_size, (drops[i]-1)*font_size);
+        //ctx.fillStyle = matrixGreen;
+        //ctx.fillText(text, i*font_size, (drops[i]-1)*font_size);
 
-		
-		//sending the drop back to the top randomly after it has crossed the screen
-		//adding a randomness to the reset to make the drops
-		//scattered on the Y axis
-                //bigger constant results in less dense
-		//display. Original was 0.975
-		if(drops[i]*font_size > c.height && Math.random() > 0.99)
-			drops[i] = 0;
-		
-		//incrementing Y coordinate
-		drops[i]++;
-	}
+        //sending the drop back to the top randomly after it has crossed the screen
+        //adding a randomness to the reset to make the drops
+        //scattered on the Y axis
+        //bigger constant results in less dense
+        //display. Original was 0.975
+        if(drops[i]*font_size > c.height && Math.random() > 0.99)
+            drops[i] = 0;
+
+        //incrementing Y coordinate
+        drops[i]++;
+    }
 }
 
 window.onload = init;
