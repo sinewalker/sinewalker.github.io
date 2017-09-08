@@ -10,7 +10,12 @@
 //       maintainable
 // TODO: Can I change the fill fade so that it starts with a
 //       different/bluer green before fading to greener green?
-//         --> this might require two loops?
+//         --> this might require drops[] to store the previous character as
+//             well as the position, and then:
+//               1. overdraw position-1 with previous saved char, in fade colour
+//               2. draw position with new random char, in bluer colour
+//               3. save the new char to the drop, increment position
+
 
 
 var c;
