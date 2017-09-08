@@ -24,9 +24,6 @@ function init(){
     c = document.getElementById("c");
     ctx = c.getContext("2d");
 
-    //making the canvas full screen
-    c.height = window.innerHeight;
-    c.width = window.innerWidth;
 
     //matrix characters - taken from the unicode charsets of a few real languages
     var chinese = "田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑";
@@ -46,6 +43,10 @@ function init(){
 }
 
 function resize(){
+    //making the canvas full screen
+    c.height = window.innerHeight;
+    c.width = window.innerWidth;
+
     font_size = c.width / 80;  // originally 10;
     var columns = c.width/font_size; //number of columns for the rain
     //an array of drops - one per column
