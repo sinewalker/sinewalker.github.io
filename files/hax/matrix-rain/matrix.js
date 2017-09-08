@@ -53,7 +53,7 @@ function resize(){
     //x below is the x coordinate
     //1 = y co-ordinate of the drop(same for every drop initially)
     for(var x = 0; x < columns; x++)
-	      drops[x] = 1;
+	      drops[x] = c.height*Math.random();
 }
 
 //drawing the characters
