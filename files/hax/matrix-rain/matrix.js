@@ -25,13 +25,13 @@ var drops;
 var characters;
 
 //tweakable params
-var DRAW_INTERVAL = 42; // bigger is slower, originally 33
-var DRAW_COLUMNS = 60;  //originally 10
+var DRAW_INTERVAL = 50; // bigger is slower, originally 33
+var DRAW_COLUMNS = 80;  //originally 10
 var DRAW_FADE_ALPHA = "rgba(0, 0, 0, 0.05)";  //Black BG for the canvas translucent BG to show trail. smaller = longer trail, originally 0.05
 var DRAW_DENSITY = 0.99;  //bigger constant results in less dense display. Original was 0.975
 var DRAW_FONT = "arial";
-var DRAW_MATRIX_GREEN = "#6FF";
-var DRAW_PHOSPHER_GRN = "#0D3";
+var DRAW_MATRIX_GREEN = "#0F5";
+var DRAW_PHOSPHER_GRN = "#F00";
 
 function init(){
 
@@ -88,8 +88,7 @@ function draw()
         ctx.fillText(drops[i].char, i*font_size, (drops[i].pos*font_size)-font_size);
 
         //a random character to print
-        drops[i].char = characters[Math.floor(Math.random()*characters.length)];         
-                
+        drops[i].char = characters[Math.floor(Math.random()*characters.length)];
         ctx.fillStyle = matrixGreen;
         ctx.fillText(drops[i].char, i*font_size, drops[i].pos*font_size);
 
