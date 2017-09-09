@@ -5,10 +5,10 @@
 // DONE: use more than just Chinese characters
 // DONE: make the text scale to window's size, fixed 80 chars width
 // DONE: discover how to change density/trail length/colours/speed
-// TODO: more experiments around finding/changing display params
-// TODO: make the parameters into variables so it is more easily
+// DONE: more experiments around finding/changing display params
+// DONE: make the parameters into variables so it is more easily
 //       maintainable
-// TODO: Can I change the fill fade so that it starts with a
+// DONE: Can I change the fill fade so that it starts with a
 //       different/bluer green before fading to greener green?
 //         --> this might require drops[] to store the previous character as
 //             well as the position, and then:
@@ -25,13 +25,13 @@ var drops;
 var characters;
 
 //tweakable params
-var DRAW_INTERVAL = 50; // bigger is slower, originally 33
-var DRAW_COLUMNS = 80;  //originally 10
+var DRAW_INTERVAL = 42; // bigger is slower, originally 33
+var DRAW_COLUMNS = 60;  //originally 10
 var DRAW_FADE_ALPHA = "rgba(0, 0, 0, 0.05)";  //Black BG for the canvas translucent BG to show trail. smaller = longer trail, originally 0.05
 var DRAW_DENSITY = 0.99;  //bigger constant results in less dense display. Original was 0.975
 var DRAW_FONT = "arial";
-var DRAW_MATRIX_GREEN = "#0F5";
-var DRAW_PHOSPHER_GRN = "#F00";
+var DRAW_MATRIX_GREEN = "#6FF";
+var DRAW_PHOSPHER_GRN = "#0D3";
 
 function init(){
 
@@ -66,7 +66,7 @@ function resize(){
     //x below is the x coordinate
     //1 = y co-ordinate of the drop(same for every drop initially)
     for(var x = 0; x < columns; x++)
-        drops[x] = c.height*Math.random();
+        drops[x] = {pos: c.height*Math.random(), char: " "};
 }
 
 //drawing the characters
@@ -83,25 +83,24 @@ function draw()
     //looping over drops
     for(var i = 0; i < drops.length; i++)
     {
+        //Draw over the phosphor glow in prev character
+        ctx.fillStyle = phospherGrn;
+        ctx.fillText(drops[i].char, i*font_size, (drops[i].pos*font_size)-font_size);
+
         //a random character to print
-        var text = characters[Math.floor(Math.random()*characters.length)];
-        //var text= characters[i];
-        //x = i*font_size, y = value of drops[i]*font_size
-
-        //ctx.fillStyle = phospherGrn;
-        ctx.fillText(text, i*font_size, drops[i]*font_size);
-
-        //ctx.fillStyle = matrixGreen;
-        //ctx.fillText(text, i*font_size, (drops[i]-1)*font_size);
+        drops[i].char = characters[Math.floor(Math.random()*characters.length)];         
+                
+        ctx.fillStyle = matrixGreen;
+        ctx.fillText(drops[i].char, i*font_size, drops[i].pos*font_size);
 
         //sending the drop back to the top randomly after it has crossed the screen
         //adding a randomness to the reset to make the drops
         //scattered on the Y axis
-        if(drops[i]*font_size > c.height && Math.random() > DRAW_DENSITY)
-            drops[i] = 0;
+        if(drops[i].pos*font_size > c.height && Math.random() > DRAW_DENSITY)
+            drops[i].pos = 0;
 
         //incrementing Y coordinate
-        drops[i]++;
+        drops[i].pos++;
     }
 }
 
