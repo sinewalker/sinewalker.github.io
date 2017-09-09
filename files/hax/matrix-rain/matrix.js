@@ -16,8 +16,6 @@
 //               2. draw position with new random char, in bluer colour
 //               3. save the new char to the drop, increment position
 
-
-
 var c;
 var ctx;
 var font_size;
@@ -25,16 +23,15 @@ var drops;
 var characters;
 
 //tweakable params
-var DRAW_INTERVAL = 42; // bigger is slower, originally 33
-var DRAW_COLUMNS = 80;  //originally 10
-var DRAW_FADE_ALPHA = "rgba(0, 0, 0, 0.05)";  //Black BG for the canvas translucent BG to show trail. smaller = longer trail, originally 0.05
-var DRAW_DENSITY = 0.98;  //bigger constant results in less dense display. Original was 0.975
-var DRAW_FONT = "arial";
+var DRAW_INTERVAL     = 42;  // bigger is slower, originally 33
+var DRAW_COLUMNS      = 80;  // originally 10
+var DRAW_FADE_ALPHA   = "rgba(0, 0, 0, 0.05)";  //smaller α = longer trail, originally 0.05
+var DRAW_DENSITY      = 0.98;  //bigger = less dense display, originally 0.975
+var DRAW_FONT         = "arial";
 var DRAW_MATRIX_GREEN = "#7FF";
 var DRAW_PHOSPHER_GRN = "#0C3";
 
 function init(){
-
     c = document.getElementById("c");
     ctx = c.getContext("2d");
 
@@ -47,7 +44,7 @@ function init(){
 
     characters = chinese.concat(japanese, english, greek, numbers);
 
-    //converting the string into an array of single characters
+    //convert the string into an array of single characters
     characters = characters.split("");
 
     resize();
@@ -55,52 +52,43 @@ function init(){
 }
 
 function resize(){
-    //making the canvas full screen
+    //make the canvas full screen
     c.height = window.innerHeight;
     c.width = window.innerWidth;
 
     font_size = c.width / DRAW_COLUMNS;
+    ctx.font = font_size + "px " + DRAW_FONT;
+
     var columns = c.width/font_size; //number of columns for the rain
-    //an array of drops - one per column
-    drops = [];
-    //x below is the x coordinate
-    //1 = y co-ordinate of the drop(same for every drop initially)
-    for(var x = 0; x < columns; x++)
-        drops[x] = {pos: c.height*Math.random(), char: " "};
+    drops = [];                  //an array of drops - one per column
+    for(var i = 0; i < columns; i++)
+        drops[i] = {pos: c.height*Math.random(), char: " "};
 }
 
-//drawing the characters
-function draw()
-{
-
+//draw the code rain
+function draw(){
     ctx.fillStyle = DRAW_FADE_ALPHA;
     ctx.fillRect(0, 0, c.width, c.height);
-    var matrixGreen = DRAW_MATRIX_GREEN;
-    var phospherGrn = DRAW_PHOSPHER_GRN;
 
-    ctx.fillStyle = matrixGreen; //green text
-    ctx.font = font_size + "px " + DRAW_FONT;
-    //looping over drops
-    for(var i = 0; i < drops.length; i++)
-    {
-        //Draw over the phosphor glow in prev character
-        ctx.fillStyle = phospherGrn;
+    for(var i = 0; i < drops.length; i++){
+        //draw over the phosphor glow in prev character
+        ctx.fillStyle = DRAW_PHOSPHER_GRN;
         ctx.fillText(drops[i].char, i*font_size, (drops[i].pos*font_size)-font_size);
 
-        //a random character to print
+        //a random character to draw
         drops[i].char = characters[Math.floor(Math.random()*characters.length)];
 
         //draw new character at current position
-        ctx.fillStyle = matrixGreen;
+        ctx.fillStyle = DRAW_MATRIX_GREEN;
         ctx.fillText(drops[i].char, i*font_size, drops[i].pos*font_size);
 
-        //sending the drop back to the top randomly after it has crossed the screen
-        //to make the drops scattered on the Y axis
+        drops[i].pos++;
+
+        //After the drop has crossed the bottom of the screen, send it back to
+        //the top. Adding random chance affects how quickly the drop returns
+        //(density of drops on screen) and scatters then on the Y axis
         if(drops[i].pos*font_size > c.height && Math.random() > DRAW_DENSITY)
             drops[i].pos = 0;
-
-        //incrementing Y coordinate
-        drops[i].pos++;
     }
 }
 
