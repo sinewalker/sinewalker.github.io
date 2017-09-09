@@ -1,0 +1,5 @@
+/*basic reset*/
+* {margin: 0; padding: 0;}
+/*adding a blud bg to the body to make things clearer*/
+body {background: blue;}
+canvas {display: blue;}
