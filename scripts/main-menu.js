@@ -83,6 +83,7 @@
                     //.append(new Btn('(directory list)').addClass('skin-menu').on('click', linkEvent('/hax/')))
                     .append(new Btn('Matrix rain').addClass('skin-matrix').on('click', linkEvent('/hax/matrix-rain/matrix.html')))
                     .append(new Btn('Unicodify').addClass('skin-hax').on('click', linkEvent('/hax/unicodify/')))
+                    .append(new Btn('Pick-up sticks').addClass('skin-hax').on('click', linkEvent('/hax/pickup-sticks/sticks.html')))
                     )
             .append(new Btn('iStorage').addClass('skin-cloud')
                     .append(new Btn('Google Drive').addClass('skin-gdrive').on('click', linkEvent('https://drive.google.com/folderview?id=0Bx4srwpEBrFMUEJPRll4ajdDakU&usp=sharing/')))
