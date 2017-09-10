@@ -43,7 +43,7 @@ function init(){
 }
 
 function resize(){
-    //adjust the canvas to fill the windo
+    //adjust the canvas to fill the window
     c.height = window.innerHeight;
     c.width = window.innerWidth;
     //Also clears the context. The background canvas colour is determined by the
@@ -56,7 +56,6 @@ function toggleFade() {
 
 function draw(){
     if (fade){
-        //TODO toggle fading with a button
         ctx.fillStyle = DRAW_BACKGROUND;
         ctx.fillRect(0,0,c.width,c.height);
     }
