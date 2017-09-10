@@ -28,6 +28,7 @@
 
 var c;
 var ctx;
+var fade=false;
 
 var DRAW_INTERVAL   = 30; // msec between repaints
 var DRAW_BACKGROUND = "rgba(0,0,255,0.01)";
@@ -49,10 +50,16 @@ function resize(){
     //CSS, so no need to fillRect here.
 }
 
+function toggleFade() {
+    fade = !fade;
+}
+
 function draw(){
-    //TODO toggle fading with a button
-    // ctx.fillStyle = DRAW_BACKGROUND;
-    // ctx.fillRect(0,0,c.width,c.height);
+    if (fade){
+        //TODO toggle fading with a button
+        ctx.fillStyle = DRAW_BACKGROUND;
+        ctx.fillRect(0,0,c.width,c.height);
+    }
     for(var i = 0; i < DRAW_TURBO; i++){
         ctx.strokeStyle = '#' + Math.floor(Math.random()*16777215).toString(16);
         ctx.beginPath();
