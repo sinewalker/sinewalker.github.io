@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>http://milosophical.me/authors/michael-lockhart.xml</loc>
-  <lastmod>2017-08-12T23:27:00Z</lastmod>
+  <lastmod>2017-09-19T00:49:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/authors/mike-lockhart.xml</loc>
@@ -31,11 +31,11 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/rss.xml</loc>
-  <lastmod>2017-08-12T23:27:00Z</lastmod>
+  <lastmod>2017-09-19T00:49:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/sitemap.xml</loc>
-  <lastmod>2017-08-13T01:20:00Z</lastmod>
+  <lastmod>2017-09-19T00:49:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/4-bit-rules.xml</loc>
@@ -151,7 +151,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/children.xml</loc>
-  <lastmod>2017-08-12T23:27:00Z</lastmod>
+  <lastmod>2017-09-19T00:49:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/clojure.xml</loc>
@@ -167,7 +167,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/codekids.xml</loc>
-  <lastmod>2017-06-15T21:55:00Z</lastmod>
+  <lastmod>2017-09-19T00:49:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/colour.xml</loc>
@@ -360,6 +360,10 @@
  <sitemap>
   <loc>http://milosophical.me/tags/geocaching.xml</loc>
   <lastmod>2017-06-15T21:55:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://milosophical.me/tags/getkidscoding.xml</loc>
+  <lastmod>2017-09-19T00:49:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/gnupg.xml</loc>
