@@ -53,6 +53,8 @@ Well, we *could* do that. It's a matter of how much time is available to work th
 
 I know that the class has some LEGO&trade; NXT&trade; robots that they would like to program, so that is yet another direction.
 
+**UPDATE 2017-09-19T12:08+1000** After talking very briefly with the teacher, we feel we should head down the Python trail next term, if only because there are a couple of pupils who've seen in already and may act as teacher's helpers, and because the two languages in HTML and CSS are also a move from *Imperative* programming to *Declaraitive*.
+
 ## Getting started with Trinket
 
 Whichever language we choose to use, we'll be using Trinket to do the coding.  Getting started is really simple:
@@ -65,6 +67,21 @@ Whichever language we choose to use, we'll be using Trinket to do the coding.  G
 ### Saving work
 
 You can keep your work *without having a Trinket.io account*:  Just click the "**Share**" menu, and choose "**Link**".  You can copy the URL and store it in your notebook. I'll be recommending pupils to follow my [fourth rule of computing](/blog/2015/4-bit-rules-of-computing-part-1.html).
+
+## Pedagogy
+
+One other stream of thought I've been having is to answer the "why" and "what" questions that teachers and other parents have about getting kids to code.  I think that the CodeCLub joint founder Clare Sutcliffe summs this up brilliantly in he 10-minute TEDx Talk in Brighton, in 2012:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ng7sf2_peFg?rel=0" frameborder="0" allowfullscreen></iframe>
+
+This is clearly oriented towards the UK, and indeed UK now has a computer curriculum for K-6 which the CodeClub projects follow closely. But what about Australia? Well, CodeClub AU have put up [this Australian Curriculum Map](https://codeclubau.org/curriculum/overview.html) which maps the projects to the new Australian coding curriculum!  Very handy resource for teachers.  Teachers also can benefit from [Teacher training and workshops](https://codeclubau.org/teacher-training/), online or face-to-face, **for free**.
+
+An important point in Clare's video is the gap in generations between the current "digital natives" and coders like me who learned to code in the 1980s.  Teachers today haven't had the experience of coding that I enjoyed, or at least not from a point of view where they could be supported in teaching it to children.  Naturally the new STEM curriculum with computing in it is very scary and frustrating to them.
+
+This is where I feel that I fit in:  as a coder and a dad, I'm in a position where facing a room full of children and trying to explain computers to them is -- while daunting and challenging -- not completely terrifying, as it would be to many coders out there.  So it's something I'm keen to do.
+
+My personal views on this effort are that true "computer literacy" will only be achieved when pupils can not only use computers, but express themselves with them. Just like English literacy.  And also just like English, the goal is not to create a generation of computer programmers. I want coding to be a core skill, like English and Mathematics, because just like those two, it is central to future (indeed *current*) lifestyles and vocations.  We don't teach English to create book authors, but everyone understands its importance.  The same is true for programming computers.
+
 
 ## Stay tuned
 
