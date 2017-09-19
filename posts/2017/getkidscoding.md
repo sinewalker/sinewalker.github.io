@@ -18,7 +18,7 @@ This year I've had even less time away from work, but I've had great support fro
 
 ## CodeClub, `#getkidscoding`, and Scratch
 
-I started last year by registering a CodeClub and working through the Scratch projects on the Scratch 1 module.  This was well received by the kids.  This year we skimmed that module (since half the class is made of the same pupils as last year) -- the kids have all kept up, even those who weren't exposed before.  I think it's for two reasons:
+I started last year by [registering a CodeClub](https://codeclubau.org/get-involved/) (you can see Margate on the map!) and working through the Scratch projects on the Scratch 1 module.  This was well received by the kids.  This year we skimmed that module (since half the class is made of the same pupils as last year) -- the kids have all kept up, even those who weren't exposed before.  I think it's for two reasons:
 
  1. We paired experienced kids with newbies
  2. All the kids are in grade 6, instead of a mixed 4/5 class
@@ -35,7 +35,7 @@ But there is good news:  Scratch is only the beginning of the CodeClub coding jo
 
  * It requires only an HTML5 browser. Anything newer than 2014 will do
  * Pupils *are not required to sign in or have an email address*:  You can bookmark links to resume your projects
- * The editor, while fairly basic, has syntax highlighting and balances parethesis/quote pairs, so you can get feedback when you make typing mistakes.
+ * The editor, while fairly basic, has syntax highlighting and balances parenthesis/quote pairs, so you can get feedback when you make typing mistakes.
 
 I believe it's time to expose the kids to some "real" code: they have a great grounding from Scratch and understand the basics of Sequence, Blocks, Loops, and Branches, so it's only a small step up.
 
@@ -53,7 +53,7 @@ Well, we *could* do that. It's a matter of how much time is available to work th
 
 I know that the class has some LEGO&trade; NXT&trade; robots that they would like to program, so that is yet another direction.
 
-**UPDATE 2017-09-19T12:08+1000** After talking very briefly with the teacher, we feel we should head down the Python trail next term, if only because there are a couple of pupils who've seen in already and may act as teacher's helpers, and because the two languages in HTML and CSS are also a move from *Imperative* programming to *Declaraitive*.
+**UPDATE 2017-09-19T12:08+1000** After talking very briefly with the teacher, we feel we should head down the Python trail next term, if only because there are a couple of pupils who've seen it already and may act as teacher's helpers, and because the two languages HTML and CSS are also a move from *Imperative* programming to *Declaraitive*.
 
 ## Getting started with Trinket
 
@@ -66,17 +66,17 @@ Whichever language we choose to use, we'll be using Trinket to do the coding.  G
 
 ### Saving work
 
-You can keep your work *without having a Trinket.io account*:  Just click the "**Share**" menu, and choose "**Link**".  You can copy the URL and store it in your notebook. I'll be recommending pupils to follow my [fourth rule of computing](/blog/2015/4-bit-rules-of-computing-part-1.html).
+You can keep your work *without having a Trinket.io account*:  Just click the "**Share**" menu, and choose "**Link**".  You can copy the URL and store it in your notebook. I'll be recommending that pupils follow my [fourth rule of computing](/blog/2015/4-bit-rules-of-computing-part-1.html).
 
 ## Pedagogy
 
-One other stream of thought I've been having is to answer the "why" and "what" questions that teachers and other parents have about getting kids to code.  I think that the CodeCLub joint founder Clare Sutcliffe summs this up brilliantly in he 10-minute TEDx Talk in Brighton, in 2012:
+One other stream of thought I've been having is to answer the "why" and "what" questions that teachers and other parents have about getting kids to code.  I think that the CodeClub joint founder Clare Sutcliffe sums this up brilliantly in he 10-minute TEDx Talk in Brighton, in 2012:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ng7sf2_peFg?rel=0" frameborder="0" allowfullscreen></iframe>
 
-This is clearly oriented towards the UK, and indeed UK now has a computer curriculum for K-6 which the CodeClub projects follow closely. But what about Australia? Well, CodeClub AU have put up [this Australian Curriculum Map](https://codeclubau.org/curriculum/overview.html) which maps the projects to the new Australian coding curriculum!  Very handy resource for teachers.  Teachers also can benefit from [Teacher training and workshops](https://codeclubau.org/teacher-training/), online or face-to-face, **for free**.
+This is clearly oriented towards the UK, and indeed UK now has a [computer curriculum for K-6](http://www.develop-online.net/news/uk-govt-outlines-computer-science-curriculum/0115853) which the CodeClub projects follow closely. But what about Australia? Well, CodeClub AU have put up [this Australian Curriculum Map](https://codeclubau.org/curriculum/overview.html) which maps the projects to the new [Australian Digital Technologies curriculum](https://www.australiancurriculum.edu.au/f-10-curriculum/technologies/digital-technologies/)!  Very handy resource for teachers.  Teachers also can benefit from [Teacher training and workshops](https://codeclubau.org/teacher-training/), online or face-to-face, **for free**.
 
-An important point in Clare's video is the gap in generations between the current "digital natives" and coders like me who learned to code in the 1980s.  Teachers today haven't had the experience of coding that I enjoyed, or at least not from a point of view where they could be supported in teaching it to children.  Naturally the new STEM curriculum with computing in it is very scary and frustrating to them.
+An important point in Clare's video is the gap in generations between the current "digital natives" and coders like me who learned to code in the 1980s.  Teachers today haven't had the experience of coding that I enjoyed, or at least not from a point of view where they could be supported in teaching it to children.  Naturally the new STEM curriculum with computing in it is [very scary and frustrating to them](http://www.smh.com.au/national/computer-science-reforms-to-test-teachers-skills-20140111-30nj4.html).
 
 This is where I feel that I fit in:  as a coder and a dad, I'm in a position where facing a room full of children and trying to explain computers to them is -- while daunting and challenging -- not completely terrifying, as it would be to many coders out there.  So it's something I'm keen to do.
 
