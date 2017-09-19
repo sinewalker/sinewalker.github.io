@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>http://milosophical.me/authors/michael-lockhart.xml</loc>
-  <lastmod>2017-09-19T03:45:00Z</lastmod>
+  <lastmod>2017-09-19T03:48:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/authors/mike-lockhart.xml</loc>
@@ -31,15 +31,15 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/rss.xml</loc>
-  <lastmod>2017-09-19T03:45:00Z</lastmod>
+  <lastmod>2017-09-19T03:48:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/sitemap.xml</loc>
-  <lastmod>2017-09-19T03:45:00Z</lastmod>
+  <lastmod>2017-09-19T03:48:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/4-bit-rules.xml</loc>
-  <lastmod>2017-09-19T03:45:00Z</lastmod>
+  <lastmod>2017-09-19T03:48:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/aboutme.xml</loc>
@@ -87,7 +87,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/blogging.xml</loc>
-  <lastmod>2017-09-19T03:45:00Z</lastmod>
+  <lastmod>2017-09-19T03:48:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/book.xml</loc>
@@ -119,7 +119,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/cat_blog.xml</loc>
-  <lastmod>2017-09-19T03:45:00Z</lastmod>
+  <lastmod>2017-09-19T03:48:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/cat_hacking.xml</loc>
@@ -423,7 +423,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/journal.xml</loc>
-  <lastmod>2017-09-19T03:45:00Z</lastmod>
+  <lastmod>2017-09-19T03:48:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/jvm.xml</loc>
@@ -551,7 +551,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/notebook.xml</loc>
-  <lastmod>2017-09-19T03:45:00Z</lastmod>
+  <lastmod>2017-09-19T03:48:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/nx.xml</loc>
@@ -743,7 +743,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/tip.xml</loc>
-  <lastmod>2017-09-19T03:45:00Z</lastmod>
+  <lastmod>2017-09-19T03:48:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/tips.xml</loc>
