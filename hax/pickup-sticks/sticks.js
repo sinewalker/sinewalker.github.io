@@ -8,14 +8,14 @@
 //
 // It draws random lines in random colours. I hacked it on my old Amstrad CPC
 // 6128 in the mid 1980s. Things were much simpler back then, just 6 lines of
-// code:
+// code (https://gist.github.com/sinewalker/c8fa68158a63f95c01c5eb39f354df7b):
 //
-// 10 CLS
-// 20 WHILE 1>0
-// 30   GRAPHICS PEN 15*RND
-// 40   MOVE 640*RND,400*RND
-// 50   DRAW 640*RND,400*RND
-// 60 WEND
+//  10 CLS
+//  20 WHILE 1>0
+//  30   GRAPHICS PEN 15*RND
+//  40   MOVE 640*RND,400*RND
+//  50   DRAW 640*RND,400*RND
+//  60 WEND
 //
 // The default colours on the CPC are yellow on blue, so
 // that is why it has a blue background.
