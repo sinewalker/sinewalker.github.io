@@ -13,7 +13,7 @@ Take this enhancement to the language that finally allows you to do a switch on 
 </p>
 
 
-<pre>
+<pre><code>
 public class StringSwitch {
     public static String getFruitColour(String name) {
         switch (name) {
@@ -41,7 +41,7 @@ public class StringSwitch {
         System.out.println(getFruitColour(null));     // actually causes NPE at the switch
     }
 }
-</pre>
+</code></pre>
 
 <p>
 This should work, and the null string should cause the switch to fall through. Seems reasonable, yes? Well, no. You get an NPE:
@@ -60,7 +60,7 @@ Exception in thread "main" java.lang.NullPointerException
 Damn it, guys! How does this make my coding simpler? Now I have to remember that if I'm switching on String, I have to guard against NPEs. Okay, it's better than nested <code>if</code>'s, but it's a serious gotcha. Again. Here's one solution, though of course, being Java, it's fugly:
 
 
-<pre>
+<pre><code>
 public class StringSwitch {
     public static String getFruitColour(String name) {
         if (name != null) {
@@ -92,7 +92,7 @@ public class StringSwitch {
         System.out.println(getFruitColour(null));     // this time the NPE is guarded
     }
 }
-</pre>
+</code></pre>
 <p>
 If anything, Java 7 demonstrates that the JVM is a great platform for dynamic languages other than Java. Like for instance Scala and Clojure... How disappointing.
 </p>

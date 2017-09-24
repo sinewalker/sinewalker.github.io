@@ -1,62 +1,57 @@
 <html><body><p>I don't know how many other people get this issue, but it comes up at my work a bit: Some co-worker asks me if I know of a tool to do such-and-such, and invariably I think <em>“well, that's </em>easy<em> to do on Unix, but on </em>Windows<em>…”</em>.
-
-
+</p>
+<p>
 Then I remember Cygwin, and quickly find a Cygwin utility that does it, or can be scripted to do it with a small amount of work. So then co-worker asks if they can have a copy of this utility, and of course Cygwin is Free, so I say “sure, go download from <a title="Cygwin download mirrors" href="http://www.cygwin.com/mirrors.html">www.cygwin.com</a>.” Then they say, “yeah, but I don't want to install all of Cygwin, can't you just give me that one program?”
+</p>
 
-
-
+<p>
 Well, the Cygwin command-line tools <em>can</em> be run from a Windows <code>CMD.EXE</code> shell, so this is quite possible to do. However, they all require the Cygwin POSIX layer, which at a minimum means I should also give them <code>cygwin1.dll</code>. But what <em>other</em> DLLs might the program use?
+</p>
 
-
-
+<p>
 <strong>MJL2008-09-10T14:37+1000 Update:</strong> since this page gets a lot of hits, here's the quick answer: <strong>use cygcheck</strong>, i.e:
 
 </p><p style="text-align:center;"><code>cygcheck grep</code></p>
 
 
-
+<p>
 Find it under Happy hacker discovery #2. Keep reading if you're bored...
-
+</p>
 
 
 <!-- TEASER_END -->
 
 
-
+<p>
 ...
+</p>
 
-
-
+<p>
 In the past, I used to just give the person the <code>cygwin1.dll</code> DLL and a program (<code>SPLIT.EXE</code>,say), let the person run it on their computer, explaining that it will crash with an error about a missing DLL. Then they would come back to me and say that they also need <code>cygintl-8.dll</code> and try again. It will crash <em>again</em> because <code>cygintl-8.dll</code> just happens to link to <code>cygiconv-2.dll</code>. After supplying this third DLL file, my co-worker can finally run <code>SPLIT.EXE</code> and break their huge data set into manageable chunks. Everyone's happy.
+</p>
 
-
-
+<p>
 The whole process is a bit embarrassing for me and annoying for them (though they <em>could</em> just download the base Cygwin install like I <em>asked</em>…) So, to solve this problem somewhat, I set about thinking <em>“I wonder if there's a Cygwin tool that can find DLLs in a program?”</em>.
+</p>
 
-
-
+<p>
 Well, a quick look at <code>info binutils</code> reveals that there is nothing that <em>directly</em> solves my problem of listing which DLLs a program links to. There is this thing called <code>dlltool</code>, but it is for creating PE dynamic libraries, not for listing the libraries used by a PE executable. Bummer.
-
+</p>
 <h3>Happy hacker discovery #0</h3>
-
+<p>
 Well, there is also a tool called <code>strings</code>, which will list text strings in binary files. Now, Windows PE executables happen to contain the name of their linked DLLs as text strings, yay! So all I need to do, is pass <code>strings</code> over a given program, filter for DLL names (to strip out error messages and such) and I have my list.
+</p>
 
-
-
+<p>
 Oh, but then I'll need to repeat for each DLL as well. So I need a script to do it:
-
+</p>
 <pre>#!/bin/bash
 
 #
-
 # finds all the DLL files linked by a Win32 PE executable.
-
 # Useful for finding needed DLLs to supply with a Cygwin program when
-
 # sharing just that program with other people.
-
 #
-
 
 
 if [ x"$1" = x ]; then
@@ -67,32 +62,23 @@ if [ x"$1" = x ]; then
 fi
 
 
-
 SEARCH_FILE=`which $1`.exe
 
 
-
 # This is not perfect, as it's too permissive, but should be good enough
-
 DLL_REGEXP='^[[:alnum:][:punct:]]*\\.[Dd][Ll][Ll]$'
 
 
-
 # We don't care about the Win32 kernel API library...
-
 KERNEL_REGEXP='[Kk][Ee][Rr][Nn][Ee][Ll]32\\.[Dd][Ll][Ll]'
 
 
-
 # Get list of program's DLLs:
-
 DLL_LIST=`strings -n 5 $SEARCH_FILE \\
           |grep $DLL_REGEXP \\
           |grep -v $KERNEL_REGEXP`
 
-
 # Print the DLLs used directly by the program
-
 printf "$SEARCH_FILE:\\n"
 
 for I in $DLL_LIST; do
@@ -100,7 +86,6 @@ for I in $DLL_LIST; do
 done
 
 printf "\\t(KERNEL32.DLL)\\n\\n"
-
 
 
 #Now find each DLL's dependencies (only one level deep though)
@@ -117,33 +102,34 @@ for CURR_DLL in $DLL_LIST; do
     done
     printf "\\t\\t(KERNEL32.DLL)\\n\\n"
 done</pre>
-
+<p>
 There we are, a list of DLLs used by a given program, and the DLLs that those DLLs use.
+</p>
 
-
-
+<p>
 It's not perfect: <strong>it is not recursive</strong>, so only goes one level deep, but this should cover most cases. One day I might come back to this, when I figure out how to write a recursive function in bash.
+</p>
 
-
-
+<p>
 So now I know which DLLs to give to my co-worker along with the nifty tool they want. But where on my system are they? Cygwin installs most DLLs into <code>/usr/bin</code>. But sometimes they can be in <code>/usr/lib</code>. So do I have to make a search?
-
+</p>
 <h3>Happy hacker discovery #1</h3>
-
+<p>
 Well, no I don't. Cygwin's <code>which</code> command also works for DLLs, yay! You just have to go:
-
+</p>
 <pre>  $ <strong>which cygwin1.dll</strong>
   /usr/bin/cygwin1.dll<strong>
 </strong>  $ <strong>which cygintl-8.dll</strong>
   /usr/bin/cygintl-8.dll
   $ <strong>which cygiconv-2.dll</strong>
   /usr/bin/cygiconv-2.dll</pre>
+<p>
 There, problem solved.
-
+</p>
 <h3>Happy hacker discovery #2</h3>
-
+<p>
 <strong>Update: 2008-01-21 09:56+1100</strong>: There's an awesome tool that comes with Cygwin, called <code><strong>cygcheck</strong></code><sub>(1)</sub>, that does exactly what I need. Thanks for the tip, Leni! Here's a sample output for the SPLIT.EXE example:
-
+</p>
 <pre>$ <strong>cygcheck split</strong>
 
 Found: d:\cygwin\bin\split.exe
