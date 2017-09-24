@@ -182,13 +182,10 @@
 <br><p>
 The next side-effect I haven't yet solved. I <a title="how to set up cygwin's xwin menu" href="http://sinewalker.wordpress.com/2006/04/18/cygwin-systray-menu/">use the XWin menu</a> to define some links to the servers I look after at work. I use <code>plink.exe</code> (part of <a title="PuTTY home page" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY</a>) to launch an xterm on the remote host, displayed locally, and using <code>pagent.exe</code> to do the authentication. For example:
 </p>
-<br><pre><code><strong>MENU DEV_SERVERS {
+<br><pre><code>MENU DEV_SERVERS {
     "Content Server" exec "D:/Programs/PuTTY/plink.exe -ssh -X -C -load someserverdef /usr/openwin/bin/xterm -name greenbackground -ls"
-</strong></code></pre>
-<br><p>
-...
-</p>
-<br><p>
+…</code></pre>
+<br><br><p>
 This used to work, but now nothing happens.  Interestingly, the command <em>will </em>work if you execute it directly from a bash shell. If anyone has an idea, I'd be grateful for their help :)
 </p>
 
@@ -212,7 +209,7 @@ I haven't yet un-installed Cygwin's X server: I fear it could also remove client
 <br><p>
 A final note: It's menu config file is Xmingrc (no dot), which lives in Window's HOME <code>%USERPROFILE%</code>. Also, because it's got no Cygwin dependency, you can't launch local Cygwin X clients from this menu. At least, not without wrapping them in calls to Cygwin's run.exe, e.g.
 </p>
-<br><p style="text-align:center;"><code>d:\cygwin\bin\run.exe -p /usr/X11R6/bin emacs -display 127.0.0.1:0.0 --debug-init</code></p>
+<br><p style="text-align:center;"><code>D:\cygwin\bin\run.exe -p /usr/X11R6/bin emacs -display 127.0.0.1:0.0 --debug-init</code></p>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../../../tags/cygwin.html" rel="tag">cygwin</a></li>

@@ -168,10 +168,10 @@
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>I have a bunch of free <a title="Xiph's meta container format for media" href="http://www.xiph.org/ogg/">Ogg</a> <a title="Patent-free audio codec (MP3 killer)" href="http://www.vorbis.com/">Vorbis</a> audio files that I've downloaded from <a title="Kahvi Collective. Sound has the power to make the world a better place" href="http://kahvi.org/">Kahvi.org</a>. They're great! But recently they've been including cover art within the files, which breaks Windows Media Player (it can't handle the very long tags of binhex-coded JPGs).
-
-
+</p>
+<p>
 Since I rather like WMP's integration in windows (keyboard shortcuts), and <a title="Kewl KDE music player (iTunes killer)" href="http://amarok.kde.org/">Amarok</a> <a title="Amarok for win32 is still a work in progress, but it compiles..." href="http://amarok.kde.org/wiki/Development/Win32">isn't quite ready for win32</a>, I thought I'd find a way to strip the troublesome tags from the data files rather than change to another player.
-
+</p>
 
 
 Here's a quick-and-dirty shell hack to remove the tags from the files and get them playable by daft players such as Windows Media Player
@@ -180,8 +180,7 @@ Here's a quick-and-dirty shell hack to remove the tags from the files and get th
 
 <!-- TEASER_END -->
 
-</p>
-<pre>#!/bin/bash
+<pre><code>#!/bin/bash
 
 ###############################################################################
 #
@@ -247,17 +246,18 @@ rm *-comment.txt
 
 # clean-up of art is manual. There might be different cover-art from
 # each file, but if not (diff a*-art.txt b*.txt etc produces no
-# output) then just remove all but first and rename it...</pre>
+# output) then just remove all but first and rename it...</code></pre>
 
-<hr>The smarts are all in the vorbis utilites included as part of Cygwin. Specifically the script uses vorbiscomment<sub>(1)</sub> to extract and apply tags in the Ogg files, and grep and (optionally) patch to manipulate the comments.
+<hr>
+<p>The smarts are all in the vorbis utilites included as part of Cygwin. Specifically the script uses vorbiscomment<sub>(1)</sub> to extract and apply tags in the Ogg files, and grep and (optionally) patch to manipulate the comments.</p>
 
 
-
+<p>
 Enjoy!
+</p>
 
-
-
-P.S. My Wordpress stylesheet is doing weird things with the margins and this is really badly formatted, sorry. You can copy/paste into a text editor just fine though...
+<p>
+P.S. My Wordpress stylesheet is doing weird things with the margins and this is really badly formatted, sorry. You can copy/paste into a text editor just fine though...</p>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../../../tags/audio.html" rel="tag">audio</a></li>

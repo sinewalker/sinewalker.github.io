@@ -29,8 +29,8 @@ Both are great services. <a title="Unixmen: Google vs OpenDNS" href="http://www.
 <p>
 In openSUSE, you can install <a title="(Wikipedia)" href="http://en.wikipedia.org/wiki/BIND">bind</a> like this (as root):
 </p>
-<pre style="padding-left:30px;"><code># <strong>zypper install bind</strong>
-</code></pre>
+<pre style="padding-left:30px;"># <strong>zypper install bind</strong>
+</pre>
 <p>
 Although the program is called <a title="Internet Systems Consortium's page about BIND" href="http://www.isc.org/software/bind">BIND</a>, <a title="Off-topic: interesting diversion in application of use-mention in various fields. It comes up quite a lot in computers :)" href="http://www.google.com/search?q=%22the+name+of+the+song%22+haddocks+eyes">the name of the service is</a> actually <a title="TLDP, NAG2, Running named" href="http://tldp.org/LDP/nag2/x-087-2-resolv.named.html">named</a> (name daemon). It's configured with the file <strong><code>/etc/named.conf</code></strong>. Edit this (as root) to add a list of up to three forwarding DNS name servers. I'm going with Google as Primary, then OpenDNS, then my router (which forwards to my ISP):
 </p>
@@ -39,8 +39,8 @@ Although the program is called <a title="Internet Systems Consortium's page abou
 <p>
 Next, you need to tell openSUSE to start the DNS server at boot time. It makes sense to have it running whenever there are network services. In openSUSE, this means at <a title="(Wikipedia) - what's a runlevel" href="http://en.wikipedia.org/wiki/Runlevel">runlevels</a> 3 and 5. I use <a title="Yet another Setup Tool - the reason I still run openSUSE" href="http://chorgan.provo.novell.com/yast/doc/SL11.1/">YaST</a> because it's so simple:
 </p>
-<pre style="padding-left:30px;"><code># <strong>yast2 runlevel</strong>
-</code></pre>
+<pre style="padding-left:30px;"># <strong>yast2 runlevel</strong>
+</pre>
 <p>
 Finally, start the server. Either do it from YaST, or with the command-line:
 </p>

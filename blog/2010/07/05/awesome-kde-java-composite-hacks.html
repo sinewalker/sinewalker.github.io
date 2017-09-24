@@ -208,9 +208,9 @@ This has the advantage that it only affects you, not everyone on the system who 
 <p>
 There is a <a title="Java reparinting window bug" href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6429775">bug</a> in Java 1.5 and 1.6 where it makes protocol assumptions that are not true in non-reparanting window managers (something along those lines anyway).  It results in Java GUIs appearing as just a grey box in certain window managers like xgl, dwm, wmii, xmonad and awesome. <a title="awesome tip to fix grey Java windows" href="http://awesome.naquadah.org/wiki/Problems_with_Java">Apparently</a> this'll be fixed in Java 1.7. In the mean-time, to fix it for 1.5 and 1.6 you can install a utility called <a title="wmname" href="http://tools.suckless.org/wmname">wmname</a> (I used Webpin again) and then put this in a script to run at start-up (i.e. in <code>~/.kde4/Autostart</code>)
 </p>
-<pre style="padding-left:30px;"><code>#!/bin/sh
+<pre style="padding-left:30px;">#!/bin/sh
 /usr/bin/wmname LG3D
-</code></pre>
+</pre>
 <p>
 The "LG3D" window manager name above is one of the strings that 1.5 and 1.6 JVMs look for and change their behavior if found. This value is the name of the<a title="Wikipedia" href="http://en.wikipedia.org/wiki/Project_Looking_Glass"> LookingGlass3D</a> window manager, by Sun. Appreciate the irony...
 </p>

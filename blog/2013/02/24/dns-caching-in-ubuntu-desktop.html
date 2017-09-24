@@ -167,24 +167,23 @@
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p>In a <a href="http://sinewalker.wordpress.com/2012/01/11/implementing-a-caching-only-dns-on-debian/">previous blog entry</a> I described setting up a caching-only DNS server to speed up hostname resolution on Debian systems.  I've recently been playing with Ubuntu and noticed that this hack is not working.
+    <p>In a <a href="http://sinewalker.wordpress.com/2012/01/11/implementing-a-caching-only-dns-on-debian/">previous blog entry</a> I described setting up a caching-only DNS server to speed up hostname resolution on Debian systems.  I've recently been playing with Ubuntu and noticed that this hack is not working.</p>
 
 
 <!-- TEASER_END -->
 
 
-
+<p>
 Some investigation lead me to two blog entries.
-
 </p>
 <ul>
 <li><a href="https://www.stgraber.org/2012/02/24/dns-in-ubuntu-12-04/">This describes changes to DNS in Ubuntu 12.04 and their rationalle</a></li>
 	<li>
 <a href="http://sokratisg.net/2012/03/31/ubuntu-precise-12-04-get-rid-of-nms-dnsmasq-and-setup-your-own/">This blog entry describes dsnmasq</a> and how to switch NetworkManager to use your own dnsmasq setup.</li>
 </ul>
-
+<p>
 I have found that I can continue to use my own bind9 setup (not wishing to learn about <a href="http://linux.die.net/man/8/dnsmasq">dnsmasq(8)</a> today) by combining sugestions from the two blogs.
-
+</p>
 <ol>
 <li>Setup DNS caching server per <a href="http://sinewalker.wordpress.com/2012/01/11/implementing-a-caching-only-dns-on-debian/">my existing procedure for Debian</a>
 </li>
@@ -198,7 +197,7 @@ I have found that I can continue to use my own bind9 setup (not wishing to learn
 Now test it:
 </p>
 
-<code><pre>mjl@hoppy:~$ <strong>time nslookup australia.gov.au</strong>
+<pre>mjl@hoppy:~$ <strong>time nslookup australia.gov.au</strong>
 Server:        127.0.0.1
 Address:    127.0.0.1#53
 
@@ -219,7 +218,7 @@ Address: 205.239.168.12
 
 <strong>real    0m0.012s</strong>
 user    0m0.000s
-sys     0m0.008s</pre></code>
+sys     0m0.008s</pre>
 <p>
 The (real) time dropped from nearly 2/3 of a second to under 1/64 seconds!
 </p>

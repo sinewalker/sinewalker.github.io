@@ -1,18 +1,17 @@
 <html><body><p>I'm using Emacs/X11 on cygwin as my main editor (when stuck on work's machine) and Emacs 22's Unicode support really rocks.  However, getting it to pass unicode between the kill ring and Windows /X11 clipboard doesn't work out-of-the-box (mainly because Emacs thinks it's on a Unix host).  The fix is easy though:
-
+</p>
 
 <!-- TEASER_END -->
 
-</p><p style="text-align:center;">Set your MULE selection coding system to use the same unicode coding system that Windows employs
+<p style="text-align:center;">Set your MULE selection coding system to use the same unicode coding system that Windows employs<br/>
+(UTF-16BE I think. Or it could be UTF-16LE, will need more trial and error)</p>
 
-(UTF-16BE I think. Or it could be UTF-16LE, will need more trial and error)
-
-
-
+<p>
 How?  Use MULE's set-selection-coding-system function (interactively, it's bound to C-x RET x).  You could put this in your .emacs:
+</p>
 
-</p><p style="text-align:center;"><strong>(set-selection-coding-system utf-16be-dos)</strong></p>
+    <p style="text-align:center;"><code>(set-selection-coding-system utf-16be-dos)</code></p>
 
 
-
-Once you've done this, then cut/paste of unicode works wonderfully, and you can wax lyrical about your Façade design patterns in your UML editor, or your web browser (like I just did: type C-x 8 , c to get a ç, and then copy/paste from emacs to firefox...)</body></html>
+<p>
+Once you've done this, then cut/paste of unicode works wonderfully, and you can wax lyrical about your Façade design patterns in your UML editor, or your web browser (like I just did: type C-x 8 , c to get a ç, and then copy/paste from emacs to firefox...)</p></body></html>

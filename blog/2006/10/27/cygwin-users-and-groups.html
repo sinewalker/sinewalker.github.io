@@ -21,8 +21,7 @@
 
 
 Your group is currently &quot;mkpasswd&quot;.  This indicates that
-
-the /etc/passwd (and possibly /etc/group) files should">
+the /etc/passwd (and possibly /etc/group) files should ">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2006-10-27T08:47:02+11:00">
 <meta property="article:tag" content="cygwin">
@@ -175,28 +174,23 @@ the /etc/passwd (and possibly /etc/group) files should">
 <blockquote>
 
 <pre>Your group is currently "mkpasswd".  This indicates that
-
 the /etc/passwd (and possibly /etc/group) files should be rebuilt.
-
 See the man pages for mkpasswd and mkgroup then, for example, run
-
 mkpasswd -l [-d] &gt; /etc/passwd
-
 mkgroup  -l [-d] &gt; /etc/group
-
 Note that the -d switch is necessary for domain users.</pre>
-
 </blockquote>
 
-<!-- TEASER_END -->If you happen to be in a corporate environment with a huge active directory, then the <code>mkpasswd</code><sub>(1)</sub> command can take a very long time.  A quicker way to fix this issue (provided only the current user uses cygwin on this machine, which is most likely) is to issue this command instead:
+    <!-- TEASER_END -->
+    <p>If you happen to be in a corporate environment with a huge active directory, then the <code>mkpasswd</code><sub>(1)</sub> command can take a very long time.  A quicker way to fix this issue (provided only the current user uses cygwin on this machine, which is most likely) is to issue this command instead:</p>
 
 <blockquote>
 
 <pre>mkpasswd -l -c &gt; /etc/passwd; mkgroup -l -d &gt; /etc/group</pre>
 
 </blockquote>
-
-The <code>mkgroup</code><sub>(1)</sub> command will still take a few minutes to complete, but typically there are much fewer groups than users, so it's bearable.
+<p>
+The <code>mkgroup</code><sub>(1)</sub> command will still take a few minutes to complete, but typically there are much fewer groups than users, so it's bearable.</p>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../../../tags/cygwin.html" rel="tag">cygwin</a></li>

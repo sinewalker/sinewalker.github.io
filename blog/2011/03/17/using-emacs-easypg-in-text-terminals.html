@@ -168,12 +168,12 @@
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>There is a bug in the integration between Emacs' EasyPG and the "new" GnuPG2 that causes Emacs to not load <code>.gpg</code> files when running in a text terminal.  It's being worked on, apparently, but in the mean-time, here is how to fix it.
-
+</p>
 
 <!-- TEASER_END -->
 
 
-
+<p>
 The only solution I've found that works is to install a copy of GnuPG1 concurrent with the new GnuPG2.  They can live happily side-by-side.  Once you've done that, you need to tell EasyPG to use the old program rather than the new one. Full details are on the <a href="http://www.emacswiki.org/emacs/EasyPG">Emacs Wiki</a>, here it is in a nutshell:
 
 </p>
@@ -187,9 +187,9 @@ The only solution I've found that works is to install a copy of GnuPG1 concurren
  
 
 
-
+<p>
 If you like to use the gpg agent and graphical pinentry programs and only want to override GnuPG2 with GnuPG1 when running Emacs in a text terminial, then you can put code like this in your Emacs start-up (mine goes in <code>~/.emacs.d/&lt;username&gt;.el</code> because I use the <a href="https://github.com/technomancy/emacs-starter-kit">Emacs Starter Kit</a>):
-
+</p>
 
 
 <blockquote>

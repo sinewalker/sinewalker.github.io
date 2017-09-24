@@ -16,30 +16,25 @@ As pointed out earlier, you can get <a href="http://emacs.naquadah.org/">emacs-s
 
 
 <ol>
- <li>Import the key (this is a one-line pipeline, broken for display only):
+ <li>Import the key:
 <pre>
-$ <strong>wget -q -O - http://emacs.naquadah.org/key.gpg 
-| sudo apt-key add -</strong>
-
+$ <strong>wget -q -O - http://emacs.naquadah.org/key.gpg | sudo apt-key add -</strong>
 </pre>
  </li>
  <li>Add the snapshot repository to your <strong><code>/etc/apt/sources.list</code></strong> (by hand). Here's Julien's "stable" snapshot:
 <pre>
 deb http://emacs.naquadah.org/ stable/
 deb-src http://emacs.naquadah.org/ stable/
-
 </pre>
  </li>
  <li>Update your package database
 <pre>
 $ <strong>sudo aptitude update</strong>
-
 </pre>
  </li>
  <li>Install emacs-snapshot
 <pre>
 $ <strong>sudo aptitude install <code>emacs-snapshot</code></strong>
-
 </pre>
  </li>
 </ol>
@@ -49,7 +44,8 @@ $ <strong>sudo aptitude install <code>emacs-snapshot</code></strong>
 <h3>Ubuntu</h3>
 <p>
 I'm running Ubuntu 11.10 in a VirtualBox on work's Windows 7 machine. As mentioned at Julien Danjou's page,
-
+</p>
+<p>
 Damien Cassou makes a version of the same emacs-snapshot for Ubuntu, which is hosted <a title="emacs-snapshot PPA for ubuntu" href="https://launchpad.net/~cassou/+archive/emacs">at Launchpad</a>. You add it and install simalarly:
 </p>
 
@@ -58,19 +54,16 @@ Damien Cassou makes a version of the same emacs-snapshot for Ubuntu, which is ho
  <li>Add the PPA (Personal Package Archive). This also imports the key:
 <pre>
 $ <strong>sudo add-apt-repository ppa:cassou/emacs</strong>
-
 </pre>
  </li>
  <li>Update your package database
 <pre>
 $ <strong>sudo apt-get update</strong>
-
 </pre>
  </li>
  <li>Install emacs-snapshot
 <pre>
-$ <strong>sudo apt-get install emacs-snapshot</strong>
-
+$ <strong>sudo apt-get install <code>emacs-snapshot</code></strong>
 </pre>
  </li>
 </ol>
@@ -90,7 +83,6 @@ It's handy to have a native Windows emacs as well as the one in the VM. Of cours
 <pre>
 C:\&gt; <strong>CD C:\Applications</strong>
 C:\Applications\&gt; <strong>MKLINK /D emacs emacs</strong><em>&lt;version&gt;</em>
-
 </pre>
  </li>
  <li>Create an <em>Environment Variable</em> called <code><strong>%HOME%</strong></code> that refers to your Windows home directory (<code>C:\Users\</code><em>&lt;username&gt;</em>). This is so that you can put your <code>.emacs.d</code> in your home directory, and Emacs will find it:
@@ -115,7 +107,7 @@ C:\Applications\&gt; <strong>MKLINK /D emacs emacs</strong><em>&lt;version&gt;</
 You can now put your emacs settings into <code>~/.emacs.d</code> (that's <code>%HOME%\.emacs.d</code> for Windows). I highly recommend <a title="Technomany's home" href="http://technomancy.us/">Technomancy</a>'s <a title="GitHub ESK2 branch" href="https://github.com/technomancy/emacs-starter-kit">Emacs Starter Kit</a> (version 2).
 </p>
 
-
+<p>
 My own<code> ~/.emacs.d/init.el</code> is set up to bootstrap ESK2 and a few favourite packages, just as Technomancy describes. 
 </p>
 
@@ -125,8 +117,7 @@ One package I'd like to mention here is "<a href="http://xahlee.org/emacs/ergono
 
 
 
-<pre><code>
-;;;; egroemacs keybindings
+<pre><code>;;;; egroemacs keybindings
 
 (setenv "ERGOEMACS_KEYBOARD_LAYOUT" "dv") ; US Dvorak (Ergonomic)
 
@@ -136,9 +127,7 @@ One package I'd like to mention here is "<a href="http://xahlee.org/emacs/ergono
 (when (package-installed-p 'ergoemacs-keybindings)
   (load-file "~/.emacs.d/elpa/ergoemacs-keybindings-5.3.9/ergoemacs-keybindings.el")
   (ergoemacs-mode 1)
-  (cua-mode 1))
-
-</pre></code>
+  (cua-mode 1))</pre></code>
 
 
 </body></html>

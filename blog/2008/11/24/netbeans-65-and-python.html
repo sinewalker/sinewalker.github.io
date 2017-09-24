@@ -184,9 +184,9 @@ I recently had occasion to play with some Python at work (a small script to do s
 <br><p>
 <strong>The work-around</strong>:  The debugger is interactive and includes a Jython shell which is integrated into your debugging context (so cool)! Upon starting the debugger, your can just issue these commands:
 </p>
-<br><pre><code>&gt;&gt;&gt; <strong>import os, sys</strong>
+<br><pre>&gt;&gt;&gt; <strong>import os, sys</strong>
 &gt;&gt;&gt; <strong>os.chdir(os.path.dirname(sys.argv[0]))</strong>
-</code></pre>
+</pre>
 <br><p>
 This will set the CWD for the current debug session to the directory where your script file is. That's where the CWD is set when you run scripts normally with the F6 key.
 </p>

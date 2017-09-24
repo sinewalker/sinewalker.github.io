@@ -166,35 +166,39 @@
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <a title="GNU Emacs home page" href="http://www.gnu.org/software/emacs/">Emacs</a> long-awaited version 22.1 was released on 2007-07-02, and a package for Cygwin was available a few months later. The Cygwin package is still experimental, so Cygwin's setup program will select 21 by default.
+    <p><a title="GNU Emacs home page" href="http://www.gnu.org/software/emacs/">Emacs</a> long-awaited version 22.1 was released on 2007-07-02, and a package for Cygwin was available a few months later. The Cygwin package is still experimental, so Cygwin's setup program will select 21 by default.
+</p>
 
 
-<!-- TEASER_END -->I've been hanging out for the new features of 22, happily use it in Linux daily and want to also use it in my Cygwin. It's pretty simple to get it working in Cygwin (it's installable from setup.exe), but since it's an experimental package, you need to take notice of the version of emacs you're installing and make sure you cycle through the install versions and pick 22.1-<em>x</em> for these packages:
-
+<!-- TEASER_END -->
+<p>
+I've been hanging out for the new features of 22, happily use it in Linux daily and want to also use it in my Cygwin. It's pretty simple to get it working in Cygwin (it's installable from setup.exe), but since it's an experimental package, you need to take notice of the version of emacs you're installing and make sure you cycle through the install versions and pick 22.1-<em>x</em> for these packages:
+</p>
 <ul>
 <li><strong>emacs</strong></li>
 	<li><strong>emacs-X11</strong></li>
 	<li>
 <strong>emacs-el</strong> (you will need to install this, even if you're not interested in the elisp code, because the pre-compiled lisp code for Cygwin has some errors that cause the .elc to not load properly :( )</li>
 </ul>
+<p>
 <strong>There's also an important gotcha</strong>:  <span style="text-decoration:underline;"><strong>every</strong></span> time you run setup.exe to install/remove Cygwin packages, you need to make sure that these three emacs ones are cycled to "Keep" version 22! Otherwise you'll be unpleasantly surprised that emacs 21 is installed...
+</p>
 
-
-
+<p>
 Also: version 22 seems rather unstable for cygwin. It frequently crashes on my employer's WinXP SP2 platform. I'm not sure why, usually it happens in comint modes (like shell mode, for instance) but it can just crash mid-way through lisp operations also. This is annoying, but not critical (unless you're in the middle of a vi/emacs war with colleagues). My advice: make sure autosave is turned on, and make use of <code>M-x recover-session</code>.
+</p>
 
-
-
+<p>
 The Free Software Foundation <a title="GNU Emacs 22.2 NEWS file" href="http://www.gnu.org/software/emacs/NEWS.22.2">announced</a> on 2008-03-26 that version 22.2 of emacs has been released. Maybe when the cygwin package is built, it'll be more stable. In the mean-time, I find the new features too invaluable to move back to 21, so I'll put up with the occasional crash (and save my work often!)
-
+</p>
 
 
 <hr>
 <strong>2008-05-07T1656+10 Update:</strong>
 
 
-
-I've just installed the version of emacs 22.2 compiled for Cygwin, prepared by <a title="Angelo Graziosi's emacs 22.2 compiled for Cygwin" href="http://www.webalice.it/angelo.graziosi/cygwin/emacs/Emacs.html">Angelo Graziosi</a>. It seems to be much more stable than the 22.1 version in Cygwin's repository, plus 22.2 has a few minor feature enhancements that are nice to boot!
+<p>
+I've just installed the version of emacs 22.2 compiled for Cygwin, prepared by <a title="Angelo Graziosi's emacs 22.2 compiled for Cygwin" href="http://www.webalice.it/angelo.graziosi/cygwin/emacs/Emacs.html">Angelo Graziosi</a>. It seems to be much more stable than the 22.1 version in Cygwin's repository, plus 22.2 has a few minor feature enhancements that are nice to boot!</p>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../../../tags/cygwin.html" rel="tag">cygwin</a></li>

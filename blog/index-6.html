@@ -213,17 +213,16 @@ finally understand what my problem is:
     </header><div class="p-summary entry-summary">
     <div>
 <p>I have a bunch of free <a title="Xiph's meta container format for media" href="http://www.xiph.org/ogg/">Ogg</a> <a title="Patent-free audio codec (MP3 killer)" href="http://www.vorbis.com/">Vorbis</a> audio files that I've downloaded from <a title="Kahvi Collective. Sound has the power to make the world a better place" href="http://kahvi.org/">Kahvi.org</a>. They're great! But recently they've been including cover art within the files, which breaks Windows Media Player (it can't handle the very long tags of binhex-coded JPGs).
-
-
+</p>
+<p>
 Since I rather like WMP's integration in windows (keyboard shortcuts), and <a title="Kewl KDE music player (iTunes killer)" href="http://amarok.kde.org/">Amarok</a> <a title="Amarok for win32 is still a work in progress, but it compiles..." href="http://amarok.kde.org/wiki/Development/Win32">isn't quite ready for win32</a>, I thought I'd find a way to strip the troublesome tags from the data files rather than change to another player.
-
+</p>
 
 
 Here's a quick-and-dirty shell hack to remove the tags from the files and get them playable by daft players such as Windows Media Player
 
 
 
-</p>
 <p class="more"><a href="2008/08/26/stripping-tags-from-ogg-vorbis-files.html">Read more…</a></p>
 </div>
     </div>
@@ -237,17 +236,16 @@ Here's a quick-and-dirty shell hack to remove the tags from the files and get th
     </header><div class="p-summary entry-summary">
     <div>
 <p>Okay, this isn't rocket-science, and in fact it's not even my idea (heard it on the <a title="Free/Libré Open Source Software POD casts" href="http://twit.tv/FLOSS">FLOSS</a> <a title="Git" href="http://twit.tv/floss19">POD about Git</a>). A problem with centralised repository systems such as Subversion (which is used on SourceForge) is that you need network access to do many things, and also to just save your work. You can't do commits to the repo' while on the train, for instance (which is where I do most of my hacking).
-
-
-One option is to switch to a distributed revision system, such as <a title="The Git home page" href="http://git.or.cz/">Git</a> or <a title="The Hg home page" href="http://www.selenic.com/mercurial/wiki/">Mercurial</a>.  I may do that some day, but right now is not a good time for me to be learning a new revision system. Plus to have SourceForge host my project in Hg (for instance) means installing it myself and <a title="How to hose a Hg project on SourceForge" href="http://www.selenic.com/mercurial/wiki/index.cgi/MercurialOnSourceforge">blah-blah-blah</a>. Then there's IDE integration to consider...
-
-
-
-I want to have my cake and eat it too.
-
-
-
 </p>
+<p>
+One option is to switch to a distributed revision system, such as <a title="The Git home page" href="http://git.or.cz/">Git</a> or <a title="The Hg home page" href="http://www.selenic.com/mercurial/wiki/">Mercurial</a>.  I may do that some day, but right now is not a good time for me to be learning a new revision system. Plus to have SourceForge host my project in Hg (for instance) means installing it myself and <a title="How to hose a Hg project on SourceForge" href="http://www.selenic.com/mercurial/wiki/index.cgi/MercurialOnSourceforge">blah-blah-blah</a>. Then there's IDE integration to consider...
+</p>
+
+<p>
+I want to have my cake and eat it too.
+</p>
+
+
 <p class="more"><a href="2008/08/21/cascaded-revision-control-strategy.html">Read more…</a></p>
 </div>
     </div>
@@ -261,9 +259,8 @@ I want to have my cake and eat it too.
     </header><div class="p-summary entry-summary">
     <div>
 <p>I've just finished hacking together a simple little program to transcode my "dvorcodes" for when entering on a QWERTY keyboard. I've created a new <a title="Dvorcode project summary page on SourceForge" href="http://sourceforge.net/projects/dvorcode/">project on SourceForge</a> and I've uploaded the code and a pair of pre-compiled executable JARs (one for Java 5 and also a re-worked version that's been tested on Java 1.4.2).
-
-
 </p>
+
 <p class="more"><a href="2008/08/15/project-dvorcode.html">Read more…</a></p>
 </div>
     </div>
@@ -277,9 +274,8 @@ I want to have my cake and eat it too.
     </header><div class="p-summary entry-summary">
     <div>
 <p>I'm using Emacs/X11 on cygwin as my main editor (when stuck on work's machine) and Emacs 22's Unicode support really rocks.  However, getting it to pass unicode between the kill ring and Windows /X11 clipboard doesn't work out-of-the-box (mainly because Emacs thinks it's on a Unix host).  The fix is easy though:
-
-
 </p>
+
 <p class="more"><a href="2008/06/27/unicode-chars-between-emacsx11-cygwin-and-win32.html">Read more…</a></p>
 </div>
     </div>
@@ -293,12 +289,11 @@ I want to have my cake and eat it too.
     </header><div class="p-summary entry-summary">
     <div>
 <p>Did you ever get a stream of XML out of a log file, or in a data stream, and it's all mashed together without line-breaks so that it just appears as gobble-de-gook? If there's a data error (not an XML parsing error) then you have to read it so that you can find where the error is, but you don't have XML-spy and NetBeans is overkill or takes forever to fire up...
-
-
-Emacs to the rescue! <a title="Benjamin Ferrari's blog (seems to lack an " href="http://blog.bookworm.at/">Benjamin Ferrari</a> wrote this <em>increadibly useful</em> (and simple) <a title="Benjamin Ferrari's original blog post for below code" href="http://blog.bookworm.at/2007/03/pretty-print-xml-with-emacs.html">elisp function</a> to pretty-print a block of XML code:
-
 </p>
-<pre><p class="more"><a href="2008/06/26/pretty-printing-xml-with-emacs-nxml-mode.html">Read more…</a></p></pre>
+<p>
+Emacs to the rescue! <a title="Benjamin Ferrari's blog (seems to lack an " href="http://blog.bookworm.at/">Benjamin Ferrari</a> wrote this <em>increadibly useful</em> (and simple) <a title="Benjamin Ferrari's original blog post for below code" href="http://blog.bookworm.at/2007/03/pretty-print-xml-with-emacs.html">elisp function</a> to pretty-print a block of XML code:
+</p>
+<p class="more"><a href="2008/06/26/pretty-printing-xml-with-emacs-nxml-mode.html">Read more…</a></p>
 </div>
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2008/06/18/solaris-x11-and-dvorak-simplified-keyboard-layout.html" class="u-url">Solaris X11 and Dvorak simplified keyboard layout</a></h1>
@@ -311,9 +306,8 @@ Emacs to the rescue! <a title="Benjamin Ferrari's blog (seems to lack an " href=
     </header><div class="p-summary entry-summary">
     <div>
 <p>I've recently been playing with <a title="OpenSolaris web site" href="http://opensolaris.org">OpenSolaris</a> and <a title="SDN Solaris Express DE Community web site" href="http://developers.sun.com/sxde/community.jsp">Solaris Express DE</a> running in <a title="Sun's xVM VirtualBox web site" href="http://virtualbox.org">VirtualBox</a>. They're fine so far (except audio isn't working) but I stumbled on a usability issue that was nearly a show-stopper: dratted QWERTY layouts! The GNOME GUI for switching to Dvorak doesn't work, and <code>setxkbmap</code><sub>(1)</sub> can't find the rules file for dvorak either (they don't seem to be installed where the man page indicates)...
-
-
 </p>
+
 <p class="more"><a href="2008/06/18/solaris-x11-and-dvorak-simplified-keyboard-layout.html">Read more…</a></p>
 </div>
     </div>

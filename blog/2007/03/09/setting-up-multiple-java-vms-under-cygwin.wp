@@ -4,21 +4,21 @@
 	<li>Different language features from different JVM versions</li>
 	<li>Java classes compiled with “<em>Tiger</em>” won't run in “<em>Mantis</em>”…</li>
 </ul>
-
+<p>
 It is also useful to be able to quickly switch between installed JREs/JDKs depending on the task at hand.
+</p>
 
-
-
+<p>
 If I'm hacking in Linux, the <a title="JPackage home page" href="www.jpackage.org">JPackage</a> project provides a much <a title="JPackage's install/location/naming policy facilitates use of the udate-alternative mechanism" href="http://www.jpackage.org/policy.php">nicer </a><a title="Debian's update-alternatives solution explained" href="http://www.debian.org/doc/debian-policy/ap-pkg-alternatives.html">solution </a>to this problem, and the Linux distro' I'm using (SUSE 10.0) <a title="Instruction for installing Java on openSUSE" href="http://en.opensuse.org/Installing_Sun's_Java_on_SUSE_Linux">uses JPackage</a>. It'd be nice if there was an <code>update-alternatives</code> for Cygwin, but since there isn't I've come up with this hack.
-
+</p>
 
 
 <!-- TEASER_END -->
 
 
-
+<p>
 <hr><strong>2007-03-09T08:06+1100 - Update: Neater <code>JVersion</code> code</strong> I've recently upgraded to <em>Mustang</em> and noticed that this broke my function, since it installs to a different base directory <em>again</em>… So here is a new version that hopefully covers off future default directory names that Sun comes up with for <em>Dolphin</em> and the Open Source releases.
-
+</p>
 <pre><code>
 
 # Path variables
@@ -87,71 +87,54 @@ function JVersion() {
 JVersion &gt; /dev/null
 
 </code></pre>
-
+<p>
 This is all you need now, no complicated set-up variables and such rubbish. You'll notice that the setup steps are now just to set <code>$X_PATH_NO_JAVA</code> (save the <code>$PATH</code><em> without</em> Java in it), and set up <code>$JAVA_BASE</code> if necessary. Then after the function is declared and I run it to set a default Java environment for Cygwin (Still <em>Mantis</em> for now, since my work is using it for a system I support).
+</p>
 
-
-
+<p>
 Read on for old stuff and false-starts...
+</p>
 
-
-
+<p>
 ...
+</p>
 
-
-
+<p>
 I have a shell function called <code>JVersion</code> which you use to select the version of the JVM you want to use, and a bunch of environment variables to make it all work.  Here's how you use it:
-
+</p>
 <blockquote>
 
 <pre>$ <strong>JVersion tiger</strong>
-
 Java Version: 1.5.0_04
-
 Java Base: /cygdrive/d/java
-
 Java Home: /cygdrive/d/java/j2sdk1.5.0_04
-
 $ <strong>java -version
-
 </strong>java version "1.5.0_04"
-
 Java(TM) 2 Runtime Environment, Standard Edition (build 1.5.0_04-b05)
-
 Java HotSpot(TM) Client VM (build 1.5.0_04-b05, mixed mode, sharing)
-
 $
-
-$ <strong>JVersion mantis
-
-</strong>Java Version: 1.4.2_05
-
+$ <strong>JVersion mantis</strong>
+Java Version: 1.4.2_05
 Java Base: /cygdrive/d/java
-
 Java Home: /cygdrive/d/java/j2sdk1.4.2_05
-
-$ <strong>java -version
-
-</strong>java version "1.4.2_05"
-
+$ <strong>java -version</strong>
+java version "1.4.2_05"
 Java(TM) 2 Runtime Environment, Standard Edition (build 1.4.2_05-b04)
-
 Java HotSpot(TM) Client VM (build 1.4.2_05-b04, mixed mode)
-
 $</pre>
 
 </blockquote>
-
+<p>
 When using Java from the command-line (DOS or Cygwin), you need to have the interpreter (for JRE) and development tools (for JDK) on the system search PATH. You also used to have to set the CLASSPATH for the JRE to find bootstrap and extension classes, but these are now found automatically via the System property "<code>sun.boot.class.path</code>" and the Java Extension Mechanism. However, it's still useful to have a JAVA_HOME variable for some third-party tools, such as IDEs.
+</p>
 
-
-
+<p>
 I've written a bash function which uses some control variables to allow easy switching of JVMs on Cygwin. It's still a bit of a hack, but I find it useful when I'm on Windows to work from the bash prompt as well as whatever IDE I'm hacking in.
+</p>
 
-
-
+<p>
 The control variables are
-
+</p>
 <ul>
 	<li><code>JAVA_BASE</code> = the base directory where all the JVMs are installed. I put each JVM in it's own directory under <code>D:\java</code>
 This variable should be in the Windows environment, but it defaults to <code>d:\java</code> in my <code>.bashrc</code> if it was not set (i.e. I forgot to):
@@ -159,9 +142,9 @@ This variable should be in the Windows environment, but it defaults to <code>d:\
 <pre>if [ x"$JAVA_BASE" = x ]; then
      JAVA_BASE=d:\\java    # default if not set in Windows
 fi</pre>
-
+<p>
 I'm sticking to DOS pathnames for this variable, as I intend to replicate this functionality with batch files one day, in case I'm mad enough to run Java from a Windows command shell.  Anyway, I then convert this to a Cygwin path with the following <a title="$man 1 sed" href="http://linux.ctyme.com/man/man2933.htm"><code>sed</code><sub>(1)</sub></a> and <a title="$man 1 gawk" href="http://linux.ctyme.com/man/man0898.htm"><code>awk</code><sub>(1)</sub></a> hack:
-
+</p>
 <pre>JAVA_BASE=`echo $JAVA_BASE | sed 's////g'`   # fix DOS sloshes
 
 export JAVA_BASE=`echo $JAVA_BASE | awk '{print(tolower($1))}' \\
@@ -189,9 +172,9 @@ fi</pre>
 	<li><code>X_PATH_NO_JAVA<code> = the system search path, without a JVM</code></code></li>
 	<li><code><code>PATH = the system search path</code></code></li>
 </ul>
-
+<p>
 The aim is to set JAVA_HOME and PATH so that the Java tools can be found. They are set using the previous variables:
-
+</p>
 <pre>export JAVA_HOME=$JAVA_BASE/j2sdk$JAVA_VER
 
 if [ x"$X_PATH_NO_JAVA" = x ]; then
@@ -199,9 +182,9 @@ if [ x"$X_PATH_NO_JAVA" = x ]; then
 fi
 
 export PATH=$JAVA_HOME/bin:$X_PATH_NO_JAVA</pre>
-
+<p>
 So, the above code is run inside my <code>.bashrc</code>, which takes care of finding the installed JVMs and setting Mantis as the default to use. But what about switching? Well, here's the shell function:
-
+</p>
 <blockquote>
 
 <pre>function JVersion() {
@@ -226,33 +209,33 @@ So, the above code is run inside my <code>.bashrc</code>, which takes care of fi
 }</pre>
 
 </blockquote>
-
+<p>
 You may have noticed that this hack is rather brittle. It works well, but only so long as you follow these steps:
-
+</p>
 <ol>
 	<li>Install your Javas on your <code>D:</code> drive (or you have to fix all of the <code>sed</code> scripts!)</li>
 	<li>Have a “base” directory, such as <code>D:\java</code></li>
 	<li>Have a Windows environment variable called <code>JAVA_BASE</code> equal to the “base” directory</li>
 	<li>Install your Javas each in a sub-directory of your “base”, called <code>j2sdk<em>w</em>.<em>x</em>.<em>y</em>_<em>z</em></code></li>
 </ol>
-
+<p>
 Additionally it only caters for a <em>single</em> release of each Java version, <em>and</em> only for <a title="Sun's internal J2SE release code names" href="http://java.sun.com/j2se/codenames.html">Java versions</a> “<em>Mantis</em>” (1.4.2) and “<em>Tiger</em>” (1.5.0). If you want to install “<em>Mustang</em>” and switch to it, you'll need to add a <code>JAVA_MUSTANG</code> variable, equal to 1.6.0 and also add a case for 1.6.0 to both the <code>JAVA_VER</code> setup code and the <code>JVersion</code> <code>case</code> statement… ugly, but I haven't come up with a more elegant solution yet.  Ultimately I'd like to make a proper replacement for <code>update-alternatives</code>, but since symlinks will only work for the Cygwin tools, and not the Java tools themselves, it seems unlikely I'll come up with a nicer solution.
-
+</p>
 <h3>A note about paths in Java on Cygwin:</h3>
-
+<p>
 This is noted in the Cygwin docs somewhere I think, but just a reminder: <code>java.exe</code>, <code>javac.exe</code>, etc. are Win32 programs, and are not linked to the Cygwin DLLs in any way. So <em>always</em> they will need DOS style paths (<code>D:\<em>somedir</em>\<em>etc</em></code>). They won't understand Cygwin's <code>/cygdrive/d/<em>whatever</em></code>. Also as I just alluded to, any Cygwin links will not be followed by the Java tools, for the same reason.  In <a title="$man 1 bash" href="http://linux.ctyme.com/man/man0210.htm"><code>bash</code><sub>(1)</sub></a>, you'll need to escape the sloshes if you're setting the classpath on the command line:
-
+</p>
 <pre>java -classpath D:\\\\java\\\\special-classes\\\\somefile.jar MyClass</pre>
-
+<p>
 Since java transposes the <code>/</code> and <code>\</code> characters itself, it <em>may</em> be possible to do the following:
-
+</p>
 <pre>java -classpath D:/java/special-classes/somefile.jar MyClass</pre>
-
+<p>
 But I haven't tested it…
+</p>
 
 
-
-<hr><strong>2006-06-17T16:39+1000 - Update: Cygwin's <code>cygpath</code><sub>(1)</sub> command</strong> I should have seen this before spending so long playing with sed and sloshes…Cygwin's <code>cygpath</code><sub>(1)</sub> command can be used to fix the Unix/DOS path stuff, much simpler than mucking about with <code>sed</code> and <code>awk</code>.  So in the above, instead of code like this:
+<hr><p><strong>2006-06-17T16:39+1000 - Update: Cygwin's <code>cygpath</code><sub>(1)</sub> command</strong> I should have seen this before spending so long playing with sed and sloshes…Cygwin's <code>cygpath</code><sub>(1)</sub> command can be used to fix the Unix/DOS path stuff, much simpler than mucking about with <code>sed</code> and <code>awk</code>.  So in the above, instead of code like this:</p>
 
 <pre>JAVA_BASE=`echo $JAVA_BASE | sed 's////g'`   # fix DOS sloshes
 
@@ -261,7 +244,7 @@ export JAVA_BASE=`echo $JAVA_BASE | awk '{print(tolower($1))}' \\
 … that mess can be replaced replaced with this:
 
 <pre><code>export JAVA_BASE=`cygpath -up $JAVA_BASE`</code></pre>
-
+<p>
 … (using back-quotes, or the <code>$()</code> notation if you prefer).  Similarly, to run Java with a classpath specified in a Cygwin format (i.e. from a Cygwin script or prompt):
-
+</p>
 <pre><code>java -classpath `cygpath -wp /cygdrive/d/java/special-classes/somefile.jar` MyClass</code></pre></body></html>

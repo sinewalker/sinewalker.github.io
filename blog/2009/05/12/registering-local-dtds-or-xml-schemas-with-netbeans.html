@@ -174,7 +174,7 @@
 <br><p>In my example, I'm trying to use NetBeans to validate an <a title="Solaris SMF Quick start" href="http://www.sun.com/bigadmin/content/selfheal/smf-quickstart.jsp">SMF</a> <a title="Service development intro" href="http://www.sun.com/bigadmin/content/selfheal/sdev_intro.jsp">Manifest</a>, which is an XML file defined by a <code>SYSTEM</code> DTD called <code>service_bundle.dtd.1</code>.  On Solaris 10 machines you can find a copy of the DTD file in <code>/usr/share/lib/xml/dtd/service_bundle.dtd.1</code>, and most example SMF manifests that you can find <a title="SMF Manifest Repository" href="http://www.blastwave.org/smf/manifests.php">on the Internet</a> include the DOCTYPE like so:
 
 </p>
-<br><pre>&lt;!DOCTYPE service_bundle SYSTEM "/usr/share/lib/xml/dtd/service_bundle.dtd.1"&gt;</pre>
+<br><pre><code>&lt;!DOCTYPE service_bundle SYSTEM "/usr/share/lib/xml/dtd/service_bundle.dtd.1"&gt;</code></pre>
 <br><p>
 If you run NetBeans on Solaris 10, I assume this will probably work out-of-the-box (though I haven't tried this...).  However for us hackers on other platforms, you need to copy this file down to your development machine, and then register it with NetBeans so that you can use it.
 </p>
@@ -188,7 +188,7 @@ NetBeans' DTDs and XML Schemas Manager contains a collection of XML Schema Catal
 	<li>Choose <strong>User Catalog [read-write] </strong>from the list of <em>DTDs and XML Schemas</em>
 </li>
 	<li>Press "<strong>Add Local DTD or Schema...</strong>" button</li>
-	<li>In our example, the DOCTYPE reads:<br><pre>SYSTEM "/usr/share/lib/xml/dtd/service_bundle.dtd.1"</pre>
+	<li>In our example, the DOCTYPE reads:<br><pre><code>SYSTEM "/usr/share/lib/xml/dtd/service_bundle.dtd.1"</code></pre>
 So, we must map this SYSTEM ID  to a local URI on our development machine.  If it had said <code>PUBLIC "..."</code><br> then we would map a PUBLIC ID instead.</li>
 	<li>Click the radio button for the relevant ID type (<strong>System ID</strong> in our case)</li>
 	<li>Copy in the string ID from your XML file into the relevant field. Make sure you don't put in the double-quotes
