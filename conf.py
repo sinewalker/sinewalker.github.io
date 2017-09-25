@@ -3,7 +3,7 @@
 #   File:       conf.py
 #   Created:    2014-08-21
 #   Language:   Python
-#   Time-stamp: <2017-08-05 08:02:55 mjl>
+#   Time-stamp: <2017-09-25 07:43:51 mjl>
 #   Platform:   (Nikola 7.1 configuration file)
 #   OS:         *nix
 #   Author:     [MJL] Michael J. Lockhart (mlockhart@squiz.net)
@@ -218,7 +218,7 @@ THEME = "milosophy"
 
 # Primary color of your theme. This will be used to customize your theme and
 # auto-generate related colors in POSTS_SECTION_COLORS. Must be a HEX value.
-THEME_COLOR = '#5670d4'
+THEME_COLOR = '#e37f2a;'
 
 # POSTS and PAGES contains (wildcard, destination, template) tuples.
 # (translatable)
