@@ -167,7 +167,7 @@ Nikola v7.8.3
 
 **Success!** 
 
-In Nikola <= 7.7.1 I used `STORY_INDEX = True` to have this page: [http://milosophical.me/pg/index.html](http://milosophical.me/pg/index.html).
+In Nikola <= 7.7.1 I used `STORY_INDEX = True` to have this [index of non-blog Pages at /pg/index.html](/pg/index.html).
 
 I still want a page (ne "story") index, so now I'll have to work out why that is breaking.  Time to go exploring, let's blog about it ([Rule 4](/blog/2015/4-bit-rules-of-computing-part-1.html)):
 

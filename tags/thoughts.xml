@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Milosophical Me (Posts about thoughts)</title><link>http://milosophical.me/</link><description></description><atom:link href="http://milosophical.me/tags/thoughts.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2017 &lt;a href="mailto:sinewalker@gmail.com"&gt;Michael Lockhart&lt;/a&gt; 
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License" style="border-width:0"
-     src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"/&gt;&lt;/a&gt;</copyright><lastBuildDate>Sun, 24 Sep 2017 11:53:52 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>"generic" types: what's in a name?</title><link>http://milosophical.me/blog/2008/09/10/generic-types-whats-in-a-name.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;I've been stumbling over Java's generic types for a while now... I think I
+     src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"/&gt;&lt;/a&gt;</copyright><lastBuildDate>Mon, 25 Sep 2017 22:26:39 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>"generic" types: what's in a name?</title><link>http://milosophical.me/blog/2008/09/10/generic-types-whats-in-a-name.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;I've been stumbling over Java's generic types for a while now... I think I
 finally understand what my problem is:
 &lt;/p&gt;
 &lt;br&gt;
@@ -109,7 +109,7 @@ Wouldn't it be nice to organise your books like this?
 &lt;/p&gt;
 
 &lt;br&gt;
-&lt;p&gt;&lt;a title="photo sharing" href="http://www.flickr.com/photos/rodcorp/60832828/"&gt;&lt;img src="http://static.flickr.com/30/60832828_a153590482_m.jpg" alt=""&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a title="photo sharing" href="http://milosophical.me/old/files/2006/03/24/organised-books.png"&gt;&lt;img src="http://milosophical.me/old/files/2006/03/24/organised-books.png" alt=""&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.flickr.com/photos/rodcorp/60832828/"&gt;Richard Of York Graded Books In Vain&lt;/a&gt;
 &lt;/p&gt;
 &lt;p&gt;

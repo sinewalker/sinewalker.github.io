@@ -17,7 +17,7 @@ My plan was very simple: check out the code with NetBeans, build it, run it (usi
 <p>
 Small problem: once the project is checked out and loaded, NetBeans pops up a warning dialog:
 
-</p><p style="padding-left:30px;"><img src="http://farm4.static.flickr.com/3070/2472351759_d9d7ff3f6b_o_d.png" alt="Alert box" width="533" height="255"></p>
+</p><p style="padding-left:30px;"><img src="/old/files/2008/04/30/reference_alert_box.png" alt="Alert box" width="533" height="255"></p>
 
 
 <p>
@@ -31,22 +31,22 @@ Well, to make a long story short, the fix is to do the following steps (an expla
 <br/>
 <ol>
 	<li>Resolve Problems by right-clicking the SwingSet3 project in the Projects view and choosing the "<strong>Resolve Problems...</strong>" menu item:</li>
-<a href="http://farm4.static.flickr.com/3129/2473173812_52fe68032f_o_d.png"><img src="http://farm4.static.flickr.com/3129/2473173812_91b7f88edb_d.jpg" alt="NetBeans Project menu " width="500" height="351"></a>
+<a href="/old/files/2008/04/30/netbeans_project_menu.png"><img src="/old/files/2008/04/30/netbeans_project_menu.png" alt="NetBeans Project menu " width="500" height="351"></a>
 	<li>This opens a dialog listing the problem (should only have one). Press the "<strong>Resolve</strong>..." button at right</li>
-<img src="http://farm4.static.flickr.com/3201/2473173864_2a1f5444fc_o_d.png" alt="Resolve Reference Problems dialog" width="458" height="392">
+<img src="/old/files/2008/04/30/resolve_ref_probs_dialog.png" alt="Resolve Reference Problems dialog" width="458" height="392">
 	<li>NetBeans presents a dialog listing libraries and JARs. Our issue is that the SwingSet3 project has defined a library called "<strong>JavaWebStart</strong>" but if you look in the tree at left, there is no such library defined in NetBeans by default. No worries, let's make one</li>
 	<li>Press the button at bottom ("<strong>New Library...</strong>")<br/>
-<a href="http://farm4.static.flickr.com/3225/2472351987_1017ef91ec_o_d.png"><img src="http://farm4.static.flickr.com/3225/2472351987_747fefca8a_d.jpg" alt="NetBeans Library Manager -- New Library button" width="500" height="358"></a><br/>
+<a href="/old/files/2008/04/30/nb_new_library_button.png"><img src="/old/files/2008/04/30/nb_new_library_button.png" alt="NetBeans Library Manager -- New Library button" width="500" height="358"></a><br/>
 
 This gives you the same dialog you get via Project Properties &gt; Libraries &gt; Add Library &gt; Create (in case you want to repeat later...). Give it the name that the Project wants ("<strong>JavaWebStart</strong>" in case of SwingSet3). It'll be a Class Library</li>
 	<li>Now you need to tell NetBeans about the JARs that belong to the library:<br/>
-<img src="http://farm4.static.flickr.com/3172/2472352043_0040e20d2b_d.jpg" alt="NetBeans Library Manager -- Add JAR/Folder" width="500" height="358"><br/>
+<img src="/old/files/2008/04/30/nb_add_jar_button.jpg" alt="NetBeans Library Manager -- Add JAR/Folder" width="500" height="358"><br/>
 
 We need <code><strong>jnlp.jar</strong></code>, but might as well add the other Java Web Start stuff to the library too. You can find these JARs in your JDK under <strong><code><em>&lt;JDK_HOME&gt;</em>/sample/jnlp/servlet</code></strong>. Add all the JARs form this directory (<strong><code>jnlp.jar</code></strong>,<code> <strong>jnlp-servlet.jar</strong></code>, <strong><code>jardiff.jar</code></strong>):<br/>
 
-<a href="http://farm4.static.flickr.com/3227/2472352103_1a795fd8ca_o_d.png"><img src="http://farm4.static.flickr.com/3227/2472352103_339145900f_d.jpg" alt="Library Manager, JARs added" width="500" height="358"></a></li>
+<a href="/old/files/2008/04/30/nb_add_jnlp.png"><img src="/old/files/2008/04/30/nb_add_jnlp.png" alt="Library Manager, JARs added" width="500" height="358"></a></li>
 	<li>Add your new library to your project's Compile Libraries and you're done:<br/>
-<img src="http://farm4.static.flickr.com/3035/2473174102_8462fafb3d_d.jpg" alt="Resolved, click Close." width="458" height="392"></li>
+<img src="/old/files/2008/04/30/nb_lib_jars_added.jpg" alt="Resolved, click Close." width="458" height="392"></li>
 
 </ol>
 <p>
@@ -56,7 +56,7 @@ projects requiring JWS/JNLP too:<br/>
 
 <br/>
 
-<a href="http://farm3.static.flickr.com/2309/2485078298_865ae8cd92_o_d.png"><img src="http://farm3.static.flickr.com/2309/2485078298_25a83e9060_m_d.jpg" alt="Right-click Libraries in Projects view to get a menu, choose Add Library" width="240" height="169"></a><a href="http://farm3.static.flickr.com/2166/2484260383_92c8339077_o_d.png"><img src="http://farm3.static.flickr.com/2166/2484260383_acd1f1a6d9_t_d.jpg" alt="Find the JavaWebStart Library and press " width="92" height="100"></a><a href="http://farm4.static.flickr.com/3133/2485077758_c417209c53_o_d.png"><img src="http://farm4.static.flickr.com/3133/2485077758_1cc77bea3d_m_d.jpg" alt="The new Library's JARs are added to the Library tree of the Project view"></a>
+<a href="/old/files/2008/04/30/nb_add_library.png"><img src="/old/files/2008/04/30/nb_add_library.png" alt="Right-click Libraries in Projects view to get a menu, choose Add Library" width="240" height="169"></a><a href="/old/files/2008/04/30/nb_choose_library.png"><img src="/old/files/2008/04/30/nb_choose_library.png" alt="Find the JavaWebStart Library and press " width="184" height="200"></a><a href="/old/files/2008/04/30/nb_library_added.png"><img src="/old/files/2008/04/30/nb_library_added.png" alt="The new Library's JARs are added to the Library tree of the Project view" width="240" height="169"></a>
 
 <br/>
 <p>
