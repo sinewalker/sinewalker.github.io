@@ -40,8 +40,8 @@ By using these human-scale units of distance and time, it is easier to comprehen
 
 ## Conversions and common speeds
 
- * 1 km/h = 0.2778 m/s ([Wolfram Alpha](http://www.wolframalpha.com/input/?i=1+km%2Fh)),  1/0.2778 = 3.5997
- * 1 MPH = 0.447 m/s ([Wolfram Alpha](http://www.wolframalpha.com/input/?i=1+mile%2Fhour)),  1/0.447 = 2.237
+ * 1 km/h = 0.2778 m/s ([Wolfram Alpha](http://www.wolframalpha.com/input/?i=1+km%2Fh)),  1 &divide; 0.2778 = 3.5997
+ * 1 MPH = 0.447 m/s ([Wolfram Alpha](http://www.wolframalpha.com/input/?i=1+mile%2Fhour)),  1 &divide; 0.447 = 2.237
 
 So the conversion rate between m/s and km/h is **3.6**.  That is: multiply m/s by 3.6 to get km/h, or divide km/h by 3.6 to get m/s.
 
