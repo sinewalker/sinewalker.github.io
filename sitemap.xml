@@ -59,7 +59,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/archive/2017/index.html</loc>
-  <lastmod>2017-10-02T11:42:00Z</lastmod>
+  <lastmod>2017-10-02T11:49:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/archive/archive.html</loc>
@@ -71,7 +71,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/authors/michael-lockhart.html</loc>
-  <lastmod>2017-10-02T11:42:00Z</lastmod>
+  <lastmod>2017-10-02T11:49:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/authors/mike-lockhart.html</loc>
@@ -519,7 +519,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/2017/speeds.html</loc>
-  <lastmod>2017-10-02T11:42:00Z</lastmod>
+  <lastmod>2017-10-02T11:49:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/2017/upgrade-nikola-783.html</loc>
@@ -571,7 +571,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/index.html</loc>
-  <lastmod>2017-10-02T11:42:00Z</lastmod>
+  <lastmod>2017-10-02T11:49:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/hax/codec/URL%20Decoder_Encoder.html</loc>
@@ -1095,7 +1095,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/geek.html</loc>
-  <lastmod>2017-09-25T22:21:00Z</lastmod>
+  <lastmod>2017-10-02T11:49:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/general.html</loc>
@@ -1163,7 +1163,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/index.html</loc>
-  <lastmod>2017-09-24T21:44:00Z</lastmod>
+  <lastmod>2017-10-02T11:49:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/jargon.html</loc>
@@ -1279,7 +1279,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/musings.html</loc>
-  <lastmod>2017-10-02T11:42:00Z</lastmod>
+  <lastmod>2017-10-02T11:49:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/netbeans.html</loc>
@@ -1446,6 +1446,10 @@
   <lastmod>2017-09-24T21:45:00Z</lastmod>
  </url>
  <url>
+  <loc>http://milosophical.me/tags/speed.html</loc>
+  <lastmod>2017-10-02T11:49:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://milosophical.me/tags/ssd.html</loc>
   <lastmod>2017-09-24T21:45:00Z</lastmod>
  </url>
@@ -1528,6 +1532,10 @@
  <url>
   <loc>http://milosophical.me/tags/useability.html</loc>
   <lastmod>2017-09-24T21:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://milosophical.me/tags/velocity.html</loc>
+  <lastmod>2017-10-02T11:49:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/virtual-memory.html</loc>

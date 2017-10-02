@@ -2,10 +2,10 @@
 .. title: Vehicle speed units
 .. slug: speeds
 .. date: 2017-10-02 07:42:18 UTC+11:00
-.. tags: musings
+.. tags: musings, geek, speed, velocity
 .. category: 
 .. link: 
-.. description: 
+.. description: how fast are you going now?
 .. type: text
 -->
 
@@ -20,7 +20,7 @@ Okay, it probably wouldn't happen *unless I were Emperor of the World*, but chec
 
 **In Australia** (and *all countries except for the United States, Liberia and Myanmar (Burma)*) **vehicle speed is measured in kilometers per hour** (km/h or sometimes kph).  This is a hang over from when we "went metric". Prior to this, we used miles per hour (MPH).  It's a useful measure for a horse-and-cart, or a train, I suppose, because if you can maintain a constant speed, you can estimate how many kilometers (or miles) you can travel in one hour; or how many hours it will take to travel a long distance like, say, 500 miles.
 
-It makes more sense for ships and aeroplanes, that cover large distances at a fairly constant rate once cruising. [Airspeed](https://en.wikipedia.org/wiki/Airspeed) (all kinds), ground speed and sailing speed are all measured in [knots](https://en.wikipedia.org/wiki/Airspeed) because of their navigational heritage. One knot is one [Nautical mile](https://en.wikipedia.org/wiki/Nautical_mile) per hour and is about 51.4 cm/s, by the way.
+It makes more sense for ships and aeroplanes, that cover large distances at a fairly constant rate once cruising. [Airspeed](https://en.wikipedia.org/wiki/Airspeed) (all kinds), ground speed and sailing speed are all measured in [knots](https://en.wikipedia.org/wiki/Knot_(unit)) because of their navigational heritage. One knot is one [Nautical mile](https://en.wikipedia.org/wiki/Nautical_mile) per hour and is about 51.4 cm/s, by the way.
 
 **But for most of us, we don't travel multiple-hour trips any more:** cars and busses are so fast, and distances so short, that trips usually last *minutes*, or maybe an hour or so, even for long inter-city commutes. It's only for cross-country travel (or stuck traffic) that we would drive for many hours.
 
