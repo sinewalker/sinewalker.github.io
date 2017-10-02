@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>http://milosophical.me/authors/michael-lockhart.xml</loc>
-  <lastmod>2017-09-25T22:26:00Z</lastmod>
+  <lastmod>2017-10-02T11:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/authors/mike-lockhart.xml</loc>
@@ -15,7 +15,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/pixels/dust/rss.xml</loc>
-  <lastmod>2017-09-24T21:45:00Z</lastmod>
+  <lastmod>2017-10-02T11:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/pixels/minecraft/rss.xml</loc>
@@ -31,11 +31,11 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/rss.xml</loc>
-  <lastmod>2017-09-25T22:26:00Z</lastmod>
+  <lastmod>2017-10-02T11:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/sitemap.xml</loc>
-  <lastmod>2017-09-25T22:26:00Z</lastmod>
+  <lastmod>2017-10-02T11:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/4-bit-rules.xml</loc>
@@ -520,6 +520,10 @@
  <sitemap>
   <loc>http://milosophical.me/tags/multi-threading.xml</loc>
   <lastmod>2017-06-15T21:55:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://milosophical.me/tags/musings.xml</loc>
+  <lastmod>2017-10-02T11:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/netbeans.xml</loc>
