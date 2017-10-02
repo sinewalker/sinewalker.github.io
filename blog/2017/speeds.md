@@ -34,7 +34,7 @@ If we measured vehicle speed using the normal SI unit, [meters per second](https
 
 Think about that.  A pace and a heart beat are easy to imagine; much easier than a mile, a kilometer, or an hour. You have to recall past trips to imagine the distance, and how long an hour seems depends upon if you're bored or having fun, or in a hurry or not.
 
-Now, imagine you're driving down the road at 90 km/h (roughly 55 MPH).  How fast are you going, really? ***That's 25 meters per second*** !  Twenty five paces every heart beat.  A whole Olympic swimming pool in two heart beats.  Suddenly you understand just how *fast* that is, no?! Think about colliding with a stationary power post at that speed&hellps;. And that's a *modest* or even conservative highway speed.
+Now, imagine you're driving down the road at 90 km/h (roughly 55 MPH).  How fast are you going, really? ***That's 25 meters per second*** !  Twenty five paces every heart beat.  More than five car lengths.  A whole Olympic swimming pool in two heart beats.  Suddenly you understand just how *fast* that is, no?! Think about colliding with a stationary power post at that speed&hellip;. And that's a *modest* or even conservative highway speed.
 
 By using these human-scale units of distance and time, it is easier to comprehend a vehicle's speed.
 
@@ -62,7 +62,7 @@ Here's a list of some interesting speeds:
  * 28m/s  - 101km/h  Typical limit in Australia (100km/h) (~60MPH)
  * 30m/s  - 108km/h  Maximum limit in Australia (110km/h)
  * 32m/s  - 115km/h  Speed a lot of highway or freeway drivers like to go
- * 35m/s  - 126km/h  [Autobahn=(https://en.wikipedia.org/wiki/Autobahn) (typical) or emergency services limit (130km/h) (~80MPH)
+ * 35m/s  - 126km/h  [Autobahn](https://en.wikipedia.org/wiki/Autobahn) (typical) or emergency services limit (130km/h) (~80MPH)
  * 40m/s  - 144km/h
  * 45m/s  - 162km/h  (~100MPH)
  * 50m/s  - 180km/h
@@ -106,7 +106,7 @@ Car speedos Are STUPID. As if my Nissan X-Trail will ever reach 240km/h, even ru
 
 They should be calibrated to the *actual speeds we can (or are allowed to) travel*.
 
-If my cars speedo went from 0 to 35m/s in 1m/s increments with heavy marks at 5m/s, it would be perfect.  (yes, I'd like a dail as well as numbers for the speed: studies prove it's much easier for a human to read it)
+If my cars speedo went from 0 to 35m/s in 1m/s increments with heavy marks at 5m/s, it would be perfect.
 
 European cars would probably want to calibrate to 50m/s, and super cars might want to go to 100m/s I guess.  Because, you know, super cars&hellip; Dicks.
 
