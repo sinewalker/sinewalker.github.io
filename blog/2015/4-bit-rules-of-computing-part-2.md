@@ -131,8 +131,9 @@ Here is a *bad* comment:
 Actually, this second example contains a good comment, and a bad
 comment
 
-* The first comment should be replaced with a named function instead of
-being anonymous.  Rule 2 (DRY and all that &hellip;)
+* The first comment should be replaced with a named function instead of being
+  anonymous. Actually it's also redundant since you're calling the `filter`
+  method anyway.  Rule 2 (DRY and all that &hellip;)
 * The second comment "~5 min" is good*-ish*, though `5/60` would be about
 as clear, or a perhaps make a function to convert `minutes-to-hours(5)`
 

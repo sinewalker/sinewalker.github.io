@@ -276,8 +276,9 @@ disconnected, not disconnect when it <em>exits</em> — so maybe this is actuall
 <p>Actually, this second example contains a good comment, and a bad
 comment</p>
 <ul>
-<li>The first comment should be replaced with a named function instead of
-being anonymous.  Rule 2 (DRY and all that …)</li>
+<li>The first comment should be replaced with a named function instead of being
+  anonymous. Actually it's also redundant since you're calling the <code>filter</code>
+  method anyway.  Rule 2 (DRY and all that …)</li>
 <li>The second comment "~5 min" is good<em>-ish</em>, though <code>5/60</code> would be about
 as clear, or a perhaps make a function to convert <code>minutes-to-hours(5)</code>
 </li>
