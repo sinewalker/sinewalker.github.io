@@ -20,6 +20,7 @@ up my thoughts about those other rules, and I want to get something out
 roughly every week.
 
 <!-- TEASER_END -->
+----
 
 **Rule 4**: If you're exploring, keep a notebook/journal
 ----
@@ -79,10 +80,10 @@ helpful in my problem solving so that I have some structure about how
 to approach the goal, rather than just bashing my head against a wall.
 
 It helps that I can type almost as fast as I think now (yeah yeah, and I'm not
-*that* fast at typing&hellip;). Back when I kept hand-written notes it was a
-pain (literally) to write this much detail down, but I did it even then because
-it was helpful, and with a detailed map of where I had come and was going, I
-almost never got lost.
+*that* fast at thinking&hellip;). Back when I kept hand-written notes it was a
+pain (literally) to write this much detail down, but I did it even then
+because it was helpful, and with a detailed map of where I had come and was
+going, I almost never got lost.
 
 <img src="/pixels/dust/virtual-heart-system-log.jpg">
 
