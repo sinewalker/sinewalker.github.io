@@ -16,6 +16,8 @@ In this installment:  Rules 5, on comments.  Rule 5 is a bit contentious and I'v
 
 <!-- TEASER_END -->
 
+----
+
 **Rule 5**: Comments considered harmful
 ----
 *(embedded in code, as well as those on YouTube)*
@@ -60,9 +62,9 @@ Rule 3.8: "&hellip;*practicality beats purity*".
 Misuse of code comments
 ----
 
-Many uses of code comments are the
-[Wrong Thing](http://www.catb.org/jargon/html/W/Wrong-Thing.html)&trade;
-and you should be doing something else instead:
+Many uses of code comments are the [Wrong
+Thing](/jargon/html/W/Wrong-Thing.html)&trade; and you should be doing
+something else instead:
 
 * **Comments with** ***change history***: Use a `CHANGELOG` and/or revision control
   commit messages

@@ -19,6 +19,9 @@ In this instalment:  Rules 0 to 3 (the first 2 bits).
 
 <!-- TEASER_END -->
 
+----
+
+
 **Rule 0**: All rules are broken
 ----
 
@@ -50,13 +53,13 @@ I believe the quote was something along the following lines:
 > So, you type your program in, save it, run it and it doesn't work (Lukes'
 > first law of computing: nothing works first time). Now what? &hellip;
 
-I remember who wrote the article because Peter Lukes' articles in
-*ACU* were a big inspiration in my early computing years.  I fondly
-recall learning about recursion (using CPC Locomotive BASIC, which
-does not have functions, or a stack&hellip;) and other enlightening
-ways to think about computer programming. To this day, I still initial
-my code comments in a similar manner to his `LKS870915`, (although I
-use 4-digit years, at least since the Y2K jazz).
+I remember who wrote the article because Peter Lukes' articles in *ACU* were a
+big inspiration in my early computing years. I fondly recall learning about
+recursion (using CPC Locomotive BASIC, which does not have functions, or a
+stack&hellip;) and other enlightening ways to think about computer
+programming. To this day, I still initial my code comments in a similar manner
+to his `LKS150987`, (although I use 4-digit years similar to
+[ISO-8601](https://xkcd.com/1179/) dates, at least since the Y2K jazz).
 
 Anyway, besides the fun play on words, this rule reminds me to
 *relax*, step back and reflect that computing is non trivial.
@@ -99,7 +102,7 @@ something three times.
 Don't repeat yourself, make the computer do it.
 
 
-** Rule 3**: `python <(echo import this)`
+**Rule 3**: `python <(echo import this)`
 ----
 ([Python](https://www.python.org/about/gettingstarted/) [PEP 20](https://www.python.org/dev/peps/pep-0020/))
 
