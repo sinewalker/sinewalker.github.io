@@ -34,7 +34,7 @@ The [openSUSE 13.2 Portal](https://en.opensuse.org/Portal:13.2) mentions a switc
 
 But then, why use XFS and not ext4fs?
 
-[RedHat switched from ext3/4 to XFS for RHEL 7](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Storage_Administration_Guide/ch06s09.html), so there may be technical reasons I don't understand (fragmentation, preallocation, perhaps performance?)  Maybe a similar decision was made for SLE?  Anyway, the biggest down-side for me personally is that you can't shrink an XFS filesystem, only grow it. And to do that you must take the filesystem offline.
+The SUSE [Storage Administration Guide](https://www.suse.com/documentation/sles-12/singlehtml/stor_admin/stor_admin.html#cha.filesystems) links to a [table comparing filesystem features](https://www.suse.com/products/server/technical-information/#FileSystem), which goes some way to explaining their choice of XFS over ext4fs.  Anyway the biggest down-side for me personally is that you can't shrink an XFS filesystem, only grow it. And to do that you must take the filesystem offline.
 
 So: I'm probably going against the experts here, but I think I *won't* use XFS again, simply because I want/need the ability to grow *and shrink* volumes.  I also understand the ext tools better than the xfs ones.
 
