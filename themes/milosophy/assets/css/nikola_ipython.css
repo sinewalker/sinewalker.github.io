@@ -10,17 +10,23 @@ div.prompt {
   border-radius: 3px;
 }
 
+div.input_area {
+  background: #222222;
+}
 div.prompt.input_prompt {
-    color: #202020;
+    color: #bada55;
 }
 
 div.output_prompt {
   /* 5px right shift to account for margin in parent container */
+  color: rgb(155, 73, 48);
   margin: 0 5px 0 0px;
 }
 
 div.output_area pre {
   font-size: medium;
+  color: #bada55;
+  background: transparent;
 }
 
 div.text_cell_render {
