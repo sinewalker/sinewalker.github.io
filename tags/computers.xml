@@ -2,7 +2,9 @@
 <?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Milosophical Me (Posts about computers)</title><link>http://milosophical.me/</link><description></description><atom:link href="http://milosophical.me/tags/computers.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2018 &lt;a href="mailto:sinewalker@gmail.com"&gt;Michael Lockhart&lt;/a&gt; 
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License" style="border-width:0"
-     src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"/&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 13 Jan 2018 11:14:41 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Back to openSUSE</title><link>http://milosophical.me/blog/2008/03/31/back-to-opensuse.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;Well, my stint in *buntu is over, and it ends with an award to openSUSE: this is the first Linux distro I've returned to.&lt;/p&gt;
+     src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"/&gt;&lt;/a&gt;
+     &lt;label for="lightswitch"&gt;&amp;#9775;&lt;/label&gt;
+&lt;input type="checkbox" id="lightswitch" /&gt;</copyright><lastBuildDate>Sun, 14 Jan 2018 12:12:09 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Back to openSUSE</title><link>http://milosophical.me/blog/2008/03/31/back-to-opensuse.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;Well, my stint in *buntu is over, and it ends with an award to openSUSE: this is the first Linux distro I've returned to.&lt;/p&gt;
 
 &lt;p&gt;
 Kubuntu is nice, and I'm happy that I've tried it out, but it's not for me. It's nice enough if you want a simple desktop system, and APT rocks (especially with the aptitude front-end). But it's just not as good as openSUSE, sorry.
