@@ -996,11 +996,14 @@ LICENSE = ""
 LICENSE = """
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
 <img alt="Creative Commons License" style="border-width:0"
-     src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"/></a>"""
+     src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"/></a>
+"""
 
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
-CONTENT_FOOTER = '<hr/>Contents Copyright &copy; {license} 2005 &mdash; {date}         <a href="mailto:{email}">{author}</a>. Powered by <a href="https://getnikola.com" rel="nofollow"><img src="/img/nikola.png" alt="Nikola"/></a>, <a href="https://github.com/syl20bnr/spacemacs"><img src="https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg" alt="built with Spacemacs"/></a>'
+CONTENT_FOOTER = """
+<hr/>Contents Copyright &copy; {license} 2005 &mdash; {date}         <a href="mailto:{email}">{author}</a>. Powered by <a href="https://getnikola.com" rel="nofollow"><img src="/img/nikola.png" alt="Nikola"/></a>, <a href="https://github.com/syl20bnr/spacemacs"><img src="https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg" alt="built with Spacemacs"/></a>
+"""
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
 # for translatability, as dicts are not formattable.  Nikola will
