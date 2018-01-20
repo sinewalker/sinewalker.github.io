@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>http://milosophical.me/authors/michael-lockhart.xml</loc>
-  <lastmod>2018-01-14T12:29:00Z</lastmod>
+  <lastmod>2018-01-20T10:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/authors/mike-lockhart.xml</loc>
@@ -35,11 +35,11 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/rss.xml</loc>
-  <lastmod>2018-01-14T12:29:00Z</lastmod>
+  <lastmod>2018-01-20T10:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/sitemap.xml</loc>
-  <lastmod>2018-01-15T11:57:00Z</lastmod>
+  <lastmod>2018-01-20T10:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/4-bit-rules.xml</loc>
@@ -151,7 +151,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/cheat.xml</loc>
-  <lastmod>2018-01-14T12:12:00Z</lastmod>
+  <lastmod>2018-01-18T11:40:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/children.xml</loc>
@@ -167,7 +167,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/code.xml</loc>
-  <lastmod>2018-01-14T12:12:00Z</lastmod>
+  <lastmod>2018-01-20T10:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/codekids.xml</loc>
@@ -183,7 +183,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/computers.xml</loc>
-  <lastmod>2018-01-14T12:12:00Z</lastmod>
+  <lastmod>2018-01-20T10:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/concurrency.xml</loc>
@@ -199,7 +199,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/copyright.xml</loc>
-  <lastmod>2018-01-14T12:12:00Z</lastmod>
+  <lastmod>2018-01-20T10:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/cursor.xml</loc>
@@ -279,7 +279,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/emacs.xml</loc>
-  <lastmod>2018-01-14T12:12:00Z</lastmod>
+  <lastmod>2018-01-20T10:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/emacs24.xml</loc>
@@ -343,11 +343,11 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/game.xml</loc>
-  <lastmod>2018-01-14T12:12:00Z</lastmod>
+  <lastmod>2018-01-18T11:40:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/geek.xml</loc>
-  <lastmod>2018-01-14T12:12:00Z</lastmod>
+  <lastmod>2018-01-20T10:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/general.xml</loc>
@@ -391,7 +391,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/hacking.xml</loc>
-  <lastmod>2018-01-14T12:29:00Z</lastmod>
+  <lastmod>2018-01-20T10:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/hardware.xml</loc>
@@ -419,11 +419,11 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/java.xml</loc>
-  <lastmod>2018-01-14T12:12:00Z</lastmod>
+  <lastmod>2018-01-20T10:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/jedit.xml</loc>
-  <lastmod>2018-01-14T12:12:00Z</lastmod>
+  <lastmod>2018-01-20T10:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/journal.xml</loc>
@@ -455,7 +455,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/lisp.xml</loc>
-  <lastmod>2018-01-14T12:12:00Z</lastmod>
+  <lastmod>2018-01-20T10:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/literate.xml</loc>
@@ -467,7 +467,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/lore.xml</loc>
-  <lastmod>2018-01-14T12:12:00Z</lastmod>
+  <lastmod>2018-01-18T11:40:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/luks.xml</loc>
@@ -567,7 +567,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/observation.xml</loc>
-  <lastmod>2018-01-14T12:12:00Z</lastmod>
+  <lastmod>2018-01-20T10:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/obsolete.xml</loc>
@@ -579,7 +579,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/openssh.xml</loc>
-  <lastmod>2018-01-14T12:12:00Z</lastmod>
+  <lastmod>2018-01-20T10:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/opensuse.xml</loc>
@@ -703,7 +703,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/ssh.xml</loc>
-  <lastmod>2018-01-14T12:12:00Z</lastmod>
+  <lastmod>2018-01-20T10:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/stability.xml</loc>
@@ -739,7 +739,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/thoughts.xml</loc>
-  <lastmod>2018-01-14T12:12:00Z</lastmod>
+  <lastmod>2018-01-20T10:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/threads.xml</loc>
@@ -755,7 +755,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/tip.xml</loc>
-  <lastmod>2018-01-14T12:12:00Z</lastmod>
+  <lastmod>2018-01-20T10:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/tips.xml</loc>

@@ -3,8 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License" style="border-width:0"
      src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"/&gt;&lt;/a&gt;
-     &lt;label for="lightswitch"&gt;&amp;#9775;&lt;/label&gt;
-&lt;input type="checkbox" id="lightswitch" /&gt;</copyright><lastBuildDate>Sun, 14 Jan 2018 12:12:09 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Emacs dunnet solved</title><link>http://milosophical.me/blog/2006/03/08/emacs-dunnet-solved.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;p&gt;
+</copyright><lastBuildDate>Thu, 18 Jan 2018 11:40:49 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Emacs dunnet solved</title><link>http://milosophical.me/blog/2006/03/08/emacs-dunnet-solved.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;p&gt;
 &lt;em&gt;This post was originally published
   at &lt;a href="http://sinewalker.blogspot.com.au/2006_03_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
   on 8 March 2006, and then updated
@@ -93,7 +92,7 @@ More ideas to try as the wizard in &lt;em&gt;pokey &lt;/em&gt;(from some tips at
 
 &lt;ul&gt;
 	&lt;li&gt;&lt;strong&gt;&lt;code&gt;dun-current-room=tloc&lt;/code&gt;&lt;/strong&gt; to go directly to the room containing the egg&lt;/li&gt;
-	&lt;li&gt;&lt;code&gt;&lt;strong&gt;dun-items='(append 18 dun-items)&lt;/strong&gt;&lt;/code&gt;, to add the egg to your inventory directly (a truely &lt;a title="Moby definition (jargon file)" href="http://www.catb.org/~esr/jargon/html/M/moby.html"&gt;moby&lt;/a&gt; &lt;a title="definition (jargon file)" href="http://www.catb.org/jargon/html/H/hack.html"&gt;hack&lt;/a&gt;)&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;&lt;strong&gt;dun-items='(append 18 dun-items)&lt;/strong&gt;&lt;/code&gt;, to add the egg to your inventory directly (a truely &lt;a title="Moby definition (jargon file)" href="http://milosophical.me/jargon/html/M/moby.html"&gt;moby&lt;/a&gt; &lt;a title="definition (jargon file)" href="http://milosophical.me/jargon/html/H/hack.html"&gt;hack&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;br&gt;
