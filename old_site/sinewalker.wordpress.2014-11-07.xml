@@ -1692,7 +1692,7 @@ Another idea to try (theoretical, but interesting, from TimHorse' comment below)
 More ideas to try as the wizard in <em>pokey </em>(from some tips at the <a title="Ron Schnell" href="http://www.driver-aces.com/ronnie.html">Dunnet author</a>'s <a title="Ronnie's Dunnet hints" href="http://www.driver-aces.com/dunnet.html">hints page</a>):
 <ul>
 	<li><strong><code>dun-current-room=tloc</code></strong> to go directly to the room containing the egg</li>
-	<li><code><strong>dun-items='(append 18 dun-items)</strong></code>, to add the egg to your inventory directly (a truely <a title="Moby definition (jargon file)" href="http://www.catb.org/~esr/jargon/html/M/moby.html">moby</a> <a title="definition (jargon file)" href="http://www.catb.org/jargon/html/H/hack.html">hack</a>)</li>
+	<li><code><strong>dun-items='(append 18 dun-items)</strong></code>, to add the egg to your inventory directly (a truely <a title="Moby definition (jargon file)" href="/jargon/html/M/moby.html">moby</a> <a title="definition (jargon file)" href="http://www.catb.org/jargon/html/H/hack.html">hack</a>)</li>
 </ul>
 I'm actually motivated to play this game on the train tonight...
 
@@ -2891,62 +2891,62 @@ Have you ever noticed the prolific use of mystical/fantastical words in computer
 
 <!--more-->Anyway, here is a list I've compiled (mostly from the <a href="http://www.jargon.org">Jargon File</a>) of mystical/fantastical terms used in computing:
 <ul>
-	<li><a href="http://www.catb.org/~esr/jargon/html/A/Angband.html">Angband</a></li>
+	<li><a href="/jargon/html/A/Angband.html">Angband</a></li>
 	<li><a href="http://www.ietf.org/rfc/rfc527.txt">ARPA-wocky</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/A/avatar.html">avatar</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/B/big-endian.html">big-endian</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/B/black-magic.html">black magic</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/B/buried-treasure.html">burried treasure</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/D/daemon.html">daemon</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/D/deep-magic.html">deep magic</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/D/demon.html">demon</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/D/Discordianism.html">Discordianism</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/D/dragon.html">dragon</a></li>
+	<li><a href="/jargon/html/A/avatar.html">avatar</a></li>
+	<li><a href="/jargon/html/B/big-endian.html">big-endian</a></li>
+	<li><a href="/jargon/html/B/black-magic.html">black magic</a></li>
+	<li><a href="/jargon/html/B/buried-treasure.html">burried treasure</a></li>
+	<li><a href="/jargon/html/D/daemon.html">daemon</a></li>
+	<li><a href="/jargon/html/D/deep-magic.html">deep magic</a></li>
+	<li><a href="/jargon/html/D/demon.html">demon</a></li>
+	<li><a href="/jargon/html/D/Discordianism.html">Discordianism</a></li>
+	<li><a href="/jargon/html/D/dragon.html">dragon</a></li>
 	<li><a href="http://dwarf.freestandards.org/Home.php">DWARF</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/E/elder-days.html">elder days</a></li>
+	<li><a href="/jargon/html/E/elder-days.html">elder days</a></li>
 	<li><a href="http://en.wikipedia.org/wiki/Executable_and_Linkable_Format">ELF</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/E/elvish.html">elvish</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/E/Eris.html">Eris</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/F/Frankenputer.html">Frankenputer</a></li>
+	<li><a href="/jargon/html/E/elvish.html">elvish</a></li>
+	<li><a href="/jargon/html/E/Eris.html">Eris</a></li>
+	<li><a href="/jargon/html/F/Frankenputer.html">Frankenputer</a></li>
 	<li><a href="www.gnome.org">GNOME</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/G/Great-Worm.html">Great Worm</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/G/guru.html">guru</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/G/guru-meditation.html">guru meditation</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/H/heavy-wizardry.html">heavy wizardry</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/H/heisenbug.html">heisenbug</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/H/hex.html">hex</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/I/incantation.html">incantation</a></li>
+	<li><a href="/jargon/html/G/Great-Worm.html">Great Worm</a></li>
+	<li><a href="/jargon/html/G/guru.html">guru</a></li>
+	<li><a href="/jargon/html/G/guru-meditation.html">guru meditation</a></li>
+	<li><a href="/jargon/html/H/heavy-wizardry.html">heavy wizardry</a></li>
+	<li><a href="/jargon/html/H/heisenbug.html">heisenbug</a></li>
+	<li><a href="/jargon/html/H/hex.html">hex</a></li>
+	<li><a href="/jargon/html/I/incantation.html">incantation</a></li>
 	<li><a href="http://www.sun.com/software/jini/">JINI</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/L/line-666.html">line 666</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/M/magic.html">magic</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/M/magic-number.html">magic number</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/M/magic-smoke.html">magic smoke</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/O/Oracle--the.html">Oracle</a></li>
+	<li><a href="/jargon/html/L/line-666.html">line 666</a></li>
+	<li><a href="/jargon/html/M/magic.html">magic</a></li>
+	<li><a href="/jargon/html/M/magic-number.html">magic number</a></li>
+	<li><a href="/jargon/html/M/magic-smoke.html">magic smoke</a></li>
+	<li><a href="/jargon/html/O/Oracle--the.html">Oracle</a></li>
 	<li><a href="http://en.wikipedia.org/wiki/Pixel">pixel</a> (from pixie)</li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/P/pointy-hat.html">pointy hat</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/R/rain-dance.html">rain dance</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/R/reaper.html">reaper</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/R/reincarnation--cycle-of.html">reincarnation, cycle of</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/R/religious-issues.html">religious issues</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/R/runes.html">runes</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/S/sacred.html">sacred</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/S/smurf.html">smurf</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/S/spider.html">spider</a></li>
+	<li><a href="/jargon/html/P/pointy-hat.html">pointy hat</a></li>
+	<li><a href="/jargon/html/R/rain-dance.html">rain dance</a></li>
+	<li><a href="/jargon/html/R/reaper.html">reaper</a></li>
+	<li><a href="/jargon/html/R/reincarnation--cycle-of.html">reincarnation, cycle of</a></li>
+	<li><a href="/jargon/html/R/religious-issues.html">religious issues</a></li>
+	<li><a href="/jargon/html/R/runes.html">runes</a></li>
+	<li><a href="/jargon/html/S/sacred.html">sacred</a></li>
+	<li><a href="/jargon/html/S/smurf.html">smurf</a></li>
+	<li><a href="/jargon/html/S/spider.html">spider</a></li>
 	<li><a href="http://en.wikipedia.org/wiki/Sprite_(computer_graphics)">sprite</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/T/tentacle.html">tentacle</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/T/theology.html">theology</a></li>
+	<li><a href="/jargon/html/T/tentacle.html">tentacle</a></li>
+	<li><a href="/jargon/html/T/theology.html">theology</a></li>
 	<li>various uses of trees</li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/U/urchin.html">urchin</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/V/voodoo-programming.html">voodoo programming</a></li>
+	<li><a href="/jargon/html/U/urchin.html">urchin</a></li>
+	<li><a href="/jargon/html/V/voodoo-programming.html">voodoo programming</a></li>
 	<li>web</li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/W/wheel.html">wheel</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/W/wizard.html">wizard</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/W/Wizard-Book.html">Wizard Book</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/W/wizard-hat.html">wizard hat</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/X/xyzzy.html">xyzzy</a></li>
+	<li><a href="/jargon/html/W/wheel.html">wheel</a></li>
+	<li><a href="/jargon/html/W/wizard.html">wizard</a></li>
+	<li><a href="/jargon/html/W/Wizard-Book.html">Wizard Book</a></li>
+	<li><a href="/jargon/html/W/wizard-hat.html">wizard hat</a></li>
+	<li><a href="/jargon/html/X/xyzzy.html">xyzzy</a></li>
 	<li><a href="http://en.wikipedia.org/wiki/Yggdrasil_Linux">yggdrasil</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/Z/zen.html">zen</a></li>
-	<li><a href="http://www.catb.org/~esr/jargon/html/Z/zombie.html">zombie</a></li>
+	<li><a href="/jargon/html/Z/zen.html">zen</a></li>
+	<li><a href="/jargon/html/Z/zombie.html">zombie</a></li>
 </ul>
 A similar list could be made of Lewis-Carrol references, or even Douglas Adams.]]></content:encoded>
   <excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -4752,7 +4752,7 @@ else
 // end Insert_Date_DOW.bsh
 </code></pre>
 </blockquote>
-The comments are  lot more verbose, but you can see the Insert_Date_ISO-MJL macro at work in the script comments above. Also, the Java <a title="Javadoc - J2SE5 documentation" href="http://java.sun.com/j2se/1.5.0/docs/api/java/text/SimpleDateFormat.html"><code>SimpleDateFormat</code></a> class makes formatting much simpler to read, I feel, but even with BeanShell's ability to use untyped variables (for example, in BeanShell you can say “<code>dateFormatter = new SimpleDateFormat</code>…”, instead of Java's “<code>DateFormat dateFormatter=new SimpleDateFormat</code>…”), the code is still not as <a title="//Elegant" href="http://www.catb.org/~esr/jargon/html/E/elegant.html"><em>elegant</em></a> as the elisp version.
+The comments are  lot more verbose, but you can see the Insert_Date_ISO-MJL macro at work in the script comments above. Also, the Java <a title="Javadoc - J2SE5 documentation" href="http://java.sun.com/j2se/1.5.0/docs/api/java/text/SimpleDateFormat.html"><code>SimpleDateFormat</code></a> class makes formatting much simpler to read, I feel, but even with BeanShell's ability to use untyped variables (for example, in BeanShell you can say “<code>dateFormatter = new SimpleDateFormat</code>…”, instead of Java's “<code>DateFormat dateFormatter=new SimpleDateFormat</code>…”), the code is still not as <a title="//Elegant" href="/jargon/html/E/elegant.html"><em>elegant</em></a> as the elisp version.
 
 However, I think I'm starting to like jEdit over Emacs (blasphemy!).  Mind you it's slow: it makes Emacs seem zippy, and traditionaly Emacs stood for “EMACS Makes A Computer Slow”!
 
@@ -12127,7 +12127,7 @@ Sorry, I'm not being very helpful, hey?  I think I'll disable the comments on th
   <description/>
   <content:encoded><![CDATA[There is a feature of OpenSSH, enabled by default, that causes the ssh daemon to do a name lookup for the client and confirm that it matches its IP address. This is supposed to check against some sort of IP spoof during SSH login attacks.  However on my local network which lacks a DNS, it results in lengthy delays during logins.
 
-<!--more-->I found good explanations and how to fix this in the <a title="OpenSUSE FAQ 3.3: ssh(1) takes a long time to connect or log in" href="http://www.openssh.com/faq.html#3.3">OpenSSH FAQ</a> and also on the<a title="SSH Login slow - NOVELL FORUMS" href="http://forums.novell.com/novell-product-support-forums/suse-linux-enterprise-server-sles/sles-configure-administer/340097-sles9-ssh-login-slow.html"> SUSE Linux Forums</a> and a <a title="Libel: UseDNS resolution and OpenSSH" href="http://ayaz.wordpress.com/2008/02/03/usedns-resolution-and-openssh/">couple</a> of <a title="SuSE Linux slow logins over SSH" href="http://www.carlosvazquez.org/Blog/index.cfm?blog_id=72">blogs</a>.  This issue also comes up as at least one <a title="Ubuntu bug #424371 - Logins to OpenSSH server slow due to &quot;UseDNS yes&quot; config" href="https://bugs.launchpad.net/ubuntu/+source/openssh/+bug/424371">bug</a> for Ubuntu (but it's not a bug, it's a <a title="Jargon file: Feature" href="http://www.catb.org/~esr/jargon/html/F/feature.html">feature</a>).
+<!--more-->I found good explanations and how to fix this in the <a title="OpenSUSE FAQ 3.3: ssh(1) takes a long time to connect or log in" href="http://www.openssh.com/faq.html#3.3">OpenSSH FAQ</a> and also on the<a title="SSH Login slow - NOVELL FORUMS" href="http://forums.novell.com/novell-product-support-forums/suse-linux-enterprise-server-sles/sles-configure-administer/340097-sles9-ssh-login-slow.html"> SUSE Linux Forums</a> and a <a title="Libel: UseDNS resolution and OpenSSH" href="http://ayaz.wordpress.com/2008/02/03/usedns-resolution-and-openssh/">couple</a> of <a title="SuSE Linux slow logins over SSH" href="http://www.carlosvazquez.org/Blog/index.cfm?blog_id=72">blogs</a>.  This issue also comes up as at least one <a title="Ubuntu bug #424371 - Logins to OpenSSH server slow due to &quot;UseDNS yes&quot; config" href="https://bugs.launchpad.net/ubuntu/+source/openssh/+bug/424371">bug</a> for Ubuntu (but it's not a bug, it's a <a title="Jargon file: Feature" href="/jargon/html/F/feature.html">feature</a>).
 
 In a nutshell: if you want to remove this delay and don't care about doing reverse lookups, set <strong>UseDNS no</strong> in <strong>/etc/ssh/sshd_config</strong> and then restart the daemon. The FAQ explains it better than me.]]></content:encoded>
   <excerpt:encoded><![CDATA[]]></excerpt:encoded>
