@@ -12,16 +12,16 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="http://milosophical.me/blog/2018/minecraft-python-1.html">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Michael Lockhart">
-<link rel="prev" href="../2017/speeds.html" title="Vehicle speed units" type="text/html">
+<meta name="robots" content="noindex">
 <meta property="og:site_name" content="Milosophical Me">
 <meta property="og:title" content="Minecraft Jamin'">
 <meta property="og:url" content="http://milosophical.me/blog/2018/minecraft-python-1.html">
 <meta property="og:description" content="Minecraft Jammin¶A bit over two years ago I wrote a post about hacking minecraft with Python. During my holiday break this year I decided to revisit this, and have a bit more of a go with it.  Some th">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2018-02-05T11:18:42+11:00">
-<meta property="article:tag" content="draft minecraft">
 <meta property="article:tag" content="getkidscoding">
 <meta property="article:tag" content="kids">
+<meta property="article:tag" content="minecraft">
 <meta property="article:tag" content="python">
 </head>
 <body>
@@ -188,8 +188,19 @@
 <h3 id="Connecting-to-Minecraft-from-Python">Connecting to Minecraft from Python<a class="anchor-link" href="minecraft-python-1.html#Connecting-to-Minecraft-from-Python">¶</a>
 </h3>
 <p>The <a href="https://www.raspberrypi.org/documentation/usage/minecraft/README.md">Minecraft PI Edition</a> included with the <a href="https://www.raspbian.org/">Raspbian OS</a> for <a href="https://www.raspberrypi.org">Raspberry Pi</a> may be accessed by an <a href="https://en.wikipedia.org/wiki/Application_programming_interface">Application Programming Interface</a> (API). The API is a collection of well defined methods for a computer Application to doing some things in Minecraft, and it was written by Mojang (Minecraft's creators) especially for the PI Edition of the game, to be an Interface for Java and Python programs.</p>
-<p>The API uses a computer <a href="../../jargon/html/P/protocol.html">protocol</a> to connect to a Minecraft game "server" and then sends messages to it. The protocol is described in the file <code>mcpi_protocol_spec.txt</code> included with the MCPI download when you install it per the Raspberry Pi instructions, or the excellent tutorials and guides at <a href="http://www.stuffaboutcode.com/p/minecraft.html">Stuff about code</a>.  I've also placed <a href="#">a copy on my web site</a> for easy finding.</p>
+<p>The API uses a computer <a href="../../jargon/html/P/protocol.html">protocol</a> to connect to a Minecraft game "server" and then sends messages to it. The protocol is described in the file <code>mcpi_protocol_spec.txt</code> included with the MCPI download when you install it per the Raspberry Pi instructions, or the excellent tutorials and guides at <a href="http://www.stuffaboutcode.com/p/minecraft.html">Stuff about code</a>.  I've also placed <a href="http://milosophical.me/hax/mcpi_protocol_spec.txt">a copy on my web site</a> for easy finding.</p>
+<p>The Stuff About Code site has lots of helpful information for connecting to Minecraft on your Raspberry Pi, or for installing servers and mod's on a PC or Mac if you don't have a Pi.  Unfortunately the info is a little dated now.</p>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="New-ways-to-connect-to-Minecraft">New ways to connect to Minecraft<a class="anchor-link" href="minecraft-python-1.html#New-ways-to-connect-to-Minecraft">¶</a>
+</h3>
 </div>
 </div>
 </div>
@@ -198,15 +209,10 @@
 
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../../tags/draft-minecraft.html" rel="tag">draft minecraft</a></li>
-            <li><a class="tag p-category" href="../../tags/getkidscoding.html" rel="tag">getkidscoding</a></li>
+<li><a class="tag p-category" href="../../tags/getkidscoding.html" rel="tag">getkidscoding</a></li>
             <li><a class="tag p-category" href="../../tags/kids.html" rel="tag">kids</a></li>
+            <li><a class="tag p-category" href="../../tags/minecraft.html" rel="tag">minecraft</a></li>
             <li><a class="tag p-category" href="../../tags/python.html" rel="tag">python</a></li>
-        </ul>
-<ul class="pager hidden-print">
-<li class="previous">
-                <a href="../2017/speeds.html" rel="prev" title="Vehicle speed units">Previous post</a>
-            </li>
         </ul></nav></aside><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-yYfngbEKv4RENfGDvNUqJTqGFcKf31NJEe9OTnnMH3Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
         </script></article>

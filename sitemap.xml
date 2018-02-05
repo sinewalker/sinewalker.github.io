@@ -67,15 +67,15 @@
  </url>
  <url>
   <loc>http://milosophical.me/archive/archive.html</loc>
-  <lastmod>2018-01-22T10:48:00Z</lastmod>
+  <lastmod>2018-02-05T01:12:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/authors/index.html</loc>
-  <lastmod>2018-01-22T10:48:00Z</lastmod>
+  <lastmod>2018-02-05T01:12:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/authors/michael-lockhart.html</loc>
-  <lastmod>2018-02-05T01:07:00Z</lastmod>
+  <lastmod>2018-02-05T01:12:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/authors/mike-lockhart.html</loc>
@@ -523,15 +523,11 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/2017/speeds.html</loc>
-  <lastmod>2018-02-05T01:07:00Z</lastmod>
+  <lastmod>2018-02-05T01:12:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/2017/upgrade-nikola-783.html</loc>
   <lastmod>2018-01-22T10:41:00Z</lastmod>
- </url>
- <url>
-  <loc>http://milosophical.me/blog/2018/minecraft-python-1.html</loc>
-  <lastmod>2018-02-05T01:07:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-1.html</loc>
@@ -543,7 +539,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-11.html</loc>
-  <lastmod>2018-01-22T10:48:00Z</lastmod>
+  <lastmod>2018-02-05T01:12:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-2.html</loc>
@@ -579,7 +575,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/index.html</loc>
-  <lastmod>2018-02-05T01:07:00Z</lastmod>
+  <lastmod>2018-02-05T01:12:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/hax/codec/URL%20Decoder_Encoder.html</loc>
@@ -1131,7 +1127,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/getkidscoding.html</loc>
-  <lastmod>2018-02-05T01:07:00Z</lastmod>
+  <lastmod>2018-02-05T01:12:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/gnupg.html</loc>
@@ -1179,7 +1175,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/index.html</loc>
-  <lastmod>2018-01-22T11:07:00Z</lastmod>
+  <lastmod>2018-02-05T01:12:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/jargon.html</loc>
@@ -1399,7 +1395,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/python.html</loc>
-  <lastmod>2018-02-05T01:07:00Z</lastmod>
+  <lastmod>2018-02-05T01:12:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/quote.html</loc>
