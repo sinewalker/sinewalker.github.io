@@ -12,17 +12,19 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="http://milosophical.me/blog/2018/minecraft-python-1.html">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Michael Lockhart">
-<meta name="robots" content="noindex">
+<link rel="prev" href="../2017/speeds.html" title="Vehicle speed units" type="text/html">
 <meta property="og:site_name" content="Milosophical Me">
 <meta property="og:title" content="Minecraft Jamin'">
 <meta property="og:url" content="http://milosophical.me/blog/2018/minecraft-python-1.html">
-<meta property="og:description" content="Minecraft Jammin¶A bit over two years ago I wrote a post about hacking minecraft with Python. During my holiday break this year I decided to revisit this, and have a bit more of a go with it.  Some th">
+<meta property="og:description" content="Minecraft Jammin'¶A bit over two years ago I wrote a post about hacking minecraft with Python. During my holiday break this year I decided to revisit this, and have a bit more of a go with it.  Some t">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2018-02-05T11:18:42+11:00">
 <meta property="article:tag" content="getkidscoding">
+<meta property="article:tag" content="hacking">
 <meta property="article:tag" content="kids">
 <meta property="article:tag" content="minecraft">
 <meta property="article:tag" content="python">
+<meta property="article:tag" content="RaspberryPi">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -172,10 +174,9 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Minecraft-Jammin">Minecraft Jammin<a class="anchor-link" href="minecraft-python-1.html#Minecraft-Jammin">¶</a>
+<h2 id="Minecraft-Jammin'">Minecraft Jammin'<a class="anchor-link" href="minecraft-python-1.html#Minecraft-Jammin'">¶</a>
 </h2>
-<p>A bit over two years ago I wrote <a href="../2015/minecraft-python-0.html">a post about hacking minecraft with Python</a>. During my holiday break this year I decided to revisit this, and have a bit more of a go with it.  Some things have changed, including the Minecraft Buckit Server that I used then (Canarymod) being abandoned, and some new enhanced modules that let you run Minecraft PI Python code on a non-PI machine, with Python 3!  So let's dig in.</p>
-<hr>
+<p>A bit over two years ago I wrote <a href="../2015/minecraft-python-0.html">a post about hacking minecraft with Python</a>. During my holiday break this year I decided to revisit this, and have a bit more of a go with it.  Some things have changed, including the Minecraft Bukkit Server that I used then (CanaryMod) being abandoned, and some new enhanced modules that let you run Minecraft PI Python code on a non-PI machine, with Python 3!  So let's dig in.</p>
 <!-- TEASER_END -->
 </div>
 </div>
@@ -185,11 +186,18 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Connecting-to-Minecraft-from-Python">Connecting to Minecraft from Python<a class="anchor-link" href="minecraft-python-1.html#Connecting-to-Minecraft-from-Python">¶</a>
+<hr>
+<h3 id="Connecting-Python-programs-to-Minecraft">Connecting Python programs to Minecraft<a class="anchor-link" href="minecraft-python-1.html#Connecting-Python-programs-to-Minecraft">¶</a>
 </h3>
-<p>The <a href="https://www.raspberrypi.org/documentation/usage/minecraft/README.md">Minecraft PI Edition</a> included with the <a href="https://www.raspbian.org/">Raspbian OS</a> for <a href="https://www.raspberrypi.org">Raspberry Pi</a> may be accessed by an <a href="https://en.wikipedia.org/wiki/Application_programming_interface">Application Programming Interface</a> (API). The API is a collection of well defined methods for a computer Application to doing some things in Minecraft, and it was written by Mojang (Minecraft's creators) especially for the PI Edition of the game, to be an Interface for Java and Python programs.</p>
-<p>The API uses a computer <a href="../../jargon/html/P/protocol.html">protocol</a> to connect to a Minecraft game "server" and then sends messages to it. The protocol is described in the file <code>mcpi_protocol_spec.txt</code> included with the MCPI download when you install it per the Raspberry Pi instructions, or the excellent tutorials and guides at <a href="http://www.stuffaboutcode.com/p/minecraft.html">Stuff about code</a>.  I've also placed <a href="http://milosophical.me/hax/mcpi_protocol_spec.txt">a copy on my web site</a> for easy finding.</p>
-<p>The Stuff About Code site has lots of helpful information for connecting to Minecraft on your Raspberry Pi, or for installing servers and mod's on a PC or Mac if you don't have a Pi.  Unfortunately the info is a little dated now.</p>
+<h4 id="Minecraft-Pi-Edition">Minecraft Pi Edition<a class="anchor-link" href="minecraft-python-1.html#Minecraft-Pi-Edition">¶</a>
+</h4>
+<p><strong>Quick recap</strong>: The <a href="https://www.raspberrypi.org/documentation/usage/minecraft/README.md">Minecraft Pi Edition</a> game included with the <a href="https://www.raspbian.org/">Raspbian OS</a> for <a href="https://www.raspberrypi.org">Raspberry Pi</a> may be accessed by an <a href="https://en.wikipedia.org/wiki/Application_programming_interface">Application Programming Interface</a> (API). The API is a collection of well defined methods for a computer Application to do some things in Minecraft, and it was written by Mojang (Minecraft's creators) especially for the Pi Edition of the game, to be an Interface for Java and Python programs.</p>
+<p>The <em>MCPI API</em> describes a computer <a href="../../jargon/html/P/protocol.html">protocol</a> for a <em>client</em> program to connect to a Minecraft game <em>server</em> and then communicate with it through network messages. The core of the protocol is described in the file <code>mcpi_protocol_spec.txt</code> included with the MCPIPY download when you install it per the Raspberry Pi instructions, or the excellent tutorials and guides at <a href="http://www.stuffaboutcode.com/p/minecraft.html">Stuff About Code</a>.  I've also placed <a href="http://milosophical.me/hax/mcpi_protocol_spec.txt">a copy of the spec' on my web site</a> for easy finding.</p>
+<p>The <em>Stuff About Code</em> site has lots of helpful information for hacking in Python 2.<em>x</em> and connecting your programs to Minecraft Pi Edition. If you have a Raspberry Pi, then this is the quickest and easiest option to get started. <strong>Martin O'Hanlon</strong> (the man behind Stuff About Code), together with David Whale, have written a fantastic book <em>Adventures in Minecraft</em> (you can find a link to purchase this on their web site), which introduces programming basics in Python.  It is full of fun projects, and also extends MCPIPY with some higher-level primitive shapes (drawing lines, polygons and polyhedra, as well as playing games and so on).</p>
+<h4 id="Minecraft-Java-Edition">Minecraft Java Edition<a class="anchor-link" href="minecraft-python-1.html#Minecraft-Java-Edition">¶</a>
+</h4>
+<p>If you don't have a Raspberry Pi, or you want to use a more familiar computer, then Martin O'Hanlon also has you covered.  He created the <a href="https://github.com/martinohanlon/canaryraspberryjuice">Raspberry Juice Bukkit module</a>, a <a href="https://dev.bukkit.org/">Bukkit server</a> that implements most of the MCPI API. The <a href="http://www.stuffaboutcode.com/2014/10/minecraft-raspberryjuice-and-canarymod.html">method described on Stuff About Code</a> (and which I blogged about years ago) installs Raspberry Juice into the <em>CanaryMod</em> Bukkit server and then has you use Minecraft's <em>Multiplayer</em> mode to connect the game to CanaryMod.</p>
+<p>Unfortunately those instructions are quite dated now, and CanaryMod itself has been abondoned.  There is a newer Bukkit server that also works with Raspberry Juice, called <a href="https://www.spigotmc.org/">Spigot</a>.  I have been able to follow Martin's instructions using Spigot instead of CanaryMod.  My results were satisfactory, but I've found something even better.</p>
 
 </div>
 </div>
@@ -199,8 +207,32 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="New-ways-to-connect-to-Minecraft">New ways to connect to Minecraft<a class="anchor-link" href="minecraft-python-1.html#New-ways-to-connect-to-Minecraft">¶</a>
+<h3 id="Raspberry-Jam:-a-new-way-to-connect-Python-to-Minecraft-Java">Raspberry Jam: a new way to connect Python to Minecraft Java<a class="anchor-link" href="minecraft-python-1.html#Raspberry-Jam:-a-new-way-to-connect-Python-to-Minecraft-Java">¶</a>
 </h3>
+<p>A far easier way to start coding on Minecraft Java is to use <a href="https://github.com/arpruss/raspberryjammod">raspberryjammod</a>, a <a href="https://mcforge.readthedocs.io/en/latest/">Minecraft Forge</a> module.  <em>Forge</em> is a Minecraft "modding" framework, widely used to expand or enhance the Java edition of the game with new modules such as better rendering, minigames, new creatures and blocks.  Chances are good that Minecraft players reading this already know a lot about it.</p>
+<p>The creator of <em>raspberryjammod</em>, <a href="https://github.com/arpruss">Arpruss</a>, has documented installing and using it in <a href="http://www.instructables.com/id/Python-coding-for-Minecraft/">an Instructable</a>.  It's really good and complete and I've successfully followed the instructions to install it on Macintosh, PC (Windows 10), and Linux (SUSE).  I recommend following the instructable. It's <em>almost</em> as easy as installing Raspbian OS and getting going on a Pi.</p>
+<p>A really neat thing about Arpruss' work is:  <strong>it also includes an updated version of the MCPIPY code from Stuff About Code, with additional examples, plus changes to make it compatible with Python 3!</strong>  You can get it from <a href="https://github.com/arpruss/raspberryjammod/releases">Arpruss' raspberryjammod releases GitHub page</a> (look for <code>python-scripts.zip</code>). These scripts still work with Python 2 and still target the original MCPI API, so you can use this Python code everywhere, including on the Pi.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="PythonTool-Mod">PythonTool Mod<a class="anchor-link" href="minecraft-python-1.html#PythonTool-Mod">¶</a>
+</h4>
+<p>The <a href="https://ngcm.github.io/PythonTool-Mod/">PythonTool Mod</a> is another <em>Forge</em> mod, which works together with <em>raspberryjammod</em> to take the hacking experience even further. It improves on the Raspberry Jam base in a few important ways:</p>
+<ul>
+<li>In-game script loading/reloading</li>
+<li>Execute scripts by Equipping them and then Using them, rather than entering <code>/py somescript</code> commands in the Chat</li>
+<li>Allows you to have a folder for your own scripts separate to the MCPIPY library</li>
+<li>The website introduces Using <a href="http://jupyter.org/">Jupyter Notebooks</a> to <a href="https://ngcm.github.io/PythonTool-Mod/startcoding/">note-take and explore</a>
+</li>
+</ul>
+<p>There are <a href="https://ngcm.github.io/PythonTool-Mod/installation/">instructions to install PythonTool Mod</a> also.  I have a few notes and gotchas though which I'd like to expand in my next blog post.</p>
+
 </div>
 </div>
 </div>
@@ -210,9 +242,16 @@
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../tags/getkidscoding.html" rel="tag">getkidscoding</a></li>
+            <li><a class="tag p-category" href="../../tags/hacking.html" rel="tag">hacking</a></li>
             <li><a class="tag p-category" href="../../tags/kids.html" rel="tag">kids</a></li>
             <li><a class="tag p-category" href="../../tags/minecraft.html" rel="tag">minecraft</a></li>
             <li><a class="tag p-category" href="../../tags/python.html" rel="tag">python</a></li>
+            <li><a class="tag p-category" href="../../tags/raspberrypi.html" rel="tag">RaspberryPi</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../2017/speeds.html" rel="prev" title="Vehicle speed units">Previous post</a>
+            </li>
         </ul></nav></aside><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-yYfngbEKv4RENfGDvNUqJTqGFcKf31NJEe9OTnnMH3Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
         </script></article>
