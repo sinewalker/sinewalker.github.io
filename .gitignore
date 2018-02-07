@@ -10,3 +10,4 @@ state_data.json
 plugins
 .DS_Store
 blog.code-workspace
+.ipynb_checkpoints
