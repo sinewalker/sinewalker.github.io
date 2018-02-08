@@ -201,6 +201,16 @@ NAVIGATION_LINKS = {
         ),
         (
             (
+                ('/jargon/index.html', 'Main page'),
+                ('/jargon/html/index.html', 'Table of Content'),
+                ('/jargon/html/lexicon.html', 'Lexicon'),
+                ('/jargon/html/go01.html', 'Glossary'),
+                ('/jargon/html/appendixa.html','Folklore'),
+            ),
+            'Jargon'
+        ),
+        (
+            (
                 ('https://about.me/mikelockhart', 'About.me'),
                 ('/pg/colophon.html', 'About this site'),
                 ('https://calendar.google.com/calendar/embed?src=sinewalker@gmail.com&ctz=Australia/Sydney/', 'My calendar'),
