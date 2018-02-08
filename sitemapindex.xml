@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>http://milosophical.me/authors/michael-lockhart.xml</loc>
-  <lastmod>2018-02-08T10:16:00Z</lastmod>
+  <lastmod>2018-02-08T10:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/authors/mike-lockhart.xml</loc>
@@ -35,11 +35,11 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/rss.xml</loc>
-  <lastmod>2018-02-08T10:16:00Z</lastmod>
+  <lastmod>2018-02-08T10:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/sitemap.xml</loc>
-  <lastmod>2018-02-08T10:16:00Z</lastmod>
+  <lastmod>2018-02-08T10:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/4-bit-rules.xml</loc>
@@ -367,7 +367,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/getkidscoding.xml</loc>
-  <lastmod>2018-02-08T10:16:00Z</lastmod>
+  <lastmod>2018-02-08T10:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/git.xml</loc>
@@ -395,7 +395,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/hacking.xml</loc>
-  <lastmod>2018-02-08T10:16:00Z</lastmod>
+  <lastmod>2018-02-08T10:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/hardware.xml</loc>
@@ -447,7 +447,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/kids.xml</loc>
-  <lastmod>2018-02-08T10:16:00Z</lastmod>
+  <lastmod>2018-02-08T10:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/kobo.xml</loc>
@@ -523,7 +523,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/minecraft.xml</loc>
-  <lastmod>2018-02-08T10:16:00Z</lastmod>
+  <lastmod>2018-02-08T10:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/mit.xml</loc>
@@ -639,7 +639,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/python.xml</loc>
-  <lastmod>2018-02-08T10:16:00Z</lastmod>
+  <lastmod>2018-02-08T10:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/quote.xml</loc>
@@ -667,7 +667,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/raspberrypi.xml</loc>
-  <lastmod>2018-02-08T10:16:00Z</lastmod>
+  <lastmod>2018-02-08T10:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/registry.xml</loc>
