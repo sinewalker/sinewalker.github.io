@@ -342,7 +342,7 @@ ln -s ~/.minecraft fun/minecraft</code></pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Hack-Minecraft-options">Hack Minecraft options<a class="anchor-link" href="minecraft-python-2.html#Hack-Minecraft-options">¶</a>
 </h2>
-<p>Fire up your shiny new editor and edit the Minecraft options file, <code>$MCPROFILE\options.txt</code>. You want to search for the option to pause when the game loses focus, and turn that OFF (so that your Minecraft continues to play when you're using your editor, like Minecraft Pi edition does).  In Code you can press Control-F to find (Command-F on a Mac) and enter "pause", that should find it. Change the line to look like this:</p>
+<p>Fire up your shiny new editor and edit the Minecraft options file, <code>$MCPROFILE/options.txt</code>. You want to search for the option to pause when the game loses focus, and turn that OFF (so that your Minecraft continues to play when you're using your editor, like Minecraft Pi edition does).  In Code you can press Control-F to find (Command-F on a Mac) and enter "pause", that should find it. Change the line to look like this:</p>
 
 <pre><code>pauseOnLostFocus:false</code></pre>
 <p>and then Save the file (Control-S or Command-S).  Next time you start Minecraft it'll behave like the Pi edition.</p>
@@ -362,12 +362,13 @@ ln -s ~/.minecraft fun/minecraft</code></pre>
 <li>Download Forge and PythonTool Mod from the links on the <a href="https://ngcm.github.io/PythonTool-Mod/downloads/">PythonTool Mod downloads page</a>. For Forge, <strong>download the Installer</strong> (with an icon that looks like a filing box)</li>
 <li>Run the installer to install Forge (<code>java -jar ~/Downloads/forge-1.10.2-12.18.3.2511-installer.jar</code>). When it asks where Minecraft is, just choose the <code>$MCPROFILE</code> directory from earlier</li>
 <li>Start the Minecraft Launcher and Click on <strong>Launch options</strong>. Turn on the "<strong>Advanced settings</strong>" switch. There should be a new profile created by the Forge installer, called <em>forge</em>.  Click that to edit it</li>
-<li>Confirm that the <strong><em>Version</em></strong> is "release 1.10.2" or similar. <strong>Note:</strong> it must be the latest supported by PythonTool, which is 1.10 when this post was written.</li>
-<li>Change the <strong><em>JVM arguments</em></strong>" to increase the amount of memory used by Minecraft to about &amp;frac23; to ¾ of your computer's RAM. That is, if you have a PC with 4GB of RAM, then you want it to say <code>-Xmx3G</code>.</li>
+<li>Confirm that the <strong><em>Version</em></strong> is "release 1.10.2" or similar. <strong>Note:</strong> it must be the latest supported by PythonTool, which is 1.10 when this post was written</li>
+<li>Change the <strong><em>JVM arguments</em></strong> and increase the amount of memory used by Minecraft to about ½ to ¾ of your computer's RAM. That is, if you have a PC with 4GB of RAM, then you want it to say <code>-Xmx2G</code>
+</li>
 <li>Click <strong>Save</strong>
 </li>
-<li>Click the <strong>News</strong> and look in the <em>PLAY</em> button. Be sure it's using your "forge" profile and if not, choose it by clicking the arrow to the side of PLAY and picking it from the list.</li>
-<li>Click <strong>PLAY</strong> to run the game.  Minecraft will start and you should see a new "<em>Mods</em>" option on the main menu. You may notice a different animation on the splash screen while Minecraft loads, this is normal.</li>
+<li>Click the <strong>News</strong> and look in the <em>PLAY</em> button. Be sure it's using your "forge" profile and if not, choose it by clicking the arrow to the side of PLAY and picking it from the list</li>
+<li>Click <strong>PLAY</strong> to run the game.  Minecraft will start and you should see a new "<em>Mods</em>" option on the main menu. You may notice a different animation on the splash screen while Minecraft loads, this is normal</li>
 </ol>
 <h3 id="Install-Raspberry-Jam">Install Raspberry Jam<a class="anchor-link" href="minecraft-python-2.html#Install-Raspberry-Jam">¶</a>
 </h3>
@@ -385,7 +386,7 @@ ln -s ~/.minecraft fun/minecraft</code></pre>
 <h3 id="Install-PythonTool">Install PythonTool<a class="anchor-link" href="minecraft-python-2.html#Install-PythonTool">¶</a>
 </h3>
 <ol>
-<li>Move the <code>pythontool-0.8.jar</code> (or later version) into the <code>$MCPROFILE/mods</code> directory</li>
+<li>Move the <code>pythontool-0.8.jar</code> (or later version) which you downloaded at the beginning, into the <code>$MCPROFILE/mods</code> directory</li>
 </ol>
 <p>This is enough to get you going either with the <a href="https://ngcm.github.io/PythonTool-Mod/userguide/">instructions from PythonTool</a> or the <a href="http://www.instructables.com/id/Python-coding-for-Minecraft/">Raspberry Jam instructable</a> (from after its steps on installing all the prerequisits).</p>
 
@@ -407,15 +408,24 @@ ln -s ~/.minecraft fun/minecraft</code></pre>
 <li>Choose Mods from the main menu and confirm that Raspberry Jam and PythonTool Mods have been loaded. They will appear in the Mod List:
 <img src="../../pixels/minecraft/mod-list.png" alt="">
 </li>
-<li>Start a Single Player game, Creative Mode, Superflat</li>
-<li>Run a python script with Raspberry Jam:  Type <code>/py zhouwei-rainbow</code> in the Chat (pressing <code>T</code> to Talk opens the Chat).  A Rainbow should be created!
+<li>Start a Single Player game, Create a new World, Creative Mode, Superflat</li>
+<li>Run a python script with Raspberry Jam:<ul>
+<li>Pressing <code>T</code> to Talk (opens the Chat)</li>
+<li>Type <code>/py zhouwei-rainbow</code> in the Chat. A Rainbow should be created!
 <img src="../../pixels/minecraft/zhouwei_rainbow.png" alt="">
 </li>
-<li>Equip a Computer and Use it, you should see that it works like a Chest and has items for all the scripts from the python-scripts.zip file. You can Equip those and Use them to run them instead of typing /py all the time. Try one, such as the dohnut
+</ul>
+</li>
+<li>PythonTool gives you a new Block type called "Computer".<ul>
+<li>Equip a Computer and Use it</li>
+<li>You should see that it works like a Chest and has items for all the Python Scripts from the python-scripts.zip file. You can Equip those and Use them to run them instead of typing /py all the time. </li>
+<li>Try one, such as the dohnut.  Equip the donut by finding it in the Scripts and dragging it to the equip bar, and then press <code>ESC</code> and Use it:
 <img src="../../pixels/minecraft/donut.png" alt="">
 </li>
+</ul>
+</li>
 </ol>
-<p>If it all goes well, we're good to continue.</p>
+<p>If it all has gone well, you're good to continue.</p>
 
 </div>
 </div>
