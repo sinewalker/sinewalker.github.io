@@ -314,7 +314,7 @@ md fun
 mklink /d fun\minecraft %APPDATA%\.minecraft</code></pre>
 </li>
 <li>
-<p><strong>Macintosh</strong>: Go to your <a href="https://www.macworld.com/article/1161156/software-system/view-library-folder-in-lion.html">Application Support folder</a> (it's hidden in the Finder. Press Command-Shift-G and type <code>~/Library</code> to go to it's parent). Then Command-Drag the minecraft Profile folder to your desktop.  Your you can make a link from the Terminal like in Linux:</p>
+<p><strong>Macintosh</strong>: Go to your <a href="https://www.macworld.com/article/1161156/software-system/view-library-folder-in-lion.html">Application Support folder</a> (it's hidden in the Finder. Press Command-Shift-G and type <code>~/Library</code> to go to it's parent). Then Command-Drag the minecraft Profile folder to your desktop.  Or you can make a link from the Terminal like in Linux:</p>
 
 <pre><code>cd
 mkdir fun
@@ -331,6 +331,21 @@ ln -s ~/.minecraft fun/minecraft</code></pre>
 </li>
 </ul>
 <p>You can now reach the Minecraft Profiles quickly and easily. This is where Minecraft's game settings and Worlds are kept. It's also where we install the mod's, so for brevity, since the instructions from here on are the same for each OS, I'll call this location <code>$MCPROFILE</code>.  You can substitute that for "~/fun/minecraft" or one of the locations above for your operating system.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Hack-Minecraft-options">Hack Minecraft options<a class="anchor-link" href="minecraft-python-2.html#Hack-Minecraft-options">¶</a>
+</h2>
+<p>Fire up your shiny new editor and edit the Minecraft options file, <code>$MCPROFILE\options.txt</code>. You want to search for the option to pause when the game loses focus, and turn that OFF (so that your Minecraft continues to play when you're using your editor, like Minecraft Pi edition does).  In Code you can press Control-F to find (Command-F on a Mac) and enter "pause", that should find it. Change the line to look like this:</p>
+
+<pre><code>pauseOnLostFocus:false</code></pre>
+<p>and then Save the file (Control-S or Command-S).  Next time you start Minecraft it'll behave like the Pi edition.</p>
 
 </div>
 </div>
