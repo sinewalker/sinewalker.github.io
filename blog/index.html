@@ -158,7 +158,32 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2018/minecraft-python-2.html" class="u-url">A Minecraft Coding environment</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2018/minecraft-python-3.html" class="u-url">Exploring Minecraft code in Jupyter</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="2018/minecraft-python-3.html" rel="bookmark"><time class="published dt-published" datetime="2018-02-10T21:50:09+11:00" title="2018-02-10 21:50">2018-02-10 21:50</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here are some breif notes from a lazy Sunday morning spent exploring the <a href="2018/minecraft-python-2.html">minecraft coding environment</a> that I set up using <a href="http://www.instructables.com/id/Python-coding-for-Minecraft/">Raspberry Jam</a> earlier.  I'm taking my notes in <a href="http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html">Jupyter</a> while I explore the Minecraft API and poke around with one of the sample programs.  Since by blogging engine <a href="https://getnikola.com/">Nikola</a> also supports Jupyter Notebooks as one of it's import formats, I found that I could do <a href="http://www.literateprogramming.com/">Litterate Programming</a> for Minecraft quite nicely!
+</p>
+<p class="more"><a href="2018/minecraft-python-3.html">Read more…</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2018/minecraft-python-2.html" class="u-url">A Minecraft Coding environment</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
@@ -324,28 +349,6 @@
 <p>Since switching to a new computer at work I have been reviewing my hodge-podge of directories that I moved from my old work laptop.  Same as with my <a href="2016/spacemacs-01.html">emacs configuration</a>, I like my <code>${HOME}</code> to be familiar and friendly no matter what computer and operating system I'm using. Also like emacs at the beginning of this year, it's presently a mess. So I'm documenting how I'd like it to look, be that on my home Linux computer, the Windows mode of the same, or on my work's Macintosh.</p>
 <p>This long and detailed article is for my own purpose. Others MAY find it frightfully dull and of little value.</p>
 <p class="more"><a href="2016/home-dir-maintenance.html">Read more…</a></p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2016/filesystems-home.html" class="u-url">Choosing Filesystems and devices for home server</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
-            </span></p>
-            <p class="dateline"><a href="2016/filesystems-home.html" rel="bookmark"><time class="published dt-published" datetime="2016-10-22T11:55:50+11:00" title="2016-10-22 11:55">2016-10-22 11:55</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>With the release of <a href="https://en.opensuse.org/Portal:42.2">openSUSE Leap 42.2</a> just 25 days away, I'm considering to move to it, from my current <a href="https://en.opensuse.org/Portal:13.2">openSUSE 13.2</a> <em>Harlequin</em>. I had skipped <a href="https://en.opensuse.org/Portal:42.1">Leap 42.1</a> <em>Malachite</em> not for any technical issues with Leap itself, but because I've been pretty tied up learning about Mac OS for work, and because I've been very happy with <em>Harlequin</em> anyway.  But it'll reach end of life in Q1 2017 so it's time to upgrade, and I will go to the newest Leap release when it's out. The rolling release <em>Tumbleweed</em> is still not an option for me: not when I have an NVidia GPU and also want to play with CUDA and run VirtualBox VMs.</p>
-<p>When I moved house back in 2013, I made a number of rushed decisions and among those was to accept the default filesystem suggestion from Harlequin's YaST installer:  use <strong>btrfs</strong> for the <code>/root</code> volume, and <strong>XFS</strong> for <code>/home</code>.  I also put both of these into LVM volumes on the computer's 128G SSD, with about 40G for <code>/root</code>, 8G for <code>swap</code> and the rest for <code>/home</code> thinking "It's LVM, so I can resize the volumes later if this doesn't work out." .... Well, yes, you <em>can</em> resize LVM volumes, but the filesystems contained within behave differently. It turned out that I wanted to grow <code>/root</code> by taking away some space from <code>/home</code>, but I hit a snag:  XFS filesystems can't be shrunk, only grown.  Bummer.</p>
-<p>This time around I will take the opportunity of the upgrade to reformat my <code>/home</code> volume, but the questions are:</p>
-<ul>
-<li>Which filesystems to choose from?</li>
-<li>Which filesystem for <code>/home</code> is best?</li>
-<li>Where to put <code>/home</code>?</li>
-</ul>
-<p>Should I have my home on my fast, but pokey SSD, or should I move it to a slow(er) but expansive HDD? Come to think of it, what about tiered storage in general? (SSD, HDD, "cloud", backups, archives). How should I manage these volumes in a non-intrusive way?</p>
-<p>So here are my thoughts and plans.</p>
-<p class="more"><a href="2016/filesystems-home.html">Read more…</a></p>
 </div>
     </div>
     </article>
