@@ -57,7 +57,7 @@ A quick summary should give you a bit of an idea:
   * windows *vs* mac &rarr; mac
   * linux *vs* mac &rarr; linux, probably. it's a close call.
   * iOS *vs* Android &rarr;  droid
-  * pirates *vs* nijas &rarr; pirates
+  * pirates *vs* ninjas &rarr; pirates
   * cats *vs* dogs &rarr; both
   * BSG *vs* Bab5 &rarr; ooh, that's a toughie. They're both good. "Come on Mike, make a call!" Argh!  The Expanse?
 
