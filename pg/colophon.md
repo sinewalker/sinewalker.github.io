@@ -8,27 +8,59 @@
 .. type: text
 #+END_COMMENT
 
-Introductions
-----
+# Introductions
 
 My name is Mike Lockhart, and this is my web log. I am a senior support sysadmin
 and larval web hacker for a well known Australian Open Source web content
 management company. I do mainly Linux
 and [Matrix](http://www.squiz.net/au/platform/matrix) work, and dabble in some
-other languages and projects in my *Copious Free Time*. Before this, I worked
-for nearly 15 years in EDS and Hewlett Packard on lots of different systems.
+other languages and projects in my *Copious Free Time*. 
 
-
-I'm also married for almost 19 years and we are parents to three boys aged
+I'm also married for 19 years and we are parents to three boys aged
 between 5 and 12 years. We live in [Tasmania](http://discovertasmania.com.au),
 where we grew up, returning here from New South Wales, in late 2013. We all feel
 very lucky to be living here, with family close at hand and an awesome, friendly
 and welcoming community around us.
 
 On the Net, I go by the handle *sinewalker*, and while after 20 years I think
-I've outgrown it, it's still
-a [unique username](https://duckduckgo.com/?q=sinewalker) in most places. A
-newer handle I'm adopting is *milohax*.
+I've outgrown it, it's still a [unique
+username](https://duckduckgo.com/?q=sinewalker) in most places. A newer handle
+I'm adopting is *milohax*.
+
+## What am I into?
+
+A quick summary should give you a bit of an idea:
+
+### Likes:
+  * Open Source software
+  * Open Architecture computers
+  * Open Crown hats
+  * chili, coffee, whisky
+
+### Dislikes:
+  * opera (well, arias)
+  * cruft
+  * politics
+
+### Hobbies:
+  (what? I have 3 kids...)
+  
+  * walking
+  * reading
+  * hacking (old school)
+  * dad stuff
+
+### Preferences:
+  * emacs *vs* vi &rarr;  emacs
+  * tabs *vs* spaces &rarr; spaces (also: use what you like, just be consistent!)
+  * trek *vs* star wars &rarr;  star wars
+  * windows *vs* mac &rarr; mac
+  * linux *vs* mac &rarr; linux, probably. it's a close call.
+  * iOS *vs* Android &rarr;  droid
+  * pirates *vs* nijas &rarr; pirates
+  * cats *vs* dogs &rarr; both
+  * BSG *vs* Bab5 &rarr; ooh, that's a toughie. They're both good. "Come on Mike, make a call!" Argh!  The Expanse?
+
 
 This web
 ----
