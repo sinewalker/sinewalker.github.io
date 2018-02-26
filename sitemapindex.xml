@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>http://milosophical.me/authors/michael-lockhart.xml</loc>
-  <lastmod>2018-02-11T20:31:00Z</lastmod>
+  <lastmod>2018-02-26T20:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/authors/mike-lockhart.xml</loc>
@@ -35,15 +35,15 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/rss.xml</loc>
-  <lastmod>2018-02-11T20:31:00Z</lastmod>
+  <lastmod>2018-02-26T20:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/sitemap.xml</loc>
-  <lastmod>2018-02-26T03:02:00Z</lastmod>
+  <lastmod>2018-02-26T21:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/4-bit-rules.xml</loc>
-  <lastmod>2018-01-21T21:22:00Z</lastmod>
+  <lastmod>2018-02-26T20:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/aboutme.xml</loc>
@@ -123,7 +123,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/cat_blog.xml</loc>
-  <lastmod>2018-01-21T21:22:00Z</lastmod>
+  <lastmod>2018-02-26T20:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/cat_hacking.xml</loc>
@@ -771,7 +771,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/tip.xml</loc>
-  <lastmod>2018-01-21T21:22:00Z</lastmod>
+  <lastmod>2018-02-26T20:36:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/tips.xml</loc>
