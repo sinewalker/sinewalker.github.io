@@ -5,7 +5,7 @@
 .. tags: 4-bit-rules, tip
 .. category: blog
 .. link: 
-.. description: Mike's 4-bit rules explained, part 0
+.. description: Mike's 4-bit rules explained, part 0, upated 2018-02-27
 .. type: text
 -->
 
@@ -61,13 +61,18 @@ programming. To this day, I still initial my code comments in a similar manner
 to his `LKS150987`, (although I use 4-digit years similar to
 [ISO-8601](https://xkcd.com/1179/) dates, at least since the Y2K jazz).
 
-Anyway, besides the fun play on words, this rule reminds me to
-*relax*, step back and reflect that computing is non trivial.
+> Anyway, besides the fun play on words, this rule reminds me to *relax*, step
+> back and reflect that computing is non-trivial, and then **keep going and try it
+> again!**
 
-There are those who like to boast about their programs compiling on
-the first try (but do they *work*?) and others who "test in
-production", but I at least, am human. Most likely you are too, and
-this is good.
+There are those who like to boast about their programs compiling on the first
+try (but do they *work*?) and others who "test in production", but I at least,
+am human. Most likely you are too, and this is good. Which means: you're going
+to mess up the first time (or even the first ten). The important thing is to:
+
+ * Make a start
+ * Learn from the `ERROR`s (the *First Law*&hellip;)
+ * Then *Respawn* and try it again
 
 **Rule 2**: Don't Repeat Yourself
 ----
