@@ -305,6 +305,37 @@ git ignore mcpi   #I don't want this in my blog code</code></pre>
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">print</span> /Users/mjl/fun/minecraft/mcpipy/zhuowei_rainbow.py
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>ERROR:root:Cell magic `%%print` not found.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -390,12 +421,59 @@ git ignore mcpi   #I don't want this in my blog code</code></pre>
 <p>Oh, whoops!</p>
 <p>Well, okay, Jupyter can't find the <code>server</code> library... hmm. It's not part of mcpi, that's why.  What does that code actually do?  I'll take a look (just the code please, no comments):</p>
 
-<pre><code>[08:37]$ egrep -v '^#' server.py
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">cd</span> ~/fun/minecraft/mcpipy/
+<span class="o">!!</span>egrep -v <span class="s1">'^#'</span> server.py
+</pre></div>
 
-address = "127.0.0.1"
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
 
 
-is_pi = False</code></pre>
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>/Users/mjl/Grid/MEGA/fun/minecraft/mcpipy
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[2]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>['', 'address = "127.0.0.1"', '', '', 'is_pi = False']</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>That is code to specify which minecraft server to connect to. A lot of the mcpipy examples include it.  It's designed so that you keep a server.py together with your scripts and edit it to change where to connect to.  I'm going to just skip it for running within Jupyter. I'll ignore that error, and replace any mention of <code>server.address</code> or <code>server.is_pi</code> with appropriate values.</p>
 
 </div>
@@ -415,7 +493,7 @@ is_pi = False</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [11]:</div>
+<div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
@@ -564,7 +642,7 @@ is_pi = False</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [14]:</div>
+<div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">height</span> <span class="o">=</span> <span class="mi">60</span>
@@ -573,7 +651,7 @@ is_pi = False</code></pre>
 <span class="n">pX</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">pos</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
 <span class="n">pZ</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">pos</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+<span class="n">pos</span>
 </pre></div>
 
 </div>
@@ -586,13 +664,15 @@ is_pi = False</code></pre>
 
 <div class="output_area">
 
-<div class="prompt"></div>
+<div class="prompt output_prompt">Out[7]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Vec3(-396.0628397478346,78.2656717475833,246.25265071486024)
-</pre>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Vec3(-1436.9899566384854,74.0,-278.2069795419402)</pre>
 </div>
+
 </div>
 
 </div>
@@ -604,7 +684,7 @@ is_pi = False</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Okay, that shows a nice way to debug Minecraft hacks from within a Notebook too: you can just get Python to print values and they'll be printed out like above in the Notebook.</p>
+<p>Okay, that shows a nice way to debug Minecraft hacks from within a Notebook too: you can just get Jupyter to run a cell and the last value (the <code>pos</code> at the end) will be output like above, in the Notebook.</p>
 <p>Using these <em>variables</em> in place of the numbers should be enough to solve our other issues. I'll reformat the code a bit so that it fits within the page width nicer too:</p>
 
 </div>
@@ -612,7 +692,7 @@ is_pi = False</code></pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [15]:</div>
+<div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">width</span><span class="p">)):</span>
@@ -665,7 +745,7 @@ is_pi = False</code></pre>
 <li class="previous">
                 <a href="minecraft-python-2.html" rel="prev" title="A Minecraft Coding environment">Previous post</a>
             </li>
-        </ul></nav></aside><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-yYfngbEKv4RENfGDvNUqJTqGFcKf31NJEe9OTnnMH3Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        </ul></nav></aside><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
         </script></article>
 </div>

@@ -220,18 +220,18 @@ line ;-)</p>
 <h2>3 Unlock LUKS volumes</h2>
 <p>To mount a LUKS-encrypted drive you first need to unlock the LUKS
 container:</p>
-<pre class="code shell"><a name="rest_code_da92602662bd4860949425d4fc79de7d-1"></a><span class="c1"># cryptsetup luksOpen /dev/sdb1 myusb</span>
-<a name="rest_code_da92602662bd4860949425d4fc79de7d-2"></a>Enter passphrase <span class="k">for</span> /dev/sdb1:
-<a name="rest_code_da92602662bd4860949425d4fc79de7d-3"></a>No key available with this passphrase.
-<a name="rest_code_da92602662bd4860949425d4fc79de7d-4"></a>Enter passphrase <span class="k">for</span> /dev/sdb1:
+<pre class="code shell"><a name="rest_code_018cb65f59ca47d2b28b7fbebc15a142-1"></a><span class="c1"># cryptsetup luksOpen /dev/sdb1 myusb</span>
+<a name="rest_code_018cb65f59ca47d2b28b7fbebc15a142-2"></a>Enter passphrase <span class="k">for</span> /dev/sdb1:
+<a name="rest_code_018cb65f59ca47d2b28b7fbebc15a142-3"></a>No key available with this passphrase.
+<a name="rest_code_018cb65f59ca47d2b28b7fbebc15a142-4"></a>Enter passphrase <span class="k">for</span> /dev/sdb1:
 </pre>
 <p>Ah, yes. Got to get that passphrase. Of course, being in KeePass2 it's
 a random generated hex string that no human will ever remember (that is what
 password database are for, after all)... Well, we'll come back to
 this...</p>
 <p>So, need to unlock the volume on the laptop...</p>
-<pre class="code sh"><a name="rest_code_2185e70b963542f093eaee8a10153822-1"></a><span class="c1">#cryptsetup luksOpen /dev/sda3 laptop</span>
-<a name="rest_code_2185e70b963542f093eaee8a10153822-2"></a>Enter passphrase <span class="k">for</span> /dev/sda3:
+<pre class="code sh"><a name="rest_code_41429884dd014ab4923a2e906ffa61ef-1"></a><span class="c1">#cryptsetup luksOpen /dev/sda3 laptop</span>
+<a name="rest_code_41429884dd014ab4923a2e906ffa61ef-2"></a>Enter passphrase <span class="k">for</span> /dev/sda3:
 </pre>
 <p>Okay, so it opened, great! (The problem after the upgrade was that it
 wouldn't even get this far). Now I just need to mount the home
@@ -240,27 +240,27 @@ volume. It's part of an LVG...</p>
 <div class="section" id="mount-the-lvg-s">
 <h2>4 Mount the LVG(s)</h2>
 <p>First, let's look at the logical volumes:</p>
-<pre class="code sh"><a name="rest_code_b0a4a8b3b23343e8b9554931b0f13857-1"></a><span class="c1">#lvs</span>
-<a name="rest_code_b0a4a8b3b23343e8b9554931b0f13857-2"></a>  LV   VG   Attr      LSize   Pool Origin Data%  Move Log Cpy%Sync Convert
-<a name="rest_code_b0a4a8b3b23343e8b9554931b0f13857-3"></a>  home lvg  -wi-ao--- <span class="m">179</span>.31g
-<a name="rest_code_b0a4a8b3b23343e8b9554931b0f13857-4"></a>  root lvg  -wi-ao---  <span class="m">50</span>.00g
-<a name="rest_code_b0a4a8b3b23343e8b9554931b0f13857-5"></a>  swap lvg  -wi-ao---   <span class="m">8</span>.00g
+<pre class="code sh"><a name="rest_code_7ba44f6ac0e649b791a52f80e04dfd73-1"></a><span class="c1">#lvs</span>
+<a name="rest_code_7ba44f6ac0e649b791a52f80e04dfd73-2"></a>  LV   VG   Attr      LSize   Pool Origin Data%  Move Log Cpy%Sync Convert
+<a name="rest_code_7ba44f6ac0e649b791a52f80e04dfd73-3"></a>  home lvg  -wi-ao--- <span class="m">179</span>.31g
+<a name="rest_code_7ba44f6ac0e649b791a52f80e04dfd73-4"></a>  root lvg  -wi-ao---  <span class="m">50</span>.00g
+<a name="rest_code_7ba44f6ac0e649b791a52f80e04dfd73-5"></a>  swap lvg  -wi-ao---   <span class="m">8</span>.00g
 </pre>
 <p>That's right, I used a very simple/guessable naming
 convention. Bravo. Okay, the passwords file is somewhere in 'home',
 let's mount it</p>
-<pre class="code sh"><a name="rest_code_fbbd1751e7da4bce991f7e96619fe48f-1"></a><span class="c1"># mount /dev/laptop/home /mnt</span>
-<a name="rest_code_fbbd1751e7da4bce991f7e96619fe48f-2"></a><span class="c1"># ls /mnt</span>
-<a name="rest_code_fbbd1751e7da4bce991f7e96619fe48f-3"></a>guest mjl
+<pre class="code sh"><a name="rest_code_8a9f1c80fc8d4fcf8105b6c2d9ad0391-1"></a><span class="c1"># mount /dev/laptop/home /mnt</span>
+<a name="rest_code_8a9f1c80fc8d4fcf8105b6c2d9ad0391-2"></a><span class="c1"># ls /mnt</span>
+<a name="rest_code_8a9f1c80fc8d4fcf8105b6c2d9ad0391-3"></a>guest mjl
 </pre>
 <p>W00t! Alright, now I can grab that KeePass database, shove it on an SD
 chip and then load it up in Keepass2Android on my smart phone (the
 LiveUSB doesn't have any KeePass software... hmm, better do something
 about that later).</p>
-<pre class="code sh"><a name="rest_code_033a534cd33c4cb78ac2dc206caab3b7-1"></a><span class="c1"># mkdir /var/tmp/sdc</span>
-<a name="rest_code_033a534cd33c4cb78ac2dc206caab3b7-2"></a><span class="c1"># mount /dev/sdc1 /var/tmp/sdc</span>
-<a name="rest_code_033a534cd33c4cb78ac2dc206caab3b7-3"></a><span class="c1"># cp /mnt/home/mjl/keys/db.kdbx /var/tmp/sdc</span>
-<a name="rest_code_033a534cd33c4cb78ac2dc206caab3b7-4"></a><span class="c1"># umount /var/tmp/sdc</span>
+<pre class="code sh"><a name="rest_code_5bb9a76f81e542cc92fac69ba8ab5962-1"></a><span class="c1"># mkdir /var/tmp/sdc</span>
+<a name="rest_code_5bb9a76f81e542cc92fac69ba8ab5962-2"></a><span class="c1"># mount /dev/sdc1 /var/tmp/sdc</span>
+<a name="rest_code_5bb9a76f81e542cc92fac69ba8ab5962-3"></a><span class="c1"># cp /mnt/home/mjl/keys/db.kdbx /var/tmp/sdc</span>
+<a name="rest_code_5bb9a76f81e542cc92fac69ba8ab5962-4"></a><span class="c1"># umount /var/tmp/sdc</span>
 </pre>
 <p>Awesome. Now I can open up the password database, and laboriously
 transcribe that generated passphrase to unlock the backup drive, when
@@ -289,15 +289,15 @@ you're looking for</li>
 </li>
 <li>pick a volume (e.g. "myvolume") and mount it</li>
 </ol>
-<pre class="code sh"><a name="rest_code_6937fd1151ba4aeb99ffad5edaf13a12-1"></a><span class="c1"># mount /dev/mapper/mybackup/myvolume /recover</span>
+<pre class="code sh"><a name="rest_code_99596d7452164fc58bfc651beb8562eb-1"></a><span class="c1"># mount /dev/mapper/mybackup/myvolume /recover</span>
 </pre>
 <p>Now you can navigate the volume and view/copy files.</p>
 </div>
 <div class="section" id="unmounting">
 <h2>6 Unmounting</h2>
 <p>You need to first umount the volume, and then close the LUKS:</p>
-<pre class="code sh"><a name="rest_code_f3dd4028d0d449cb962568d3cde68ad9-1"></a><span class="c1"># umount /recover</span>
-<a name="rest_code_f3dd4028d0d449cb962568d3cde68ad9-2"></a><span class="c1"># cryptsetup luksClose mybackup</span>
+<pre class="code sh"><a name="rest_code_a1b07f99be5b4fd88479c945e663ee24-1"></a><span class="c1"># umount /recover</span>
+<a name="rest_code_a1b07f99be5b4fd88479c945e663ee24-2"></a><span class="c1"># cryptsetup luksClose mybackup</span>
 </pre>
 </div>
 </div>
