@@ -3,7 +3,19 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License" style="border-width:0"
      src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"/&gt;&lt;/a&gt;
-</copyright><lastBuildDate>Sun, 11 Mar 2018 20:02:01 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Exploring Minecraft code in Jupyter</title><link>http://milosophical.me/blog/2018/minecraft-python-3.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+</copyright><lastBuildDate>Sat, 17 Mar 2018 22:52:36 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>4-bit Rules of Computing, Part 3</title><link>http://milosophical.me/blog/2018/4-bits-part3.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+    &lt;div class="container" id="notebook-container"&gt;
+
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Here is the forth part of my &lt;a href="http://milosophical.me/tags/4-bit-rules.html"&gt;blog series&lt;/a&gt; expanding on my
+&lt;a href="http://milosophical.me/pg/4-bit-rules.html"&gt;4-bit rules of computing&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;&lt;a href="http://milosophical.me/blog/2015/4-bit-rules-of-computing-part-2.html"&gt;Previously&lt;/a&gt; in &lt;em&gt;Milosophical Me&lt;/em&gt;: Mike was reflecting on Comments, both in source code and in social media, and had come to the conclusion that they are to be avoided, that they can be more harmful than helpful, and that source codes (and people) should be allowed to speak for them selves.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;There is an exception to Rule 5 (&lt;em&gt;Rule 0&lt;/em&gt; allows for this): &lt;strong&gt;doc-comments&lt;/strong&gt;.   In this post I explore what they are, how they differ from regular comments, and how to use them to assist your fellow hackers.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://milosophical.me/blog/2018/4-bits-part3.html"&gt;Read more…&lt;/a&gt; (9 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>4-bit-rules</category><category>comments</category><category>literate</category><category>tip</category><guid>http://milosophical.me/blog/2018/4-bits-part3.html</guid><pubDate>Tue, 27 Feb 2018 20:44:51 GMT</pubDate></item><item><title>Exploring Minecraft code in Jupyter</title><link>http://milosophical.me/blog/2018/minecraft-python-3.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
@@ -58,7 +70,4 @@
 
 &lt;p&gt;(well, pooh).&lt;/p&gt;
 &lt;p&gt;I decided a while back that I wasn't going to meta-blog (otherwise most of my posts would be about blogging!), but I think in this case, Rule 4 will come to the rescue.  Anyway at least you know this story has a happy ending, or else I wouldn't be able to add this &lt;code&gt;new_post&lt;/code&gt;!&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://milosophical.me/blog/2017/upgrade-nikola-783.html"&gt;Read more…&lt;/a&gt; (5 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>hacking</category><category>meta</category><category>nikola</category><guid>http://milosophical.me/blog/2017/upgrade-nikola-783.html</guid><pubDate>Wed, 22 Mar 2017 20:48:48 GMT</pubDate></item><item><title>Organising my digital stuff</title><link>http://milosophical.me/blog/2016/home-dir-maintenance.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;I started to write about my &lt;code&gt;${HOME}&lt;/code&gt; directory structure in &lt;a href="http://milosophical.me/blog/2016/filesystems-home.html"&gt;my post about /home filesystem choices&lt;/a&gt; but then it got terribly long and complicated. So I'm writing about it here.&lt;/p&gt;
-&lt;p&gt;Since switching to a new computer at work I have been reviewing my hodge-podge of directories that I moved from my old work laptop.  Same as with my &lt;a href="http://milosophical.me/blog/2016/spacemacs-01.html"&gt;emacs configuration&lt;/a&gt;, I like my &lt;code&gt;${HOME}&lt;/code&gt; to be familiar and friendly no matter what computer and operating system I'm using. Also like emacs at the beginning of this year, it's presently a mess. So I'm documenting how I'd like it to look, be that on my home Linux computer, the Windows mode of the same, or on my work's Macintosh.&lt;/p&gt;
-&lt;p&gt;This long and detailed article is for my own purpose. Others MAY find it frightfully dull and of little value.&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://milosophical.me/blog/2016/home-dir-maintenance.html"&gt;Read more…&lt;/a&gt; (10 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>boring</category><category>organisation</category><category>tips</category><guid>http://milosophical.me/blog/2016/home-dir-maintenance.html</guid><pubDate>Thu, 03 Nov 2016 12:20:10 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="http://milosophical.me/blog/2017/upgrade-nikola-783.html"&gt;Read more…&lt;/a&gt; (5 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>hacking</category><category>meta</category><category>nikola</category><guid>http://milosophical.me/blog/2017/upgrade-nikola-783.html</guid><pubDate>Wed, 22 Mar 2017 20:48:48 GMT</pubDate></item></channel></rss>

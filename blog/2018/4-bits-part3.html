@@ -13,7 +13,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
 <link rel="canonical" href="http://milosophical.me/blog/2018/4-bits-part3.html">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Michael Lockhart">
-<meta name="robots" content="noindex">
+<link rel="prev" href="minecraft-python-3.html" title="Exploring Minecraft code in Jupyter" type="text/html">
 <meta property="og:site_name" content="Milosophical Me">
 <meta property="og:title" content="4-bit Rules of Computing, Part 3">
 <meta property="og:url" content="http://milosophical.me/blog/2018/4-bits-part3.html">
@@ -198,7 +198,7 @@
 <blockquote>
 <p><a href="../2015/4-bit-rules-of-computing-part-2.html">Previously</a> in <em>Milosophical Me</em>: Mike was reflecting on Comments, both in source code and in social media, and had come to the conclusion that they are to be avoided, that they can be more harmful than helpful, and that source codes (and people) should be allowed to speak for them selves.</p>
 </blockquote>
-<p>There is an exception to Rule 5 (<em>Rule 0</em> allows for this): <strong>doc-comments</strong>.   Let's explore what they are, how they differ from regular comments, and how to use them to assist your fellow hackers.</p>
+<p>There is an exception to Rule 5 (<em>Rule 0</em> allows for this): <strong>doc-comments</strong>.   In this post I explore what they are, how they differ from regular comments, and how to use them to assist your fellow hackers.</p>
 <!-- TEASER_END -->
 </div>
 </div>
@@ -217,7 +217,7 @@
 <p>You are in a maze of twisty little passages, all alike</p>
 </blockquote>
 <p>Sometimes exploring code is like a text-adventure game.  The modules are like different rooms containing strange objects and it's not immediately clear what you should be doing next, or how to use the objects.</p>
-<p>In a text-adventure game, you need to <code>LOOK</code> at your surroundings to get you bearings and see what objects are around; <code>TAKE</code> objects and even <code>EXAMINE</code> them once they're in your hands to uncover their secrets.  Only then will you discover that the sword you just took has a magical enscryption on it, for instance.</p>
+<p>In a text-adventure game, you need to <code>LOOK</code> at your surroundings to get your bearings and see what objects are around; <code>TAKE</code> objects, and even <code>EXAMINE</code> them once they're in your hands to uncover their secrets.  Only then will you discover that the sword you just took has a powerful magical enscryption on it, for instance.</p>
 <p>If the code you're exploring has <em>doc-comments</em>, then you can do the same thing: you can <em>look</em> at the module's description and an overview of classes and methods; or get the coding system to <em>describe</em> an object's properties and methods, how they should be called, what behavior to expect.</p>
 <p>Most languages that have this facility call it <a href="https://en.wikipedia.org/wiki/Docstring">Docstrings</a>, which is the name LISP gave them, and (I think) where it originated.  I'm calling them "<em>doc-comments</em>" for two reasons:</p>
 <ol>
@@ -232,18 +232,18 @@
 <ol>
 <li>
 <p><em>Code is the single authoritative source of truth in a program!</em></p>
-<p>Doc-comments include supplemental information on the object being documented which, while not needed or used by a compiler or interpreter, are for tools that inspect code and help you to write it.</p>
+<p>Doc-comments include supplemental information on the object being documented which, while not needed or used by a compiler or interpreter, are essential for tools that inspect code and help you to write it.</p>
 <ul>
-<li>add signposts for code-completion tools</li>
-<li>provide the description text for pop-up tool-tips, or to generate documentation</li>
-<li>specify expected values for parameters, not just the data type</li>
+<li>Add signposts for code-completion tools</li>
+<li>Provide the description text for pop-up tool-tips, or to generate documentation</li>
+<li>Specify expected values for parameters, not just the data type</li>
 </ul>
 </li>
 <li>
 <p><em>There is no way to ensure that code comments are correct at all
 times (they're not always updated with code changes, and they can't
 be covered by unit tests)</em></p>
-<p>Some doc-comments can include unit test cases, ensuring that they must agree with the code they describe, or else the tests fail. By being in-line with the code they test, this increases the likely hood that both the code and the doc-comment will be updated together, especially if you follow some of the practices of Test-Driven Development.</p>
+<p>Some doc-comments <em>can include unit test cases</em>, ensuring that they must agree with the code they describe, or else the tests fail. By being in-line with the code they test, this increases the likelihood that both the code and the doc-comment will be <em>updated together</em>, especially if you follow some of the practices of Test-Driven Development.</p>
 <p>Other doc-comment systems have a feature similar to Java's <em>decoractors</em> which will automatically build "boilerplate" code such as Object-Oriented "getters" and "setters". All you have to do is decorate the object members that should be accessed in that way. This is in addition to pointing out to any human reader that such a member is meant to be accessed only through it's get/set methods.</p>
 </li>
 <li>
@@ -286,123 +286,50 @@ polyglot meta-programming</p>
         <span class="o">}</span>
  <span class="o">}</span>
 </pre></div>
-<p>Here, the tags <code>@param</code> and <code>@return</code> are like the old <em>Structured Programming</em>-style "Pre-condition"/"Post-condition" comments that I would put in my Pascal school assignments.  This example comes from <a href="http://www.oracle.com/technetwork/java/javase/tech/index-137868.html">Oracle's Javadoc style guide</a>. It also shows an embedded HTML <code>&lt;p&gt;</code> tag which the <code>javadoc</code> tool can use when generating an HTML API document.</p>
-<p>I call this "inside-out" Litterate Programming because, rather than have an English narative with code dispursed through it like the WEB system of <em>TeX</em>, or Jupyter Notebooks; <em>javadoc</em> is more about havinging a code library with English dispursed through it. The focus of Litterate Programming is on the humans reading the document, and you "weave" the document to generate the code from it; whereas in javadoc the focus is on the computer as the audience of the code, and you use the <code>javadoc</code> tool to generate the document (so it's like "tangling").</p>
+<p>Here, the tags <code>@param</code> and <code>@return</code> are like the old <a href="https://en.wikipedia.org/wiki/Structured_programming">Structured Programming</a>-style <a href="https://en.wikipedia.org/wiki/Predicate_transformer_semantics">"Pre-condition"/"Post-condition"</a> comments that I would put in my Pascal school assignments.</p>
+<p>The above code example comes from <a href="http://www.oracle.com/technetwork/java/javase/tech/index-137868.html">Oracle's Javadoc style guide</a>. It also shows an embedded HTML <code>&lt;p&gt;</code> tag which the <code>javadoc</code> tool can use when generating an HTML API document.</p>
+<p>I call this <strong>"inside-out" Litterate Programming</strong> because, rather than have an English narative with code dispursed through it like Knuth's <a href="https://en.wikipedia.org/wiki/WEB">WEB</a> system of <em>TeX</em>, or Jupyter Notebooks; <em>javadoc</em> is more about havinging <em>a code library with English dispursed through it</em>. The focus of Litterate Programming is on the <em>humans reading the document</em>, and you "weave" the document to generate the code from it; whereas in javadoc the focus is on the <em>computer as the audience of the code</em>, and you use the <code>javadoc</code> tool to generate the document (so it's like "tangling").</p>
 <h4 id="iPython-and-emacs-environments:-explore-the-environment-interactively">iPython and emacs environments: explore the environment interactively<a class="anchor-link" href="4-bits-part3.html#iPython-and-emacs-environments:-explore-the-environment-interactively">¶</a>
 </h4>
 <p>(These are just examples; there are other systems that do this too, like R and Mathematica. I'm not trying to have an exhaustive comparison here, it's not the point I'm making.)</p>
-<p><code>elisp</code></p>
+<p>In Emacs, you can type <code>M-x describe-function</code> (<code>C-h f</code>) and enter the name of a function. You'll get a description like this one for <code>describe-function</code> itself:</p>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="screenshot-of-emacs">screenshot of emacs<a class="anchor-link" href="4-bits-part3.html#screenshot-of-emacs">¶</a>
-</h5>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>iPython has an online inspection system that is driven by Python docstrings.</p>
+<pre><code>describe-function is an interactive autoloaded compiled Lisp function in
+‘help-fns.el’.
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-sys.argv<span class="o">?</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">argv</span>
+It is bound to s-SPC h d f, C-h f, &lt;f1&gt; f, &lt;help&gt; f, &lt;menu-bar&gt; &lt;help-menu&gt;
+&lt;describe&gt; &lt;describe-function&gt;.
+
+(describe-function FUNCTION)
+
+Display the full documentation of FUNCTION (a symbol).
+When called from lisp, FUNCTION may also be a function object.
+
+[back]</code></pre>
+<p>There is a lot going on here besides the doc-comment, but those words at the bottom actually do come from the function's code in <code>help-fns.el</code>:</p>
+<div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">defun</span> <span class="nv">describe-function</span> <span class="p">(</span><span class="k">function</span><span class="p">)</span>
+  <span class="s">"Display the full documentation of FUNCTION (a symbol).</span>
+<span class="s">When called from lisp, FUNCTION may also be a function object."</span>
+  <span class="p">(</span><span class="k">interactive</span>
+   <span class="p">(</span><span class="k">let*</span> <span class="p">((</span><span class="nv">fn</span> <span class="p">(</span><span class="nv">function-called-at-point</span><span class="p">))</span>
+          <span class="p">(</span><span class="nv">enable-recursive-minibuffers</span> <span class="no">t</span><span class="p">)</span>
+          <span class="p">(</span><span class="nv">val</span> <span class="p">(</span><span class="nf">completing-read</span>
+                <span class="p">(</span><span class="k">if</span> <span class="nv">fn</span>
+                    <span class="p">(</span><span class="nf">format</span> <span class="s">"Describe function (default %s): "</span> <span class="nv">fn</span><span class="p">)</span>
+                  <span class="s">"Describe function: "</span><span class="p">)</span>
+<span class="err">⋮</span>
 </pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[1]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>['/Users/mjl/lib/nikola/lib/python3.6/site-packages/ipykernel_launcher.py',
- '-f',
- '/Users/mjl/Library/Jupyter/runtime/kernel-92c61386-92cf-4963-bc9a-d958c4deb996.json']</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="screenshot-of-jupyter---sys.argv-help">screenshot of jupyter - sys.argv help<a class="anchor-link" href="4-bits-part3.html#screenshot-of-jupyter---sys.argv-help">¶</a>
-</h5>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>That particular doc-comment explains that <code>sys.argv</code> is a <code>List</code> of <code>String</code> objects, and shows its values and the <code>List</code>'s methods which <code>sys.arg</code> has. It's not particuarly helpful to show what it <em>means</em> though.  Perhaps the module's documentation is more helpful?</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>sys<span class="o">?</span>
+<p>I truncated the output here, but <a href="https://github.com/emacs-mirror/emacs/blob/emacs-25/lisp/help-fns.el#L52">the whole function</a> is illustrative because it does <em>also</em> include <em>ordinary comments</em>. Note though that they are exceptional because they describe difficult logic:</p>
+<div class="highlight"><pre><span></span><span class="err">⋮</span>
+    <span class="p">(</span><span class="k">save-excursion</span>
+      <span class="p">(</span><span class="nv">with-help-window</span> <span class="p">(</span><span class="nv">help-buffer</span><span class="p">)</span>
+        <span class="p">(</span><span class="nf">prin1</span> <span class="k">function</span><span class="p">)</span>
+        <span class="c1">;; Use " is " instead of a colon so that</span>
+        <span class="c1">;; it is easier to get out the function name using forward-sexp.</span>
+        <span class="p">(</span><span class="nf">princ</span> <span class="s">" is "</span><span class="p">)</span>
+<span class="err">⋮</span>
 </pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="screenshot-of-jupyter---sys-help">screenshot of jupyter - sys help<a class="anchor-link" href="4-bits-part3.html#screenshot-of-jupyter---sys-help">¶</a>
-</h5>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Yes,now we can see what it means: command line arguments, and the first element of the List is the pathname to the python script that is running.</p>
-<p>It's just like an adventure game.</p>
+<p>IPython and Jupyter have an online inspection help system that provides something very similar, also driven by Python's <em>docstrings</em>.</p>
 
 </div>
 </div>
@@ -412,15 +339,121 @@ sys.argv<span class="o">?</span>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Doc-comments-for-assistive-technology">Doc-comments for assistive technology<a class="anchor-link" href="4-bits-part3.html#Doc-comments-for-assistive-technology">¶</a>
-</h4>
-<p>There are others, list them, vscode settings and screenshot</p>
-<h3 id="Wait,-did-you-say-you-can-test-doc-comments?">Wait, did you say you can test doc-comments?<a class="anchor-link" href="4-bits-part3.html#Wait,-did-you-say-you-can-test-doc-comments?">¶</a>
+<h2 id="Wait,-did-you-say-you-can-test-doc-comments?">Wait, did you say you can test doc-comments?<a class="anchor-link" href="4-bits-part3.html#Wait,-did-you-say-you-can-test-doc-comments?">¶</a>
+</h2>
+<p>Python's <a href="https://pymotw.com/2/doctest/">doctest</a> module (<em>Python Module of the Month</em>, covers Python2; or see the <a href="https://docs.python.org/3/library/doctest.html#module-doctest">Python 3 documentation</a>) provides a way to include your module's test cases within the code. This is a super facility that is well worth your time exploring.  See my <a href="../../pg/4-bit-rules.html">Rule 7</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Regular-strings-as-doc-comments">Regular strings as doc-comments<a class="anchor-link" href="4-bits-part3.html#Regular-strings-as-doc-comments">¶</a>
+</h2>
+<p>I have rolled my own doc-comments system in at least one language that doesn't have them:  <strong>Bash</strong>, which is the default Unix shell for GNU systems and many BSD ones also.</p>
+<p>It is documented on my <a href="https://github.com/sinewalker/dotfiles/wiki/Self-documenting-functions">dotfiles project wiki on GitHub</a> as well as within <a href="https://github.com/sinewalker/dotfiles/blob/1.0/source/10_meta.sh">the code itself</a>, of course!  Take a look at it.</p>
+<p>With this, and provided that the functions include a <code>$FUNCDESC</code> doc-comment that followes a few <a href="https://github.com/sinewalker/dotfiles/wiki/Self-documenting-functions#coding-conventions">simple conventions</a>, you can interactively explore my various esoteric shell functions.</p>
+<p>Let's explore the system itself:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Describing-and-Listing-shell-functions">Describing and Listing shell functions<a class="anchor-link" href="4-bits-part3.html#Describing-and-Listing-shell-functions">¶</a>
 </h3>
-<p>Python's <a href="https://pymotw.com/2/doctest/">doctest</a> module (Python Module of the Month, covers Python2; or see [Python  3 documentation (<a href="https://docs.python.org/3/library/doctest.html#module-doctest">https://docs.python.org/3/library/doctest.html#module-doctest</a>)) provides a way to include your module's test cases within the code. This is a super facility that is well worth your time exploring.  See my Rule 7.</p>
-<h3 id="Regular-strings-as-doc-comments">Regular strings as doc-comments<a class="anchor-link" href="4-bits-part3.html#Regular-strings-as-doc-comments">¶</a>
+<pre><code>
+[mjl@milo:~/hax]
+[08:14]$ describe describe
+Fn: describe in /Users/mjl/.dotfiles/source/10_meta.sh line 65
+    'Describe a function and show where it is defined.
+[mjl@milo:~/hax]
+[08:14]$</code></pre>
+<p>My <a href="https://github.com/sinewalker/dotfiles/blob/1.0/source/10_meta.sh#L65">describe</a> function tells you <em>where a shell function comes from, and a quick summary description from the doc-comment</em>. It's a bit like emacs' <code>describe-function</code>.</p>
+<p>What if we want to see all of the doumentation, and the code? Well, we <em>could</em> look in that file, or we can just <code>list</code> the function, as it has been loaded into memory:</p>
+
+<pre><code>
+[mjl@milo:~/hax]
+[08:14]$ list describe
+Fn: describe in /Users/mjl/.dotfiles/source/10_meta.sh line 65
+    'Describe a function and show where it is defined.
+describe ()
+{
+    local FUNCDESC='Describe a function and show where it is defined.
+
+Prints information about the specified function including the first line of the
+$FUNCDESC declaration from the function definition, and where the function is
+defined.
+
+This function requires shopt -s extdebug to show file and line details.';
+    if [[ -z "${1}" ]]; then
+        usage "${FUNCNAME} &lt;function&gt;" ${FUNCDESC};
+        error "Must supply a function to describe.";
+        return 1;
+    fi;
+    local toggled=0;
+    shopt extdebug &gt; /dev/null || shopt -s extdebug &amp;&amp; toggled=1;
+    declare -F "${1}" | awk '{print "Fn: " $1 " in " $3 " line " $2}';
+    type -a "${1}" | awk -F = '/FUNCDESC/{print "    "$2;exit}' | fold -s -w ${COLUMNS};
+    [[ $toggled == 1 ]] &amp;&amp; shopt -u extdebug
+}
+[mjl@milo:~/hax]
+[08:14]$</code></pre>
+<p>Because the doc-comment is actually stored as an <em>environment variable</em>, it is included in this listing, whereas normal shell comments are not shown by Bash's <code>type</code> builtin function (the comments are ignored when the file is <code>source</code>d).</p>
+<p>The <code>describe</code> function above just prints the first line of the code that matches the pattern <code>FUNCDESC</code>. To see the whole function instead, use <a href="https://github.com/sinewalker/dotfiles/blob/1.0/source/10_meta.sh#L90">list</a> like above.  Listing <code>list</code> is left as an exercise for the reader.</p>
+<p>The same <code>$FUNCDESC</code> variable is also referenced in the call to my <code>usage</code> function, to show how to use the function when you make an error. Here it is in action:</p>
+
+<pre><code>
+[mjl@milo:~]
+[09:46]$ describe
+Usage: describe &lt;function&gt;
+Describe a function and show where it is defined. Prints information about the
+specified function including the first line of the $FUNCDESC declaration from
+the function definition, and where the function is defined. This function
+requires shopt -s extdebug to show file and line details.
+Must supply a function to describe.
+[mjl@milo:~]
+[09:46]$</code></pre>
+<h3 id="LOOKing-around">LOOKing around<a class="anchor-link" href="4-bits-part3.html#LOOKing-around">¶</a>
 </h3>
-<p>I have rolled my own doc-comments system in at least one language that doesn't have them:  Bash.  Here is how it works.</p>
+<p>You can list <em>all</em> the current Bash functions with <a href="https://github.com/sinewalker/dotfiles/blob/1.0/source/10_meta.sh#L41">functions</a>:</p>
+
+<pre><code>
+[mjl@milo:~/hax]
+[08:19]$ functions
+activate
+analyse-web
+backout
+backup
+buz
+check-tls
+check_help
+cleanup
+cpmod
+⋮</code></pre>
+<p>(truncated for brevity — I have 85 shell functions on my Mac, from various locations)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Use-the-Source,-Luke">
+<em>Use the Source, Luke</em><a class="anchor-link" href="4-bits-part3.html#Use-the-Source,-Luke">¶</a>
+</h2>
+<p>So I hope this illustrates the value of <em>good doc-comments</em>.  With an interactive system that supports them, like Emacs, iPython/Jupyter and my own Bash meta-fuctions, they can be a really great tool that helps coders to explore and experiment with a codebase.</p>
+<p>It's just like playng <code>ADVENT</code>, and like the game, good doc-comments foster in me a sense of <em>adventure</em> and <em>exploration</em> which makes coding with strange new codebases something <em>fun</em> instead of a hideous nightmare.</p>
+<p>Commenting and documenting your code is traditionally looked at as a tiresome chore that is never complete.  Who knows, with this frame of mind, it might even encourage hackers to write their own doc-comments as a sort-of mini-adventure?</p>
+<p><strong><em>This</em></strong> would be a <em>Force for Good</em>.</p>
 
 </div>
 </div>
@@ -434,6 +467,11 @@ sys.argv<span class="o">?</span>
             <li><a class="tag p-category" href="../../tags/comments.html" rel="tag">comments</a></li>
             <li><a class="tag p-category" href="../../tags/literate.html" rel="tag">literate</a></li>
             <li><a class="tag p-category" href="../../tags/tip.html" rel="tag">tip</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="minecraft-python-3.html" rel="prev" title="Exploring Minecraft code in Jupyter">Previous post</a>
+            </li>
         </ul></nav></aside><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
         </script></article>
