@@ -77,7 +77,7 @@ something else instead:
 * **Comments that** ***restate what the code says in English***: Use descriptive names for things! To be fair, "the only real difficulties in programming are cache invalidation and naming things", but if some thought is put into the names of things, a comment is usually not required. Sometimes the act of writing the comment helps me to come up with names, and then I can remove the comment&hellip;
 * **Comments that** ***explain long, complex subroutines***: *devide and conquer* &mdash; break it into parts that are each more simple to grasp
 * **Comments for functions detailing** ***pre-conditions, post-conditions,
-  parameters*** and so on: only if your language doesn't have **doc-comments**
+  parameters*** and so on: only if your language doesn't have [doc-comments](/blog/2018/4-bits-part3.html)
 
 All of this is just noise, and is not well maintained anyway. Lose it
 where you can.
@@ -189,14 +189,13 @@ available &mdash; I've been there &hellip;)
 The other hand
 ----
 
-Now, **on the other hand, if you are unfortunate enough to be working
-in a language that does not have Doc-Comments**, or **that is evil and
-esoteric** (like assembly, bash scripts, JCL, or Perl), or **your
-problem is very hairy** (numerical analysis, or some complicated logic
-that really deserves a
-[Literate Programming](http://www.literateprogramming.com/)
-approach), well *then* I think *you* ***should*** *be using comments*
-***liberally***.
+Now, **on the other hand, if you are unfortunate enough to be working in a
+language that does not have [Doc-Comments](/blog/2018/4-bits-part3.html)**, or
+**that is evil and esoteric** (like assembly, bash scripts, JCL, or Perl), or
+**your problem is very hairy** (numerical analysis, or some complicated logic
+that really deserves a [Literate
+Programming](http://www.literateprogramming.com/) approach), well *then* I think
+*you* ***should*** *be using comments* ***liberally***.
 
 But keep [Rule 0](/pg/4-bit-rules-part-0) and Rule 2 in mind.
 
