@@ -51,7 +51,7 @@ keeping Rule 0 in mind.
 `8`: You can't proof-read *after* you hit Send
 
 `9`: These aren't the bugs you're looking for &mdash; move along
-     *(Don't sweat the email's details)*
+     *(Pretty good is better than perfect)*
 
 `A`: Fix Mistakes, don't break Promises
 
