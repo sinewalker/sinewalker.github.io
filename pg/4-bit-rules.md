@@ -2,7 +2,7 @@
 .. title: Mike's 4-Bit Rules of Computing
 .. slug: 4-bit-rules
 .. date: 2015-03-18 11:36:26 UTC+11:00
-.. tags: 
+.. tags: 4-bit-rules
 .. category: 
 .. link: 
 .. description: 
@@ -27,42 +27,42 @@ keeping Rule 0 in mind.
 
 ----
 
-`0`: All rules are broken
+`0000` - `0`: [All rules are broken](/blog/2015/4-bit-rules-of-computing-part-0.html)
      &mdash; *and some were made to be*
 
-`1`: The *First Law*: Nothing works *First* time
+`0001` - `1`: The *First Law*: Nothing works *First* time
      &mdash; *Peter Lukes, Amstrad Computer User magazine, Issue 32, September 1987*
 
-`2`: Don't Repeat Yourself
+`0010` - `2`: Don't Repeat Yourself
       *(tip: computers are* good *at that&hellip;)*
 
-`3`: `python <(echo import this)`
+`0011` - `3`: `python <(echo import this)`
       *(Python [PEP 20](https://www.python.org/dev/peps/pep-0020/))*
 
-`4`: If you're exploring, keep a notebook/journal
+`0100` - `4`: [If you're exploring, keep a notebook/journal](/blog/2015/4-bit-rules-of-computing-part-1.html)
 
-`5`: Comments considered harmful
+`0101` - `5`: [Comments considered harmful](/blog/2015/4-bit-rules-of-computing-part-2.html)
      *(embedded in code, as well as those on YouTube)*
 
-`6`: but Doc-Comments are a Force for Good
+`0110` - `6`: but [Doc-Comments are a Force for Good](/blog/2018/4-bits-part3.html)
 
-`7`: Test it. Test it Again
+`0111` - `7`: Test it. Test it Again
 
-`8`: You can't proof-read *after* you hit Send
+`1000` - `8`: You can't proof-read *after* you hit Send
 
-`9`: These aren't the bugs you're looking for &mdash; move along
+`1001` - `9`: These aren't the bugs you're looking for &mdash; move along
      *(Pretty good is better than perfect)*
 
-`A`: Fix Mistakes, don't break Promises
+`1010` - `A`: Fix Mistakes, don't break Promises
 
-`B`: You Ain't Gonna Need It
+`1011` - `B`: You Ain't Gonna Need It
 
-`C`: Always know where you're going when you start writing
+`1100` - `C`: Always know where you're going when you start writing
 
-`D`: DON'T PANIC, Read The Fine Manuals
+`1101` - `D`: DON'T PANIC, Read The Fine Manuals
 
-`E`: When there is no manual: Write The Missing Manual
+`1110` - `E`: When there is no manual: Write The Missing Manual
 
-`F`: Read The Logs
+`1111` - `F`: Read The Logs
      (*READ the logs*)
  
