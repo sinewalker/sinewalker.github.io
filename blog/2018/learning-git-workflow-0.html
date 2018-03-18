@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Blogging about good RCS workflows and branching strategies.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Learning DVCS Workflow - 0 | Milosophical Me</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#e37f2a;">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="http://milosophical.me/blog/2018/learning-git-workflow-0.html">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Michael Lockhart">
+<link rel="prev" href="4-bits-part3.html" title="4-bit Rules of Computing, Part 3" type="text/html">
+<meta property="og:site_name" content="Milosophical Me">
+<meta property="og:title" content="Learning DVCS Workflow - 0">
+<meta property="og:url" content="http://milosophical.me/blog/2018/learning-git-workflow-0.html">
+<meta property="og:description" content="Blogging about good RCS workflows and branching strategies.">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2018-03-18T11:48:10+11:00">
+<meta property="article:tag" content="code">
+<meta property="article:tag" content="git">
+<meta property="article:tag" content="magit">
+<meta property="article:tag" content="mercurial">
+<meta property="article:tag" content="subversion">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://milosophical.me/">
+
+                <span id="blog-title">Milosophical Me</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../index.html">Blog</a>
+                </li>
+<li>
+<a href="../../archive/archive.html">Archive</a>
+                </li>
+<li>
+<a href="../../tags/index.html">Tags</a>
+                </li>
+<li>
+<a href="../../pg/index.html">Codex</a>
+                </li>
+<li>
+<a href="../../pixels/index.html">Pixels</a>
+            </li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Social <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://plus.google.com/+MichaelLockhart/posts">Microblog</a>
+                    </li>
+<li>
+<a href="https://gist.github.com/sinewalker">Gists - social code</a>
+                    </li>
+<li>
+<a href="https://www.facebook.com/sinewalker">Facebook</a>
+                    </li>
+<li>
+<a href="mailto:sinewalker@gmail.com">Email</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://github.com/sinewalker">GitHub</a>
+                    </li>
+<li>
+<a href="https://gist.github.com/sinewalker">Gists</a>
+                    </li>
+<li>
+<a href="https://bitbucket.com/sinewalker">Bitbucket</a>
+                    </li>
+<li>
+<a href="https://codepen.io/sinewalker/">Codepen</a>
+                    </li>
+<li class="active">
+<a href="#"> <span class="sr-only">(active)</span></a>
+                    </li>
+<li>
+<a href="https://sourceforge.net/u/sinewalker/profile/">SourceForge</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Jargon <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="../../jargon/index.html">Main page</a>
+                    </li>
+<li>
+<a href="../../jargon/html/index.html">Table of Content</a>
+                    </li>
+<li>
+<a href="../../jargon/html/lexicon.html">Lexicon</a>
+                    </li>
+<li>
+<a href="../../jargon/html/go01.html">Glossary</a>
+                    </li>
+<li>
+<a href="../../jargon/html/appendixa.html">Folklore</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://about.me/mikelockhart">About.me</a>
+                    </li>
+<li>
+<a href="../../pg/colophon.html">About this site</a>
+                    </li>
+<li>
+<a href="https://calendar.google.com/calendar/embed?src=sinewalker@gmail.com&amp;ctz=Australia/Sydney/">My calendar</a>
+                    </li>
+<li>
+<a href="https://www.linkedin.com/in/mikelockhart">LinkedIn</a>
+                    </li>
+<li>
+<a href="http://stackoverflow.com/users/776953/mike">Stack Overflow</a>
+            </li>
+</ul>
+</li>
+<li>
+<a href="../../rss.xml">RSS</a>
+
+                
+            </li>
+</ul>
+<!-- DuckDuckGo custom search --><form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form navbar-right" role="search">
+<input type="hidden" name="sites" value="http://milosophical.me/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="Search…" class="form-control"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+
+            <ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="learning-git-workflow-0.md" id="sourcelink">Source</a>
+    </li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Learning DVCS Workflow - 0</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    <a href="../../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2018-03-18T11:48:10+11:00" itemprop="datePublished" title="2018-03-18 11:48">2018-03-18 11:48</time></a></p>
+            
+        <p class="sourceline"><a href="learning-git-workflow-0.md" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>If you take look at the revision history for <a href="https://github.com/sinewalker/dotfiles/commits/master">some of</a> my <a href="https://github.com/sinewalker/dotspacemacs/commits/master">projects</a> on <a href="https://github.com/sinewalker/sinewalker.github.io/commits/master">GitHub</a>, you'll see that I have a fairly messy track-record!</p>
+<p>A few times I have successfully used <a href="https://magit.vc/">Magit</a>'s ability to <a href="https://magit.vc/manual/magit/Staging-and-Unstaging.html#Staging-and-Unstaging">interactively stage/unstage Hunks or parts of Hunks</a>, to make my commits a bit more clean and sensible, but not always.</p>
+<p><strong>The real problem is</strong>: I haven't been using Branches.  It's because I haven't studied how to use them effectively, and in the past they've been scary.</p>
+<p>But for the future, and especially for my dotfiles, I'd like to be able to read through the commits and make sense of them after. Also I'd like to be sure when I'm committing that I don't make any unplanned master changes and break things. </p>
+<p>I also tend to work by myself on these projects, but I'll often go on a tangent, or start a blog post and then put off finishing it while another, different idea is developed and maybe even published first.  Ideally I should be able to track these things separately.</p>
+<p>So I need to learn:  how to do revision control workflow with branches, <strong>properly</strong>.</p>
+<!-- TEASER_END -->
+
+<hr>
+<p>NOTE:- This is <em>not</em> a how-to. I don't know what I'm doing. Yet. I haven't tested anything either, just taking notes today.</p>
+<h2>Branching and merging?!  Halp!</h2>
+<p>To be honest my past experience with Microsoft Visual SourceSafe, Rational ClearCase, and even Subversion is that, while the <em>idea</em> of separating concurrent streams of work into branches makes total sense, in <em>practice</em> branching and then <em>merging</em> branches is a difficult, error prone and risky operation!</p>
+<p>That's putting it lightly. Have a look at this screen shot I took from a past employer. The vertical trees are branches,  each node is a commit/revision, the red lines are merges (or rebases, I can't remember, it was about ten years ago):</p>
+<p><img alt="" src="../../pixels/dust/irrational-unclearcase.jpg"></p>
+<blockquote>
+<p>I still get nightmares!</p>
+</blockquote>
+<p>So, that's where I'm coming from. My notes here are what I'm exploring online to try and get somewhere with branching that's <em>not</em> like that.</p>
+<h3>Step 0, pick an RCS</h3>
+<p>I used to <em>HATE</em> Git.  I still do hate it's command-line interface, but Magit makes it a joy to use, and exposes the many weird and whacky functions of git in a way that you can begin to understand it.  It's reference manual is pretty darn awesome too.</p>
+<p>All the cool kids use Git, including my workplace. I'm starting to get used to it.  Doing my own projects with it helps a lot.</p>
+<p>I've been <a href="https://magit.vc/manual/magit/">reading the Magit User Manual</a>, and the Git bible: <a href="https://git-scm.com/book/en/v2">Pro Git</a>. The <a href="https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell">chapter on Branching</a> has some example workflows but doesn't try to proscribe a particular one, which makes sense.</p>
+<p>Now, though, I'm looking for some guidance on policy, not just mechanism.</p>
+<h3>Step 1, what are some workflows people use?</h3>
+<ul>
+<li>The pictures in <a href="http://nvie.com/posts/a-successful-git-branching-model/">this article by Vincent Driessen</a> look more like what I want to do:</li>
+</ul>
+<p><img alt="" src="../../pixels/dust/git-model-1x-trans.png"></p>
+<blockquote>
+<p>(get the high-quality original, suitable for printing, <a href="http://nvie.com/posts/a-successful-git-branching-model/">from the article</a>)</p>
+</blockquote>
+<p>I like it <em>a lot</em>, actually, and will read it through properly. At first glance it's a lot like the <a href="https://guides.github.com/introduction/flow/">GitHub Flow</a> (which I've also only skimmed).</p>
+<p>Also my online friend Alec the Geek is a git evangelist and has lots of useful information about git which I should read: http://alecthegeek.github.io/</p>
+<h3>Step 3, pick one workflow to examine</h3>
+<p>I'm looking at Vincent Dreissen's workflow first, I'll call it:</p>
+<h2>The Driessen Flow</h2>
+<p>Because, why not?</p>
+<p>Vincent Driessen documents <a href="http://nvie.com/posts/a-successful-git-branching-model/">a successful git branching model</a> that looks attractive.</p>
+<p>Consists of two <em>kinds</em> of branches</p>
+<ul>
+<li>main branches (long lived; master and development)</li>
+<li>supporting branches (short lived; feature/merge/fix)</li>
+</ul>
+<h2>Main branches</h2>
+<p>Driessen uses two long-lived branches (I think like those mentioned in Pro Git).</p>
+<ul>
+<li>
+<code>master</code>: stable releases. Merges from <code>develop</code> only</li>
+<li>
+<code>develop</code>: this is where supporting branches merge to</li>
+</ul>
+<h2>Supporting branches</h2>
+<p>Supporting branches are used to contain commits for:</p>
+<ul>
+<li>features</li>
+<li>releases</li>
+<li>bugs</li>
+</ul>
+<p>These are short-lived branches that end either by merging to <code>develop</code> or by being removed (dead-ends).</p>
+<h2>Feature branches</h2>
+<ul>
+<li>may branch from <code>develop</code>
+</li>
+<li>MUST merge back to <code>develop</code>
+</li>
+<li>branch naming: anything except <code>master</code>, <code>develop</code>, or <code>bug-*</code>
+</li>
+</ul>
+<p>Typically exist in local/developer repos, not in <code>origin.</code></p>
+<h3>Creating a Feature branch</h3>
+<p><code>$ git checkout -b myfeature develop</code></p>
+<p>Or Magit:</p>
+<ul>
+<li>
+<em>b l</em> [el] <code>(magit-branch-checkout)</code>, enter a new branch for "myfeature" and then pick "develop" as the starting point.</li>
+</ul>
+<h3>Merging finished feature to <code>develop</code>
+</h3>
+<pre class="code literal-block"><span></span>$ git checkout develop
+$ git merge --no-ff myfeature
+$ git branch -d myfeature 
+$ git push origin develop
+</pre>
+
+
+<p>I like the <code>--no-ff</code>: always creates a new commit of the merge, not fast-forwarding.</p>
+<blockquote>
+<p>This avoids losing information about the historical existence of a feature branch and groups together all commits that together added the feature</p>
+</blockquote>
+<p>So, because of the non-fast-forward, you can still see the branch in the history, even after you delete the branch.</p>
+<p>With Magit</p>
+<ul>
+<li>
+<em>m i</em> <code>(magit-merge-into)</code> and choose "develop</li>
+</ul>
+<p>That's it, I think:</p>
+<blockquote>
+<p>This command merges the current branch into another local branch and then removes the former. The latter becomes the new current branch.</p>
+</blockquote>
+<p><strong>I need to find out if it also forces a merge commit, not a fast-forward.</strong></p>
+<p>I'm not sure what this next bit means, exactly. It seems to be concerned about remotes though, so it <em>probably</em> doesn't matter for local branches?</p>
+<blockquote>
+<p>Before the source branch is merged, it is first force pushed to its
+push-remote, provided the respective remote branch already exists. This
+ensures that the respective pull-request (if any) won’t get stuck on some
+obsolete version of the commits that are being merged. Finally, if
+magit-branch-pull-request was used to create the merged branch, then the
+respective remote branch is also removed.</p>
+</blockquote>
+<h2>Release branches</h2>
+<ul>
+<li>may branch from <code>develop</code>
+</li>
+<li>MUST merge to <code>develop</code>, AND <code>master</code>
+</li>
+<li>branch naming: <code>release-*</code>
+</li>
+</ul>
+<p>This is where you do last-minute "dotting of i's and crossing of t's", or for merging in minor bug fixes before merging the release → <code>develop</code> → <code>master</code>.</p>
+<p>The Driessen flow recommends that you branch merge from <code>develop</code> to <code>master</code> by making a <code>release-</code> branch, and there, before merging that back to develop, then to master.  This is interesting too:</p>
+<blockquote>
+<p>It is exactly at the start of a release branch that the upcoming release gets assigned a version number—not any earlier. Up until that moment, the develop branch reflected changes for the “next release”, but it is unclear whether that “next release” will eventually become 0.3 or 1.0, until the release branch is started. That decision is made on the start of the release branch and is carried out by the project’s rules on version number bumping.</p>
+</blockquote>
+<h3>Creating release branches</h3>
+<p>With git:</p>
+<ol>
+<li><code>$ git checkout -b release-1.2 develop</code></li>
+<li>Do some version change, e.g. with a <code>bump-version.sh 1.2</code> or similar</li>
+<li><code>$ git commit -a -m "prepared release version 1.2"</code></li>
+</ol>
+<p>With Magit</p>
+<ol>
+<li>
+<em>b l</em> <code>(magit-branch-checkout)</code>, enter a new branch for "release-1.2" and then "develop" as the starting point.</li>
+<li>Do some version change, like with git</li>
+<li>
+<em>c c</em> <code>(magit-commit)</code>, enter a commit message "prepared release version 1.2", press <code>C-c C-c</code>
+</li>
+</ol>
+<h3>Finishing a release branches</h3>
+<ol>
+<li>Merge release to <code>master</code>
+</li>
+<li>Tag the commit on <code>master</code>
+</li>
+<li>Merge release to <code>develop</code>
+</li>
+<li>Delete the release branch</li>
+</ol>
+<p>With git:</p>
+<pre class="code literal-block"><span></span>$ git checkout master
+$ git merge --no-ff release-1.2
+$ git tag -a <span class="m">1</span>.2
+$ git checkout develop
+$ git merge --no-ff release-1.2
+$ git branch -d release-1.2
+</pre>
+
+
+<p>With Magit:</p>
+<ol>
+<li>
+<em>b b</em> <code>(magit-checkout)</code> and choose "master"</li>
+<li>
+<em>m m</em> <code>(magit-merge)</code> and choose "release-1.2"</li>
+<li>
+<em>t t -a</em> <code>(magit-tag)</code> and enter "1.2"</li>
+<li>
+<em>b b</em> <code>(magit-checkout)</code> and choose "release-1.2"</li>
+<li>
+<em>m i</em> <code>(magit-merge-into)</code> and choose "develop"</li>
+</ol>
+<h2>Bugs</h2>
+<p>Or "hotfixes", but whatever. They're changes that need to be made to <code>master</code> after a release tag. So that's a bug. Short-term branch. I guess the bug's "hot" because it can't wait for it's turn in the <code>develop</code> stream.</p>
+<p>I made a small change to the naming here, because Driessen's examples are confusing to me: surely you'd name your bug or "hotfix" branch after the issue number, not the future release tag?</p>
+<ul>
+<li>May branch from: <code>master</code>
+</li>
+<li>MUST merge into <code>develop</code> and <code>master</code>
+</li>
+<li>Branch naming: <code>bug-*</code>
+</li>
+</ul>
+<h3>creating a bug branch</h3>
+<p>With git:</p>
+<ol>
+<li><code>$ git checkout -b bug-ABC master</code></li>
+<li>bump the version</li>
+<li><code>$ git commit -a -m "vesion 1.2.1"</code></li>
+<li>make the fix, test etc.</li>
+<li><code>$ git commit -m "fix servere production bug ABC"</code></li>
+</ol>
+<p>With Magit</p>
+<ol>
+<li>
+<em>b l</em> <code>(magit-branch-checkout)</code>, enter new branch "bug-ABC" and then "master" as the starting point</li>
+<li>bump the version</li>
+<li>
+<em>c c</em> -a <code>(magit-commit)</code>, enter "version 1.2.1"</li>
+<li>make the fix, test etc.</li>
+<li>
+<em>c c</em> <code>(magit-commit)</code>, enter "fix severe production bug ABC"`</li>
+</ol>
+<h3>Finishing a bug branch</h3>
+<p>Need to merge into <code>master</code>, but <em>also</em> into <code>develop</code>, to keep the fix in the development stream. Same as a release, <strong>except</strong> if there is a current <code>release-</code> branch, then merge back to that instead of to <code>develop</code>.</p>
+<p>With git:</p>
+<pre class="code literal-block"><span></span>$ git checkout master
+$ git merge --no-ff bug-ABC
+$ git tag -a <span class="m">1</span>.2.1
+$ git checkout develop
+$ git merge --no-ff bug-ABC
+$ git branch -d bug-ABC
+</pre>
+
+
+<p>With Magit:</p>
+<ol>
+<li>
+<em>b b</em> <code>(magit-checkout)</code> and choose "master"</li>
+<li>
+<em>m m</em> <code>(magit-merge)</code> and choose "bug-ABC"</li>
+<li>
+<em>t t -a</em> <code>(magit-tag)</code> and enter "1.2.1"</li>
+<li>
+<em>b b</em> <code>(magit-checkout)</code> and choose "bug-ABC"</li>
+<li>
+<em>m i</em> <code>(magit-merge-into)</code> and choose "develop"</li>
+</ol>
+<h2>What I learned this afternoon</h2>
+<ul>
+<li>There's more than one way to skin this cat.  This is one way, I like it, I'll look at more.</li>
+<li>The only difference between a "long-life" branch and a "short-term" is that you <em>delete</em> the short ones with <code>git branch -d &lt;somebranch&gt;</code> (or <code>(magit-merge-into)</code>), but leave the long-term ones alone.</li>
+</ul>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../tags/code.html" rel="tag">code</a></li>
+            <li><a class="tag p-category" href="../../tags/git.html" rel="tag">git</a></li>
+            <li><a class="tag p-category" href="../../tags/magit.html" rel="tag">magit</a></li>
+            <li><a class="tag p-category" href="../../tags/mercurial.html" rel="tag">mercurial</a></li>
+            <li><a class="tag p-category" href="../../tags/subversion.html" rel="tag">subversion</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="4-bits-part3.html" rel="prev" title="4-bit Rules of Computing, Part 3">Previous post</a>
+            </li>
+        </ul></nav></aside></article>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer"><hr>Contents Copyright © 
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a>
+ 2005 — 2018         <a href="mailto:sinewalker@gmail.com">Michael Lockhart</a>. Powered by <a href="https://getnikola.com" rel="nofollow"><img src="../../img/nikola.png" alt="Nikola"></a>, <a href="https://github.com/syl20bnr/spacemacs"><img src="https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg" alt="built with Spacemacs"></a>
+
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-65364237-1', 'auto');  ga('send', 'pageview');</script>
+</body>
+</html>

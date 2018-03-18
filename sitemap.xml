@@ -63,19 +63,19 @@
  </url>
  <url>
   <loc>http://milosophical.me/archive/2018/index.html</loc>
-  <lastmod>2018-03-17T22:52:00Z</lastmod>
+  <lastmod>2018-03-18T11:26:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/archive/archive.html</loc>
-  <lastmod>2018-03-17T11:55:00Z</lastmod>
+  <lastmod>2018-03-18T01:33:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/authors/index.html</loc>
-  <lastmod>2018-03-17T11:55:00Z</lastmod>
+  <lastmod>2018-03-18T01:33:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/authors/michael-lockhart.html</loc>
-  <lastmod>2018-03-17T23:29:00Z</lastmod>
+  <lastmod>2018-03-18T11:26:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/authors/mike-lockhart.html</loc>
@@ -531,7 +531,15 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/2018/4-bits-part3.html</loc>
-  <lastmod>2018-03-17T22:52:00Z</lastmod>
+  <lastmod>2018-03-18T10:37:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://milosophical.me/blog/2018/learning-git-workflow-0.html</loc>
+  <lastmod>2018-03-18T11:26:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://milosophical.me/blog/2018/learning-git-workflow.html</loc>
+  <lastmod>2018-03-18T08:19:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/2018/minecraft-python-1.html</loc>
@@ -555,7 +563,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-11.html</loc>
-  <lastmod>2018-03-17T11:55:00Z</lastmod>
+  <lastmod>2018-03-18T01:33:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-2.html</loc>
@@ -591,7 +599,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/index.html</loc>
-  <lastmod>2018-03-17T22:52:00Z</lastmod>
+  <lastmod>2018-03-18T11:26:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/hax/codec/URL%20Decoder_Encoder.html</loc>
@@ -795,7 +803,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/pixels/dust/index.html</loc>
-  <lastmod>2018-03-17T11:55:00Z</lastmod>
+  <lastmod>2018-03-18T11:30:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/pixels/index.html</loc>
@@ -803,7 +811,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/pixels/lego/index.html</loc>
-  <lastmod>2018-03-17T11:55:00Z</lastmod>
+  <lastmod>2018-03-18T01:33:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/pixels/minecraft/index.html</loc>
@@ -819,7 +827,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/4-bit-rules.html</loc>
-  <lastmod>2018-03-17T23:29:00Z</lastmod>
+  <lastmod>2018-03-18T01:33:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/aboutme.html</loc>
@@ -914,6 +922,10 @@
   <lastmod>2018-03-17T11:55:00Z</lastmod>
  </url>
  <url>
+  <loc>http://milosophical.me/tags/cat_log.html</loc>
+  <lastmod>2018-03-18T08:19:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://milosophical.me/tags/cat_lore.html</loc>
   <lastmod>2018-03-17T23:29:00Z</lastmod>
  </url>
@@ -943,7 +955,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/code.html</loc>
-  <lastmod>2018-03-17T11:55:00Z</lastmod>
+  <lastmod>2018-03-18T11:26:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/codekids.html</loc>
@@ -955,7 +967,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/comments.html</loc>
-  <lastmod>2018-03-17T23:29:00Z</lastmod>
+  <lastmod>2018-03-18T01:33:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/computers.html</loc>
@@ -1146,6 +1158,10 @@
   <lastmod>2018-03-17T11:55:00Z</lastmod>
  </url>
  <url>
+  <loc>http://milosophical.me/tags/git.html</loc>
+  <lastmod>2018-03-18T11:26:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://milosophical.me/tags/gnupg.html</loc>
   <lastmod>2018-03-17T11:55:00Z</lastmod>
  </url>
@@ -1191,7 +1207,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/index.html</loc>
-  <lastmod>2018-03-17T11:55:00Z</lastmod>
+  <lastmod>2018-03-18T10:37:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/jargon.html</loc>
@@ -1247,7 +1263,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/literate.html</loc>
-  <lastmod>2018-03-17T23:29:00Z</lastmod>
+  <lastmod>2018-03-18T01:33:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/look-and-feel.html</loc>
@@ -1270,6 +1286,10 @@
   <lastmod>2018-03-17T11:55:00Z</lastmod>
  </url>
  <url>
+  <loc>http://milosophical.me/tags/magit.html</loc>
+  <lastmod>2018-03-18T11:26:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://milosophical.me/tags/magnifier.html</loc>
   <lastmod>2018-03-17T11:55:00Z</lastmod>
  </url>
@@ -1284,6 +1304,10 @@
  <url>
   <loc>http://milosophical.me/tags/media.html</loc>
   <lastmod>2018-03-17T11:55:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://milosophical.me/tags/mercurial.html</loc>
+  <lastmod>2018-03-18T11:26:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/meta-data.html</loc>
@@ -1511,7 +1535,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/subversion.html</loc>
-  <lastmod>2018-03-17T11:55:00Z</lastmod>
+  <lastmod>2018-03-18T11:26:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/suse.html</loc>
@@ -1551,7 +1575,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/tip.html</loc>
-  <lastmod>2018-03-17T23:29:00Z</lastmod>
+  <lastmod>2018-03-18T01:33:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/tips.html</loc>

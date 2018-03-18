@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>http://milosophical.me/authors/michael-lockhart.xml</loc>
-  <lastmod>2018-03-17T23:29:00Z</lastmod>
+  <lastmod>2018-03-18T11:26:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/authors/mike-lockhart.xml</loc>
@@ -15,11 +15,11 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/pixels/dust/rss.xml</loc>
-  <lastmod>2018-03-17T11:55:00Z</lastmod>
+  <lastmod>2018-03-18T11:30:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/pixels/lego/rss.xml</loc>
-  <lastmod>2018-03-17T11:55:00Z</lastmod>
+  <lastmod>2018-03-18T01:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/pixels/minecraft/rss.xml</loc>
@@ -39,15 +39,15 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/rss.xml</loc>
-  <lastmod>2018-03-17T23:29:00Z</lastmod>
+  <lastmod>2018-03-18T11:26:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/sitemap.xml</loc>
-  <lastmod>2018-03-18T00:35:00Z</lastmod>
+  <lastmod>2018-03-18T11:30:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/4-bit-rules.xml</loc>
-  <lastmod>2018-03-17T23:29:00Z</lastmod>
+  <lastmod>2018-03-18T01:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/aboutme.xml</loc>
@@ -142,6 +142,10 @@
   <lastmod>2018-03-11T20:02:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>http://milosophical.me/tags/cat_log.xml</loc>
+  <lastmod>2018-03-18T08:19:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>http://milosophical.me/tags/cat_lore.xml</loc>
   <lastmod>2018-03-17T23:29:00Z</lastmod>
  </sitemap>
@@ -171,7 +175,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/code.xml</loc>
-  <lastmod>2018-03-11T20:02:00Z</lastmod>
+  <lastmod>2018-03-18T11:26:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/codekids.xml</loc>
@@ -183,7 +187,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/comments.xml</loc>
-  <lastmod>2018-03-17T23:29:00Z</lastmod>
+  <lastmod>2018-03-18T01:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/computers.xml</loc>
@@ -374,6 +378,10 @@
   <lastmod>2018-03-11T20:02:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>http://milosophical.me/tags/git.xml</loc>
+  <lastmod>2018-03-18T11:26:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>http://milosophical.me/tags/gnupg.xml</loc>
   <lastmod>2018-03-11T20:02:00Z</lastmod>
  </sitemap>
@@ -471,7 +479,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/literate.xml</loc>
-  <lastmod>2018-03-17T23:29:00Z</lastmod>
+  <lastmod>2018-03-18T01:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/look-and-feel.xml</loc>
@@ -494,6 +502,10 @@
   <lastmod>2018-03-11T20:02:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>http://milosophical.me/tags/magit.xml</loc>
+  <lastmod>2018-03-18T11:26:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>http://milosophical.me/tags/magnifier.xml</loc>
   <lastmod>2018-03-11T20:02:00Z</lastmod>
  </sitemap>
@@ -508,6 +520,10 @@
  <sitemap>
   <loc>http://milosophical.me/tags/media.xml</loc>
   <lastmod>2018-03-11T20:02:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://milosophical.me/tags/mercurial.xml</loc>
+  <lastmod>2018-03-18T11:26:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/meta-data.xml</loc>
@@ -735,7 +751,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/subversion.xml</loc>
-  <lastmod>2018-03-11T20:02:00Z</lastmod>
+  <lastmod>2018-03-18T11:26:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/suse.xml</loc>
@@ -775,7 +791,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/tip.xml</loc>
-  <lastmod>2018-03-17T23:29:00Z</lastmod>
+  <lastmod>2018-03-18T01:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/tips.xml</loc>
