@@ -128,13 +128,11 @@ So, because of the non-fast-forward, you can still see the branch in the history
 
 With Magit
 
- * *m i* `(magit-merge-into)` and choose "develop
+ * *m -n i* `(magit-merge-into)`, (typing *-n* before *i* to turn on `--no-ff`); and choose "develop
 
 That's it, I think:
 
 > This command merges the current branch into another local branch and then removes the former. The latter becomes the new current branch.
-
-**I need to find out if it also forces a merge commit, not a fast-forward.**
 
 I'm not sure what this next bit means, exactly. It seems to be concerned about remotes though, so it *probably* doesn't matter for local branches?
 
@@ -196,7 +194,7 @@ With Magit:
  2. *m m* `(magit-merge)` and choose "release-1.2"
  3. *t t -a* `(magit-tag)` and enter "1.2"
  4. *b b* `(magit-checkout)` and choose "release-1.2"
- 5. *m i* `(magit-merge-into)` and choose "develop"
+ 5. *m -n i* `(magit-merge-into)` and choose "develop"
  
 # Bugs
 
