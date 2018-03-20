@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License" style="border-width:0"
      src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"/&gt;&lt;/a&gt;
-</copyright><lastBuildDate>Sun, 11 Mar 2018 20:02:01 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Meta: Setting up Nikola blogging</title><link>http://milosophical.me/blog/2015/setting-up-nikola.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+</copyright><lastBuildDate>Tue, 20 Mar 2018 10:56:42 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Meta: Setting up Nikola blogging</title><link>http://milosophical.me/blog/2015/setting-up-nikola.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
@@ -28,56 +28,95 @@
 the third bit, out of 4 bits), but it is taking me more time to write
 up my thoughts about those other rules, and I want to get something out
 roughly every week.&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://milosophical.me/blog/2015/4-bit-rules-of-computing-part-1.html"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>4-bit-rules</category><category>blogging</category><category>journal</category><category>notebook</category><category>tip</category><guid>http://milosophical.me/blog/2015/4-bit-rules-of-computing-part-1.html</guid><pubDate>Tue, 02 Jun 2015 08:47:00 GMT</pubDate></item><item><title>2010 in review</title><link>http://milosophical.me/blog/2011/01/19/2010-in-review.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;The stats helper monkeys at WordPress.com mulled over how this blog did in 2010, and here's a high level summary of its overall blog health.
+&lt;p&gt;&lt;a href="http://milosophical.me/blog/2015/4-bit-rules-of-computing-part-1.html"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>4-bit-rules</category><category>blogging</category><category>journal</category><category>notebook</category><category>tip</category><guid>http://milosophical.me/blog/2015/4-bit-rules-of-computing-part-1.html</guid><pubDate>Tue, 02 Jun 2015 08:47:00 GMT</pubDate></item><item><title>Blogging with Emacs Org Mode</title><link>http://milosophical.me/blog/2011/12/15/blogging-with-emacs-org-mode.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;My blog is really in need of some love. One of the reasons I'm not posting very frequently (apart from just not having much to say or making time to say it) is that it is such a pain to write posts in WordPress' built in editor.  I briefly considered editing in a text editor and then cut/pasting, but usually there's a mess to clean up anyway, so it's not much fun either. &lt;/p&gt; 
+
+
+&lt;p&gt;&lt;a href="http://milosophical.me/blog/2011/12/15/blogging-with-emacs-org-mode.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>blogging</category><category>code</category><category>emacs</category><category>hacking</category><category>org-mode</category><guid>http://milosophical.me/blog/2011/12/15/blogging-with-emacs-org-mode.html</guid><pubDate>Thu, 15 Dec 2011 10:53:00 GMT</pubDate></item><item><title>2010 in review</title><link>http://milosophical.me/blog/2011/01/19/2010-in-review.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;The stats helper monkeys at WordPress.com mulled over how this blog did in 2010, and here's a high level summary of its overall blog health.
 &lt;/p&gt;
 
-&lt;p&gt;&lt;a href="http://milosophical.me/blog/2011/01/19/2010-in-review.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>blogging</category><category>general</category><guid>http://milosophical.me/blog/2011/01/19/2010-in-review.html</guid><pubDate>Wed, 19 Jan 2011 09:45:02 GMT</pubDate></item><item><title>Can't trust the papers…</title><link>http://milosophical.me/blog/2005/11/01/cant-trust-the-papers.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;p&gt;&lt;em&gt;This post was originally published
-    at &lt;a href="http://sinewalker.blogspot.com.au/2005_11_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt; on 1 November 2005&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://milosophical.me/blog/2011/01/19/2010-in-review.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>analytics</category><category>blogging</category><guid>http://milosophical.me/blog/2011/01/19/2010-in-review.html</guid><pubDate>Wed, 19 Jan 2011 09:45:02 GMT</pubDate></item><item><title>Stat Counter</title><link>http://milosophical.me/blog/2006/07/14/stat-counter.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;Further to &lt;a title="Are blogstats valid?" href="http://sinewalker.wordpress.com/2006/06/01/are-blog-stats-valid/"&gt;my queries about WordPress' blog stats accuracy&lt;/a&gt;, I went &lt;a title="Google -- hits counter free" href="http://www.google.com.au/search?q=web+hits+counter+free&amp;amp;start=0&amp;amp;ie=utf-8&amp;amp;oe=utf-8&amp;amp;client=firefox-a&amp;amp;rls=org.mozilla:en-US:official"&gt;googling &lt;/a&gt;for a free stats counter. &lt;a title="Stat Counter -- free web stats." href="http://www.statcounter.com/"&gt;This one&lt;/a&gt;'s pretty good.
+&lt;/p&gt;
 
-          &lt;hr&gt;
+&lt;p&gt;&lt;a href="http://milosophical.me/blog/2006/07/14/stat-counter.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>analytics</category><category>blogging</category><guid>http://milosophical.me/blog/2006/07/14/stat-counter.html</guid><pubDate>Fri, 14 Jul 2006 05:16:41 GMT</pubDate></item><item><title>Are Blog Stats valid?</title><link>http://milosophical.me/blog/2006/06/01/are-blog-stats-valid.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;p&gt;I just passed 500 hits.  Now, many of the first couple of hundred are just me browsing without being logged in (this is my home page, and the cookies weren't being kept for a while there…).
+&lt;/p&gt;
+&lt;p&gt;
+The number goes up by about 10–15 a day, but I didn't think I had anyone reading this?  Surely it's not being hit by Google and friends that often, is it?
+&lt;/p&gt;
 
 &lt;p&gt;
-&lt;em&gt;In reference to &lt;a href="http://slashdot.org/article.pl?sid=05/10/31/2247225&amp;amp;tid=188&amp;amp;tid=95"&gt;this Slashdot article&lt;/a&gt; about the Internet killing
-  newspapers&lt;/em&gt;
-&lt;/p&gt;
-&lt;br&gt;
-
-&lt;p&gt;Why does "mainstream media" think blogging is such a huge hit? It's not that
-Internet is immediate, or that anyone can do it (which has big down-sides as
-well as it's egalitarian advantages). It is simply that people everywhere are
-fed-up with WWII-era propagandists telling us what to believe and have started
-researching it for themselves.&lt;/p&gt;
-
-&lt;br&gt;
-
-&lt;p&gt;
-This is the Information Revolution: the Revolution is greatly improved access
-to the information. People are more educated now than they were 50 or even 20
-years ago and can make informed judgements. They don't need some "journalist"
-to do it for them. This is quite appart form the fact that today's journalism
-is extremely poor compared to yester-year's.
+If you're a regular visitor, drop a comment and let me know :D&lt;/p&gt;</description><category>analytics</category><category>blogging</category><guid>http://milosophical.me/blog/2006/06/01/are-blog-stats-valid.html</guid><pubDate>Thu, 01 Jun 2006 06:25:01 GMT</pubDate></item><item><title>Google Mail</title><link>http://milosophical.me/blog/2006/05/30/google-mail.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;Google have openned up gmail to anybody with a mobile phone.  I guess they still don't want just anyone (like a robot) signing on...
 &lt;/p&gt;
 
-&lt;br&gt;
-
-&lt;p&gt;
-I don't buy papers because I know that I can't trust them to bring me news in
-an unbiased, non-politically or commercially influenced fashion, or full of
-Tabloid rubbish like British newspapers. I accept the risk that the news I
-learn via the Net can be from the "uninformed" masses and mitigate this by
-using many sources so I can judge for myself where the "truth" lies.
+&lt;p&gt;&lt;a href="http://milosophical.me/blog/2006/05/30/google-mail.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>AboutMe</category><category>blogging</category><category>email</category><guid>http://milosophical.me/blog/2006/05/30/google-mail.html</guid><pubDate>Mon, 29 May 2006 23:48:36 GMT</pubDate></item><item><title>Migrated to Wordpress</title><link>http://milosophical.me/blog/2006/03/30/migrated-to-wordpress.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;
+&lt;em&gt;This post was originally published
+  at &lt;a href="http://sinewalker.blogspot.com.au/2006_03_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
+  and &lt;a href="http://sinewalker.wordpress.com/2006/03/30/migrated-to-wordpress/"&gt;sinewalker.wordpress.com&lt;/a&gt;
+  on 30 March 2006.&lt;/em&gt;
 &lt;/p&gt;
+&lt;hr&gt;
+
+
+&lt;p&gt;Well, here is the new Wordpress version of my blog!&lt;/p&gt;
 
 &lt;br&gt;
 
 &lt;p&gt;
-I won't even read over people's shoulders anymore.
+So far, I'm pretty impressed with Wordpress.  The code is much cleaner than
+Blogger, its post editor is far superior too.  I love the Categories, they work
+much easier than the Blogger + Delicious kludge I had at &lt;a title="My old blog
+                                                                   site" href="http://sinewalker.blogspot.com"&gt;my
+    old blog&lt;/a&gt;.&lt;/p&gt;
+
+&lt;br&gt;
+
+
+
+&lt;p&gt;&lt;a href="http://milosophical.me/blog/2006/03/30/migrated-to-wordpress.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>blogging</category><category>Wordpress</category><guid>http://milosophical.me/blog/2006/03/30/migrated-to-wordpress.html</guid><pubDate>Thu, 30 Mar 2006 01:15:20 GMT</pubDate></item><item><title>?? New template doesn't work ??</title><link>http://milosophical.me/blog/2006/03/20/new-template-doesnt-work.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;p&gt;
+&lt;em&gt;This post was originally published
+  at &lt;a href="http://sinewalker.blogspot.com.au/2006_03_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
+  on 20 March 2006.&lt;/em&gt;
+&lt;/p&gt;
+&lt;hr&gt;
+
+&lt;p&gt;New del.icio.us rolls do not appear at right-hand side of this site, even though they did in Preview?  Strange.  Maybe it's a blogger glitch?  See what happens in a few days, I suppose...
 &lt;/p&gt;
 
 &lt;br&gt;
 
 &lt;p&gt;
-For at least the last 10 years, newspapers have been good for only one thing:
-the ink used in newspaper presses is fantastic for removing streaks and smudges
-from my computer monitor!&lt;/p&gt;
-</description><category>blogging</category><category>media</category><category>rant</category><category>thoughts</category><guid>http://milosophical.me/blog/2005/11/01/cant-trust-the-papers.html</guid><pubDate>Tue, 01 Nov 2005 04:54:00 GMT</pubDate></item></channel></rss>
+&lt;strong&gt;UPDATE&lt;/strong&gt;:  2006-03-20 12:45 -- Not a glitch. Strange behaviour when I commented the del.icio.us block in the template.  It seems that the comment block wasn't terminated?  Odd.  Fixed by removing my comments.  This is sub-optimal, but works at least.&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+&lt;a rel="tag" href="http://del.icio.us/sinewalker_blog/Delicious"&gt;&lt;/a&gt;&lt;/p&gt;</description><category>Blogger</category><category>blogging</category><category>Delicious</category><guid>http://milosophical.me/blog/2006/03/20/new-template-doesnt-work.html</guid><pubDate>Mon, 20 Mar 2006 01:31:00 GMT</pubDate></item><item><title>Organising my bookmarks</title><link>http://milosophical.me/blog/2006/03/20/organising-my-bookmarks.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;p&gt;
+&lt;em&gt;This post was originally published
+  at &lt;a href="http://sinewalker.blogspot.com.au/2006_03_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt;
+  on 20 March 2006.&lt;/em&gt;
+&lt;/p&gt;
+&lt;hr&gt;
+
+&lt;p&gt;I've added the new “tag roll” and “link roll” to the right in
+      this blog's template.  Looks great, but examining my tags reveals I'm a
+      bit disorganised, huh?&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+That's nothing, you should check out my tags in Flickr.  Definitely could do with some improvement there.
+&lt;/p&gt;
+
+&lt;br&gt;
+
+&lt;p&gt;
+&lt;a href="http://del.icio.us/help/tags"&gt;Tags&lt;/a&gt; are a great idea.  The trouble is, I'm uncertain how best to use them.
+That is, what are the best tag words to attach to a link or photo so that I can
+find the right one again? How can I best group my del.icio.us tags
+into &lt;a href="http://del.icio.us/help/bundles"&gt;Bundles &lt;/a&gt;to facilitate
+research? Should I even try?&lt;/p&gt;
+
+
+&lt;br&gt;
+
+&lt;p&gt;
+I guess only experience will help. So I'll keep persevering :-).  Also, since tags are social, looking at how other people have tagged their stuff could be instructive too.&lt;/p&gt;</description><category>blogging</category><category>Delicious</category><category>tagging</category><guid>http://milosophical.me/blog/2006/03/20/organising-my-bookmarks.html</guid><pubDate>Mon, 20 Mar 2006 01:16:00 GMT</pubDate></item></channel></rss>

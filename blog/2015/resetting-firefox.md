@@ -2,7 +2,7 @@
 .. title: Resetting Firefox
 .. slug: resetting-firefox
 .. date: 2015-12-16 13:21:28 UTC+11:00
-.. tags: howto,tip,firefox
+.. tags: how-to,tip,firefox
 .. category: 
 .. link: 
 .. description: 

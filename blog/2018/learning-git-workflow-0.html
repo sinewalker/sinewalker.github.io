@@ -280,13 +280,12 @@ $ git push origin develop
 <p>With Magit</p>
 <ul>
 <li>
-<em>m i</em> <code>(magit-merge-into)</code> and choose "develop</li>
+<em>m -n i</em> <code>(magit-merge-into)</code>, (typing <em>-n</em> before <em>i</em> to turn on <code>--no-ff</code>); and choose "develop</li>
 </ul>
 <p>That's it, I think:</p>
 <blockquote>
 <p>This command merges the current branch into another local branch and then removes the former. The latter becomes the new current branch.</p>
 </blockquote>
-<p><strong>I need to find out if it also forces a merge commit, not a fast-forward.</strong></p>
 <p>I'm not sure what this next bit means, exactly. It seems to be concerned about remotes though, so it <em>probably</em> doesn't matter for local branches?</p>
 <blockquote>
 <p>Before the source branch is merged, it is first force pushed to its
@@ -357,7 +356,7 @@ $ git branch -d release-1.2
 <li>
 <em>b b</em> <code>(magit-checkout)</code> and choose "release-1.2"</li>
 <li>
-<em>m i</em> <code>(magit-merge-into)</code> and choose "develop"</li>
+<em>m -n i</em> <code>(magit-merge-into)</code> and choose "develop"</li>
 </ol>
 <h2>Bugs</h2>
 <p>Or "hotfixes", but whatever. They're changes that need to be made to <code>master</code> after a release tag. So that's a bug. Short-term branch. I guess the bug's "hot" because it can't wait for it's turn in the <code>develop</code> stream.</p>
