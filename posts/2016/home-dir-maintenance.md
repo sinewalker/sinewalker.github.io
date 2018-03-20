@@ -2,7 +2,7 @@
 .. title: Organising my digital stuff
 .. slug: home-dir-maintenance
 .. date: 2016-11-03 23:20:10 UTC+11:00
-.. tags: tips, organisation, boring
+.. tags: tip, organisation, boring
 .. category:
 .. link:
 .. description:

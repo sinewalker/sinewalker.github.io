@@ -2,7 +2,7 @@
 .. title: Loading Geocache Pocket-queries on TomTom XL
 .. slug: geocache-tomtom
 .. date: 2016-10-09 14:08:46 UTC+11:00
-.. tags: geocaching, gps, gsak, tomtom, howto
+.. tags: geocaching, gps, gsak, tomtom, how-to
 .. category: 
 .. link: 
 .. description: 
