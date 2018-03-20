@@ -2,7 +2,7 @@
 .. title: Import Library eBooks into Kobo
 .. slug: import-library-ebooks-into-kobo
 .. date: 2015-12-19 16:14:38 UTC+11:00
-.. tags: howto,kobo,ebook,epub,drm
+.. tags: how-to,kobo,ebook,epub,drm
 .. category: 
 .. link: 
 .. description: 
