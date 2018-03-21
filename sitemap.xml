@@ -807,7 +807,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/pixels/lego/index.html</loc>
-  <lastmod>2018-03-20T06:45:00Z</lastmod>
+  <lastmod>2018-03-21T02:08:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/pixels/minecraft/index.html</loc>
@@ -1054,10 +1054,6 @@
   <lastmod>2018-03-20T06:45:00Z</lastmod>
  </url>
  <url>
-  <loc>http://milosophical.me/tags/emacs-org-mode-blogging-code.html</loc>
-  <lastmod>2018-03-20T06:45:00Z</lastmod>
- </url>
- <url>
   <loc>http://milosophical.me/tags/emacs.html</loc>
   <lastmod>2018-03-20T10:56:00Z</lastmod>
  </url>
@@ -1098,10 +1094,6 @@
   <lastmod>2018-03-20T10:56:00Z</lastmod>
  </url>
  <url>
-  <loc>http://milosophical.me/tags/fix.html</loc>
-  <lastmod>2018-03-20T06:45:00Z</lastmod>
- </url>
- <url>
   <loc>http://milosophical.me/tags/flickr.html</loc>
   <lastmod>2018-03-20T06:45:00Z</lastmod>
  </url>
@@ -1128,10 +1120,6 @@
  <url>
   <loc>http://milosophical.me/tags/geek.html</loc>
   <lastmod>2018-03-20T10:56:00Z</lastmod>
- </url>
- <url>
-  <loc>http://milosophical.me/tags/general.html</loc>
-  <lastmod>2018-03-20T06:45:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/generics.html</loc>
@@ -1188,10 +1176,6 @@
  <url>
   <loc>http://milosophical.me/tags/how-to.html</loc>
   <lastmod>2018-03-20T10:56:00Z</lastmod>
- </url>
- <url>
-  <loc>http://milosophical.me/tags/howto.html</loc>
-  <lastmod>2018-03-20T06:45:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/ide.html</loc>
@@ -1354,10 +1338,6 @@
   <lastmod>2018-03-20T10:56:00Z</lastmod>
  </url>
  <url>
-  <loc>http://milosophical.me/tags/networks.html</loc>
-  <lastmod>2018-03-20T06:45:00Z</lastmod>
- </url>
- <url>
   <loc>http://milosophical.me/tags/nikola.html</loc>
   <lastmod>2018-03-20T06:45:00Z</lastmod>
  </url>
@@ -1422,10 +1402,6 @@
   <lastmod>2018-03-20T06:45:00Z</lastmod>
  </url>
  <url>
-  <loc>http://milosophical.me/tags/problem.html</loc>
-  <lastmod>2018-03-20T06:45:00Z</lastmod>
- </url>
- <url>
   <loc>http://milosophical.me/tags/process.html</loc>
   <lastmod>2018-03-20T06:45:00Z</lastmod>
  </url>
@@ -1448,10 +1424,6 @@
  <url>
   <loc>http://milosophical.me/tags/quote.html</loc>
   <lastmod>2018-03-20T10:56:00Z</lastmod>
- </url>
- <url>
-  <loc>http://milosophical.me/tags/quotes.html</loc>
-  <lastmod>2018-03-20T06:45:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/radeon.html</loc>
@@ -1570,16 +1542,8 @@
   <lastmod>2018-03-20T06:45:00Z</lastmod>
  </url>
  <url>
-  <loc>http://milosophical.me/tags/tip-konsole-kde.html</loc>
-  <lastmod>2018-03-20T06:45:00Z</lastmod>
- </url>
- <url>
   <loc>http://milosophical.me/tags/tip.html</loc>
   <lastmod>2018-03-20T10:56:00Z</lastmod>
- </url>
- <url>
-  <loc>http://milosophical.me/tags/tips.html</loc>
-  <lastmod>2018-03-20T06:45:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/tomtom.html</loc>

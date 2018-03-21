@@ -19,7 +19,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/pixels/lego/rss.xml</loc>
-  <lastmod>2018-03-20T06:45:00Z</lastmod>
+  <lastmod>2018-03-21T02:08:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/pixels/minecraft/rss.xml</loc>
@@ -43,7 +43,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/sitemap.xml</loc>
-  <lastmod>2018-03-20T11:01:00Z</lastmod>
+  <lastmod>2018-03-21T02:08:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/4-bit-rules.xml</loc>
@@ -278,10 +278,6 @@
   <lastmod>2018-03-20T06:45:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://milosophical.me/tags/emacs-org-mode-blogging-code.xml</loc>
-  <lastmod>2018-03-20T06:45:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>http://milosophical.me/tags/emacs.xml</loc>
   <lastmod>2018-03-20T10:56:00Z</lastmod>
  </sitemap>
@@ -322,10 +318,6 @@
   <lastmod>2018-03-20T10:56:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://milosophical.me/tags/fix.xml</loc>
-  <lastmod>2018-03-20T06:45:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>http://milosophical.me/tags/flickr.xml</loc>
   <lastmod>2018-03-20T06:45:00Z</lastmod>
  </sitemap>
@@ -352,10 +344,6 @@
  <sitemap>
   <loc>http://milosophical.me/tags/geek.xml</loc>
   <lastmod>2018-03-20T10:56:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://milosophical.me/tags/general.xml</loc>
-  <lastmod>2018-03-20T06:45:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/generics.xml</loc>
@@ -412,10 +400,6 @@
  <sitemap>
   <loc>http://milosophical.me/tags/how-to.xml</loc>
   <lastmod>2018-03-20T10:56:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://milosophical.me/tags/howto.xml</loc>
-  <lastmod>2018-03-20T06:45:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/ide.xml</loc>
@@ -574,10 +558,6 @@
   <lastmod>2018-03-20T10:56:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://milosophical.me/tags/networks.xml</loc>
-  <lastmod>2018-03-20T06:45:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>http://milosophical.me/tags/nikola.xml</loc>
   <lastmod>2018-03-20T06:45:00Z</lastmod>
  </sitemap>
@@ -642,10 +622,6 @@
   <lastmod>2018-03-20T06:45:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://milosophical.me/tags/problem.xml</loc>
-  <lastmod>2018-03-20T06:45:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>http://milosophical.me/tags/process.xml</loc>
   <lastmod>2018-03-20T06:45:00Z</lastmod>
  </sitemap>
@@ -668,10 +644,6 @@
  <sitemap>
   <loc>http://milosophical.me/tags/quote.xml</loc>
   <lastmod>2018-03-20T10:56:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://milosophical.me/tags/quotes.xml</loc>
-  <lastmod>2018-03-20T06:45:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/radeon.xml</loc>
@@ -790,16 +762,8 @@
   <lastmod>2018-03-20T06:45:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>http://milosophical.me/tags/tip-konsole-kde.xml</loc>
-  <lastmod>2018-03-20T06:45:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>http://milosophical.me/tags/tip.xml</loc>
   <lastmod>2018-03-20T10:56:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>http://milosophical.me/tags/tips.xml</loc>
-  <lastmod>2018-03-20T06:45:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/tomtom.xml</loc>
