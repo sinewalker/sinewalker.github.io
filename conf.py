@@ -3,12 +3,12 @@
 #   File:       conf.py
 #   Created:    2014-08-21
 #   Language:   Python
-#   Time-stamp: <2017-09-25 07:43:51 mjl>
+#   Time-stamp: <2018-03-22 17:31:40 mjl>
 #   Platform:   (Nikola 7.1 configuration file)
 #   OS:         *nix
 #   Author:     [MJL] Michael J. Lockhart (mlockhart@squiz.net)
 #
-#   Rights:     Copyright © 2014-2017 Michael James Lockhart, B.App.Comp(HONS)
+#   Rights:     Copyright © 2014-2018 Michael James Lockhart, B.App.Comp(HONS)
 #
 #   PURPOSE:    Nikola configuration file for Milosophical Me web site
 #
@@ -479,7 +479,7 @@ TAG_PATH = "tags"
 
 # If TAG_PAGES_ARE_INDEXES is set to True, each tag's page will contain
 # the posts themselves. If set to False, it will be just a list of links.
-# TAG_PAGES_ARE_INDEXES = False
+TAG_PAGES_ARE_INDEXES = True
 
 # Set descriptions for tag pages to make them more interesting. The
 # default is no description. The value is used in the meta description
