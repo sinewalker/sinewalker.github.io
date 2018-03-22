@@ -9,9 +9,9 @@
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#e37f2a;">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS for tag cygwin (en)" href="cygwin.xml">
 <link rel="canonical" href="http://milosophical.me/tags/cygwin.html">
-<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><link rel="alternate" type="application/rss+xml" title="RSS for tag cygwin" href="cygwin.xml">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><link rel="alternate" type="application/rss+xml" title="RSS for tag cygwin (en)" href="cygwin.xml">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -153,49 +153,252 @@
         <div class="row">
             
             
-<article class="tagpage"><header><h1>Posts about cygwin</h1>
+
+    
+    
+
+
+    <header><h1>Posts about cygwin</h1>
+    </header><div class="postindex">
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2008/11/26/new-x11-server-in-cygwin.html" class="u-url">Trouble with the New X11 server in Cygwin</a></h1>
         <div class="metadata">
-            
-            <p class="feedlink">
-                    <a href="cygwin.xml" type="application/rss+xml">RSS feed</a>
-            </p>
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="../blog/2008/11/26/new-x11-server-in-cygwin.html" rel="bookmark"><time class="published dt-published" datetime="2008-11-26T10:07:34+11:00" title="2008-11-26 10:07">2008-11-26 10:07</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>I recently upgraded my Cygwin install and noticed that Cygwin has switched it's X server <code>XWin.exe</code> from the XFree86 codebase to the Xorg codebase. Besides an updated logo, it also has some other side-effects.</p>
+
+
+<p class="more"><a href="../blog/2008/11/26/new-x11-server-in-cygwin.html">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2008/08/26/stripping-tags-from-ogg-vorbis-files.html" class="u-url">Stripping tags from ogg Vorbis files</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="../blog/2008/08/26/stripping-tags-from-ogg-vorbis-files.html" rel="bookmark"><time class="published dt-published" datetime="2008-08-26T16:05:34+10:00" title="2008-08-26 16:05">2008-08-26 16:05</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>I have a bunch of free <a title="Xiph's meta container format for media" href="http://www.xiph.org/ogg/">Ogg</a> <a title="Patent-free audio codec (MP3 killer)" href="http://www.vorbis.com/">Vorbis</a> audio files that I've downloaded from <a title="Kahvi Collective. Sound has the power to make the world a better place" href="http://kahvi.org/">Kahvi.org</a>. They're great! But recently they've been including cover art within the files, which breaks Windows Media Player (it can't handle the very long tags of binhex-coded JPGs).
+</p>
+<p>
+Since I rather like WMP's integration in windows (keyboard shortcuts), and <a title="Kewl KDE music player (iTunes killer)" href="http://amarok.kde.org/">Amarok</a> <a title="Amarok for win32 is still a work in progress, but it compiles..." href="http://amarok.kde.org/wiki/Development/Win32">isn't quite ready for win32</a>, I thought I'd find a way to strip the troublesome tags from the data files rather than change to another player.
+</p>
+
+
+Here's a quick-and-dirty shell hack to remove the tags from the files and get them playable by daft players such as Windows Media Player
+
+
+
+<p class="more"><a href="../blog/2008/08/26/stripping-tags-from-ogg-vorbis-files.html">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2008/04/04/cygwin-and-emacs-22.html" class="u-url">Cygwin and Emacs 22</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="../blog/2008/04/04/cygwin-and-emacs-22.html" rel="bookmark"><time class="published dt-published" datetime="2008-04-04T10:09:14+11:00" title="2008-04-04 10:09">2008-04-04 10:09</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p><a title="GNU Emacs home page" href="http://www.gnu.org/software/emacs/">Emacs</a> long-awaited version 22.1 was released on 2007-07-02, and a package for Cygwin was available a few months later. The Cygwin package is still experimental, so Cygwin's setup program will select 21 by default.
+</p>
+
+
+<p class="more"><a href="../blog/2008/04/04/cygwin-and-emacs-22.html">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2007/06/07/essential-tools-to-make-windows-almost-bareable.html" class="u-url">Essentials to make Windows almost bareable</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="../blog/2007/06/07/essential-tools-to-make-windows-almost-bareable.html" rel="bookmark"><time class="published dt-published" datetime="2007-06-07T09:16:44+10:00" title="2007-06-07 09:16">2007-06-07 09:16</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>Okay, so I hate working in Windows, but on my employer's equipment at least, I must live with it. After having had this machine replaced twice (faulty Dell hardware) and rebuilt more times than I can remember (Windows BSODs), for a total of at least 3 system migrations this past year, I thought I'd better keep a list of what free software to install on top of Windows, and what adjustments to make, so that at least I don't feel like I'm wearing a straight jacket.  Here goes:
+</p>
+
+<p class="more"><a href="../blog/2007/06/07/essential-tools-to-make-windows-almost-bareable.html">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2007/03/22/remote-desktop-acces-suse-cygwin-x-and-xdmcp.html" class="u-url">Remote desktop access on SuSE: Cygwin, X, XDMCP and SSH?  Nope.  FreeNX!</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="../blog/2007/03/22/remote-desktop-acces-suse-cygwin-x-and-xdmcp.html" rel="bookmark"><time class="published dt-published" datetime="2007-03-22T13:59:02+11:00" title="2007-03-22 13:59">2007-03-22 13:59</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p><strong>MJL20080827 -- Update</strong>:  I Just realised that this is one of my top-visited pages and it's a totally disorganised and incongruent pile of... What's worse is, I've never updated it since the promised update back in March 2007!</p>
+
+<p>
+Let me clear things up (and save you wading through the whole article): If you want remote access to your openSUSE desktop from a networked thin client, then forget about X11, XDMCP, VNC or tunneling X through SSH. Use the <a title="Nomachine's intro to NX" href="http://nomachine.com/documentation/html/intr-technology.html">NX</a> protocol. You'll need to do the following:
+</p>
+<ol>
+<li>Install <a title="FreeNX -- an opensource implementation of an NX protocol server" href="http://freenx.berlios.de/">FreeNX</a> on your openSUSE host. Some (slightly outdated, but usable) instructions are in Chapter 9 of the <a title="openSUSE 10.2 Reference manual (PDF)" href="http://www.novell.com/documentation/opensuse102/pdfdoc/opensuse102_reference/opensuse102_reference.pdf" target="_blank">openSUSE 10.2 Reference manual</a>. If you're using openSUSE 11.0 or newer, <a title="FreeNX" href="http://software.opensuse.org/search?baseproject=openSUSE%3A11.0&amp;p=1&amp;q=FreeNX">get the latest FreeNX package</a> from the <a title="All about openSUSE Build Service" href="http://build.opensuse.org/">openSUSE Build Service</a> (there are <a title="openSUSE one-click install standard" href="http://en.opensuse.org/Standards/One_Click_Install">one-click install</a> buttons)</li>
+	<li>Install an NX client on your remote terminal(s). <a title="Nomachine home page" href="http://www.nomachine.com/">Nomachine</a> has <a title="Nomachine's downloads page" href="http://www.nomachine.com/download.php">free NX clients</a> for Linux, Mac, Windows and Solaris (even some experimental ones for PlayStation 2 and Zaurus!). If your remote terminal is running openSUSE, you could alternatively <a title="Free NX client from OBS" href="http://software.opensuse.org/search?baseproject=openSUSE%3A11.0&amp;p=1&amp;q=freenx-client">get an open-source NX client</a> from the build service (or ask yourself: I'm running X locally, so why don't I just use good ole SSH and X11?)</li>
+	<li>Configure your NX client to connect to the openSUSE host, then log in and enjoy!</li>
+</ol>
+<p>
+<strong>The upshot: </strong>I've done this with a FreeNX server and Nomachine's NX client for Windows XP, and it all "just works", except maybe for some font issues with older X clients like emacs (install extra font packages from nomachine to fix that), and some transparency effect issues I noticed in kwin4, probably to do with X11 extensions missing in the NX client. Not a big deal.
+</p>
+
+<p>
+Read the rest of this article for the boring background and laughable false-starts in my quest for remote desktops in X... &lt;blush/&gt;
+</p>
+
+
+<p class="more"><a href="../blog/2007/03/22/remote-desktop-acces-suse-cygwin-x-and-xdmcp.html">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2007/03/09/finding-dlls-used-by-a-cygwin-program.html" class="u-url">Finding DLLs used by a Cygwin program</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="../blog/2007/03/09/finding-dlls-used-by-a-cygwin-program.html" rel="bookmark"><time class="published dt-published" datetime="2007-03-09T09:14:25+11:00" title="2007-03-09 09:14">2007-03-09 09:14</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>I don't know how many other people get this issue, but it comes up at my work a bit: Some co-worker asks me if I know of a tool to do such-and-such, and invariably I think <em>“well, that's </em>easy<em> to do on Unix, but on </em>Windows<em>…”</em>.
+</p>
+<p>
+Then I remember Cygwin, and quickly find a Cygwin utility that does it, or can be scripted to do it with a small amount of work. So then co-worker asks if they can have a copy of this utility, and of course Cygwin is Free, so I say “sure, go download from <a title="Cygwin download mirrors" href="http://www.cygwin.com/mirrors.html">www.cygwin.com</a>.” Then they say, “yeah, but I don't want to install all of Cygwin, can't you just give me that one program?”
+</p>
+
+<p>
+Well, the Cygwin command-line tools <em>can</em> be run from a Windows <code>CMD.EXE</code> shell, so this is quite possible to do. However, they all require the Cygwin POSIX layer, which at a minimum means I should also give them <code>cygwin1.dll</code>. But what <em>other</em> DLLs might the program use?
+</p>
+
+<p>
+<strong>MJL2008-09-10T14:37+1000 Update:</strong> since this page gets a lot of hits, here's the quick answer: <strong>use cygcheck</strong>, i.e:
+
+</p>
+<p style="text-align:center;"><code>cygcheck grep</code></p>
+
+
+<p>
+Find it under Happy hacker discovery #2. Keep reading if you're bored...
+</p>
+
+
+<p class="more"><a href="../blog/2007/03/09/finding-dlls-used-by-a-cygwin-program.html">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2007/03/09/setting-up-multiple-java-vms-under-cygwin.html" class="u-url">Setting up multiple Java VMs under Cygwin</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="../blog/2007/03/09/setting-up-multiple-java-vms-under-cygwin.html" rel="bookmark"><time class="published dt-published" datetime="2007-03-09T08:21:02+11:00" title="2007-03-09 08:21">2007-03-09 08:21</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>It is useful to have different versions of the JVM installed, for a number of reasons:
+</p>
+<ul>
+<li>Different optimisation features from different JVM implementations</li>
+	<li>Different language features from different JVM versions</li>
+	<li>Java classes compiled with “<em>Tiger</em>” won't run in “<em>Mantis</em>”…</li>
+</ul>
+<p>
+It is also useful to be able to quickly switch between installed JREs/JDKs depending on the task at hand.
+</p>
+
+<p>
+If I'm hacking in Linux, the <a title="JPackage home page" href="../blog/2007/03/09/www.jpackage.org">JPackage</a> project provides a much <a title="JPackage's install/location/naming policy facilitates use of the udate-alternative mechanism" href="http://www.jpackage.org/policy.php">nicer </a><a title="Debian's update-alternatives solution explained" href="http://www.debian.org/doc/debian-policy/ap-pkg-alternatives.html">solution </a>to this problem, and the Linux distro' I'm using (SUSE 10.0) <a title="Instruction for installing Java on openSUSE" href="http://en.opensuse.org/Installing_Sun's_Java_on_SUSE_Linux">uses JPackage</a>. It'd be nice if there was an <code>update-alternatives</code> for Cygwin, but since there isn't I've come up with this hack.
+</p>
+
+
+<p class="more"><a href="../blog/2007/03/09/setting-up-multiple-java-vms-under-cygwin.html">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2006/10/27/cygwin-users-and-groups.html" class="u-url">Cygwin users and groups</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="../blog/2006/10/27/cygwin-users-and-groups.html" rel="bookmark"><time class="published dt-published" datetime="2006-10-27T08:47:02+11:00" title="2006-10-27 08:47">2006-10-27 08:47</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>When you first install cygwin and run bash, it'll usually display this error message:
+</p>
+<blockquote>
+
+<pre>Your group is currently "mkpasswd".  This indicates that
+the /etc/passwd (and possibly /etc/group) files should be rebuilt.
+See the man pages for mkpasswd and mkgroup then, for example, run
+mkpasswd -l [-d] &gt; /etc/passwd
+mkgroup  -l [-d] &gt; /etc/group
+Note that the -d switch is necessary for domain users.</pre>
+</blockquote>
+
+    <p class="more"><a href="../blog/2006/10/27/cygwin-users-and-groups.html">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2006/04/18/cygwin-systray-menu.html" class="u-url">Cygwin systray menu</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="../blog/2006/04/18/cygwin-systray-menu.html" rel="bookmark"><time class="published dt-published" datetime="2006-04-18T16:11:43+10:00" title="2006-04-18 16:11">2006-04-18 16:11</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>
+<em>This post was originally published
+  at <a href="http://sinewalker.wordpress.com/2006/04/18/cygwin-systray-menu/">sinewalker.wordpress.com</a>
+  on 18 April 2006.</em>
+</p>
+
+<hr>
+<p>While I'm on the subject of Cygwin hacking, I discovered this man-page about the Cygwin X server: type <code>man XWinrc</code> and read about how you can hack your systray icon to include a little launcher menu for you favorite X clients 8)
+</p>
+<br><p class="more"><a href="../blog/2006/04/18/cygwin-systray-menu.html">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2006/04/18/hacking-emacsclient-in-cygwin.html" class="u-url">Hacking emacsclient in cygwin</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="../blog/2006/04/18/hacking-emacsclient-in-cygwin.html" rel="bookmark"><time class="published dt-published" datetime="2006-04-18T15:57:29+10:00" title="2006-04-18 15:57">2006-04-18 15:57</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>
+<em>This post was originally published
+  at <a href="http://sinewalker.wordpress.com/2006/04/18/hacking-emacsclient-in-cygwin/">sinewalker.wordpress.com</a>
+  on 18 April 2006.</em>
+</p>
+
+<hr>
+<p>I don't know why I haven't ever got around to this, but here—finally—is a hack to have Cygwin only ever start one instance of emacs (especially important in cygwin, because Win32 does not appear to share program texts between processes… )
+</p>
+
+<br><p class="more"><a href="../blog/2006/04/18/hacking-emacsclient-in-cygwin.html">Read more…</a></p>
+</div>
+    </div>
+    </article>
+</div>
+
+
+
+
+
+
 
         </div>
-        
-
-    </header><ul class="postlist">
-<li>
-<time class="listdate" datetime="2008-11-26T10:07:34+11:00" title="2008-11-26 10:07">2008-11-26 10:07</time><a href="../blog/2008/11/26/new-x11-server-in-cygwin.html" class="listtitle">Trouble with the New X11 server in Cygwin</a><a></a>
-</li>
-            <li>
-<time class="listdate" datetime="2008-08-26T16:05:34+10:00" title="2008-08-26 16:05">2008-08-26 16:05</time><a href="../blog/2008/08/26/stripping-tags-from-ogg-vorbis-files.html" class="listtitle">Stripping tags from ogg Vorbis files</a><a></a>
-</li>
-            <li>
-<time class="listdate" datetime="2008-04-04T10:09:14+11:00" title="2008-04-04 10:09">2008-04-04 10:09</time><a href="../blog/2008/04/04/cygwin-and-emacs-22.html" class="listtitle">Cygwin and Emacs 22</a><a></a>
-</li>
-            <li>
-<time class="listdate" datetime="2007-06-07T09:16:44+10:00" title="2007-06-07 09:16">2007-06-07 09:16</time><a href="../blog/2007/06/07/essential-tools-to-make-windows-almost-bareable.html" class="listtitle">Essentials to make Windows almost bareable</a><a></a>
-</li>
-            <li>
-<time class="listdate" datetime="2007-03-22T13:59:02+11:00" title="2007-03-22 13:59">2007-03-22 13:59</time><a href="../blog/2007/03/22/remote-desktop-acces-suse-cygwin-x-and-xdmcp.html" class="listtitle">Remote desktop access on SuSE: Cygwin, X, XDMCP and SSH?  Nope.  FreeNX!</a><a></a>
-</li>
-            <li>
-<time class="listdate" datetime="2007-03-09T09:14:25+11:00" title="2007-03-09 09:14">2007-03-09 09:14</time><a href="../blog/2007/03/09/finding-dlls-used-by-a-cygwin-program.html" class="listtitle">Finding DLLs used by a Cygwin program</a><a></a>
-</li>
-            <li>
-<time class="listdate" datetime="2007-03-09T08:21:02+11:00" title="2007-03-09 08:21">2007-03-09 08:21</time><a href="../blog/2007/03/09/setting-up-multiple-java-vms-under-cygwin.html" class="listtitle">Setting up multiple Java VMs under Cygwin</a><a></a>
-</li>
-            <li>
-<time class="listdate" datetime="2006-10-27T08:47:02+11:00" title="2006-10-27 08:47">2006-10-27 08:47</time><a href="../blog/2006/10/27/cygwin-users-and-groups.html" class="listtitle">Cygwin users and groups</a><a></a>
-</li>
-            <li>
-<time class="listdate" datetime="2006-04-18T16:11:43+10:00" title="2006-04-18 16:11">2006-04-18 16:11</time><a href="../blog/2006/04/18/cygwin-systray-menu.html" class="listtitle">Cygwin systray menu</a><a></a>
-</li>
-            <li>
-<time class="listdate" datetime="2006-04-18T15:57:29+10:00" title="2006-04-18 15:57">2006-04-18 15:57</time><a href="../blog/2006/04/18/hacking-emacsclient-in-cygwin.html" class="listtitle">Hacking emacsclient in cygwin</a><a></a>
-</li>
-        </ul></article>
-</div>
         <!--End of body content-->
 
         <footer id="footer"><hr>Contents Copyright © 

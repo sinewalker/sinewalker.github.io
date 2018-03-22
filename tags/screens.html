@@ -9,9 +9,9 @@
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#e37f2a;">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS for tag screens (en)" href="screens.xml">
 <link rel="canonical" href="http://milosophical.me/tags/screens.html">
-<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><link rel="alternate" type="application/rss+xml" title="RSS for tag screens" href="screens.xml">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><link rel="alternate" type="application/rss+xml" title="RSS for tag screens (en)" href="screens.xml">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -153,25 +153,63 @@
         <div class="row">
             
             
-<article class="tagpage"><header><h1>Posts about screens</h1>
+
+    
+    
+
+
+    <header><h1>Posts about screens</h1>
+    </header><div class="postindex">
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2010/07/09/what-happened-to-my-ctrl-zoom-in-xorg.html" class="u-url">What happened to my Ctrl-+/- zoom in Xorg?</a></h1>
         <div class="metadata">
-            
-            <p class="feedlink">
-                    <a href="screens.xml" type="application/rss+xml">RSS feed</a>
-            </p>
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="../blog/2010/07/09/what-happened-to-my-ctrl-zoom-in-xorg.html" rel="bookmark"><time class="published dt-published" datetime="2010-07-09T17:17:58+10:00" title="2010-07-09 17:17">2010-07-09 17:17</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>Older X.org and XFree86 used to have this neat feature where pressing Ctrl+&lt;numpad +&gt; and Ctrl+&lt;numpad -&gt; would cycle through the screen modes defined in your config file in the "Screen" section, effectively switching screen modes on the fly and letting you pan around the full virtual screen size with the mouse.</p>
+
+<p>
+This was a really useful feature for zooming in on small details, or to blow up videos without incurring high CPU overhead.
+</p>
+
+<p>
+But since about X.org 1.7 this feature seems to be missing.  I've been researching and discovered why it's missing, and what to do about it.
+</p>
+<p class="more"><a href="../blog/2010/07/09/what-happened-to-my-ctrl-zoom-in-xorg.html">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2009/02/20/xming-screen-size.html" class="u-url">XMing screen size and changing multiple monitors</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="../blog/2009/02/20/xming-screen-size.html" rel="bookmark"><time class="published dt-published" datetime="2009-02-20T10:22:44+11:00" title="2009-02-20 10:22">2009-02-20 10:22</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <p>My work's notebook (Windows XP) is running Xming as it's X11 server, and it travels between work, home and on the train.</p>
+<br><p>
+My work office has  a docking station and a rotating second display. Typically if I start Xming with this display plugged in, Xming will adjust it's screen size to use both displays, but if I start it without the screen plugged in, it'll size to just the notebook screen. If I later add the 2nd screen (by docking the notebook), Xming won't use it without a restart. Also if I rotate the screen, only the top 1200 pixels will be used by Xming.
+</p>
+<br><p>
+The solution is to specify a screen size to begin with that is as wide and tall as both of the screens.  On my docked notebook the two displays are the notebook's display (1920x1200 pixels)  and 2nd display (1600x1200 pixels, which rotates to 1200x1600). So that means the combined screen width is 3520 pixels, and the tallest screen hight is 1600 pixels.  Specify this to Xming when it starts:
+
+</p>
+<br><p style="text-align:center;"><code>path\to\xming.exe :0 -clipboard -multiwindow <strong><span style="color:#7722ff;">-screen 0 3520x1600</span></strong></code></p>
+<br><p style="text-align:left;">Now I can add/remove/rotate the second screen and still use all of it without restarting Xming.</p>
+    </div>
+    </article>
+</div>
+
+
+
+
+
+
 
         </div>
-        
-
-    </header><ul class="postlist">
-<li>
-<time class="listdate" datetime="2010-07-09T17:17:58+10:00" title="2010-07-09 17:17">2010-07-09 17:17</time><a href="../blog/2010/07/09/what-happened-to-my-ctrl-zoom-in-xorg.html" class="listtitle">What happened to my Ctrl-+/- zoom in Xorg?</a><a></a>
-</li>
-            <li>
-<time class="listdate" datetime="2009-02-20T10:22:44+11:00" title="2009-02-20 10:22">2009-02-20 10:22</time><a href="../blog/2009/02/20/xming-screen-size.html" class="listtitle">XMing screen size and changing multiple monitors</a><a></a>
-</li>
-        </ul></article>
-</div>
         <!--End of body content-->
 
         <footer id="footer"><hr>Contents Copyright © 

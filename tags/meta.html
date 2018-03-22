@@ -9,9 +9,9 @@
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#e37f2a;">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS for tag meta (en)" href="meta.xml">
 <link rel="canonical" href="http://milosophical.me/tags/meta.html">
-<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><link rel="alternate" type="application/rss+xml" title="RSS for tag meta" href="meta.xml">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><link rel="alternate" type="application/rss+xml" title="RSS for tag meta (en)" href="meta.xml">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -153,24 +153,96 @@
         <div class="row">
             
             
-<article class="tagpage"><header><h1>Posts about meta</h1>
+
+    
+    
+
+
+    <header><h1>Posts about meta</h1>
+    </header><div class="postindex">
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2017/upgrade-nikola-783.html" class="u-url">Upgrading Nikola: some pitfalls and how I climbed out of them</a></h1>
         <div class="metadata">
-            
-            <p class="feedlink">
-                    <a href="meta.xml" type="application/rss+xml">RSS feed</a>
-            </p>
-
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="../blog/2017/upgrade-nikola-783.html" rel="bookmark"><time class="published dt-published" datetime="2017-03-23T07:48:48+11:00" title="2017-03-23 07:48">2017-03-23 07:48</time></a></p>
         </div>
-        
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>After <a href="https://github.com/sinewalker/dotfiles/issues/7">some</a> <a href="https://github.com/sinewalker/dotfiles/issues/17">hacking</a> of <a href="https://github.com/sinewalker/dotfiles">my dotfiles</a> and <a href="https://github.com/sinewalker/dotfiles/blob/master/source/50_python.sh">python settings</a>, I lost my <code>nikola</code> virtual environment (I think it broke after a brew update or something.  The hacking's only partly recorded in the issues on GitHub).</p>
+<p>But that's no biggie, just make a new one and re-install, right?  Well, not quite. The re-install gives you the <em>latest</em> Nikola (great!) and that means I have to review and update my <code>conf.py</code> (okay...) and figure out runtime errors like this:</p>
+<pre class="code literal-block"><span></span><span class="k">[src:?][mjl@milo:~/hax/net/blog/milosophical.me]</span>
+<span class="na">[07:27](nikola)$ nikola version</span>
+<span class="na">Traceback (most recent call last):</span>
+  <span class="na">File "/Users/mjl/lib/nikola/bin/nikola", line 11, in &lt;module&gt;</span>
+    <span class="na">sys.exit(main())</span>
+  <span class="na">File "/Users/mjl/lib/nikola/lib/python3.6/site-packages/nikola/__main__.py", line 171, in main</span>
+    <span class="na">_</span> <span class="o">=</span> <span class="s">DN.run(oargs)</span>
+<span class="s">  File "/Users/mjl/lib/nikola/lib/python3.6/site-packages/nikola/__main__.py", line 339, in run</span>
+<span class="s">    self.nikola.init_plugins()</span>
+<span class="s">  File "/Users/mjl/lib/nikola/lib/python3.6/site-packages/nikola/nikola.py", line 1077, in init_plugins</span>
+<span class="s">    self._activate_plugins_of_category("SignalHandler")</span>
+<span class="s">  File "/Users/mjl/lib/nikola/lib/python3.6/site-packages/nikola/nikola.py", line 1233, in _activate_plugins_of_category</span>
+<span class="s">    plugin_info.plugin_object.set_site(self)</span>
+<span class="s">  File "/Users/mjl/lib/nikola/lib/python3.6/site-packages/nikola/plugins/misc/taxonomies_classifier.py", line 328, in set_site</span>
+<span class="s">    self._register_path_handlers(taxonomy)</span>
+<span class="s">  File "/Users/mjl/lib/nikola/lib/python3.6/site-packages/nikola/plugins/misc/taxonomies_classifier.py", line 316, in _register_path_handlers</span>
+<span class="s">    doc = taxonomy.path_handler_docstrings[name]</span>
+<span class="na">KeyError: 'page_index_folder_index'</span>
+</pre>
 
-    </header><ul class="postlist">
-<li>
-<time class="listdate" datetime="2017-03-23T07:48:48+11:00" title="2017-03-23 07:48">2017-03-23 07:48</time><a href="../blog/2017/upgrade-nikola-783.html" class="listtitle">Upgrading Nikola: some pitfalls and how I climbed out of them</a><a></a>
-</li>
-            <li>
-<time class="listdate" datetime="2015-06-08T21:57:43+10:00" title="2015-06-08 21:57">2015-06-08 21:57</time><a href="../blog/2015/setting-up-nikola.html" class="listtitle">Meta: Setting up Nikola blogging</a><a></a>
-</li>
-        </ul></article>
+
+<p>(well, pooh).</p>
+<p>I decided a while back that I wasn't going to meta-blog (otherwise most of my posts would be about blogging!), but I think in this case, Rule 4 will come to the rescue.  Anyway at least you know this story has a happy ending, or else I wouldn't be able to add this <code>new_post</code>!</p>
+<p class="more"><a href="../blog/2017/upgrade-nikola-783.html">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2015/setting-up-nikola.html" class="u-url">Meta: Setting up Nikola blogging</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="../blog/2015/setting-up-nikola.html" rel="bookmark"><time class="published dt-published" datetime="2015-06-08T21:57:43+10:00" title="2015-06-08 21:57">2015-06-08 21:57</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Tonight I thought that I'd sit down at my home server, <em>Tesla</em>, and do a bit of blogging.  This server's recently been rebuilt after a bad run-in with a hard-drive problem and I had not got around to putting my blog onto it.  Instead I was blogging with work's laptop.</p>
+<p>After spending an hour cloning and installing my blog repositories and the necessary software through trial-and-error, I thought it best to write down what is necessary to bootstrap my blogging environment, and save myself some trouble in the future.</p>
+<p>Ideally I will make a script to get most of this going soon … but in the meantime, you are treated to a meta-blog.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="../blog/2015/setting-up-nikola.html">Read more…</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article>
+</div>
+
+
+
+
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+        </script>
 </div>
         <!--End of body content-->
 

@@ -158,7 +158,7 @@
 
             <ul class="nav navbar-nav navbar-right">
 <li>
-    <a href="4-bits-part3.ipynb" id="sourcelink">Source</a>
+    <a href="4-bits-part3.md" id="sourcelink">Source</a>
     </li>
 
                 
@@ -181,20 +181,13 @@
             </span></p>
             <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2018-02-28T07:44:51+11:00" itemprop="datePublished" title="2018-02-28 07:44">2018-02-28 07:44</time></a></p>
             
-        <p class="sourceline"><a href="4-bits-part3.ipynb" class="sourcelink">Source</a></p>
+        <p class="sourceline"><a href="4-bits-part3.md" class="sourcelink">Source</a></p>
 
         </div>
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
+    <div>
 <p>Here is the forth part of my <a href="../../tags/4-bit-rules.html">blog series</a> expanding on my
 <a href="../../pg/4-bit-rules.html">4-bit rules of computing</a>.</p>
 <blockquote>
@@ -202,18 +195,10 @@
 </blockquote>
 <p>There is an exception to Rule 5 (<em>Rule 0</em> allows for this): <strong>doc-comments</strong>.   In this post I explore what they are, how they differ from regular comments, and how to use them to assist your fellow hackers.</p>
 <!-- TEASER_END -->
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
+
 <hr>
-<h2 id="Rule-6:-Doc-comments-are-a-Force-for-Good">
-<strong>Rule 6</strong>: Doc-comments are a Force for Good<a class="anchor-link" href="4-bits-part3.html#Rule-6:-Doc-comments-are-a-Force-for-Good">¶</a>
-</h2>
+<h2>
+<strong>Rule 6</strong>: Doc-comments are a Force for Good</h2>
 <p>(follows on from Rule 5 <em>Comments considered harmful</em>)</p>
 <blockquote>
 <p>You are in a maze of twisty little passages, all alike</p>
@@ -227,13 +212,12 @@
 </li>
 <li>(More important) it balances Rule 5's caution against using comments at all</li>
 </ol>
-<h3 id="What-is-a-doc-comment?">What is a doc-comment?<a class="anchor-link" href="4-bits-part3.html#What-is-a-doc-comment?">¶</a>
-</h3>
+<h3>What is a doc-comment?</h3>
 <p>Like regular comments, you use these to describe the code in a natural human language, let's say English (<em>Solo sé un poco de Español</em>).  Where doc-comments are different is, they have special features that are designed to be parsed by development tools to assist programmers directly, not just to be read by human eyes and ignored by compilers or interpreters.</p>
 <p>Let's see how doc-comments address the problems I outlined with regular comments:</p>
 <ol>
 <li>
-<p><em>Code is the single authoritative source of truth in a program!</em></p>
+<p><em>Code is the single authoritative source of truth in a program!</em>  </p>
 <p>Doc-comments include supplemental information on the object being documented which, while not needed or used by a compiler or interpreter, are essential for tools that inspect code and help you to write it.</p>
 <ul>
 <li>Add signposts for code-completion tools</li>
@@ -243,29 +227,27 @@
 </li>
 <li>
 <p><em>There is no way to ensure that code comments are correct at all
-times (they're not always updated with code changes, and they can't
-be covered by unit tests)</em></p>
+  times (they're not always updated with code changes, and they can't
+  be covered by unit tests)</em></p>
 <p>Some doc-comments <em>can include unit test cases</em>, ensuring that they must agree with the code they describe, or else the tests fail. By being in-line with the code they test, this increases the likelihood that both the code and the doc-comment will be <em>updated together</em>, especially if you follow some of the practices of Test-Driven Development.</p>
 <p>Other doc-comment systems have a feature similar to Java's <em>decoractors</em> which will automatically build "boilerplate" code such as Object-Oriented "getters" and "setters". All you have to do is decorate the object members that should be accessed in that way. This is in addition to pointing out to any human reader that such a member is meant to be accessed only through it's get/set methods.</p>
 </li>
 <li>
 <p>Comments are written in human language which can be prone to
-misinterpretation</p>
+  misinterpretation</p>
 <p>This is still true of doc-comments.  Having a structure to the comment may reduce this risk, but not eliminate it.</p>
 </li>
 <li>
 <p>Comments embedded in code <em>can actually be harmful</em> when doing
-polyglot meta-programming</p>
+  polyglot meta-programming</p>
 <p>Doc-comments are not syntactictly able to be embedded within the code like a regular comment can be (to mark out a suspicious section while debugging). They are usually strings, and have a special location within the code that must be adhered to (usually the beginning of a function or module), otherwise it's not a doc-comment.</p>
 </li>
 </ol>
-<h3 id="How-do-you-use-them">How do you use them<a class="anchor-link" href="4-bits-part3.html#How-do-you-use-them">¶</a>
-</h3>
+<h3>How do you use them</h3>
 <p>Doc-comments can be used in different ways, depending how the language designers built them.</p>
-<h4 id="javadoc:-Inside-out-Litterate-Programming">javadoc: Inside-out Litterate Programming<a class="anchor-link" href="4-bits-part3.html#javadoc:-Inside-out-Litterate-Programming">¶</a>
-</h4>
+<h4>javadoc: Inside-out Litterate Programming</h4>
 <p>In Java, the doc-comments' main purpose is to be the source-code for API documentation.  The goal is to be able to generate an API reference from the same code that implements the API.  It's mostly successful.  This is not strictly <em>Litterate Programming</em> because it doesn't weave instructive narative with the code, but it does at least formalise the system of commenting that I was taught in high-school:</p>
-<div class="highlight"><pre><span></span><span class="cm">/**</span>
+<pre class="code literal-block"><span></span><span class="cm">/**</span>
 <span class="cm"> * Returns an Image object that can then be painted on the screen. </span>
 <span class="cm"> * The url argument must specify an absolute {@link URL}. The name</span>
 <span class="cm"> * argument is a specifier that is relative to the url argument. </span>
@@ -287,17 +269,16 @@ polyglot meta-programming</p>
             <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
         <span class="o">}</span>
  <span class="o">}</span>
-</pre></div>
+</pre>
+
+
 <p>Here, the tags <code>@param</code> and <code>@return</code> are like the old <a href="https://en.wikipedia.org/wiki/Structured_programming">Structured Programming</a>-style <a href="https://en.wikipedia.org/wiki/Predicate_transformer_semantics">"Pre-condition"/"Post-condition"</a> comments that I would put in my Pascal school assignments.</p>
 <p>The above code example comes from <a href="http://www.oracle.com/technetwork/java/javase/tech/index-137868.html">Oracle's Javadoc style guide</a>. It also shows an embedded HTML <code>&lt;p&gt;</code> tag which the <code>javadoc</code> tool can use when generating an HTML API document.</p>
 <p>I call this <strong>"inside-out" Litterate Programming</strong> because, rather than have an English narative with code dispursed through it like Knuth's <a href="https://en.wikipedia.org/wiki/WEB">WEB</a> system of <em>TeX</em>, or Jupyter Notebooks; <em>javadoc</em> is more about havinging <em>a code library with English dispursed through it</em>. The focus of Litterate Programming is on the <em>humans reading the document</em>, and you "weave" the document to generate the code from it; whereas in javadoc the focus is on the <em>computer as the audience of the code</em>, and you use the <code>javadoc</code> tool to generate the document (so it's like "tangling").</p>
-<h4 id="iPython-and-emacs-environments:-explore-the-environment-interactively">iPython and emacs environments: explore the environment interactively<a class="anchor-link" href="4-bits-part3.html#iPython-and-emacs-environments:-explore-the-environment-interactively">¶</a>
-</h4>
+<h4>iPython and emacs environments: explore the environment interactively</h4>
 <p>(These are just examples; there are other systems that do this too, like R and Mathematica. I'm not trying to have an exhaustive comparison here, it's not the point I'm making.)</p>
 <p>In Emacs, you can type <code>M-x describe-function</code> (<code>C-h f</code>) and enter the name of a function. You'll get a description like this one for <code>describe-function</code> itself:</p>
-
-<pre><code>describe-function is an interactive autoloaded compiled Lisp function in
-‘help-fns.el’.
+<pre class="code literal-block"><span></span>describe-function is an interactive autoloaded compiled Lisp function in ‘help-fns.el’.
 
 It is bound to s-SPC h d f, C-h f, &lt;f1&gt; f, &lt;help&gt; f, &lt;menu-bar&gt; &lt;help-menu&gt;
 &lt;describe&gt; &lt;describe-function&gt;.
@@ -307,9 +288,12 @@ It is bound to s-SPC h d f, C-h f, &lt;f1&gt; f, &lt;help&gt; f, &lt;menu-bar&gt
 Display the full documentation of FUNCTION (a symbol).
 When called from lisp, FUNCTION may also be a function object.
 
-[back]</code></pre>
+[back]
+</pre>
+
+
 <p>There is a lot going on here besides the doc-comment, but those words at the bottom actually do come from the function's code in <code>help-fns.el</code>:</p>
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="nb">defun</span> <span class="nv">describe-function</span> <span class="p">(</span><span class="k">function</span><span class="p">)</span>
+<pre class="code literal-block"><span></span><span class="p">(</span><span class="nb">defun</span> <span class="nv">describe-function</span> <span class="p">(</span><span class="k">function</span><span class="p">)</span>
   <span class="s">"Display the full documentation of FUNCTION (a symbol).</span>
 <span class="s">When called from lisp, FUNCTION may also be a function object."</span>
   <span class="p">(</span><span class="k">interactive</span>
@@ -320,9 +304,11 @@ When called from lisp, FUNCTION may also be a function object.
                     <span class="p">(</span><span class="nf">format</span> <span class="s">"Describe function (default %s): "</span> <span class="nv">fn</span><span class="p">)</span>
                   <span class="s">"Describe function: "</span><span class="p">)</span>
 <span class="err">⋮</span>
-</pre></div>
-<p>I truncated the output here, but <a href="https://github.com/emacs-mirror/emacs/blob/emacs-25/lisp/help-fns.el#L52">the whole function</a> is illustrative because it does <em>also</em> include <em>ordinary comments</em>. Note though that they are exceptional because they describe difficult logic:</p>
-<div class="highlight"><pre><span></span><span class="err">⋮</span>
+</pre>
+
+
+<p>I truncated the listing here, but <a href="https://github.com/emacs-mirror/emacs/blob/emacs-25/lisp/help-fns.el#L52">the whole function</a> is illustrative because it does <em>also</em> include <em>ordinary comments</em>. Note though that they are exceptional because they describe difficult logic:</p>
+<pre class="code literal-block"><span></span><span class="err">⋮</span>
     <span class="p">(</span><span class="k">save-excursion</span>
       <span class="p">(</span><span class="nv">with-help-window</span> <span class="p">(</span><span class="nv">help-buffer</span><span class="p">)</span>
         <span class="p">(</span><span class="nf">prin1</span> <span class="k">function</span><span class="p">)</span>
@@ -330,139 +316,98 @@ When called from lisp, FUNCTION may also be a function object.
         <span class="c1">;; it is easier to get out the function name using forward-sexp.</span>
         <span class="p">(</span><span class="nf">princ</span> <span class="s">" is "</span><span class="p">)</span>
 <span class="err">⋮</span>
-</pre></div>
+</pre>
+
+
 <p>IPython and Jupyter have an online inspection help system that provides something very similar, also driven by Python's <em>docstrings</em>.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Wait,-did-you-say-you-can-test-doc-comments?">Wait, did you say you can test doc-comments?<a class="anchor-link" href="4-bits-part3.html#Wait,-did-you-say-you-can-test-doc-comments?">¶</a>
-</h2>
+<h2>Wait, did you say you can test doc-comments?</h2>
 <p>Python's <a href="https://pymotw.com/2/doctest/">doctest</a> module (<em>Python Module of the Month</em>, covers Python2; or see the <a href="https://docs.python.org/3/library/doctest.html#module-doctest">Python 3 documentation</a>) provides a way to include your module's test cases within the code. This is a super facility that is well worth your time exploring.  See my <a href="../../pg/4-bit-rules.html">Rule 7</a>.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Regular-strings-as-doc-comments">Regular strings as doc-comments<a class="anchor-link" href="4-bits-part3.html#Regular-strings-as-doc-comments">¶</a>
-</h2>
+<h2>Regular strings as doc-comments</h2>
 <p>I have rolled my own doc-comments system in at least one language that doesn't have them:  <strong>Bash</strong>, which is the default Unix shell for GNU systems and many BSD ones also.</p>
-<p>It is documented on my <a href="https://github.com/sinewalker/dotfiles/wiki/Self-documenting-functions">dotfiles project wiki on GitHub</a> as well as within <a href="https://github.com/sinewalker/dotfiles/blob/1.0/source/10_meta.sh">the code itself</a>, of course!  Take a look at it.</p>
+<p>It is documented on my <a href="https://github.com/sinewalker/dotfiles/wiki/Self-documenting-functions">dotfiles project wiki on GitHub</a> as well as within <a href="https://github.com/sinewalker/dotfiles/blob/1.0/source/10_meta.sh">the code itself</a>, of course!  Take a look at it. </p>
 <p>With this, and provided that the functions include a <code>$FUNCDESC</code> doc-comment that followes a few <a href="https://github.com/sinewalker/dotfiles/wiki/Self-documenting-functions#coding-conventions">simple conventions</a>, you can interactively explore my various esoteric shell functions.</p>
 <p>Let's explore the system itself:</p>
+<h3>Describing and Listing shell functions</h3>
+<pre class="code literal-block"><span></span><span class="k">[mjl@milo:~/hax]</span>
+<span class="na">[08:14]$ describe describe</span>
+<span class="na">Fn: describe in /Users/mjl/.dotfiles/source/10_meta.sh line 65</span>
+    <span class="na">'Describe a function and show where it is defined.</span>
+<span class="k">[mjl@milo:~/hax]</span>
+<span class="na">[08:14]$</span>
+</pre>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Describing-and-Listing-shell-functions">Describing and Listing shell functions<a class="anchor-link" href="4-bits-part3.html#Describing-and-Listing-shell-functions">¶</a>
-</h3>
-<pre><code>
-[mjl@milo:~/hax]
-[08:14]$ describe describe
-Fn: describe in /Users/mjl/.dotfiles/source/10_meta.sh line 65
-    'Describe a function and show where it is defined.
-[mjl@milo:~/hax]
-[08:14]$</code></pre>
-<p>My <a href="https://github.com/sinewalker/dotfiles/blob/1.0/source/10_meta.sh#L65">describe</a> function tells you <em>where a shell function comes from, and a quick summary description from the doc-comment</em>. It's a bit like emacs' <code>describe-function</code>.</p>
+
+<p>My <a href="https://github.com/sinewalker/dotfiles/blob/1.0/source/10_meta.sh#L65">describe</a> function tells you <em>where a shell function comes from, and a quick summary description from the doc-comment</em>. It's a bit like emacs' <code>describe-function</code>. </p>
 <p>What if we want to see all of the doumentation, and the code? Well, we <em>could</em> look in that file, or we can just <code>list</code> the function, as it has been loaded into memory:</p>
+<pre class="code literal-block"><span></span><span class="o">[</span>mjl@milo:~/hax<span class="o">]</span>
+<span class="o">[</span><span class="m">08</span>:14<span class="o">]</span>$ list describe
+Fn: describe in /Users/mjl/.dotfiles/source/10_meta.sh line <span class="m">65</span>
+    Describe a <span class="k">function</span> and show where it is defined.
+describe <span class="o">()</span>
+<span class="o">{</span>
+    <span class="nb">local</span> <span class="nv">FUNCDESC</span><span class="o">=</span><span class="s1">'Describe a function and show where it is defined.</span>
 
-<pre><code>
-[mjl@milo:~/hax]
-[08:14]$ list describe
-Fn: describe in /Users/mjl/.dotfiles/source/10_meta.sh line 65
-    'Describe a function and show where it is defined.
-describe ()
-{
-    local FUNCDESC='Describe a function and show where it is defined.
+<span class="s1">Prints information about the specified function including the first line of the</span>
+<span class="s1">$FUNCDESC declaration from the function definition, and where the function is</span>
+<span class="s1">defined.</span>
 
-Prints information about the specified function including the first line of the
-$FUNCDESC declaration from the function definition, and where the function is
-defined.
+<span class="s1">This function requires shopt -s extdebug to show file and line details.'</span><span class="p">;</span>
+    <span class="k">if</span> <span class="o">[[</span> -z <span class="s2">"</span><span class="si">${</span><span class="nv">1</span><span class="si">}</span><span class="s2">"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+        usage <span class="s2">"</span><span class="si">${</span><span class="nv">FUNCNAME</span><span class="si">}</span><span class="s2"> &lt;function&gt;"</span> <span class="si">${</span><span class="nv">FUNCDESC</span><span class="si">}</span><span class="p">;</span>
+        error <span class="s2">"Must supply a function to describe."</span><span class="p">;</span>
+        <span class="k">return</span> <span class="m">1</span><span class="p">;</span>
+    <span class="k">fi</span><span class="p">;</span>
+    <span class="nb">local</span> <span class="nv">toggled</span><span class="o">=</span><span class="m">0</span><span class="p">;</span>
+    <span class="nb">shopt</span> extdebug &gt; /dev/null <span class="o">||</span> <span class="nb">shopt</span> -s extdebug <span class="o">&amp;&amp;</span> <span class="nv">toggled</span><span class="o">=</span><span class="m">1</span><span class="p">;</span>
+    <span class="nb">declare</span> -F <span class="s2">"</span><span class="si">${</span><span class="nv">1</span><span class="si">}</span><span class="s2">"</span> <span class="p">|</span> awk <span class="s1">'{print "Fn: " $1 " in " $3 " line " $2}'</span><span class="p">;</span>
+    <span class="nb">type</span> -a <span class="s2">"</span><span class="si">${</span><span class="nv">1</span><span class="si">}</span><span class="s2">"</span> <span class="p">|</span> awk -F <span class="o">=</span> <span class="s1">'/FUNCDESC/{print "    "$2;exit}'</span> <span class="p">|</span> fold -s -w <span class="si">${</span><span class="nv">COLUMNS</span><span class="si">}</span><span class="p">;</span>
+    <span class="o">[[</span> <span class="nv">$toggled</span> <span class="o">==</span> <span class="m">1</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="nb">shopt</span> -u extdebug
+<span class="o">}</span>
+<span class="o">[</span>mjl@milo:~/hax<span class="o">]</span>
+<span class="o">[</span><span class="m">08</span>:14<span class="o">]</span>$
+</pre>
 
-This function requires shopt -s extdebug to show file and line details.';
-    if [[ -z "${1}" ]]; then
-        usage "${FUNCNAME} &lt;function&gt;" ${FUNCDESC};
-        error "Must supply a function to describe.";
-        return 1;
-    fi;
-    local toggled=0;
-    shopt extdebug &gt; /dev/null || shopt -s extdebug &amp;&amp; toggled=1;
-    declare -F "${1}" | awk '{print "Fn: " $1 " in " $3 " line " $2}';
-    type -a "${1}" | awk -F = '/FUNCDESC/{print "    "$2;exit}' | fold -s -w ${COLUMNS};
-    [[ $toggled == 1 ]] &amp;&amp; shopt -u extdebug
-}
-[mjl@milo:~/hax]
-[08:14]$</code></pre>
+
 <p>Because the doc-comment is actually stored as an <em>environment variable</em>, it is included in this listing, whereas normal shell comments are not shown by Bash's <code>type</code> builtin function (the comments are ignored when the file is <code>source</code>d).</p>
 <p>The <code>describe</code> function above just prints the first line of the code that matches the pattern <code>FUNCDESC</code>. To see the whole function instead, use <a href="https://github.com/sinewalker/dotfiles/blob/1.0/source/10_meta.sh#L90">list</a> like above.  Listing <code>list</code> is left as an exercise for the reader.</p>
 <p>The same <code>$FUNCDESC</code> variable is also referenced in the call to my <code>usage</code> function, to show how to use the function when you make an error. Here it is in action:</p>
+<pre class="code literal-block"><span></span><span class="k">[mjl@milo:~]</span>
+<span class="na">[09:46]$ describe</span>
+<span class="na">Usage: describe &lt;function&gt;</span>
+<span class="na">Describe a function and show where it is defined. Prints information about the</span>
+<span class="na">specified function including the first line of the $FUNCDESC declaration from</span>
+<span class="na">the function definition, and where the function is defined. This function</span>
+<span class="na">requires shopt -s extdebug to show file and line details.</span>
+<span class="na">Must supply a function to describe.</span>
+<span class="k">[mjl@milo:~]</span>
+<span class="na">[09:46]$</span>
+</pre>
 
-<pre><code>
-[mjl@milo:~]
-[09:46]$ describe
-Usage: describe &lt;function&gt;
-Describe a function and show where it is defined. Prints information about the
-specified function including the first line of the $FUNCDESC declaration from
-the function definition, and where the function is defined. This function
-requires shopt -s extdebug to show file and line details.
-Must supply a function to describe.
-[mjl@milo:~]
-[09:46]$</code></pre>
-<h3 id="LOOKing-around">LOOKing around<a class="anchor-link" href="4-bits-part3.html#LOOKing-around">¶</a>
-</h3>
+
+<h3>LOOKing around</h3>
 <p>You can list <em>all</em> the current Bash functions with <a href="https://github.com/sinewalker/dotfiles/blob/1.0/source/10_meta.sh#L41">functions</a>:</p>
+<pre class="code literal-block"><span></span><span class="k">[mjl@milo:~/hax]</span>
+<span class="na">[08:19]$ functions</span>
+<span class="na">activate</span>
+<span class="na">analyse-web</span>
+<span class="na">backout</span>
+<span class="na">backup</span>
+<span class="na">buz</span>
+<span class="na">check-tls</span>
+<span class="na">check_help</span>
+<span class="na">cleanup</span>
+<span class="na">cpmod</span>
+<span class="na">⋮</span>
+</pre>
 
-<pre><code>
-[mjl@milo:~/hax]
-[08:19]$ functions
-activate
-analyse-web
-backout
-backup
-buz
-check-tls
-check_help
-cleanup
-cpmod
-⋮</code></pre>
-<p>(truncated for brevity — I have 85 shell functions on my Mac, from various locations)</p>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Use-the-Source,-Luke">
-<em>Use the Source, Luke</em><a class="anchor-link" href="4-bits-part3.html#Use-the-Source,-Luke">¶</a>
-</h2>
+<p>(truncated for brevity — I have 85 interactive shell functions on my Mac, from various locations)</p>
+<h2><em>Use the Source, Luke</em></h2>
 <p>So I hope this illustrates the value of <em>good doc-comments</em>.  With an interactive system that supports them, like Emacs, iPython/Jupyter and my own Bash meta-fuctions, they can be a really great tool that helps coders to explore and experiment with a codebase.</p>
 <p>It's just like playng <code>ADVENT</code>, and like the game, good doc-comments foster in me a sense of <em>adventure</em> and <em>exploration</em> which makes coding with strange new codebases something <em>fun</em> instead of a hideous nightmare.</p>
 <p>Commenting and documenting your code is traditionally looked at as a tiresome chore that is never complete.  Who knows, with this frame of mind, it might even encourage hackers to write their own doc-comments as a sort-of mini-adventure?</p>
 <p><strong><em>This</em></strong> would be a <em>Force for Good</em>.</p>
-
 </div>
-</div>
-</div>
-    </div>
-  </div>
-
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../tags/4-bit-rules.html" rel="tag">4-bit-rules</a></li>
@@ -478,9 +423,7 @@ cpmod
             <li class="next">
                 <a href="learning-git-workflow-0.html" rel="next" title="Learning DVCS Workflow - 0">Next post</a>
             </li>
-        </ul></nav></aside><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
-        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
-        </script></article>
+        </ul></nav></aside></article>
 </div>
         <!--End of body content-->
 

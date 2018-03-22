@@ -9,9 +9,9 @@
 <link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#e37f2a;">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS for tag useability (en)" href="useability.xml">
 <link rel="canonical" href="http://milosophical.me/tags/useability.html">
-<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><link rel="alternate" type="application/rss+xml" title="RSS for tag useability" href="useability.xml">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><link rel="alternate" type="application/rss+xml" title="RSS for tag useability (en)" href="useability.xml">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -153,34 +153,128 @@
         <div class="row">
             
             
-<article class="tagpage"><header><h1>Posts about useability</h1>
+
+    
+    
+
+
+    <header><h1>Posts about useability</h1>
+    </header><div class="postindex">
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2010/07/05/awesome-kde-java-composite-hacks.html" class="u-url">Awesome KDE, Java composite hacks</a></h1>
         <div class="metadata">
-            
-            <p class="feedlink">
-                    <a href="useability.xml" type="application/rss+xml">RSS feed</a>
-            </p>
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="../blog/2010/07/05/awesome-kde-java-composite-hacks.html" rel="bookmark"><time class="published dt-published" datetime="2010-07-05T14:54:32+10:00" title="2010-07-05 14:54">2010-07-05 14:54</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>I've been experimenting with the <a title="This is gonna be LEGEN ... wait for it ... DARY" href="http://awesome.naquadah.org/">awesome</a> <a title="Wikipedia" href="http://en.wikipedia.org/wiki/Tiling_window_manager">tiling window manager</a> as a replacement to KDE's <a title="Wikipedia" href="http://en.wikipedia.org/wiki/KWin">kwin</a>, and I've managed to hack together a recipe for getting them up an running. It's surprisingly simple, although the learing curve was a little steep.
+</p>
+<p>
+This post documents what I've done to get things working nicely with the basic awesome config. No customisations here, see the <a title="Awesome's wiki" href="http://awesome.naquadah.org/wiki/Main_Page">awesome wiki</a> for some <a title="Customising Awesome" href="http://awesome.naquadah.org/wiki/Main_Page#Customization">ideas</a>.
+</p>
+<p class="more"><a href="../blog/2010/07/05/awesome-kde-java-composite-hacks.html">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2010/03/10/ms-windows-focus-follows-mouse-registry-hacks.html" class="u-url">MS-Windows focus-follows-mouse Registry hacks</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="../blog/2010/03/10/ms-windows-focus-follows-mouse-registry-hacks.html" rel="bookmark"><time class="published dt-published" datetime="2010-03-10T14:42:26+11:00" title="2010-03-10 14:42">2010-03-10 14:42</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>I like the "focus follows mouse" window-focussing model from X11, because
+</p>
+<ul>
+<li>I don't have to click on the window, just move the mouse and the window it's over is focussed</li>
+	<li>I can focus a window <em>without</em> bringing it to the front, which is sometimes handy. If I want it in front, I can click it.</li>
+</ul>
+<br><p>
+However MS-Windows follows the old-fashioned, Macintosh/Smalltalk style of having users click on a window to focus it for the keyboard. How do you make MS-Windows behave more like X11?
+</p>
+
+
+<p class="more"><a href="../blog/2010/03/10/ms-windows-focus-follows-mouse-registry-hacks.html">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2008/06/18/solaris-x11-and-dvorak-simplified-keyboard-layout.html" class="u-url">Solaris X11 and Dvorak simplified keyboard layout</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="../blog/2008/06/18/solaris-x11-and-dvorak-simplified-keyboard-layout.html" rel="bookmark"><time class="published dt-published" datetime="2008-06-18T14:00:46+10:00" title="2008-06-18 14:00">2008-06-18 14:00</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>I've recently been playing with <a title="OpenSolaris web site" href="http://opensolaris.org">OpenSolaris</a> and <a title="SDN Solaris Express DE Community web site" href="http://developers.sun.com/sxde/community.jsp">Solaris Express DE</a> running in <a title="Sun's xVM VirtualBox web site" href="http://virtualbox.org">VirtualBox</a>. They're fine so far (except audio isn't working) but I stumbled on a usability issue that was nearly a show-stopper: dratted QWERTY layouts! The GNOME GUI for switching to Dvorak doesn't work, and <code>setxkbmap</code><sub>(1)</sub> can't find the rules file for dvorak either (they don't seem to be installed where the man page indicates)...
+</p>
+
+<p class="more"><a href="../blog/2008/06/18/solaris-x11-and-dvorak-simplified-keyboard-layout.html">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2007/08/30/hetrogeneous-operating-environments-considered-normal.html" class="u-url">Hetrogeneous Operating Environments considered normal</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="../blog/2007/08/30/hetrogeneous-operating-environments-considered-normal.html" rel="bookmark"><time class="published dt-published" datetime="2007-08-30T11:47:52+10:00" title="2007-08-30 11:47">2007-08-30 11:47</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <p>Was reading <a title="an inside look at KDE 4.0" href="http://rackit.gartnerwebdev.com/2007/08/28/ready-for-a-new-k-an-inside-look-at-kde-40/" target="_blank">this interview</a> with Wade Olson about KDE 4.0.  It is pretty interesting, but the best quote was at the end:
+</p>
+<blockquote>
+<p>I often rant about how in all disruptive technologies, trends are always the same. Whether with the automobile, railroads, telephony or computers. A dominant company establishes ubiquity, but eventually competition settles in. Can you believe that Fords and Chevys can drive on the same roads and use the same gas? What a miracle of modern science that an AT&amp;T user could call a Sprint user on the phone? A TGV and ICE train can ride on the same tracks? Madness! I can plug a lamp into the wall that my power company didn’t sell me? Now that’s what I call progress.</p>
+<p>
+Why would computing be any different? I can’t believe that some choose to write software for a large audience that isn’t cross platform, browser-based or interoperable - but some do. Over time, proprietary file formats will go from being a competitive advantage to disadvantage. Heterogeneous systems are the norm and expected in every industry. It’s just tough being patient in ours.</p>
+</blockquote>
+<p>
+Whatever your views on OOXML or Linux or Apple or DRM or FOSS/Proprietary software, or other contentious issues in the IT  industry, you've got to admit, these are pretty sensible aims.</p>
+<p></p>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2006/03/22/new-printer-just-works-in-suse-10.html" class="u-url">New Printer “Just Works” in SUSE 10</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="../blog/2006/03/22/new-printer-just-works-in-suse-10.html" rel="bookmark"><time class="published dt-published" datetime="2006-03-22T09:45:00+11:00" title="2006-03-22 09:45">2006-03-22 09:45</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <p>
+<em>This post was originally published
+  at <a href="http://sinewalker.blogspot.com.au/2006_03_01_archive.html">sinewalker.blogspot.com.au</a>
+  on 22 March 2006.</em>
+</p>
+<hr>
+<p>Well, here's a first for me:  go to local Dick Smith's, buy a
+      cheap printer, for my wife  (HP Deskjet 3940, AU$66).  Because I don't
+      really care about printing from Linux, I didn't care if it works or not
+      on that OS, just bought whatever Windows printer was cheapest.</p>
+
+<br><p>
+Brought it home, plugged it into my PC (in Windows) and it works, after installing drivers and software and about 15 mins of setup time.</p>
+
+<br><p>
+For the heck of it, I rebooted to Linux to see what would happen.  Well lordy
+“New hardware detected:  HPdeskjet3940” and an offer to set it up. After 5
+minutes — just accepting all the standard options — out comes a test page, in
+colour, bi-directional and fast.</p>
+
+<br><p>
+Neat.  Linux is ready for me....</p>
+    </div>
+    </article>
+</div>
+
+
+
+
+
+
 
         </div>
-        
-
-    </header><ul class="postlist">
-<li>
-<time class="listdate" datetime="2010-07-05T14:54:32+10:00" title="2010-07-05 14:54">2010-07-05 14:54</time><a href="../blog/2010/07/05/awesome-kde-java-composite-hacks.html" class="listtitle">Awesome KDE, Java composite hacks</a><a></a>
-</li>
-            <li>
-<time class="listdate" datetime="2010-03-10T14:42:26+11:00" title="2010-03-10 14:42">2010-03-10 14:42</time><a href="../blog/2010/03/10/ms-windows-focus-follows-mouse-registry-hacks.html" class="listtitle">MS-Windows focus-follows-mouse Registry hacks</a><a></a>
-</li>
-            <li>
-<time class="listdate" datetime="2008-06-18T14:00:46+10:00" title="2008-06-18 14:00">2008-06-18 14:00</time><a href="../blog/2008/06/18/solaris-x11-and-dvorak-simplified-keyboard-layout.html" class="listtitle">Solaris X11 and Dvorak simplified keyboard layout</a><a></a>
-</li>
-            <li>
-<time class="listdate" datetime="2007-08-30T11:47:52+10:00" title="2007-08-30 11:47">2007-08-30 11:47</time><a href="../blog/2007/08/30/hetrogeneous-operating-environments-considered-normal.html" class="listtitle">Hetrogeneous Operating Environments considered normal</a><a></a>
-</li>
-            <li>
-<time class="listdate" datetime="2006-03-22T09:45:00+11:00" title="2006-03-22 09:45">2006-03-22 09:45</time><a href="../blog/2006/03/22/new-printer-just-works-in-suse-10.html" class="listtitle">New Printer “Just Works” in SUSE 10</a><a></a>
-</li>
-        </ul></article>
-</div>
         <!--End of body content-->
 
         <footer id="footer"><hr>Contents Copyright © 
