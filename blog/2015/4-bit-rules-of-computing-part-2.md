@@ -12,7 +12,7 @@
 Here is the third part of my [blog series](/tags/4-bit-rules.html) expanding on my
 [4-bit rules of computing](/pg/4-bit-rules.html).
 
-In this installment:  Rules 5, on comments.  Rule 5 is a bit contentious and I've taken too long in writing my thoughts on it &mdash; which is probably telling. Nonetheless I still want to press ahead and get these words out.  I also wanted to include Rule 6 with this post, but I'm taking my own advice and breaking the post into two, because it really was getting quite long.
+In this installment:  Rules 5, on comments.  Rule 5 is a bit contentious and I've taken too long in writing my thoughts on it &mdash; which is probably telling. Nonetheless I still want to press ahead and get these words out.  I also wanted to include [Rule 6](/blog/2018/4-bits-part3.html) with this post, but I'm taking my own advice and breaking the post into two, because it really was getting quite long.
 
 <!-- TEASER_END -->
 
@@ -41,7 +41,7 @@ reaction I've had when discussing this line of thought in face-to-face
 with other coders has been the same too: "The smeg? No way!"
 
 But after I calmed down and *read John's post properly*, I came
-around, mostly (see **Rule 6**)&hellip;.
+around, mostly (see *[Rule 6](/blog/2018/4-bits-part3.html)*)&hellip;.
 
 While I'm not convinced that John successfully demonstrates his point,
 I do follow his reasoning, and I agree with his *principle* that
@@ -56,7 +56,7 @@ the same vein that
 [Edsger Dijkstra](http://en.wikipedia.org/wiki/Edsger_W._Dijkstra)
 [treated `GOTO`](http://www.u.arizona.edu/~rubinson/copyright_violations/Go_To_Considered_Harmful.html)**:
 *avoid it where you can*.  This is exactly in accordance with the advice
-in **[Rule 3](/blog/4-bit-rules-of-computing-part-0)**, specifically
+in *[Rule 3](/blog/4-bit-rules-of-computing-part-0)*, specifically
 Rule 3.8: "&hellip;*practicality beats purity*".
 
 Misuse of code comments
