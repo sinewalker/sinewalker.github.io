@@ -2,17 +2,28 @@
 <html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="description" content="A geek's notebook">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Posts for year 2018 | Milosophical Me</title>
+<title>Learning DVCS Workflow - 1 | Milosophical Me</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#e37f2a;">
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
-<link rel="canonical" href="http://milosophical.me/archive/2018/index.html">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
+<link rel="canonical" href="http://milosophical.me/blog/2018/git-checkout-ftw.html">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Michael Lockhart">
+<link rel="prev" href="4-bits-part4.html" title="4-bit Rules of Computing, Part 4" type="text/html">
+<meta property="og:site_name" content="Milosophical Me">
+<meta property="og:title" content="Learning DVCS Workflow - 1">
+<meta property="og:url" content="http://milosophical.me/blog/2018/git-checkout-ftw.html">
+<meta property="og:description" content="Tonight I learned a basic git trick that was not immediately obvious to me, but should have been, I guess.
+I've been switching my Spacemacs back to the master branch to try trouble-shoot a performance">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2018-03-27T22:16:00+11:00">
+<meta property="article:tag" content="git">
+<meta property="article:tag" content="magit">
+<meta property="article:tag" content="merging">
+<meta property="article:tag" content="tip">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -37,10 +48,10 @@
         <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
             <ul class="nav navbar-nav">
 <li>
-<a href="../../blog/index.html">Blog</a>
+<a href="../index.html">Blog</a>
                 </li>
 <li>
-<a href="../archive.html">Archive</a>
+<a href="../../archive/archive.html">Archive</a>
                 </li>
 <li>
 <a href="../../tags/index.html">Tags</a>
@@ -143,7 +154,13 @@
 <!-- End of custom search -->
 
 
-            <ul class="nav navbar-nav navbar-right"></ul>
+            <ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="git-checkout-ftw.md" id="sourcelink">Source</a>
+    </li>
+
+                
+            </ul>
 </div>
 <!-- /.navbar-collapse -->
     </div>
@@ -154,30 +171,70 @@
         <div class="row">
             
             
-<article class="listpage"><header><h1>Posts for year 2018</h1>
-    </header><ul class="postlist">
-<li>
-<time class="listdate" datetime="2018-03-27T22:16:00+11:00" title="2018-03-27 22:16">2018-03-27 22:16</time><a href="../../blog/2018/git-checkout-ftw.html" class="listtitle">Learning DVCS Workflow - 1</a>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Learning DVCS Workflow - 1</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    <a href="../../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2018-03-27T22:16:00+11:00" itemprop="datePublished" title="2018-03-27 22:16">2018-03-27 22:16</time></a></p>
+            
+        <p class="sourceline"><a href="git-checkout-ftw.md" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>Tonight I learned a basic git trick that was not immediately obvious to me, but should have been, I guess.</p>
+<p>I've been switching <a href="https://github.com/sinewalker/dotspacemacs/tree/develop">my Spacemacs</a> back to the <a href="https://github.com/sinewalker/dotspacemacs/">master branch</a> to try trouble-shoot a performance issue I'm having on the Macintosh where it just hangs occasionally.  My master is tracking to Spacemacs master which is still at 0.200.13.  I haven't touched it in over a year, and there are some things that I wanted from my <code>develop</code> branch.</p>
+<p>I want to merge in the latest version of those few files, but not <em>everything</em> on the branch, so a <em>merge</em> is not the right operation.</p>
+<!-- TEASER_END -->
+
+<hr>
+<p>Turns out you can use <code>git checkout</code> to do this very easily. The "trick" was: you can specify a <em>path</em> as well as a branch to check out (derp, I knew that).  Magit doesn't (so far as I can find) let you check out just one or a few files, so you have to do it from the command line:</p>
+<pre class="code literal-block"><span></span>git checkout &lt;branch&gt; [&lt;path&gt;...]
+</pre>
+
+
+<p>Here's an example I did tonight. To get my latest EShell aliases from my Spacemacs <code>develop</code> branch, and merge them into <code>master</code>, I just did this:</p>
+<pre class="code literal-block"><span></span>$ git checkout master
+$ git checkout develop config/eshell/alias
+$ git add .
+$ git commit -m <span class="s2">"merged latest eshell aliases from develop branch"</span>
+</pre>
+
+
+<p>It also can be used the other way.  I <a href="https://github.com/sinewalker/dotspacemacs/commit/979d01a9fd5347b4e691102ee422aece11b308f1">fixed a bug</a> on my SUSE laptop where Spacemacs would not start up cleanly. I had a syntax error in my <code>layers/mjl/keybindings.el</code> on a condition that only gets executed outside of a machine running <code>darwin</code> -- clearly I introduced it last year on my Mac and never found out until I tried to use this on a SUSE machine!</p>
+<p>Anyway that fix commit is on my <code>master</code> branch.  Back to going the other way.  One other thing that I wanted from my <code>develop</code> branch is my latest keybindings. When I merge my latest keybindings from <code>develop</code> to <code>master</code> it doesn't have the fix.</p>
+<p>I used a combination of git command-line and Magit's cool selective hunk stage/unstage feature (it's like "interactive" mode in the git command line, but not horrible) to get it done very smoothly:</p>
+<ol>
+<li>From the command line, on the master branch:  <code>git checkout develop layers/mjl/keybindings.el</code>
 </li>
-        <li>
-<time class="listdate" datetime="2018-03-23T21:25:22+11:00" title="2018-03-23 21:25">2018-03-23 21:25</time><a href="../../blog/2018/4-bits-part4.html" class="listtitle">4-bit Rules of Computing, Part 4</a>
+<li>In Magit, stage the changes, then un-stage the hunk that has the syntax error</li>
+<li>In Magit, commit the staged changes on master</li>
+<li>Switch to the <code>develop</code> branch (Magit:  <code>b b</code> -&gt; develop)</li>
+<li>On the command line, in develop branche: <code>git checkout master layers/mjl/keybindings.el</code>
 </li>
-        <li>
-<time class="listdate" datetime="2018-03-18T11:48:10+11:00" title="2018-03-18 11:48">2018-03-18 11:48</time><a href="../../blog/2018/learning-git-workflow-0.html" class="listtitle">Learning DVCS Workflow - 0</a>
-</li>
-        <li>
-<time class="listdate" datetime="2018-02-28T07:44:51+11:00" title="2018-02-28 07:44">2018-02-28 07:44</time><a href="../../blog/2018/4-bits-part3.html" class="listtitle">4-bit Rules of Computing, Part 3</a>
-</li>
-        <li>
-<time class="listdate" datetime="2018-02-10T21:50:09+11:00" title="2018-02-10 21:50">2018-02-10 21:50</time><a href="../../blog/2018/minecraft-python-3.html" class="listtitle">Exploring Minecraft code in Jupyter</a>
-</li>
-        <li>
-<time class="listdate" datetime="2018-02-08T07:10:19+11:00" title="2018-02-08 07:10">2018-02-08 07:10</time><a href="../../blog/2018/minecraft-python-2.html" class="listtitle">A Minecraft Coding environment</a>
-</li>
-        <li>
-<time class="listdate" datetime="2018-02-05T11:18:42+11:00" title="2018-02-05 11:18">2018-02-05 11:18</time><a href="../../blog/2018/minecraft-python-1.html" class="listtitle">Minecraft Jamin'</a>
-</li>
-    </ul></article>
+<li>Back in Magit, stage the single hunk with the fix for the syntax error</li>
+<li>Commit the change</li>
+<li>Push everything up to origin</li>
+<li>Switch back to master branch</li>
+</ol>
+<p>It's such a simple thing but very handy, I had to blog it while it's fresh in my mind.</p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../tags/git.html" rel="tag">git</a></li>
+            <li><a class="tag p-category" href="../../tags/magit.html" rel="tag">magit</a></li>
+            <li><a class="tag p-category" href="../../tags/merging.html" rel="tag">merging</a></li>
+            <li><a class="tag p-category" href="../../tags/tip.html" rel="tag">tip</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="4-bits-part4.html" rel="prev" title="4-bit Rules of Computing, Part 4">Previous post</a>
+            </li>
+        </ul></nav></aside></article>
 </div>
         <!--End of body content-->
 

@@ -27,7 +27,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/archive/2009/index.html</loc>
-  <lastmod>2018-03-21T02:15:00Z</lastmod>
+  <lastmod>2018-03-27T11:34:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/archive/2010/index.html</loc>
@@ -63,19 +63,19 @@
  </url>
  <url>
   <loc>http://milosophical.me/archive/2018/index.html</loc>
-  <lastmod>2018-03-23T11:52:00Z</lastmod>
+  <lastmod>2018-03-27T11:42:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/archive/archive.html</loc>
-  <lastmod>2018-03-23T11:04:00Z</lastmod>
+  <lastmod>2018-03-27T11:34:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/authors/index.html</loc>
-  <lastmod>2018-03-23T11:04:00Z</lastmod>
+  <lastmod>2018-03-23T20:59:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/authors/michael-lockhart.html</loc>
-  <lastmod>2018-03-23T11:52:00Z</lastmod>
+  <lastmod>2018-03-27T11:42:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/authors/mike-lockhart.html</loc>
@@ -339,11 +339,15 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/2009/05/12/registering-local-dtds-or-xml-schemas-with-netbeans.html</loc>
-  <lastmod>2018-03-21T02:15:00Z</lastmod>
+  <lastmod>2018-03-27T11:34:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://milosophical.me/blog/2009/dos-equis.html</loc>
+  <lastmod>2018-03-23T20:59:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/2010/03/10/ms-windows-focus-follows-mouse-registry-hacks.html</loc>
-  <lastmod>2018-03-21T02:15:00Z</lastmod>
+  <lastmod>2018-03-27T11:34:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/2010/04/07/openssh-slow-logins-and-dns.html</loc>
@@ -535,7 +539,11 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/2018/4-bits-part4.html</loc>
-  <lastmod>2018-03-23T11:52:00Z</lastmod>
+  <lastmod>2018-03-27T11:34:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://milosophical.me/blog/2018/git-checkout-ftw.html</loc>
+  <lastmod>2018-03-27T11:42:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/2018/learning-git-workflow-0.html</loc>
@@ -559,11 +567,11 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-10.html</loc>
-  <lastmod>2018-03-22T06:31:00Z</lastmod>
+  <lastmod>2018-03-27T11:34:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-11.html</loc>
-  <lastmod>2018-03-23T11:04:00Z</lastmod>
+  <lastmod>2018-03-27T11:34:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-2.html</loc>
@@ -587,19 +595,19 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-7.html</loc>
-  <lastmod>2018-03-22T06:32:00Z</lastmod>
+  <lastmod>2018-03-27T11:34:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-8.html</loc>
-  <lastmod>2018-03-22T06:31:00Z</lastmod>
+  <lastmod>2018-03-27T11:34:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-9.html</loc>
-  <lastmod>2018-03-22T06:31:00Z</lastmod>
+  <lastmod>2018-03-27T11:34:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/index.html</loc>
-  <lastmod>2018-03-23T11:52:00Z</lastmod>
+  <lastmod>2018-03-27T11:42:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/hax/codec/URL%20Decoder_Encoder.html</loc>
@@ -786,12 +794,20 @@
   <lastmod>2018-03-21T02:15:00Z</lastmod>
  </url>
  <url>
+  <loc>http://milosophical.me/pg/agimo.html</loc>
+  <lastmod>2018-03-23T20:56:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://milosophical.me/pg/colophon.html</loc>
   <lastmod>2018-03-21T02:15:00Z</lastmod>
  </url>
  <url>
+  <loc>http://milosophical.me/pg/dos-equis.html</loc>
+  <lastmod>2018-03-23T20:51:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://milosophical.me/pg/index.html</loc>
-  <lastmod>2018-03-21T02:15:00Z</lastmod>
+  <lastmod>2018-03-27T11:34:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/pg/milosophical-me.html</loc>
@@ -1175,7 +1191,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/git.html</loc>
-  <lastmod>2018-03-22T06:31:00Z</lastmod>
+  <lastmod>2018-03-27T11:42:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/gnupg.html</loc>
@@ -1247,7 +1263,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/index.html</loc>
-  <lastmod>2018-03-23T11:04:00Z</lastmod>
+  <lastmod>2018-03-27T11:34:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/jargon.html</loc>
@@ -1330,12 +1346,16 @@
   <lastmod>2018-03-22T06:31:00Z</lastmod>
  </url>
  <url>
+  <loc>http://milosophical.me/tags/lyrics.html</loc>
+  <lastmod>2018-03-23T20:59:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://milosophical.me/tags/macintosh.html</loc>
   <lastmod>2018-03-22T06:31:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/magit.html</loc>
-  <lastmod>2018-03-22T06:31:00Z</lastmod>
+  <lastmod>2018-03-27T11:42:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/magnifier.html</loc>
@@ -1356,6 +1376,10 @@
  <url>
   <loc>http://milosophical.me/tags/mercurial.html</loc>
   <lastmod>2018-03-22T06:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://milosophical.me/tags/merging.html</loc>
+  <lastmod>2018-03-27T11:42:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/meta-data.html</loc>
@@ -1458,6 +1482,10 @@
   <lastmod>2018-03-22T06:32:00Z</lastmod>
  </url>
  <url>
+  <loc>http://milosophical.me/tags/parody.html</loc>
+  <lastmod>2018-03-23T20:59:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://milosophical.me/tags/passwords.html</loc>
   <lastmod>2018-03-22T06:32:00Z</lastmod>
  </url>
@@ -1543,7 +1571,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/silly.html</loc>
-  <lastmod>2018-03-22T06:32:00Z</lastmod>
+  <lastmod>2018-03-27T11:34:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/sloshes.html</loc>
@@ -1635,11 +1663,11 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/tip-3.html</loc>
-  <lastmod>2018-03-23T11:04:00Z</lastmod>
+  <lastmod>2018-03-27T11:34:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/tip.html</loc>
-  <lastmod>2018-03-23T11:52:00Z</lastmod>
+  <lastmod>2018-03-27T11:42:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/tomtom.html</loc>
