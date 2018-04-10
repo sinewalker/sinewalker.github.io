@@ -14,6 +14,7 @@ Lyrics to "The Riddle" by Nik Kershaw
 <!-- TEASER_END -->
 ----
 
+```
 I've got two strong arms
 
     Blessings of Babylon
@@ -88,7 +89,7 @@ I got time to heal
 A blackbird sings on bluebird hill
 
 Thanks to the calling of the wild wise men's child.
-
+```
  
 
 ------

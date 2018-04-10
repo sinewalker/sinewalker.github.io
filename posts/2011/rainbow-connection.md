@@ -15,6 +15,7 @@ I'm learning a new song to sing to my kids at bedtime
 <!-- TEASER_END -->
 ----
 
+```
 Why are there so many songs about rainbows
 
   and what's on the other side?
@@ -77,9 +78,9 @@ La-da-da de-da-da doom
 
   ba da da-da la-de da doom.
 
- 
+``` 
 
--- Kermit the Frog, the Muppet Movie.  Transcribed by me.
+-- Kermit the Frog, *The Muppet Movie*.  Transcribed by me.
 
  
 

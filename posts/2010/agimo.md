@@ -9,10 +9,11 @@
 .. type: text
 -->
 
-In 2010, decisions at work provided inspiration on the train to work this morning....
+Decisions at work provided inspiration on the train to work this morning....
 
 
-Sung to "Casino"
+Sung to *Casino*
+
 With apologies to Philadelphia Grand Jury
 
 ```

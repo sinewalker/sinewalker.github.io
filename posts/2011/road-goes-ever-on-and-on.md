@@ -1,5 +1,5 @@
 <!--
-.. title: road-goes-ever-on-and-on
+.. title: The Road goes ever on and on
 .. slug: road-goes-ever-on-and-on
 .. date: 2011-01-15 22:29:10 UTC+11:00
 .. tags: lyrics,
@@ -9,7 +9,7 @@
 .. type: text
 -->
 
-Following is my own (very minor!) adaptation of J.R.R.Tolkien's walking poem which I sing to my sons at night.  This poem appears in various forms both in The Hobbit and in LOTR.  I have not yet committed to memory the version sung by Frodo in the chapter "Three Is Company" -- it's stanzas are a different format to those sung/spoken by Bilbo, and do not fit easily to the tune sung by Bilbo in the LOTR movie, nor to the tune sung by The Starlit Jewel which you can find on youtube (http://www.youtube.com/watch?v=dE-vX9eU7hw).  I might fiddle with them one day and create my own tune to use as a chorus or a coda.
+Following is my own (very minor!) adaptation of J.R.R.Tolkien's walking poem which I sing to my sons at night.  This poem appears in various forms both in *The Hobbit* and in LOTR.  I have not yet committed to memory the version sung by Frodo in the chapter "Three Is Company" — it's stanzas are a different format to those sung/spoken by Bilbo, and do not fit easily to the tune sung by Bilbo in the LOTR movie, nor to the tune sung by The [Starlit Jewel which you can find on youtube](http://www.youtube.com/watch?v=dE-vX9eU7hw).  I might fiddle with them one day and create my own tune to use as a chorus or a coda.
 
  
 
@@ -18,7 +18,7 @@ Anyway, here it is.  I have taken both of the versions which Bilbo recites in LO
 <!-- TEASER_END -->
  ----
  
-
+```
     The Road goes ever on and on
 
     Down from the door where it began.
@@ -88,3 +88,4 @@ Anyway, here it is.  I have taken both of the versions which Bilbo recites in LO
     Will turn towards the lighted inn,
 
     My evening-rest and sleep to meet.
+```
