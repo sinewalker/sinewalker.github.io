@@ -12,7 +12,7 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
 <link rel="canonical" href="http://milosophical.me/blog/index-11.html">
-<link rel="prev" href="index.html" type="text/html">
+<link rel="prev" href="index-12.html" type="text/html">
 <link rel="next" href="index-10.html" type="text/html">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]-->
 </head>
@@ -162,137 +162,7 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2017/raspi-wifi.html" class="u-url">Raspberry Pi WiFi</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
-            </span></p>
-            <p class="dateline"><a href="2017/raspi-wifi.html" rel="bookmark"><time class="published dt-published" datetime="2017-06-17T11:43:46+10:00" title="2017-06-17 11:43">2017-06-17 11:43</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>Today's project was to bootstrap a WiFi LAN connection for Raspberry Pi 2, with a USB WiFi transceiver.</p>
-<p class="more"><a href="2017/raspi-wifi.html">Read more…</a></p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2017/bonjour-raspi.html" class="u-url">Bonjour Raspberry Pi</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
-            </span></p>
-            <p class="dateline"><a href="2017/bonjour-raspi.html" rel="bookmark"><time class="published dt-published" datetime="2017-06-15T23:19:40+10:00" title="2017-06-15 23:19">2017-06-15 23:19</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>In preparation for some robotics I've dug out my <a href="https://www.raspberrypi.org/products/raspberry-pi-2-model-b/">Raspberry Pi 2 B</a> and I'm reacquainting myself with it.  Tonight's goal: Boot up an old <a href="https://www.raspbian.org/">Raspbian</a> <em>Squeeze</em> SD card and get the Pi to identify on the LAN with a domain-name -- rather than having to learn it's IP address -- using <a href="http://www.avahi.org/">avahi</a> (AKA <a href="https://developer.apple.com/bonjour/">Bonjour</a> or <em>zero-conf</em> mDNS networking).</p>
-<p class="more"><a href="2017/bonjour-raspi.html">Read more…</a></p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2017/upgrade-nikola-783.html" class="u-url">Upgrading Nikola: some pitfalls and how I climbed out of them</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
-            </span></p>
-            <p class="dateline"><a href="2017/upgrade-nikola-783.html" rel="bookmark"><time class="published dt-published" datetime="2017-03-23T07:48:48+11:00" title="2017-03-23 07:48">2017-03-23 07:48</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>After <a href="https://github.com/sinewalker/dotfiles/issues/7">some</a> <a href="https://github.com/sinewalker/dotfiles/issues/17">hacking</a> of <a href="https://github.com/sinewalker/dotfiles">my dotfiles</a> and <a href="https://github.com/sinewalker/dotfiles/blob/master/source/50_python.sh">python settings</a>, I lost my <code>nikola</code> virtual environment (I think it broke after a brew update or something.  The hacking's only partly recorded in the issues on GitHub).</p>
-<p>But that's no biggie, just make a new one and re-install, right?  Well, not quite. The re-install gives you the <em>latest</em> Nikola (great!) and that means I have to review and update my <code>conf.py</code> (okay...) and figure out runtime errors like this:</p>
-<pre class="code literal-block"><span></span><span class="k">[src:?][mjl@milo:~/hax/net/blog/milosophical.me]</span>
-<span class="na">[07:27](nikola)$ nikola version</span>
-<span class="na">Traceback (most recent call last):</span>
-  <span class="na">File "/Users/mjl/lib/nikola/bin/nikola", line 11, in &lt;module&gt;</span>
-    <span class="na">sys.exit(main())</span>
-  <span class="na">File "/Users/mjl/lib/nikola/lib/python3.6/site-packages/nikola/__main__.py", line 171, in main</span>
-    <span class="na">_</span> <span class="o">=</span> <span class="s">DN.run(oargs)</span>
-<span class="s">  File "/Users/mjl/lib/nikola/lib/python3.6/site-packages/nikola/__main__.py", line 339, in run</span>
-<span class="s">    self.nikola.init_plugins()</span>
-<span class="s">  File "/Users/mjl/lib/nikola/lib/python3.6/site-packages/nikola/nikola.py", line 1077, in init_plugins</span>
-<span class="s">    self._activate_plugins_of_category("SignalHandler")</span>
-<span class="s">  File "/Users/mjl/lib/nikola/lib/python3.6/site-packages/nikola/nikola.py", line 1233, in _activate_plugins_of_category</span>
-<span class="s">    plugin_info.plugin_object.set_site(self)</span>
-<span class="s">  File "/Users/mjl/lib/nikola/lib/python3.6/site-packages/nikola/plugins/misc/taxonomies_classifier.py", line 328, in set_site</span>
-<span class="s">    self._register_path_handlers(taxonomy)</span>
-<span class="s">  File "/Users/mjl/lib/nikola/lib/python3.6/site-packages/nikola/plugins/misc/taxonomies_classifier.py", line 316, in _register_path_handlers</span>
-<span class="s">    doc = taxonomy.path_handler_docstrings[name]</span>
-<span class="na">KeyError: 'page_index_folder_index'</span>
-</pre>
-
-
-<p>(well, pooh).</p>
-<p>I decided a while back that I wasn't going to meta-blog (otherwise most of my posts would be about blogging!), but I think in this case, Rule 4 will come to the rescue.  Anyway at least you know this story has a happy ending, or else I wouldn't be able to add this <code>new_post</code>!</p>
-<p class="more"><a href="2017/upgrade-nikola-783.html">Read more…</a></p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2016/home-dir-maintenance.html" class="u-url">Organising my digital stuff</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
-            </span></p>
-            <p class="dateline"><a href="2016/home-dir-maintenance.html" rel="bookmark"><time class="published dt-published" datetime="2016-11-03T23:20:10+11:00" title="2016-11-03 23:20">2016-11-03 23:20</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>I started to write about my <code>${HOME}</code> directory structure in <a href="2016/filesystems-home.html">my post about /home filesystem choices</a> but then it got terribly long and complicated. So I'm writing about it here.</p>
-<p>Since switching to a new computer at work I have been reviewing my hodge-podge of directories that I moved from my old work laptop.  Same as with my <a href="2016/spacemacs-01.html">emacs configuration</a>, I like my <code>${HOME}</code> to be familiar and friendly no matter what computer and operating system I'm using. Also like emacs at the beginning of this year, it's presently a mess. So I'm documenting how I'd like it to look, be that on my home Linux computer, the Windows mode of the same, or on my work's Macintosh.</p>
-<p>This long and detailed article is for my own purpose. Others MAY find it frightfully dull and of little value.</p>
-<p class="more"><a href="2016/home-dir-maintenance.html">Read more…</a></p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2016/filesystems-home.html" class="u-url">Choosing Filesystems and devices for home server</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
-            </span></p>
-            <p class="dateline"><a href="2016/filesystems-home.html" rel="bookmark"><time class="published dt-published" datetime="2016-10-22T11:55:50+11:00" title="2016-10-22 11:55">2016-10-22 11:55</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>With the release of <a href="https://en.opensuse.org/Portal:42.2">openSUSE Leap 42.2</a> just 25 days away, I'm considering to move to it, from my current <a href="https://en.opensuse.org/Portal:13.2">openSUSE 13.2</a> <em>Harlequin</em>. I had skipped <a href="https://en.opensuse.org/Portal:42.1">Leap 42.1</a> <em>Malachite</em> not for any technical issues with Leap itself, but because I've been pretty tied up learning about Mac OS for work, and because I've been very happy with <em>Harlequin</em> anyway.  But it'll reach end of life in Q1 2017 so it's time to upgrade, and I will go to the newest Leap release when it's out. The rolling release <em>Tumbleweed</em> is still not an option for me: not when I have an NVidia GPU and also want to play with CUDA and run VirtualBox VMs.</p>
-<p>When I moved house back in 2013, I made a number of rushed decisions and among those was to accept the default filesystem suggestion from Harlequin's YaST installer:  use <strong>btrfs</strong> for the <code>/root</code> volume, and <strong>XFS</strong> for <code>/home</code>.  I also put both of these into LVM volumes on the computer's 128G SSD, with about 40G for <code>/root</code>, 8G for <code>swap</code> and the rest for <code>/home</code> thinking "It's LVM, so I can resize the volumes later if this doesn't work out." .... Well, yes, you <em>can</em> resize LVM volumes, but the filesystems contained within behave differently. It turned out that I wanted to grow <code>/root</code> by taking away some space from <code>/home</code>, but I hit a snag:  XFS filesystems can't be shrunk, only grown.  Bummer.</p>
-<p>This time around I will take the opportunity of the upgrade to reformat my <code>/home</code> volume, but the questions are:</p>
-<ul>
-<li>Which filesystems to choose from?</li>
-<li>Which filesystem for <code>/home</code> is best?</li>
-<li>Where to put <code>/home</code>?</li>
-</ul>
-<p>Should I have my home on my fast, but pokey SSD, or should I move it to a slow(er) but expansive HDD? Come to think of it, what about tiered storage in general? (SSD, HDD, "cloud", backups, archives). How should I manage these volumes in a non-intrusive way?</p>
-<p>So here are my thoughts and plans.</p>
-<p class="more"><a href="2016/filesystems-home.html">Read more…</a></p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2016/geocache-tomtom.html" class="u-url">Loading Geocache Pocket-queries on TomTom XL</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
-            </span></p>
-            <p class="dateline"><a href="2016/geocache-tomtom.html" rel="bookmark"><time class="published dt-published" datetime="2016-10-09T14:08:46+11:00" title="2016-10-09 14:08">2016-10-09 14:08</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>We're back from a two-weeks family trip to <a href="http://www.visitvictoria.com/">Victoria</a>, along the <a href="http://greatoceanrd.org.au">Great Ocean Road</a>.  We planned to do some <a href="https://www.geocaching.com/guide/">GeoCaching</a> along the way and we even purchased a store-display model <a href="http://www.magellangps.com/Store/eXploristSeries/eXplorist-510">Magellan eXplorist 510</a> which has support for paper-less caching. It's great, if a bit heavy on the batteries.</p>
-<p>The trip was so epic and busy, and we did so many things along the way that we barely had time to stop for caches - we only found six! But it was still a fun diversion.</p>
-<p>This article's about the <strong>TomTom XL</strong> though, our venerable old in-car sat' nav', which needs a little help to do GeoCaching. The device dates from around 2006/2007 I think.  Before our trip, we purchased a (long overdue) map update for it, and then the night before we left home I sat down for a bit to re-learn how to upload caches into it as Points Of Interest. This makes driving to the nearest cache much simpler because the TomTom can plan the route. Or else you will see caches popping up along your way if you have a different route already planned.</p>
-<p class="more"><a href="2016/geocache-tomtom.html">Read more…</a></p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2016/spacemacs-01.html" class="u-url">One Spacemacs Config to Rule Them All</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
-            </span></p>
-            <p class="dateline"><a href="2016/spacemacs-01.html" rel="bookmark"><time class="published dt-published" datetime="2016-02-07T21:42:24+11:00" title="2016-02-07 21:42">2016-02-07 21:42</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>It's been a month since I started using <a href="http://spacemacs.org">Spacemacs</a> for my Emacs configuration, and adopted it as my main editor. What's been happening?</p>
-<p>Well, mostly not a lot, which is exactly why I wanted to use it. Oh, sure, <a href="https://github.com/sinewalker/dotspacemacs/commits/master">my commit history</a> shows I've been fairly busy making small adjustments, but they are just tweaks here and there, nothing to blog about.</p>
-<p>But, I did sit down this weekend and hack at it so that I can install <em>the same dotspacemacs settings everywhere</em>, which <em>is</em> worth a blog entry.</p>
-<p class="more"><a href="2016/spacemacs-01.html">Read more…</a></p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2016/standing-desk-update.html" class="u-url">Standing Desks update</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2016/standing-desk-update.html" class="u-url">Standing Desks update</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
@@ -322,17 +192,218 @@ out quite nicely.</p>
 <p class="more"><a href="2015/spacemacs-00.html">Read more…</a></p>
 </div>
     </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2015/import-library-ebooks-into-kobo.html" class="u-url">Import Library eBooks into Kobo</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="2015/import-library-ebooks-into-kobo.html" rel="bookmark"><time class="published dt-published" datetime="2015-12-19T16:14:38+11:00" title="2015-12-19 16:14">2015-12-19 16:14</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>I was asked by my neighbor (a second time) to help importing eBooks that she downloaded from the state Library into her mother's Kobo eReader.  Much scratching of heads and drinking of tea ensued, but we sorted it out, in the end.  This post describes some of what I learned, though not the DRM bit: we worked that out the first time and it was so painful I have driven it from my mind.</p>
+<p class="more"><a href="2015/import-library-ebooks-into-kobo.html">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2015/resetting-firefox.html" class="u-url">Resetting Firefox</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="2015/resetting-firefox.html" rel="bookmark"><time class="published dt-published" datetime="2015-12-16T13:21:28+11:00" title="2015-12-16 13:21">2015-12-16 13:21</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>I just survived my first Firefox Reset and lived to tell about it.</p>
+<p>I was experiencing some weird cross-site stuff for one of work's web tools, and decided to give Firefox's <a href="https://support.mozilla.org/en-US/kb/reset-preferences-fix-problems">Reset</a> a try. <strong>It actually worked!</strong></p>
+<p>My concern was that, because it deletes all your add-ons and customisations, I would lose them. Fortunately, I also use Firefox <a href="https://support.mozilla.org/en-US/products/firefox/sync">Sync</a> already. So that meant, after Firfox had cleaned itself up, it re-downloaded all my custom goodness and re-installed it.</p>
+<p><strong><em>One caveat</em></strong>: you do have to Restart Firefox after Sync has done it's bit to re-install Addons. After that, everything is as it should be. Hurray.</p>
+<h3>The steps to Refresh Firefox are:</h3>
+<ol>
+<li>Go to <code>about:support</code>
+</li>
+<li>Press the <strong>Refresh</strong> button in the top right</li>
+<li>Wait for Sync to finish (you can check how it's going by looking in <code>about:addons</code> to see if your Extensions are all there yet)</li>
+<li>Restart Firefox (either from the addons page, or by pressing Alt-F2 and typing <code>restart</code>)</li>
+</ol>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2015/loading-ssh-keys-at-kde-startup.html" class="u-url">Loading SSH keys at KDE startup</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="2015/loading-ssh-keys-at-kde-startup.html" rel="bookmark"><time class="published dt-published" datetime="2015-11-04T21:33:18+11:00" title="2015-11-04 21:33">2015-11-04 21:33</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It's really handy to have all my SSH authentication be passwordless, but in a secure way. In openSUSE, the <code>ssh-agent</code> is started for you automatically, but you still need to add your identities manually (and enter passphrases when you do this).  That's a bit of a pain to do every time you login.</p>
+<p>Here are some simple scripts and steps I use to set up my KDE session so that it will automatically load my SSH identities when I login.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="2015/loading-ssh-keys-at-kde-startup.html">Read more…</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2015/4-bit-rules-of-computing-part-2.html" class="u-url">4-bit Rules of Computing, Part 2</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="2015/4-bit-rules-of-computing-part-2.html" rel="bookmark"><time class="published dt-published" datetime="2015-07-22T21:15:00+10:00" title="2015-07-22 21:15">2015-07-22 21:15</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>Here is the third part of my <a href="../tags/4-bit-rules.html">blog series</a> expanding on my
+<a href="../pg/4-bit-rules.html">4-bit rules of computing</a>.</p>
+<p>In this installment:  Rules 5, on comments.  Rule 5 is a bit contentious and I've taken too long in writing my thoughts on it — which is probably telling. Nonetheless I still want to press ahead and get these words out.  I also wanted to include <a href="2018/4-bits-part3.html">Rule 6</a> with this post, but I'm taking my own advice and breaking the post into two, because it really was getting quite long.</p>
+<p class="more"><a href="2015/4-bit-rules-of-computing-part-2.html">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2015/setting-up-nikola.html" class="u-url">Meta: Setting up Nikola blogging</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="2015/setting-up-nikola.html" rel="bookmark"><time class="published dt-published" datetime="2015-06-08T21:57:43+10:00" title="2015-06-08 21:57">2015-06-08 21:57</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Tonight I thought that I'd sit down at my home server, <em>Tesla</em>, and do a bit of blogging.  This server's recently been rebuilt after a bad run-in with a hard-drive problem and I had not got around to putting my blog onto it.  Instead I was blogging with work's laptop.</p>
+<p>After spending an hour cloning and installing my blog repositories and the necessary software through trial-and-error, I thought it best to write down what is necessary to bootstrap my blogging environment, and save myself some trouble in the future.</p>
+<p>Ideally I will make a script to get most of this going soon … but in the meantime, you are treated to a meta-blog.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="2015/setting-up-nikola.html">Read more…</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2015/4-bit-rules-of-computing-part-1.html" class="u-url">4-bit Rules of Computing, Part 1</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="2015/4-bit-rules-of-computing-part-1.html" rel="bookmark"><time class="published dt-published" datetime="2015-06-02T18:47:00+10:00" title="2015-06-02 18:47">2015-06-02 18:47</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>Here is the second part of my <a href="../tags/4-bit-rules">blog series</a> expanding on my
+<a href="../pg/4-bit-rules.html">4-bit rules of computing</a>.</p>
+<p>In this instalment:  Rule 4, on keeping a notebook or journal.</p>
+<p>I had planned on including Rules 5,6 and 7 as well (that is, all of
+the third bit, out of 4 bits), but it is taking me more time to write
+up my thoughts about those other rules, and I want to get something out
+roughly every week.</p>
+<p class="more"><a href="2015/4-bit-rules-of-computing-part-1.html">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2015/minecraft-python-0.html" class="u-url">Hacking Minecraft with Python</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="2015/minecraft-python-0.html" rel="bookmark"><time class="published dt-published" datetime="2015-06-01T14:07:34+10:00" title="2015-06-01 14:07">2015-06-01 14:07</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I'm having a play with <strong>Minecraft</strong> and <strong>Python</strong>, using the <strong><em>mcpipy</em></strong> library, a Minecraft server called <strong>CannaryMod</strong>, and a plugin-in for that called <strong>RaspberryJuice</strong>.</p>
+<p>You can do all this out-of-the-box with Raspbian on a RaspberryPi, but I wanted to set up my home computers also.  Here's a quick run-down of the steps I followed.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p class="more"><a href="2015/minecraft-python-0.html">Read more…</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2015/what-are-those-j-and-l-characters-in-email.html" class="u-url">What are those J and L characters in email?</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="2015/what-are-those-j-and-l-characters-in-email.html" rel="bookmark"><time class="published dt-published" datetime="2015-05-28T09:52:13+10:00" title="2015-05-28 09:52">2015-05-28 09:52</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>Do you receive email with a mystery "J" or "L" in them?</p>
+<pre class="code literal-block"><span></span>Fabulous! Thanks very much Mike J
+</pre>
+
+
+<p>What the heck are they?  It's actually not much of a mystery: they are
+automatic emoticons inserted by MS-Outlook when someone types <code>:-)</code> or
+variants.</p>
+<p>Outlook substitutes the string for the letter J or L, and formats that
+character with <strong><em>Windings</em></strong>, which in that font maps to the smiley
+or the frowny glyph.</p>
+<p>I <em>guess</em> if you look at J and L sideways, and pretend only half their
+mouth is working, it kinda makes sense for a J to be a smile and an L
+to be a frown...?</p>
+<p>Well, anyway, now you know.</p>
+</div>
+    </div>
     </article>
 </div>
 
         <nav class="postindexpager"><ul class="pager">
 <li class="previous">
-                <a href="index.html" rel="prev">Newer posts</a>
+                <a href="index-12.html" rel="prev">Newer posts</a>
             </li>
             <li class="next">
                 <a href="index-10.html" rel="next">Older posts</a>
             </li>
-        </ul></nav>
+        </ul></nav><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+        </script>
 </div>
         <!--End of body content-->
 
