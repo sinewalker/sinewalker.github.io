@@ -1,7 +1,7 @@
 #+BEGIN_COMMENT
 .. title: Colophon
 .. slug: colophon
-.. date: 2017-08-13 07:27 UTC+10:00
+.. date: 2018-04-11T10:36+1000
 .. tags: about, meta
 .. link:
 .. description: Some information about the site.
@@ -26,6 +26,8 @@ On the Net, I go by the handle *sinewalker*, and while after 20 years I think
 I've outgrown it, it's still a [unique
 username](https://duckduckgo.com/?q=sinewalker) in most places. A newer handle
 I'm adopting is *milohax*.
+
+My ACIC background check is held at [CVCheck](http://ww1.cvcheck.com/go/y4XPc63).
 
 ## What am I into?
 
@@ -52,14 +54,14 @@ A quick summary should give you a bit of an idea:
 
 ### Preferences:
   * emacs *vs* vi &rarr;  emacs
-  * tabs *vs* spaces &rarr; spaces (also: use what you like, just be consistent!)
+  * tabs *vs* spaces &rarr; spaces
   * trek *vs* star wars &rarr;  star wars
   * windows *vs* mac &rarr; mac
-  * linux *vs* mac &rarr; linux, probably. it's a close call.
+  * linux *vs* mac &rarr; linux
   * iOS *vs* Android &rarr;  droid
   * pirates *vs* ninjas &rarr; pirates
   * cats *vs* dogs &rarr; both
-  * BSG *vs* Bab5 &rarr; ooh, that's a toughie. They're both good. "Come on Mike, make a call!" Argh!  The Expanse?
+  * BSG *vs* Bab5 &rarr; uuuhmmm,  The Expanse?
 
 
 This web
