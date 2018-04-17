@@ -66,7 +66,8 @@ A quick summary should give you a bit of an idea:
   * iOS *vs* Android &rarr;  droid
   * Oreos Dunk *vs* Tim Tam Slam &rarr; Tim Tams
   * Hershy Bar Cookies `N' Creme *vs* Nestlé Milkybar &rarr; Milkybar
-
+  * Coffee:  black
+  * Tea:     Earl Grey, hot
 
 This web
 ----
