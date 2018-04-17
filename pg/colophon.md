@@ -50,18 +50,22 @@ A quick summary should give you a bit of an idea:
   * walking
   * reading
   * hacking (old school)
+  * robotics, electronics, quad copters
   * dad stuff
 
 ### Preferences:
   * emacs *vs* vi &rarr;  emacs
   * tabs *vs* spaces &rarr; spaces
-  * trek *vs* star wars &rarr;  star wars
-  * windows *vs* mac &rarr; mac
-  * linux *vs* mac &rarr; linux
-  * iOS *vs* Android &rarr;  droid
   * pirates *vs* ninjas &rarr; pirates
-  * cats *vs* dogs &rarr; both
-  * BSG *vs* Bab5 &rarr; uuuhmmm,  The Expanse?
+  * manual *vs* automatic transmission &rarr; manual
+  * corded *vs* cordless power tools &rarr; corded
+  * Trek *vs* Star Wars &rarr;  Star Wars
+  * BSG *vs* Bab5 &rarr; BSG (re-imagined)
+  * Windows *vs* macOS &rarr; macOS
+  * Linux *vs* macOS &rarr; Linux (suse)
+  * iOS *vs* Android &rarr;  droid
+  * Oreos Dunk *vs* Tim Tam Slam &rarr; Tim Tams
+  * Hershy Bar Cookies `N' Creme *vs* Nestlé Milkybar &rarr; Milkybar
 
 
 This web
