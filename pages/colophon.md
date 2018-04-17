@@ -64,8 +64,8 @@ A quick summary should give you a bit of an idea:
   * Windows *vs* macOS &rarr; macOS
   * Linux *vs* macOS &rarr; Linux (suse)
   * iOS *vs* Android &rarr;  droid
-  * Oreos Dunk vs Tim Tam Slam &rarr; Tim Tams
-  * Hershy Bar Cookies `N' Creme vs Nestle Milkybar &rarr; Milkybar
+  * Oreos Dunk *vs* Tim Tam Slam &rarr; Tim Tams
+  * Hershy Bar Cookies `N' Creme *vs* Nestlé Milkybar &rarr; Milkybar
 
 
 This web
