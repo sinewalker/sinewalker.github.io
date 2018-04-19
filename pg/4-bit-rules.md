@@ -13,17 +13,18 @@ Over the years I have found a handful of rules to work by when
 Computing. Some people have lots and lots of rules but I'm a simple
 bloke, and can carry only about 4-bits worth in my head.
 
-None of these rules are my own invention. They are others' tips and
-advice, received and honed over about 30 years' experience in
-computing, since I began it as a hobby in primary school in the
-1980's.  Some of these rules are *also* applicable to Real Life. They
-are deliberately laconic (to make them easier to remember); I will
-[blog about them](/tags/4-bit-rules.html)  to expand and explain &mdash; especially the
-controversial-sounding ones like Rules 5 and 6.
+None of these rules are my own invention. They are others' tips and advice,
+received and honed over about 30 years' experience in computing, since I began
+it as a hobby in primary school in the 1980's. Some of these rules are *also*
+applicable to Real Life. They are deliberately laconic (to make them easier to
+remember); I will [blog about them](/tags/4-bit-rules.html) to expand and
+explain — especially the controversial-sounding ones like Rules 5 and 6.
 
 `salt:` These are computing rules that *I* work by and recommend to
 others, though you should feel free to adopt only what you like,
 keeping Rule 0 in mind.
+
+Rules 0011 (3) and 1100 (c) are break-outs overcoming the 4-bit limit….
 
 ----
 
@@ -46,7 +47,7 @@ keeping Rule 0 in mind.
 
 `0110` - `6`: but [Doc-Comments are a Force for Good](/blog/2018/4-bits-part3.html)
 
-`0111` - `7`: Test it. Test it Again
+`0111` - `7`: [Test it. Test it Again](/blog/2018/4-bits-part4.html)
 
 `1000` - `8`: You can't proof-read *after* you hit Send
 
@@ -57,7 +58,7 @@ keeping Rule 0 in mind.
 
 `1011` - `B`: You Ain't Gonna Need It
 
-`1100` - `C`: Always know where you're going when you start writing
+`1100` - `C`: Some Fundamental Networking Truths (IETF [RFC 1925](https://tools.ietf.org/html/rfc1925), April 1, 1996)
 
 `1101` - `D`: DON'T PANIC, Read The Fine Manuals
 
