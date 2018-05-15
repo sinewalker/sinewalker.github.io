@@ -34,8 +34,9 @@ My ACIC background check is held at [CVCheck](http://ww1.cvcheck.com/go/y4XPc63)
 A quick summary should give you a bit of an idea:
 
 ### Likes:
-  * Open Source software
-  * Open Architecture computers
+  * Open Source Software
+  * Open Data Formats
+  * Open Architecture Computers
   * Open Crown hats
   * chili, coffee, whisky
 
@@ -59,10 +60,10 @@ A quick summary should give you a bit of an idea:
   * pirates *vs* ninjas &rarr; pirates
   * manual *vs* automatic transmission &rarr; manual
   * corded *vs* cordless power tools &rarr; corded
-  * Trek *vs* Star Wars &rarr;  Star Wars
+  * Star Trek *vs* Star Wars &rarr;  Star Wars
   * BSG *vs* Bab5 &rarr; BSG (re-imagined)
   * Windows *vs* macOS &rarr; macOS
-  * Linux *vs* macOS &rarr; Linux (suse)
+  * Linux *vs* macOS &rarr; Linux (openSUSE)
   * iOS *vs* Android &rarr;  droid
   * Oreos Dunk *vs* Tim Tam Slam &rarr; Tim Tams
   * Hershy Bar Cookies `N' Creme *vs* Nestlé Milkybar &rarr; Milkybar
