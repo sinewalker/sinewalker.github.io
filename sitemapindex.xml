@@ -130,6 +130,10 @@
   <lastmod>2018-03-21T02:15:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>http://milosophical.me/pixels/scouts/rss.xml</loc>
+  <lastmod>2018-05-17T12:51:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>http://milosophical.me/pixels/stand-desk/rss.xml</loc>
   <lastmod>2018-03-21T02:15:00Z</lastmod>
  </sitemap>
@@ -143,7 +147,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/sitemap.xml</loc>
-  <lastmod>2018-05-15T12:41:00Z</lastmod>
+  <lastmod>2018-05-17T12:51:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/4-bit-rules.xml</loc>
