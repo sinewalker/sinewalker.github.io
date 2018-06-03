@@ -5,7 +5,7 @@
 .. tags: passwords, pass, keepassx, password-store
 .. category: 
 .. link: 
-.. description: 
+.. description: An overview of the standard unix password manager and the components involved. 
 .. type: text
 -->
 
@@ -90,38 +90,51 @@ There are a few moving parts to this.  Here's an overview:
 
 
 ## Password Programs
-![](/pixels/dust/openpgp-icon-128.png)
+<img src="/pixels/dust/openpgp-icon-128.png" align="left" hspace="5">
 
 You need the **password store** utility for Unix, and also for other devices you will be keeping your password store on.  Information about each is available from the password store web site.
 
 In addition to the password store program, you need an **Open PGP tool**. On a Unix machine, Pass uses the GNU Privacy Guard (GPG) tool to encrypt and decrypt files ending in `.gpg`.  The Android app uses *Open Key Chain* to do the same.
 
+<br/>
+
 ## PGP key pair
-![](/pixels/dust/pgp-keys-128.png)
+<img src="/pixels/dust/pgp-keys-128.png" align="left" hspace="5">
 
 To encrypt and decrypt the password store, you use a *public/secret PGP key pair*. I call mine `password-store`.  You will need to place this key pair onto the key ring for each machine that you want to access the password store.  The *public* key is used to encrypt the passwords, and the *secret* key is used to decrypt them again.
 
 A PGP Public/Secret key pair can have a *pass phrase* associated with it, and you should use one: this becomes your *master password* and will be one of the few that you must remember from this point.  It should be a strong pass phrase, but not too hard to type in on a mobile smart phone (unless you're happy to use a different pass phrase for the same key pair on the phone, which is also possible).
 
-## Password Store
-![](/pixels/dust/gibson-password-256.png)
+<br/>
+<br/>
 
-This is your actual collection of passwords, each in it's own OpenPGP-encrypted file. Organise it how you like, as recommended by the **pass** manual. 
+## Password Store
+<img src="/pixels/dust/gibson-password-256.png"  align="left" hspace="5">
+
+This is your actual collection of passwords, each in it's own OpenPGP-encrypted file. Organise it how you like, as recommended by the **pass** manual.
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 ## Git repository
-![](/pixels/dust/git-logo-128.png)
+<img src="/pixels/dust/git-logo-128.png"  align="left" hspace="5">
 
 Your password store can be stored in a local Git repository. This allows you to track changes and retrieve old passwords (I'm unsure why you'd want to get old passwords). But more useful is being able to `pass git push` and `pass git pull` between the computer and an online Git *Remote* on the Internet.
 
+<br/>
+<br/>
+
 ## Git Remote
-![](/pixels/dust/gitlab-b-128.png)
+<img src="/pixels/dust/gitlab-b-128.png"  align="left" hspace="5">
 
 A copy of your password store git repository that's on the Internet.  You can store it in any online git repository service such as GitHub, or BitBucket.  I prefer to use GitLab.com for this though, because it offers free *private* repositories.
 
 You may think having a private repo to store encrypted data is redundant, but with a *public* repo, anybody can clone it to their computer.  The only thing protecting your passwords then is the pass phrase for your key pair.  It could be cracked by brute force, so better if people can't clone it at all.
 
 ## SSH Keys
-![](/pixels/dust/openssh-128.png)
+<img src="/pixels/dust/openssh-128.png"  align="left" hspace="5">
 
 To communicate with the Remote I use the `git+ssh` protocol, and this requires it's own *public/private SSH key pair*.
 
@@ -131,8 +144,7 @@ You need to generate a key pair on *each machine that will connect to the Remote
 
 
 ## System Clipboard or pinentry program
-![](/pixels/dust/password-128.png)
-
+<img src="/pixels/dust/password-128.png" align="left" hspace="5">
 This is how you can get your password out of `pass` and into the program that needs the password.  Password Store is set to clear the clipboard entry after a set interval (default is 45 seconds), to reduce the chance of you pasting your password into another program.  But it does leave the password exposed for *all programs which can read the clipboard to see*.  Better to use a direct interface, if you can, of which a few are available for browsers and text editors.
 
 The next post will describe actually setting this up on a Unix computer.
