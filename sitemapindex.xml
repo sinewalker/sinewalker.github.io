@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>http://milosophical.me/authors/michael-lockhart.xml</loc>
-  <lastmod>2018-06-24T09:20:00Z</lastmod>
+  <lastmod>2018-06-24T13:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/authors/mike-lockhart.xml</loc>
@@ -143,11 +143,11 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/rss.xml</loc>
-  <lastmod>2018-06-24T09:20:00Z</lastmod>
+  <lastmod>2018-06-24T13:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/sitemap.xml</loc>
-  <lastmod>2018-06-24T09:21:00Z</lastmod>
+  <lastmod>2018-06-24T13:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/4-bit-rules.xml</loc>
@@ -491,7 +491,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/git.xml</loc>
-  <lastmod>2018-06-24T09:20:00Z</lastmod>
+  <lastmod>2018-06-24T13:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/gitlab.xml</loc>
@@ -503,7 +503,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/gpg.xml</loc>
-  <lastmod>2018-06-24T09:20:00Z</lastmod>
+  <lastmod>2018-06-24T13:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/gps.xml</loc>
@@ -571,11 +571,11 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/keepassx.xml</loc>
-  <lastmod>2018-06-24T00:07:00Z</lastmod>
+  <lastmod>2018-06-24T13:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/keybase.xml</loc>
-  <lastmod>2018-06-24T09:21:00Z</lastmod>
+  <lastmod>2018-06-24T13:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/keyboards.xml</loc>
@@ -771,15 +771,15 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/pass.xml</loc>
-  <lastmod>2018-06-24T09:21:00Z</lastmod>
+  <lastmod>2018-06-24T11:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/password-store.xml</loc>
-  <lastmod>2018-06-24T09:21:00Z</lastmod>
+  <lastmod>2018-06-24T13:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/passwords.xml</loc>
-  <lastmod>2018-06-24T09:21:00Z</lastmod>
+  <lastmod>2018-06-24T13:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/perfection.xml</loc>
@@ -891,7 +891,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/ssh.xml</loc>
-  <lastmod>2018-06-24T00:07:00Z</lastmod>
+  <lastmod>2018-06-24T13:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/stability.xml</loc>

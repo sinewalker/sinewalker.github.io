@@ -67,19 +67,19 @@
  </url>
  <url>
   <loc>http://milosophical.me/archive/2018/index.html</loc>
-  <lastmod>2018-06-24T09:20:00Z</lastmod>
+  <lastmod>2018-06-24T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/archive/archive.html</loc>
-  <lastmod>2018-06-24T00:06:00Z</lastmod>
+  <lastmod>2018-06-24T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/authors/index.html</loc>
-  <lastmod>2018-06-24T00:06:00Z</lastmod>
+  <lastmod>2018-06-24T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/authors/michael-lockhart.html</loc>
-  <lastmod>2018-06-24T09:20:00Z</lastmod>
+  <lastmod>2018-06-24T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/authors/mike-lockhart.html</loc>
@@ -579,7 +579,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/2018/keepass-and-password-store.html</loc>
-  <lastmod>2018-06-24T04:55:00Z</lastmod>
+  <lastmod>2018-06-24T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/2018/learning-git-workflow-0.html</loc>
@@ -599,7 +599,11 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/2018/password-store-0.html</loc>
-  <lastmod>2018-06-24T09:21:00Z</lastmod>
+  <lastmod>2018-06-24T13:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://milosophical.me/blog/2018/password-store-1.html</loc>
+  <lastmod>2018-06-24T12:49:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-1.html</loc>
@@ -615,7 +619,11 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-12.html</loc>
-  <lastmod>2018-06-24T00:07:00Z</lastmod>
+  <lastmod>2018-06-24T13:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://milosophical.me/blog/index-13.html</loc>
+  <lastmod>2018-06-24T12:49:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-2.html</loc>
@@ -651,7 +659,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/index.html</loc>
-  <lastmod>2018-06-24T09:20:00Z</lastmod>
+  <lastmod>2018-06-24T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/hax/codec/URL%20Decoder_Encoder.html</loc>
@@ -1339,7 +1347,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/git.html</loc>
-  <lastmod>2018-06-24T09:20:00Z</lastmod>
+  <lastmod>2018-06-24T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/gitlab.html</loc>
@@ -1351,7 +1359,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/gpg.html</loc>
-  <lastmod>2018-06-24T09:20:00Z</lastmod>
+  <lastmod>2018-06-24T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/gps.html</loc>
@@ -1419,7 +1427,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/index.html</loc>
-  <lastmod>2018-06-24T00:06:00Z</lastmod>
+  <lastmod>2018-06-24T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/jargon.html</loc>
@@ -1455,11 +1463,11 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/keepassx.html</loc>
-  <lastmod>2018-06-24T00:07:00Z</lastmod>
+  <lastmod>2018-06-24T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/keybase.html</loc>
-  <lastmod>2018-06-24T09:20:00Z</lastmod>
+  <lastmod>2018-06-24T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/keyboards.html</loc>
@@ -1655,15 +1663,15 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/pass.html</loc>
-  <lastmod>2018-06-24T09:20:00Z</lastmod>
+  <lastmod>2018-06-24T11:33:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/password-store.html</loc>
-  <lastmod>2018-06-24T09:20:00Z</lastmod>
+  <lastmod>2018-06-24T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/passwords.html</loc>
-  <lastmod>2018-06-24T09:20:00Z</lastmod>
+  <lastmod>2018-06-24T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/perfection.html</loc>
@@ -1775,7 +1783,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/ssh.html</loc>
-  <lastmod>2018-06-24T00:07:00Z</lastmod>
+  <lastmod>2018-06-24T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/stability.html</loc>
