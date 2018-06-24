@@ -35,7 +35,7 @@
             </a>
         </div>
 <!-- /.navbar-header -->
-        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+        <div class="collapse navbar-collapse" id="bs-navbar" role="navigation" aria-expanded="false">
             <ul class="nav navbar-nav">
 <li class="active">
 <a href="#">Blog <span class="sr-only">(active)</span></a>
@@ -161,7 +161,22 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2018/keepass-and-password-store.html" class="u-url">Pasword databases: from KeePassX to Unix password store</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2018/password-store-0.html" class="u-url">Password databases: setting up password-store on a Unix computer</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="2018/password-store-0.html" rel="bookmark"><time class="published dt-published" datetime="2018-06-24T07:23:41+10:00" title="2018-06-24 07:23">2018-06-24 07:23</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>Having <a href="2018/keepass-and-password-store.html">covered</a> what <a href="https://www.passwordstore.org/">pass</a> is, why I'm using it, and the required supporting tools <a href="https://gnupg.org/">gnupg</a>, <a href="https://git-scm.com/">git</a>, <a href="https://www.openssh.com/">ssh</a> and a <a href="https://www.gitlab.com/">private git remote</a>, it's time to go over how to put the system together.</p>
+<p>Setting it all up on a Unix computer is fairly straight-forward. Getting it onto an Android is a bit different.  So in this post I'll cover how the pieces of the system fit together, and then walk through setting it up on Unix.</p>
+<p>Synchronising your local password-store git repository with your remote store is done a bit differently depending if this is the <em>first</em> time you're setting up the remote, or if you already have a remote and you wish to merge it into your new local. I'll cover that too.</p>
+<p class="more"><a href="2018/password-store-0.html">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2018/keepass-and-password-store.html" class="u-url">Pasword databases: from KeePassX to Unix password store</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
@@ -333,20 +348,6 @@ For real <em>rigour</em>, there is much more required than a few simple rules. B
     <div>
 <p>Just an idle thought this morning: wouldnt it be great if vehicles and road authorities agreed to use <a href="https://en.wikipedia.org/wiki/International_System_of_Units">SI Units</a> to measure vehicle speed?</p>
 <p class="more"><a href="2017/speeds.html">Read more…</a></p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2017/getkidscoding.html" class="u-url">getkidscoding</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
-            </span></p>
-            <p class="dateline"><a href="2017/getkidscoding.html" rel="bookmark"><time class="published dt-published" datetime="2017-09-19T09:45:54+10:00" title="2017-09-19 09:45">2017-09-19 09:45</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>I've been coming to my sons class when I get a chance and showing the kids about computer codes. I actually started a <a href="https://codeclubau.org">CodeClub</a> last year and we were pretty successful, though very limited by my availability -- I was able to run the club for one hour <em>most</em> weeks, so it took us two terms to cover <a href="https://codeclubprojects.org/en-GB/scratch/">Scratch 1</a>.</p>
-<p>This year I've had even less time away from work, but I've had great support from the grade 6 teacher. We plan for him to facilitate the projects in class while I assist via emails and blogs. So: here's my first post.</p>
-<p class="more"><a href="2017/getkidscoding.html">Read more…</a></p>
 </div>
     </div>
     </article>
