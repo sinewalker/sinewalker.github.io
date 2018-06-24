@@ -1,5 +1,5 @@
 <!--
-.. title: Pasword databases: from KeePassX to Unix password store
+.. title: Password databases: from KeePassX to Unix password store
 .. slug: keepass-and-password-store
 .. date: 2018-04-28 22:52:33 UTC+10:00
 .. tags: passwords, pass, keepassx, password-store
