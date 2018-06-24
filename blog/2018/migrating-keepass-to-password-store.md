@@ -2,7 +2,7 @@
 .. title: Password databases: Migrating from KeePassX to Pass
 .. slug: migrating-keepass-to-password-store
 .. date: 2018-05-03 22:00:22 UTC+10:00
-.. tags: draft, password-store, keepassx, passwords, git, gpg, ssh, keybase
+.. tags: password-store, keepassx, passwords, git, gpg, ssh, keybase
 .. category: 
 .. link: 
 .. description: 

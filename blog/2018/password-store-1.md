@@ -2,7 +2,7 @@
 .. title: Password databases: Installing password-store on Android
 .. slug: password-store-1
 .. date: 2018-06-24 22:45:22 UTC+10:00
-.. tags: password-store, keepassx, passwords, git, gpg, ssh, keybase
+.. tags: draft, password-store, keepassx, passwords, git, gpg, ssh, keybase
 .. category: 
 .. link: 
 .. description: 
