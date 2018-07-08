@@ -3,7 +3,7 @@
 #   File:       conf.py
 #   Created:    2014-08-21
 #   Language:   Python
-#   Time-stamp: <2018-03-22 17:31:40 mjl>
+#   Time-stamp: <2018-07-09 07:27:55 mjl>
 #   Platform:   (Nikola 7.1 configuration file)
 #   OS:         *nix
 #   Author:     [MJL] Michael J. Lockhart (mlockhart@squiz.net)
@@ -831,7 +831,7 @@ GALLERY_FOLDERS = {"pixels": "pixels"}
 # EXTRA_IMAGE_EXTENSIONS = []
 #
 # If set to False, it will sort by filename instead. Defaults to True
-# GALLERY_SORT_BY_DATE = True
+GALLERY_SORT_BY_DATE = False
 
 # If set to True, EXIF data will be copied when an image is thumbnailed or
 # resized. (See also EXIF_WHITELIST)
