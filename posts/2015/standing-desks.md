@@ -54,7 +54,7 @@ keyboard instead&hellip;)
 
 My setup is pretty basic: 
 
-<image src="/pixels/dust/work-desk-box.jpg"/>
+<img src="/img/work-desk-box.jpg"/>
 
  * an inexpensive coffee-table or side-table desk sits atop a normal
    work desk

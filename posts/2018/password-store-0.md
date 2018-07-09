@@ -20,9 +20,9 @@ Synchronising your local password-store git repository with your remote store is
 
 Here are all the parts of my password-store system. Don't worry, it's not as complicated as the drawing suggests:
 
-![password-store system diagram](/pixels/dust/password-store-system.png)
+![password-store system diagram](/img/password-store-system.png)
 
-*Password-Store system — see a [vector rendition](/pixels/dust/password-store-system.svg)*
+*Password-Store system — see a [vector rendition](/img/password-store-system.svg)*
 
 This shows all the system components, deployed across three devices:
 
@@ -36,9 +36,9 @@ Each group is the same (the Android stack is *essentially* the same, but grouped
 
 I'll focus on just one group, my company workstation, without looking at the synchronisation yet:
 
-![password-store unix diagram](/pixels/dust/password-store-unix.png)
+![password-store unix diagram](/img/password-store-unix.png)
 
-*Password-Store Unix tool chain - see a [vector rendition](/pixels/dust/password-store-unix.svg)*
+*Password-Store Unix tool chain - see a [vector rendition](/img/password-store-unix.svg)*
 
 
 This shows the relationship between the parts of a normal `pass` system, with revision control added:

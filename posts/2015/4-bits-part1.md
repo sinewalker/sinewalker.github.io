@@ -85,7 +85,7 @@ pain (literally) to write this much detail down, but I did it even then
 because it was helpful, and with a detailed map of where I had come and was
 going, I almost never got lost.
 
-<img src="/pixels/dust/virtual-heart-system-log.jpg">
+<img src="/img/virtual-heart-system-log.jpg">
 
 This physical notebook is a lovely thing to have, but today I
 recommend that you save your wrist as well as your wits and keep an
