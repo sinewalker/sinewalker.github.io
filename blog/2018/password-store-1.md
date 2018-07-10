@@ -59,14 +59,14 @@ On the Android, follow these steps:
  
  2. Install *Password Store* [from Google Play](https://play.google.com/store/apps/details?id=com.zeapo.pwdstore) or *F-droid*:
 
-    <a class="reference" href="/img/android-passwords/00-F-droid-password-store.png" alt="Install Password Store from F-Droid"><img src="/img/android-passwords/00-F-Droid-password-store.thumbnail.png"></a>
+    <a class="reference" href="/img/android-passwords/00-F-droid-password-store.png" alt="Install Password Store from F-Droid"><img src="/img/android-passwords/00-F-droid-password-store.thumbnail.png"></a>
     <a class="reference" href="/img/android-passwords/01-install-password-store.png" alt="Install Password Store"><img src="/img/android-passwords/01-install-password-store.thumbnail.png"></a>
     <a class="reference" href="/img/android-passwords/02-installing-password-store.png" alt="Installing Password Store"><img src="/img/android-passwords/02-installing-password-store.thumbnail.png"></a>
     <a class="reference" href="/img/android-passwords/03-installed-password-store.png" alt="Password Store installed"><img src="/img/android-passwords/03-installed-password-store.thumbnail.png"></a>
 
  3. Install *OpenKeychain* [from Google Play](https://play.google.com/store/apps/details?id=org.sufficientlysecure.keychain) or *F-droid*:
 
-    <a class="reference" href="/img/android-passwords/04-F-droid-openkeychain.png" alt="Install OpenKeychain from F-Droid"><img src="/img/android-passwords/04-F-Droid-openkeychain.thumbnail.png"></a>
+    <a class="reference" href="/img/android-passwords/04-F-droid-openkeychain.png" alt="Install OpenKeychain from F-Droid"><img src="/img/android-passwords/04-F-droid-openkeychain.thumbnail.png"></a>
     <a class="reference" href="/img/android-passwords/05-install-openkeychain.png" alt="Install OpenKeychain"><img src="/img/android-passwords/05-install-openkeychain.thumbnail.png"></a>
     <a class="reference" href="/img/android-passwords/06-installed-openkeychain.png" alt="OpenKeychain installed"><img src="/img/android-passwords/06-installed-openkeychain.thumbnail.png"></a>
 

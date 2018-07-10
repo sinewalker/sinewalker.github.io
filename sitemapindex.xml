@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>http://milosophical.me/authors/michael-lockhart.xml</loc>
-  <lastmod>2018-07-10T12:27:00Z</lastmod>
+  <lastmod>2018-07-10T22:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/authors/mike-lockhart.xml</loc>
@@ -139,11 +139,11 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/rss.xml</loc>
-  <lastmod>2018-07-10T12:27:00Z</lastmod>
+  <lastmod>2018-07-10T22:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/sitemap.xml</loc>
-  <lastmod>2018-07-10T12:27:00Z</lastmod>
+  <lastmod>2018-07-10T22:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/4-bit-rules.xml</loc>
@@ -499,7 +499,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/gpg.xml</loc>
-  <lastmod>2018-07-10T12:27:00Z</lastmod>
+  <lastmod>2018-07-10T22:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/gps.xml</loc>
@@ -571,7 +571,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/keybase.xml</loc>
-  <lastmod>2018-07-10T12:27:00Z</lastmod>
+  <lastmod>2018-07-10T22:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/keyboards.xml</loc>
@@ -743,7 +743,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/openkeychain.xml</loc>
-  <lastmod>2018-07-10T12:27:00Z</lastmod>
+  <lastmod>2018-07-10T22:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/openssh.xml</loc>
@@ -775,11 +775,11 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/password-store.xml</loc>
-  <lastmod>2018-07-10T12:27:00Z</lastmod>
+  <lastmod>2018-07-10T22:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/passwords.xml</loc>
-  <lastmod>2018-07-10T12:27:00Z</lastmod>
+  <lastmod>2018-07-10T22:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/perfection.xml</loc>
@@ -891,7 +891,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/ssh.xml</loc>
-  <lastmod>2018-07-10T12:27:00Z</lastmod>
+  <lastmod>2018-07-10T22:38:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/stability.xml</loc>
