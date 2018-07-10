@@ -34,7 +34,7 @@ To be honest my past experience with Microsoft Visual SourceSafe, Rational Clear
 
 That's putting it lightly. Have a look at this screen shot I took from a past employer. The vertical trees are branches,  each node is a commit/revision, the red lines are merges (or rebases, I can't remember, it was about ten years ago):
 
-![](/pixels/dust/irrational-unclearcase.jpg)
+![](/img/irrational-unclearcase.jpg)
 >I still get nightmares!
 
 So, that's where I'm coming from. My notes here are what I'm exploring online to try and get somewhere with branching that's _not_ like that.
@@ -53,7 +53,7 @@ Now, though, I'm looking for some guidance on policy, not just mechanism.
 
  * The pictures in [this article by Vincent Driessen](http://nvie.com/posts/a-successful-git-branching-model/) look more like what I want to do:
 
-![](/pixels/dust/git-model-1x-trans.png)
+![](/img/git-model-1x-trans.png)
 >(get the high-quality original, suitable for printing, [from the article](http://nvie.com/posts/a-successful-git-branching-model/))
 
 I like it *a lot*, actually, and will read it through properly. At first glance it's a lot like the [GitHub Flow](https://guides.github.com/introduction/flow/) (which I've also only skimmed).

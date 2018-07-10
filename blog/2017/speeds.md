@@ -100,7 +100,7 @@ Some are slightly slower than current, and some slightly faster.
 
 ## Car speedometers
 
-![](/pixels/dust/Nissan-X-Trail-dash.jpg)
+![](/img/Nissan-X-Trail-dash.jpg)
 
 Car speedos Are STUPID. As if my Nissan X-Trail will ever reach 240km/h, even running the engine on the red-line! Most cars are the same.
 
@@ -112,6 +112,6 @@ European cars would probably want to calibrate to 50m/s, and super cars might wa
 
 I notice a lot of American cars show the speed using MPH and km/h:
 
-![](/pixels/dust/american-speedo.jpg)
+![](/img/american-speedo.jpg)
 
 Car makers could do something like that for every other country, showing km/h and m/s, and topping out at 160 km/h  /  45 m/s  (about 100MPH).

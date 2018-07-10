@@ -30,7 +30,7 @@ So my `${HOME}` has an accumulation of crufty files, and weird directories, with
 
 To get a feel for the state of this mess, take a look at my real-life work bench, which reflects my computer work benches a little too closely:
 
-![](/pixels/dust/messy-workbench.jpg)
+![](/img/messy-workbench.jpg)
 
 
 (I know, right&hellip;?)
