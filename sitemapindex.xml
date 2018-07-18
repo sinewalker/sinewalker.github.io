@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>http://milosophical.me/authors/michael-lockhart.xml</loc>
-  <lastmod>2018-07-18T22:37:00Z</lastmod>
+  <lastmod>2018-07-18T22:41:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/authors/mike-lockhart.xml</loc>
@@ -139,11 +139,11 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/rss.xml</loc>
-  <lastmod>2018-07-18T22:37:00Z</lastmod>
+  <lastmod>2018-07-18T22:41:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/sitemap.xml</loc>
-  <lastmod>2018-07-18T22:37:00Z</lastmod>
+  <lastmod>2018-07-18T22:41:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/4-bit-rules.xml</loc>
@@ -171,7 +171,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/asciinema.xml</loc>
-  <lastmod>2018-07-18T22:37:00Z</lastmod>
+  <lastmod>2018-07-18T22:41:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/audio.xml</loc>
@@ -283,7 +283,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/code.xml</loc>
-  <lastmod>2018-07-18T22:37:00Z</lastmod>
+  <lastmod>2018-07-18T22:41:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/codekids.xml</loc>
@@ -431,7 +431,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/experiments.xml</loc>
-  <lastmod>2018-07-18T22:37:00Z</lastmod>
+  <lastmod>2018-07-18T22:41:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/ext4fs.xml</loc>
@@ -559,7 +559,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/journald.xml</loc>
-  <lastmod>2018-07-18T22:37:00Z</lastmod>
+  <lastmod>2018-07-18T22:41:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/jupyter.xml</loc>
@@ -923,7 +923,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/systemd.xml</loc>
-  <lastmod>2018-07-18T22:37:00Z</lastmod>
+  <lastmod>2018-07-18T22:41:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/tagging.xml</loc>
