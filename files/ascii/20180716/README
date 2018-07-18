@@ -1,0 +1,8 @@
+experiments with systemd Journal.
+
+See /posts/2018/journald-experiments-0.md  (or .html on the web)
+
+exp-0:  tailing log output from a service (bash and python)
+exp-1:  journalctl -f vs tail -f  with bash
+exp-2:  journalctl -f vs tail -f  with python
+exp-3   python buffered vs unbuffered (with, w/out systemd)
