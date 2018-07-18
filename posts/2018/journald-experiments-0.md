@@ -275,7 +275,7 @@ This is a repeat of Experiment 1, using Python instead of bash.  Still using CPy
   src="/ascii/20180716/exp-2.cast"
   title="Experiment 2: streaming python (unbuffered) via journald vs a text file"
   cols="100"
-  rows="25"
+  rows="37"
   theme="tango"
   start-at="27"
   preload>
