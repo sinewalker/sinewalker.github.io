@@ -3,7 +3,21 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License" style="border-width:0"
      src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"/&gt;&lt;/a&gt;
-</copyright><lastBuildDate>Mon, 09 Jul 2018 13:47:19 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>4-bit Rules of Computing, Part 4</title><link>http://milosophical.me/blog/2018/4-bits-part4.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;Here is the fifth part of my &lt;a href="http://milosophical.me/tags/4-bit-rules.html"&gt;blog series&lt;/a&gt; expanding on my
+</copyright><lastBuildDate>Wed, 18 Jul 2018 13:04:49 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Journald experiments - Testing systemd's logger: speed and buffering</title><link>http://milosophical.me/blog/2018/journald-experiments-0.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;I've been having good natured arguments at work about whether it's the &lt;em&gt;End of the World&lt;/em&gt; that we are at last switching away from &lt;em&gt;Scientific Linux 6&lt;/em&gt; and it's &lt;a href="https://en.wikipedia.org/wiki/UNIX_System_V"&gt;System V&lt;/a&gt; style &lt;a href="https://en.wikipedia.org/wiki/Init"&gt;init&lt;/a&gt; scripts, to &lt;em&gt;CentOS 7&lt;/em&gt;, which uses &lt;a href="https://freedesktop.org/wiki/Software/systemd/"&gt;systemd&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;My own opinion is that &lt;em&gt;systemd is pretty &lt;a href="http://milosophical.me/jargon/html/C/cuspy.html"&gt;cuspy&lt;/a&gt;&lt;/em&gt;.  It's not perfect, but nor is it some great hulking monolithic monster come to destroy the Unix Way in the Linux world.  It offers many worthwhile improvements and I've enjoyed using it in openSUSE for years now. I look forward to switching away from the hair-ball of &lt;em&gt;wet&lt;/em&gt; SysV init scripts with clumsy precedent semantics and manual service recovery.&lt;/p&gt;
+&lt;p&gt;Now, I don't want to throw my hat into the ring on the pro's and con's of systemd having replaced the start-up infrastructure (and &lt;em&gt;a lot&lt;/em&gt; of other systems besides) on Linux-based operating systems.  Enough has been said already on that front, by many more experienced than I, and further argument is pointless:  whichever camp you're in, you won't be convinced of the other sides point of view by now.&lt;/p&gt;
+&lt;p&gt;However there is &lt;em&gt;one&lt;/em&gt; argument against systemd that I'm not so sure about: &lt;a href="http://0pointer.de/blog/projects/journal-submit.html"&gt;journald&lt;/a&gt; and it's past issues:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;alleged buffering of logs&lt;/strong&gt;, making diagnostics and debugging on time-critical services difficult or impossible&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;binary log files&lt;/strong&gt; which can be corrupted, and then not useful thereafter (because they're binary)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;volatile storage&lt;/strong&gt;, so that your logs are gone when you want them the most: after an unplanned reboot&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I'll be spending a few days experimenting with &lt;code&gt;journald&lt;/code&gt; in these areas, to see if it's as bad now as it was five years ago when &lt;a href="https://bbs.archlinux.org/viewtopic.php?id=159090"&gt;concerns like these were being raised&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In this post I want to look at the &lt;code&gt;journald&lt;/code&gt; daemon / &lt;code&gt;journalctl&lt;/code&gt; log viewer a bit, from the point of view of &lt;strong&gt;buffering output&lt;/strong&gt;, whether and where it could be occurring, and what the implications might be as a web sysop.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;This is a medium-long post, with about 23 minutes of terminal output recordings (in text, using &lt;a href="https://ascinnema.org"&gt;asciinema&lt;/a&gt;) and is about 2⅓MB to download. It's also about half-an-hour's read on top of that.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="http://milosophical.me/blog/2018/journald-experiments-0.html"&gt;Read more…&lt;/a&gt; (14 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>asciinema</category><category>code</category><category>experiments</category><category>journald</category><category>systemd</category><guid>http://milosophical.me/blog/2018/journald-experiments-0.html</guid><pubDate>Sat, 14 Jul 2018 11:32:16 GMT</pubDate></item><item><title>4-bit Rules of Computing, Part 4</title><link>http://milosophical.me/blog/2018/4-bits-part4.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;Here is the fifth part of my &lt;a href="http://milosophical.me/tags/4-bit-rules.html"&gt;blog series&lt;/a&gt; expanding on my
 &lt;a href="http://milosophical.me/pg/4-bit-rules.html"&gt;4-bit rules of computing&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;In this post: &lt;strong&gt;rules 7, 8, and 9&lt;/strong&gt;; which discuss &lt;strong&gt;testing and debugging&lt;/strong&gt;. They are all related in a way: having to do with making good-quality craft work. Because, as much as computer people like to &lt;em&gt;believe&lt;/em&gt; that we're "engineers" or that this is "computer science", &lt;a href="https://web.archive.org/web/20171221023913/https://www.theatlantic.com/technology/archive/2017/09/saving-the-world-from-code/540393/"&gt;we're not really&lt;/a&gt;.  We're crafts people, in a profession that's still very young and finding its roots and methods in order to be consistently successful.&lt;/p&gt;
 &lt;p&gt;I'm definitely &lt;em&gt;not&lt;/em&gt; trying to pretend I'm an "engineer". 
@@ -51,25 +65,4 @@ Here's a quick-and-dirty shell hack to remove the tags from the files and get th
 &lt;p&gt;
 Emacs to the rescue! &lt;a title="Benjamin Ferrari's blog (seems to lack an " href="http://blog.bookworm.at/"&gt;Benjamin Ferrari&lt;/a&gt; wrote this &lt;em&gt;increadibly useful&lt;/em&gt; (and simple) &lt;a title="Benjamin Ferrari's original blog post for below code" href="http://blog.bookworm.at/2007/03/pretty-print-xml-with-emacs.html"&gt;elisp function&lt;/a&gt; to pretty-print a block of XML code:
 &lt;/p&gt;
-&lt;p&gt;&lt;a href="http://milosophical.me/blog/2008/06/26/pretty-printing-xml-with-emacs-nxml-mode.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>code</category><category>emacs</category><category>geek</category><category>hacking</category><category>lisp</category><category>tip</category><category>XHTML</category><guid>http://milosophical.me/blog/2008/06/26/pretty-printing-xml-with-emacs-nxml-mode.html</guid><pubDate>Thu, 26 Jun 2008 02:46:03 GMT</pubDate></item><item><title>Finding DLLs used by a Cygwin program</title><link>http://milosophical.me/blog/2007/03/09/finding-dlls-used-by-a-cygwin-program.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;I don't know how many other people get this issue, but it comes up at my work a bit: Some co-worker asks me if I know of a tool to do such-and-such, and invariably I think &lt;em&gt;“well, that's &lt;/em&gt;easy&lt;em&gt; to do on Unix, but on &lt;/em&gt;Windows&lt;em&gt;…”&lt;/em&gt;.
-&lt;/p&gt;
-&lt;p&gt;
-Then I remember Cygwin, and quickly find a Cygwin utility that does it, or can be scripted to do it with a small amount of work. So then co-worker asks if they can have a copy of this utility, and of course Cygwin is Free, so I say “sure, go download from &lt;a title="Cygwin download mirrors" href="http://www.cygwin.com/mirrors.html"&gt;www.cygwin.com&lt;/a&gt;.” Then they say, “yeah, but I don't want to install all of Cygwin, can't you just give me that one program?”
-&lt;/p&gt;
-
-&lt;p&gt;
-Well, the Cygwin command-line tools &lt;em&gt;can&lt;/em&gt; be run from a Windows &lt;code&gt;CMD.EXE&lt;/code&gt; shell, so this is quite possible to do. However, they all require the Cygwin POSIX layer, which at a minimum means I should also give them &lt;code&gt;cygwin1.dll&lt;/code&gt;. But what &lt;em&gt;other&lt;/em&gt; DLLs might the program use?
-&lt;/p&gt;
-
-&lt;p&gt;
-&lt;strong&gt;MJL2008-09-10T14:37+1000 Update:&lt;/strong&gt; since this page gets a lot of hits, here's the quick answer: &lt;strong&gt;use cygcheck&lt;/strong&gt;, i.e:
-
-&lt;/p&gt;&lt;p style="text-align:center;"&gt;&lt;code&gt;cygcheck grep&lt;/code&gt;&lt;/p&gt;
-
-
-&lt;p&gt;
-Find it under Happy hacker discovery #2. Keep reading if you're bored...
-&lt;/p&gt;
-
-
-&lt;p&gt;&lt;a href="http://milosophical.me/blog/2007/03/09/finding-dlls-used-by-a-cygwin-program.html"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>code</category><category>cygwin</category><category>hacking</category><guid>http://milosophical.me/blog/2007/03/09/finding-dlls-used-by-a-cygwin-program.html</guid><pubDate>Thu, 08 Mar 2007 22:14:25 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="http://milosophical.me/blog/2008/06/26/pretty-printing-xml-with-emacs-nxml-mode.html"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>code</category><category>emacs</category><category>geek</category><category>hacking</category><category>lisp</category><category>tip</category><category>XHTML</category><guid>http://milosophical.me/blog/2008/06/26/pretty-printing-xml-with-emacs-nxml-mode.html</guid><pubDate>Thu, 26 Jun 2008 02:46:03 GMT</pubDate></item></channel></rss>

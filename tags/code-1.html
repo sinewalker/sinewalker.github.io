@@ -161,7 +161,41 @@
 
     <header><h1>Posts about code (old posts, page 1)</h1>
     </header><div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2007/03/09/setting-up-multiple-java-vms-under-cygwin.html" class="u-url">Setting up multiple Java VMs under Cygwin</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2007/03/09/finding-dlls-used-by-a-cygwin-program.html" class="u-url">Finding DLLs used by a Cygwin program</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="../blog/2007/03/09/finding-dlls-used-by-a-cygwin-program.html" rel="bookmark"><time class="published dt-published" datetime="2007-03-09T09:14:25+11:00" title="2007-03-09 09:14">2007-03-09 09:14</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>I don't know how many other people get this issue, but it comes up at my work a bit: Some co-worker asks me if I know of a tool to do such-and-such, and invariably I think <em>“well, that's </em>easy<em> to do on Unix, but on </em>Windows<em>…”</em>.
+</p>
+<p>
+Then I remember Cygwin, and quickly find a Cygwin utility that does it, or can be scripted to do it with a small amount of work. So then co-worker asks if they can have a copy of this utility, and of course Cygwin is Free, so I say “sure, go download from <a title="Cygwin download mirrors" href="http://www.cygwin.com/mirrors.html">www.cygwin.com</a>.” Then they say, “yeah, but I don't want to install all of Cygwin, can't you just give me that one program?”
+</p>
+
+<p>
+Well, the Cygwin command-line tools <em>can</em> be run from a Windows <code>CMD.EXE</code> shell, so this is quite possible to do. However, they all require the Cygwin POSIX layer, which at a minimum means I should also give them <code>cygwin1.dll</code>. But what <em>other</em> DLLs might the program use?
+</p>
+
+<p>
+<strong>MJL2008-09-10T14:37+1000 Update:</strong> since this page gets a lot of hits, here's the quick answer: <strong>use cygcheck</strong>, i.e:
+
+</p>
+<p style="text-align:center;"><code>cygcheck grep</code></p>
+
+
+<p>
+Find it under Happy hacker discovery #2. Keep reading if you're bored...
+</p>
+
+
+<p class="more"><a href="../blog/2007/03/09/finding-dlls-used-by-a-cygwin-program.html">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2007/03/09/setting-up-multiple-java-vms-under-cygwin.html" class="u-url">Setting up multiple Java VMs under Cygwin</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 <a href="../authors/michael-lockhart.html">Michael Lockhart</a>

@@ -2,17 +2,16 @@
 <html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="description" content="A geek's notebook">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Posts for year 2018 | Milosophical Me</title>
-<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
-<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<title>Posts about journald | Milosophical Me</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#e37f2a;">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
-<link rel="canonical" href="http://milosophical.me/archive/2018/index.html">
-<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]-->
+<link rel="alternate" type="application/rss+xml" title="RSS for tag journald (en)" href="journald.xml">
+<link rel="canonical" href="http://milosophical.me/tags/journald.html">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><link rel="alternate" type="application/rss+xml" title="RSS for tag journald (en)" href="journald.xml">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -37,19 +36,19 @@
         <div class="collapse navbar-collapse" id="bs-navbar" role="navigation" aria-expanded="false">
             <ul class="nav navbar-nav">
 <li>
-<a href="../../blog/index.html">Blog</a>
+<a href="../blog/index.html">Blog</a>
                 </li>
 <li>
-<a href="../archive.html">Archive</a>
+<a href="../archive/archive.html">Archive</a>
                 </li>
 <li>
-<a href="../../tags/index.html">Tags</a>
+<a href="index.html">Tags</a>
                 </li>
 <li>
-<a href="../../pg/index.html">Codex</a>
+<a href="../pg/index.html">Codex</a>
                 </li>
 <li>
-<a href="../../pixels/index.html">Pixels</a>
+<a href="../pixels/index.html">Pixels</a>
             </li>
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Social <b class="caret"></b></a>
@@ -95,19 +94,19 @@
 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Jargon <b class="caret"></b></a>
             <ul class="dropdown-menu">
 <li>
-<a href="../../jargon/index.html">Main page</a>
+<a href="../jargon/index.html">Main page</a>
                     </li>
 <li>
-<a href="../../jargon/html/index.html">Table of Content</a>
+<a href="../jargon/html/index.html">Table of Content</a>
                     </li>
 <li>
-<a href="../../jargon/html/lexicon.html">Lexicon</a>
+<a href="../jargon/html/lexicon.html">Lexicon</a>
                     </li>
 <li>
-<a href="../../jargon/html/go01.html">Glossary</a>
+<a href="../jargon/html/go01.html">Glossary</a>
                     </li>
 <li>
-<a href="../../jargon/html/appendixa.html">Folklore</a>
+<a href="../jargon/html/appendixa.html">Folklore</a>
             </li>
 </ul>
 </li>
@@ -118,7 +117,7 @@
 <a href="https://about.me/mikelockhart">About.me</a>
                     </li>
 <li>
-<a href="../../pg/colophon.html">About this site</a>
+<a href="../pg/colophon.html">About this site</a>
                     </li>
 <li>
 <a href="https://calendar.google.com/calendar/embed?src=sinewalker@gmail.com&amp;ctz=Australia/Sydney/">My calendar</a>
@@ -132,7 +131,7 @@
 </ul>
 </li>
 <li>
-<a href="../../rss.xml">RSS</a>
+<a href="../rss.xml">RSS</a>
 
                 
             </li>
@@ -154,52 +153,58 @@
         <div class="row">
             
             
-<article class="listpage"><header><h1>Posts for year 2018</h1>
-    </header><ul class="postlist">
+
+    
+    
+
+
+    <header><h1>Posts about journald</h1>
+    </header><div class="postindex">
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2018/journald-experiments-0.html" class="u-url">Journald experiments - Testing systemd's logger: speed and buffering</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="../blog/2018/journald-experiments-0.html" rel="bookmark"><time class="published dt-published" datetime="2018-07-14T21:32:16+10:00" title="2018-07-14 21:32">2018-07-14 21:32</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>I've been having good natured arguments at work about whether it's the <em>End of the World</em> that we are at last switching away from <em>Scientific Linux 6</em> and it's <a href="https://en.wikipedia.org/wiki/UNIX_System_V">System V</a> style <a href="https://en.wikipedia.org/wiki/Init">init</a> scripts, to <em>CentOS 7</em>, which uses <a href="https://freedesktop.org/wiki/Software/systemd/">systemd</a>. </p>
+<p>My own opinion is that <em>systemd is pretty <a href="../jargon/html/C/cuspy.html">cuspy</a></em>.  It's not perfect, but nor is it some great hulking monolithic monster come to destroy the Unix Way in the Linux world.  It offers many worthwhile improvements and I've enjoyed using it in openSUSE for years now. I look forward to switching away from the hair-ball of <em>wet</em> SysV init scripts with clumsy precedent semantics and manual service recovery.</p>
+<p>Now, I don't want to throw my hat into the ring on the pro's and con's of systemd having replaced the start-up infrastructure (and <em>a lot</em> of other systems besides) on Linux-based operating systems.  Enough has been said already on that front, by many more experienced than I, and further argument is pointless:  whichever camp you're in, you won't be convinced of the other sides point of view by now.</p>
+<p>However there is <em>one</em> argument against systemd that I'm not so sure about: <a href="http://0pointer.de/blog/projects/journal-submit.html">journald</a> and it's past issues:</p>
+<ul>
 <li>
-<time class="listdate" datetime="2018-07-14T21:32:16+10:00" title="2018-07-14 21:32">2018-07-14 21:32</time><a href="../../blog/2018/journald-experiments-0.html" class="listtitle">Journald experiments - Testing systemd's logger: speed and buffering</a>
-</li>
-        <li>
-<time class="listdate" datetime="2018-06-24T22:45:22+10:00" title="2018-06-24 22:45">2018-06-24 22:45</time><a href="../../blog/2018/password-store-1.html" class="listtitle">Password databases: Installing password-store on Android</a>
-</li>
-        <li>
-<time class="listdate" datetime="2018-06-24T07:23:41+10:00" title="2018-06-24 07:23">2018-06-24 07:23</time><a href="../../blog/2018/password-store-0.html" class="listtitle">Password databases: setting up password-store on a Unix computer</a>
-</li>
-        <li>
-<time class="listdate" datetime="2018-05-03T22:00:22+10:00" title="2018-05-03 22:00">2018-05-03 22:00</time><a href="../../blog/2018/migrating-keepass-to-password-store.html" class="listtitle">Password databases: Migrating from KeePassX to Pass</a>
-</li>
-        <li>
-<time class="listdate" datetime="2018-04-28T22:52:33+10:00" title="2018-04-28 22:52">2018-04-28 22:52</time><a href="../../blog/2018/keepass-and-password-store.html" class="listtitle">Password databases: from KeePassX to Unix password store</a>
-</li>
-        <li>
-<time class="listdate" datetime="2018-03-27T22:16:00+11:00" title="2018-03-27 22:16">2018-03-27 22:16</time><a href="../../blog/2018/git-checkout-ftw.html" class="listtitle">Learning DVCS Workflow - 1</a>
-</li>
-        <li>
-<time class="listdate" datetime="2018-03-23T21:25:22+11:00" title="2018-03-23 21:25">2018-03-23 21:25</time><a href="../../blog/2018/4-bits-part4.html" class="listtitle">4-bit Rules of Computing, Part 4</a>
-</li>
-        <li>
-<time class="listdate" datetime="2018-03-18T11:48:10+11:00" title="2018-03-18 11:48">2018-03-18 11:48</time><a href="../../blog/2018/learning-git-workflow-0.html" class="listtitle">Learning DVCS Workflow - 0</a>
-</li>
-        <li>
-<time class="listdate" datetime="2018-02-28T07:44:51+11:00" title="2018-02-28 07:44">2018-02-28 07:44</time><a href="../../blog/2018/4-bits-part3.html" class="listtitle">4-bit Rules of Computing, Part 3</a>
-</li>
-        <li>
-<time class="listdate" datetime="2018-02-10T21:50:09+11:00" title="2018-02-10 21:50">2018-02-10 21:50</time><a href="../../blog/2018/minecraft-python-3.html" class="listtitle">Exploring Minecraft code in Jupyter</a>
-</li>
-        <li>
-<time class="listdate" datetime="2018-02-08T07:10:19+11:00" title="2018-02-08 07:10">2018-02-08 07:10</time><a href="../../blog/2018/minecraft-python-2.html" class="listtitle">A Minecraft Coding environment</a>
-</li>
-        <li>
-<time class="listdate" datetime="2018-02-05T11:18:42+11:00" title="2018-02-05 11:18">2018-02-05 11:18</time><a href="../../blog/2018/minecraft-python-1.html" class="listtitle">Minecraft Jamin'</a>
-</li>
-    </ul></article>
+<strong>alleged buffering of logs</strong>, making diagnostics and debugging on time-critical services difficult or impossible</li>
+<li>
+<strong>binary log files</strong> which can be corrupted, and then not useful thereafter (because they're binary)</li>
+<li>
+<strong>volatile storage</strong>, so that your logs are gone when you want them the most: after an unplanned reboot</li>
+</ul>
+<p>I'll be spending a few days experimenting with <code>journald</code> in these areas, to see if it's as bad now as it was five years ago when <a href="https://bbs.archlinux.org/viewtopic.php?id=159090">concerns like these were being raised</a>.</p>
+<p>In this post I want to look at the <code>journald</code> daemon / <code>journalctl</code> log viewer a bit, from the point of view of <strong>buffering output</strong>, whether and where it could be occurring, and what the implications might be as a web sysop.</p>
+<blockquote>
+<p><em>This is a medium-long post, with about 23 minutes of terminal output recordings (in text, using <a href="https://ascinnema.org">asciinema</a>) and is about 2⅓MB to download. It's also about half-an-hour's read on top of that.</em></p>
+</blockquote>
+<p class="more"><a href="../blog/2018/journald-experiments-0.html">Read more…</a></p>
 </div>
+    </div>
+    </article>
+</div>
+
+
+
+
+
+
+
+        </div>
         <!--End of body content-->
 
         <footer id="footer"><hr>Contents Copyright © 
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
 <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a>
- 2005 — 2018         <a href="mailto:sinewalker@gmail.com">Michael Lockhart</a>. Powered by <a href="https://getnikola.com" rel="nofollow"><img src="../../img/nikola.png" alt="Nikola"></a>, <a href="https://github.com/syl20bnr/spacemacs"><img src="https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg" alt="built with Spacemacs"></a>
+ 2005 — 2018         <a href="mailto:sinewalker@gmail.com">Michael Lockhart</a>. Powered by <a href="https://getnikola.com" rel="nofollow"><img src="../img/nikola.png" alt="Nikola"></a>, <a href="https://github.com/syl20bnr/spacemacs"><img src="https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg" alt="built with Spacemacs"></a>
 
             
         </footer>
@@ -207,7 +212,7 @@
 </div>
 
 
-            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+            <script src="../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
     moment.locale("en");
     fancydates(0, "YYYY-MM-DD HH:mm");
     </script><!-- end fancy dates --><script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-65364237-1', 'auto');  ga('send', 'pageview');</script>

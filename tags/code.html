@@ -161,7 +161,36 @@
 
     <header><h1>Posts about code</h1>
     </header><div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2018/4-bits-part4.html" class="u-url">4-bit Rules of Computing, Part 4</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2018/journald-experiments-0.html" class="u-url">Journald experiments - Testing systemd's logger: speed and buffering</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="../blog/2018/journald-experiments-0.html" rel="bookmark"><time class="published dt-published" datetime="2018-07-14T21:32:16+10:00" title="2018-07-14 21:32">2018-07-14 21:32</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>I've been having good natured arguments at work about whether it's the <em>End of the World</em> that we are at last switching away from <em>Scientific Linux 6</em> and it's <a href="https://en.wikipedia.org/wiki/UNIX_System_V">System V</a> style <a href="https://en.wikipedia.org/wiki/Init">init</a> scripts, to <em>CentOS 7</em>, which uses <a href="https://freedesktop.org/wiki/Software/systemd/">systemd</a>. </p>
+<p>My own opinion is that <em>systemd is pretty <a href="../jargon/html/C/cuspy.html">cuspy</a></em>.  It's not perfect, but nor is it some great hulking monolithic monster come to destroy the Unix Way in the Linux world.  It offers many worthwhile improvements and I've enjoyed using it in openSUSE for years now. I look forward to switching away from the hair-ball of <em>wet</em> SysV init scripts with clumsy precedent semantics and manual service recovery.</p>
+<p>Now, I don't want to throw my hat into the ring on the pro's and con's of systemd having replaced the start-up infrastructure (and <em>a lot</em> of other systems besides) on Linux-based operating systems.  Enough has been said already on that front, by many more experienced than I, and further argument is pointless:  whichever camp you're in, you won't be convinced of the other sides point of view by now.</p>
+<p>However there is <em>one</em> argument against systemd that I'm not so sure about: <a href="http://0pointer.de/blog/projects/journal-submit.html">journald</a> and it's past issues:</p>
+<ul>
+<li>
+<strong>alleged buffering of logs</strong>, making diagnostics and debugging on time-critical services difficult or impossible</li>
+<li>
+<strong>binary log files</strong> which can be corrupted, and then not useful thereafter (because they're binary)</li>
+<li>
+<strong>volatile storage</strong>, so that your logs are gone when you want them the most: after an unplanned reboot</li>
+</ul>
+<p>I'll be spending a few days experimenting with <code>journald</code> in these areas, to see if it's as bad now as it was five years ago when <a href="https://bbs.archlinux.org/viewtopic.php?id=159090">concerns like these were being raised</a>.</p>
+<p>In this post I want to look at the <code>journald</code> daemon / <code>journalctl</code> log viewer a bit, from the point of view of <strong>buffering output</strong>, whether and where it could be occurring, and what the implications might be as a web sysop.</p>
+<blockquote>
+<p><em>This is a medium-long post, with about 23 minutes of terminal output recordings (in text, using <a href="https://ascinnema.org">asciinema</a>) and is about 2⅓MB to download. It's also about half-an-hour's read on top of that.</em></p>
+</blockquote>
+<p class="more"><a href="../blog/2018/journald-experiments-0.html">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2018/4-bits-part4.html" class="u-url">4-bit Rules of Computing, Part 4</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
@@ -314,40 +343,6 @@ Here's a quick-and-dirty shell hack to remove the tags from the files and get th
 Emacs to the rescue! <a title="Benjamin Ferrari's blog (seems to lack an " href="http://blog.bookworm.at/">Benjamin Ferrari</a> wrote this <em>increadibly useful</em> (and simple) <a title="Benjamin Ferrari's original blog post for below code" href="http://blog.bookworm.at/2007/03/pretty-print-xml-with-emacs.html">elisp function</a> to pretty-print a block of XML code:
 </p>
 <p class="more"><a href="../blog/2008/06/26/pretty-printing-xml-with-emacs-nxml-mode.html">Read more…</a></p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2007/03/09/finding-dlls-used-by-a-cygwin-program.html" class="u-url">Finding DLLs used by a Cygwin program</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
-            </span></p>
-            <p class="dateline"><a href="../blog/2007/03/09/finding-dlls-used-by-a-cygwin-program.html" rel="bookmark"><time class="published dt-published" datetime="2007-03-09T09:14:25+11:00" title="2007-03-09 09:14">2007-03-09 09:14</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>I don't know how many other people get this issue, but it comes up at my work a bit: Some co-worker asks me if I know of a tool to do such-and-such, and invariably I think <em>“well, that's </em>easy<em> to do on Unix, but on </em>Windows<em>…”</em>.
-</p>
-<p>
-Then I remember Cygwin, and quickly find a Cygwin utility that does it, or can be scripted to do it with a small amount of work. So then co-worker asks if they can have a copy of this utility, and of course Cygwin is Free, so I say “sure, go download from <a title="Cygwin download mirrors" href="http://www.cygwin.com/mirrors.html">www.cygwin.com</a>.” Then they say, “yeah, but I don't want to install all of Cygwin, can't you just give me that one program?”
-</p>
-
-<p>
-Well, the Cygwin command-line tools <em>can</em> be run from a Windows <code>CMD.EXE</code> shell, so this is quite possible to do. However, they all require the Cygwin POSIX layer, which at a minimum means I should also give them <code>cygwin1.dll</code>. But what <em>other</em> DLLs might the program use?
-</p>
-
-<p>
-<strong>MJL2008-09-10T14:37+1000 Update:</strong> since this page gets a lot of hits, here's the quick answer: <strong>use cygcheck</strong>, i.e:
-
-</p>
-<p style="text-align:center;"><code>cygcheck grep</code></p>
-
-
-<p>
-Find it under Happy hacker discovery #2. Keep reading if you're bored...
-</p>
-
-
-<p class="more"><a href="../blog/2007/03/09/finding-dlls-used-by-a-cygwin-program.html">Read more…</a></p>
 </div>
     </div>
     </article>

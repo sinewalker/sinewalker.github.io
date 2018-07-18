@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Journald experiments - Testing systemd's logger: speed and buffering | Milosophical Me</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#e37f2a;">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="http://milosophical.me/blog/2018/journald-experiments-0.html">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Michael Lockhart">
+<link rel="prev" href="password-store-1.html" title="Password databases: Installing password-store on Android" type="text/html">
+<meta property="og:site_name" content="Milosophical Me">
+<meta property="og:title" content="Journald experiments - Testing systemd's logger: speed and buffering">
+<meta property="og:url" content="http://milosophical.me/blog/2018/journald-experiments-0.html">
+<meta property="og:description" content="I've been having good natured arguments at work about whether it's the End of the World that we are at last switching away from Scientific Linux 6 and it's System V style init scripts, to CentOS 7, wh">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2018-07-14T21:32:16+10:00">
+<meta property="article:tag" content="asciinema">
+<meta property="article:tag" content="code">
+<meta property="article:tag" content="experiments">
+<meta property="article:tag" content="journald">
+<meta property="article:tag" content="systemd">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://milosophical.me/">
+
+                <span id="blog-title">Milosophical Me</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" role="navigation" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../index.html">Blog</a>
+                </li>
+<li>
+<a href="../../archive/archive.html">Archive</a>
+                </li>
+<li>
+<a href="../../tags/index.html">Tags</a>
+                </li>
+<li>
+<a href="../../pg/index.html">Codex</a>
+                </li>
+<li>
+<a href="../../pixels/index.html">Pixels</a>
+            </li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Social <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://plus.google.com/+MichaelLockhart/posts">Microblog</a>
+                    </li>
+<li>
+<a href="https://gist.github.com/sinewalker">Gists - social code</a>
+                    </li>
+<li>
+<a href="https://www.facebook.com/sinewalker">Facebook</a>
+                    </li>
+<li>
+<a href="mailto:sinewalker@gmail.com">Email</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://github.com/sinewalker">GitHub</a>
+                    </li>
+<li>
+<a href="https://gist.github.com/sinewalker">Gists</a>
+                    </li>
+<li>
+<a href="https://bitbucket.com/sinewalker">Bitbucket</a>
+                    </li>
+<li>
+<a href="https://codepen.io/sinewalker/">Codepen</a>
+                    </li>
+<li class="active">
+<a href="#"> <span class="sr-only">(active)</span></a>
+                    </li>
+<li>
+<a href="https://sourceforge.net/u/sinewalker/profile/">SourceForge</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Jargon <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="../../jargon/index.html">Main page</a>
+                    </li>
+<li>
+<a href="../../jargon/html/index.html">Table of Content</a>
+                    </li>
+<li>
+<a href="../../jargon/html/lexicon.html">Lexicon</a>
+                    </li>
+<li>
+<a href="../../jargon/html/go01.html">Glossary</a>
+                    </li>
+<li>
+<a href="../../jargon/html/appendixa.html">Folklore</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://about.me/mikelockhart">About.me</a>
+                    </li>
+<li>
+<a href="../../pg/colophon.html">About this site</a>
+                    </li>
+<li>
+<a href="https://calendar.google.com/calendar/embed?src=sinewalker@gmail.com&amp;ctz=Australia/Sydney/">My calendar</a>
+                    </li>
+<li>
+<a href="https://www.linkedin.com/in/mikelockhart">LinkedIn</a>
+                    </li>
+<li>
+<a href="http://stackoverflow.com/users/776953/mike">Stack Overflow</a>
+            </li>
+</ul>
+</li>
+<li>
+<a href="../../rss.xml">RSS</a>
+
+                
+            </li>
+</ul>
+<!-- DuckDuckGo custom search --><form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form navbar-right" role="search">
+<input type="hidden" name="sites" value="http://milosophical.me/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="Search…" class="form-control"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+
+            <ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="journald-experiments-0.md" id="sourcelink">Source</a>
+    </li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Journald experiments - Testing systemd's logger: speed and buffering</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    <a href="../../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2018-07-14T21:32:16+10:00" itemprop="datePublished" title="2018-07-14 21:32">2018-07-14 21:32</time></a></p>
+            
+        <p class="sourceline"><a href="journald-experiments-0.md" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>I've been having good natured arguments at work about whether it's the <em>End of the World</em> that we are at last switching away from <em>Scientific Linux 6</em> and it's <a href="https://en.wikipedia.org/wiki/UNIX_System_V">System V</a> style <a href="https://en.wikipedia.org/wiki/Init">init</a> scripts, to <em>CentOS 7</em>, which uses <a href="https://freedesktop.org/wiki/Software/systemd/">systemd</a>. </p>
+<p>My own opinion is that <em>systemd is pretty <a href="../../jargon/html/C/cuspy.html">cuspy</a></em>.  It's not perfect, but nor is it some great hulking monolithic monster come to destroy the Unix Way in the Linux world.  It offers many worthwhile improvements and I've enjoyed using it in openSUSE for years now. I look forward to switching away from the hair-ball of <em>wet</em> SysV init scripts with clumsy precedent semantics and manual service recovery.</p>
+<p>Now, I don't want to throw my hat into the ring on the pro's and con's of systemd having replaced the start-up infrastructure (and <em>a lot</em> of other systems besides) on Linux-based operating systems.  Enough has been said already on that front, by many more experienced than I, and further argument is pointless:  whichever camp you're in, you won't be convinced of the other sides point of view by now.</p>
+<p>However there is <em>one</em> argument against systemd that I'm not so sure about: <a href="http://0pointer.de/blog/projects/journal-submit.html">journald</a> and it's past issues:</p>
+<ul>
+<li>
+<strong>alleged buffering of logs</strong>, making diagnostics and debugging on time-critical services difficult or impossible</li>
+<li>
+<strong>binary log files</strong> which can be corrupted, and then not useful thereafter (because they're binary)</li>
+<li>
+<strong>volatile storage</strong>, so that your logs are gone when you want them the most: after an unplanned reboot</li>
+</ul>
+<p>I'll be spending a few days experimenting with <code>journald</code> in these areas, to see if it's as bad now as it was five years ago when <a href="https://bbs.archlinux.org/viewtopic.php?id=159090">concerns like these were being raised</a>.</p>
+<p>In this post I want to look at the <code>journald</code> daemon / <code>journalctl</code> log viewer a bit, from the point of view of <strong>buffering output</strong>, whether and where it could be occurring, and what the implications might be as a web sysop.</p>
+<blockquote>
+<p><em>This is a medium-long post, with about 23 minutes of terminal output recordings (in text, using <a href="https://ascinnema.org">asciinema</a>) and is about 2⅓MB to download. It's also about half-an-hour's read on top of that.</em></p>
+</blockquote>
+<!-- TEASER_END -->
+
+<hr>
+<h2>
+<code>journald</code> and <code>journalctl</code>
+</h2>
+<p>The <a href="https://www.freedesktop.org/software/systemd/man/systemd-journald.service.html">journald service</a> is the systemd component responsible for writing system logs. It replaces traditional rotated <code>syslog</code> text files <code>/var/log/messages</code>, <code>/var/log/secure</code>, <code>/var/log/syslog</code> and so on with a structured <em>Journal</em> stored in compressed, binary files.</p>
+<p>There are two main components to this logging system:</p>
+<ol>
+<li>
+<p><code>systemd-journald.service</code> which is the daemon that accepts logging information from other services or programs, either through it's <a href="https://www.freedesktop.org/software/systemd/man/sd_journal_print.html">API</a>, or by intercepting the <em>stdout</em> and <em>stderr</em> streams from a service (daemon)</p>
+</li>
+<li>
+<p><code>journalctl</code> which is the <em>user-space</em> tool provided by systemd to parse the binary logs into various formats</p>
+</li>
+</ol>
+<p>Together these write the Journal and read it. You can also write directly to the Journal from a shell script using <a href="https://www.freedesktop.org/software/systemd/man/systemd-cat.html">systemd-cat</a>. </p>
+<p>Instead of <code>grep</code>ing/<code>awk</code>ing and <code>tail</code>ing the the <code>/var/log/messages</code> file (or <code>gunzip</code>ping one or more of the rotated ones), you use <code>journalctl</code> to view the Journal.</p>
+<p>This tool has <a href="https://www.freedesktop.org/software/systemd/man/journalctl.html">many options</a> which replace the traditional Unix text file utilities to filter and display Journal entries.  Yes it's quite the monolith — but then so are <code>openssl</code> and <code>git</code>. The output of <code>journalctl</code> can be plain text suitable for a traditional Unix pipeline, if necessary.</p>
+<h3>Trouble with the Journal?</h3>
+<p>The best argument we had at work against systemd was around this system of Journal logging and some troubles we had streaming the Journal back to a terminal. It was argued that not only has systemd re-invented the wheel (true) but the Journal is very slow and laggy, and potentially buffered. We had an instance where system troubleshooting was made very difficult during an overnight backup run on one occasion: the service was supposedly logging what was going on, but operators saw no updates from <code>journalctl</code>! There were <em>long</em> delays between starting a backup and <em>any mention</em> of it in the Journal.  "If only those people at Red Hat hadn't swallowed the systemd Kool-Aid…."</p>
+<p>I hadn't come across this issue in my home system before, but then it's a home system, not a production server.  So I Googled it and found a few interesting Stack Exchange questions:</p>
+<ul>
+<li><a href="https://serverfault.com/questions/913707/journalctl-follow-isnt-advancing">journalctl --follow isn't advancing</a></li>
+<li><a href="https://serverfault.com/questions/832691/view-unbuffered-log-output-from-journalctl">View unbuffered log output from journalctl</a></li>
+<li><a href="https://serverfault.com/questions/909192/systemd-python-service-buffers-journalctl-output-even-with-u">systemd python service buffers journalctl output even with -u</a></li>
+<li><a href="https://stackoverflow.com/questions/43602550/how-do-i-properly-redirect-stdout-stderr-from-a-systemd-service-on-raspbian">How do I properly redirect stdout/stderr from a systemd service on Raspbian?</a></li>
+</ul>
+<p>The common theme here seems to be: running systemd services which are Python scripts can indeed have problems. Our backup system at work involves an in-house wrapper around <a href="https://restic.net/">restic</a>, and <em>our wrapper is written in Python</em>.  Maybe we're seeing this same issue?</p>
+<p>The Stack Exchange questioners ask if it's something to do with systemd's Journal, and the answerers seem adamant that it's actually Python doing this. The answers seem typical of systemd proponents too:  blame the user or any other tool except for systemd.  Let's be clear here:  I <em>really like</em> systemd, but I agree with its detractors about the general attitude of proponents being combative and arrogant.</p>
+<p>I decided this week-end I would test the Journal's performance with and without Python, and Python with and without the Journal, and buffering, and see if I could come to the bottom of this issue.</p>
+<h2>Experiments with <code>journalctl</code>
+</h2>
+<p>The questions to answer are:</p>
+<ul>
+<li>How does the systemd Journal perform when streaming service output?</li>
+<li>Is it any different if Python is involved or not?</li>
+<li>Is Python's buffering of output at fault, or is there something inherently wrong with the Journal?</li>
+</ul>
+<h2>Apparatus</h2>
+<p>Here are instructions for creating the test apparatus:</p>
+<h3>Test system</h3>
+<p>For these experiments, I used the current <em>openSUSE Tumbleweed 20180709</em> with <strong>systemd version 237 release 8.1</strong>, built on June 20th. I set systemd to use <em>persitent</em> storage rather than the default <em>volatile</em>, because I am assuming this is what most sysops would want on a server, and because it <em>may</em> introduce some I/O latency which would be absent on a memory-only logger, which would be an important impact to the tests.</p>
+<p>I chose <em>Tumbleweed</em> in a <em>VirtualBox</em> virtual machine so that I could be sure to have a recent-but-stable systemd to test, and because I know this OS very well.  The test VM had a single virtual x86_64 CPU, 2GiB of RAM, storage was virtual SATA on a default VDI disc image with dynamic allocation to 16GiB. </p>
+<p>I still haven't worked out Vagrant, so here I'll document the <em><strong>manual</strong> steps</em> for creating the test system:</p>
+<ol>
+<li>Download the x86-64 version of the <a href="https://software.opensuse.org/distributions/tumbleweed">Tumblweed Network Image (85MB) ISO</a> (it's actually 122MB now)</li>
+<li>Create a new VirtualBox VM<ul>
+<li>Type: Linux</li>
+<li>Version: openSUSE (64-bit)</li>
+<li>Memory: 2048MiB</li>
+<li>Hard disk: default, sized to 16GiB, dynamically allocated</li>
+<li>Settings:<ul>
+<li>Network: <strong>Bridged Adapter</strong><br>
+   (so that I can <code>scp</code> scripts and recordings between the test VM and the host)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Install <em>Tumbelweed</em> in the VM<ul>
+<li>Start the VM</li>
+<li>Select the Tumblweed ISO as boot image for the virtual CD-ROM</li>
+<li>In the installer, <strong>select the server profile</strong>, leave the rest as default</li>
+</ul>
+</li>
+<li>After install, Login as <code>root</code>
+</li>
+<li>Make persistent storage for the Journal (it will be picked up automatically):<br><code>mkdir /var/log/journal</code>
+</li>
+<li>Enable SSH in the guest:<br><code>systemctl enable sshd</code><br><code>systemctl start sshd</code>
+</li>
+<li>Allow SSH through the firewall:<br><code>firewall-cmd --zone=public --permanent --add-service=ssh</code>
+</li>
+<li>Retrieve the Bridged address and note it down for after:<br><code>ip addr|grep global</code>
+</li>
+<li>I hate vi. Let's use a text editor from the 1990s:<br><code>zypper in -y mc</code><br><code>echo "EDITOR=mcedit" &gt;&gt; /root/.bashrc # set EDITOR for the root user</code><br><code>sed -i '/mcedit/s^#//g' /etc/skel/.bashrc #optional, sets for new users</code>
+</li>
+<li>Install <a href="https://asciinema.org">asciinema</a> to record the actual test streaming sessions:<br><code>zypper in -y asciinema</code>
+</li>
+</ol>
+<h3>ASCIIcasts</h3>
+<p>Since the point of these experiments is to see how fast (or slow) the output of <code>journalctl</code> can be, I wanted to record the sessions and then play them back to illustrate the speed.  For this I used <a href="https://asciinema.org">asciinema</a>, which records a terminal session as text, much like <code>script</code>, and then you can play the recordings back with a Javascript player in a browser.</p>
+<p>So all the recordings on this page are 'asciicasts' rather than video.  Not only can you pause and rewind, but you can also scale them, or even select text and copy it.</p>
+<p><link rel="stylesheet" type="text/css" href="../../scripts/vendor/asciinema-player.css"><script src="../../scripts/vendor/asciinema-player.js"></script></p>
+<p>The asciicasts on this page are all pre-loaded in your browser so that any jittery output is as it was recorded and not attributable to your Internet bandwidth while the playback loads.</p>
+<h3>Service scripts</h3>
+<p>Since I was testing the Journal's logging performance, I wrote a simple shell script to print the date 20 times per second. That's all that it does. This should be fast enough to see how the streaming is going, and doesn't actually do any taxing work for the VM, so there shouldn't be any resource contention going on.  I'm measuring purely the streaming.</p>
+<p>I created a directory <code>/root/hax</code> in which to keep these service scripts:</p>
+<p><code>/root/hax/ticktock.sh</code>:</p>
+<pre class="code literal-block"><span></span><span class="ch">#!/bin/bash</span>
+<span class="k">while</span> true<span class="p">;</span> <span class="k">do</span>
+  date
+  sleep <span class="m">0</span>.05
+<span class="k">done</span>
+</pre>
+
+
+<p><code>/root/hax/ticktock.py</code>, the same exact logic, in Python:</p>
+<pre class="code literal-block"><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">())</span>
+  <span class="n">sleep</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
+</pre>
+
+
+<p>Both of these write to <em>stdout</em>.  It will be up to the Service manifest to direct that to different targets.</p>
+<h3>Service manifests</h3>
+<p>The service manifests I installed as "system" services, rather than "user" services.</p>
+<p>This is <code>/etc/systemd/system/tick-sh.service</code>:</p>
+<pre class="code literal-block"><span></span><span class="k">[Unit]</span>
+<span class="na">Description</span><span class="o">=</span><span class="s">ticktock-sh</span>
+
+<span class="k">[Service]</span>
+<span class="na">ExecStart</span><span class="o">=</span><span class="s">/root/hax/ticktock.sh</span>
+
+<span class="c1">#StandardOutput=file:/tmp/ticktock.log</span>
+<span class="c1">#StandardError=inherit</span>
+
+<span class="k">[Install]</span>
+<span class="na">WantedBy</span><span class="o">=</span><span class="s">default.target</span>
+</pre>
+
+
+<p>The <code>StandardOutput</code> and <code>StandardError</code> directives are commented out. I used them during later experiments to send the output to a file rather than to the Journal.  The <code>WantedBy</code> target may be a mistake, judging by the errors in the test results, but it's not an impact I think.</p>
+<p>This is <code>/etc/systemd/system/tick-py.service</code>:</p>
+<pre class="code literal-block"><span></span><span class="k">[Unit]</span>
+<span class="na">Description</span><span class="o">=</span><span class="s">ticktock-py</span>
+
+<span class="k">[Service]</span>
+<span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/bin/python -u /root/hax/ticktock.py</span>
+<span class="c1">#ExecStart=/root/hax/ticktock.py</span>
+
+<span class="c1">#StandardOutput=file:/tmp/ticktock.log</span>
+<span class="c1">#StandardError=inherit</span>
+
+<span class="k">[Install]</span>
+<span class="na">WantedBy</span><span class="o">=</span><span class="s">default.target</span>
+</pre>
+
+
+<p>For the Python <code>tick-py</code> service, I also have two <code>ExecStart</code> directives so that I could toggle unbuffered and buffered <code>python</code> calls.  This can be observed in the recordings.</p>
+<p>After saving system service manifests, they are loaded into systemd by restarting the daemon: <code>systemctl daemon-reload</code>.  One may also edit an existing service and automatically reload using <code>systemctl edit «service» --full</code>.</p>
+<h2>Experiment 0: tailing log output from a service</h2>
+<p>In this experiment I compared tailing the output of each service as it streams to the Journal, with streaming to a file.</p>
+<p>Since Python's buffered output and unbuffered output is in question, I used <code>bash</code> as a comparison, working from the assumption that the output from <code>/usr/bin/date</code>, a GNU utility and ELF 64-bit executable, is not buffered in any special way. </p>
+<p><asciinema-player src="../../ascii/20180716/exp-0.cast" title="Experiment 0: bash vs python-unbuffered" cols="100" rows="37" theme="tango" start-at="55" preload></asciinema-player>
+  Experiment 0: bash <em>vs</em> python (unbuffered) - 4:20</p>
+<p>Points to note in this recording:</p>
+<ul>
+<li>I first note that systemd is using <em>persistent</em> logging to an actual file, not <em>volatile</em> logging. This might impact performance, though I cannot see why you'd want volitile logging on a server — it would only be useful on embedded systems, or <em>maybe</em> desktops</li>
+<li>The bash output streamed via <code>journalctl</code> at <strong>01:04</strong> is a bit jerky/choppy, not buttery smooth like you would expect when printing 20 times a second.<ul>
+<li>There must be some overhead in streaming to the Journal, processing, tagging for the service that's doing the writing, and then <code>journalctl</code> un-marshalling from the Journal to the terminal.</li>
+<li>There are no breaks or pauses while it's running though</li>
+<li>Perhaps <code>journalctl -f</code> only polls the Journal a few times a second?</li>
+</ul>
+</li>
+<li>It ran for about a minute I broke out of the tail.</li>
+<li>The python output (unbuffered) begins at <strong>03:08</strong> in the recording. It looks about the same speed as the bash stream</li>
+<li>I let the python service stream for about a minute before breaking out.  There were no pauses</li>
+</ul>
+<p>This experiment shows that the streamed <em>stdout</em> from both a bash script and a python (unbuffered) script is about the same.  It's quite a bit slower than 20 lines per second (I estimate about 4 screen updates per second on the recording), but there are no pauses or gaps in the output.</p>
+<p>The important observation from this first experiment is that there are no pauses or breaks in the output from <code>journalctl</code>, whether that input comes from bash (and the GNU <code>date</code> utility), or from python (so long as python's been told <em>not</em> to buffer its output).</p>
+<p>The slow update rate does point to some kind of marshalling/unmarshalling going on between the service, the <code>systemd-journald</code> daemon storing binary logs and the <code>journalctl</code> utility reading them.  I suppose that would constitute some kind of “buffering”, though not the sort that makes the Journal unusable, even when writing output to the Journal at quite high frequency.</p>
+<p>Also, the jerkiness in the recording is as I observed on the VM, not attributable to <em>asciinema</em> or the javascript player (later experiments will show streaming from a text file with is not jerky).</p>
+<h2>Experiment 1: <code>journalctl -f</code> <em>vs</em> <code>tail -f /some/file</code> from <code>bash</code>
+</h2>
+<p>I decided to test streaming from bash directly to a file as well as through the Journal.  The first experiment showed slightly jerky output from <code>journalctl</code> with bash, I wanted to see if this would be better using <code>tail</code>.</p>
+<p><asciinema-player src="../../ascii/20180716/exp-1.cast" title="Experiment 1: streaming bash via journald vs a text file" cols="100" rows="37" theme="tango" start-at="25" preload></asciinema-player>
+  Experiment 1 - streaming bash via journald <em>vs</em> a text file - 4:27</p>
+<ul>
+<li>At <strong>00:32</strong> I edited the <code>tick-sh.service</code> manifest and set it to  stream to a text file instead of the Journal, using the <code>StandardOut=</code> and <code>StandardError=</code> directives</li>
+<li>After starting the service, a <code>journalctl -f</code> at <strong>00:55</strong> confirms no output in the Journal, just the log entry to say the service was started at 21:45:34</li>
+<li>Starting at <strong>01:15</strong> in the recording I tailed the <code>/tmp/ticktock.log</code> file, and it's showing nice smooth updates in the recording. So this is faster than streaming out of the Journal via <code>journalctl -f</code>, by at least 5 times</li>
+<li>I broke out of the tail at <strong>02:22</strong>, over a minute of streaming, no gaps or stutters</li>
+<li>At <strong>02:38</strong> I again edited <code>tick-sh.service</code>, directing output back to the Journal by commenting out the <code>StandardOut=</code>/<code>StandardError=</code> lines</li>
+<li>Streaming from <code>journalctl</code> begins at <strong>03:05</strong>, observe the screen updates, about 4 per second again, though if you pause the recording you can confirm that there are 20 lines output per second, so nothing is missed</li>
+<li>I let the Journal stream continue until <strong>04:08</strong>, then stopped the service</li>
+<li>The recording ends with a status report for the service, showing the last few log entries.  This is one of the nice features of systemd: it's ability to show relevant and recent logs for a service, along with the service status.</li>
+</ul>
+<p>So when running a shell script as a service, the Journal doesn't seem to introduce any major difficulties in tailing service output.</p>
+<p>Granted, the updates while streaming are slower, but there are no gaps in the output shown.  While <code>tail</code> is faster, probably almost instant, it would be possible to miss output lines if they were written faster than the operating system can schedule <code>tail</code> to read the last line of the file. So I guess that is the trade-off.</p>
+<h2>Experiment 2: <code>journalctl -f</code> <em>vs</em> <code>tail -f /some/file</code> from <code>python -u</code> (unbuffered)</h2>
+<p>This is a repeat of Experiment 1, using Python instead of bash.  Still using CPython's <code>-u</code> switch to specify not to buffer streaming output.</p>
+<p><asciinema-player src="../../ascii/20180716/exp-2.cast" title="Experiment 2: streaming python (unbuffered) via journald vs a text file" cols="100" rows="25" theme="tango" start-at="27" preload></asciinema-player>
+ Experiment 2 - streaming python (unbuffered) via journald <em>vs</em> a text file - 5:01</p>
+<ul>
+<li>Begging at <strong>00:33</strong> I edited the <code>tick-py</code> service to stream to the same text file as in Experiment 1, by the same method</li>
+<li>Tailing the file begins at <strong>01:12</strong>, and the <code>tail -f</code> performance from Python's output is just as fast as with <code>bash</code>/<code>date</code> in Experiment 1. Python includes fractions of a second in its output</li>
+<li>I let the <code>tail</code> run for 77 seconds before breaking out at <strong>2:29</strong>.  No other pauses and no jitter.</li>
+<li>At <strong>02:48</strong> I edited the <code>tick-py.service</code> manifest and set it back to stream to the Journal</li>
+<li>Resumed streaming from <code>journalctl -f</code> at <strong>03:17</strong>, the output starts at <code>22:01:48</code>
+</li>
+<li>I broke out of the stream at <strong>04:29</strong>. Output printed <code>22:03:00</code> (72 seconds, no pauses, no gaps, looked like the bash run)</li>
+</ul>
+<p>So far in these experiments I am not seeing any issues with running a python script from systemd and streaming to the Journal.  I begin to believe the nay-sayers in those Stack Exchange questions: it really <em>isn't</em> systemd that is causing delays. What delays?</p>
+<h2>Experiment 3: Python unbuffered <em>vs</em> buffered, with and without Journal</h2>
+<p>Well this <em>Journald buffer myth</em> is Busted, but let's force some delays in typical <em>Mythbusters</em> fashion.  According to <a href="https://docs.python.org/3/library/sys.html#sys.stdin">the Python reference for the <code>sys</code> module</a>:</p>
+<blockquote>
+<p>When interactive, <code>stdout</code> and <code>stderr</code> streams are line-buffered. Otherwise, they are block-buffered like regular text files. You can override this value with the <code>-u</code> command-line option.</p>
+</blockquote>
+<p>That is why I used <code>/usr/bin/python -u</code> in the <code>ExecStart=</code> directive for <code>tick-py.service</code>; so that this would be overridden:</p>
+<pre class="code literal-block"><span></span>ExecStart=/usr/bin/python -u /root/hax/ticktock.py
+#ExecStart=/root/hax/ticktock.py
+</pre>
+
+
+<p>If I swap to the other <code>ExecStart=</code> which just calls the script, relying on the shebang, then Python's block-buffering will come into effect:</p>
+<pre class="code literal-block"><span></span><span class="ch">#!/usr/bin/env python</span>
+</pre>
+
+
+<p>In this experiment I compare unbuffered and buffered output, first streaming through the Journal, and then tailing the file.</p>
+<p><asciinema-player src="../../ascii/20180716/exp-3.cast" title="Experiment 3: streaming python: unbuffered vs buffered (to Journal and a text file)" cols="100" rows="37" theme="tango" start-at="34" preload></asciinema-player>
+ Experiment 3 - streaming python: unbuffered  <em>vs</em> buffered (to Journal and a text file) - 9:47</p>
+<ul>
+<li>Buffered streaming begins at <strong>00:42</strong> in the recording, streaming from <code>22:17:14</code>
+</li>
+<li>I broke the stream at <strong>01:46</strong>, <code>22:18:18</code> (64 seconds).  Usual jerky stream but no pauses or breaks</li>
+<li>At <strong>02:00</strong> I edited <code>tick-py.service</code> to swap <code>ExecStart=</code> directives. The next run would let python default to block-buffering the output</li>
+<li>I confirmed at <strong>02:27</strong> that the service had been restarted. Note that systemd has logged the start time as <code>22:18:54</code> but there is no output from the script in the Journal yet</li>
+<li>I began to tail the Journal at <strong>02:33</strong> in the recording. The tail shows output from <code>22:19:01</code> and then pauses for about 4 seconds before the next burst of output</li>
+<li>The next output burst is at <strong>02:45</strong> in the recording, and again at <strong>02:52</strong> (about 6 seconds between each burst)</li>
+<li>The Journal continues to update in burst about 6-7 seconds apart. Perhaps it takes this long for the script to fill a block of data when writing the date 20 times per second?</li>
+<li>I broke the <code>journalctl</code> stream at <strong>03:52</strong> in the recording. The last listed output was <code>22:20:19</code>.  If you pause the recording during this minute of streaming, you will see that there are 20 records per second and nothing is missing from the Journal</li>
+<li>At <strong>04:02</strong> I confirmed service status, and the Journal shows a final output timestamp of <code>22:20:26.969366</code>; then systemd logs that the service was stopping at 22:20:28.  Interestingly, the output from the script is cut midway through printing the time before the service is finally logged as Stopped.</li>
+<li>At <strong>04:20</strong> I edited <code>tick-py.service</code> again, swapped execution back to unbuffered and directed systemd to send the output to the <code>/tmp/ticktock.log</code> file instead of the Journal</li>
+<li>I confirmed the service had started at <strong>05:09</strong> in the recording, and then began to tail the file at <strong>05:12</strong>.</li>
+<li>Like with the previous experiments, unbuffered output from python tailed from a file has no breaks and is very quick.  Most seconds seem to contain 20 entries</li>
+<li>I broke the tail at <strong>06:23</strong> (71 seconds), no freezes. The last tailed output was <code>22:22:54</code> and I stopped the service shortly after</li>
+<li>
+<strong>06:37</strong> I again edited <code>tick-py.service</code>, swapped back to buffered execution</li>
+<li>Tailing the file with buffered output begins at <strong>07:11</strong> in the recording</li>
+<li>At <strong>07:51</strong>, after 40 seconds of no output, I broke the tail. Note that the output still showed <code>22:23:03</code> which would have been from the previous run. The file hasn't been appended</li>
+<li>I decided to remove the file and restart the service. This resulted in the file being updated again, as shown at <strong>08:14</strong> in the recording where there is a sudden burst of output.</li>
+<li>The file then updates roughly every 6 or 7 seconds like with systemd</li>
+<li>I broke the final tail at <strong>09:33</strong> in the recording (after about 79 seconds)</li>
+<li>The final status report from systemd shows log entries for the service starts and stops while taking output to the file.</li>
+</ul>
+<h2>Conclusions</h2>
+<ul>
+<li>The systemd Journal performs quite well when streaming service output. <code>journalctl -f</code> only updates about 4 times per second, but it does not miss any output, nor is there any break or pause introduced by systemd</li>
+<li>The Journal does not perform any different depending if the service running is a shell script or a python script</li>
+<li>Python's own documententation mentions that its <em>stdout</em> and <em>stderr</em> are block-buffered when non-interactive, such as when connected to a Unix pipeline.  This is inherently the behaviour of python and nothing to do with systemd.  You would see the same if using <code>syslog</code>, and indeed it's the same just going directly to a file</li>
+</ul>
+<p>As a sysop who needs to write and maintain systemd services, this was valuable information to learn about python scripts.  Perhaps other interpreters do something similar?  In any case it's not an issue that comes from systemd, which is very reassuring.</p>
+<p>I'm keen to share this post with my work colleagues 😄</p>
+<p>Next things to tackle are </p>
+<ul>
+<li>binary logs, what could go wrong?</li>
+<li>volatile storage</li>
+</ul>
+<p>These will be for a future post.</p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../tags/asciinema.html" rel="tag">asciinema</a></li>
+            <li><a class="tag p-category" href="../../tags/code.html" rel="tag">code</a></li>
+            <li><a class="tag p-category" href="../../tags/experiments.html" rel="tag">experiments</a></li>
+            <li><a class="tag p-category" href="../../tags/journald.html" rel="tag">journald</a></li>
+            <li><a class="tag p-category" href="../../tags/systemd.html" rel="tag">systemd</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="password-store-1.html" rel="prev" title="Password databases: Installing password-store on Android">Previous post</a>
+            </li>
+        </ul></nav></aside></article>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer"><hr>Contents Copyright © 
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a>
+ 2005 — 2018         <a href="mailto:sinewalker@gmail.com">Michael Lockhart</a>. Powered by <a href="https://getnikola.com" rel="nofollow"><img src="../../img/nikola.png" alt="Nikola"></a>, <a href="https://github.com/syl20bnr/spacemacs"><img src="https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg" alt="built with Spacemacs"></a>
+
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-65364237-1', 'auto');  ga('send', 'pageview');</script>
+</body>
+</html>

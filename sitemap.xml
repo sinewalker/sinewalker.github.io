@@ -67,19 +67,19 @@
  </url>
  <url>
   <loc>http://milosophical.me/archive/2018/index.html</loc>
-  <lastmod>2018-07-10T22:38:00Z</lastmod>
+  <lastmod>2018-07-18T13:04:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/archive/archive.html</loc>
-  <lastmod>2018-07-09T21:29:00Z</lastmod>
+  <lastmod>2018-07-14T11:51:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/authors/index.html</loc>
-  <lastmod>2018-07-09T21:29:00Z</lastmod>
+  <lastmod>2018-07-14T11:51:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/authors/michael-lockhart.html</loc>
-  <lastmod>2018-07-10T22:38:00Z</lastmod>
+  <lastmod>2018-07-18T13:04:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/authors/mike-lockhart.html</loc>
@@ -578,6 +578,10 @@
   <lastmod>2018-07-09T13:47:00Z</lastmod>
  </url>
  <url>
+  <loc>http://milosophical.me/blog/2018/journald-experiments-0.html</loc>
+  <lastmod>2018-07-18T13:04:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://milosophical.me/blog/2018/keepass-and-password-store.html</loc>
   <lastmod>2018-07-09T13:47:00Z</lastmod>
  </url>
@@ -607,7 +611,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/2018/password-store-1.html</loc>
-  <lastmod>2018-07-10T22:38:00Z</lastmod>
+  <lastmod>2018-07-14T11:51:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-1.html</loc>
@@ -627,7 +631,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-13.html</loc>
-  <lastmod>2018-07-09T21:29:00Z</lastmod>
+  <lastmod>2018-07-14T11:51:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-2.html</loc>
@@ -663,7 +667,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/index.html</loc>
-  <lastmod>2018-07-10T22:38:00Z</lastmod>
+  <lastmod>2018-07-18T13:04:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/hax/codec/URL%20Decoder_Encoder.html</loc>
@@ -1014,6 +1018,10 @@
   <lastmod>2018-07-09T13:46:00Z</lastmod>
  </url>
  <url>
+  <loc>http://milosophical.me/tags/asciinema.html</loc>
+  <lastmod>2018-07-18T13:04:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://milosophical.me/tags/audio.html</loc>
   <lastmod>2018-07-09T13:46:00Z</lastmod>
  </url>
@@ -1127,11 +1135,11 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/code-1.html</loc>
-  <lastmod>2018-07-09T13:46:00Z</lastmod>
+  <lastmod>2018-07-17T12:19:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/code.html</loc>
-  <lastmod>2018-07-09T13:46:00Z</lastmod>
+  <lastmod>2018-07-18T13:04:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/codekids.html</loc>
@@ -1283,7 +1291,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/experiments.html</loc>
-  <lastmod>2018-07-09T13:46:00Z</lastmod>
+  <lastmod>2018-07-18T13:04:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/ext4fs.html</loc>
@@ -1427,7 +1435,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/index.html</loc>
-  <lastmod>2018-07-09T21:29:00Z</lastmod>
+  <lastmod>2018-07-17T12:19:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/jargon.html</loc>
@@ -1448,6 +1456,10 @@
  <url>
   <loc>http://milosophical.me/tags/journal.html</loc>
   <lastmod>2018-07-09T13:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://milosophical.me/tags/journald.html</loc>
+  <lastmod>2018-07-18T13:04:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/jupyter.html</loc>
@@ -1808,6 +1820,10 @@
  <url>
   <loc>http://milosophical.me/tags/svn.html</loc>
   <lastmod>2018-07-09T13:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://milosophical.me/tags/systemd.html</loc>
+  <lastmod>2018-07-18T13:04:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/tagging.html</loc>

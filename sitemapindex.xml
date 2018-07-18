@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>http://milosophical.me/authors/michael-lockhart.xml</loc>
-  <lastmod>2018-07-10T22:38:00Z</lastmod>
+  <lastmod>2018-07-18T13:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/authors/mike-lockhart.xml</loc>
@@ -139,11 +139,11 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/rss.xml</loc>
-  <lastmod>2018-07-10T22:38:00Z</lastmod>
+  <lastmod>2018-07-18T13:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/sitemap.xml</loc>
-  <lastmod>2018-07-10T22:38:00Z</lastmod>
+  <lastmod>2018-07-18T13:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/4-bit-rules.xml</loc>
@@ -168,6 +168,10 @@
  <sitemap>
   <loc>http://milosophical.me/tags/arduino.xml</loc>
   <lastmod>2018-07-09T13:46:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://milosophical.me/tags/asciinema.xml</loc>
+  <lastmod>2018-07-18T13:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/audio.xml</loc>
@@ -279,7 +283,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/code.xml</loc>
-  <lastmod>2018-07-09T13:47:00Z</lastmod>
+  <lastmod>2018-07-18T13:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/codekids.xml</loc>
@@ -427,7 +431,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/experiments.xml</loc>
-  <lastmod>2018-07-09T13:47:00Z</lastmod>
+  <lastmod>2018-07-18T13:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/ext4fs.xml</loc>
@@ -552,6 +556,10 @@
  <sitemap>
   <loc>http://milosophical.me/tags/journal.xml</loc>
   <lastmod>2018-07-09T13:47:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://milosophical.me/tags/journald.xml</loc>
+  <lastmod>2018-07-18T13:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/jupyter.xml</loc>
@@ -912,6 +920,10 @@
  <sitemap>
   <loc>http://milosophical.me/tags/svn.xml</loc>
   <lastmod>2018-07-09T13:46:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://milosophical.me/tags/systemd.xml</loc>
+  <lastmod>2018-07-18T13:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/tagging.xml</loc>
