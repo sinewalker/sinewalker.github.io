@@ -220,7 +220,7 @@
 </li>
 </ol>
 <p>Together these write the Journal and read it. You can also write directly to the Journal from a shell script using <a href="https://www.freedesktop.org/software/systemd/man/systemd-cat.html">systemd-cat</a>. </p>
-<p>Instead of <code>grep</code>ing/<code>awk</code>ing and <code>tail</code>ing the the <code>/var/log/messages</code> file (or <code>gunzip</code>ping one or more of the rotated ones), you use <code>journalctl</code> to view the Journal.</p>
+<p>Instead of <code>grep</code>ing/<code>awk</code>ing and <code>tail</code>ing the <code>/var/log/messages</code> file (or <code>gunzip</code>ping one or more of the rotated ones), you use <code>journalctl</code> to view the Journal.</p>
 <p>This tool has <a href="https://www.freedesktop.org/software/systemd/man/journalctl.html">many options</a> which replace the traditional Unix text file utilities to filter and display Journal entries.  Yes it's quite the monolith — but then so are <code>openssl</code> and <code>git</code>. The output of <code>journalctl</code> can be plain text suitable for a traditional Unix pipeline, if necessary.</p>
 <h3>Trouble with the Journal?</h3>
 <p>The best argument we had at work against systemd was around this system of Journal logging and some troubles we had streaming the Journal back to a terminal. It was argued that not only has systemd re-invented the wheel (true) but the Journal is very slow and laggy, and potentially buffered. We had an instance where system troubleshooting was made very difficult during an overnight backup run on one occasion: the service was supposedly logging what was going on, but operators saw no updates from <code>journalctl</code>! There were <em>long</em> delays between starting a backup and <em>any mention</em> of it in the Journal.  "If only those people at Red Hat hadn't swallowed the systemd Kool-Aid…."</p>
@@ -350,9 +350,9 @@
 <h2>Experiment 0: tailing log output from a service</h2>
 <p>In this experiment I compared tailing the output of each service as it streams to the Journal, with streaming to a file.</p>
 <p>Since Python's buffered output and unbuffered output is in question, I used <code>bash</code> as a comparison, working from the assumption that the output from <code>/usr/bin/date</code>, a GNU utility and ELF 64-bit executable, is not buffered in any special way. </p>
-<p><asciinema-player src="../../ascii/20180716/exp-0.cast" title="Experiment 0: bash vs python-unbuffered" cols="100" rows="37" theme="tango" start-at="55" preload></asciinema-player>
-  Experiment 0: bash <em>vs</em> python (unbuffered) - 4:20</p>
-<p>Points to note in this recording:</p>
+<p><asciinema-player src="../../ascii/20180716/exp-0.cast" title="Experiment 0: bash vs python-unbuffered" cols="100" rows="37" theme="tango" start-at="55" preload></asciinema-player></p>
+<center>Experiment 0: bash <em>vs</em> python (unbuffered) - 4:20</center>
+<br><p>Points to note in this recording:</p>
 <ul>
 <li>I first note that systemd is using <em>persistent</em> logging to an actual file, not <em>volatile</em> logging. This might impact performance, though I cannot see why you'd want volitile logging on a server — it would only be useful on embedded systems, or <em>maybe</em> desktops</li>
 <li>The bash output streamed via <code>journalctl</code> at <strong>01:04</strong> is a bit jerky/choppy, not buttery smooth like you would expect when printing 20 times a second.<ul>
@@ -372,9 +372,9 @@
 <h2>Experiment 1: <code>journalctl -f</code> <em>vs</em> <code>tail -f /some/file</code> from <code>bash</code>
 </h2>
 <p>I decided to test streaming from bash directly to a file as well as through the Journal.  The first experiment showed slightly jerky output from <code>journalctl</code> with bash, I wanted to see if this would be better using <code>tail</code>.</p>
-<p><asciinema-player src="../../ascii/20180716/exp-1.cast" title="Experiment 1: streaming bash via journald vs a text file" cols="100" rows="37" theme="tango" start-at="25" preload></asciinema-player>
-  Experiment 1 - streaming bash via journald <em>vs</em> a text file - 4:27</p>
-<ul>
+<p><asciinema-player src="../../ascii/20180716/exp-1.cast" title="Experiment 1: streaming bash via journald vs a text file" cols="100" rows="37" theme="tango" start-at="25" preload></asciinema-player></p>
+<center>Experiment 1 - streaming bash via journald <em>vs</em> a text file - 4:27</center>
+<br><ul>
 <li>At <strong>00:32</strong> I edited the <code>tick-sh.service</code> manifest and set it to  stream to a text file instead of the Journal, using the <code>StandardOut=</code> and <code>StandardError=</code> directives</li>
 <li>After starting the service, a <code>journalctl -f</code> at <strong>00:55</strong> confirms no output in the Journal, just the log entry to say the service was started at 21:45:34</li>
 <li>Starting at <strong>01:15</strong> in the recording I tailed the <code>/tmp/ticktock.log</code> file, and it's showing nice smooth updates in the recording. So this is faster than streaming out of the Journal via <code>journalctl -f</code>, by at least 5 times</li>
@@ -388,9 +388,9 @@
 <p>Granted, the updates while streaming are slower, but there are no gaps in the output shown.  While <code>tail</code> is faster, probably almost instant, it would be possible to miss output lines if they were written faster than the operating system can schedule <code>tail</code> to read the last line of the file. So I guess that is the trade-off.</p>
 <h2>Experiment 2: <code>journalctl -f</code> <em>vs</em> <code>tail -f /some/file</code> from <code>python -u</code> (unbuffered)</h2>
 <p>This is a repeat of Experiment 1, using Python instead of bash.  Still using CPython's <code>-u</code> switch to specify not to buffer streaming output.</p>
-<p><asciinema-player src="../../ascii/20180716/exp-2.cast" title="Experiment 2: streaming python (unbuffered) via journald vs a text file" cols="100" rows="25" theme="tango" start-at="27" preload></asciinema-player>
- Experiment 2 - streaming python (unbuffered) via journald <em>vs</em> a text file - 5:01</p>
-<ul>
+<p><asciinema-player src="../../ascii/20180716/exp-2.cast" title="Experiment 2: streaming python (unbuffered) via journald vs a text file" cols="100" rows="25" theme="tango" start-at="27" preload></asciinema-player></p>
+<center>Experiment 2 - streaming python (unbuffered) via journald <em>vs</em> a text file - 5:01</center>
+<br><ul>
 <li>Begging at <strong>00:33</strong> I edited the <code>tick-py</code> service to stream to the same text file as in Experiment 1, by the same method</li>
 <li>Tailing the file begins at <strong>01:12</strong>, and the <code>tail -f</code> performance from Python's output is just as fast as with <code>bash</code>/<code>date</code> in Experiment 1. Python includes fractions of a second in its output</li>
 <li>I let the <code>tail</code> run for 77 seconds before breaking out at <strong>2:29</strong>.  No other pauses and no jitter.</li>
@@ -417,9 +417,9 @@
 
 
 <p>In this experiment I compare unbuffered and buffered output, first streaming through the Journal, and then tailing the file.</p>
-<p><asciinema-player src="../../ascii/20180716/exp-3.cast" title="Experiment 3: streaming python: unbuffered vs buffered (to Journal and a text file)" cols="100" rows="37" theme="tango" start-at="34" preload></asciinema-player>
- Experiment 3 - streaming python: unbuffered  <em>vs</em> buffered (to Journal and a text file) - 9:47</p>
-<ul>
+<p><asciinema-player src="../../ascii/20180716/exp-3.cast" title="Experiment 3: streaming python: unbuffered vs buffered (to Journal and a text file)" cols="100" rows="37" theme="tango" start-at="34" preload></asciinema-player></p>
+<center>Experiment 3 - streaming python: unbuffered  <em>vs</em> buffered (to Journal and a text file) - 9:47</center>
+<br><ul>
 <li>Buffered streaming begins at <strong>00:42</strong> in the recording, streaming from <code>22:17:14</code>
 </li>
 <li>I broke the stream at <strong>01:46</strong>, <code>22:18:18</code> (64 seconds).  Usual jerky stream but no pauses or breaks</li>

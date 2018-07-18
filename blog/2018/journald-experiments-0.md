@@ -43,7 +43,7 @@ There are two main components to this logging system:
  
 Together these write the Journal and read it. You can also write directly to the Journal from a shell script using [systemd-cat](https://www.freedesktop.org/software/systemd/man/systemd-cat.html). 
 
-Instead of `grep`ing/`awk`ing and `tail`ing the the `/var/log/messages` file (or `gunzip`ping one or more of the rotated ones), you use `journalctl` to view the Journal.
+Instead of `grep`ing/`awk`ing and `tail`ing the `/var/log/messages` file (or `gunzip`ping one or more of the rotated ones), you use `journalctl` to view the Journal.
 
 This tool has [many options](https://www.freedesktop.org/software/systemd/man/journalctl.html) which replace the traditional Unix text file utilities to filter and display Journal entries.  Yes it's quite the monolith — but then so are `openssl` and `git`. The output of `journalctl` can be plain text suitable for a traditional Unix pipeline, if necessary.
 
@@ -216,7 +216,7 @@ Since Python's buffered output and unbuffered output is in question, I used `bas
   start-at="55"
   preload>
 </asciinema-player>
-  Experiment 0: bash *vs* python (unbuffered) - 4:20
+<center>Experiment 0: bash *vs* python (unbuffered) - 4:20</center><br/>
 
 Points to note in this recording:
 
@@ -251,7 +251,7 @@ I decided to test streaming from bash directly to a file as well as through the 
   start-at="25"
   preload>
 </asciinema-player>
-  Experiment 1 - streaming bash via journald *vs* a text file - 4:27
+<center>Experiment 1 - streaming bash via journald *vs* a text file - 4:27</center><br/>
 
  * At **00:32** I edited the `tick-sh.service` manifest and set it to  stream to a text file instead of the Journal, using the `StandardOut=` and `StandardError=` directives
  * After starting the service, a `journalctl -f` at **00:55** confirms no output in the Journal, just the log entry to say the service was started at 21:45:34
@@ -280,7 +280,7 @@ This is a repeat of Experiment 1, using Python instead of bash.  Still using CPy
   start-at="27"
   preload>
 </asciinema-player>
- Experiment 2 - streaming python (unbuffered) via journald *vs* a text file - 5:01
+<center>Experiment 2 - streaming python (unbuffered) via journald *vs* a text file - 5:01</center><br/>
 
 
  * Begging at **00:33** I edited the `tick-py` service to stream to the same text file as in Experiment 1, by the same method
@@ -322,7 +322,7 @@ In this experiment I compare unbuffered and buffered output, first streaming thr
   start-at="34"
   preload>
 </asciinema-player>
- Experiment 3 - streaming python: unbuffered  *vs* buffered (to Journal and a text file) - 9:47
+<center>Experiment 3 - streaming python: unbuffered  *vs* buffered (to Journal and a text file) - 9:47</center><br/>
 
  * Buffered streaming begins at **00:42** in the recording, streaming from `22:17:14`
  * I broke the stream at **01:46**, `22:18:18` (64 seconds).  Usual jerky stream but no pauses or breaks
