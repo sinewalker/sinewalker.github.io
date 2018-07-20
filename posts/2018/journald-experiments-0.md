@@ -2,7 +2,7 @@
 .. title: Journald experiments - Testing systemd's logger: speed and buffering
 .. slug: journald-experiments-0
 .. date: 2018-07-14 21:32:16 UTC+10:00
-.. tags: journald,systemd,asciinema,experiments,code
+.. tags: journald,systemd,asciinema,experiments,code,python
 .. category: 
 .. link: 
 .. description: 
