@@ -161,7 +161,26 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2018/journald-experiments-0.html" class="u-url">Journald experiments - Testing systemd's logger: speed and buffering</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2018/latin1-to-utf8.html" class="u-url">Converting latin-1 To utf-8 with Python</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="2018/latin1-to-utf8.html" rel="bookmark"><time class="published dt-published" datetime="2018-07-21T23:09:46+10:00" title="2018-07-21 23:09">2018-07-21 23:09</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>Tonight I finally converted all the Glossary pages in my mirror of the <a href="http://catb.org/~esr/jargon">Jargon File</a> into Unicode (utf-8 encoding) so that they will transmit and display properly from GitHub Pages (or any other modern web server).  It was a fairly trivial thing to do in the end, but I am likely to need to repeat this for other things at work, so I'm blogging it.</p>
+<p>The Jargon File was <a href="../jargon/news.html">converted into XML-Dockbook and Unicode</a> for version 4.4.0, but ESR only converted the front- and back-matter, not the Glossary entries (i.e. the actual lexicon).  Those are still <em>latin-1</em> (<a href="https://en.wikipedia.org/wiki/ISO/IEC_8859-1">ISO-8859-1</a>). And although the HTML rendition begins with the correct header declaring this:</p>
+<pre class="code literal-block"><span></span><span class="cp">&lt;?xml version="1.0" encoding="ISO-8859-1" standalone="no"?&gt;</span>
+</pre>
+
+
+<p>The pages are actually served from catb.org as <a href="https://en.wikipedia.org/wiki/Unicode">Unicode</a> (<a href="https://en.wikipedia.org/wiki/UTF-8">utf-8</a>).  For instance, compare <a href="http://www.catb.org/~esr/jargon/html/0/dev-null.html">/dev/null on catb.org</a> with <a href="../jargon/html/0/dev-null.html">my mirror of /dev/null</a>.</p>
+<p class="more"><a href="2018/latin1-to-utf8.html">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2018/journald-experiments-0.html" class="u-url">Journald experiments - Testing systemd's logger: speed and buffering</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
@@ -319,31 +338,6 @@ For real <em>rigour</em>, there is much more required than a few simple rules. B
 <p class="more"><a href="2018/4-bits-part3.html">Read more…</a></p>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2018/minecraft-python-3.html" class="u-url">Exploring Minecraft code in Jupyter</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
-            </span></p>
-            <p class="dateline"><a href="2018/minecraft-python-3.html" rel="bookmark"><time class="published dt-published" datetime="2018-02-10T21:50:09+11:00" title="2018-02-10 21:50">2018-02-10 21:50</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Some breif notes from a lazy Sunday morning spent exploring the <a href="2018/minecraft-python-2.html">minecraft coding environment</a> that I set up using <a href="http://www.instructables.com/id/Python-coding-for-Minecraft/">Raspberry Jam</a> earlier.  I'm taking my notes in <a href="http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html">Jupyter</a> while I explore the Minecraft API and poke around with one of the sample programs.  Since my blogging engine <a href="https://getnikola.com/">Nikola</a> also supports Jupyter Notebooks as one of it's import formats, I found that I could do <a href="http://www.literateprogramming.com/">Litterate Programming</a> for Minecraft quite nicely!
-</p>
-<p class="more"><a href="2018/minecraft-python-3.html">Read more…</a></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-    </div>
     </article>
 </div>
 
@@ -351,9 +345,7 @@ For real <em>rigour</em>, there is much more required than a few simple rules. B
 <li class="next">
                 <a href="index-13.html" rel="next">Older posts</a>
             </li>
-        </ul></nav><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
-        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
-        </script>
+        </ul></nav>
 </div>
         <!--End of body content-->
 

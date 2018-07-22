@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content='Converting ISO-8859-1 ("latin1") to Unicode/utf8'>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Converting latin-1 To utf-8 with Python | Milosophical Me</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#e37f2a;">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="http://milosophical.me/blog/2018/latin1-to-utf8.html">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Michael Lockhart">
+<link rel="prev" href="journald-experiments-0.html" title="Journald experiments - Testing systemd's logger: speed and buffering" type="text/html">
+<meta property="og:site_name" content="Milosophical Me">
+<meta property="og:title" content="Converting latin-1 To utf-8 with Python">
+<meta property="og:url" content="http://milosophical.me/blog/2018/latin1-to-utf8.html">
+<meta property="og:description" content='Converting ISO-8859-1 ("latin1") to Unicode/utf8'>
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2018-07-21T23:09:46+10:00">
+<meta property="article:tag" content="character-encoding">
+<meta property="article:tag" content="code">
+<meta property="article:tag" content="codec">
+<meta property="article:tag" content="iso-8859-1">
+<meta property="article:tag" content="jargon">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="unicode">
+<meta property="article:tag" content="utf-8">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://milosophical.me/">
+
+                <span id="blog-title">Milosophical Me</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" role="navigation" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../index.html">Blog</a>
+                </li>
+<li>
+<a href="../../archive/archive.html">Archive</a>
+                </li>
+<li>
+<a href="../../tags/index.html">Tags</a>
+                </li>
+<li>
+<a href="../../pg/index.html">Codex</a>
+                </li>
+<li>
+<a href="../../pixels/index.html">Pixels</a>
+            </li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Social <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://plus.google.com/+MichaelLockhart/posts">Microblog</a>
+                    </li>
+<li>
+<a href="https://gist.github.com/sinewalker">Gists - social code</a>
+                    </li>
+<li>
+<a href="https://www.facebook.com/sinewalker">Facebook</a>
+                    </li>
+<li>
+<a href="mailto:sinewalker@gmail.com">Email</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://github.com/sinewalker">GitHub</a>
+                    </li>
+<li>
+<a href="https://gist.github.com/sinewalker">Gists</a>
+                    </li>
+<li>
+<a href="https://bitbucket.com/sinewalker">Bitbucket</a>
+                    </li>
+<li>
+<a href="https://codepen.io/sinewalker/">Codepen</a>
+                    </li>
+<li class="active">
+<a href="#"> <span class="sr-only">(active)</span></a>
+                    </li>
+<li>
+<a href="https://sourceforge.net/u/sinewalker/profile/">SourceForge</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Jargon <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="../../jargon/index.html">Main page</a>
+                    </li>
+<li>
+<a href="../../jargon/html/index.html">Table of Content</a>
+                    </li>
+<li>
+<a href="../../jargon/html/lexicon.html">Lexicon</a>
+                    </li>
+<li>
+<a href="../../jargon/html/go01.html">Glossary</a>
+                    </li>
+<li>
+<a href="../../jargon/html/appendixa.html">Folklore</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://about.me/mikelockhart">About.me</a>
+                    </li>
+<li>
+<a href="../../pg/colophon.html">About this site</a>
+                    </li>
+<li>
+<a href="https://calendar.google.com/calendar/embed?src=sinewalker@gmail.com&amp;ctz=Australia/Sydney/">My calendar</a>
+                    </li>
+<li>
+<a href="https://www.linkedin.com/in/mikelockhart">LinkedIn</a>
+                    </li>
+<li>
+<a href="http://stackoverflow.com/users/776953/mike">Stack Overflow</a>
+            </li>
+</ul>
+</li>
+<li>
+<a href="../../rss.xml">RSS</a>
+
+                
+            </li>
+</ul>
+<!-- DuckDuckGo custom search --><form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form navbar-right" role="search">
+<input type="hidden" name="sites" value="http://milosophical.me/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="Search…" class="form-control"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+
+            <ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="latin1-to-utf8.md" id="sourcelink">Source</a>
+    </li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Converting latin-1 To utf-8 with Python</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    <a href="../../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2018-07-21T23:09:46+10:00" itemprop="datePublished" title="2018-07-21 23:09">2018-07-21 23:09</time></a></p>
+            
+        <p class="sourceline"><a href="latin1-to-utf8.md" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>Tonight I finally converted all the Glossary pages in my mirror of the <a href="http://catb.org/~esr/jargon">Jargon File</a> into Unicode (utf-8 encoding) so that they will transmit and display properly from GitHub Pages (or any other modern web server).  It was a fairly trivial thing to do in the end, but I am likely to need to repeat this for other things at work, so I'm blogging it.</p>
+<p>The Jargon File was <a href="../../jargon/news.html">converted into XML-Dockbook and Unicode</a> for version 4.4.0, but ESR only converted the front- and back-matter, not the Glossary entries (i.e. the actual lexicon).  Those are still <em>latin-1</em> (<a href="https://en.wikipedia.org/wiki/ISO/IEC_8859-1">ISO-8859-1</a>). And although the HTML rendition begins with the correct header declaring this:</p>
+<pre class="code literal-block"><span></span><span class="cp">&lt;?xml version="1.0" encoding="ISO-8859-1" standalone="no"?&gt;</span>
+</pre>
+
+
+<p>The pages are actually served from catb.org as <a href="https://en.wikipedia.org/wiki/Unicode">Unicode</a> (<a href="https://en.wikipedia.org/wiki/UTF-8">utf-8</a>).  For instance, compare <a href="http://www.catb.org/~esr/jargon/html/0/dev-null.html">/dev/null on catb.org</a> with <a href="../../jargon/html/0/dev-null.html">my mirror of /dev/null</a>.</p>
+<!-- TEASER_END -->
+
+<hr>
+<h2>UTF-8 does not equal Latin-1</h2>
+<p>It's a widely held misconception that utf-8 is a superset of ISO-8859-1.  It's not. While <em>Unicode</em> itself <em>does</em> contain a <a href="https://en.wikipedia.org/wiki/Latin-1_Supplement_(Unicode_block)">Latin-1 Suplemenent</a>,  <em>all</em> of the upper 128 character bit-patterns of ISO-8859-1 have <em>different meaning in utf-8</em>, and there are many legitimate ISO-8859-1 characters that are <em>illegal utf-8 encoding byte sequences</em>.  This often confuses me because I'm used to 8-bit characters where the encoding is the same as the code-point:  <code>A</code> is <code>0x41</code> and means <em>A</em>;  <code>ÿ</code> is <code>0xFF</code> (in latin-1) and means <em>ÿ</em>. With Unicode, the code-points and their encodings are <em>not</em> the same, there are multiple byte-stream encodings for Unicode and utf-8 is just one of them.</p>
+<p>Despite the <em>8</em> in it's name, utf-8 is not 8-bit. It's a <em>multi-byte</em> encoding for Unicode.  It just happens to share <em>half</em> of the 8-bit space with ISO-8859-1 (which shares the same half with ASCII), and so for English the same characters have the same 8-bit encodings.  <em>Most</em> Western-European languages it can be encoded in utf-8 with between 8 and 16-bits as well, and some require 21-bits (so 3 bytes or 4 bytes for utf-8's codec scheme, but only for rare characters).</p>
+<p>This is why utf-8 is so popular online:</p>
+<ul>
+<li>most web sites are in Western-European languages</li>
+<li>most of these Latin-based characters can be encoded with 8-16 bits per character</li>
+<li>the first 128 characters are the same bit-patterns as 7-bit <a href="https://en.wikipedia.org/wiki/UTF-16">ASCII</a>, the original byte stream for the APRANET and the Internet</li>
+</ul>
+<p>If you look at Japanese or Chinese sites, they prefer <a href="https://en.wikipedia.org/wiki/UTF-16">utf-16</a> because this encoding is more efficient for those Unicode blocks: the most common Chinese characters will fit in a 2-byte encoding in utf-16, whereas the same code-points in utf-8 typically need 3 or 4 bytes.</p>
+<h3>Why ISO-8859-1 “breaks” in utf-8</h3>
+<p>Because utf-8 is a multi-byte encoding, it reserves some bit patterns for encoding that more than one byte is involved in the current code-point for a character.  The last code-point in 8-bit utf-8 is actually <code>0x7F</code>: the most-significant-bit is reserved to indicate multi-byte. So all of the legitimate ISO-8859-1 8-bit bytes result in <em>different</em> utf-8 characters, and some are <em>illegal utf-8 byte sequences</em>.</p>
+<p>That's why you can't just take an ISO-8859-1 byte stream (or any other ISO-8859 code page, or the Windows one) and interpret it as utf-8. It only works if the bytes from the stream are in the 7-bit (ASCII) range.</p>
+<h2>Fixing the Jargon File</h2>
+<p>When I mirrored the Jargon File back in October 2015, I asked <a href="https://www.httrack.com">HTTrack</a> to encode as UTF-8, thinking this would fix it.  It didn't really succeed, all it did was to add its own encoding header:</p>
+<pre class="code literal-block"><span></span><span class="c">&lt;!-- Mirrored from www.catb.org/~esr/jargon/html/A/ABEND.html by HTTrack Website Copier/3.x [XR&amp;CO'2014], Mon, 26 Oct 2015 13:15:16 GMT --&gt;</span>
+<span class="c">&lt;!-- Added by HTTrack --&gt;</span><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">"content-type"</span> <span class="na">content</span><span class="o">=</span><span class="s">"text/html;charset=utf-8"</span> <span class="p">/&gt;</span><span class="c">&lt;!-- /Added by HTTrack --&gt;</span>
+</pre>
+
+
+<p>The bytes within the page were still ISO-8859-1.  So I was having the same issue as catb.org:  while the page declares ISO, the web server actually sends utf-8; and now the HTTrack insertion adds its own <code>content</code> to the confusion.</p>
+<p>Fixing the Jargon file <a href="../../jargon/mirroring.html">properly</a> will involve actually going into the <a href="../../jargon/jargsrc.tar.gz">Docbook sources</a> and ESRs makefiles and correcting it there.  I'm not going to do that: it's too much effort to recover software that understands <a href="http://docbook.sourceforge.net/">DocBook</a> XML <a href="https://sourceforge.net/projects/docbook/files/OldFiles/">1.62</a> still and can do a lossless conversion.  That'll be a "someday" project probably (it's been <strong>15 years</strong> since ESR updated the Jargon File himself, and it's dated, and bordering on becoming <a href="../../jargon/jargtxt.html">bogus</a> because of a lack of currency, so it's a low-priority <em>maybe</em> project).  Instead what I've done is just run a filter over all the HTML output of the Jargon, since that is what is actually being served most of the time.</p>
+<p>Here's the filter code, <code>transcode.py</code>:</p>
+<pre class="code literal-block"><span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">codecs</span>
+
+<span class="n">sourceFileName</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">targetFileName</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="s1">'.tmp'</span>
+
+<span class="n">BLOCKSIZE</span> <span class="o">=</span> <span class="mi">1048576</span> <span class="c1"># or some other, desired size in bytes</span>
+<span class="k">with</span> <span class="n">codecs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">sourceFileName</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">,</span> <span class="s2">"ISO-8859-1"</span><span class="p">)</span> <span class="k">as</span> <span class="n">sourceFile</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">codecs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">targetFileName</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">,</span> <span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">targetFile</span><span class="p">:</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="n">contents</span> <span class="o">=</span> <span class="n">sourceFile</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">BLOCKSIZE</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">contents</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="n">targetFile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">contents</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'ISO-8859-1'</span><span class="p">,</span><span class="s1">'utf-8'</span><span class="p">))</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">targetFileName</span><span class="p">,</span><span class="n">sourceFileName</span><span class="p">)</span>
+</pre>
+
+
+<p>It's a <a href="http://milosophical.me/jargon/html/C/clone-and-hack-coding.html">clone and hack</a>, based upon <a href="https://stackoverflow.com/a/191403/776953">this answer to an SO question</a> on converting files to utf-8 in Python.  All I changed was:</p>
+<ul>
+<li>take the <code>sourceFileName</code> from the script argument (without checking if there <em>is</em> an argument)</li>
+<li>set a temporary <code>targetFileName</code> based on the source file</li>
+<li>
+<a href="../../jargon/html/H/hardcoded.html">hardcoded</a> the source encoding</li>
+<li>and replaced "<code>ISO-8859-1</code>" in the output file with "<code>utf-8</code>" so that the headers match the content (very näive: just looks for the exact string match, so any mention of "ISO-8859-1" within the body will also be replaced)</li>
+<li>Finally, replace the original source file with the temporary target file, by intentionally <a href="http://milosophical.me/jargon/html/C/clobber.html">clobber</a>ing the original with <code>os.rename()</code>.</li>
+</ul>
+<p>I then ran this filter in a shell loop like so:</p>
+<pre class="code literal-block"><span></span><span class="o">[</span>src<span class="o">][</span>mjl@milo:~/hax/blog/milosophical.me/files/jargon/html<span class="o">]</span>
+<span class="o">[</span><span class="m">22</span>:56<span class="o">](</span>nikola<span class="o">)</span>β <span class="k">for</span> Y in <span class="m">0</span> <span class="o">[</span>A-Z<span class="o">]</span><span class="p">;</span> <span class="k">do</span>
+  <span class="nb">echo</span> <span class="nv">$Y</span>
+  <span class="k">for</span> X in <span class="nv">$Y</span>/*.html<span class="p">;</span> <span class="k">do</span>
+    <span class="nb">echo</span> <span class="nv">$X</span>
+    ~/hax/transcode.py <span class="nv">$X</span>
+  <span class="k">done</span>
+<span class="k">done</span>
+</pre>
+
+
+<p>And there we have it: all the Jargon lexicon is now encoded as utf-8 and declared as such in the headers. Here's <a href="../../jargon/html/0/dev-null.html">/dev/null</a>:</p>
+<pre class="code literal-block"><span></span><span class="cp">&lt;?xml version="1.0" encoding="utf-8" standalone="no"?&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">"http://www.w3.org/1999/xhtml"</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- Mirrored from www.catb.org/~esr/jargon/html/0/dev-null.html by HTTrack Website Copier/3.x [XR&amp;CO'2014], Mon, 26 Oct 2015 13:16:51 GMT --&gt;</span>
+<span class="c">&lt;!-- Added by HTTrack --&gt;</span><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">"content-type"</span> <span class="na">content</span><span class="o">=</span><span class="s">"text/html;charset=utf-8"</span> <span class="p">/&gt;</span><span class="c">&lt;!-- /Added by HTTrack --&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;&lt;</span><span class="nt">title</span><span class="p">&gt;</span>/dev/null<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">href</span><span class="o">=</span><span class="s">"../../jargon.css"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/css"</span><span class="p">/&gt;&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"generator"</span> <span class="na">content</span><span class="o">=</span><span class="s">"DocBook XSL Stylesheets V1.61.0"</span><span class="p">/&gt;&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"home"</span> <span class="na">href</span><span class="o">=</span><span class="s">"../index.html"</span> <span class="na">title</span><span class="o">=</span><span class="s">"The Jargon File"</span><span class="p">/&gt;&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"up"</span> <span class="na">href</span><span class="o">=</span><span class="s">"../0.html"</span> <span class="na">title</span><span class="o">=</span><span class="s">"0"</span><span class="p">/&gt;&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"previous"</span> <span class="na">href</span><span class="o">=</span><span class="s">"TM.html"</span> <span class="na">title</span><span class="o">=</span><span class="s">"(TM)"</span><span class="p">/&gt;&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"next"</span> <span class="na">href</span><span class="o">=</span><span class="s">"me.html"</span> <span class="na">title</span><span class="o">=</span><span class="s">"/me"</span><span class="p">/&gt;&lt;/</span><span class="nt">head</span><span class="p">&gt;&lt;</span><span class="nt">body</span><span class="p">&gt;&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"navheader"</span><span class="p">&gt;&lt;</span><span class="nt">table</span> <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span> <span class="na">summary</span><span class="o">=</span><span class="s">"Navigation header"</span><span class="p">&gt;&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">th</span> <span class="na">colspan</span><span class="o">=</span><span class="s">"3"</span> <span class="na">align</span><span class="o">=</span><span class="s">"center"</span><span class="p">&gt;</span>/dev/null<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">td</span> <span class="na">width</span><span class="o">=</span><span class="s">"20%"</span> <span class="na">align</span><span class="o">=</span><span class="s">"left"</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">accesskey</span><span class="o">=</span><span class="s">"p"</span> <span class="na">href</span><span class="o">=</span><span class="s">"TM.html"</span><span class="p">&gt;</span>Prev<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">th</span> <span class="na">width</span><span class="o">=</span><span class="s">"60%"</span> <span class="na">align</span><span class="o">=</span><span class="s">"center"</span><span class="p">&gt;</span>0<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">td</span> <span class="na">width</span><span class="o">=</span><span class="s">"20%"</span> <span class="na">align</span><span class="o">=</span><span class="s">"right"</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">a</span> <span class="na">accesskey</span><span class="o">=</span><span class="s">"n"</span> <span class="na">href</span><span class="o">=</span><span class="s">"me.html"</span><span class="p">&gt;</span>Next<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;&lt;/</span><span class="nt">table</span><span class="p">&gt;&lt;</span><span class="nt">hr</span><span class="p">/&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;&lt;</span><span class="nt">dt</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">id</span><span class="o">=</span><span class="s">"dev-null"</span><span class="p">/&gt;&lt;</span><span class="nt">dt</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">""</span> <span class="na">id</span><span class="o">=</span><span class="s">"dev-null"</span><span class="p">&gt;&lt;</span><span class="nt">b</span><span class="p">&gt;</span>/dev/null<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>: <span class="p">&lt;</span><span class="nt">span</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">"http://www.w3.org/1999/xhtml"</span> <span class="na">class</span><span class="o">=</span><span class="s">"pronunciation"</span><span class="p">&gt;</span>/dev·nuhl/<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>, <span class="p">&lt;</span><span class="nt">span</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">"http://www.w3.org/1999/xhtml"</span> <span class="na">class</span><span class="o">=</span><span class="s">"grammar"</span><span class="p">&gt;</span>n.<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">dt</span><span class="p">&gt;&lt;/</span><span class="nt">dt</span><span class="p">&gt;&lt;</span><span class="nt">dd</span><span class="p">&gt;&lt;</span><span class="nt">p</span><span class="p">&gt;</span> [from the Unix null device, used as a data sink] A notional
+   <span class="ni">&amp;#8216;</span>black hole<span class="ni">&amp;#8217;</span> in any information space being discussed, used, or
+   referred to.  A controversial posting, for example, might end <span class="ni">&amp;#8220;</span><span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"quote"</span><span class="p">&gt;</span>Kudos
+   to rasputin@kremlin.org, flames to /dev/null<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span><span class="ni">&amp;#8221;</span>.  See 
+   <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"../B/bit-bucket.html"</span><span class="p">&gt;&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">"glossterm"</span><span class="p">&gt;</span>bit bucket<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;/</span><span class="nt">dd</span><span class="p">&gt;&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"navfooter"</span><span class="p">&gt;&lt;</span><span class="nt">hr</span><span class="p">/&gt;&lt;</span><span class="nt">table</span> <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span> <span class="na">summary</span><span class="o">=</span><span class="s">"Navigation footer"</span><span class="p">&gt;&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">td</span> <span class="na">width</span><span class="o">=</span><span class="s">"40%"</span> <span class="na">align</span><span class="o">=</span><span class="s">"left"</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">accesskey</span><span class="o">=</span><span class="s">"p"</span> <span class="na">href</span><span class="o">=</span><span class="s">"TM.html"</span><span class="p">&gt;</span>Prev<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span> <span class="na">width</span><span class="o">=</span><span class="s">"20%"</span> <span class="na">align</span><span class="o">=</span><span class="s">"center"</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">accesskey</span><span class="o">=</span><span class="s">"u"</span> <span class="na">href</span><span class="o">=</span><span class="s">"../0.html"</span><span class="p">&gt;</span>Up<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span> <span class="na">width</span><span class="o">=</span><span class="s">"40%"</span> <span class="na">align</span><span class="o">=</span><span class="s">"right"</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">a</span> <span class="na">accesskey</span><span class="o">=</span><span class="s">"n"</span> <span class="na">href</span><span class="o">=</span><span class="s">"me.html"</span><span class="p">&gt;</span>Next<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">td</span> <span class="na">width</span><span class="o">=</span><span class="s">"40%"</span> <span class="na">align</span><span class="o">=</span><span class="s">"left"</span> <span class="na">valign</span><span class="o">=</span><span class="s">"top"</span><span class="p">&gt;</span>(TM) <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span> <span class="na">width</span><span class="o">=</span><span class="s">"20%"</span> <span class="na">align</span><span class="o">=</span><span class="s">"center"</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">accesskey</span><span class="o">=</span><span class="s">"h"</span> <span class="na">href</span><span class="o">=</span><span class="s">"../index.html"</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span> <span class="na">width</span><span class="o">=</span><span class="s">"40%"</span> <span class="na">align</span><span class="o">=</span><span class="s">"right"</span> <span class="na">valign</span><span class="o">=</span><span class="s">"top"</span><span class="p">&gt;</span> /me<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;&lt;/</span><span class="nt">table</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- Mirrored from www.catb.org/~esr/jargon/html/0/dev-null.html by HTTrack Website Copier/3.x [XR&amp;CO'2014], Mon, 26 Oct 2015 13:16:51 GMT --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre>
+
+
+<p>Happy <a href="../../jargon/html/H/hack.html">Hacking</a>.</p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../tags/character-encoding.html" rel="tag">character-encoding</a></li>
+            <li><a class="tag p-category" href="../../tags/code.html" rel="tag">code</a></li>
+            <li><a class="tag p-category" href="../../tags/codec.html" rel="tag">codec</a></li>
+            <li><a class="tag p-category" href="../../tags/iso-8859-1.html" rel="tag">iso-8859-1</a></li>
+            <li><a class="tag p-category" href="../../tags/jargon.html" rel="tag">jargon</a></li>
+            <li><a class="tag p-category" href="../../tags/python.html" rel="tag">python</a></li>
+            <li><a class="tag p-category" href="../../tags/unicode.html" rel="tag">unicode</a></li>
+            <li><a class="tag p-category" href="../../tags/utf-8.html" rel="tag">utf-8</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="journald-experiments-0.html" rel="prev" title="Journald experiments - Testing systemd's logger: speed and buffering">Previous post</a>
+            </li>
+        </ul></nav></aside></article>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer"><hr>Contents Copyright © 
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a>
+ 2005 — 2018         <a href="mailto:sinewalker@gmail.com">Michael Lockhart</a>. Powered by <a href="https://getnikola.com" rel="nofollow"><img src="../../img/nikola.png" alt="Nikola"></a>, <a href="https://github.com/syl20bnr/spacemacs"><img src="https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg" alt="built with Spacemacs"></a>
+
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates --><script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');  ga('create', 'UA-65364237-1', 'auto');  ga('send', 'pageview');</script>
+</body>
+</html>

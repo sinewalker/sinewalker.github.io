@@ -161,7 +161,26 @@
 
     <header><h1>Posts about code</h1>
     </header><div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2018/journald-experiments-0.html" class="u-url">Journald experiments - Testing systemd's logger: speed and buffering</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2018/latin1-to-utf8.html" class="u-url">Converting latin-1 To utf-8 with Python</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="../blog/2018/latin1-to-utf8.html" rel="bookmark"><time class="published dt-published" datetime="2018-07-21T23:09:46+10:00" title="2018-07-21 23:09">2018-07-21 23:09</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>Tonight I finally converted all the Glossary pages in my mirror of the <a href="http://catb.org/~esr/jargon">Jargon File</a> into Unicode (utf-8 encoding) so that they will transmit and display properly from GitHub Pages (or any other modern web server).  It was a fairly trivial thing to do in the end, but I am likely to need to repeat this for other things at work, so I'm blogging it.</p>
+<p>The Jargon File was <a href="../jargon/news.html">converted into XML-Dockbook and Unicode</a> for version 4.4.0, but ESR only converted the front- and back-matter, not the Glossary entries (i.e. the actual lexicon).  Those are still <em>latin-1</em> (<a href="https://en.wikipedia.org/wiki/ISO/IEC_8859-1">ISO-8859-1</a>). And although the HTML rendition begins with the correct header declaring this:</p>
+<pre class="code literal-block"><span></span><span class="cp">&lt;?xml version="1.0" encoding="ISO-8859-1" standalone="no"?&gt;</span>
+</pre>
+
+
+<p>The pages are actually served from catb.org as <a href="https://en.wikipedia.org/wiki/Unicode">Unicode</a> (<a href="https://en.wikipedia.org/wiki/UTF-8">utf-8</a>).  For instance, compare <a href="http://www.catb.org/~esr/jargon/html/0/dev-null.html">/dev/null on catb.org</a> with <a href="../jargon/html/0/dev-null.html">my mirror of /dev/null</a>.</p>
+<p class="more"><a href="../blog/2018/latin1-to-utf8.html">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2018/journald-experiments-0.html" class="u-url">Journald experiments - Testing systemd's logger: speed and buffering</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
@@ -326,23 +345,6 @@ Here's a quick-and-dirty shell hack to remove the tags from the files and get th
 
 
 <p class="more"><a href="../blog/2008/08/26/stripping-tags-from-ogg-vorbis-files.html">Read more…</a></p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2008/06/26/pretty-printing-xml-with-emacs-nxml-mode.html" class="u-url">Pretty-printing XML with Emacs' NXML-mode</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
-            </span></p>
-            <p class="dateline"><a href="../blog/2008/06/26/pretty-printing-xml-with-emacs-nxml-mode.html" rel="bookmark"><time class="published dt-published" datetime="2008-06-26T12:46:03+10:00" title="2008-06-26 12:46">2008-06-26 12:46</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>Did you ever get a stream of XML out of a log file, or in a data stream, and it's all mashed together without line-breaks so that it just appears as gobble-de-gook? If there's a data error (not an XML parsing error) then you have to read it so that you can find where the error is, but you don't have XML-spy and NetBeans is overkill or takes forever to fire up...
-</p>
-<p>
-Emacs to the rescue! <a title="Benjamin Ferrari's blog (seems to lack an " href="http://blog.bookworm.at/">Benjamin Ferrari</a> wrote this <em>increadibly useful</em> (and simple) <a title="Benjamin Ferrari's original blog post for below code" href="http://blog.bookworm.at/2007/03/pretty-print-xml-with-emacs.html">elisp function</a> to pretty-print a block of XML code:
-</p>
-<p class="more"><a href="../blog/2008/06/26/pretty-printing-xml-with-emacs-nxml-mode.html">Read more…</a></p>
 </div>
     </div>
     </article>
