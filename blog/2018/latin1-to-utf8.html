@@ -201,17 +201,17 @@
 
 <hr>
 <h2>UTF-8 does not equal Latin-1</h2>
-<p>It's a widely held misconception that utf-8 is a superset of ISO-8859-1.  It's not. While <em>Unicode</em> itself <em>does</em> contain a <a href="https://en.wikipedia.org/wiki/Latin-1_Supplement_(Unicode_block)">Latin-1 Suplemenent</a>,  <em>all</em> of the upper 128 character bit-patterns of ISO-8859-1 have <em>different meaning in utf-8</em>, and there are many legitimate ISO-8859-1 characters that are <em>illegal utf-8 encoding byte sequences</em>.  This often confuses me because I'm used to 8-bit characters where the encoding is the same as the code-point:  <code>A</code> is <code>0x41</code> and means <em>A</em>;  <code>ÿ</code> is <code>0xFF</code> (in latin-1) and means <em>ÿ</em>. With Unicode, the code-points and their encodings are <em>not</em> the same, there are multiple byte-stream encodings for Unicode and utf-8 is just one of them.</p>
-<p>Despite the <em>8</em> in it's name, utf-8 is not 8-bit. It's a <em>multi-byte</em> encoding for Unicode.  It just happens to share <em>half</em> of the 8-bit space with ISO-8859-1 (which shares the same half with ASCII), and so for English the same characters have the same 8-bit encodings.  <em>Most</em> Western-European languages it can be encoded in utf-8 with between 8 and 16-bits as well, and some require 21-bits (so 3 bytes or 4 bytes for utf-8's codec scheme, but only for rare characters).</p>
+<p>It's a widely held misconception that utf-8 is a superset of ISO-8859-1.  It's not.  While <em>Unicode</em> itself <em>does</em> contain a <a href="https://en.wikipedia.org/wiki/Latin-1_Supplement_(Unicode_block)">Latin-1 Supplement</a>,  <em>all</em> of the upper 128 character bit-patterns of ISO-8859-1 have <em>different meaning in utf-8</em>, and there are many legitimate ISO-8859-1 characters that are <em>illegal utf-8 encoding byte sequences</em>.  This often confuses me because I'm used to 8-bit characters where the encoding is the same as the code-point:  <code>A</code> is <code>0x41</code> and means <em>A</em>;  <code>ÿ</code> is <code>0xFF</code> (in latin-1) and means <em>ÿ</em>. With Unicode, the code-points and their encodings are <em>not</em> the same, there are multiple byte-stream encodings for Unicode, and utf-8 is just one of them.</p>
+<p>Despite the <em>8</em> in it's name, utf-8 is not 8-bit.  It's a <em>potentially-multi-byte</em> encoding for Unicode, and it's <em>at least 8 bits</em>.  It just happens to share <em>half</em> of the 8-bit space with ISO-8859-1 (which shares the same half with ASCII), and so for English the same characters have the same 8-bit encodings.  <em>Most</em> Western-European languages it can be encoded in utf-8 with between 8 and 16-bits as well, and some require 21-bits (so 3 bytes or 4 bytes for utf-8's codec scheme, but only for rare characters).</p>
 <p>This is why utf-8 is so popular online:</p>
 <ul>
 <li>most web sites are in Western-European languages</li>
-<li>most of these Latin-based characters can be encoded with 8-16 bits per character</li>
+<li>most of these Latin-based characters can be encoded with 8 bits per character, many with up to 16-bits</li>
 <li>the first 128 characters are the same bit-patterns as 7-bit <a href="https://en.wikipedia.org/wiki/UTF-16">ASCII</a>, the original byte stream for the APRANET and the Internet</li>
 </ul>
 <p>If you look at Japanese or Chinese sites, they prefer <a href="https://en.wikipedia.org/wiki/UTF-16">utf-16</a> because this encoding is more efficient for those Unicode blocks: the most common Chinese characters will fit in a 2-byte encoding in utf-16, whereas the same code-points in utf-8 typically need 3 or 4 bytes.</p>
 <h3>Why ISO-8859-1 “breaks” in utf-8</h3>
-<p>Because utf-8 is a multi-byte encoding, it reserves some bit patterns for encoding that more than one byte is involved in the current code-point for a character.  The last code-point in 8-bit utf-8 is actually <code>0x7F</code>: the most-significant-bit is reserved to indicate multi-byte. So all of the legitimate ISO-8859-1 8-bit bytes result in <em>different</em> utf-8 characters, and some are <em>illegal utf-8 byte sequences</em>.</p>
+<p>Because utf-8 is a multi-byte encoding, it reserves some bit patterns for encoding that more than one byte is involved in the current code-point for a character.  The last code-point in 8-bit utf-8 is actually <code>0x7F</code>: the most-significant-bit is reserved to indicate multi-byte.  So all of the legitimate ISO-8859-1 8-bit bytes result in <em>different</em> Unicode characters, and some are <em>illegal utf-8 byte sequences</em>.</p>
 <p>That's why you can't just take an ISO-8859-1 byte stream (or any other ISO-8859 code page, or the Windows one) and interpret it as utf-8. It only works if the bytes from the stream are in the 7-bit (ASCII) range.</p>
 <h2>Fixing the Jargon File</h2>
 <p>When I mirrored the Jargon File back in October 2015, I asked <a href="https://www.httrack.com">HTTrack</a> to encode as UTF-8, thinking this would fix it.  It didn't really succeed, all it did was to add its own encoding header:</p>
@@ -220,9 +220,9 @@
 </pre>
 
 
-<p>The bytes within the page were still ISO-8859-1.  So I was having the same issue as catb.org:  while the page declares ISO, the web server actually sends utf-8; and now the HTTrack insertion adds its own <code>content</code> to the confusion.</p>
+<p>The bytes within the page were still ISO-8859-1.  So I was having the same issue as catb.org: while the page declares ISO, the web server actually sends utf-8; and now the HTTrack insertion adds its own <code>content</code> to the confusion.</p>
 <p>Fixing the Jargon file <a href="../../jargon/mirroring.html">properly</a> will involve actually going into the <a href="../../jargon/jargsrc.tar.gz">Docbook sources</a> and ESRs makefiles and correcting it there.  I'm not going to do that: it's too much effort to recover software that understands <a href="http://docbook.sourceforge.net/">DocBook</a> XML <a href="https://sourceforge.net/projects/docbook/files/OldFiles/">1.62</a> still and can do a lossless conversion.  That'll be a "someday" project probably (it's been <strong>15 years</strong> since ESR updated the Jargon File himself, and it's dated, and bordering on becoming <a href="../../jargon/jargtxt.html">bogus</a> because of a lack of currency, so it's a low-priority <em>maybe</em> project).  Instead what I've done is just run a filter over all the HTML output of the Jargon, since that is what is actually being served most of the time.</p>
-<p>Here's the filter code, <code>transcode.py</code>:</p>
+<p>Here's the python code, <code>transcode.py</code>:</p>
 <pre class="code literal-block"><span></span><span class="ch">#!/usr/bin/env python3</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">os</span>
@@ -244,7 +244,7 @@
 </pre>
 
 
-<p>It's a <a href="http://milosophical.me/jargon/html/C/clone-and-hack-coding.html">clone and hack</a>, based upon <a href="https://stackoverflow.com/a/191403/776953">this answer to an SO question</a> on converting files to utf-8 in Python.  All I changed was:</p>
+<p>It's a <a href="../../jargon/html/C/clone-and-hack-coding.html">clone and hack</a>, based upon <a href="https://stackoverflow.com/a/191403/776953">this answer to an SO question</a> on converting files to utf-8 in Python.  All I changed was:</p>
 <ul>
 <li>take the <code>sourceFileName</code> from the script argument (without checking if there <em>is</em> an argument)</li>
 <li>set a temporary <code>targetFileName</code> based on the source file</li>
@@ -253,7 +253,7 @@
 <li>and replaced "<code>ISO-8859-1</code>" in the output file with "<code>utf-8</code>" so that the headers match the content (very näive: just looks for the exact string match, so any mention of "ISO-8859-1" within the body will also be replaced)</li>
 <li>Finally, replace the original source file with the temporary target file, by intentionally <a href="http://milosophical.me/jargon/html/C/clobber.html">clobber</a>ing the original with <code>os.rename()</code>.</li>
 </ul>
-<p>I then ran this filter in a shell loop like so:</p>
+<p>I then ran this code in a shell loop like so:</p>
 <pre class="code literal-block"><span></span><span class="o">[</span>src<span class="o">][</span>mjl@milo:~/hax/blog/milosophical.me/files/jargon/html<span class="o">]</span>
 <span class="o">[</span><span class="m">22</span>:56<span class="o">](</span>nikola<span class="o">)</span>β <span class="k">for</span> Y in <span class="m">0</span> <span class="o">[</span>A-Z<span class="o">]</span><span class="p">;</span> <span class="k">do</span>
   <span class="nb">echo</span> <span class="nv">$Y</span>

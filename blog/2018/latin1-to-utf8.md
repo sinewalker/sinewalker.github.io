@@ -26,21 +26,21 @@ The pages are actually served from catb.org as [Unicode](https://en.wikipedia.or
 
 # UTF-8 does not equal Latin-1
 
-It's a widely held misconception that utf-8 is a superset of ISO-8859-1.  It's not. While *Unicode* itself *does* contain a [Latin-1 Suplemenent](https://en.wikipedia.org/wiki/Latin-1_Supplement_(Unicode_block)),  *all* of the upper 128 character bit-patterns of ISO-8859-1 have *different meaning in utf-8*, and there are many legitimate ISO-8859-1 characters that are *illegal utf-8 encoding byte sequences*.  This often confuses me because I'm used to 8-bit characters where the encoding is the same as the code-point:  `A` is `0x41` and means *A*;  `ÿ` is `0xFF` (in latin-1) and means *&yuml;*. With Unicode, the code-points and their encodings are *not* the same, there are multiple byte-stream encodings for Unicode and utf-8 is just one of them.
+It's a widely held misconception that utf-8 is a superset of ISO-8859-1.  It's not.  While *Unicode* itself *does* contain a [Latin-1 Supplement](https://en.wikipedia.org/wiki/Latin-1_Supplement_(Unicode_block)),  *all* of the upper 128 character bit-patterns of ISO-8859-1 have *different meaning in utf-8*, and there are many legitimate ISO-8859-1 characters that are *illegal utf-8 encoding byte sequences*.  This often confuses me because I'm used to 8-bit characters where the encoding is the same as the code-point:  `A` is `0x41` and means *A*;  `ÿ` is `0xFF` (in latin-1) and means *&yuml;*. With Unicode, the code-points and their encodings are *not* the same, there are multiple byte-stream encodings for Unicode, and utf-8 is just one of them.
 
-Despite the *8* in it's name, utf-8 is not 8-bit. It's a *multi-byte* encoding for Unicode.  It just happens to share *half* of the 8-bit space with ISO-8859-1 (which shares the same half with ASCII), and so for English the same characters have the same 8-bit encodings.  *Most* Western-European languages it can be encoded in utf-8 with between 8 and 16-bits as well, and some require 21-bits (so 3 bytes or 4 bytes for utf-8's codec scheme, but only for rare characters).
+Despite the *8* in it's name, utf-8 is not 8-bit.  It's a *potentially-multi-byte* encoding for Unicode, and it's *at least 8 bits*.  It just happens to share *half* of the 8-bit space with ISO-8859-1 (which shares the same half with ASCII), and so for English the same characters have the same 8-bit encodings.  *Most* Western-European languages it can be encoded in utf-8 with between 8 and 16-bits as well, and some require 21-bits (so 3 bytes or 4 bytes for utf-8's codec scheme, but only for rare characters).
 
 This is why utf-8 is so popular online:
 
  * most web sites are in Western-European languages
- * most of these Latin-based characters can be encoded with 8-16 bits per character
+ * most of these Latin-based characters can be encoded with 8 bits per character, many with up to 16-bits
  * the first 128 characters are the same bit-patterns as 7-bit [ASCII](https://en.wikipedia.org/wiki/UTF-16), the original byte stream for the APRANET and the Internet
 
 If you look at Japanese or Chinese sites, they prefer [utf-16](https://en.wikipedia.org/wiki/UTF-16) because this encoding is more efficient for those Unicode blocks: the most common Chinese characters will fit in a 2-byte encoding in utf-16, whereas the same code-points in utf-8 typically need 3 or 4 bytes.
 
 ## Why ISO-8859-1 “breaks” in utf-8
 
-Because utf-8 is a multi-byte encoding, it reserves some bit patterns for encoding that more than one byte is involved in the current code-point for a character.  The last code-point in 8-bit utf-8 is actually `0x7F`: the most-significant-bit is reserved to indicate multi-byte. So all of the legitimate ISO-8859-1 8-bit bytes result in *different* utf-8 characters, and some are *illegal utf-8 byte sequences*.
+Because utf-8 is a multi-byte encoding, it reserves some bit patterns for encoding that more than one byte is involved in the current code-point for a character.  The last code-point in 8-bit utf-8 is actually `0x7F`: the most-significant-bit is reserved to indicate multi-byte.  So all of the legitimate ISO-8859-1 8-bit bytes result in *different* Unicode characters, and some are *illegal utf-8 byte sequences*.
 
 That's why you can't just take an ISO-8859-1 byte stream (or any other ISO-8859 code page, or the Windows one) and interpret it as utf-8. It only works if the bytes from the stream are in the 7-bit (ASCII) range.
 
@@ -53,11 +53,11 @@ When I mirrored the Jargon File back in October 2015, I asked [HTTrack](https://
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 ```
 
-The bytes within the page were still ISO-8859-1.  So I was having the same issue as catb.org:  while the page declares ISO, the web server actually sends utf-8; and now the HTTrack insertion adds its own `content` to the confusion.
+The bytes within the page were still ISO-8859-1.  So I was having the same issue as catb.org: while the page declares ISO, the web server actually sends utf-8; and now the HTTrack insertion adds its own `content` to the confusion.
 
 Fixing the Jargon file [properly](/jargon/mirroring.html) will involve actually going into the [Docbook sources](/jargon/jargsrc.tar.gz) and ESRs makefiles and correcting it there.  I'm not going to do that: it's too much effort to recover software that understands [DocBook](http://docbook.sourceforge.net/) XML [1.62](https://sourceforge.net/projects/docbook/files/OldFiles/) still and can do a lossless conversion.  That'll be a "someday" project probably (it's been **15 years** since ESR updated the Jargon File himself, and it's dated, and bordering on becoming [bogus](/jargon/jargtxt.html) because of a lack of currency, so it's a low-priority *maybe* project).  Instead what I've done is just run a filter over all the HTML output of the Jargon, since that is what is actually being served most of the time.
 
-Here's the filter code, `transcode.py`:
+Here's the python code, `transcode.py`:
 
 ```python
 #!/usr/bin/env python3
@@ -80,7 +80,7 @@ with codecs.open(sourceFileName, "r", "ISO-8859-1") as sourceFile:
 os.rename(targetFileName,sourceFileName)
 ```
 
-It's a [clone and hack](http://milosophical.me/jargon/html/C/clone-and-hack-coding.html), based upon [this answer to an SO question](https://stackoverflow.com/a/191403/776953) on converting files to utf-8 in Python.  All I changed was:
+It's a [clone and hack](/jargon/html/C/clone-and-hack-coding.html), based upon [this answer to an SO question](https://stackoverflow.com/a/191403/776953) on converting files to utf-8 in Python.  All I changed was:
 
  * take the `sourceFileName` from the script argument (without checking if there *is* an argument)
  * set a temporary `targetFileName` based on the source file
@@ -88,7 +88,7 @@ It's a [clone and hack](http://milosophical.me/jargon/html/C/clone-and-hack-codi
  * and replaced "`ISO-8859-1`" in the output file with "`utf-8`" so that the headers match the content (very näive: just looks for the exact string match, so any mention of "ISO-8859-1" within the body will also be replaced)
  * Finally, replace the original source file with the temporary target file, by intentionally [clobber](http://milosophical.me/jargon/html/C/clobber.html)ing the original with `os.rename()`.
 
-I then ran this filter in a shell loop like so:
+I then ran this code in a shell loop like so:
 
 ```sh
 [src][mjl@milo:~/hax/blog/milosophical.me/files/jargon/html]
