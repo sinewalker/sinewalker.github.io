@@ -105,6 +105,9 @@ div.input_area > pre  {
 div.text_cell_render {
     color: var(--page-colour) !important;
 }
+div.container{
+    width: 100%;
+}
 pre {
     background-color: var(--code-background);
     color: var(--code-color);
