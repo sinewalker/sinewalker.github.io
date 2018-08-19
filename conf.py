@@ -182,6 +182,7 @@ NAVIGATION_LINKS = {
         (
             (
                 ('https://plus.google.com/+MichaelLockhart/posts', 'Microblog'),
+                ('https://www.twitter.com/milo_hax','Nanoblog'),
                 ('https://gist.github.com/sinewalker', 'Gists - social code'),
                 ('https://www.facebook.com/sinewalker', 'Facebook'),
                 ('mailto:sinewalker@gmail.com', 'Email'),
