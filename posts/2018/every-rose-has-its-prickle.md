@@ -1,4 +1,4 @@
-.. title: Every Rose Has It's .... Prickle
+.. title: Every Rose Has Its … Prickle
 .. slug: every-rose-has-its-prickle
 .. date: 2018-08-19 21:40:29 UTC+10:00
 .. tags: parody, silly, lyrics
