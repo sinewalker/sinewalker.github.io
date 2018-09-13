@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License" style="border-width:0"
      src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"/&gt;&lt;/a&gt;
-</copyright><lastBuildDate>Mon, 09 Jul 2018 13:47:07 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Mounting LUKS/LVM from a LiveUSB</title><link>http://milosophical.me/blog/2014/mounting-lukslvm-from-a-liveusb.html</link><dc:creator>Mike Lockhart..</dc:creator><description>&lt;div&gt;&lt;p&gt;After upgrading work's openSUSE laptop from 13.1 to 13.2 today it
+</copyright><lastBuildDate>Thu, 13 Sep 2018 04:39:06 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Mounting LUKS/LVM from a LiveUSB</title><link>http://milosophical.me/blog/2014/mounting-lukslvm-from-a-liveusb.html</link><dc:creator>Mike Lockhart..</dc:creator><description>&lt;div&gt;&lt;p&gt;After upgrading work's openSUSE laptop from 13.1 to 13.2 today it
 would not unlock the LUKS-encrypted LVM, which is a problem since the
 entire SSD is encrypted (except for /boot).  Bummer.&lt;/p&gt;
 &lt;p&gt;So, I had occasion to test my backup/recovery strategy and found that
