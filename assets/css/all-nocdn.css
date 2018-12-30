@@ -7616,3 +7616,8 @@ pre {
 blockquote  {
     border-left: var(--page-background);
 }
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+    margin-left: 1.5em;
+    margin-right: 1em;
+    line-height: 1.25;
+}
