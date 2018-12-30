@@ -3,7 +3,15 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License" style="border-width:0"
      src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"/&gt;&lt;/a&gt;
-</copyright><lastBuildDate>Thu, 13 Sep 2018 04:39:05 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Learning DVCS Workflow - 1</title><link>http://milosophical.me/blog/2018/git-checkout-ftw.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;Tonight I learned a basic git trick that was not immediately obvious to me, but should have been, I guess.&lt;/p&gt;
+</copyright><lastBuildDate>Sun, 30 Dec 2018 21:53:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>ssh-pass</title><link>http://milosophical.me/blog/2018/ssh-pass.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;I've been using &lt;a href="https://www.passwordstore.org/"&gt;pass&lt;/a&gt; for a while now and I really like it.  But I don't like putting passwords or passphrases into my system clipboard if I can help it:  writing code to sniff the clipboard is child's play, so I'd like to avoid that attack vector if possible.&lt;/p&gt;
+&lt;p&gt;One place that I thought would be simple would be the SSH utility to add keys to your SSH Agent: &lt;code&gt;ssh-add&lt;/code&gt;.  It should be possible to do something like this:&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;$ pass github/sinewalker&lt;span class="p"&gt;|&lt;/span&gt;head -1&lt;span class="p"&gt;|&lt;/span&gt;ssh-add github/sinewalker
+&lt;/pre&gt;
+
+
+&lt;p&gt;Unfortunately this isn't so:  &lt;code&gt;ssh-add&lt;/code&gt; doesn't accept your passphrase from STDIN when piped like this.&lt;/p&gt;
+&lt;p&gt;But, there &lt;em&gt;is&lt;/em&gt; a way to do it.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://milosophical.me/blog/2018/ssh-pass.html"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>password-store</category><category>passwords</category><category>ssh</category><category>tip</category><guid>http://milosophical.me/blog/2018/ssh-pass.html</guid><pubDate>Sat, 29 Dec 2018 22:57:41 GMT</pubDate></item><item><title>Learning DVCS Workflow - 1</title><link>http://milosophical.me/blog/2018/git-checkout-ftw.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;Tonight I learned a basic git trick that was not immediately obvious to me, but should have been, I guess.&lt;/p&gt;
 &lt;p&gt;I've been switching &lt;a href="https://github.com/sinewalker/dotspacemacs/tree/develop"&gt;my Spacemacs&lt;/a&gt; back to the &lt;a href="https://github.com/sinewalker/dotspacemacs/"&gt;master branch&lt;/a&gt; to try trouble-shoot a performance issue I'm having on the Macintosh where it just hangs occasionally.  My master is tracking to Spacemacs master which is still at 0.200.13.  I haven't touched it in over a year, and there are some things that I wanted from my &lt;code&gt;develop&lt;/code&gt; branch.&lt;/p&gt;
 &lt;p&gt;I want to merge in the latest version of those few files, but not &lt;em&gt;everything&lt;/em&gt; on the branch, so a &lt;em&gt;merge&lt;/em&gt; is not the right operation.&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://milosophical.me/blog/2018/git-checkout-ftw.html"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>git</category><category>magit</category><category>merging</category><category>tip</category><guid>http://milosophical.me/blog/2018/git-checkout-ftw.html</guid><pubDate>Tue, 27 Mar 2018 11:16:00 GMT</pubDate></item><item><title>4-bit Rules of Computing, Part 4</title><link>http://milosophical.me/blog/2018/4-bits-part4.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;Here is the fifth part of my &lt;a href="http://milosophical.me/tags/4-bit-rules.html"&gt;blog series&lt;/a&gt; expanding on my
@@ -58,18 +66,4 @@ For real &lt;em&gt;rigour&lt;/em&gt;, there is much more required than a few sim
 the third bit, out of 4 bits), but it is taking me more time to write
 up my thoughts about those other rules, and I want to get something out
 roughly every week.&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://milosophical.me/blog/2015/4-bit-rules-of-computing-part-1.html"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>4-bit-rules</category><category>blogging</category><category>journal</category><category>notebook</category><category>tip</category><guid>http://milosophical.me/blog/2015/4-bit-rules-of-computing-part-1.html</guid><pubDate>Tue, 02 Jun 2015 08:47:00 GMT</pubDate></item><item><title>What are those J and L characters in email?</title><link>http://milosophical.me/blog/2015/what-are-those-j-and-l-characters-in-email.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;Do you receive email with a mystery "J" or "L" in them?&lt;/p&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;Fabulous! Thanks very much Mike J
-&lt;/pre&gt;
-
-
-&lt;p&gt;What the heck are they?  It's actually not much of a mystery: they are
-automatic emoticons inserted by MS-Outlook when someone types &lt;code&gt;:-)&lt;/code&gt; or
-variants.&lt;/p&gt;
-&lt;p&gt;Outlook substitutes the string for the letter J or L, and formats that
-character with &lt;strong&gt;&lt;em&gt;Windings&lt;/em&gt;&lt;/strong&gt;, which in that font maps to the smiley
-or the frowny glyph.&lt;/p&gt;
-&lt;p&gt;I &lt;em&gt;guess&lt;/em&gt; if you look at J and L sideways, and pretend only half their
-mouth is working, it kinda makes sense for a J to be a smile and an L
-to be a frown...?&lt;/p&gt;
-&lt;p&gt;Well, anyway, now you know.&lt;/p&gt;&lt;/div&gt;</description><category>characters</category><category>emoticon</category><category>tip</category><guid>http://milosophical.me/blog/2015/what-are-those-j-and-l-characters-in-email.html</guid><pubDate>Wed, 27 May 2015 23:52:13 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a href="http://milosophical.me/blog/2015/4-bit-rules-of-computing-part-1.html"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>4-bit-rules</category><category>blogging</category><category>journal</category><category>notebook</category><category>tip</category><guid>http://milosophical.me/blog/2015/4-bit-rules-of-computing-part-1.html</guid><pubDate>Tue, 02 Jun 2015 08:47:00 GMT</pubDate></item></channel></rss>

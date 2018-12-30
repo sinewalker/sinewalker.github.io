@@ -164,7 +164,27 @@
 
     <header><h1>Posts about tip</h1>
     </header><div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2018/git-checkout-ftw.html" class="u-url">Learning DVCS Workflow - 1</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2018/ssh-pass.html" class="u-url">ssh-pass</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="../blog/2018/ssh-pass.html" rel="bookmark"><time class="published dt-published" datetime="2018-12-30T09:57:41+11:00" title="2018-12-30 09:57">2018-12-30 09:57</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>I've been using <a href="https://www.passwordstore.org/">pass</a> for a while now and I really like it.  But I don't like putting passwords or passphrases into my system clipboard if I can help it:  writing code to sniff the clipboard is child's play, so I'd like to avoid that attack vector if possible.</p>
+<p>One place that I thought would be simple would be the SSH utility to add keys to your SSH Agent: <code>ssh-add</code>.  It should be possible to do something like this:</p>
+<pre class="code literal-block"><span></span>$ pass github/sinewalker<span class="p">|</span>head -1<span class="p">|</span>ssh-add github/sinewalker
+</pre>
+
+
+<p>Unfortunately this isn't so:  <code>ssh-add</code> doesn't accept your passphrase from STDIN when piped like this.</p>
+<p>But, there <em>is</em> a way to do it.</p>
+<p class="more"><a href="../blog/2018/ssh-pass.html">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2018/git-checkout-ftw.html" class="u-url">Learning DVCS Workflow - 1</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
@@ -331,32 +351,6 @@ the third bit, out of 4 bits), but it is taking me more time to write
 up my thoughts about those other rules, and I want to get something out
 roughly every week.</p>
 <p class="more"><a href="../blog/2015/4-bit-rules-of-computing-part-1.html">Read more…</a></p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2015/what-are-those-j-and-l-characters-in-email.html" class="u-url">What are those J and L characters in email?</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
-            </span></p>
-            <p class="dateline"><a href="../blog/2015/what-are-those-j-and-l-characters-in-email.html" rel="bookmark"><time class="published dt-published" datetime="2015-05-28T09:52:13+10:00" title="2015-05-28 09:52">2015-05-28 09:52</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>Do you receive email with a mystery "J" or "L" in them?</p>
-<pre class="code literal-block"><span></span>Fabulous! Thanks very much Mike J
-</pre>
-
-
-<p>What the heck are they?  It's actually not much of a mystery: they are
-automatic emoticons inserted by MS-Outlook when someone types <code>:-)</code> or
-variants.</p>
-<p>Outlook substitutes the string for the letter J or L, and formats that
-character with <strong><em>Windings</em></strong>, which in that font maps to the smiley
-or the frowny glyph.</p>
-<p>I <em>guess</em> if you look at J and L sideways, and pretend only half their
-mouth is working, it kinda makes sense for a J to be a smile and an L
-to be a frown...?</p>
-<p>Well, anyway, now you know.</p>
 </div>
     </div>
     </article>

@@ -163,7 +163,27 @@
 
     <header><h1>Posts about ssh</h1>
     </header><div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2018/password-store-1.html" class="u-url">Password databases: Installing password-store on Android</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2018/ssh-pass.html" class="u-url">ssh-pass</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="../blog/2018/ssh-pass.html" rel="bookmark"><time class="published dt-published" datetime="2018-12-30T09:57:41+11:00" title="2018-12-30 09:57">2018-12-30 09:57</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>I've been using <a href="https://www.passwordstore.org/">pass</a> for a while now and I really like it.  But I don't like putting passwords or passphrases into my system clipboard if I can help it:  writing code to sniff the clipboard is child's play, so I'd like to avoid that attack vector if possible.</p>
+<p>One place that I thought would be simple would be the SSH utility to add keys to your SSH Agent: <code>ssh-add</code>.  It should be possible to do something like this:</p>
+<pre class="code literal-block"><span></span>$ pass github/sinewalker<span class="p">|</span>head -1<span class="p">|</span>ssh-add github/sinewalker
+</pre>
+
+
+<p>Unfortunately this isn't so:  <code>ssh-add</code> doesn't accept your passphrase from STDIN when piped like this.</p>
+<p>But, there <em>is</em> a way to do it.</p>
+<p class="more"><a href="../blog/2018/ssh-pass.html">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2018/password-store-1.html" class="u-url">Password databases: Installing password-store on Android</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
