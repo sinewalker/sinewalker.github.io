@@ -164,7 +164,22 @@
 
     <header><h1>Posts about code</h1>
     </header><div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2018/latin1-to-utf8.html" class="u-url">Converting latin-1 To utf-8 with Python</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2019/python-virtualenv-wrappers.html" class="u-url">Python Virtualenv wrapper functions</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="../blog/2019/python-virtualenv-wrappers.html" rel="bookmark"><time class="published dt-published" datetime="2019-02-24T07:39:54+11:00" title="2019-02-24 07:39">2019-02-24 07:39</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>A while ago I noted that I should write about my shell functions for creating and managing Python Virtual Environments. Recently I was helping my boss set up some python virtual environments for some different projects, and I couldn't remember how to use <a href="https://virtualenv.pypa.io/en/stable/">virtualenv</a> directly.</p>
+<p>I <em>really wanted</em> to just share my wrappers with him, and I found that they weren't <em>quite</em> ready to share because I hadn't finished documenting them.</p>
+<p>This post is to remedy that.</p>
+<p class="more"><a href="../blog/2019/python-virtualenv-wrappers.html">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2018/latin1-to-utf8.html" class="u-url">Converting latin-1 To utf-8 with Python</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
@@ -327,29 +342,6 @@ I recently had occasion to play with some Python at work (a small script to do s
 <p class="more"><a href="../blog/2008/11/24/netbeans-65-and-python.html">Read more…</a></p>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="../blog/2008/08/26/stripping-tags-from-ogg-vorbis-files.html" class="u-url">Stripping tags from ogg Vorbis files</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
-            </span></p>
-            <p class="dateline"><a href="../blog/2008/08/26/stripping-tags-from-ogg-vorbis-files.html" rel="bookmark"><time class="published dt-published" datetime="2008-08-26T16:05:34+10:00" title="2008-08-26 16:05">2008-08-26 16:05</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>I have a bunch of free <a title="Xiph's meta container format for media" href="http://www.xiph.org/ogg/">Ogg</a> <a title="Patent-free audio codec (MP3 killer)" href="http://www.vorbis.com/">Vorbis</a> audio files that I've downloaded from <a title="Kahvi Collective. Sound has the power to make the world a better place" href="http://kahvi.org/">Kahvi.org</a>. They're great! But recently they've been including cover art within the files, which breaks Windows Media Player (it can't handle the very long tags of binhex-coded JPGs).
-</p>
-<p>
-Since I rather like WMP's integration in windows (keyboard shortcuts), and <a title="Kewl KDE music player (iTunes killer)" href="http://amarok.kde.org/">Amarok</a> <a title="Amarok for win32 is still a work in progress, but it compiles..." href="http://amarok.kde.org/wiki/Development/Win32">isn't quite ready for win32</a>, I thought I'd find a way to strip the troublesome tags from the data files rather than change to another player.
-</p>
-
-
-Here's a quick-and-dirty shell hack to remove the tags from the files and get them playable by daft players such as Windows Media Player
-
-
-
-<p class="more"><a href="../blog/2008/08/26/stripping-tags-from-ogg-vorbis-files.html">Read more…</a></p>
-</div>
-    </div>
     </article>
 </div>
 
@@ -364,7 +356,7 @@ Here's a quick-and-dirty shell hack to remove the tags from the files and get th
         <footer id="footer"><hr>Contents Copyright © 
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
 <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a>
- 2005 — 2018         <a href="mailto:sinewalker@gmail.com">Michael Lockhart</a>. Powered by <a href="https://getnikola.com" rel="nofollow"><img src="../img/nikola.png" alt="Nikola"></a>, <a href="https://github.com/syl20bnr/spacemacs"><img src="https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg" alt="built with Spacemacs"></a>
+ 2005 — 2019         <a href="mailto:sinewalker@gmail.com">Michael Lockhart</a>. Powered by <a href="https://getnikola.com" rel="nofollow"><img src="../img/nikola.png" alt="Nikola"></a>, <a href="https://github.com/syl20bnr/spacemacs"><img src="https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg" alt="built with Spacemacs"></a>
 
             
         </footer>
