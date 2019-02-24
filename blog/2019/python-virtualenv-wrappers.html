@@ -228,7 +228,7 @@ Fn: mkvenv in ./50_python.sh line <span class="m">60</span>
 
 
 <p>That's interesting, all the python virtual environments will be created in <code>${VIRTUALENV_BASE}</code>.  What's this?  Well you can echo it out:</p>
-<pre class="code literal-block"><span></span>$  <span class="nb">echo</span> <span class="nv">$VIRTUALENV_BASE</span>
+<pre class="code literal-block"><span></span>$ <span class="nb">echo</span> <span class="nv">$VIRTUALENV_BASE</span>
 /Users/mjl/lib/python
 </pre>
 
@@ -258,17 +258,16 @@ Installing setuptools, pip, wheel...done.
 
 <p>Cool.  Let's use it.  </p>
 <h2>Activate an environment</h2>
-<p>Activating an environment puts it in your shell <code>$PATH</code> and  adds it's name to your prompt, so you can tell that it's active.  This uses virtualenv activation scripts to do the work, just like normal.  I'm going to include my more complicated shell prompt here, since it's relevant:</p>
-<pre class="code literal-block"><span></span><span class="o">[</span><span class="m">08</span>:17<span class="o">]</span>β activate myvenv3
-<span class="o">[</span>mjl@milo:~/hax<span class="o">]</span>
-<span class="o">[</span><span class="m">08</span>:17<span class="o">](</span>myvenv3<span class="o">)</span>β
+<p>Activating an environment puts it in your shell <code>$PATH</code> and  adds it's name to your prompt, so you can tell that it's active.  This uses virtualenv activation scripts to do the work, just like normal:</p>
+<pre class="code literal-block"><span></span>$ activate myvenv3
+<span class="o">(</span>myvenv3<span class="o">)</span>$
 </pre>
 
 
 <p>A nice thing about my <code>activate</code> is that you don't have to remember where you installed the environment and <code>source bin/activate</code> from there. Instead it is just found for you from the relevant environment in <code>${VIRTUALENV_BASE}</code>. Very handy.</p>
 <h2>Listing environments</h2>
 <p>The <code>activate</code> function (and others) all use Bash TAB-completion, if you have that enabled. But maybe you're not sure what environments you have and need to see them all? Use <code>lsvenv</code> to list your environments:</p>
-<pre class="code literal-block"><span></span>$ lsvenv
+<pre class="code literal-block"><span></span><span class="o">(</span>myenv3<span class="o">)</span>$ lsvenv
 edge-config
 hax
 jupyter
@@ -285,7 +284,7 @@ te
 <p>Hmm, that <code>myvenv</code> is messy, I want to get rid of it.</p>
 <h2>Removing environments</h2>
 <p>Use <code>rmvenv</code> to remove an environment:</p>
-<pre class="code literal-block"><span></span>$  rmvenv myvenv
+<pre class="code literal-block"><span></span><span class="o">(</span>myenv3<span class="o">)</span>$ rmvenv myvenv
 Remove Venv: myvenv? <span class="o">[</span>y/N<span class="o">]</span> y
 $
 </pre>
@@ -293,55 +292,56 @@ $
 
 <h2>Deactivating an environment</h2>
 <p>You can switch directly to another environment and <code>activate</code> will automatically deactivate the current one first.  But if you want to deactivate all of the virtualenv stuff <em>without</em> going to a different environment or ending your shell session, just use <code>deactivate</code> like normal:</p>
-<pre class="code literal-block"><span></span><span class="o">[</span>mjl@milo:~/hax<span class="o">]</span>
-<span class="o">[</span><span class="m">08</span>:30<span class="o">](</span>myvenv3<span class="o">)</span>β which python
+<pre class="code literal-block"><span></span><span class="o">(</span>myvenv3<span class="o">)</span>$ which python
 /Users/mjl/lib/python/myvenv3/bin/python
-<span class="o">[</span>mjl@milo:~/hax<span class="o">]</span>
-<span class="o">[</span><span class="m">08</span>:30<span class="o">](</span>myvenv3<span class="o">)</span>β deactivate 
-<span class="o">[</span>mjl@milo:~/hax<span class="o">]</span>
-<span class="o">[</span><span class="m">08</span>:30<span class="o">]</span>β which python
+<span class="o">(</span>myvenv3<span class="o">)</span>$ deactivate 
+$ which python
 /usr/local/bin/python
-<span class="o">[</span>mjl@milo:~/hax<span class="o">]</span>
-<span class="o">[</span><span class="m">08</span>:30<span class="o">]</span>β 
+$ 
 </pre>
 
 
 <h2>Virtualenv alternative:  Anaconda</h2>
 <p>I also use <a href="https://www.anaconda.com/distribution/">Anaconda Pyhton</a> a little bit, which has its own method for managing virtual environments with the <code>conda</code> tool.  But activation and deactivation is a but clunky.  So my <code>activate</code> and <code>deactivate</code> functions also work with Anaconda.</p>
-<p>But now we have two <em>kinds</em> of Python virtual environments.  How is that handled?  Use <code>sucuri</code> (which is named after an Amazonian word for python) to switch to Anaconda-mode.  You'll get a reminder about it in your prompt:</p>
-<pre class="code literal-block"><span></span><span class="o">[</span>mjl@milo:~/hax<span class="o">]</span>
-<span class="o">[</span><span class="m">08</span>:30<span class="o">]</span>β sucuri 
+<p>But now we have two <em>kinds</em> of Python virtual environments.  How is that handled?  Use <code>sucuri</code> (which is named after an Amazonian word for anaconda) to switch to Anaconda-mode. </p>
+<pre class="code literal-block"><span></span>$ sucuri 
 Anaconda: ACTIVATED 🐍
-<span class="o">[</span>mjl@milo:~/hax<span class="o">]</span>
-<span class="o">[</span><span class="m">08</span>:32<span class="o">](</span>🐍 <span class="o">)</span>β
+$
 </pre>
 
 
-<p>Yes, UTF-8 characters.  If your terminal doesn't handle that, my function takes care of you and uses ASCII instead.  Anyway, you can list your environments in the same way.  This time the conda environmens are listed instead of the virtualenv ones (using <code>conda info</code> — another thing you don't need to remember):</p>
+<p>Yes, that's a UTF-8 character.  If your terminal doesn't handle that, my function takes care of you and uses ASCII instead.</p>
+<blockquote>
+<blockquote>
+<p>Note that there's no other indication that Anaconda is active.  My <a href="https://github.com/sinewalker/dotfiles/blob/1.1.1/source/20_prompt.sh">complicated bash prompt function</a> does give you some indication by adding a snake.  If you're interested, you can go down that rabit hole. I'll leave my prompts in place for the rest of this blog post.</p>
+</blockquote>
+</blockquote>
+<p>Anyway, you can list your environments in the same way.  This time the conda environmens are listed instead of the virtualenv ones (using <code>conda info</code> — another thing you don't need to remember):</p>
 <pre class="code literal-block"><span></span><span class="o">[</span>mjl@milo:~/hax<span class="o">]</span>
-<span class="o">[</span><span class="m">08</span>:32<span class="o">](</span>🐍 <span class="o">)</span>β lsvenv 
+<span class="o">[</span><span class="m">08</span>:32<span class="o">](</span>🐍<span class="o">)</span>β lsvenv 
 snowflakes
 root
 <span class="o">[</span>mjl@milo:~/hax<span class="o">]</span>
-<span class="o">[</span><span class="m">08</span>:32<span class="o">](</span>🐍 <span class="o">)</span>β
+<span class="o">[</span><span class="m">08</span>:32<span class="o">](</span>🐍<span class="o">)</span>β
 </pre>
 
 
 <p>Activation is the same too:</p>
 <pre class="code literal-block"><span></span><span class="o">[</span>mjl@milo:~/hax<span class="o">]</span>
-<span class="o">[</span><span class="m">08</span>:32<span class="o">](</span>🐍 <span class="o">)</span>β activate snowflakes 
+<span class="o">[</span><span class="m">08</span>:32<span class="o">](</span>🐍<span class="o">)</span>β activate snowflakes 
 <span class="o">[</span>mjl@milo:~/hax<span class="o">]</span>
-<span class="o">[</span><span class="m">08</span>:32<span class="o">](</span>🐍 -snowflakes<span class="o">)</span>β which python
+<span class="o">[</span><span class="m">08</span>:32<span class="o">](</span>🐍-snowflakes<span class="o">)</span>β which python
 /Users/mjl/lib/anaconda/envs/snowflakes/bin/python
 <span class="o">[</span>mjl@milo:~/hax<span class="o">]</span>
-<span class="o">[</span><span class="m">08</span>:32<span class="o">](</span>🐍 -snowflakes<span class="o">)</span>β deactivate 
+<span class="o">[</span><span class="m">08</span>:32<span class="o">](</span>🐍-snowflakes<span class="o">)</span>β deactivate 
 <span class="o">[</span>mjl@milo:~/hax<span class="o">]</span>
+<span class="o">[</span><span class="m">08</span>:32<span class="o">](</span>🐍<span class="o">)</span>β
 </pre>
 
 
 <p>In Anaconda-mode, you can use my <code>mkvenv</code> to make a conda environment, but I don't try to wrap all the special conda commands. Use <code>conda</code> if you want to do something more sophisticated, but for basic stuff, this is fine:</p>
 <pre class="code literal-block"><span></span><span class="o">[</span>mjl@milo:~/hax<span class="o">]</span>
-<span class="o">[</span><span class="m">08</span>:35<span class="o">](</span>🐍 <span class="o">)</span>β mkvenv anotherenv
+<span class="o">[</span><span class="m">08</span>:35<span class="o">](</span>🐍<span class="o">)</span>β mkvenv anotherenv
 mkvenv: Warning! Anaconda is active.
 This wrapper will use conda to create anotherenv, but it is only very basic.
 Fetching package metadata .........
@@ -359,14 +359,14 @@ Proceed <span class="o">([</span>y<span class="o">]</span>/n<span class="o">)</s
 <span class="c1">#</span>
 
 <span class="o">[</span>mjl@milo:~/hax<span class="o">]</span>
-<span class="o">[</span><span class="m">08</span>:35<span class="o">](</span>🐍 <span class="o">)</span>β
+<span class="o">[</span><span class="m">08</span>:35<span class="o">](</span>🐍<span class="o">)</span>β
 </pre>
 
 
 <p>(Don't "use source activate anotherenv" … pfft.  Just activate anotherenv.)</p>
 <p>Here's the new environment:</p>
 <pre class="code literal-block"><span></span><span class="o">[</span>mjl@milo:~/hax<span class="o">]</span>
-<span class="o">[</span><span class="m">08</span>:35<span class="o">](</span>🐍 <span class="o">)</span>β lsvenv
+<span class="o">[</span><span class="m">08</span>:35<span class="o">](</span>🐍<span class="o">)</span>β lsvenv
 anotherenv
 snowflakes
 root
@@ -375,18 +375,18 @@ root
 
 <p>Removing it <em>is</em> a bit tricky.  My <code>rmvenv</code> just gives up.  It does tell you how you <em>might</em> want to do it with <code>conda</code> though:</p>
 <pre class="code literal-block"><span></span><span class="o">[</span>mjl@milo:~/hax<span class="o">]</span>
-<span class="o">[</span><span class="m">08</span>:36<span class="o">](</span>🐍 <span class="o">)</span>β rmvenv anotherenv
+<span class="o">[</span><span class="m">08</span>:36<span class="o">](</span>🐍<span class="o">)</span>β rmvenv anotherenv
 rmvenv: Warning! Anaconda is active.
 Consider using <span class="s1">'conda remove -all -n anotherenv'</span> instead.
 Aborting.
 <span class="o">[</span>mjl@milo:~/hax<span class="o">]</span>
-<span class="o">[</span><span class="m">08</span>:36<span class="o">](</span>🐍 <span class="o">)</span> <span class="m">3</span> β 
+<span class="o">[</span><span class="m">08</span>:36<span class="o">](</span>🐍<span class="o">)</span> <span class="m">3</span> β 
 </pre>
 
 
 <p>At the end of your conda session, deactivate by running <code>sucuri</code> again:</p>
 <pre class="code literal-block"><span></span><span class="o">[</span>mjl@milo:~/hax<span class="o">]</span>
-<span class="o">[</span><span class="m">08</span>:32<span class="o">](</span>🐍 <span class="o">)</span>β sucuri 
+<span class="o">[</span><span class="m">08</span>:32<span class="o">](</span>🐍<span class="o">)</span>β sucuri 
 Anaconda: deactivated
 <span class="o">[</span>mjl@milo:~/hax<span class="o">]</span>
 <span class="o">[</span><span class="m">08</span>:32<span class="o">]</span>β

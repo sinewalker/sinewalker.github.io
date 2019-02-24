@@ -56,7 +56,7 @@ Fn: mkvenv in ./50_python.sh line 60
 That's interesting, all the python virtual environments will be created in `${VIRTUALENV_BASE}`.  What's this?  Well you can echo it out:
 
 ```sh
-$  echo $VIRTUALENV_BASE
+$ echo $VIRTUALENV_BASE
 /Users/mjl/lib/python
 ```
 
@@ -93,12 +93,11 @@ Cool.  Let's use it.
 
 # Activate an environment
 
-Activating an environment puts it in your shell `$PATH` and  adds it's name to your prompt, so you can tell that it's active.  This uses virtualenv activation scripts to do the work, just like normal.  I'm going to include my more complicated shell prompt here, since it's relevant:
+Activating an environment puts it in your shell `$PATH` and  adds it's name to your prompt, so you can tell that it's active.  This uses virtualenv activation scripts to do the work, just like normal:
 
 ```sh
-[08:17]β activate myvenv3
-[mjl@milo:~/hax]
-[08:17](myvenv3)β
+$ activate myvenv3
+(myvenv3)$
 ```
 
 A nice thing about my `activate` is that you don't have to remember where you installed the environment and `source bin/activate` from there. Instead it is just found for you from the relevant environment in `${VIRTUALENV_BASE}`. Very handy.
@@ -109,7 +108,7 @@ A nice thing about my `activate` is that you don't have to remember where you in
 The `activate` function (and others) all use Bash TAB-completion, if you have that enabled. But maybe you're not sure what environments you have and need to see them all? Use `lsvenv` to list your environments:
 
 ```sh
-$ lsvenv
+(myenv3)$ lsvenv
 edge-config
 hax
 jupyter
@@ -129,7 +128,7 @@ Hmm, that `myvenv` is messy, I want to get rid of it.
 Use `rmvenv` to remove an environment:
 
 ```sh
-$  rmvenv myvenv
+(myenv3)$ rmvenv myvenv
 Remove Venv: myvenv? [y/N] y
 $
 ```
@@ -139,16 +138,12 @@ $
 You can switch directly to another environment and `activate` will automatically deactivate the current one first.  But if you want to deactivate all of the virtualenv stuff *without* going to a different environment or ending your shell session, just use `deactivate` like normal:
 
 ```sh
-[mjl@milo:~/hax]
-[08:30](myvenv3)β which python
+(myvenv3)$ which python
 /Users/mjl/lib/python/myvenv3/bin/python
-[mjl@milo:~/hax]
-[08:30](myvenv3)β deactivate 
-[mjl@milo:~/hax]
-[08:30]β which python
+(myvenv3)$ deactivate 
+$ which python
 /usr/local/bin/python
-[mjl@milo:~/hax]
-[08:30]β 
+$ 
 ```
 
 
@@ -156,45 +151,48 @@ You can switch directly to another environment and `activate` will automatically
 
 I also use [Anaconda Pyhton](https://www.anaconda.com/distribution/) a little bit, which has its own method for managing virtual environments with the `conda` tool.  But activation and deactivation is a but clunky.  So my `activate` and `deactivate` functions also work with Anaconda.
 
-But now we have two *kinds* of Python virtual environments.  How is that handled?  Use `sucuri` (which is named after an Amazonian word for python) to switch to Anaconda-mode.  You'll get a reminder about it in your prompt:
+But now we have two *kinds* of Python virtual environments.  How is that handled?  Use `sucuri` (which is named after an Amazonian word for anaconda) to switch to Anaconda-mode. 
 
 ```sh
-[mjl@milo:~/hax]
-[08:30]β sucuri 
+$ sucuri 
 Anaconda: ACTIVATED 🐍
-[mjl@milo:~/hax]
-[08:32](🐍 )β
+$
 ```
 
-Yes, UTF-8 characters.  If your terminal doesn't handle that, my function takes care of you and uses ASCII instead.  Anyway, you can list your environments in the same way.  This time the conda environmens are listed instead of the virtualenv ones (using `conda info` &mdash; another thing you don't need to remember):
+Yes, that's a UTF-8 character.  If your terminal doesn't handle that, my function takes care of you and uses ASCII instead.
+
+>> Note that there's no other indication that Anaconda is active.  My [complicated bash prompt function](https://github.com/sinewalker/dotfiles/blob/1.1.1/source/20_prompt.sh) does give you some indication by adding a snake.  If you're interested, you can go down that rabit hole. I'll leave my prompts in place for the rest of this blog post.
+
+Anyway, you can list your environments in the same way.  This time the conda environmens are listed instead of the virtualenv ones (using `conda info` &mdash; another thing you don't need to remember):
 
 ```sh
 [mjl@milo:~/hax]
-[08:32](🐍 )β lsvenv 
+[08:32](🐍)β lsvenv 
 snowflakes
 root
 [mjl@milo:~/hax]
-[08:32](🐍 )β
+[08:32](🐍)β
 ```
 
 Activation is the same too:
 
 ```sh  
 [mjl@milo:~/hax]
-[08:32](🐍 )β activate snowflakes 
+[08:32](🐍)β activate snowflakes 
 [mjl@milo:~/hax]
-[08:32](🐍 -snowflakes)β which python
+[08:32](🐍-snowflakes)β which python
 /Users/mjl/lib/anaconda/envs/snowflakes/bin/python
 [mjl@milo:~/hax]
-[08:32](🐍 -snowflakes)β deactivate 
+[08:32](🐍-snowflakes)β deactivate 
 [mjl@milo:~/hax]
+[08:32](🐍)β
 ```
 
 In Anaconda-mode, you can use my `mkvenv` to make a conda environment, but I don't try to wrap all the special conda commands. Use `conda` if you want to do something more sophisticated, but for basic stuff, this is fine:
 
 ```sh
 [mjl@milo:~/hax]
-[08:35](🐍 )β mkvenv anotherenv
+[08:35](🐍)β mkvenv anotherenv
 mkvenv: Warning! Anaconda is active.
 This wrapper will use conda to create anotherenv, but it is only very basic.
 Fetching package metadata .........
@@ -212,7 +210,7 @@ Proceed ([y]/n)?
 #
 
 [mjl@milo:~/hax]
-[08:35](🐍 )β
+[08:35](🐍)β
 ```
 
   (Don't "use source activate anotherenv" &hellip; pfft.  Just activate anotherenv.)
@@ -221,7 +219,7 @@ Here's the new environment:
 
 ```sh
 [mjl@milo:~/hax]
-[08:35](🐍 )β lsvenv
+[08:35](🐍)β lsvenv
 anotherenv
 snowflakes
 root
@@ -231,19 +229,19 @@ Removing it *is* a bit tricky.  My `rmvenv` just gives up.  It does tell you how
 
 ```sh
 [mjl@milo:~/hax]
-[08:36](🐍 )β rmvenv anotherenv
+[08:36](🐍)β rmvenv anotherenv
 rmvenv: Warning! Anaconda is active.
 Consider using 'conda remove -all -n anotherenv' instead.
 Aborting.
 [mjl@milo:~/hax]
-[08:36](🐍 ) 3 β 
+[08:36](🐍) 3 β 
 ```
 
 At the end of your conda session, deactivate by running `sucuri` again:
 
 ```sh
 [mjl@milo:~/hax]
-[08:32](🐍 )β sucuri 
+[08:32](🐍)β sucuri 
 Anaconda: deactivated
 [mjl@milo:~/hax]
 [08:32]β

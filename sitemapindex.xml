@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>http://milosophical.me/authors/michael-lockhart.xml</loc>
-  <lastmod>2019-02-23T22:13:00Z</lastmod>
+  <lastmod>2019-02-24T10:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/authors/mike-lockhart.xml</loc>
@@ -139,11 +139,11 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/rss.xml</loc>
-  <lastmod>2019-02-23T22:13:00Z</lastmod>
+  <lastmod>2019-02-24T10:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/sitemap.xml</loc>
-  <lastmod>2019-02-23T22:13:00Z</lastmod>
+  <lastmod>2019-02-24T10:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/4-bit-rules.xml</loc>
@@ -191,7 +191,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/bash.xml</loc>
-  <lastmod>2019-02-23T22:13:00Z</lastmod>
+  <lastmod>2019-02-24T10:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/bind.xml</loc>
@@ -291,7 +291,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/code.xml</loc>
-  <lastmod>2019-02-23T22:13:00Z</lastmod>
+  <lastmod>2019-02-24T10:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/codec.xml</loc>
@@ -543,7 +543,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/hax.xml</loc>
-  <lastmod>2019-02-23T22:13:00Z</lastmod>
+  <lastmod>2019-02-24T10:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/help.xml</loc>
@@ -555,7 +555,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/howto.xml</loc>
-  <lastmod>2019-02-23T22:13:00Z</lastmod>
+  <lastmod>2019-02-24T10:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/ide.xml</loc>
@@ -847,7 +847,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/python.xml</loc>
-  <lastmod>2019-02-23T22:13:00Z</lastmod>
+  <lastmod>2019-02-24T10:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/quote.xml</loc>
