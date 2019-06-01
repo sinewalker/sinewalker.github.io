@@ -11,6 +11,7 @@ defusedxml==0.6.0
 docutils==0.14
 doit==0.31.1
 entrypoints==0.3
+ghp-import2==1.0.1
 husl==4.0.3
 idna==2.8
 ipykernel==5.1.1
