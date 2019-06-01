@@ -1,8 +1,8 @@
 /* to match dark code colors, background: #272822, color: #f8f822 */
 
-/* Titillium 
- Because this custom.css is embedded after the parant Theme, I can't use @include 
- 
+/* Titillium
+ Because this custom.css is embedded after the parent Theme, I can't use @include
+
  I'd also rather load the face here than through some link on the page, because then it's in a totally unrelated location (e.g. conf.py)
 */
 
