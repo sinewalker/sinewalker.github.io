@@ -19,17 +19,17 @@ This post is to remedy that.
 
 ----
 
-I have a small collection of bash functions which I use for creating and managing Python Virtual Environments with `virtualenv`.  I keep them in my [dotfiles](https://github.com/sinewalker/dotfiles/tree/1.1.1).  Rather than make you clone my *entire* dotfiles set up, I have modularised it down to two files which you can source. They are:
+I have a small collection of bash functions which I use for creating and managing Python Virtual Environments with `virtualenv`.  I keep them in my [dotfiles](https://github.com/sinewalker/dotfiles/tree/1.1.3).  Rather than make you clone my *entire* dotfiles set up, I have modularised it down to two files which you can source. They are:
 
- * [10_meta.sh](https://github.com/sinewalker/dotfiles/blob/1.1.1/source/10_meta.sh) (v1.1.1) - shell utility functions
- * [50_python.sh](https://github.com/sinewalker/dotfiles/blob/1.1.1/source/50_python.sh) (v1.1.1) - python utility functionts
+ * [10_meta.sh](https://github.com/sinewalker/dotfiles/blob/1.1.3/source/10_meta.sh) (v1.1.3) - shell utility functions
+ * [50_python.sh](https://github.com/sinewalker/dotfiles/blob/1.1.3/source/50_python.sh) (v1.1.3) - python utility functionts
 
 To use these, download the scripts to a place where you keep shell functions:
 
 ```sh
 cd path/to/your/shell/library
 for X in 10_meta.sh 50_python.sh; do
-  curl https://raw.githubusercontent.com/sinewalker/dotfiles/1.1.1/source/$X > $X
+  curl https://raw.githubusercontent.com/sinewalker/dotfiles/1.1.3/source/$X > $X
 done
 ```
 
@@ -45,7 +45,7 @@ Let's explore them.
 
 # Make an environment
 
-One of the most useful meta-functions that you just sourced from `10_meta.sh` is [describe](https://github.com/sinewalker/dotfiles/blob/1.1.1/source/10_meta.sh#L74), which I talk about more fully on [my post about Rule 6 - Doc Comments](/blog/2018/4-bits-part3.html).  
+One of the most useful meta-functions that you just sourced from `10_meta.sh` is [describe](https://github.com/sinewalker/dotfiles/blob/1.1.3/source/10_meta.sh#L83), which I talk about more fully on [my post about Rule 6 - Doc Comments](/blog/2018/4-bits-part3.html).  
 
 ```sh
 $ describe mkvenv 
@@ -60,7 +60,7 @@ $ echo $VIRTUALENV_BASE
 /Users/mjl/lib/python
 ```
 
-It's actually set in `50_python.sh` on [line 53](https://github.com/sinewalker/dotfiles/blob/1.1.1/source/50_python.sh#L53) as the `python` sub-directory of your `${LIBRARY}` directory, if you have one, or of your `${HOME}/lib` directory if you don't.  The following line just makes sure you have that directory.  All the virtual environments will be created in this location.  
+It's actually set in `50_python.sh` on [line 53](https://github.com/sinewalker/dotfiles/blob/1.1.3/source/50_python.sh#L53) as the `python` sub-directory of your `${LIBRARY}` directory, if you have one, or of your `${HOME}/lib` directory if you don't.  The following line just makes sure you have that directory.  All the virtual environments will be created in this location.  
 
 So `mkvenv` will create a virual environment for you:
 
@@ -161,7 +161,7 @@ $
 
 Yes, that's a UTF-8 character.  If your terminal doesn't handle that, my function takes care of you and uses ASCII instead.
 
->> Note that there's no other indication that Anaconda is active.  My [complicated bash prompt function](https://github.com/sinewalker/dotfiles/blob/1.1.1/source/20_prompt.sh) does give you some indication by adding a snake.  If you're interested, you can go down that rabit hole. I'll leave my prompts in place for the rest of this blog post.
+>> Note that there's no other indication that Anaconda is active.  My [complicated bash prompt function](https://github.com/sinewalker/dotfiles/blob/1.1.3/source/98_prompt.sh) does give you some indication by adding a snake.  If you're interested, you can go down that rabit hole. I'll leave my prompts in place for the rest of this blog post.
 
 Anyway, you can list your environments in the same way.  This time the conda environmens are listed instead of the virtualenv ones (using `conda info` &mdash; another thing you don't need to remember):
 

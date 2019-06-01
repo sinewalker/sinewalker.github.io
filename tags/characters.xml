@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Milosophical Me (Posts about characters)</title><link>http://milosophical.me/</link><description></description><atom:link href="http://milosophical.me/tags/characters.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2018 &lt;a href="mailto:sinewalker@gmail.com"&gt;Michael Lockhart&lt;/a&gt; 
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Milosophical Me (Posts about characters)</title><link>http://milosophical.me/</link><description></description><atom:link href="http://milosophical.me/tags/characters.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2019 &lt;a href="mailto:sinewalker@gmail.com"&gt;Michael Lockhart&lt;/a&gt; 
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License" style="border-width:0"
      src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"/&gt;&lt;/a&gt;
-</copyright><lastBuildDate>Sun, 30 Dec 2018 21:53:42 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>What are those J and L characters in email?</title><link>http://milosophical.me/blog/2015/what-are-those-j-and-l-characters-in-email.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;Do you receive email with a mystery "J" or "L" in them?&lt;/p&gt;
-&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;Fabulous! Thanks very much Mike J
+</copyright><lastBuildDate>Sat, 01 Jun 2019 12:37:56 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>What are those J and L characters in email?</title><link>http://milosophical.me/blog/2015/what-are-those-j-and-l-characters-in-email.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;Do you receive email with a mystery "J" or "L" in them?&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Fabulous&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt; &lt;span class="n"&gt;Thanks&lt;/span&gt; &lt;span class="n"&gt;very&lt;/span&gt; &lt;span class="n"&gt;much&lt;/span&gt; &lt;span class="n"&gt;Mike&lt;/span&gt; &lt;span class="n"&gt;J&lt;/span&gt;
 &lt;/pre&gt;
 
 

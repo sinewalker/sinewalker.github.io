@@ -193,31 +193,31 @@
 
 <hr>
 <p>At the <a href="http://www.mrelliott.info/huonbots/">Huon Robotics</a> lab I borrowed Bob's Ralink Technology Corp RT5370 USB WiFi adapter and plugged it into my Pi.  It works <a href="https://www.modmypi.com/blog/how-to-set-up-the-ralink-rt5370-wifi-dongle-on-raspian">without any weird jiggery-pokery</a>! (I should <a href="https://www.modmypi.com/raspberry-pi/accessories/wifi-dongles/wifi-dongle-nano-usb/">get myself one of these</a> - <a href="https://www.banggood.com/Wholesale-New-Mini-150Mbps-USB-WiFi-Wireless-Adapter-150M-Network-LAN-Card-802_11-ngb-p-39274.html?rmmds=detail-left-hotproducts">$6.64 from BangGood</a>).  Here's the <code>dmesg</code> output snippet for the WiFi device:</p>
-<pre class="code literal-block"><span></span>[    3.437549] usb 1-1.2: new high-speed USB device number 4 using dwc_otg
-[    3.565661] usb 1-1.2: New USB device found, idVendor=148f, idProduct=5370
-[    3.574731] usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
-[    3.584074] usb 1-1.2: Product: 802.11 n WLAN
-[    3.590766] usb 1-1.2: Manufacturer: Ralink
-[    3.596804] usb 1-1.2: SerialNumber: 1.0
-[    4.927442] udevd[159]: starting version 175
-[    8.057609] usb 1-1.2: reset high-speed USB device number 4 using dwc_otg
-[    8.248612] ieee80211 phy0: rt2x00_set_rt: Info - RT chipset 5390, rev 0502 detected
-[    8.467608] random: nonblocking pool is initialized
-[    8.488610] ieee80211 phy0: rt2x00_set_rf: Info - RF chipset 5370 detected
-[    8.553044] ieee80211 phy0: Selected rate control algorithm 'minstrel_ht'
-[    8.556921] usbcore: registered new interface driver rt2800usb
-[   22.415959] ieee80211 phy0: rt2x00lib_request_firmware: Info - Loading firmware file 'rt2870.bin'
-[   22.426198] ieee80211 phy0: rt2x00lib_request_firmware: Info - Firmware detected - version: 0.29
+<pre class="code literal-block"><span></span>[    <span class="mi">3</span>.<span class="mi">437549</span>] <span class="nv">usb</span> <span class="mi">1</span><span class="o">-</span><span class="mi">1</span>.<span class="mi">2</span>: <span class="nv">new</span> <span class="nv">high</span><span class="o">-</span><span class="nv">speed</span> <span class="nv">USB</span> <span class="nv">device</span> <span class="nv">number</span> <span class="mi">4</span> <span class="nv">using</span> <span class="nv">dwc_otg</span>
+[    <span class="mi">3</span>.<span class="mi">565661</span>] <span class="nv">usb</span> <span class="mi">1</span><span class="o">-</span><span class="mi">1</span>.<span class="mi">2</span>: <span class="nv">New</span> <span class="nv">USB</span> <span class="nv">device</span> <span class="nv">found</span>, <span class="nv">idVendor</span><span class="o">=</span><span class="mi">148</span><span class="nv">f</span>, <span class="nv">idProduct</span><span class="o">=</span><span class="mi">5370</span>
+[    <span class="mi">3</span>.<span class="mi">574731</span>] <span class="nv">usb</span> <span class="mi">1</span><span class="o">-</span><span class="mi">1</span>.<span class="mi">2</span>: <span class="nv">New</span> <span class="nv">USB</span> <span class="nv">device</span> <span class="nv">strings</span>: <span class="nv">Mfr</span><span class="o">=</span><span class="mi">1</span>, <span class="nv">Product</span><span class="o">=</span><span class="mi">2</span>, <span class="nv">SerialNumber</span><span class="o">=</span><span class="mi">3</span>
+[    <span class="mi">3</span>.<span class="mi">584074</span>] <span class="nv">usb</span> <span class="mi">1</span><span class="o">-</span><span class="mi">1</span>.<span class="mi">2</span>: <span class="nv">Product</span>: <span class="mi">802</span>.<span class="mi">11</span> <span class="nv">n</span> <span class="nv">WLAN</span>
+[    <span class="mi">3</span>.<span class="mi">590766</span>] <span class="nv">usb</span> <span class="mi">1</span><span class="o">-</span><span class="mi">1</span>.<span class="mi">2</span>: <span class="nv">Manufacturer</span>: <span class="nv">Ralink</span>
+[    <span class="mi">3</span>.<span class="mi">596804</span>] <span class="nv">usb</span> <span class="mi">1</span><span class="o">-</span><span class="mi">1</span>.<span class="mi">2</span>: <span class="nv">SerialNumber</span>: <span class="mi">1</span>.<span class="mi">0</span>
+[    <span class="mi">4</span>.<span class="mi">927442</span>] <span class="nv">udevd</span>[<span class="mi">159</span>]: <span class="nv">starting</span> <span class="nv">version</span> <span class="mi">175</span>
+[    <span class="mi">8</span>.<span class="mi">057609</span>] <span class="nv">usb</span> <span class="mi">1</span><span class="o">-</span><span class="mi">1</span>.<span class="mi">2</span>: <span class="nv">reset</span> <span class="nv">high</span><span class="o">-</span><span class="nv">speed</span> <span class="nv">USB</span> <span class="nv">device</span> <span class="nv">number</span> <span class="mi">4</span> <span class="nv">using</span> <span class="nv">dwc_otg</span>
+[    <span class="mi">8</span>.<span class="mi">248612</span>] <span class="nv">ieee80211</span> <span class="nv">phy0</span>: <span class="nv">rt2x00_set_rt</span>: <span class="nv">Info</span> <span class="o">-</span> <span class="nv">RT</span> <span class="nv">chipset</span> <span class="mi">5390</span>, <span class="nv">rev</span> <span class="mi">0502</span> <span class="nv">detected</span>
+[    <span class="mi">8</span>.<span class="mi">467608</span>] <span class="k">random</span>: <span class="nv">nonblocking</span> <span class="nv">pool</span> <span class="nv">is</span> <span class="nv">initialized</span>
+[    <span class="mi">8</span>.<span class="mi">488610</span>] <span class="nv">ieee80211</span> <span class="nv">phy0</span>: <span class="nv">rt2x00_set_rf</span>: <span class="nv">Info</span> <span class="o">-</span> <span class="nv">RF</span> <span class="nv">chipset</span> <span class="mi">5370</span> <span class="nv">detected</span>
+[    <span class="mi">8</span>.<span class="mi">553044</span>] <span class="nv">ieee80211</span> <span class="nv">phy0</span>: <span class="nv">Selected</span> <span class="nv">rate</span> <span class="nv">control</span> <span class="nv">algorithm</span> <span class="s1">'</span><span class="s">minstrel_ht</span><span class="s1">'</span>
+[    <span class="mi">8</span>.<span class="mi">556921</span>] <span class="nv">usbcore</span>: <span class="nv">registered</span> <span class="nv">new</span> <span class="nv">interface</span> <span class="nv">driver</span> <span class="nv">rt2800usb</span>
+[   <span class="mi">22</span>.<span class="mi">415959</span>] <span class="nv">ieee80211</span> <span class="nv">phy0</span>: <span class="nv">rt2x00lib_request_firmware</span>: <span class="nv">Info</span> <span class="o">-</span> <span class="nv">Loading</span> <span class="nv">firmware</span> <span class="nv">file</span> <span class="s1">'</span><span class="s">rt2870.bin</span><span class="s1">'</span>
+[   <span class="mi">22</span>.<span class="mi">426198</span>] <span class="nv">ieee80211</span> <span class="nv">phy0</span>: <span class="nv">rt2x00lib_request_firmware</span>: <span class="nv">Info</span> <span class="o">-</span> <span class="nv">Firmware</span> <span class="nv">detected</span> <span class="o">-</span> <span class="nv">version</span>: <span class="mi">0</span>.<span class="mi">29</span>
 </pre>
 
 
 <p>And the wlan0 interface starts up:</p>
-<pre class="code literal-block"><span></span>[   26.074025] wlan0: authenticate with 94:44:52:de:71:69
-[   26.138412] wlan0: send auth to 94:44:52:de:71:69 (try 1/3)
-[   26.140174] wlan0: authenticated
-[   26.147412] wlan0: associate with 94:44:52:de:71:69 (try 1/3)
-[   26.151524] wlan0: RX AssocResp from 94:44:52:de:71:69 (capab=0x411 status=0 aid=3)
-[   26.162793] wlan0: associated
+<pre class="code literal-block"><span></span>[   <span class="mi">26</span>.<span class="mi">074025</span>] <span class="nv">wlan0</span>: <span class="nv">authenticate</span> <span class="nv">with</span> <span class="mi">94</span>:<span class="mi">44</span>:<span class="mi">52</span>:<span class="nv">de</span>:<span class="mi">71</span>:<span class="mi">69</span>
+[   <span class="mi">26</span>.<span class="mi">138412</span>] <span class="nv">wlan0</span>: <span class="k">send</span> <span class="nv">auth</span> <span class="nv">to</span> <span class="mi">94</span>:<span class="mi">44</span>:<span class="mi">52</span>:<span class="nv">de</span>:<span class="mi">71</span>:<span class="mi">69</span> <span class="ss">(</span><span class="nv">try</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="ss">)</span>
+[   <span class="mi">26</span>.<span class="mi">140174</span>] <span class="nv">wlan0</span>: <span class="nv">authenticated</span>
+[   <span class="mi">26</span>.<span class="mi">147412</span>] <span class="nv">wlan0</span>: <span class="nv">associate</span> <span class="nv">with</span> <span class="mi">94</span>:<span class="mi">44</span>:<span class="mi">52</span>:<span class="nv">de</span>:<span class="mi">71</span>:<span class="mi">69</span> <span class="ss">(</span><span class="nv">try</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="ss">)</span>
+[   <span class="mi">26</span>.<span class="mi">151524</span>] <span class="nv">wlan0</span>: <span class="nv">RX</span> <span class="nv">AssocResp</span> <span class="nv">from</span> <span class="mi">94</span>:<span class="mi">44</span>:<span class="mi">52</span>:<span class="nv">de</span>:<span class="mi">71</span>:<span class="mi">69</span> <span class="ss">(</span><span class="nv">capab</span><span class="o">=</span><span class="mi">0</span><span class="nv">x411</span> <span class="nv">status</span><span class="o">=</span><span class="mi">0</span> <span class="nv">aid</span><span class="o">=</span><span class="mi">3</span><span class="ss">)</span>
+[   <span class="mi">26</span>.<span class="mi">162793</span>] <span class="nv">wlan0</span>: <span class="nv">associated</span>
 </pre>
 
 
@@ -226,12 +226,12 @@
 <h3></h3>
 <p>The Raspberry Pi website has a <a href="https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md">good article on setting up WiFi from the command line</a></p>
 <p>Here's my <code>/etc/wpa_supplicant/wpa_supplicant.conf</code>:</p>
-<pre class="code literal-block"><span></span>ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
-network={
-    ssid="belkin.3269"
-    psk="REDACTED"
-}
+<pre class="code literal-block"><span></span><span class="n">ctrl_interface</span><span class="o">=</span><span class="n">DIR</span><span class="o">=/</span><span class="n">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">wpa_supplicant</span> <span class="k">GROUP</span><span class="o">=</span><span class="n">netdev</span>
+<span class="n">update_config</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">network</span><span class="o">=</span><span class="err">{</span>
+    <span class="n">ssid</span><span class="o">=</span><span class="ss">"belkin.3269"</span>
+    <span class="n">psk</span><span class="o">=</span><span class="ss">"REDACTED"</span>
+<span class="err">}</span>
 </pre>
 
 
