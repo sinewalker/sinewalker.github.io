@@ -28,7 +28,7 @@ Before you leap to conclusions, this Rule isn't about [Test-driven development](
 My highest scoring [Stack Overflow answer](https://stackoverflow.com/questions/1434779/maximum-java-heap-size-of-a-32-bit-jvm-on-a-64-bit-os/7019624#7019624) to date has an insightful comment attached to it:
 
 >I like that you actually tested rather than made guesses.
->– Jim Hurne Aug 25 '11 at 18:01
+>– Jim Hume Aug 25 '11 at 18:01
 
 The reason he likes it is clear: rather than basing my answer upon conjecture, perhaps backed up with some research and cited references; I made a tool to observe what the maximum memory allocation on 32-bit JVMs actually is, and _then_ I started to think about what it means, and predict what would happen.
 
@@ -40,7 +40,7 @@ So the Rule is: you won't actually *know* the outcome *until you test it*.
 
 I am really drawing attention to the inner cycle of the Scientific Method (the part where data are gathered, predictions made, hypothesis refined and then re-tested).
 
-That's [Iterative Development](https://en.wikipedia.org/wiki/Iterative_and_incremental_development) (well, *more or less*&hellip;) ;-)
+That's [Iterative Development](https://en.wikipedia.org/wiki/Iterative_and_incremental_development) (well, *more or less*&hellip;) `;-)`
 
 So what about TDD then? Well I'll admit I haven't done much in my own work, but the ideas about it appeal.  Certainly there is a big advantage to 
 

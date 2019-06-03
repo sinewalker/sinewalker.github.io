@@ -1,7 +1,7 @@
 /* to match dark code colors, background: #272822, color: #f8f822 */
 
-/* Titillium 
- Because this custom.css is embedded after the parant Theme, I can't use @include 
+/* Titillium
+ Because this custom.css is embedded after the parent Theme, I can't use @include 
  
  I'd also rather load the face here than through some link on the page, because then it's in a totally unrelated location (e.g. conf.py)
 */
@@ -31,14 +31,24 @@
     --anchor-colour: #e37f2a;
     --anchor-hover-background: #20b2d2;  /* rgb (32,178,210) */
     --anchor-hover-colour: #ccf;
+    --anchor-text-glow:
+         0px  0px  7px  rgba(32,178,210,0.75),
+         0px  0px 14px  rgba(32,178,210,0.525),
+         0px  0px 21px  rgba(32,178,210,0.3625),
+         0px  0px 28px  rgba(32,178,210,0.25725),
+         1px  1px  1px  rgba(6%,6%,6%,1.0),
+        -1px -1px  1px  rgba(6%,6%,6%,1.0),
+         1px -1px  1px  rgba(6%,6%,6%,1.0),
+        -1px  1px  1px  rgba(6%,6%,6%,1.0);
     --tags: #74e;
+    --page-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkAgMAAAANjH3HAAAACVBMVEUaGhohISElJSUh9lebAAAB20lEQVRIx4XWuZXDMAwE0C0SAQtggIIYoAAEU+aKOHhYojTrYP2+QfOW/5QIJOih/q8HwF/pb3EX+UPIveYcQGgEHiu9hI+ihEc5Jz5KBIlRRRaJ1JtoSAl5Hw96hLB1/up1tnIXOck5jZQy+3iU2hAOKSH1JvwxHsp+5TLF5MOl1/MQXsVs1miXc+KDbYydyMeUgpPQreZ7fWidbNhkXNJSeAhc6qHmHD8AYovunYyEACWEbyIhNeB9fRrH3hFi0bGPLuEW7xCNaohw1vAlS805nfsrTspclB/hVdoqusg53eH7FWot+wjYpOViX8KbFFKTwlnzvj65P9H/vD0/hibYBGhPwlPO8TmxRsaxsNnrUmUXpNhirlJMPr6Hqq9k5Xn/8iYQHYIuQsWFC6Z87IOxLxHphSY4SpuiU87xJnJr5axfeRd+lnMExXpEWPpuZ1v7qZdNBOjiHzDREHX5fs5Zz9p6X0vVKbKKchlSl5rv+3p//FJ/PYvoKryI8vs+2G9lzRmnEKkh+BU8yDk515jDj/HAswu7CCz6U/Mxb/PnC9N41ndpU4hUU7JGk/C9PmP/M2xZYdvBW2PObyf1IUiIzoHmHW9yTncliYs9A9tVNppdShfgQaTLMf+j3X723tLeHgAAAABJRU5ErkJggg==);
 }
 
 body {
     background-color: var(--page-background);
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkAgMAAAANjH3HAAAACVBMVEUaGhohISElJSUh9lebAAAB20lEQVRIx4XWuZXDMAwE0C0SAQtggIIYoAAEU+aKOHhYojTrYP2+QfOW/5QIJOih/q8HwF/pb3EX+UPIveYcQGgEHiu9hI+ihEc5Jz5KBIlRRRaJ1JtoSAl5Hw96hLB1/up1tnIXOck5jZQy+3iU2hAOKSH1JvwxHsp+5TLF5MOl1/MQXsVs1miXc+KDbYydyMeUgpPQreZ7fWidbNhkXNJSeAhc6qHmHD8AYovunYyEACWEbyIhNeB9fRrH3hFi0bGPLuEW7xCNaohw1vAlS805nfsrTspclB/hVdoqusg53eH7FWot+wjYpOViX8KbFFKTwlnzvj65P9H/vD0/hibYBGhPwlPO8TmxRsaxsNnrUmUXpNhirlJMPr6Hqq9k5Xn/8iYQHYIuQsWFC6Z87IOxLxHphSY4SpuiU87xJnJr5axfeRd+lnMExXpEWPpuZ1v7qZdNBOjiHzDREHX5fs5Zz9p6X0vVKbKKchlSl5rv+3p//FJ/PYvoKryI8vs+2G9lzRmnEKkh+BU8yDk515jDj/HAswu7CCz6U/Mxb/PnC9N41ndpU4hUU7JGk/C9PmP/M2xZYdvBW2PObyf1IUiIzoHmHW9yTncliYs9A9tVNppdShfgQaTLMf+j3X723tLeHgAAAABJRU5ErkJggg==);
+    background-image: var(--page-image);
     color: var(--page-colour);
-    font-size: 17px; /*medium;*/
+    font-size: 18px;
     font-family: 'Titillium Web', sans-serif;
 }
 
@@ -46,20 +56,13 @@ a {
     color: var(--anchor-colour);
 }
 
+/* below, some parts are !important because I'm overriding Bootstrap things*/
 
 a:hover {
     background-color: transparent;
-    color: var(--anchor-hover-colour) !important; /*important because the drop-down menus in bootstrap have transparent colour*/
+    color: var(--anchor-hover-colour) !important; 
     text-decoration: none;
-    text-shadow:
-     0px  0px 7px  rgba(32,178,210,0.75),
-     0px  0px 14px rgba(32,178,210,0.525),
-     0px  0px 21px rgba(32,178,210,0.3625),
-     0px  0px 28px rgba(32,178,210,0.25725),
-     1px  1px 1px  rgba(6%,6%,6%,1.0),
-    -1px -1px 1px  rgba(6%,6%,6%,1.0),
-     1px -1px 1px  rgba(6%,6%,6%,1.0),
-    -1px  1px 1px  rgba(6%,6%,6%,1.0);
+    text-shadow: var(--anchor-text-glow);
 }
 
 ul.breadcrumb {

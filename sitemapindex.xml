@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>http://milosophical.me/authors/michael-lockhart.xml</loc>
-  <lastmod>2019-06-01T12:41:00Z</lastmod>
+  <lastmod>2019-06-03T00:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/authors/mike-lockhart.xml</loc>
@@ -139,15 +139,15 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/rss.xml</loc>
-  <lastmod>2019-06-01T12:41:00Z</lastmod>
+  <lastmod>2019-06-03T00:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/sitemap.xml</loc>
-  <lastmod>2019-06-01T12:41:00Z</lastmod>
+  <lastmod>2019-06-03T00:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/4-bit-rules.xml</loc>
-  <lastmod>2019-06-01T12:41:00Z</lastmod>
+  <lastmod>2019-06-03T00:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/aboutme.xml</loc>
@@ -223,7 +223,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/bugs.xml</loc>
-  <lastmod>2019-06-01T12:37:00Z</lastmod>
+  <lastmod>2019-06-03T00:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/build-deps.xml</loc>
@@ -291,7 +291,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/code.xml</loc>
-  <lastmod>2019-06-01T12:41:00Z</lastmod>
+  <lastmod>2019-06-03T00:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/codec.xml</loc>
@@ -343,7 +343,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/debugging.xml</loc>
-  <lastmod>2019-06-01T12:37:00Z</lastmod>
+  <lastmod>2019-06-03T00:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/delicious.xml</loc>
@@ -431,7 +431,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/engineering.xml</loc>
-  <lastmod>2019-06-01T12:37:00Z</lastmod>
+  <lastmod>2019-06-03T00:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/epub.xml</loc>
@@ -443,7 +443,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/experiments.xml</loc>
-  <lastmod>2019-06-01T12:37:00Z</lastmod>
+  <lastmod>2019-06-03T00:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/ext4fs.xml</loc>
@@ -815,7 +815,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/perfection.xml</loc>
-  <lastmod>2019-06-01T12:37:00Z</lastmod>
+  <lastmod>2019-06-03T00:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/pgp.xml</loc>
@@ -955,7 +955,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/tdd.xml</loc>
-  <lastmod>2019-06-01T12:37:00Z</lastmod>
+  <lastmod>2019-06-03T00:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/teleportation.xml</loc>
@@ -967,7 +967,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/testing.xml</loc>
-  <lastmod>2019-06-01T12:37:00Z</lastmod>
+  <lastmod>2019-06-03T00:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/thoughts.xml</loc>
@@ -983,7 +983,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/tip.xml</loc>
-  <lastmod>2019-06-01T12:41:00Z</lastmod>
+  <lastmod>2019-06-03T00:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/tomtom.xml</loc>
