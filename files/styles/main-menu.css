@@ -339,6 +339,16 @@ body {
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.8), 0 0 0 4px #006294;
 }
 
+.button-button.skin-gitlab {
+  background-image: url(../icons/icon-gitlab.png);
+  background-color: #006294;
+  box-shadow: 0 1px 0 0 black;
+}
+
+.button-button.skin-gitlab:focus {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.8), 0 0 0 4px #006294;
+}
+
 .button-button.skin-bitbucket {
   background-image: url(../icons/icon-bitbucket.png);
   background-color: #205081;
