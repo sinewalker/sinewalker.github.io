@@ -182,11 +182,10 @@ NAVIGATION_LINKS = {
         ('/pixels/index.html', 'Pixels'),
         (
             (
-                ('https://plus.google.com/+MichaelLockhart/posts', 'Microblog'),
-                ('https://www.twitter.com/milo_hax','Nanoblog'),
-                ('https://gist.github.com/sinewalker', 'Gists - social code'),
-                ('https://www.facebook.com/sinewalker', 'Facebook'),
-                ('mailto:sinewalker@gmail.com', 'Email'),
+                ('https://gist.github.com/sinewalker', 'Gists - Microblog'),
+                ('https://www.twitter.com/milo_hax','Tweets - Nanoblog'),
+                ('https://www.facebook.com/sinewalker', 'Facebook - Necessary Evil'),
+                ('mailto:sinewalker@gmail.com', 'Email - So 20th Century'),
             ),
             'Social'
         ),
@@ -197,6 +196,7 @@ NAVIGATION_LINKS = {
                 ('https://bitbucket.com/sinewalker', 'Bitbucket'),
                 ('https://codepen.io/sinewalker/','Codepen'),
                 ('',''),
+                ('https://gitlab.com/sinewalker','GitLab'),
                 ('https://sourceforge.net/u/sinewalker/profile/', 'SourceForge'),
             ),
             'Code'
@@ -214,10 +214,12 @@ NAVIGATION_LINKS = {
         (
             (
                 ('https://about.me/mikelockhart', 'About.me'),
-                ('/pg/colophon.html', 'About this site'),
-                ('https://calendar.google.com/calendar/embed?src=sinewalker@gmail.com&ctz=Australia/Sydney/', 'My calendar'),
                 ('https://www.linkedin.com/in/mikelockhart', 'LinkedIn'),
                 ('http://stackoverflow.com/users/776953/mike', 'Stack Overflow'),
+                ('',''),
+                ('/pg/colophon.html', 'About this site'),
+                ('https://github.com/sinewalker/sinewalker.github.io/wiki', 'Meta-Wiki'),
+                ('https://github.com/sinewalker/sinewalker.github.io/issues','Issues log'),
             ),
             'About'
         ),
