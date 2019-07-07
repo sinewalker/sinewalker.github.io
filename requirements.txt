@@ -1,4 +1,5 @@
 appnope==0.1.0
+argh==0.26.2
 attrs==19.1.0
 backcall==0.1.0
 bleach==3.1.0
@@ -36,6 +37,7 @@ Nikola==7.8.15
 notebook==5.7.8
 pandocfilters==1.4.2
 parso==0.4.0
+pathtools==0.1.2
 pexpect==4.7.0
 pickleshare==0.7.5
 piexif==1.1.2
@@ -49,6 +51,7 @@ Pyphen==0.9.5
 pyrsistent==0.15.2
 PyRSS2Gen==1.1
 python-dateutil==2.8.0
+PyYAML==5.1.1
 pyzmq==18.0.1
 requests==2.22.0
 Send2Trash==1.5.0
@@ -61,6 +64,7 @@ traitlets==4.3.2
 typogrify==2.0.7
 Unidecode==1.0.23
 urllib3==1.25.3
+watchdog==0.9.0
 wcwidth==0.1.7
 webassets==0.12.1
 webencodings==0.5.1
