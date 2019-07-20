@@ -47,3 +47,4 @@ A quick summary of my inclinations.
   * Hershy Bar Cookies `N' Creme *vs* Nestlé Milkybar &rarr; Milkybar
   * Coffee &rarr;  black
   * Tea &rarr;     Earl Grey, hot
+  * Whiskey, Whisky, or Bourbon &rarr; Bourbon 
