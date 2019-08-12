@@ -7624,3 +7624,9 @@ pre.literal-block, pre.doctest-block, pre.math, pre.code {
     margin-right: 1em;
     line-height: 1.25;
 }
+
+div.container:nth-child(1) {
+    background-color: var(--page-background);
+    position: fixed;
+    opacity: 0.8;
+}

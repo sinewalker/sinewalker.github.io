@@ -67,19 +67,19 @@
  </url>
  <url>
   <loc>http://milosophical.me/archive/2019/index.html</loc>
-  <lastmod>2019-07-06T21:51:00Z</lastmod>
+  <lastmod>2019-08-12T23:30:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/archive/archive.html</loc>
-  <lastmod>2019-07-06T21:51:00Z</lastmod>
+  <lastmod>2019-08-12T23:30:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/authors/index.html</loc>
-  <lastmod>2019-07-06T21:51:00Z</lastmod>
+  <lastmod>2019-08-12T23:30:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/authors/michael-lockhart.html</loc>
-  <lastmod>2019-07-06T21:51:00Z</lastmod>
+  <lastmod>2019-08-12T23:30:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/authors/mike-lockhart.html</loc>
@@ -627,7 +627,11 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/2019/python-virtualenv-wrappers.html</loc>
-  <lastmod>2019-07-06T21:51:00Z</lastmod>
+  <lastmod>2019-08-12T23:30:00Z</lastmod>
+ </url>
+ <url>
+  <loc>http://milosophical.me/blog/2019/toolsmithery-2019.html</loc>
+  <lastmod>2019-08-12T23:26:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-1.html</loc>
@@ -647,7 +651,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-13.html</loc>
-  <lastmod>2019-07-06T21:51:00Z</lastmod>
+  <lastmod>2019-08-12T23:30:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-2.html</loc>
@@ -683,7 +687,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/index.html</loc>
-  <lastmod>2019-07-06T21:51:00Z</lastmod>
+  <lastmod>2019-08-12T23:30:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/hax/codec/URL%20Decoder_Encoder.html</loc>
