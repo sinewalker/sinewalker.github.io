@@ -124,18 +124,57 @@ pre.literal-block, pre.doctest-block, pre.math, pre.code {
     line-height: 1.25;
 }
 
+/* Keep the menu bar in fixed position, floating above the page
+  This also works for the narrow mode */
 #bs-navbar {
     background-color: var(--page-background);
     position: fixed;
-    left: 20%;
     right: 0;
-    opacity: 0.9;
 }
 
+/* make the menu button float above the page in narrow mode */
+@media (min-width: 100px) {
+    #bs-navbar {
+        left: 55%;
+    }
+    button.navbar-toggle {
+        background-color: var(--page-background);
+        position: fixed;
+        right: 2%;
+    }
+}
 
+/* for middle-width pages, the Search and Source items will wrap
+   so pin them to the right, and have an angled gradient for the
+   fixed/floating menu bar */
 @media (min-width: 768px) {
     .navbar-right {
-        /* margin-right: -15px; */
         margin-right: -20%;
     }
+    #bs-navbar {
+        background: linear-gradient(10deg, rgba(0,0,0,0) 0%,
+        var(--page-background) 40%);
+        left: 18%;
+    }
+}
+
+/* wide pages can have a narrower right margin
+   and a straight lead-in gradient with padding */
+@media (min-width: 974px) {
+    .navbar-right {
+        margin-right: -15%;
+    }
+    #bs-navbar {
+        background: linear-gradient(to right, rgba(0,0,0,0) 0%,
+        var(--page-background) 10%);
+        left: 10%;
+        padding-left: 8%
+    }
+
+/* iPython propmpts */
+}
+div.prompt {
+    background-color: rgba(0,0,0,0) !important;
+    background: linear-gradient(to right, rgba(0,0,0,0) 0%,
+        var(--page-background) 100%);
 }
