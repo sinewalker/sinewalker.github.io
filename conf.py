@@ -40,6 +40,7 @@
 #   MJL20170322 - Upgrade to Nikola 7.8.3, remove STORY_INDEX=True
 #   MJL20170323 - Use NEW_POST_DATE_PATH_FORMAT
 #   MJL20180913 - Disable Google Analytics
+#   MJL20190902 - Shorten/nest Menu bar
 
 from __future__ import unicode_literals
 import time
@@ -175,11 +176,16 @@ TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ('/blog/index.html', 'Blog'),
-        ('/archive/archive.html', 'Archive'),
-        ('/tags/index.html', 'Tags'),
-        ('/pg/index.html', 'Codex'),
-        ('/pixels/index.html', 'Pixels'),
+        (
+            (
+                ('/blog/index.html', 'Blog'),
+                ('/archive/archive.html', 'Archive'),
+                ('/tags/index.html', 'Tags'),
+                ('/pg/index.html', 'Codex'),
+                ('/pixels/index.html', 'Pixels'),
+            ),
+            'Navigate',
+        ),
         (
             (
                 ('https://gist.github.com/sinewalker', 'Gists - Microblog'),
@@ -214,16 +220,17 @@ NAVIGATION_LINKS = {
         (
             (
                 ('https://about.me/mikelockhart', 'About.me'),
+                ('https://milohax.net', 'Milohax.net'),
                 ('https://www.linkedin.com/in/mikelockhart', 'LinkedIn'),
                 ('http://stackoverflow.com/users/776953/mike', 'Stack Overflow'),
                 ('',''),
                 ('/pg/colophon.html', 'About this site'),
+                ('/rss.xml', 'Rich Site Summary (RSS)'),
                 ('https://github.com/sinewalker/sinewalker.github.io/wiki', 'Meta-Wiki'),
                 ('https://github.com/sinewalker/sinewalker.github.io/issues','Issues log'),
             ),
             'About'
-        ),
-        ('/rss.xml', 'RSS')
+        )
     )
 }
 
