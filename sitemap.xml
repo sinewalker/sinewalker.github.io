@@ -67,19 +67,19 @@
  </url>
  <url>
   <loc>http://milosophical.me/archive/2019/index.html</loc>
-  <lastmod>2019-09-06T12:49:00Z</lastmod>
+  <lastmod>2019-09-06T13:20:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/archive/archive.html</loc>
-  <lastmod>2019-09-06T12:49:00Z</lastmod>
+  <lastmod>2019-09-06T13:11:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/authors/index.html</loc>
-  <lastmod>2019-09-06T12:49:00Z</lastmod>
+  <lastmod>2019-09-06T13:11:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/authors/michael-lockhart.html</loc>
-  <lastmod>2019-09-06T12:49:00Z</lastmod>
+  <lastmod>2019-09-06T13:20:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/authors/mike-lockhart.html</loc>
@@ -626,8 +626,12 @@
   <lastmod>2019-09-06T12:49:00Z</lastmod>
  </url>
  <url>
+  <loc>http://milosophical.me/blog/2019/interesting-times.html</loc>
+  <lastmod>2019-09-06T13:20:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://milosophical.me/blog/2019/python-virtualenv-wrappers.html</loc>
-  <lastmod>2019-09-06T12:49:00Z</lastmod>
+  <lastmod>2019-09-06T13:11:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-1.html</loc>
@@ -647,7 +651,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-13.html</loc>
-  <lastmod>2019-09-06T12:49:00Z</lastmod>
+  <lastmod>2019-09-06T13:11:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-2.html</loc>
@@ -683,7 +687,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/index.html</loc>
-  <lastmod>2019-09-06T12:49:00Z</lastmod>
+  <lastmod>2019-09-06T13:20:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/hax/codec/URL%20Decoder_Encoder.html</loc>
@@ -1138,6 +1142,10 @@
   <lastmod>2019-09-06T12:49:00Z</lastmod>
  </url>
  <url>
+  <loc>http://milosophical.me/tags/cat_life.html</loc>
+  <lastmod>2019-09-06T13:20:00Z</lastmod>
+ </url>
+ <url>
   <loc>http://milosophical.me/tags/cat_lore.html</loc>
   <lastmod>2019-09-06T12:49:00Z</lastmod>
  </url>
@@ -1483,7 +1491,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/index.html</loc>
-  <lastmod>2019-09-06T12:49:00Z</lastmod>
+  <lastmod>2019-09-06T13:11:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/iso-8859-1.html</loc>
@@ -1787,7 +1795,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/rant.html</loc>
-  <lastmod>2019-09-06T12:49:00Z</lastmod>
+  <lastmod>2019-09-06T13:20:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/raspberryjam.html</loc>
