@@ -23,7 +23,7 @@ Jinja2==2.10.1
 jsonschema==3.0.1
 jupyter-client==5.2.4
 jupyter-core==4.4.0
-Logbook==1.4.3
+Logbook==1.4.4
 lxml==4.3.3
 MacFSEvents==0.8.1
 Mako==1.0.11
@@ -51,7 +51,7 @@ Pyphen==0.9.5
 pyrsistent==0.15.2
 PyRSS2Gen==1.1
 python-dateutil==2.8.0
-PyYAML==5.1.1
+PyYAML==5.1.2
 pyzmq==18.0.1
 requests==2.22.0
 Send2Trash==1.5.0
