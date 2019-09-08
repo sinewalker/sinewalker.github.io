@@ -14,6 +14,7 @@ us. I haven't written in a while, sorry. I guess this year's been a bit of a
 downer, with all the horrible things going on in the world.
 
 <!-- TEASER_END -->
+----
 
 The Australian people decided to vote to keep the backwards conservative
 coalition again. Forget about the planet, the country's economy or our future.
