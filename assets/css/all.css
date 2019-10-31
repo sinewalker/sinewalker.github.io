@@ -767,6 +767,8 @@ article.post-micro {
   }
 
 :root {
+    --dark-transparent: rgba(156, 45, 45, 0);
+    --light-transparent: rgba(255,255,255,0);
     --code-background: #222; /*#272822;*/
     --code-colour: #f8f822;
     --page-background: #222;
@@ -875,6 +877,7 @@ pre.literal-block, pre.doctest-block, pre.math, pre.code {
     right: 0;
 }
 
+
 /* make the menu button float above the page in narrow mode */
 @media (min-width: 100px) {
     #bs-navbar {
@@ -884,6 +887,7 @@ pre.literal-block, pre.doctest-block, pre.math, pre.code {
         background-color: var(--page-background);
         position: fixed;
         right: 2%;
+        transition: 1.4s
     }
 }
 
@@ -892,32 +896,41 @@ pre.literal-block, pre.doctest-block, pre.math, pre.code {
    fixed/floating menu bar */
 @media (min-width: 768px) {
     .navbar-right {
-        margin-right: -20%;
+        margin-right: -25%;
     }
     #bs-navbar {
-        background: linear-gradient(10deg, rgba(0,0,0,0) 0%,
-        var(--page-background) 40%);
-        left: 18%;
+        background: linear-gradient(12deg, var(--dark-transparent) 0%,
+        var(--page-background) 45%);
+        left: 16%;
+        padding-left: 4%;
+        transition: 1.4s
+    }
+}
+@media (min-width: 924px) {
+    .navbar-right {
+        margin-right: -18%;
+    }
+    #bs-navbar {
+        background: linear-gradient(12deg, var(--dark-transparent) 0%,
+        var(--page-background) 45%);
+        left: 16%;
+        padding-left: 4%;
+        transition: 1.4s
     }
 }
 
 /* wide pages can have a narrower right margin
    and a straight lead-in gradient with padding */
-@media (min-width: 974px) {
+@media (min-width: 1014px) {
     .navbar-right {
-        margin-right: -15%;
+        margin-right: -18%;
     }
     #bs-navbar {
-        background: linear-gradient(to right, rgba(0,0,0,0) 0%,
-        var(--page-background) 10%);
-        left: 10%;
-        padding-left: 8%
+        background: linear-gradient(to right, var(--dark-transparent) 0%,
+        var(--page-background) 12%);
+        left: 8%;
+        padding-left: 12%;
+        transition: 1.4s
     }
 
-/* iPython propmpts */
-}
-div.prompt {
-    background-color: rgba(0,0,0,0) !important;
-    background: linear-gradient(to right, rgba(0,0,0,0) 0%,
-        var(--page-background) 100%);
-}
+
