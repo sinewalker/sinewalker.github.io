@@ -13,3 +13,4 @@ blog.code-workspace
 .ipynb_checkpoints
 mcpi
 .doit.db.db
+.python-version
