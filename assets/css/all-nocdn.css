@@ -7561,9 +7561,17 @@ a {
 
 /* below, some parts are !important because I'm overriding Bootstrap things*/
 
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    margin-top: 1.8em;
+    margin-bottom: 1.1em;
+    color: var(--anchor-colour);
+  }
+
 a:hover {
     background-color: transparent;
-    color: var(--anchor-hover-colour) !important; 
+    color: var(--anchor-hover-colour) !important;
     text-decoration: none;
     text-shadow: var(--anchor-text-glow);
 }
@@ -7690,5 +7698,3 @@ pre.literal-block, pre.doctest-block, pre.math, pre.code {
         padding-left: 12%;
         transition: 1.4s
     }
-
-

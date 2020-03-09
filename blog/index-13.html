@@ -177,7 +177,22 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2018/migrating-keepass-to-password-store.html" class="u-url">Password databases: Migrating from KeePassX to Pass</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2018/password-store-0.html" class="u-url">Password databases: setting up password-store on a Unix computer</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="2018/password-store-0.html" rel="bookmark"><time class="published dt-published" datetime="2018-06-24T07:23:41+10:00" title="2018-06-24 07:23">2018-06-24 07:23</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>Having <a href="2018/keepass-and-password-store.html">covered</a> what <a href="https://www.passwordstore.org/">pass</a> is, why I'm using it, and the required supporting tools <a href="https://gnupg.org/">gnupg</a>, <a href="https://git-scm.com/">git</a>, <a href="https://www.openssh.com/">ssh</a> and a <a href="https://www.gitlab.com/">private git remote</a>, it's time to go over how to put the system together.</p>
+<p>Setting it all up on a Unix computer is fairly straight-forward. Getting it onto an Android is a bit different.  So in this post I'll cover how the pieces of the system fit together, and then walk through setting it up on Unix.</p>
+<p>Synchronising your local password-store git repository with your remote store is done a bit differently depending if this is the <em>first</em> time you're setting up the remote, or if you already have a remote and you wish to merge it into your new local. I'll cover that too.</p>
+<p class="more"><a href="2018/password-store-0.html">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2018/migrating-keepass-to-password-store.html" class="u-url">Password databases: Migrating from KeePassX to Pass</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
@@ -371,7 +386,7 @@ For real <em>rigour</em>, there is much more required than a few simple rules. B
         <footer id="footer"><hr>Contents Copyright © 
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
 <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a>
- 2005 — 2019         <a href="mailto:sinewalker@gmail.com">Michael Lockhart</a>. Powered by <a href="https://getnikola.com" rel="nofollow"><img src="../img/nikola.png" alt="Nikola"></a>, <a href="https://github.com/syl20bnr/spacemacs"><img src="https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg" alt="built with Spacemacs"></a>
+ 2005 — 2020         <a href="mailto:sinewalker@gmail.com">Michael Lockhart</a>. Powered by <a href="https://getnikola.com" rel="nofollow"><img src="../img/nikola.png" alt="Nikola"></a>, <a href="https://github.com/syl20bnr/spacemacs"><img src="https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg" alt="built with Spacemacs"></a>
 
             
         </footer>
