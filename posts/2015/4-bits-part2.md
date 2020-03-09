@@ -165,7 +165,7 @@ My own comment pet peeves:
   that was not implemented*
 
 <a href="https://plus.google.com/116269726157614459607/posts/263et4zQMh3">
-  <img src="/img/SoManyLies.jpg" width="50%" height="50%"/>
+  <img src="/img/SoManyLies.jpg" width="18%" height="18%"/>
 </a>
 
    Please don't do these things. At best, you're filling your code
