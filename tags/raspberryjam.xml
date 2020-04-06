@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License" style="border-width:0"
      src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"/&gt;&lt;/a&gt;
-</copyright><lastBuildDate>Mon, 09 Mar 2020 10:55:59 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Minecrafting in Python 3</title><link>http://milosophical.me/blog/2020/minecraft-python-4.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;I've &lt;a href="http://milosophical.me/blog/2018/minecraft-python-2.html"&gt;already blogged about Python 3 and
+</copyright><lastBuildDate>Mon, 06 Apr 2020 22:26:55 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Minecrafting in Python 3</title><link>http://milosophical.me/blog/2020/minecraft-python-4.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;I've &lt;a href="http://milosophical.me/blog/2018/minecraft-python-2.html"&gt;already blogged about Python 3 and
 Minecraft&lt;/a&gt;, but there are some subtle things
 which I glossed over in that post.  I found when following my own notes that
 some of the steps are easy to skim over. I could explain a bit better what is
