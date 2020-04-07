@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>http://milosophical.me/authors/michael-lockhart.xml</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-07T00:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/authors/mike-lockhart.xml</loc>
@@ -22,12 +22,24 @@
   <lastmod>2020-04-06T22:26:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>http://milosophical.me/pixels/photos/Family/2020-backyard/rss.xml</loc>
+  <lastmod>2020-04-06T23:42:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>http://milosophical.me/pixels/photos/Family/Dad-and-Me/rss.xml</loc>
   <lastmod>2020-04-06T22:26:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/pixels/photos/Family/Kids/2012/rss.xml</loc>
   <lastmod>2020-04-06T22:26:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://milosophical.me/pixels/photos/Family/Kids/2020/backyard/rss.xml</loc>
+  <lastmod>2020-04-06T23:50:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://milosophical.me/pixels/photos/Family/Kids/2020/rss.xml</loc>
+  <lastmod>2020-04-06T23:49:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/pixels/photos/Family/Kids/ONL/Muddy/rss.xml</loc>
@@ -139,11 +151,11 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/rss.xml</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-07T00:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/sitemap.xml</loc>
-  <lastmod>2020-04-06T22:27:00Z</lastmod>
+  <lastmod>2020-04-07T00:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/4-bit-rules.xml</loc>
@@ -332,6 +344,10 @@
  <sitemap>
   <loc>http://milosophical.me/tags/copyright.xml</loc>
   <lastmod>2020-04-06T22:26:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://milosophical.me/tags/covid-19.xml</loc>
+  <lastmod>2020-04-07T00:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/cursor.xml</loc>
@@ -530,6 +546,10 @@
   <lastmod>2020-04-06T22:26:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>http://milosophical.me/tags/gratefulness.xml</loc>
+  <lastmod>2020-04-07T00:11:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>http://milosophical.me/tags/gratitude.xml</loc>
   <lastmod>2020-04-06T22:26:00Z</lastmod>
  </sitemap>
@@ -623,7 +643,7 @@
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/kids.xml</loc>
-  <lastmod>2020-04-06T22:27:00Z</lastmod>
+  <lastmod>2020-04-07T00:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/kobo.xml</loc>
@@ -636,6 +656,10 @@
  <sitemap>
   <loc>http://milosophical.me/tags/kubuntu.xml</loc>
   <lastmod>2020-04-06T22:27:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>http://milosophical.me/tags/life.xml</loc>
+  <lastmod>2020-04-07T00:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/linux.xml</loc>
@@ -1070,8 +1094,12 @@
   <lastmod>2020-04-06T22:26:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>http://milosophical.me/tags/work-life.xml</loc>
+  <lastmod>2020-04-07T00:11:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>http://milosophical.me/tags/work.xml</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-07T00:11:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>http://milosophical.me/tags/x11.xml</loc>

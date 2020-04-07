@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="Trying to make sense of the world upside-down">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Disruptor! What's going on?! | Milosophical Me</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#e37f2a;">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="http://milosophical.me/blog/2020/disruptor.html">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Michael Lockhart">
+<link rel="prev" href="minecraft-python-4.html" title="Minecrafting in Python 3" type="text/html">
+<meta property="og:site_name" content="Milosophical Me">
+<meta property="og:title" content="Disruptor! What's going on?!">
+<meta property="og:url" content="http://milosophical.me/blog/2020/disruptor.html">
+<meta property="og:description" content="Trying to make sense of the world upside-down">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2020-04-07T08:43:55+10:00">
+<meta property="article:tag" content="covid-19">
+<meta property="article:tag" content="gratefulness">
+<meta property="article:tag" content="kids">
+<meta property="article:tag" content="life">
+<meta property="article:tag" content="work">
+<meta property="article:tag" content="work-life">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://milosophical.me/">
+
+                <span id="blog-title">Milosophical Me</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" role="navigation" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Navigate <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="../index.html">Blog</a>
+                    </li>
+<li>
+<a href="../../archive/archive.html">Archive</a>
+                    </li>
+<li>
+<a href="../../tags/index.html">Tags</a>
+                    </li>
+<li>
+<a href="../../pg/index.html">Codex</a>
+                    </li>
+<li>
+<a href="../../pixels/index.html">Pixels</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Social <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://gist.github.com/sinewalker">Gists - Microblog</a>
+                    </li>
+<li>
+<a href="https://www.twitter.com/milo_hax">Tweets - Nanoblog</a>
+                    </li>
+<li>
+<a href="https://www.facebook.com/sinewalker">Facebook - Necessary Evil</a>
+                    </li>
+<li>
+<a href="mailto:sinewalker@gmail.com">Email - So 20th Century</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Code <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://github.com/sinewalker">GitHub</a>
+                    </li>
+<li>
+<a href="https://gist.github.com/sinewalker">Gists</a>
+                    </li>
+<li>
+<a href="https://bitbucket.com/sinewalker">Bitbucket</a>
+                    </li>
+<li>
+<a href="https://codepen.io/sinewalker/">Codepen</a>
+                    </li>
+<li class="active">
+<a href="#"> <span class="sr-only">(active)</span></a>
+                    </li>
+<li>
+<a href="https://gitlab.com/sinewalker">GitLab</a>
+                    </li>
+<li>
+<a href="https://sourceforge.net/u/sinewalker/profile/">SourceForge</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Jargon <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="../../jargon/index.html">Main page</a>
+                    </li>
+<li>
+<a href="../../jargon/html/index.html">Table of Content</a>
+                    </li>
+<li>
+<a href="../../jargon/html/lexicon.html">Lexicon</a>
+                    </li>
+<li>
+<a href="../../jargon/html/go01.html">Glossary</a>
+                    </li>
+<li>
+<a href="../../jargon/html/appendixa.html">Folklore</a>
+            </li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+<li>
+<a href="https://about.me/mikelockhart">About.me</a>
+                    </li>
+<li>
+<a href="https://milohax.net">Milohax.net</a>
+                    </li>
+<li>
+<a href="https://www.linkedin.com/in/mikelockhart">LinkedIn</a>
+                    </li>
+<li>
+<a href="http://stackoverflow.com/users/776953/mike">Stack Overflow</a>
+                    </li>
+<li class="active">
+<a href="#"> <span class="sr-only">(active)</span></a>
+                    </li>
+<li>
+<a href="../../pg/colophon.html">About this site</a>
+                    </li>
+<li>
+<a href="../../rss.xml">Rich Site Summary (RSS)</a>
+                    </li>
+<li>
+<a href="https://github.com/sinewalker/sinewalker.github.io/wiki">Meta-Wiki</a>
+                    </li>
+<li>
+<a href="https://github.com/sinewalker/sinewalker.github.io/issues">Issues log</a>
+            </li>
+</ul>
+</li>
+</ul>
+<!-- DuckDuckGo custom search --><form method="get" id="search" action="https://duckduckgo.com/" class="navbar-form navbar-right" role="search">
+<input type="hidden" name="sites" value="http://milosophical.me/"><input type="hidden" name="k8" value="#444444"><input type="hidden" name="k9" value="#D51920"><input type="hidden" name="kt" value="h"><input type="text" name="q" maxlength="255" placeholder="Search…" class="form-control"><input type="submit" value="DuckDuckGo Search" style="visibility: hidden;">
+</form>
+<!-- End of custom search -->
+
+
+            <ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="disruptor.md" id="sourcelink">Source</a>
+    </li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Disruptor! What's going on?!</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    <a href="../../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="#" rel="bookmark"><time class="published dt-published" datetime="2020-04-07T08:43:55+10:00" itemprop="datePublished" title="2020-04-07 08:43">2020-04-07 08:43</time></a></p>
+            
+        <p class="sourceline"><a href="disruptor.md" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>I wasn't going to write this. After all, this COVID-19 thing is mentioned <em>everywhere</em>, in <em>all</em> media, and I'm sick of reading about it. You must be too.</p>
+<p>But then I thought better of it. I can't very well pretend that nothing unusual is going on, and a few years from now, an absence of any mention of the world's current crisis will be disingenuous at best.</p>
+<p>So, here's Yet Another Coronavirus Story (YACS). In a deviation from my usual style, this is just a stream of thought. It's not a "how to survive and feel good in a pandemic" guide, or even "what I did to get through this". I don't know this, it's not what I'm writing. I'm just writing some thoughts.</p>
+<!-- TEASER_END -->
+
+<hr>
+<p>I thought this would be like SARS, or Swine/Bird Flu, or Mad Cow, or... whatever. It would spread a bit, maybe harm a lot of people, but that would be it. It would be contained. It's clearly not.</p>
+<p>The <a href="https://trekhleb.github.io/covid-19/">numbers of infected are bad</a>, sure, but it's the death toll that is most shocking. And it's a horrible way to die: being scared and unable to breath. I watched my grandfather die of emphysema, I imagine it's very much like that.</p>
+<p>The reaction of the world, while it makes some sense, is also crazy and intense. We've all had to become hermits. Some of us are selfishly hoarding supplies (food, masks, toilet-paper) making it difficult for the rest to even just get what they need. Like doctors, which I find the most upsetting: doctors going wih 5-day old masks while strangers are walking the streets wearing theirs, for no purpose.</p>
+<p>For introverts like me this stay-at-home mission is fine. For extroverts I imagine it's a frustrating, scary, itchy, enclosed feeling of dread. I suppose that, much like when I must go to a crowd of strangers, it's something that these people will get used to. But, some women and children are trapped at home with abusive men. That's not something to get used to, it's something to escape, somehow.</p>
+<p>There's a lot of angst in my head.</p>
+<p>I fear what will happen in the future, even assuming we ever return to normal. Best not to dwell too much on that because it's a deep dark cavern of fears which may never eventuate, and not much I can do even if they should.</p>
+<p>Job security is a concern for me, and I know people who have or will be losing their jobs.</p>
+<p>And, ignoring all the bad, there are people who are trying to overcome this and stay positive. I applaud them, but I can also see the reactions of others, who resent these people "living their best lives" while they are struggling to juggle very young children and an office job (at home), or who must put themselves at risk to continue their work.</p>
+<p>It's all too much to handle.</p>
+<hr>
+<p>My own situation is that I'm at a cross-road. I can see that for my professional life, things won't remain the same. This is actually a Good Thing on many levels. A lot of change to some things I've felt could be done better, will be done better, sooner. I miss the daily interaction and banter with my co-workers something fearce though. This surprised me quite a bit, I thought this would translate to online interaction but we all need to get better at it, especially me: I flip between being up-to-date on Slack but getting no work done, or being deep in the zone on a work task and not even seeing notifications. For <em>hours</em>.</p>
+<p>At home, I'm appreciating the close interaction with family. We had planned to go on a four-week camping trip beginning on the 23rd of March. So we're very glad that we had enough warning to postpone <em>that</em> plan, otherwise we'd be self-isolating in a camper trailer.</p>
+<p>We had a back-yard camp fire instead. This is the first time we got to use the fire bowl I was given for my birthday (we had fire restrictions all Summer - another disaster that's almost forgotten in the wake of recent global events).  Scorched the lawn, but that was a small sacrifice: it'll grow back.</p>
+<p></p>
+<center>
+<img alt="" src="../../pixels/photos/Family/Kids/2020/backyard/campfire0.jpg"><br><a href="../../pixels/photos/Family/Kids/2020/backyard/">Some backyard-camping photos</a>
+</center>
+<p>I'm on leave now, at home, for two weeks instead of four. It'll be a time to reflect, to connect with each other and this house that we love. I've already picked up a few house projects, and there are some hobbies I'd like to take up, for myself as well as with the kids. It's going to be a good break.</p>
+<p>I'm also going to make some time to fix myself up a bit. All those little things I've been putting off because I'm too busy: polish my online presence a bit, resurrect my (private) journal, make more personal posts on my blog, because it helps me to be clear about where I am and where I'm headed.</p>
+<hr>
+<h3>Things I am grateful for</h3>
+<ul>
+<li>We are safe at home, not stuck on an interstate trip somewhere on a road-side</li>
+<li>We have a home that we love, with a big back yard and things to do outside</li>
+<li>We are all healthy</li>
+<li>We can still call (and even <em>see</em>) friends and family</li>
+<li>Our kids are very patient and understanding</li>
+<li>We can do nearly everything we need to do online</li>
+<li>We have walls full of books, and games, and hours of online enterntainment</li>
+<li>We have all the basic supplies to last a few weeks</li>
+<li>We aren't <em>yet</em> locked down, so we can still take walks in the neighborhood</li>
+<li>I can work at home, and keep an income</li>
+<li>I have a break from work right now, so I can start to get my mind in check</li>
+<li>We all have access to support for mental health, should we need it</li>
+</ul>
+<p>We're going to be okay. Even if some of the bad things happen, even if we get sick. For most people this is true, too. All I can do for now is to stay positive, work on things that I can, and be hopeful for the future.</p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../tags/covid-19.html" rel="tag">covid-19</a></li>
+            <li><a class="tag p-category" href="../../tags/gratefulness.html" rel="tag">gratefulness</a></li>
+            <li><a class="tag p-category" href="../../tags/kids.html" rel="tag">kids</a></li>
+            <li><a class="tag p-category" href="../../tags/life.html" rel="tag">life</a></li>
+            <li><a class="tag p-category" href="../../tags/work.html" rel="tag">work</a></li>
+            <li><a class="tag p-category" href="../../tags/work-life.html" rel="tag">work-life</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="minecraft-python-4.html" rel="prev" title="Minecrafting in Python 3">Previous post</a>
+            </li>
+        </ul></nav></aside></article>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer"><hr>Contents Copyright © 
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a>
+ 2005 — 2020         <a href="mailto:sinewalker@gmail.com">Michael Lockhart</a>. Powered by <a href="https://getnikola.com" rel="nofollow"><img src="../../img/nikola.png" alt="Nikola"></a>, <a href="https://github.com/syl20bnr/spacemacs"><img src="https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg" alt="built with Spacemacs"></a>
+
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
+</body>
+</html>
