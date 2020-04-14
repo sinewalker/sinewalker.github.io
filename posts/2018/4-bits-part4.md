@@ -32,7 +32,7 @@ My highest scoring [Stack Overflow answer](https://stackoverflow.com/questions/1
 
 The reason he likes it is clear: rather than basing my answer upon conjecture, perhaps backed up with some research and cited references; I made a tool to observe what the maximum memory allocation on 32-bit JVMs actually is, and _then_ I started to think about what it means, and predict what would happen.
 
-That's the [Scientific Method](https://en.wikipedia.org/wiki/Scientific_method#History,_philosophy,_sociology) (well, *more-or-less*&hellip;)
+That's the [Scientific Method](https://en.wikipedia.org/wiki/Scientific_method) (well, *more-or-less*&hellip;)
 
 So the Rule is: you won't actually *know* the outcome *until you test it*. 
 

@@ -163,13 +163,13 @@ IPython and Jupyter have an online inspection help system that provides somethin
 
 # Wait, did you say you can test doc-comments?
 
-Python's [doctest](https://pymotw.com/2/doctest/) module (*Python Module of the Month*, covers Python2; or see the [Python 3 documentation](https://docs.python.org/3/library/doctest.html#module-doctest)) provides a way to include your module's test cases within the code. This is a super facility that is well worth your time exploring.  See my [Rule 7](/pg/4-bit-rules.html).
+Python's [doctest](https://pymotw.com/2/doctest/) module (*Python Module of the Month*, covers Python2; or see the [Python 3 documentation](https://docs.python.org/3/library/doctest.html#module-doctest)) provides a way to include your module's test cases within the code. This is a super facility that is well worth your time exploring.  See my [Rule 7](/blog/2018/4-bits-part4.html).
 
 # Regular strings as doc-comments
 
 I have rolled my own doc-comments system in at least one language that doesn't have them:  **Bash**, which is the default Unix shell for GNU systems and many BSD ones also.
 
-It is documented on my [dotfiles project wiki on GitHub](https://github.com/sinewalker/dotfiles/wiki/Self-documenting-functions) as well as within [the code itself](https://github.com/sinewalker/dotfiles/blob/1.0/source/10_meta.sh), of course!  Take a look at it. 
+It is documented on my [dotfiles project wiki on GitHub](https://github.com/sinewalker/dotfiles/wiki/Self-documenting-functions) as well as within [the code itself](https://github.com/sinewalker/dotfiles/blob/1.2.1/source/10_meta.sh), of course!  Take a look at it. 
 
 With this, and provided that the functions include a `$FUNCDESC` doc-comment that followes a few [simple conventions](https://github.com/sinewalker/dotfiles/wiki/Self-documenting-functions#coding-conventions), you can interactively explore my various esoteric shell functions.
 
@@ -187,7 +187,7 @@ Fn: describe in /Users/mjl/.dotfiles/source/10_meta.sh line 65
 [08:14]$
 ```
 
-My [describe](https://github.com/sinewalker/dotfiles/blob/1.0/source/10_meta.sh#L65) function tells you *where a shell function comes from, and a quick summary description from the doc-comment*. It's a bit like emacs' `describe-function`. 
+My [describe](https://github.com/sinewalker/dotfiles/blob/1.2.1/source/10_meta.sh#L73) function tells you *where a shell function comes from, and a quick summary description from the doc-comment*. It's a bit like emacs' `describe-function`. 
 
 What if we want to see all of the doumentation, and the code? Well, we *could* look in that file, or we can just `list` the function, as it has been loaded into memory:
 
@@ -223,7 +223,7 @@ This function requires shopt -s extdebug to show file and line details.';
 
 Because the doc-comment is actually stored as an *environment variable*, it is included in this listing, whereas normal shell comments are not shown by Bash's `type` builtin function (the comments are ignored when the file is `source`d).
 
-The `describe` function above just prints the first line of the code that matches the pattern `FUNCDESC`. To see the whole function instead, use [list](https://github.com/sinewalker/dotfiles/blob/1.0/source/10_meta.sh#L90) like above.  Listing `list` is left as an exercise for the reader.
+The `describe` function above just prints the first line of the code that matches the pattern `FUNCDESC`. To see the whole function instead, use [list](https://github.com/sinewalker/dotfiles/blob/1.2.1/source/10_meta.sh#L121) like above.  Listing `list` is left as an exercise for the reader.
 
 The same `$FUNCDESC` variable is also referenced in the call to my `usage` function, to show how to use the function when you make an error. Here it is in action:
 
@@ -243,7 +243,7 @@ Must supply a function to describe.
 
 ## LOOKing around
 
-You can list *all* the current Bash functions with [functions](https://github.com/sinewalker/dotfiles/blob/1.0/source/10_meta.sh#L41):
+You can list *all* the current Bash functions with [functions](https://github.com/sinewalker/dotfiles/blob/1.2.1/source/10_meta.sh#L49):
 
 ```
 
