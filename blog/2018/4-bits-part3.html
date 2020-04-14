@@ -337,10 +337,10 @@
 
 <p>IPython and Jupyter have an online inspection help system that provides something very similar, also driven by Python's <em>docstrings</em>.</p>
 <h2>Wait, did you say you can test doc-comments?</h2>
-<p>Python's <a href="https://pymotw.com/2/doctest/">doctest</a> module (<em>Python Module of the Month</em>, covers Python2; or see the <a href="https://docs.python.org/3/library/doctest.html#module-doctest">Python 3 documentation</a>) provides a way to include your module's test cases within the code. This is a super facility that is well worth your time exploring.  See my <a href="../../pg/4-bit-rules.html">Rule 7</a>.</p>
+<p>Python's <a href="https://pymotw.com/2/doctest/">doctest</a> module (<em>Python Module of the Month</em>, covers Python2; or see the <a href="https://docs.python.org/3/library/doctest.html#module-doctest">Python 3 documentation</a>) provides a way to include your module's test cases within the code. This is a super facility that is well worth your time exploring.  See my <a href="4-bits-part4.html">Rule 7</a>.</p>
 <h2>Regular strings as doc-comments</h2>
 <p>I have rolled my own doc-comments system in at least one language that doesn't have them:  <strong>Bash</strong>, which is the default Unix shell for GNU systems and many BSD ones also.</p>
-<p>It is documented on my <a href="https://github.com/sinewalker/dotfiles/wiki/Self-documenting-functions">dotfiles project wiki on GitHub</a> as well as within <a href="https://github.com/sinewalker/dotfiles/blob/1.0/source/10_meta.sh">the code itself</a>, of course!  Take a look at it. </p>
+<p>It is documented on my <a href="https://github.com/sinewalker/dotfiles/wiki/Self-documenting-functions">dotfiles project wiki on GitHub</a> as well as within <a href="https://github.com/sinewalker/dotfiles/blob/1.2.1/source/10_meta.sh">the code itself</a>, of course!  Take a look at it. </p>
 <p>With this, and provided that the functions include a <code>$FUNCDESC</code> doc-comment that followes a few <a href="https://github.com/sinewalker/dotfiles/wiki/Self-documenting-functions#coding-conventions">simple conventions</a>, you can interactively explore my various esoteric shell functions.</p>
 <p>Let's explore the system itself:</p>
 <h3>Describing and Listing shell functions</h3>
@@ -353,7 +353,7 @@
 </pre>
 
 
-<p>My <a href="https://github.com/sinewalker/dotfiles/blob/1.0/source/10_meta.sh#L65">describe</a> function tells you <em>where a shell function comes from, and a quick summary description from the doc-comment</em>. It's a bit like emacs' <code>describe-function</code>. </p>
+<p>My <a href="https://github.com/sinewalker/dotfiles/blob/1.2.1/source/10_meta.sh#L73">describe</a> function tells you <em>where a shell function comes from, and a quick summary description from the doc-comment</em>. It's a bit like emacs' <code>describe-function</code>. </p>
 <p>What if we want to see all of the doumentation, and the code? Well, we <em>could</em> look in that file, or we can just <code>list</code> the function, as it has been loaded into memory:</p>
 <pre class="code literal-block"><span></span><span class="o">[</span>mjl@milo:~/hax<span class="o">]</span>
 <span class="o">[</span><span class="m">08</span>:14<span class="o">]</span>$ list describe
@@ -385,7 +385,7 @@ describe <span class="o">()</span>
 
 
 <p>Because the doc-comment is actually stored as an <em>environment variable</em>, it is included in this listing, whereas normal shell comments are not shown by Bash's <code>type</code> builtin function (the comments are ignored when the file is <code>source</code>d).</p>
-<p>The <code>describe</code> function above just prints the first line of the code that matches the pattern <code>FUNCDESC</code>. To see the whole function instead, use <a href="https://github.com/sinewalker/dotfiles/blob/1.0/source/10_meta.sh#L90">list</a> like above.  Listing <code>list</code> is left as an exercise for the reader.</p>
+<p>The <code>describe</code> function above just prints the first line of the code that matches the pattern <code>FUNCDESC</code>. To see the whole function instead, use <a href="https://github.com/sinewalker/dotfiles/blob/1.2.1/source/10_meta.sh#L121">list</a> like above.  Listing <code>list</code> is left as an exercise for the reader.</p>
 <p>The same <code>$FUNCDESC</code> variable is also referenced in the call to my <code>usage</code> function, to show how to use the function when you make an error. Here it is in action:</p>
 <pre class="code literal-block"><span></span><span class="k">[mjl@milo:~]</span>
 <span class="na">[09:46]$ describe</span>
@@ -401,7 +401,7 @@ describe <span class="o">()</span>
 
 
 <h3>LOOKing around</h3>
-<p>You can list <em>all</em> the current Bash functions with <a href="https://github.com/sinewalker/dotfiles/blob/1.0/source/10_meta.sh#L41">functions</a>:</p>
+<p>You can list <em>all</em> the current Bash functions with <a href="https://github.com/sinewalker/dotfiles/blob/1.2.1/source/10_meta.sh#L49">functions</a>:</p>
 <pre class="code literal-block"><span></span><span class="k">[mjl@milo:~/hax]</span>
 <span class="na">[08:19]$ functions</span>
 <span class="na">activate</span>

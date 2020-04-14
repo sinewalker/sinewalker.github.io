@@ -56,7 +56,7 @@ the same vein that
 [Edsger Dijkstra](http://en.wikipedia.org/wiki/Edsger_W._Dijkstra)
 [treated `GOTO`](http://www.u.arizona.edu/~rubinson/copyright_violations/Go_To_Considered_Harmful.html)**:
 *avoid it where you can*.  This is exactly in accordance with the advice
-in *[Rule 3](/blog/4-bit-rules-of-computing-part-0)*, specifically
+in *[Rule 3](/blog/4-bit-rules-of-computing-part-0.html)*, specifically
 Rule 3.8: "&hellip;*practicality beats purity*".
 
 Misuse of code comments
@@ -197,7 +197,7 @@ that really deserves a [Literate
 Programming](http://www.literateprogramming.com/) approach), well *then* I think
 *you* ***should*** *be using comments* ***liberally***.
 
-But keep [Rule 0](/pg/4-bit-rules-part-0) and Rule 2 in mind.
+But keep [Rule 0](/blog/2015/4-bit-rules-of-computirg-part-0.html) and Rule 2 in mind.
 
 ----
 

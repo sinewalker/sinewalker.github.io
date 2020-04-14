@@ -51,7 +51,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/archive/2015/index.html</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-14T23:37:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/archive/2016/index.html</loc>
@@ -63,7 +63,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/archive/2018/index.html</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-14T23:21:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/archive/2019/index.html</loc>
@@ -83,7 +83,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/authors/michael-lockhart.html</loc>
-  <lastmod>2020-04-07T00:11:00Z</lastmod>
+  <lastmod>2020-04-14T23:37:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/authors/mike-lockhart.html</loc>
@@ -471,15 +471,15 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/2015/4-bit-rules-of-computing-part-0.html</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-14T23:07:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/2015/4-bit-rules-of-computing-part-1.html</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-14T23:34:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/2015/4-bit-rules-of-computing-part-2.html</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-14T23:37:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/2015/firefox-spelling.html</loc>
@@ -571,11 +571,11 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/2018/4-bits-part3.html</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-14T23:19:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/2018/4-bits-part4.html</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-14T23:21:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/2018/every-rose-has-its-prickle.html</loc>
@@ -659,11 +659,11 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-10.html</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-14T23:07:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-11.html</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-14T23:37:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-12.html</loc>
@@ -671,7 +671,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-13.html</loc>
-  <lastmod>2020-04-06T23:42:00Z</lastmod>
+  <lastmod>2020-04-14T23:21:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/blog/index-14.html</loc>
@@ -938,10 +938,6 @@
   <lastmod>2020-04-06T22:26:00Z</lastmod>
  </url>
  <url>
-  <loc>http://milosophical.me/pixels/photos/Family/2020-backyard/index.html</loc>
-  <lastmod>2020-04-06T23:42:00Z</lastmod>
- </url>
- <url>
   <loc>http://milosophical.me/pixels/photos/Family/Dad-and-Me/index.html</loc>
   <lastmod>2020-04-06T22:26:00Z</lastmod>
  </url>
@@ -1063,7 +1059,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/4-bit-rules.html</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-14T23:37:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/aboutme.html</loc>
@@ -1107,7 +1103,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/bash.html</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-14T23:19:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/bind.html</loc>
@@ -1123,7 +1119,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/blogging.html</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-14T23:34:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/book.html</loc>
@@ -1143,7 +1139,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/bugs.html</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-14T23:21:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/build-deps.html</loc>
@@ -1159,7 +1155,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/cat_blog.html</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-14T23:34:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/cat_hacking.html</loc>
@@ -1183,7 +1179,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/cat_lore.html</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-14T23:37:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/certificates.html</loc>
@@ -1219,7 +1215,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/code.html</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-14T23:21:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/codec.html</loc>
@@ -1235,7 +1231,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/comments.html</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-14T23:37:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/computers.html</loc>
@@ -1275,7 +1271,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/debugging.html</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-14T23:21:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/delicious.html</loc>
@@ -1367,7 +1363,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/engineering.html</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-14T23:21:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/epub.html</loc>
@@ -1379,7 +1375,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/experiments.html</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-14T23:21:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/ext4fs.html</loc>
@@ -1567,7 +1563,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/journal.html</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-14T23:34:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/journald.html</loc>
@@ -1627,7 +1623,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/literate.html</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-14T23:37:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/look-and-feel.html</loc>
@@ -1747,7 +1743,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/notebook.html</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-14T23:34:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/nx.html</loc>
@@ -1811,7 +1807,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/perfection.html</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-14T23:21:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/pgp.html</loc>
@@ -1955,7 +1951,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/tdd.html</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-14T23:21:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/teleportation.html</loc>
@@ -1967,7 +1963,7 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/testing.html</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-14T23:21:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/thoughts-1.html</loc>
@@ -1995,11 +1991,11 @@
  </url>
  <url>
   <loc>http://milosophical.me/tags/tip-3.html</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-14T23:07:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/tip.html</loc>
-  <lastmod>2020-04-06T22:26:00Z</lastmod>
+  <lastmod>2020-04-14T23:37:00Z</lastmod>
  </url>
  <url>
   <loc>http://milosophical.me/tags/tomtom.html</loc>

@@ -27,7 +27,7 @@ roughly every week.
 *(or, indeed, a blog)*
 
 One of the undergrad modules in my 
-[UTas](http://www.utas.edu.au/computing-information-systems) degree was 
+[UTas](https://www.utas.edu.au/technology-environments-design/ict) degree was 
 Computer Security, and as well as the dreary, dry textbooks I've forgotten 
 about, we read *The Cuckoo's Egg* by [Clifford 
 Stoll](http://en.wikipedia.org/wiki/The_Cuckoo's_Egg). It's a fun read, and 
@@ -62,7 +62,7 @@ you were thinking &mdash; because you left careful, searchable notes.
 
 I like to record the following in my notes:
 
-* The date and time (I have [key bindings for this](https://github.com/sinewalker/dotspacemacs/blob/master/layers/mjl/keybindings.el#L306) in Emacs)
+* The date and time (I have [key bindings for this](https://github.com/sinewalker/dotspacemacs/blob/0.300.0/layers/mjl/keybindings.el#L326) in Emacs)
 * What are my goals?
 * Hypotheses.  What data do I need?  How will I get those?
 * Steps for setting up build/test/run apparatus

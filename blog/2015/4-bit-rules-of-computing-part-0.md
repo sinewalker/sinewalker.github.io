@@ -32,8 +32,8 @@ broken too &mdash; relational databases should be 3rd Normal Form, for
 instance (not always).
 
 Speaking of rules that you should not follow blindly, check out [this
-presentation on YouTube](www.youtube.com/watch?v=wf-BqAjZb8M) by
-Raymond Hettinge, about why Python PEP 8 is not always helpful, and how
+presentation on YouTube](https://www.youtube.com/watch?v=wf-BqAjZb8M) by
+Raymond Hettinger, about why Python PEP 8 is not always helpful, and how
 one should think beyond just mechanically conforming to its
 requirements. This distils pretty much what I mean by Rule 0. There's
 lots about PEP 8 that's great, but following it to the detriment of
