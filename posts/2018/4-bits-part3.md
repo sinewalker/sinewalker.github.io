@@ -38,7 +38,7 @@ Most languages that have this facility call it [Docstrings](https://en.wikipedia
 
 ## What is a doc-comment?
 
-Like regular comments, you use these to describe the code in a natural human language, let's say English (*Solo sé un poco de Español*).  Where doc-comments are different is, they have special features that are designed to be parsed by development tools to assist programmers directly, not just to be read by human eyes and ignored by compilers or interpreters.
+Like regular comments, you use these to describe the code in a natural human language, let's say English (*solo sé un poco de español*).  Where doc-comments are different is, they have special features that are designed to be parsed by development tools to assist programmers directly, not just to be read by human eyes and ignored by compilers or interpreters.
 
 Let's see how doc-comments address the problems I outlined with regular comments:
 
