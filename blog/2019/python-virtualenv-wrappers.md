@@ -9,6 +9,13 @@
 .. type: text
 -->
 
+----
+**UPDATE 2020-04-16 This is not how you should do it**
+
+> *These instructions and tools are great if you're going to use Python 2 and Virtualenv. But Python 2 is dead, and there are better ways to do this in Python 3. [I'm still exploring the best ways](https://www.explainxkcd.com/wiki/index.php/1987:_Python_Environment), but I am leaning towards using [pyenv + pyenv-virtualenv](https://realpython.com/intro-to-pyenv/#virtual-environments-and-pyenv) (or [python venvs](https://docs.python.org/3/library/venv.html), or maybe [pipenv](https://hackernoon.com/reaching-python-development-nirvana-bb5692adf30c)?). Pyenv takes inspiration from rbenv which is how Ruby does this, so if you know Ruby then you'll understand it. When I understand better, I'll write another blog post*
+
+----
+
 A while ago I noted that I should write about my shell functions for creating and managing Python Virtual Environments. Recently I was helping my boss set up some python virtual environments for some different projects, and I couldn't remember how to use [virtualenv](https://virtualenv.pypa.io/en/stable/) directly.
 
 I *really wanted* to just share my wrappers with him, and I found that they weren't *quite* ready to share because I hadn't finished documenting them.
