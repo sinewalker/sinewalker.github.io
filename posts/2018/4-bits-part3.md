@@ -27,7 +27,7 @@ There is an exception to Rule 5 (*Rule 0* allows for this): **doc-comments**.   
 
 Sometimes exploring code is like a text-adventure game.  The modules are like different rooms containing strange objects and it's not immediately clear what you should be doing next, or how to use the objects.
 
-In a text-adventure game, you need to `LOOK` at your surroundings to get your bearings and see what objects are around; `TAKE` objects, and even `EXAMINE` them once they're in your hands to uncover their secrets.  Only then will you discover that the sword you just took has a powerful magical enscryption on it, for instance.
+In a text-adventure game, you need to `LOOK` at your surroundings to get your bearings and see what objects are around; `TAKE` objects, and even `EXAMINE` them once they're in your hands to uncover their secrets.  Only then will you discover that the sword you just took has a powerful magical inscription on it, for instance.
 
 If the code you're exploring has *doc-comments*, then you can do the same thing: you can *look* at the module's description and an overview of classes and methods; or get the coding system to *describe* an object's properties and methods, how they should be called, what behavior to expect.
 
@@ -56,7 +56,7 @@ Let's see how doc-comments address the problems I outlined with regular comments
   
     Some doc-comments *can include unit test cases*, ensuring that they must agree with the code they describe, or else the tests fail. By being in-line with the code they test, this increases the likelihood that both the code and the doc-comment will be *updated together*, especially if you follow some of the practices of Test-Driven Development.
 
-    Other doc-comment systems have a feature similar to Java's *decoractors* which will automatically build "boilerplate" code such as Object-Oriented "getters" and "setters". All you have to do is decorate the object members that should be accessed in that way. This is in addition to pointing out to any human reader that such a member is meant to be accessed only through it's get/set methods.
+    Other doc-comment systems have a feature similar to Java's *decorators* which will automatically build "boilerplate" code such as Object-Oriented "getters" and "setters". All you have to do is decorate the object members that should be accessed in that way. This is in addition to pointing out to any human reader that such a member is meant to be accessed only through it's get/set methods.
 
 1. Comments are written in human language which can be prone to
   misinterpretation
@@ -66,16 +66,16 @@ Let's see how doc-comments address the problems I outlined with regular comments
 1. Comments embedded in code *can actually be harmful* when doing
   polyglot meta-programming
 
-    Doc-comments are not syntactictly able to be embedded within the code like a regular comment can be (to mark out a suspicious section while debugging). They are usually strings, and have a special location within the code that must be adhered to (usually the beginning of a function or module), otherwise it's not a doc-comment.
+    Doc-comments are not syntactically able to be embedded within the code like a regular comment can be (to mark out a suspicious section while debugging). They are usually strings, and have a special location within the code that must be adhered to (usually the beginning of a function or module), otherwise it's not a doc-comment.
   
 
 ## How do you use them
 
 Doc-comments can be used in different ways, depending how the language designers built them.
 
-### javadoc: Inside-out Litterate Programming
+### javadoc: Inside-out Literate Programming
 
-In Java, the doc-comments' main purpose is to be the source-code for API documentation.  The goal is to be able to generate an API reference from the same code that implements the API.  It's mostly successful.  This is not strictly *Litterate Programming* because it doesn't weave instructive narative with the code, but it does at least formalise the system of commenting that I was taught in high-school:
+In Java, the doc-comments' main purpose is to be the source-code for API documentation.  The goal is to be able to generate an API reference from the same code that implements the API.  It's mostly successful.  This is not strictly *Literate Programming* because it doesn't weave instructive narrative with the code, but it does at least formalise the system of commenting that I was taught in high-school:
 
 ```java
 /**
@@ -106,7 +106,7 @@ Here, the tags `@param` and `@return` are like the old [Structured Programming](
 
 The above code example comes from [Oracle's Javadoc style guide](http://www.oracle.com/technetwork/java/javase/tech/index-137868.html). It also shows an embedded HTML `<p>` tag which the `javadoc` tool can use when generating an HTML API document.
 
-I call this **"inside-out" Litterate Programming** because, rather than have an English narative with code dispursed through it like Knuth's [WEB](https://en.wikipedia.org/wiki/WEB) system of *TeX*, or Jupyter Notebooks; *javadoc* is more about havinging *a code library with English dispursed through it*. The focus of Litterate Programming is on the *humans reading the document*, and you "weave" the document to generate the code from it; whereas in javadoc the focus is on the *computer as the audience of the code*, and you use the `javadoc` tool to generate the document (so it's like "tangling").
+I call this **"inside-out" Literate Programming** because, rather than have an English narrative with code dispersed through it like Knuth's [WEB](https://en.wikipedia.org/wiki/WEB) system of *TeX*, or Jupyter Notebooks; *javadoc* is more about having *a code library with English dispersed through it*. The focus of Literate Programming is on the *humans reading the document*, and you "weave" the document to generate the code from it; whereas in javadoc the focus is on the *computer as the audience of the code*, and you use the `javadoc` tool to generate the document (so it's like "tangling").
 
 ### iPython and emacs environments: explore the environment interactively
 
@@ -171,7 +171,7 @@ I have rolled my own doc-comments system in at least one language that doesn't h
 
 It is documented on my [dotfiles project wiki on GitHub](https://github.com/sinewalker/dotfiles/wiki/Self-documenting-functions) as well as within [the code itself](https://github.com/sinewalker/dotfiles/blob/1.2.1/source/10_meta.sh), of course!  Take a look at it. 
 
-With this, and provided that the functions include a `$FUNCDESC` doc-comment that followes a few [simple conventions](https://github.com/sinewalker/dotfiles/wiki/Self-documenting-functions#coding-conventions), you can interactively explore my various esoteric shell functions.
+With this, and provided that the functions include a `$FUNCDESC` doc-comment that follows a few [simple conventions](https://github.com/sinewalker/dotfiles/wiki/Self-documenting-functions#coding-conventions), you can interactively explore my various esoteric shell functions.
 
 Let's explore the system itself:
 
@@ -189,7 +189,7 @@ Fn: describe in /Users/mjl/.dotfiles/source/10_meta.sh line 65
 
 My [describe](https://github.com/sinewalker/dotfiles/blob/1.2.1/source/10_meta.sh#L73) function tells you *where a shell function comes from, and a quick summary description from the doc-comment*. It's a bit like emacs' `describe-function`. 
 
-What if we want to see all of the doumentation, and the code? Well, we *could* look in that file, or we can just `list` the function, as it has been loaded into memory:
+What if we want to see all of the documentation, and the code? Well, we *could* look in that file, or we can just `list` the function, as it has been loaded into memory:
 
 ```sh
 
@@ -264,9 +264,9 @@ cpmod
 
 # *Use the Source, Luke*
 
-So I hope this illustrates the value of *good doc-comments*.  With an interactive system that supports them, like Emacs, iPython/Jupyter and my own Bash meta-fuctions, they can be a really great tool that helps coders to explore and experiment with a codebase.
+So I hope this illustrates the value of *good doc-comments*.  With an interactive system that supports them, like Emacs, iPython/Jupyter and my own Bash meta-functions, they can be a really great tool that helps coders to explore and experiment with a codebase.
 
-It's just like playng `ADVENT`, and like the game, good doc-comments foster in me a sense of *adventure* and *exploration* which makes coding with strange new codebases something *fun* instead of a hideous nightmare.
+It's just like playing `ADVENT`, and like the game, good doc-comments foster in me a sense of *adventure* and *exploration* which makes coding with strange new codebases something *fun* instead of a hideous nightmare.
 
 Commenting and documenting your code is traditionally looked at as a tiresome chore that is never complete.  Who knows, with this frame of mind, it might even encourage hackers to write their own doc-comments as a sort-of mini-adventure?
 
