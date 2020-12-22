@@ -323,7 +323,7 @@ as clear, or a perhaps make a function to convert <code>minutes-to-hours(5)</cod
 <p>To test some dynamic web pages, a colleague removed a suspicious HTML <code>div</code> that was embedded as part of an HTML snippet within a JSON blob, to be insterted into a page. He removed it by surrounding the <code>div</code> with HTML comments <code>&lt;!-- ... --&gt;</code>.  However, when the JSON gets parsed by JavaScript, the HTML snippet that was embedded causes a syntax error, because the HTML comment is not valid JavaScript and it broke the JSON encapsulation.</p>
 <p>The resulting error was easy to find this time, but it <em>may</em> have caused a subtle flaw, or caused the code to not exercise the logic that was under investigation.</p>
 <p>In general, commenting out code for troubleshooting <em>is</em> a pragmatic way to find the cause of a problem. In this situation though, it's better to backup the original (ideally with revision control if you can), and then <em>actually</em> remove bits to trouble-shoot, rather than comment them out.</p>
-<pre class="code literal-block"><span></span><span class="o">//</span> <span class="n">Sometimes</span><span class="p">,</span> <span class="n">I</span> <span class="n">believe</span> <span class="n">the</span> <span class="n">compiler</span> <span class="n">ignores</span> <span class="k">all</span> <span class="n">my</span> <span class="n">comments</span><span class="p">.</span>
+<pre class="code literal-block"><span></span>// Sometimes, I believe the compiler ignores all my comments.
 </pre>
 
 

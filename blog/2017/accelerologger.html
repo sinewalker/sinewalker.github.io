@@ -237,16 +237,16 @@
 
 
 <p>The problem is that the <code>println(y)</code> statements never execute.  It is difficult to see why. Let's break it down a bit in psudocode:</p>
-<pre class="code literal-block"><span></span> <span class="o">*</span> <span class="nv">Sets</span> <span class="nv">up</span> <span class="nv">some</span> `<span class="nv">x</span>`,`<span class="nv">y</span>`,`<span class="nv">z</span>` <span class="nv">variables</span> <span class="nv">and</span> <span class="nv">a</span> `<span class="nv">switchState</span>`, <span class="nv">and</span> <span class="k">then</span> <span class="nv">reads</span> <span class="nv">in</span>
-   <span class="nv">the</span> <span class="nv">values</span> <span class="nv">from</span> <span class="nv">the</span> <span class="nv">accelerometer</span> <span class="nv">and</span> <span class="nv">a</span> <span class="nv">switch</span>.
+<pre class="code literal-block"><span></span> * Sets up some `x`,`y`,`z` variables and a `switchState`, and then reads in
+   the values from the accelerometer and a switch.
 
- <span class="o">*</span> <span class="nv">When</span> <span class="nv">the</span> `<span class="nv">switchState</span>` <span class="nv">is</span> `<span class="nv">HIGH</span>`:
-   <span class="o">*</span> <span class="nv">Increment</span> `<span class="nv">ctr</span>`
-   <span class="o">*</span> <span class="k">If</span> <span class="nv">the</span> `<span class="nv">ctr</span>` <span class="nv">is</span> <span class="nv">over</span> `<span class="nv">threshold</span>` <span class="k">then</span> <span class="nv">print</span> <span class="nv">the</span> `<span class="nv">y</span>` <span class="nv">accelerometer</span> <span class="nv">reading</span>
-   <span class="o">*</span> <span class="nv">reset</span> <span class="nv">the</span> <span class="nv">counter</span>
+ * When the `switchState` is `HIGH`:
+   * Increment `ctr`
+   * If the `ctr` is over `threshold` then print the `y` accelerometer reading
+   * reset the counter
 
- <span class="o">*</span> <span class="nv">When</span> <span class="nv">the</span> `<span class="nv">switchState</span>` <span class="nv">is</span> <span class="nv">not</span> `<span class="nv">HIGH</span>` <span class="ss">(</span><span class="nv">i</span>.<span class="nv">e</span>. <span class="nv">it</span><span class="s1">'</span><span class="s">s `LOW`):</span>
-   <span class="o">*</span> <span class="nv">close</span> <span class="nv">the</span> <span class="nv">logging</span> <span class="nv">file</span>
+ * When the `switchState` is not `HIGH` (i.e. it's `LOW`):
+   * close the logging file
 </pre>
 
 

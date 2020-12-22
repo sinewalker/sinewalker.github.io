@@ -3,11 +3,12 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License" style="border-width:0"
      src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"/&gt;&lt;/a&gt;
-</copyright><lastBuildDate>Tue, 14 Apr 2020 23:34:56 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Meta: Setting up Nikola blogging</title><link>http://milosophical.me/blog/2015/setting-up-nikola.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
+</copyright><lastBuildDate>Tue, 22 Dec 2020 04:51:19 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Meta: Setting up Nikola blogging</title><link>http://milosophical.me/blog/2015/setting-up-nikola.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div tabindex="-1" id="notebook" class="border-box-sizing"&gt;
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Tonight I thought that I'd sit down at my home server, &lt;em&gt;Tesla&lt;/em&gt;, and do a bit of blogging.  This server's recently been rebuilt after a bad run-in with a hard-drive problem and I had not got around to putting my blog onto it.  Instead I was blogging with work's laptop.&lt;/p&gt;
 &lt;p&gt;After spending an hour cloning and installing my blog repositories and the necessary software through trial-and-error, I thought it best to write down what is necessary to bootstrap my blogging environment, and save myself some trouble in the future.&lt;/p&gt;
@@ -17,7 +18,8 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;a href="http://milosophical.me/blog/2015/setting-up-nikola.html"&gt;Read more…&lt;/a&gt; (3 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>blogging</category><category>meta</category><category>nikola</category><guid>http://milosophical.me/blog/2015/setting-up-nikola.html</guid><pubDate>Mon, 08 Jun 2015 11:57:43 GMT</pubDate></item><item><title>4-bit Rules of Computing, Part 1</title><link>http://milosophical.me/blog/2015/4-bit-rules-of-computing-part-1.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;Here is the second part of my &lt;a href="http://milosophical.me/tags/4-bit-rules"&gt;blog series&lt;/a&gt; expanding on my
 &lt;a href="http://milosophical.me/pg/4-bit-rules.html"&gt;4-bit rules of computing&lt;/a&gt;.&lt;/p&gt;

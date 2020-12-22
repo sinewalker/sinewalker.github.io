@@ -176,7 +176,24 @@
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2020/disruptor.html" class="u-url">Disruptor! What's going on?!</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2020/migrated-to-gitlab.html" class="u-url">Migrated To GitLab Pages</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
+            </span></p>
+            <p class="dateline"><a href="2020/migrated-to-gitlab.html" rel="bookmark"><time class="published dt-published" datetime="2020-12-21T12:01:28+11:00" title="2020-12-21 12:01">2020-12-21 12:01</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>I've moved this blog to <a href="https://pages.gitlab.io">GitLab Pages</a>. You can <a href="https://milosophical.me/blog">continue to read new posts there</a>, as well access all the old posts from previous hosts.</p>
+<p>The main reason that I have done this is because I'm now employed at GitLab, so it makes sense to run my web site out of that service.</p>
+<p>This GitHub Pages repository will remain online, served under the GH Pages domain <a href="https://sinewalker.github.io"><code>https://sinewalker.github.io</code></a></p>
+<p>Follow me <a href="https://about.me/mikelockhart">at the same places</a>! </p>
+<hr>
+<hr>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2020/disruptor.html" class="u-url">Disruptor! What's going on?!</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
@@ -329,35 +346,6 @@ downer, with all the horrible things going on in the world.</p>
 
 <p>The pages are actually served from catb.org as <a href="https://en.wikipedia.org/wiki/Unicode">Unicode</a> (<a href="https://en.wikipedia.org/wiki/UTF-8">utf-8</a>).  For instance, compare <a href="http://www.catb.org/~esr/jargon/html/0/dev-null.html">/dev/null on catb.org</a> with <a href="../jargon/html/0/dev-null.html">my mirror of /dev/null</a>.</p>
 <p class="more"><a href="2018/latin1-to-utf8.html">Read more…</a></p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="2018/journald-experiments-0.html" class="u-url">Journald experiments - Testing systemd's logger: speed and buffering</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                <a href="../authors/michael-lockhart.html">Michael Lockhart</a>
-            </span></p>
-            <p class="dateline"><a href="2018/journald-experiments-0.html" rel="bookmark"><time class="published dt-published" datetime="2018-07-14T21:32:16+10:00" title="2018-07-14 21:32">2018-07-14 21:32</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>I've been having good natured arguments at work about whether it's the <em>End of the World</em> that we are at last switching away from <em>Scientific Linux 6</em> and it's <a href="https://en.wikipedia.org/wiki/UNIX_System_V">System V</a> style <a href="https://en.wikipedia.org/wiki/Init">init</a> scripts, to <em>CentOS 7</em>, which uses <a href="https://freedesktop.org/wiki/Software/systemd/">systemd</a>. </p>
-<p>My own opinion is that <em>systemd is pretty <a href="../jargon/html/C/cuspy.html">cuspy</a></em>.  It's not perfect, but nor is it some great hulking monolithic monster come to destroy the Unix Way in the Linux world.  It offers many worthwhile improvements and I've enjoyed using it in openSUSE for years now. I look forward to switching away from the hair-ball of <em>wet</em> SysV init scripts with clumsy precedent semantics and manual service recovery.</p>
-<p>Now, I don't want to throw my hat into the ring on the pro's and con's of systemd having replaced the start-up infrastructure (and <em>a lot</em> of other systems besides) on Linux-based operating systems.  Enough has been said already on that front, by many more experienced than I, and further argument is pointless:  whichever camp you're in, you won't be convinced of the other sides point of view by now.</p>
-<p>However there is <em>one</em> argument against systemd that I'm not so sure about: <a href="http://0pointer.de/blog/projects/journal-submit.html">journald</a> and it's past issues:</p>
-<ul>
-<li>
-<strong>alleged buffering of logs</strong>, making diagnostics and debugging on time-critical services difficult or impossible</li>
-<li>
-<strong>binary log files</strong> which can be corrupted, and then not useful thereafter (because they're binary)</li>
-<li>
-<strong>volatile storage</strong>, so that your logs are gone when you want them the most: after an unplanned reboot</li>
-</ul>
-<p>I'll be spending a few days experimenting with <code>journald</code> in these areas, to see if it's as bad now as it was five years ago when <a href="https://bbs.archlinux.org/viewtopic.php?id=159090">concerns like these were being raised</a>.</p>
-<p>In this post I want to look at the <code>journald</code> daemon / <code>journalctl</code> log viewer a bit, from the point of view of <strong>buffering output</strong>, whether and where it could be occurring, and what the implications might be as a web sysop.</p>
-<blockquote>
-<p><em>This is a medium-long post, with about 23 minutes of terminal output recordings (in text, using <a href="https://ascinnema.org">asciinema</a>) and is about 2⅓MB to download. It's also about half-an-hour's read on top of that.</em></p>
-</blockquote>
-<p class="more"><a href="2018/journald-experiments-0.html">Read more…</a></p>
 </div>
     </div>
     </article>

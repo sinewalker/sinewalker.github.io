@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License" style="border-width:0"
      src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"/&gt;&lt;/a&gt;
-</copyright><lastBuildDate>Mon, 06 Apr 2020 22:26:58 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Radeon Performance Enhancement</title><link>http://milosophical.me/blog/2005/03/30/radeon-performance-enhancement.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;p&gt;&lt;em&gt;This post was originally published
+</copyright><lastBuildDate>Tue, 22 Dec 2020 04:51:19 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Radeon Performance Enhancement</title><link>http://milosophical.me/blog/2005/03/30/radeon-performance-enhancement.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;p&gt;&lt;em&gt;This post was originally published
     at &lt;a href="http://sinewalker.blogspot.com.au/2005_03_01_archive.html"&gt;sinewalker.blogspot.com.au&lt;/a&gt; on 30 March 2005&lt;/em&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;Place these settings in your &lt;a href="http://www.strw.leidenuniv.nl/cgi-bin/man?program=xorg.conf&amp;amp;section=5"&gt;&lt;code&gt;xorg.conf&lt;/code&gt;&lt;/a&gt;:

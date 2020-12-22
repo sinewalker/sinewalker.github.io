@@ -423,8 +423,8 @@
 <p>When interactive, <code>stdout</code> and <code>stderr</code> streams are line-buffered. Otherwise, they are block-buffered like regular text files. You can override this value with the <code>-u</code> command-line option.</p>
 </blockquote>
 <p>That is why I used <code>/usr/bin/python -u</code> in the <code>ExecStart=</code> directive for <code>tick-py.service</code>; so that this would be overridden:</p>
-<pre class="code literal-block"><span></span><span class="n">ExecStart</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">python</span> <span class="o">-</span><span class="n">u</span> <span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">hax</span><span class="o">/</span><span class="n">ticktock</span><span class="p">.</span><span class="n">py</span>
-<span class="o">#</span><span class="n">ExecStart</span><span class="o">=/</span><span class="n">root</span><span class="o">/</span><span class="n">hax</span><span class="o">/</span><span class="n">ticktock</span><span class="p">.</span><span class="n">py</span>
+<pre class="code literal-block"><span></span>ExecStart=/usr/bin/python -u /root/hax/ticktock.py
+#ExecStart=/root/hax/ticktock.py
 </pre>
 
 

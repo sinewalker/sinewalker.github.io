@@ -337,7 +337,7 @@
 
 
 <p>Since I <em>was</em> using <code>STORY_INDEX = True</code> before, and the first run had the warning about this setting being deprecated, I set <code>PAGE_INDEX = True</code> when I merged.  But the error has been about the page index all along: </p>
-<pre class="code literal-block"><span></span><span class="n">KeyError</span><span class="p">:</span> <span class="s1">'page_index_folder_index'</span>
+<pre class="code literal-block"><span></span>KeyError: 'page_index_folder_index'
 </pre>
 
 
@@ -396,7 +396,7 @@
 <p>There's still no page <code>index.html</code> rendered (after building)?</p>
 <p>So I tried the (deprecated) <code>STORY_INDEX = True</code> again.  No dice.  That is when I <a href="https://github.com/getnikola/nikola/issues/2646#issuecomment-288998636">commented on the Issue</a>.  Which prompted <a href="https://github.com/getnikola/nikola/pull/2701">Pull Request #2701</a> by one of the developers, and a promotion of the release 7.8.4</p>
 <p>Nikola <a href="https://getnikola.com/blog/nikola-v784-is-out.html">7.8.4 was then released</a>, so a quick</p>
-<pre class="code literal-block"><span></span><span class="n">pip</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="c1">--upgrade "Nikola[extras]"</span>
+<pre class="code literal-block"><span></span>pip install --upgrade "Nikola[extras]"
 </pre>
 
 

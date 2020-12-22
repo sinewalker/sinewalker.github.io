@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License" style="border-width:0"
      src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"/&gt;&lt;/a&gt;
-</copyright><lastBuildDate>Thu, 16 Apr 2020 00:00:50 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>ssh-pass</title><link>http://milosophical.me/blog/2018/ssh-pass.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;I've been using &lt;a href="https://www.passwordstore.org/"&gt;pass&lt;/a&gt; for a while now and I really like it.  But I don't like putting passwords or passphrases into my system clipboard if I can help it:  writing code to sniff the clipboard is child's play, so I'd like to avoid that attack vector if possible.&lt;/p&gt;
+</copyright><lastBuildDate>Tue, 22 Dec 2020 04:51:21 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>ssh-pass</title><link>http://milosophical.me/blog/2018/ssh-pass.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;I've been using &lt;a href="https://www.passwordstore.org/"&gt;pass&lt;/a&gt; for a while now and I really like it.  But I don't like putting passwords or passphrases into my system clipboard if I can help it:  writing code to sniff the clipboard is child's play, so I'd like to avoid that attack vector if possible.&lt;/p&gt;
 &lt;p&gt;One place that I thought would be simple would be the SSH utility to add keys to your SSH Agent: &lt;code&gt;ssh-add&lt;/code&gt;.  It should be possible to do something like this:&lt;/p&gt;
 &lt;pre class="code literal-block"&gt;&lt;span&gt;&lt;/span&gt;$ pass github/sinewalker&lt;span class="p"&gt;|&lt;/span&gt;head -1&lt;span class="p"&gt;|&lt;/span&gt;ssh-add github/sinewalker
 &lt;/pre&gt;
@@ -43,7 +43,8 @@ For real &lt;em&gt;rigour&lt;/em&gt;, there is much more required than a few sim
     &lt;div class="container" id="notebook-container"&gt;
 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;It's really handy to have all my SSH authentication be passwordless, but in a secure way. In openSUSE, the &lt;code&gt;ssh-agent&lt;/code&gt; is started for you automatically, but you still need to add your identities manually (and enter passphrases when you do this).  That's a bit of a pain to do every time you login.&lt;/p&gt;
 &lt;p&gt;Here are some simple scripts and steps I use to set up my KDE session so that it will automatically load my SSH identities when I login.&lt;/p&gt;
@@ -52,7 +53,8 @@ For real &lt;em&gt;rigour&lt;/em&gt;, there is much more required than a few sim
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;a href="http://milosophical.me/blog/2015/loading-ssh-keys-at-kde-startup.html"&gt;Read more…&lt;/a&gt; (2 min remaining to read)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><category>how-to</category><category>KDE</category><category>ssh</category><category>tip</category><guid>http://milosophical.me/blog/2015/loading-ssh-keys-at-kde-startup.html</guid><pubDate>Wed, 04 Nov 2015 10:33:18 GMT</pubDate></item><item><title>4-bit Rules of Computing, Part 2</title><link>http://milosophical.me/blog/2015/4-bit-rules-of-computing-part-2.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;Here is the third part of my &lt;a href="http://milosophical.me/tags/4-bit-rules.html"&gt;blog series&lt;/a&gt; expanding on my
 &lt;a href="http://milosophical.me/pg/4-bit-rules.html"&gt;4-bit rules of computing&lt;/a&gt;.&lt;/p&gt;

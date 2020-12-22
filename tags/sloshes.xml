@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License" style="border-width:0"
      src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"/&gt;&lt;/a&gt;
-</copyright><lastBuildDate>Mon, 06 Apr 2020 22:27:01 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Setting up multiple Java VMs under Cygwin</title><link>http://milosophical.me/blog/2007/03/09/setting-up-multiple-java-vms-under-cygwin.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;It is useful to have different versions of the JVM installed, for a number of reasons:
+</copyright><lastBuildDate>Tue, 22 Dec 2020 04:51:18 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Setting up multiple Java VMs under Cygwin</title><link>http://milosophical.me/blog/2007/03/09/setting-up-multiple-java-vms-under-cygwin.html</link><dc:creator>Michael Lockhart</dc:creator><description>&lt;div&gt;&lt;p&gt;It is useful to have different versions of the JVM installed, for a number of reasons:
 &lt;/p&gt;&lt;ul&gt;
 	&lt;li&gt;Different optimisation features from different JVM implementations&lt;/li&gt;
 	&lt;li&gt;Different language features from different JVM versions&lt;/li&gt;
