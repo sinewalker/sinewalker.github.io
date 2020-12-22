@@ -1,0 +1,6 @@
+#!/bin/bash
+# Run nikola container and start a shell
+source docker.source
+echo -e "ENTERING ${SITE} CONTAINER.\n"
+eval ${DOCKER_CMD} /bin/sh
+echo -e "\nLEFT ${SITE}"

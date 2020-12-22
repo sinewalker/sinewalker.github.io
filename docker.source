@@ -1,0 +1,11 @@
+# don't execute - evaluate to get the variables
+SITE=milosophical.me
+NIKOLA_VER=7.8.15
+
+DOCKER_CMD="docker run --rm --interactive --tty \
+       --volume ${PWD}:/${SITE} --workdir /${SITE} \
+       --hostname ${SITE} --name ${SITE} \
+       --user $(id -u):$(id -g) --publish 8000:8000 \
+       registry.gitlab.com/paddy-hack/nikola:${NIKOLA_VER}"
+type --path docker > /dev/null \
+    || echo "WARNING - no docker executable found!" >&2

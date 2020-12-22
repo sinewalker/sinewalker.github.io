@@ -1,0 +1,5 @@
+#!/bin/bash
+# Run nikola withn a docker container
+# Passes all arguments to nikola
+source docker.source
+eval ${DOCKER_CMD} nikola ${@}
